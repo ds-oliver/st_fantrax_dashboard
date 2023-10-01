@@ -62,6 +62,9 @@ warnings.filterwarnings('ignore')
 scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 sys.path.append(scripts_path)
 
+def load_only_csvs(directory_path):
+    return [pd.read_csv(os.path.join(directory_path, filename)) for filename in os.listdir(directory_path) if filename.endswith('.csv')]
+
 
 def load_and_concatenate_csvs(directory_path):
     print("Debug: Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.")
@@ -103,10 +106,15 @@ def load_and_concatenate_csvs(directory_path):
 def main():
     add_construction()
 
-    directory_path = 'data/fantrax-data'
-    final_df = load_and_concatenate_csvs(directory_path)
+    fx_directory = 'data/fantrax-data'
+    ros_directory = 'data/ros-data'
+    gws_df = load_and_concatenate_csvs(fx_directory)
 
-    debug_dataframe(final_df)
+    ros_df = load_only_csvs(ros_directory)
+
+    debug_dataframe(ros_df)
+
+    debug_dataframe(gws_df)
 
     styled_df = 
 
