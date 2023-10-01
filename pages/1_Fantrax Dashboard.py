@@ -25,11 +25,11 @@ import io
 import matplotlib.colors as mcolors
 import matplotlib
 from collections import Counter
-from streamlit_extras.dataframe_explorer import dataframe_explorer
+# from streamlit_extras.dataframe_explorer import dataframe_explorer
 from markdownlit import mdlit
-from streamlit_extras.metric_cards import style_metric_cards
-from streamlit_extras.stylable_container import stylable_container
-from matplotlib.colors import LinearSegmentedColormap
+# from streamlit_extras.metric_cards import style_metric_cards
+# from streamlit_extras.stylable_container import stylable_container
+# from matplotlib.colors import LinearSegmentedColormap
 from scipy.stats import percentileofscore
 
 from constants import stats_cols, shooting_cols, passing_cols, passing_types_cols, gca_cols, defense_cols, possession_cols, playing_time_cols, misc_cols, fbref_cats, fbref_leagues, matches_col_groups, matches_drop_cols, matches_default_cols, matches_drop_cols, matches_default_cols, matches_standard_cols, matches_passing_cols, matches_pass_types, matches_defense_cols, matches_possession_cols, matches_misc_cols, matches_default_cols_rename, matches_standard_cols_rename, matches_defense_cols_rename, matches_passing_cols_rename, matches_possession_cols_rename, matches_misc_cols_rename, matches_pass_types_rename, colors, divergent_colors, matches_rename_dict, colors, divergent_colors, matches_rename_dict
