@@ -37,7 +37,7 @@ from constants import stats_cols, shooting_cols, passing_cols, passing_types_col
 
 from files import fx_gw1_data as gw1_data, fx_gw2_data as gw2_data, fx_gw3_data
 
-from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap, create_custom_divergent_cmap
+from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap
 
 st.set_page_config(
     page_title="Footy Magic",
@@ -120,6 +120,8 @@ def main():
     debug_dataframe(ros_df)
 
     debug_dataframe(gws_df)
+
+    
 
     styled_df = style_dataframe_custom(
         gws_df, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
