@@ -37,7 +37,7 @@ from constants import stats_cols, shooting_cols, passing_cols, passing_types_col
 
 from files import fx_gw1_data as gw1_data, fx_gw2_data as gw2_data, fx_gw3_data
 
-from functions import load_css, get_color, get_divergent_color, style_dataframe_custom, add_construction, debug_dataframe
+from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap, create_custom_divergent_cmap
 
 st.set_page_config(
     page_title="Footy Magic",
@@ -106,9 +106,14 @@ def load_and_concatenate_csvs(directory_path):
 def main():
     add_construction()
 
+    custom_cmap = create_custom_sequential_cmap(*colors)
+    custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
+
     fx_directory = 'data/fantrax-data'
     ros_directory = 'data/ros-data'
     gws_df = load_and_concatenate_csvs(fx_directory)
+
+    st.write(f"GWs_df columns: {gws_df.columns}")
 
     ros_df = load_only_csvs(ros_directory)
 
@@ -116,7 +121,8 @@ def main():
 
     debug_dataframe(gws_df)
 
-    styled_df = 
+    styled_df = style_dataframe_custom(
+        gws_df, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
 
 
 # init main function
