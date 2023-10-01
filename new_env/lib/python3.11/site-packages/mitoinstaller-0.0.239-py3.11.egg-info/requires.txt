@@ -1,0 +1,3 @@
+analytics-python
+colorama
+termcolor
