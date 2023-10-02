@@ -10,3 +10,4 @@ __pycache__/
 files.cpython-*.pyc
 constants.cpython-*.pyc
 functions.cpython-*.pyc
+pages/info_streamlit_app_logs.log
