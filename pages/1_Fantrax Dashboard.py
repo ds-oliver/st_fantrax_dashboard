@@ -37,17 +37,19 @@ from concurrent.futures import ThreadPoolExecutor
 
 from constants import stats_cols, shooting_cols, passing_cols, passing_types_cols, gca_cols, defense_cols, possession_cols, playing_time_cols, misc_cols, fbref_cats, fbref_leagues, matches_col_groups, matches_drop_cols, matches_default_cols, matches_drop_cols, matches_default_cols, matches_standard_cols, matches_passing_cols, matches_pass_types, matches_defense_cols, matches_possession_cols, matches_misc_cols, matches_default_cols_rename, matches_standard_cols_rename, matches_defense_cols_rename, matches_passing_cols_rename, matches_possession_cols_rename, matches_misc_cols_rename, matches_pass_types_rename, colors, divergent_colors, matches_rename_dict, colors, divergent_colors, matches_rename_dict
 
-from files import matches_data
+from files import matches_data, ros_data
 
 from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
-log_file_path = os.path.join(current_directory, 'streamlit_app_logs.log')
+log_file_path = os.path.join(current_directory, 'info_streamlit_app_logs.log')
+
+print(f"Log file path: {log_file_path}")
 
 logging.basicConfig(
     filename=log_file_path,
-    level=logging.info,
+    level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'  # 'a' means append
 )
@@ -116,63 +118,99 @@ def load_and_concatenate_csvs(directory_path):
 
     return concatenated_df
 
-def drop_cols_if_exists(df, cols):
-    df.drop(columns=[
-        col for col in df.columns if col in cols], axis=1, inplace=True)
 
-@st.cache_data
-def merge_dfs(df1, df2, merge_cols=['Player', 'Team', 'GW'], suffixes=('_ros', '_gws')):
-    logging.info("Starting merge_dfs() function. Merging DataFrames.")
-    merged_df = pd.merge(df1, df2, how='left', on=merge_cols)
-    logging.info("merge_dfs() function complete. Returning merged_df.")
-    return merged_df
-    
+def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'],
+             cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home']):
+
+    logging.info(
+        "Starting clean_df() function. Initial DataFrame shape: {}".format(df.shape))
+
+    # Drop specified columns if they exist
+    df.drop(columns=[
+            col for col in df.columns if col in cols_to_drop], axis=1, inplace=True)
+    logging.info(
+        "Dropped unnecessary columns. DataFrame shape: {}".format(df.shape))
+
+    # Conditionally keep columns based on the presence of 'player' using list comprehension
+    df = df[[col for col in df.columns if 'player' in col or col in cols_to_keep]]
+
+    # Capitalize all columns names 
+    df.columns = df.columns.str.capitalize()
+
+    # If Gameweek or Gw is in the columns, rename to GW
+    df.rename(columns={
+              col: 'GW' for col in df.columns if 'Gw' in col or 'Gameweek' in col}, inplace=True)
+
+    # Apply unidecode to Player and Team columns
+    df['Player'] = df['Player'].apply(unidecode.unidecode)
+    logging.info("Applied unidecode to all string columns.")
+
+    logging.info("clean_df() function complete. Final DataFrame shape: {}. Columns in df:\n{}".format(
+        df.shape, df.columns.tolist()))
+
+    return df
 
 # def reorder_columns(df, cols):
 #     # order should be Player, Position, Team, GW,
 
+
 def main():
+    logging.info("Starting main function")
     add_construction()
 
+    logging.info("Creating custom color maps")
     custom_cmap = create_custom_sequential_cmap(*colors)
     custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
 
     fx_directory = 'data/fantrax-data'
-    ros_directory = 'data/ros-data'
 
-    # Load and info data
+    logging.info("Loading and concatenating data from fantrax and ROS")
     gws_df = load_and_concatenate_csvs(fx_directory)
-    ros_df = load_only_csvs(ros_directory)[0]
-    fbref_df = load_csv_file(matches_data)[0]
+    ros_df = load_csv_file(ros_data)
+    fbref_df = load_csv_file(matches_data)
+
+    logging.info("Cleaning fbref_df")
+    fbref_df = clean_df(fbref_df)
+    ros_df = clean_df(ros_df)
+    gws_df = clean_df(gws_df)
+
+    # Standardizing data types for merging
+    fbref_df['GW'] = fbref_df['GW'].astype(float)
+    gws_df['GW'] = gws_df['GW'].astype(float)
 
     debug_dataframe(ros_df, 'ros_df')
     debug_dataframe(gws_df, 'gws_df')
     debug_dataframe(fbref_df, 'fbref_df')
-    
-    # Merge and style dataframes
-    ros_gws_df = merge_dfs(ros_df, gws_df, merge_cols=['Player', 'Team'], suffixes=('_ros', '_gws'))
 
-    # merge fbref_df with ros_gws_df on Player and Gameweek
-    ros_gws_fbref_df = merge_dfs(ros_gws_df, fbref_df, merge_cols=['Player', 'Team', 'GW'], suffixes=('_ros_gws', '_fbref'))
+    logging.info("Merging and styling dataframes")
+    # Merge ros_df with gws_df based on 'Player'
+    ros_gws_df = pd.merge(ros_df, gws_df, how='outer', on=[
+                          'Player'], suffixes=('_ros', '_gws'))
 
-    columns_to_drop = ['Pos', 'Status',
-                       '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
+    # Merge fbref_df with ros_gws_df based on 'Player' and 'GW'
+    all_data = pd.merge(fbref_df, ros_gws_df, how='outer', on=[
+                        'Player', 'GW'], suffixes=('_fbref', '_ros_gws'))
 
-    # Drop columns if they exist
-    drop_cols_if_exists(ros_gws_df, columns_to_drop)
+    # Drop unnecessary columns
+    columns_to_drop = ['Pos', 'Status', '+/-_ros',
+                       '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
+    all_data = clean_df(all_data, columns_to_drop)
 
-    debug_dataframe(ros_gws_df)
+    debug_dataframe(all_data, 'all_data')
 
-    selected_columns = ros_gws_df.columns.tolist()
+    logging.info("Styling the final dataframe")
+    selected_columns = all_data.columns.tolist()
     styled_df = style_dataframe_custom(
-        ros_gws_df, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
+        all_data, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
 
-    # Display the dataframe
+    logging.info("Displaying the dataframe on Streamlit")
     st.dataframe(
-        ros_gws_df.style.apply(lambda _: styled_df, axis=None),
+        all_data.style.apply(lambda _: styled_df, axis=None),
         use_container_width=True,
-        height=(len(ros_gws_df))
+        height=(len(all_data))
     )
+
+    logging.info("Main function completed successfully")
 
 
 # init main function

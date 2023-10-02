@@ -7,6 +7,7 @@ import os
 
 shots_data = 'data/fbref-data/all_shots_all_20230924.csv'
 matches_data = 'data/fbref-data/full_season_matchreports_20230924.csv'
+ros_data = 'data/ros-data/Weekly ROS Ranks_GW7.csv'
 
 # files paths
 data_out = 'data/data_out'
