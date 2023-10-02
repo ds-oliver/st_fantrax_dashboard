@@ -62,10 +62,12 @@ warnings.filterwarnings('ignore')
 scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 sys.path.append(scripts_path)
 
+
+@st.cache_data
 def load_only_csvs(directory_path):
     return [pd.read_csv(os.path.join(directory_path, filename)) for filename in os.listdir(directory_path) if filename.endswith('.csv')]
 
-
+@st.cache_data
 def load_and_concatenate_csvs(directory_path):
     print("Debug: Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.")
     # Initialize an empty list to hold the dataframes
@@ -113,18 +115,28 @@ def main():
     ros_directory = 'data/ros-data'
     gws_df = load_and_concatenate_csvs(fx_directory)
 
-    st.write(f"GWs_df columns: {gws_df.columns}")
-
     ros_df = load_only_csvs(ros_directory)
+
+    ros_df = ros_df[0]
 
     debug_dataframe(ros_df)
 
     debug_dataframe(gws_df)
 
-    
+    # merge ros_df and gws_df on Player 
+    ros_gws_df = pd.merge(ros_df, gws_df, on=['Player', 'Team'], how='inner', suffixes=('_ros', '_gws'))
+
+    # debug ros_gws_df
+    debug_dataframe(ros_gws_df)
+
+    selected_columns = ros_gws_df.columns.tolist()
 
     styled_df = style_dataframe_custom(
-        gws_df, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
+        ros_gws_df, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
+
+    st.dataframe(ros_gws_df.style.apply(lambda _: styled_df, axis=None),
+        use_container_width=True,
+        height=(len(ros_gws_df) * .5))
 
 
 # init main function
