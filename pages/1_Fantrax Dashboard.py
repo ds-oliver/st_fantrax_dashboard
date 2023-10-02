@@ -118,44 +118,38 @@ def load_and_concatenate_csvs(directory_path):
 
     return concatenated_df
 
-
-def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'],
-             cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home'], df_name='df'):
-
+@st.cache_data
+def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'], df_name='df'):
     logging.info(
-        "Starting clean_df() function. Initial DataFrame shape: {}".format(df.shape))
-    
+        f"Starting clean_df() function. Initial DataFrame shape: {df.shape}")
     print(f"Cleaning {df_name} dataframe")
+
+    cols_to_capitalize = ['player', 'home', 'opponent', 'gameweek']
 
     # Drop specified columns if they exist
     df.drop(columns=[
             col for col in df.columns if col in cols_to_drop], axis=1, inplace=True)
-    logging.info(
-        "Dropped unnecessary columns. DataFrame shape: {}".format(df.shape))
+    
+    # Capitalize column names if they exist
+    df.columns = [
+        col.capitalize() if col in cols_to_capitalize else col for col in df.columns]
 
-    # Conditionally keep columns based on the presence of 'player' using list comprehension
-    df = df[[col for col in df.columns if 'player' in col or col in cols_to_keep]]
+    logging.info(f"Dropped unnecessary columns. DataFrame shape: {df.shape}")
 
-    # Capitalize all columns names
-    df.columns = df.columns.str.capitalize()
-
-    # If Gameweek or Gw is in the columns, rename to GW
+    # Rename columns containing 'Gw' or 'Gameweek' to 'GW'
     df.rename(columns={
               col: 'GW' for col in df.columns if 'Gw' in col or 'Gameweek' in col}, inplace=True)
-    
-    debug_dataframe(df, 'df')
 
+    # Your existing debug_dataframe function call
+    debug_dataframe(df, df_name)
 
-    # Apply unidecode to Player and Team columns
-    df['Player'] = df['Player'].apply(unidecode.unidecode)
-    logging.info("Applied unidecode to all string columns.")
+    # Apply unidecode only if 'Player' column exists and is of object type
+    if 'Player' in df.columns and df['Player'].dtype == 'object':
+        df['Player'] = df['Player'].apply(unidecode.unidecode)
 
-    logging.info("clean_df() function complete. Final DataFrame shape: {}. Columns in df:\n{}".format(
-        df.shape, df.columns.tolist()))
-
+    logging.info(
+        f"clean_df() function complete. Final DataFrame shape: {df.shape}. Columns in df:\n{df.columns.tolist()}")
     return df
-
-
 
 # def reorder_columns(df, cols):
 #     # order should be Player, Position, Team, GW,
@@ -163,11 +157,13 @@ def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D
 
 def main():
     logging.info("Starting main function")
+    print("Starting main function")
     add_construction()
 
     logging.info("Creating custom color maps")
     custom_cmap = create_custom_sequential_cmap(*colors)
     custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
+    logging.info("Custom color maps created")
 
     fx_directory = 'data/fantrax-data'
 
@@ -175,50 +171,62 @@ def main():
     gws_df = load_and_concatenate_csvs(fx_directory)
     ros_df = load_csv_file(ros_data)
     fbref_df = load_csv_file(matches_data)
+    logging.info("Data loaded and concatenated")
+
+    debug_dataframe(ros_df, 'raw ros_df')
+    debug_dataframe(gws_df, 'raw gws_df')
+    debug_dataframe(fbref_df, 'raw fbref_df')
 
     logging.info("Cleaning dataframes before merging")
-    fbref_df = clean_df(fbref_df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'], cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home'], df_name='fbref_df')
-    gws_df = clean_df(gws_df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'], cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home'], df_name='gws_df')
+    fbref_df = clean_df(fbref_df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent', '+/-'], df_name='fbref_df')
+    logging.info("fbref_df cleaned")
+    
+    fbref_df.drop(columns=['team'], inplace=True)
 
-    # Standardizing data types for merging
+    gws_df = clean_df(gws_df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent', '+/-'], df_name='gws_df')
+    logging.info("gws_df cleaned")
+
     fbref_df['GW'] = fbref_df['GW'].astype(float)
     gws_df['GW'] = gws_df['GW'].astype(float)
+    logging.info("GW columns converted to float")
 
-    debug_dataframe(ros_df, 'ros_df')
-    debug_dataframe(gws_df, 'gws_df')
-    debug_dataframe(fbref_df, 'fbref_df')
+    debug_dataframe(ros_df, 'cleaned ros_df')
+    debug_dataframe(gws_df, 'cleaned gws_df')
+    debug_dataframe(fbref_df, 'cleaned fbref_df')
 
-    logging.info("Merging and styling dataframes")
-    # Merge ros_df with gws_df based on 'Player'
-    ros_gws_df = pd.merge(ros_df, gws_df, how='outer', on=[
-                          'Player'], suffixes=('_ros', '_gws'))
+    logging.info("Starting the merge operation")
+    ros_gws_df = pd.merge(ros_df, gws_df, how='outer', on=['Player'], suffixes=('_ros', '_gws'))
+    all_data = pd.merge(fbref_df, ros_gws_df, how='outer', on=['Player', 'GW'], suffixes=('_fbref', '_ros_gws'))
+    logging.info("Merge operation completed")
 
-    # Merge fbref_df with ros_gws_df based on 'Player' and 'GW'
-    all_data = pd.merge(fbref_df, ros_gws_df, how='outer', on=[
-                        'Player', 'GW'], suffixes=('_fbref', '_ros_gws'))
+    logging.info("Displaying the dataframe on Streamlit without styling")
+    st.table(all_data.head())
+    
+    columns_to_keep = ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank'] + [col for col in gws_df.columns if col not in ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank']]
+    logging.info(f"Columns to keep: {columns_to_keep}")
 
-    # Drop unnecessary columns
-    columns_to_drop = ['Pos', 'Status', '+/-_ros',
-                       '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
-    all_data = clean_df(all_data, columns_to_drop)
+    missing_columns = [col for col in columns_to_keep if col not in all_data.columns]
+    if missing_columns:
+        logging.warning(f"Warning: These columns are missing in 'all_data': {missing_columns}")
 
+    try:
+        logging.info("Attempting to style the final dataframe")
+        logging.info(f"Columns in all_data before styling: {all_data.columns.tolist()}")
+        
+        styled_df = style_dataframe_custom(all_data, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
+        logging.info(f"Portion of styled DataFrame: {styled_df.head()}")
+        
+        logging.info("Styling completed, proceeding to display")
+        st.dataframe(all_data.style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(all_data))
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
+    all_data.drop(columns=['Team_ros'], inplace=True)
+    all_data.rename(columns={'Team_gws': 'Team'}, inplace=True)
     debug_dataframe(all_data, 'all_data')
-
-    logging.info("Styling the final dataframe")
-    selected_columns = all_data.columns.tolist()
-    styled_df = style_dataframe_custom(
-        all_data, selected_columns, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-
-    logging.info("Displaying the dataframe on Streamlit")
-    st.dataframe(
-        all_data.style.apply(lambda _: styled_df, axis=None),
-        use_container_width=True,
-        height=(len(all_data))
-    )
 
     logging.info("Main function completed successfully")
 
-
-# init main function
 if __name__ == "__main__":
     main()

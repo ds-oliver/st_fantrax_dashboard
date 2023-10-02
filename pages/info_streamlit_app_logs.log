@@ -1,0 +1,236 @@
+2023-10-02 12:15:26,090 - INFO - Starting main function
+2023-10-02 12:15:26,091 - INFO - Creating custom color maps
+2023-10-02 12:15:26,092 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:15:26,097 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 12:15:26,390 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 12:15:26,404 - INFO - Unique GW values: [1]
+2023-10-02 12:15:26,404 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 12:15:26,448 - INFO - Cleaning dataframes before merging
+2023-10-02 12:15:26,487 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 12:15:26,489 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 12:15:26,494 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 12:15:26,511 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 12:15:26,514 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 12:15:26,519 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 12:15:26,536 - INFO - Merging and styling dataframes
+2023-10-02 12:15:26,667 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:15:26,730 - INFO - Styling the final dataframe
+2023-10-02 12:15:26,731 - ERROR - An exception occurred: cannot access local variable 'columns_to_keep' where it is not associated with a value
+2023-10-02 12:15:26,738 - INFO - Main function completed successfully
+2023-10-02 12:17:42,109 - INFO - Starting main function
+2023-10-02 12:17:42,110 - INFO - Creating custom color maps
+2023-10-02 12:17:42,111 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:17:42,143 - INFO - Cleaning dataframes before merging
+2023-10-02 12:17:42,256 - INFO - Merging and styling dataframes
+2023-10-02 12:17:42,332 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:17:42,365 - INFO - Styling the final dataframe
+2023-10-02 12:17:42,365 - ERROR - An exception occurred: cannot access local variable 'columns_to_keep' where it is not associated with a value
+2023-10-02 12:17:42,375 - INFO - Main function completed successfully
+2023-10-02 12:18:11,689 - INFO - Starting main function
+2023-10-02 12:18:11,690 - INFO - Creating custom color maps
+2023-10-02 12:18:11,690 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:18:11,707 - INFO - Cleaning dataframes before merging
+2023-10-02 12:18:11,776 - INFO - Merging and styling dataframes
+2023-10-02 12:18:11,837 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:18:11,866 - INFO - Styling the final dataframe
+2023-10-02 12:18:11,867 - ERROR - An exception occurred: cannot access local variable 'columns_to_keep' where it is not associated with a value
+2023-10-02 12:18:11,882 - INFO - Main function completed successfully
+2023-10-02 12:18:55,759 - INFO - Starting main function
+2023-10-02 12:18:55,762 - INFO - Creating custom color maps
+2023-10-02 12:18:55,762 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:18:55,782 - INFO - Cleaning dataframes before merging
+2023-10-02 12:18:55,887 - INFO - Merging and styling dataframes
+2023-10-02 12:18:55,921 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:18:55,965 - INFO - Styling the final dataframe
+2023-10-02 12:18:55,967 - ERROR - An exception occurred: cannot access local variable 'columns_to_keep' where it is not associated with a value
+2023-10-02 12:18:55,984 - INFO - Main function completed successfully
+2023-10-02 12:28:59,698 - INFO - Starting main function
+2023-10-02 12:28:59,702 - INFO - Creating custom color maps
+2023-10-02 12:28:59,705 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:28:59,805 - INFO - Cleaning dataframes before merging
+2023-10-02 12:28:59,936 - INFO - Merging and styling dataframes
+2023-10-02 12:29:00,014 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:29:00,105 - INFO - Styling the final dataframe
+2023-10-02 12:29:00,111 - ERROR - An exception occurred: cannot access local variable 'columns_to_keep' where it is not associated with a value
+2023-10-02 12:29:00,121 - INFO - Main function completed successfully
+2023-10-02 12:32:47,769 - INFO - Starting main function
+2023-10-02 12:32:47,773 - INFO - Creating custom color maps
+2023-10-02 12:32:47,774 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:32:47,839 - INFO - Cleaning dataframes before merging
+2023-10-02 12:32:47,981 - INFO - Merging and styling dataframes
+2023-10-02 12:32:48,041 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:32:48,090 - INFO - Styling the final dataframe
+2023-10-02 12:32:48,108 - ERROR - An exception occurred: 'Team'
+2023-10-02 12:32:48,120 - INFO - Main function completed successfully
+2023-10-02 12:37:04,740 - INFO - Starting main function
+2023-10-02 12:37:04,743 - INFO - Creating custom color maps
+2023-10-02 12:37:04,744 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:37:04,799 - INFO - Cleaning dataframes before merging
+2023-10-02 12:37:04,924 - INFO - Merging and styling dataframes
+2023-10-02 12:38:08,421 - INFO - Starting main function
+2023-10-02 12:38:08,426 - INFO - Creating custom color maps
+2023-10-02 12:38:08,427 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:38:08,454 - INFO - Cleaning dataframes before merging
+2023-10-02 12:38:08,548 - INFO - Merging and styling dataframes
+2023-10-02 12:38:08,612 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:38:08,642 - INFO - Styling the final dataframe
+2023-10-02 12:38:08,648 - ERROR - An exception occurred: 'Team'
+2023-10-02 12:38:08,660 - INFO - Main function completed successfully
+2023-10-02 12:39:27,555 - INFO - Starting main function
+2023-10-02 12:39:27,556 - INFO - Creating custom color maps
+2023-10-02 12:39:27,557 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:39:27,574 - INFO - Cleaning dataframes before merging
+2023-10-02 12:39:27,639 - INFO - Merging and styling dataframes
+2023-10-02 12:39:27,670 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:39:27,771 - INFO - Styling the final dataframe
+2023-10-02 12:39:27,779 - ERROR - An exception occurred: 'Team'
+2023-10-02 12:39:27,786 - INFO - Main function completed successfully
+2023-10-02 12:40:47,174 - INFO - Starting main function
+2023-10-02 12:40:47,175 - INFO - Creating custom color maps
+2023-10-02 12:40:47,176 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:40:47,191 - INFO - Cleaning dataframes before merging
+2023-10-02 12:40:47,252 - INFO - Merging and styling dataframes
+2023-10-02 12:40:47,284 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:40:47,301 - INFO - Styling the final dataframe
+2023-10-02 12:40:47,309 - ERROR - An exception occurred: 'Team'
+2023-10-02 12:40:47,317 - INFO - Main function completed successfully
+2023-10-02 12:45:37,198 - INFO - Starting main function
+2023-10-02 12:45:37,199 - INFO - Creating custom color maps
+2023-10-02 12:45:37,199 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:45:37,218 - INFO - Cleaning dataframes before merging
+2023-10-02 12:45:37,299 - INFO - Merging and styling dataframes
+2023-10-02 12:45:37,347 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:45:37,387 - INFO - Styling the final dataframe
+2023-10-02 12:45:49,628 - INFO - Displaying the styled dataframe on Streamlit
+2023-10-02 12:45:56,043 - ERROR - An exception occurred: 'id'
+2023-10-02 12:45:56,139 - INFO - Main function completed successfully
+2023-10-02 12:52:38,814 - INFO - Starting main function
+2023-10-02 12:52:38,825 - INFO - Creating custom color maps
+2023-10-02 12:52:38,826 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:52:38,884 - INFO - Cleaning dataframes before merging
+2023-10-02 12:52:38,996 - INFO - Merging and styling dataframes
+2023-10-02 12:52:39,053 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:52:39,179 - INFO - Styling the final dataframe
+2023-10-02 12:52:52,724 - INFO - Displaying the styled dataframe on Streamlit
+2023-10-02 12:53:03,604 - INFO - Starting main function
+2023-10-02 12:53:03,604 - INFO - Creating custom color maps
+2023-10-02 12:53:03,605 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:53:03,694 - INFO - Cleaning dataframes before merging
+2023-10-02 12:53:04,156 - INFO - Merging and styling dataframes
+2023-10-02 12:53:04,426 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:53:04,554 - INFO - Styling the final dataframe
+2023-10-02 12:53:12,614 - INFO - Displaying the styled dataframe on Streamlit
+2023-10-02 12:53:19,442 - ERROR - An exception occurred: 'id'
+2023-10-02 12:53:19,545 - INFO - Main function completed successfully
+2023-10-02 12:54:23,926 - INFO - Starting main function
+2023-10-02 12:54:23,937 - INFO - Creating custom color maps
+2023-10-02 12:54:23,938 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:54:23,973 - INFO - Cleaning dataframes before merging
+2023-10-02 12:54:24,041 - INFO - Merging and styling dataframes
+2023-10-02 12:54:24,075 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:54:24,096 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 12:54:24,096 - INFO - Styling the final dataframe
+2023-10-02 12:54:31,300 - INFO - Displaying the styled dataframe on Streamlit
+2023-10-02 12:54:36,844 - ERROR - An exception occurred: 'id'
+2023-10-02 12:54:36,950 - INFO - Main function completed successfully
+2023-10-02 12:58:14,553 - INFO - Starting main function
+2023-10-02 12:58:14,557 - INFO - Creating custom color maps
+2023-10-02 12:58:14,558 - INFO - Custom color maps created
+2023-10-02 12:58:14,559 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 12:58:14,610 - INFO - Data loaded and concatenated
+2023-10-02 12:58:14,623 - INFO - Cleaning dataframes before merging
+2023-10-02 12:58:14,720 - INFO - fbref_df cleaned
+2023-10-02 12:58:14,775 - INFO - gws_df cleaned
+2023-10-02 12:58:14,780 - INFO - GW columns converted to float
+2023-10-02 12:58:14,788 - INFO - Starting the merge operation
+2023-10-02 12:58:14,844 - INFO - Merge operation completed
+2023-10-02 12:58:14,844 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 12:58:14,927 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 12:58:14,929 - INFO - Attempting to style the final dataframe
+2023-10-02 12:58:24,191 - INFO - Displaying the styled dataframe on Streamlit
+2023-10-02 12:58:30,763 - ERROR - An exception occurred: 'id'
+2023-10-02 12:58:30,857 - INFO - Main function completed successfully
+2023-10-02 13:01:32,565 - INFO - Starting main function
+2023-10-02 13:01:32,568 - INFO - Creating custom color maps
+2023-10-02 13:01:32,570 - INFO - Custom color maps created
+2023-10-02 13:01:32,570 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:01:32,601 - INFO - Data loaded and concatenated
+2023-10-02 13:01:32,617 - INFO - Cleaning dataframes before merging
+2023-10-02 13:01:32,682 - INFO - fbref_df cleaned
+2023-10-02 13:01:32,721 - INFO - gws_df cleaned
+2023-10-02 13:01:32,726 - INFO - GW columns converted to float
+2023-10-02 13:01:32,732 - INFO - Starting the merge operation
+2023-10-02 13:01:32,784 - INFO - Merge operation completed
+2023-10-02 13:01:32,784 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:01:32,853 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:01:32,855 - INFO - Attempting to style the final dataframe
+2023-10-02 13:01:32,857 - INFO - Columns in all_data before styling: ['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:01:40,258 - INFO - Styling completed, proceeding to display
+2023-10-02 13:01:47,664 - ERROR - An exception occurred: 'id'
+2023-10-02 13:01:47,763 - INFO - Main function completed successfully
+2023-10-02 13:04:54,632 - INFO - Starting main function
+2023-10-02 13:04:54,633 - INFO - Creating custom color maps
+2023-10-02 13:04:54,635 - INFO - Custom color maps created
+2023-10-02 13:04:54,635 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:04:54,706 - INFO - Data loaded and concatenated
+2023-10-02 13:04:54,721 - INFO - Cleaning dataframes before merging
+2023-10-02 13:04:54,817 - INFO - fbref_df cleaned
+2023-10-02 13:04:54,844 - INFO - gws_df cleaned
+2023-10-02 13:04:54,846 - INFO - GW columns converted to float
+2023-10-02 13:04:54,853 - INFO - Starting the merge operation
+2023-10-02 13:04:54,890 - INFO - Merge operation completed
+2023-10-02 13:04:54,890 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:04:54,934 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:04:54,934 - INFO - Attempting to style the final dataframe
+2023-10-02 13:04:54,934 - INFO - Columns in all_data before styling: ['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:05:02,654 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+2  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:05:02,654 - INFO - Styling completed, proceeding to display
+2023-10-02 13:05:10,102 - ERROR - An exception occurred: 'id'
+2023-10-02 13:05:10,208 - INFO - Main function completed successfully
+2023-10-02 13:06:37,677 - INFO - Starting main function
+2023-10-02 13:06:37,683 - INFO - Creating custom color maps
+2023-10-02 13:06:37,684 - INFO - Custom color maps created
+2023-10-02 13:06:37,684 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:06:37,757 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:06:38,092 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:06:38,111 - INFO - Unique GW values: [1]
+2023-10-02 13:06:38,112 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:06:38,177 - INFO - Data loaded and concatenated
+2023-10-02 13:06:38,184 - INFO - Cleaning dataframes before merging
+2023-10-02 13:06:38,237 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:06:38,239 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:06:38,244 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:06:38,246 - INFO - fbref_df cleaned
+2023-10-02 13:06:38,262 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:06:38,267 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:06:38,271 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:06:38,274 - INFO - gws_df cleaned
+2023-10-02 13:06:38,275 - INFO - GW columns converted to float
+2023-10-02 13:06:38,278 - INFO - Starting the merge operation
+2023-10-02 13:06:38,317 - INFO - Merge operation completed
+2023-10-02 13:06:38,317 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:06:38,370 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:06:38,370 - INFO - Attempting to style the final dataframe
+2023-10-02 13:06:38,370 - INFO - Columns in all_data before styling: ['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:06:46,863 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+2  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:06:46,864 - INFO - Styling completed, proceeding to display
+2023-10-02 13:06:53,848 - ERROR - An exception occurred: 'id'
+2023-10-02 13:06:53,964 - INFO - Main function completed successfully

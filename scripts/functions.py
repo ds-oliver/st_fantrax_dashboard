@@ -1626,11 +1626,14 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_c
     :param is_percentile: Whether to use divergent color map for percentiles
     :return: DataFrame Styler object
     """
+    logging.info("Starting DataFrame styling function")
+    
     object_cmap = plt.cm.get_cmap(custom_cmap)
     styled_df = pd.DataFrame()
 
     position_column = 'Position' if 'Position' in df.columns else None
     if position_column:
+        logging.info("Styling position column")
         position_colors = {
             "D": "background-color: #6d597a; color: white",
             "M": "background-color: #08071d; color: white",
@@ -1639,11 +1642,14 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_c
         styled_df[position_column] = df[position_column].apply(lambda x: position_colors.get(x, ''))
 
         if 'Player' in df.columns:
+            logging.info("Styling Player column based on Position")
             styled_df['Player'] = df[position_column].apply(lambda x: position_colors.get(x, ''))
 
     for col in selected_columns:
         if col in ['Player', position_column]:
             continue
+
+        logging.info(f"Styling column: {col}")
 
         col_data = df[col]
 
@@ -1651,12 +1657,16 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_c
             col_data = col_data.astype(float)
             min_val = col_data.min()
             max_val = col_data.max()
+            logging.info(f"Min value for {col}: {min_val}, Max value for {col}: {max_val}")
         except ValueError:
+            logging.error(f"Failed to convert column {col} to float")
             min_val = max_val = None
 
         unique_values = col_data.unique()
+        logging.info(f"Unique values in column {col}: {unique_values}")
 
         if len(unique_values) <= 3:
+            logging.info(f"Column {col} has less than or equal to 3 unique values, applying constant colors")
             constant_colors = ["#140b04", "#1c1625", "#460202"]
             text_colors = ['white', 'white', 'white']
 
@@ -1676,10 +1686,12 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_c
             styled_df[col] = col_data.apply(lambda x: color_mapping.get(x, ''))
         elif min_val is not None and max_val is not None:
             if min_val != max_val:
+                logging.info(f"Applying gradient colors for column {col}")
                 styled_df[col] = col_data.apply(
                     lambda x: get_color((1 - (x - min_val) / (max_val - min_val)) if inverse_cmap else (x - min_val) / (max_val - min_val), object_cmap)
                 )
-
+    
+    logging.info("DataFrame styling function completed")
     return styled_df
 
 def create_custom_cmap(*colors, base_cmap=None, brightness_limit=None):
