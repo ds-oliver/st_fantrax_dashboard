@@ -144,7 +144,7 @@ def main():
 
     # Drop columns if they exist
     drop_cols_if_exists(ros_gws_df, columns_to_drop)
-    
+
     debug_dataframe(ros_gws_df)
 
     selected_columns = ros_gws_df.columns.tolist()
@@ -157,7 +157,6 @@ def main():
         use_container_width=True,
         height=(len(ros_gws_df))
     )
-
 
 
 # init main function
