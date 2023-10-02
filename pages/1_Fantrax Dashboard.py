@@ -78,16 +78,16 @@ scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'sc
 sys.path.append(scripts_path)
 
 
-@st.cache_data
+# @st.cache_data
 def load_only_csvs(directory_path):
     return [pd.read_csv(os.path.join(directory_path, filename)) for filename in os.listdir(directory_path) if filename.endswith('.csv')]
 
-@st.cache_data
+# @st.cache_data
 def load_csv_file(csv_file):
     return pd.read_csv(csv_file)
 
 
-@st.cache_data
+# @st.cache_data
 def load_and_concatenate_csvs(directory_path):
     logging.info("Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.")
 
@@ -118,7 +118,7 @@ def load_and_concatenate_csvs(directory_path):
 
     return concatenated_df
 
-@st.cache_data
+# @st.cache_data
 def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'], df_name='df'):
     logging.info(
         f"Starting clean_df() function. Initial DataFrame shape: {df.shape}")
@@ -195,9 +195,9 @@ def main():
     debug_dataframe(fbref_df, 'cleaned fbref_df')
 
     logging.info("Starting the merge operation")
-    ros_gws_df = pd.merge(ros_df, gws_df, how='outer', on=['Player'], suffixes=('_ros', '_gws'))
-    all_data = pd.merge(fbref_df, ros_gws_df, how='outer', on=['Player', 'GW'], suffixes=('_fbref', '_ros_gws'))
-    logging.info("Merge operation completed")
+    ros_gws_df = pd.merge(ros_df, gws_df, how='right', on=['Player'], suffixes=('_ros', '_gws'))
+    all_data = pd.merge(fbref_df, ros_gws_df, how='right', on=['Player', 'GW'], suffixes=('_fbref', '_ros_gws'))
+    logging.info(f"Merge operation completed. Resulting dataframe: {all_data.shape} {all_data.head()}")
 
     logging.info("Displaying the dataframe on Streamlit without styling")
     st.table(all_data.head())
