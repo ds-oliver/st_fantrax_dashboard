@@ -3,3 +3,5 @@ pages/streamlit_app_logs.log
 .log
 logs
 
+*.pyc
+__pycache__/

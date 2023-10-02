@@ -37,9 +37,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 from constants import stats_cols, shooting_cols, passing_cols, passing_types_cols, gca_cols, defense_cols, possession_cols, playing_time_cols, misc_cols, fbref_cats, fbref_leagues, matches_col_groups, matches_drop_cols, matches_default_cols, matches_drop_cols, matches_default_cols, matches_standard_cols, matches_passing_cols, matches_pass_types, matches_defense_cols, matches_possession_cols, matches_misc_cols, matches_default_cols_rename, matches_standard_cols_rename, matches_defense_cols_rename, matches_passing_cols_rename, matches_possession_cols_rename, matches_misc_cols_rename, matches_pass_types_rename, colors, divergent_colors, matches_rename_dict, colors, divergent_colors, matches_rename_dict
 
-from files import fx_gw1_data as gw1_data, fx_gw2_data as gw2_data, fx_gw3_data
+from files import fx_gw1_data as gw1_data, fx_gw2_data as gw2_data, fx_gw3_data, matches_data
 
-from functions import load_css, get_color, style_dataframe_custom, add_construction, info_dataframe, create_custom_cmap, create_custom_sequential_cmap
+from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
@@ -124,8 +124,8 @@ def merge_dfs(df1, df2, merge_cols=['Player', 'Team', 'GW'], suffixes=('_ros', '
     return merged_df
     
 
-def reorder_columns(df, cols):
-    # order should be Player, Position, Team, GW,
+# def reorder_columns(df, cols):
+#     # order should be Player, Position, Team, GW,
 
 def main():
     add_construction()
@@ -135,15 +135,21 @@ def main():
 
     fx_directory = 'data/fantrax-data'
     ros_directory = 'data/ros-data'
+    fbref_directory = matches_data
 
     # Load and info data
     gws_df = load_and_concatenate_csvs(fx_directory)
     ros_df = load_only_csvs(ros_directory)[0]
-    info_dataframe(ros_df)
-    info_dataframe(gws_df)
+    fbref_df = load_only_csvs(fbref_directory)[0]
+
+    debug_dataframe(ros_df)
+    debug_dataframe(gws_df)
 
     # Merge and style dataframes
     ros_gws_df = merge_dfs(ros_df, gws_df, merge_cols=['Player', 'Team'], suffixes=('_ros', '_gws'))
+
+    # merge fbref_df with ros_gws_df on Player and Gameweek
+    ros_gws_fbref_df = merge_dfs(ros_gws_df, fbref_df, merge_cols=['Player', 'Team', 'GW'], suffixes=('_ros_gws', '_fbref'))
 
     columns_to_drop = ['Pos', 'Status',
                        '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
@@ -151,7 +157,7 @@ def main():
     # Drop columns if they exist
     drop_cols_if_exists(ros_gws_df, columns_to_drop)
 
-    info_dataframe(ros_gws_df)
+    debug_dataframe(ros_gws_df)
 
     selected_columns = ros_gws_df.columns.tolist()
     styled_df = style_dataframe_custom(
