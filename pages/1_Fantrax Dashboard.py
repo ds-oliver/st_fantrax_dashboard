@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sys
+import logging
 import unidecode
 import os
 # import logging
@@ -34,12 +35,22 @@ from markdownlit import mdlit
 from scipy.stats import percentileofscore
 from concurrent.futures import ThreadPoolExecutor
 
-
 from constants import stats_cols, shooting_cols, passing_cols, passing_types_cols, gca_cols, defense_cols, possession_cols, playing_time_cols, misc_cols, fbref_cats, fbref_leagues, matches_col_groups, matches_drop_cols, matches_default_cols, matches_drop_cols, matches_default_cols, matches_standard_cols, matches_passing_cols, matches_pass_types, matches_defense_cols, matches_possession_cols, matches_misc_cols, matches_default_cols_rename, matches_standard_cols_rename, matches_defense_cols_rename, matches_passing_cols_rename, matches_possession_cols_rename, matches_misc_cols_rename, matches_pass_types_rename, colors, divergent_colors, matches_rename_dict, colors, divergent_colors, matches_rename_dict
 
 from files import fx_gw1_data as gw1_data, fx_gw2_data as gw2_data, fx_gw3_data
 
 from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap
+
+# Set up relative path for the log file
+current_directory = os.path.dirname(__file__)
+log_file_path = os.path.join(current_directory, 'streamlit_app_logs.log')
+
+logging.basicConfig(
+    filename=log_file_path,
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filemode='a'  # 'a' means append
+)
 
 st.set_page_config(
     page_title="Draft Alchemy",
@@ -72,6 +83,8 @@ def load_only_csvs(directory_path):
 
 @st.cache_data
 def load_and_concatenate_csvs(directory_path):
+    logging.debug("Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.")
+
     def load_csv(file_path):
         df = pd.read_csv(file_path)
         df['GW'] = df['GP'].max()
@@ -84,15 +97,24 @@ def load_and_concatenate_csvs(directory_path):
         df_list = list(executor.map(load_csv, [os.path.join(
             directory_path, filename) for filename in os.listdir(directory_path) if filename.endswith('.csv')]))
 
+    logging.debug(f"Concatenating {len(df_list)} GWs worth of data into DataFrame.")
+
     concatenated_df = pd.concat(df_list, ignore_index=True)
 
     # Drop columns if they exist
     columns_to_drop = ['Pos', 'Status',
-                       '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID']
+                       '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
     concatenated_df.drop(columns=[
                          col for col in concatenated_df.columns if col in columns_to_drop], axis=1, inplace=True)
+    
+    logging.debug(f"Unique GW values: {concatenated_df['GW'].unique()}")
+    logging.debug("load_and_concatenate_csvs() function complete. Returning concatenated_df.")
 
     return concatenated_df
+
+def drop_cols_if_exists(df, cols):
+    df.drop(columns=[
+        col for col in df.columns if col in cols], axis=1, inplace=True)
 
 @st.cache_data
 def merge_dfs(df1, df2):
@@ -116,6 +138,13 @@ def main():
 
     # Merge and style dataframes
     ros_gws_df = merge_dfs(ros_df, gws_df)
+
+    columns_to_drop = ['Pos', 'Status',
+                       '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
+
+    # Drop columns if they exist
+    drop_cols_if_exists(ros_gws_df, columns_to_drop)
+    
     debug_dataframe(ros_gws_df)
 
     selected_columns = ros_gws_df.columns.tolist()
