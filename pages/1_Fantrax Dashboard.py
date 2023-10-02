@@ -39,7 +39,7 @@ from constants import stats_cols, shooting_cols, passing_cols, passing_types_col
 
 from files import fx_gw1_data as gw1_data, fx_gw2_data as gw2_data, fx_gw3_data
 
-from functions import load_css, get_color, style_dataframe_custom, add_construction, debug_dataframe, create_custom_cmap, create_custom_sequential_cmap
+from functions import load_css, get_color, style_dataframe_custom, add_construction, info_dataframe, create_custom_cmap, create_custom_sequential_cmap
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
@@ -47,7 +47,7 @@ log_file_path = os.path.join(current_directory, 'streamlit_app_logs.log')
 
 logging.basicConfig(
     filename=log_file_path,
-    level=logging.DEBUG,
+    level=logging.info,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'  # 'a' means append
 )
@@ -83,7 +83,7 @@ def load_only_csvs(directory_path):
 
 @st.cache_data
 def load_and_concatenate_csvs(directory_path):
-    logging.debug("Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.")
+    logging.info("Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.")
 
     def load_csv(file_path):
         df = pd.read_csv(file_path)
@@ -97,7 +97,7 @@ def load_and_concatenate_csvs(directory_path):
         df_list = list(executor.map(load_csv, [os.path.join(
             directory_path, filename) for filename in os.listdir(directory_path) if filename.endswith('.csv')]))
 
-    logging.debug(f"Concatenating {len(df_list)} GWs worth of data into DataFrame.")
+    logging.info(f"Concatenating {len(df_list)} GWs worth of data into DataFrame.")
 
     concatenated_df = pd.concat(df_list, ignore_index=True)
 
@@ -107,8 +107,8 @@ def load_and_concatenate_csvs(directory_path):
     concatenated_df.drop(columns=[
                          col for col in concatenated_df.columns if col in columns_to_drop], axis=1, inplace=True)
     
-    logging.debug(f"Unique GW values: {concatenated_df['GW'].unique()}")
-    logging.debug("load_and_concatenate_csvs() function complete. Returning concatenated_df.")
+    logging.info(f"Unique GW values: {concatenated_df['GW'].unique()}")
+    logging.info("load_and_concatenate_csvs() function complete. Returning concatenated_df.")
 
     return concatenated_df
 
@@ -117,8 +117,12 @@ def drop_cols_if_exists(df, cols):
         col for col in df.columns if col in cols], axis=1, inplace=True)
 
 @st.cache_data
-def merge_dfs(df1, df2):
-    return pd.merge(df1, df2, on=['Player', 'Team'], how='inner', suffixes=('_ros', '_gws'))
+def merge_dfs(df1, df2, merge_cols=['Player', 'Team', 'GW'], suffixes=('_ros', '_gws')):
+    logging.info("Starting merge_dfs() function. Merging DataFrames.")
+    merged_df = pd.merge(df1, df2, how='left', on=merge_cols)
+    logging.info("merge_dfs() function complete. Returning merged_df.")
+    return merged_df
+    
 
 def reorder_columns(df, cols):
     # order should be Player, Position, Team, GW,
@@ -132,14 +136,14 @@ def main():
     fx_directory = 'data/fantrax-data'
     ros_directory = 'data/ros-data'
 
-    # Load and debug data
+    # Load and info data
     gws_df = load_and_concatenate_csvs(fx_directory)
     ros_df = load_only_csvs(ros_directory)[0]
-    debug_dataframe(ros_df)
-    debug_dataframe(gws_df)
+    info_dataframe(ros_df)
+    info_dataframe(gws_df)
 
     # Merge and style dataframes
-    ros_gws_df = merge_dfs(ros_df, gws_df)
+    ros_gws_df = merge_dfs(ros_df, gws_df, merge_cols=['Player', 'Team'], suffixes=('_ros', '_gws'))
 
     columns_to_drop = ['Pos', 'Status',
                        '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent']
@@ -147,7 +151,7 @@ def main():
     # Drop columns if they exist
     drop_cols_if_exists(ros_gws_df, columns_to_drop)
 
-    debug_dataframe(ros_gws_df)
+    info_dataframe(ros_gws_df)
 
     selected_columns = ros_gws_df.columns.tolist()
     styled_df = style_dataframe_custom(
