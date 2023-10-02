@@ -120,6 +120,8 @@ def drop_cols_if_exists(df, cols):
 def merge_dfs(df1, df2):
     return pd.merge(df1, df2, on=['Player', 'Team'], how='inner', suffixes=('_ros', '_gws'))
 
+def reorder_columns(df, cols):
+    # order should be Player, Position, Team, GW,
 
 def main():
     add_construction()
