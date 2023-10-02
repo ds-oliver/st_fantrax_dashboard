@@ -120,10 +120,12 @@ def load_and_concatenate_csvs(directory_path):
 
 
 def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'],
-             cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home']):
+             cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home'], df_name='df'):
 
     logging.info(
         "Starting clean_df() function. Initial DataFrame shape: {}".format(df.shape))
+    
+    print(f"Cleaning {df_name} dataframe")
 
     # Drop specified columns if they exist
     df.drop(columns=[
@@ -134,12 +136,15 @@ def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D
     # Conditionally keep columns based on the presence of 'player' using list comprehension
     df = df[[col for col in df.columns if 'player' in col or col in cols_to_keep]]
 
-    # Capitalize all columns names 
+    # Capitalize all columns names
     df.columns = df.columns.str.capitalize()
 
     # If Gameweek or Gw is in the columns, rename to GW
     df.rename(columns={
               col: 'GW' for col in df.columns if 'Gw' in col or 'Gameweek' in col}, inplace=True)
+    
+    debug_dataframe(df, 'df')
+
 
     # Apply unidecode to Player and Team columns
     df['Player'] = df['Player'].apply(unidecode.unidecode)
@@ -149,6 +154,8 @@ def clean_df(df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D
         df.shape, df.columns.tolist()))
 
     return df
+
+
 
 # def reorder_columns(df, cols):
 #     # order should be Player, Position, Team, GW,
@@ -169,10 +176,9 @@ def main():
     ros_df = load_csv_file(ros_data)
     fbref_df = load_csv_file(matches_data)
 
-    logging.info("Cleaning fbref_df")
-    fbref_df = clean_df(fbref_df)
-    ros_df = clean_df(ros_df)
-    gws_df = clean_df(gws_df)
+    logging.info("Cleaning dataframes before merging")
+    fbref_df = clean_df(fbref_df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'], cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home'], df_name='fbref_df')
+    gws_df = clean_df(gws_df, cols_to_drop=['Pos', 'Status', '+/-_ros', '+/-_gws', 'ADP', '%D', 'ID', 'Opponent'], cols_to_keep=['player', 'gameweek', 'opponent', 'started', 'home'], df_name='gws_df')
 
     # Standardizing data types for merging
     fbref_df['GW'] = fbref_df['GW'].astype(float)
