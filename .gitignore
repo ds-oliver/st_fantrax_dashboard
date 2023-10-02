@@ -6,3 +6,7 @@ logs
 *.pyc
 __pycache__/*
 __pycache__/
+
+files.cpython-*.pyc
+constants.cpython-*.pyc
+functions.cpython-*.pyc

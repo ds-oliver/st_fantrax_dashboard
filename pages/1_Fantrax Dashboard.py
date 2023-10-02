@@ -80,6 +80,10 @@ sys.path.append(scripts_path)
 def load_only_csvs(directory_path):
     return [pd.read_csv(os.path.join(directory_path, filename)) for filename in os.listdir(directory_path) if filename.endswith('.csv')]
 
+@st.cache_data
+def load_csv_file(csv_file):
+    return pd.read_csv(csv_file)
+
 
 @st.cache_data
 def load_and_concatenate_csvs(directory_path):
@@ -135,16 +139,16 @@ def main():
 
     fx_directory = 'data/fantrax-data'
     ros_directory = 'data/ros-data'
-    fbref_directory = matches_data
 
     # Load and info data
     gws_df = load_and_concatenate_csvs(fx_directory)
     ros_df = load_only_csvs(ros_directory)[0]
-    fbref_df = load_only_csvs(fbref_directory)[0]
+    fbref_df = load_csv_file(matches_data)[0]
 
-    debug_dataframe(ros_df)
-    debug_dataframe(gws_df)
-
+    debug_dataframe(ros_df, 'ros_df')
+    debug_dataframe(gws_df, 'gws_df')
+    debug_dataframe(fbref_df, 'fbref_df')
+    
     # Merge and style dataframes
     ros_gws_df = merge_dfs(ros_df, gws_df, merge_cols=['Player', 'Team'], suffixes=('_ros', '_gws'))
 
