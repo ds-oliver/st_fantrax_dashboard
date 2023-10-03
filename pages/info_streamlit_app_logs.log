@@ -2256,3 +2256,5 @@
 2023-10-02 19:59:52,767 - INFO - Starting main function
 2023-10-02 19:59:52,771 - INFO - Creating custom color maps
 2023-10-02 19:59:53,280 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 20:00:07,568 - INFO - Main function completed successfully
+2023-10-02 20:00:07,569 - INFO - Attempting to style the grouped_df dataframe
