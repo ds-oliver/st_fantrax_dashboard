@@ -22,3 +22,138 @@
 2023-10-02 17:43:24,787 - INFO - Main function completed successfully
 2023-10-02 17:43:56,366 - INFO - Starting main function
 2023-10-02 17:43:56,610 - INFO - Main function completed successfully
+2023-10-02 18:30:14,742 - INFO - Starting main function
+2023-10-02 18:31:12,325 - INFO - Starting main function
+2023-10-02 18:32:12,415 - INFO - Starting main function
+2023-10-02 18:34:59,108 - INFO - Starting main function
+2023-10-02 18:34:59,177 - INFO - Renamed column team to Team_long
+2023-10-02 18:34:59,200 - INFO - Renamed column Team_gws to Team
+2023-10-02 18:34:59,201 - INFO - Renamed column started to GS
+2023-10-02 18:39:26,028 - INFO - Starting main function
+2023-10-02 18:39:26,103 - INFO - Renamed column team to Team_long
+2023-10-02 18:39:26,131 - INFO - Renamed column Team_gws to Team
+2023-10-02 18:39:26,132 - INFO - Renamed column started to GS
+2023-10-02 18:39:28,150 - INFO - Dataframe name: final_df before FPts calculation
+2023-10-02 18:39:28,151 - INFO - Dataframe shape: (3840, 34)
+2023-10-02 18:39:28,151 - INFO - Dataframe columns: Index(['Player', 'ROS Rank', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G',
+       'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC',
+       'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO',
+       'CS', 'GW', 'GS', 'Home', 'Opponent', 'Team_long'],
+      dtype='object')
+2023-10-02 18:39:28,169 - INFO - Dataframe info: None
+2023-10-02 18:39:28,201 - INFO - Dataframe head:              Player  ROS Rank Team  ...   Home  Opponent        Team_long
+0     Mohamed Salah       3.0  LIV  ...  False       CHE        Liverpool
+1    Bernardo Silva      90.0  MCI  ...  False       BUR  Manchester City
+2  Dejan Kulusevski      28.0  TOT  ...  False       BRF        Tottenham
+3       Jeremy Doku      57.0  MCI  ...    NaN       NaN              NaN
+4    Erling Haaland       1.0  MCI  ...  False       BUR  Manchester City
+
+[5 rows x 34 columns]
+2023-10-02 18:39:28,227 - INFO - Dataframe tail:                 Player  ROS Rank Team  ...  Home  Opponent      Team_long
+3835      Milos Kerkez       NaN  BOU  ...  True       WHU    Bournemouth
+3836       Luke Thomas       NaN  SHU  ...   NaN       NaN            NaN
+3837         John Egan       NaN  SHU  ...  True       CRY  Sheffield Utd
+3838  Anel Ahmedhodzic       NaN  SHU  ...  True       CRY  Sheffield Utd
+3839     Jack Robinson       NaN  SHU  ...  True       CRY  Sheffield Utd
+
+[5 rows x 34 columns]
+2023-10-02 18:39:28,310 - INFO - Dataframe describe:          ROS Rank         RkOv  ...      GW           GS
+count  876.000000  3840.000000  ...  3840.0  1572.000000
+mean    74.472603   352.873438  ...     1.0     0.721374
+std     43.374599   208.553620  ...     0.0     0.448466
+min      1.000000     1.000000  ...     1.0     0.000000
+25%     37.000000   176.750000  ...     1.0     0.000000
+50%     73.500000   342.500000  ...     1.0     1.000000
+75%    111.000000   523.250000  ...     1.0     1.000000
+max    150.000000   731.000000  ...     1.0     1.000000
+
+[8 rows x 27 columns]
+2023-10-02 18:39:28,982 - INFO - Dataframe name: final_df after FPts calculation
+2023-10-02 18:39:28,983 - INFO - Dataframe shape: (3840, 37)
+2023-10-02 18:39:28,983 - INFO - Dataframe columns: Index(['Player', 'ROS Rank', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G',
+       'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC',
+       'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO',
+       'CS', 'GW', 'GS', 'Home', 'Opponent', 'Team_long', 'Total_FPts',
+       'Ghosts', 'Negative_FPts'],
+      dtype='object')
+2023-10-02 18:39:28,993 - INFO - Dataframe info: None
+2023-10-02 18:39:29,030 - INFO - Dataframe head:              Player  ROS Rank Team  ... Total_FPts  Ghosts  Negative_FPts
+0     Mohamed Salah       3.0  LIV  ...      98.25   26.25              0
+1    Bernardo Silva      90.0  MCI  ...     139.25   22.25              0
+2  Dejan Kulusevski      28.0  TOT  ...     111.25   30.25              0
+3       Jeremy Doku      57.0  MCI  ...     106.25   25.25              0
+4    Erling Haaland       1.0  MCI  ...     109.25   28.25              0
+
+[5 rows x 37 columns]
+2023-10-02 18:39:29,061 - INFO - Dataframe tail:                 Player  ROS Rank Team  ... Total_FPts   Ghosts  Negative_FPts
+3835      Milos Kerkez       NaN  BOU  ...    41.6250  41.6250              0
+3836       Luke Thomas       NaN  SHU  ...    38.1875  38.1875              0
+3837         John Egan       NaN  SHU  ...    42.4375  42.4375              0
+3838  Anel Ahmedhodzic       NaN  SHU  ...    41.0625  41.0625              0
+3839     Jack Robinson       NaN  SHU  ...    39.5000  39.5000              0
+
+[5 rows x 37 columns]
+2023-10-02 18:39:29,125 - INFO - Dataframe describe:          ROS Rank         RkOv  ...       Ghosts  Negative_FPts
+count  876.000000  3840.000000  ...  3840.000000         3840.0
+mean    74.472603   352.873438  ...     4.553874            0.0
+std     43.374599   208.553620  ...     7.935456            0.0
+min      1.000000     1.000000  ...     0.000000            0.0
+25%     37.000000   176.750000  ...     0.000000            0.0
+50%     73.500000   342.500000  ...     0.000000            0.0
+75%    111.000000   523.250000  ...     7.250000            0.0
+max    150.000000   731.000000  ...    60.500000            0.0
+
+[8 rows x 30 columns]
+2023-10-02 19:45:30,339 - INFO - Starting main function
+2023-10-02 19:45:30,423 - INFO - Renamed column team to Team_long
+2023-10-02 19:45:30,451 - INFO - Renamed column Team_gws to Team
+2023-10-02 19:45:30,452 - INFO - Renamed column started to GS
+2023-10-02 19:45:31,710 - INFO - Dataframe name: final_df before FPts calculation
+2023-10-02 19:45:31,710 - INFO - Dataframe shape: (3840, 34)
+2023-10-02 19:45:31,710 - INFO - Dataframe columns: Index(['Player', 'ROS Rank', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G',
+       'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC',
+       'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO',
+       'CS', 'GW', 'GS', 'Home', 'Opponent', 'Team_long'],
+      dtype='object')
+2023-10-02 19:45:31,726 - INFO - Dataframe info: None
+2023-10-02 19:45:31,762 - INFO - Dataframe head:              Player  ROS Rank Team Position  RkOv  ...  GW   GS   Home  Opponent        Team_long
+0     Mohamed Salah       3.0  LIV        F     8  ...   1  1.0  False       CHE        Liverpool
+1    Bernardo Silva      90.0  MCI        M   129  ...   1  1.0  False       BUR  Manchester City
+2  Dejan Kulusevski      28.0  TOT        M    19  ...   1  1.0  False       BRF        Tottenham
+3       Jeremy Doku      57.0  MCI        F    80  ...   1  NaN    NaN       NaN              NaN
+4    Erling Haaland       1.0  MCI        F     2  ...   1  1.0  False       BUR  Manchester City
+
+[5 rows x 34 columns]
+2023-10-02 19:45:31,788 - INFO - Dataframe tail:                 Player  ROS Rank Team Position  RkOv  ...  GW   GS  Home  Opponent      Team_long
+3835      Milos Kerkez       NaN  BOU        D   247  ...   1  1.0  True       WHU    Bournemouth
+3836       Luke Thomas       NaN  SHU        D   722  ...   1  NaN   NaN       NaN            NaN
+3837         John Egan       NaN  SHU        D   304  ...   1  1.0  True       CRY  Sheffield Utd
+3838  Anel Ahmedhodzic       NaN  SHU        D   319  ...   1  1.0  True       CRY  Sheffield Utd
+3839     Jack Robinson       NaN  SHU        D   288  ...   1  1.0  True       CRY  Sheffield Utd
+
+[5 rows x 34 columns]
+2023-10-02 19:45:31,927 - INFO - Dataframe name: final_df after FPts calculation
+2023-10-02 19:45:31,927 - INFO - Dataframe shape: (3840, 36)
+2023-10-02 19:45:31,928 - INFO - Dataframe columns: Index(['Player', 'ROS Rank', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G',
+       'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC',
+       'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO',
+       'CS', 'GW', 'GS', 'Home', 'Opponent', 'Team_long', 'Ghosts',
+       'Negative_FPts'],
+      dtype='object')
+2023-10-02 19:45:31,936 - INFO - Dataframe info: None
+2023-10-02 19:45:31,967 - INFO - Dataframe head:              Player  ROS Rank Team Position  ...  Opponent        Team_long  Ghosts Negative_FPts
+0     Mohamed Salah       3.0  LIV        F  ...       CHE        Liverpool    14.5           0.0
+1    Bernardo Silva      90.0  MCI        M  ...       BUR  Manchester City    11.5          -0.5
+2  Dejan Kulusevski      28.0  TOT        M  ...       BRF        Tottenham    16.5           0.0
+3       Jeremy Doku      57.0  MCI        F  ...       NaN              NaN    15.5           0.0
+4    Erling Haaland       1.0  MCI        F  ...       BUR  Manchester City    14.5           0.0
+
+[5 rows x 36 columns]
+2023-10-02 19:45:31,998 - INFO - Dataframe tail:                 Player  ROS Rank Team Position  ...  Opponent      Team_long  Ghosts Negative_FPts
+3835      Milos Kerkez       NaN  BOU        D  ...       WHU    Bournemouth   -7.50         -12.0
+3836       Luke Thomas       NaN  SHU        D  ...       NaN            NaN   -9.25         -16.0
+3837         John Egan       NaN  SHU        D  ...       CRY  Sheffield Utd  -10.25         -18.0
+3838  Anel Ahmedhodzic       NaN  SHU        D  ...       CRY  Sheffield Utd  -12.75         -18.0
+3839     Jack Robinson       NaN  SHU        D  ...       CRY  Sheffield Utd  -13.00         -18.0
+
+[5 rows x 36 columns]

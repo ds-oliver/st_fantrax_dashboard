@@ -48,14 +48,28 @@ def main():
     custom_cmap = create_custom_sequential_cmap(*colors)
     custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
 
-    df = load_csv_file('cleaned_transformed_data.csv')
+    grouped_df = load_csv_file('cleaned_transformed_data.csv')
 
-    columns_to_keep = df.columns.tolist()
+    lastgw_df = load_csv_file('last_game_week_data.csv')
+
+    columns_to_keep = grouped_df.columns.tolist()
 
     try:
-        logging.info("Attempting to style the final dataframe")
-        styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=200)
+        st.write("## Most Recent Game Week Data")
+        logging.info("Attempting to style the lastgw_df dataframe")
+        styled_df = style_dataframe_custom(lastgw_df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=200)
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
+    logging.info("Main function completed successfully")
+
+    try:
+        st.write("## ROS Data")
+        logging.info("Attempting to style the grouped_df dataframe")
+        styled_df = style_dataframe_custom(grouped_df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(grouped_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=200)
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
