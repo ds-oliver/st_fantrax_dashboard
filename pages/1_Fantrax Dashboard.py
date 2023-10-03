@@ -48,7 +48,7 @@ def main():
     custom_cmap = create_custom_sequential_cmap(*colors)
     custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
 
-    grouped_df = load_csv_file('cleaned_transformed_data.csv')
+    grouped_df = load_csv_file('all_game_weeks_data.csv')
 
     lastgw_df = load_csv_file('last_game_week_data.csv')
 
@@ -58,7 +58,7 @@ def main():
         st.write("## Most Recent Game Week Data")
         logging.info("Attempting to style the lastgw_df dataframe")
         styled_df = style_dataframe_custom(lastgw_df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=200)
+        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=500)
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")

@@ -2219,3 +2219,40 @@
 2023-10-02 17:51:30,205 - INFO - Creating custom color maps
 2023-10-02 17:51:30,218 - INFO - Attempting to style the final dataframe
 2023-10-02 17:51:37,989 - INFO - Main function completed successfully
+2023-10-02 19:50:49,711 - INFO - Starting main function
+2023-10-02 19:50:49,714 - INFO - Creating custom color maps
+2023-10-02 19:50:49,722 - INFO - Starting main function
+2023-10-02 19:50:49,723 - INFO - Creating custom color maps
+2023-10-02 19:50:49,782 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 19:50:49,786 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 19:50:59,415 - ERROR - An exception occurred: 'FPts/Start'
+2023-10-02 19:50:59,419 - INFO - Main function completed successfully
+2023-10-02 19:50:59,420 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 19:50:59,647 - ERROR - An exception occurred: 'FPts/Start'
+2023-10-02 19:50:59,651 - INFO - Main function completed successfully
+2023-10-02 19:50:59,676 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 19:51:02,650 - INFO - Starting main function
+2023-10-02 19:51:02,651 - INFO - Creating custom color maps
+2023-10-02 19:51:02,710 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 19:51:18,254 - ERROR - An exception occurred: 'FPts/Start'
+2023-10-02 19:51:18,256 - INFO - Main function completed successfully
+2023-10-02 19:51:18,257 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 19:51:30,849 - INFO - Main function completed successfully
+2023-10-02 19:51:36,075 - INFO - Main function completed successfully
+2023-10-02 19:52:38,219 - INFO - Starting main function
+2023-10-02 19:52:38,221 - INFO - Creating custom color maps
+2023-10-02 19:52:38,319 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 19:52:42,914 - ERROR - An exception occurred: 'FPts/Start'
+2023-10-02 19:52:42,917 - INFO - Main function completed successfully
+2023-10-02 19:52:42,919 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 19:52:51,757 - INFO - Main function completed successfully
+2023-10-02 19:56:39,995 - INFO - Starting main function
+2023-10-02 19:56:39,998 - INFO - Creating custom color maps
+2023-10-02 19:56:40,122 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 19:56:44,582 - ERROR - An exception occurred: 'FPts/Start'
+2023-10-02 19:56:44,584 - INFO - Main function completed successfully
+2023-10-02 19:56:44,584 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 19:56:53,612 - INFO - Main function completed successfully
+2023-10-02 19:59:52,767 - INFO - Starting main function
+2023-10-02 19:59:52,771 - INFO - Creating custom color maps
+2023-10-02 19:59:53,280 - INFO - Attempting to style the lastgw_df dataframe
