@@ -381,3 +381,1795 @@
 2023-10-02 13:39:30,821 - INFO - Styling completed, proceeding to display
 2023-10-02 13:39:36,648 - ERROR - An exception occurred: 'id'
 2023-10-02 13:39:36,740 - INFO - Main function completed successfully
+2023-10-02 13:41:34,116 - INFO - Starting main function
+2023-10-02 13:41:34,123 - INFO - Creating custom color maps
+2023-10-02 13:41:34,124 - INFO - Custom color maps created
+2023-10-02 13:41:34,124 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:41:34,124 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:41:34,355 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:41:34,373 - INFO - Unique GW values: [1]
+2023-10-02 13:41:34,373 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:41:34,415 - INFO - Data loaded and concatenated
+2023-10-02 13:41:34,447 - INFO - Cleaning dataframes before merging
+2023-10-02 13:41:34,450 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:41:34,457 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:41:34,481 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:41:34,494 - INFO - fbref_df cleaned
+2023-10-02 13:41:34,497 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:41:34,500 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:41:34,506 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:41:34,506 - INFO - gws_df cleaned
+2023-10-02 13:41:34,507 - INFO - GW columns converted to float
+2023-10-02 13:41:34,519 - INFO - Starting the merge operation
+2023-10-02 13:41:34,666 - INFO - Starting main function
+2023-10-02 13:41:34,679 - INFO - Creating custom color maps
+2023-10-02 13:41:34,680 - INFO - Custom color maps created
+2023-10-02 13:41:34,681 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:41:34,687 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:41:35,034 - INFO - Merge operation completed. Resulting dataframe: (3840, 139)              Player  shirtnumber  nation   age  minutes  goals  assists  pens_made  ...  CoS  BS  AER  PKM  PKD  OG  GAO  CS
+0     Mohamed Salah         11.0  eg EGY  31.0     76.0    0.0      1.0        0.0  ...    0   0    1    0    0   0    1   0
+1    Bernardo Silva         20.0  pt POR  29.0     90.0    0.0      0.0        0.0  ...    1   0    0    0    0   0    1   0
+2  Dejan Kulusevski         21.0  se SWE  23.0     90.0    0.0      0.0        0.0  ...    0   0    1    0    0   0    1   0
+3       Jeremy Doku          NaN     NaN   NaN      NaN    NaN      NaN        NaN  ...    3   0    1    0    0   0    1   0
+4    Erling Haaland          9.0  no NOR  23.0     79.0    2.0      0.0        0.0  ...    0   0    1    0    0   0    1   0
+
+[5 rows x 139 columns]
+2023-10-02 13:41:35,034 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:41:35,035 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:41:35,044 - INFO - Unique GW values: [1]
+2023-10-02 13:41:35,044 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:41:35,090 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:41:35,091 - INFO - Attempting to style the final dataframe
+2023-10-02 13:41:35,091 - INFO - Columns in all_data before styling: ['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:41:35,148 - INFO - Data loaded and concatenated
+2023-10-02 13:41:35,184 - INFO - Cleaning dataframes before merging
+2023-10-02 13:41:35,184 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:41:35,186 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:41:35,245 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:41:35,261 - INFO - fbref_df cleaned
+2023-10-02 13:41:35,263 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:41:35,293 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:41:35,402 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:41:35,407 - INFO - gws_df cleaned
+2023-10-02 13:41:35,422 - INFO - GW columns converted to float
+2023-10-02 13:41:35,554 - INFO - Starting the merge operation
+2023-10-02 13:41:36,605 - INFO - Merge operation completed. Resulting dataframe: (3840, 139)              Player  shirtnumber  nation   age  minutes  goals  assists  pens_made  ...  CoS  BS  AER  PKM  PKD  OG  GAO  CS
+0     Mohamed Salah         11.0  eg EGY  31.0     76.0    0.0      1.0        0.0  ...    0   0    1    0    0   0    1   0
+1    Bernardo Silva         20.0  pt POR  29.0     90.0    0.0      0.0        0.0  ...    1   0    0    0    0   0    1   0
+2  Dejan Kulusevski         21.0  se SWE  23.0     90.0    0.0      0.0        0.0  ...    0   0    1    0    0   0    1   0
+3       Jeremy Doku          NaN     NaN   NaN      NaN    NaN      NaN        NaN  ...    3   0    1    0    0   0    1   0
+4    Erling Haaland          9.0  no NOR  23.0     79.0    2.0      0.0        0.0  ...    0   0    1    0    0   0    1   0
+
+[5 rows x 139 columns]
+2023-10-02 13:41:36,634 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:41:37,808 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:41:37,812 - INFO - Attempting to style the final dataframe
+2023-10-02 13:41:37,821 - INFO - Columns in all_data before styling: ['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:41:42,386 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:41:42,388 - INFO - Styling completed, proceeding to display
+2023-10-02 13:41:49,505 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:41:49,511 - INFO - Styling completed, proceeding to display
+2023-10-02 13:41:58,181 - ERROR - An exception occurred: 'id'
+2023-10-02 13:41:58,288 - INFO - Main function completed successfully
+2023-10-02 13:42:00,139 - ERROR - An exception occurred: 'id'
+2023-10-02 13:42:00,249 - INFO - Main function completed successfully
+2023-10-02 13:43:44,965 - INFO - Starting main function
+2023-10-02 13:43:44,966 - INFO - Creating custom color maps
+2023-10-02 13:43:44,967 - INFO - Custom color maps created
+2023-10-02 13:43:44,967 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:43:44,967 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:43:45,273 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:43:45,286 - INFO - Unique GW values: [1]
+2023-10-02 13:43:45,286 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:43:45,321 - INFO - Data loaded and concatenated
+2023-10-02 13:43:45,327 - INFO - Cleaning dataframes before merging
+2023-10-02 13:43:45,327 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:43:45,331 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:43:45,346 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:43:45,348 - INFO - fbref_df cleaned
+2023-10-02 13:43:45,351 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:43:45,354 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:43:45,359 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:43:45,360 - INFO - gws_df cleaned
+2023-10-02 13:43:45,361 - INFO - GW columns converted to float
+2023-10-02 13:43:45,368 - INFO - Starting the merge operation
+2023-10-02 13:43:45,732 - INFO - Merge operation completed. Resulting dataframe: (3840, 139)              Player  shirtnumber  nation   age  minutes  goals  assists  pens_made  ...  CoS  BS  AER  PKM  PKD  OG  GAO  CS
+0     Mohamed Salah         11.0  eg EGY  31.0     76.0    0.0      1.0        0.0  ...    0   0    1    0    0   0    1   0
+1    Bernardo Silva         20.0  pt POR  29.0     90.0    0.0      0.0        0.0  ...    1   0    0    0    0   0    1   0
+2  Dejan Kulusevski         21.0  se SWE  23.0     90.0    0.0      0.0        0.0  ...    0   0    1    0    0   0    1   0
+3       Jeremy Doku          NaN     NaN   NaN      NaN    NaN      NaN        NaN  ...    3   0    1    0    0   0    1   0
+4    Erling Haaland          9.0  no NOR  23.0     79.0    2.0      0.0        0.0  ...    0   0    1    0    0   0    1   0
+
+[5 rows x 139 columns]
+2023-10-02 13:43:45,732 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:43:45,752 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:43:45,753 - INFO - Attempting to style the final dataframe
+2023-10-02 13:43:45,753 - INFO - Columns in all_data before styling: ['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:43:50,387 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:43:50,387 - INFO - Styling completed, proceeding to display
+2023-10-02 13:43:55,011 - ERROR - An exception occurred: 'id'
+2023-10-02 13:43:55,091 - INFO - Main function completed successfully
+2023-10-02 13:48:58,973 - INFO - Starting main function
+2023-10-02 13:48:58,975 - INFO - Creating custom color maps
+2023-10-02 13:48:58,978 - INFO - Custom color maps created
+2023-10-02 13:48:58,978 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:48:58,978 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:48:59,323 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:48:59,334 - INFO - Unique GW values: [1]
+2023-10-02 13:48:59,334 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:48:59,375 - INFO - Data loaded and concatenated
+2023-10-02 13:48:59,383 - INFO - Cleaning dataframes before merging
+2023-10-02 13:48:59,383 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:48:59,385 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:48:59,391 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:48:59,391 - INFO - fbref_df cleaned
+2023-10-02 13:48:59,392 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:48:59,396 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:48:59,403 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:48:59,404 - INFO - gws_df cleaned
+2023-10-02 13:48:59,406 - INFO - GW columns converted to float
+2023-10-02 13:48:59,412 - INFO - Starting the merge operation
+2023-10-02 13:48:59,484 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 13:51:48,790 - INFO - Starting main function
+2023-10-02 13:51:48,791 - INFO - Creating custom color maps
+2023-10-02 13:51:48,791 - INFO - Custom color maps created
+2023-10-02 13:51:48,792 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:51:48,792 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:51:49,052 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:51:49,066 - INFO - Unique GW values: [1]
+2023-10-02 13:51:49,066 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:51:49,116 - INFO - Data loaded and concatenated
+2023-10-02 13:51:49,123 - INFO - Cleaning dataframes before merging
+2023-10-02 13:51:49,123 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:51:49,126 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:51:49,135 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:51:49,135 - INFO - fbref_df cleaned
+2023-10-02 13:51:49,137 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:51:49,142 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:51:49,147 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:51:49,147 - INFO - gws_df cleaned
+2023-10-02 13:51:49,149 - INFO - GW columns converted to float
+2023-10-02 13:51:49,164 - INFO - Starting the merge operation
+2023-10-02 13:51:49,280 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 13:51:49,623 - INFO - Merge operation completed. Resulting dataframe: (3840, 139)              Player  ROS Rank  +/- Team_ros Pos  ...                Opponent     season  position_1  position_2  position_3
+0     Mohamed Salah       3.0  0.0      LIV   F  ...    Chelsea Player Stats  2023-2024          RW         NaN         NaN
+1    Bernardo Silva      90.0  2.0      MCI   M  ...    Burnley Player Stats  2023-2024          CM          RW         NaN
+2  Dejan Kulusevski      28.0  5.0      TOT   M  ...  Brentford Player Stats  2023-2024          RW         NaN         NaN
+3       Jeremy Doku      57.0 -2.0      MCI   F  ...                     NaN        NaN         NaN         NaN         NaN
+4    Erling Haaland       1.0  0.0      MCI   F  ...    Burnley Player Stats  2023-2024          FW         NaN         NaN
+
+[5 rows x 139 columns]
+2023-10-02 13:51:49,623 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:51:49,655 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:51:49,655 - INFO - Attempting to style the final dataframe
+2023-10-02 13:51:49,656 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Opponent', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:51:54,133 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:51:54,133 - INFO - Styling completed, proceeding to display
+2023-10-02 13:51:59,349 - ERROR - An exception occurred: 'id'
+2023-10-02 13:51:59,437 - INFO - Main function completed successfully
+2023-10-02 13:54:43,670 - INFO - Starting main function
+2023-10-02 13:54:43,674 - INFO - Creating custom color maps
+2023-10-02 13:54:43,675 - INFO - Custom color maps created
+2023-10-02 13:54:43,675 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:54:43,676 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:54:44,038 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:54:44,052 - INFO - Unique GW values: [1]
+2023-10-02 13:54:44,052 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:54:44,091 - INFO - Data loaded and concatenated
+2023-10-02 13:54:44,098 - INFO - Cleaning dataframes before merging
+2023-10-02 13:54:44,098 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:54:44,100 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:54:44,106 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:54:44,106 - INFO - fbref_df cleaned
+2023-10-02 13:54:44,108 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:54:44,112 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:54:44,120 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:54:44,121 - INFO - gws_df cleaned
+2023-10-02 13:54:44,122 - INFO - GW columns converted to float
+2023-10-02 13:54:44,128 - INFO - Starting the merge operation
+2023-10-02 13:54:44,220 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 13:56:23,561 - INFO - Starting main function
+2023-10-02 13:56:23,562 - INFO - Creating custom color maps
+2023-10-02 13:56:23,563 - INFO - Custom color maps created
+2023-10-02 13:56:23,563 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 13:56:23,563 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 13:56:23,805 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 13:56:23,823 - INFO - Unique GW values: [1]
+2023-10-02 13:56:23,823 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 13:56:23,880 - INFO - Data loaded and concatenated
+2023-10-02 13:56:23,890 - INFO - Cleaning dataframes before merging
+2023-10-02 13:56:23,890 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 13:56:23,892 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 13:56:23,895 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 13:56:23,895 - INFO - fbref_df cleaned
+2023-10-02 13:56:23,896 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 13:56:23,900 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 13:56:23,905 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 13:56:23,905 - INFO - gws_df cleaned
+2023-10-02 13:56:23,906 - INFO - GW columns converted to float
+2023-10-02 13:56:23,915 - INFO - Starting the merge operation
+2023-10-02 13:56:23,963 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 13:56:24,023 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  ...  OG  GAO  CS GW  started   Home                Opponent
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F  ...   0    1   0  1      1.0  False    Chelsea Player Stats
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M  ...   0    1   0  1      1.0  False    Burnley Player Stats
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M  ...   0    1   0  1      1.0  False  Brentford Player Stats
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F  ...   0    1   0  1      NaN    NaN                     NaN
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F  ...   0    1   0  1      1.0  False    Burnley Player Stats
+
+[5 rows x 36 columns]
+2023-10-02 13:56:24,024 - INFO - Displaying the dataframe on Streamlit without styling
+2023-10-02 13:56:24,033 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 13:56:24,044 - INFO - Attempting to style the final dataframe
+2023-10-02 13:56:24,044 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 13:56:30,400 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 13:56:30,400 - INFO - Styling completed, proceeding to display
+2023-10-02 13:56:35,319 - INFO - Main function completed successfully
+2023-10-02 14:04:22,879 - INFO - Starting main function
+2023-10-02 14:04:22,882 - INFO - Creating custom color maps
+2023-10-02 14:04:22,885 - INFO - Custom color maps created
+2023-10-02 14:04:22,885 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 14:04:22,885 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 14:04:23,240 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 14:04:23,253 - INFO - Unique GW values: [1]
+2023-10-02 14:04:23,253 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 14:04:23,298 - INFO - Data loaded and concatenated
+2023-10-02 14:04:23,304 - INFO - Cleaning dataframes before merging
+2023-10-02 14:04:23,304 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 14:04:23,306 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 14:04:23,330 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 14:04:23,330 - INFO - fbref_df cleaned
+2023-10-02 14:04:23,334 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 14:04:23,341 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 14:04:23,344 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 14:04:23,344 - INFO - gws_df cleaned
+2023-10-02 14:04:23,345 - INFO - GW columns converted to float
+2023-10-02 14:04:23,352 - INFO - Starting the merge operation
+2023-10-02 14:04:23,434 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 14:04:23,591 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  ...  OG  GAO  CS GW  started   Home                Opponent
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F  ...   0    1   0  1      1.0  False    Chelsea Player Stats
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M  ...   0    1   0  1      1.0  False    Burnley Player Stats
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M  ...   0    1   0  1      1.0  False  Brentford Player Stats
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F  ...   0    1   0  1      NaN    NaN                     NaN
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F  ...   0    1   0  1      1.0  False    Burnley Player Stats
+
+[5 rows x 36 columns]
+2023-10-02 14:04:23,591 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 14:04:23,592 - INFO - Attempting to style the final dataframe
+2023-10-02 14:04:23,592 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 14:04:30,343 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 14:04:30,343 - INFO - Styling completed, proceeding to display
+2023-10-02 14:04:34,463 - INFO - Main function completed successfully
+2023-10-02 14:44:27,838 - INFO - Starting main function
+2023-10-02 14:44:27,842 - INFO - Creating custom color maps
+2023-10-02 14:44:27,844 - INFO - Custom color maps created
+2023-10-02 14:44:27,844 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 14:44:27,868 - INFO - Starting load_and_concatenate_csvs() function. Loading and concatenating CSVs.
+2023-10-02 14:44:28,210 - INFO - Concatenating 6 GWs worth of data into DataFrame.
+2023-10-02 14:44:28,228 - INFO - Unique GW values: [1]
+2023-10-02 14:44:28,229 - INFO - load_and_concatenate_csvs() function complete. Returning concatenated_df.
+2023-10-02 14:44:28,300 - INFO - Data loaded and concatenated
+2023-10-02 14:44:28,311 - INFO - Cleaning dataframes before merging
+2023-10-02 14:44:28,392 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 14:44:28,396 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 14:44:28,424 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'team', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 14:44:28,431 - INFO - fbref_df cleaned
+2023-10-02 14:44:28,464 - INFO - Starting clean_df() function. Initial DataFrame shape: (3840, 30)
+2023-10-02 14:44:28,466 - INFO - Dropped unnecessary columns. DataFrame shape: (3840, 29)
+2023-10-02 14:44:28,473 - INFO - clean_df() function complete. Final DataFrame shape: (3840, 29). Columns in df:
+['Player', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW']
+2023-10-02 14:44:28,477 - INFO - gws_df cleaned
+2023-10-02 14:44:28,478 - INFO - GW columns converted to float
+2023-10-02 14:44:28,482 - INFO - Starting the merge operation
+2023-10-02 14:44:28,582 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 14:44:28,676 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  ...  OG  GAO  CS GW  started   Home                Opponent
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F  ...   0    1   0  1      1.0  False    Chelsea Player Stats
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M  ...   0    1   0  1      1.0  False    Burnley Player Stats
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M  ...   0    1   0  1      1.0  False  Brentford Player Stats
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F  ...   0    1   0  1      NaN    NaN                     NaN
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F  ...   0    1   0  1      1.0  False    Burnley Player Stats
+
+[5 rows x 36 columns]
+2023-10-02 14:44:28,676 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 14:44:28,676 - INFO - Attempting to style the final dataframe
+2023-10-02 14:44:28,676 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 14:44:33,209 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 14:44:33,209 - INFO - Styling completed, proceeding to display
+2023-10-02 14:44:37,338 - INFO - Main function completed successfully
+2023-10-02 15:06:42,071 - INFO - Starting main function
+2023-10-02 15:06:42,074 - INFO - Creating custom color maps
+2023-10-02 15:06:42,076 - INFO - Custom color maps created
+2023-10-02 15:06:42,076 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:06:42,355 - INFO - Data loaded and concatenated
+2023-10-02 15:06:42,447 - INFO - Cleaning dataframes before merging
+2023-10-02 15:06:42,585 - INFO - fbref_df cleaned
+2023-10-02 15:06:42,660 - INFO - gws_df cleaned
+2023-10-02 15:06:42,664 - INFO - GW columns converted to float
+2023-10-02 15:06:42,676 - INFO - Starting the merge operation
+2023-10-02 15:06:43,005 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:06:43,367 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  ...  OG  GAO  CS GW  started   Home                Opponent
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F  ...   0    1   0  1      1.0  False    Chelsea Player Stats
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M  ...   0    1   0  1      1.0  False    Burnley Player Stats
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M  ...   0    1   0  1      1.0  False  Brentford Player Stats
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F  ...   0    1   0  1      NaN    NaN                     NaN
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F  ...   0    1   0  1      1.0  False    Burnley Player Stats
+
+[5 rows x 36 columns]
+2023-10-02 15:06:43,367 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:06:43,367 - INFO - Attempting to style the final dataframe
+2023-10-02 15:06:43,367 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:06:51,133 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:06:51,134 - INFO - Styling completed, proceeding to display
+2023-10-02 15:06:55,047 - INFO - Main function completed successfully
+2023-10-02 15:22:49,242 - INFO - Starting main function
+2023-10-02 15:22:49,245 - INFO - Creating custom color maps
+2023-10-02 15:22:49,247 - INFO - Custom color maps created
+2023-10-02 15:22:49,247 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:22:49,414 - INFO - Data loaded and concatenated
+2023-10-02 15:22:49,453 - INFO - Cleaning dataframes before merging
+2023-10-02 15:22:49,613 - INFO - fbref_df cleaned
+2023-10-02 15:22:49,662 - INFO - gws_df cleaned
+2023-10-02 15:22:49,665 - INFO - GW columns converted to float
+2023-10-02 15:22:49,668 - INFO - Starting the merge operation
+2023-10-02 15:22:49,753 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:23:53,593 - INFO - Starting main function
+2023-10-02 15:23:53,594 - INFO - Creating custom color maps
+2023-10-02 15:23:53,595 - INFO - Custom color maps created
+2023-10-02 15:23:53,595 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:23:53,617 - INFO - Data loaded and concatenated
+2023-10-02 15:23:53,629 - INFO - Cleaning dataframes before merging
+2023-10-02 15:23:53,675 - INFO - fbref_df cleaned
+2023-10-02 15:23:53,711 - INFO - gws_df cleaned
+2023-10-02 15:23:53,713 - INFO - GW columns converted to float
+2023-10-02 15:23:53,717 - INFO - Starting the merge operation
+2023-10-02 15:23:53,786 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:25:02,865 - INFO - Starting main function
+2023-10-02 15:25:02,866 - INFO - Creating custom color maps
+2023-10-02 15:25:02,867 - INFO - Custom color maps created
+2023-10-02 15:25:02,867 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:25:02,877 - INFO - Data loaded and concatenated
+2023-10-02 15:25:02,882 - INFO - Cleaning dataframes before merging
+2023-10-02 15:25:02,932 - INFO - fbref_df cleaned
+2023-10-02 15:25:02,970 - INFO - gws_df cleaned
+2023-10-02 15:25:02,971 - INFO - GW columns converted to float
+2023-10-02 15:25:02,981 - INFO - Starting the merge operation
+2023-10-02 15:25:03,044 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:25:03,126 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  ...  PKM PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  ...    0   0   0    1   0   1      1.0  False    Chelsea
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  ...    0   0   0    1   0   1      1.0  False    Burnley
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  ...    0   0   0    1   0   1      1.0  False  Brentford
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  ...    0   0   0    1   0   1      NaN    NaN        NaN
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  ...    0   0   0    1   0   1      1.0  False    Burnley
+
+[5 rows x 36 columns]
+2023-10-02 15:25:03,127 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:25:03,127 - INFO - Attempting to style the final dataframe
+2023-10-02 15:25:03,127 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:25:08,774 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:25:08,775 - INFO - Styling completed, proceeding to display
+2023-10-02 15:25:13,033 - INFO - Main function completed successfully
+2023-10-02 15:25:59,932 - INFO - Starting main function
+2023-10-02 15:25:59,933 - INFO - Creating custom color maps
+2023-10-02 15:25:59,934 - INFO - Custom color maps created
+2023-10-02 15:25:59,934 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:26:00,023 - INFO - Data loaded and concatenated
+2023-10-02 15:26:00,023 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:26:17,510 - INFO - Starting main function
+2023-10-02 15:26:17,513 - INFO - Creating custom color maps
+2023-10-02 15:26:17,514 - INFO - Custom color maps created
+2023-10-02 15:26:17,514 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:26:17,555 - INFO - Data loaded and concatenated
+2023-10-02 15:26:17,556 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:26:17,589 - INFO - Cleaning dataframes before merging
+2023-10-02 15:26:17,641 - INFO - fbref_df cleaned
+2023-10-02 15:26:17,669 - INFO - gws_df cleaned
+2023-10-02 15:26:17,671 - INFO - GW columns converted to float
+2023-10-02 15:26:17,676 - INFO - Starting the merge operation
+2023-10-02 15:26:17,740 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:26:17,893 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  ...  PKM PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  ...    0   0   0    1   0   1      1.0  False    Chelsea
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  ...    0   0   0    1   0   1      1.0  False    Burnley
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  ...    0   0   0    1   0   1      1.0  False  Brentford
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  ...    0   0   0    1   0   1      NaN    NaN        NaN
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  ...    0   0   0    1   0   1      1.0  False    Burnley
+
+[5 rows x 36 columns]
+2023-10-02 15:26:17,894 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:26:17,894 - INFO - Attempting to style the final dataframe
+2023-10-02 15:26:17,894 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:26:22,808 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:26:22,808 - INFO - Styling completed, proceeding to display
+2023-10-02 15:26:25,914 - INFO - Main function completed successfully
+2023-10-02 15:34:55,967 - INFO - Starting main function
+2023-10-02 15:34:55,969 - INFO - Creating custom color maps
+2023-10-02 15:34:55,973 - INFO - Custom color maps created
+2023-10-02 15:34:55,973 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:34:56,027 - INFO - Data loaded and concatenated
+2023-10-02 15:34:56,027 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:34:56,058 - INFO - Cleaning dataframes before merging
+2023-10-02 15:34:56,129 - INFO - fbref_df cleaned
+2023-10-02 15:34:56,161 - INFO - gws_df cleaned
+2023-10-02 15:34:56,162 - INFO - GW columns converted to float
+2023-10-02 15:34:56,166 - INFO - Starting the merge operation
+2023-10-02 15:34:56,247 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:35:43,156 - INFO - Starting main function
+2023-10-02 15:35:43,158 - INFO - Creating custom color maps
+2023-10-02 15:35:43,159 - INFO - Custom color maps created
+2023-10-02 15:35:43,159 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:35:43,172 - INFO - Data loaded and concatenated
+2023-10-02 15:35:43,172 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:35:43,187 - INFO - Cleaning dataframes before merging
+2023-10-02 15:35:43,229 - INFO - fbref_df cleaned
+2023-10-02 15:35:43,256 - INFO - gws_df cleaned
+2023-10-02 15:35:43,257 - INFO - GW columns converted to float
+2023-10-02 15:35:43,262 - INFO - Starting the merge operation
+2023-10-02 15:35:43,327 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:35:43,463 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  ...  PKM PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0      LIV   F      LIV        F     8  26.5  ...    0   0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0      MCI   M      MCI        M   129  26.5  ...    0   0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0      TOT   M      TOT        M    19  25.5  ...    0   0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0      MCI   F      MCI        F    80  24.5  ...    0   0   0    1   0   1     True    NaN        NaN
+4    Erling Haaland         1  0.0      MCI   F      MCI        F     2  23.5  ...    0   0   0    1   0   1     True  False    Burnley
+
+[5 rows x 36 columns]
+2023-10-02 15:35:43,463 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:35:43,463 - INFO - Attempting to style the final dataframe
+2023-10-02 15:35:43,463 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Team_ros', 'Pos', 'Team_gws', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:35:48,944 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:35:48,944 - INFO - Styling completed, proceeding to display
+2023-10-02 15:35:53,067 - INFO - Main function completed successfully
+2023-10-02 15:43:34,904 - INFO - Starting main function
+2023-10-02 15:43:34,907 - INFO - Creating custom color maps
+2023-10-02 15:43:34,913 - INFO - Custom color maps created
+2023-10-02 15:43:34,913 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:43:34,959 - INFO - Data loaded and concatenated
+2023-10-02 15:43:34,960 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:43:35,003 - INFO - Cleaning dataframes before merging
+2023-10-02 15:43:35,095 - INFO - fbref_df cleaned
+2023-10-02 15:43:35,134 - INFO - gws_df cleaned
+2023-10-02 15:43:35,136 - INFO - GW columns converted to float
+2023-10-02 15:43:35,142 - INFO - Starting the merge operation
+2023-10-02 15:43:35,218 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:44:35,678 - INFO - Starting main function
+2023-10-02 15:44:35,680 - INFO - Creating custom color maps
+2023-10-02 15:44:35,680 - INFO - Custom color maps created
+2023-10-02 15:44:35,681 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:44:35,699 - INFO - Data loaded and concatenated
+2023-10-02 15:44:35,699 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:44:35,713 - INFO - Cleaning dataframes before merging
+2023-10-02 15:44:35,757 - INFO - fbref_df cleaned
+2023-10-02 15:44:35,798 - INFO - gws_df cleaned
+2023-10-02 15:44:35,799 - INFO - GW columns converted to float
+2023-10-02 15:44:35,813 - INFO - Starting the merge operation
+2023-10-02 15:44:35,937 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:44:36,097 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  Started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1      1.0  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1      1.0  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1      1.0  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1      NaN    NaN        NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1      1.0  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:44:36,097 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:44:36,097 - WARNING - Warning: These columns are missing in 'all_data': ['Team_gws']
+2023-10-02 15:44:36,097 - INFO - Attempting to style the final dataframe
+2023-10-02 15:44:36,097 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'Started', 'Home', 'Opponent']
+2023-10-02 15:44:36,102 - ERROR - An exception occurred: 'Team_gws'
+2023-10-02 15:44:36,102 - INFO - Main function completed successfully
+2023-10-02 15:45:33,960 - INFO - Starting main function
+2023-10-02 15:45:33,963 - INFO - Creating custom color maps
+2023-10-02 15:45:33,964 - INFO - Custom color maps created
+2023-10-02 15:45:33,964 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:45:33,999 - INFO - Data loaded and concatenated
+2023-10-02 15:45:33,999 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:45:34,027 - INFO - Cleaning dataframes before merging
+2023-10-02 15:45:34,067 - INFO - fbref_df cleaned
+2023-10-02 15:45:34,088 - INFO - gws_df cleaned
+2023-10-02 15:45:34,090 - INFO - GW columns converted to float
+2023-10-02 15:45:34,096 - INFO - Starting the merge operation
+2023-10-02 15:45:34,191 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:45:38,838 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN    Burnley
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:45:38,838 - INFO - Columns to keep: ['Player', 'Position', 'Team_gws', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:45:38,838 - WARNING - Warning: These columns are missing in 'all_data': ['Team_gws']
+2023-10-02 15:45:38,838 - INFO - Attempting to style the final dataframe
+2023-10-02 15:45:38,838 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:45:38,842 - ERROR - An exception occurred: 'Team_gws'
+2023-10-02 15:45:38,842 - INFO - Main function completed successfully
+2023-10-02 15:45:59,672 - INFO - Starting main function
+2023-10-02 15:45:59,673 - INFO - Creating custom color maps
+2023-10-02 15:45:59,674 - INFO - Custom color maps created
+2023-10-02 15:45:59,675 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:45:59,688 - INFO - Data loaded and concatenated
+2023-10-02 15:45:59,689 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:45:59,702 - INFO - Cleaning dataframes before merging
+2023-10-02 15:45:59,739 - INFO - fbref_df cleaned
+2023-10-02 15:45:59,777 - INFO - gws_df cleaned
+2023-10-02 15:45:59,779 - INFO - GW columns converted to float
+2023-10-02 15:45:59,828 - INFO - Starting the merge operation
+2023-10-02 15:45:59,936 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:46:00,187 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN        NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:46:00,187 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:46:00,187 - INFO - Attempting to style the final dataframe
+2023-10-02 15:46:00,187 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:46:04,786 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:46:04,786 - INFO - Styling completed, proceeding to display
+2023-10-02 15:46:08,712 - INFO - Main function completed successfully
+2023-10-02 15:47:24,609 - INFO - Starting main function
+2023-10-02 15:47:24,618 - INFO - Creating custom color maps
+2023-10-02 15:47:24,625 - INFO - Custom color maps created
+2023-10-02 15:47:24,625 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:47:24,685 - INFO - Data loaded and concatenated
+2023-10-02 15:47:24,686 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:47:24,763 - INFO - Cleaning dataframes before merging
+2023-10-02 15:47:24,854 - INFO - fbref_df cleaned
+2023-10-02 15:47:24,904 - INFO - gws_df cleaned
+2023-10-02 15:47:24,907 - INFO - GW columns converted to float
+2023-10-02 15:47:24,914 - INFO - Starting the merge operation
+2023-10-02 15:47:25,021 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:47:25,171 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN        NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:47:25,172 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:47:25,172 - INFO - Attempting to style the final dataframe
+2023-10-02 15:47:25,172 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:47:29,831 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:47:29,832 - INFO - Styling completed, proceeding to display
+2023-10-02 15:47:33,472 - INFO - Main function completed successfully
+2023-10-02 15:51:20,474 - INFO - Starting main function
+2023-10-02 15:51:20,477 - INFO - Creating custom color maps
+2023-10-02 15:51:20,478 - INFO - Custom color maps created
+2023-10-02 15:51:20,478 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:51:20,542 - INFO - Data loaded and concatenated
+2023-10-02 15:51:20,543 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:51:20,623 - INFO - Cleaning dataframes before merging
+2023-10-02 15:51:20,731 - INFO - fbref_df cleaned
+2023-10-02 15:51:20,775 - INFO - gws_df cleaned
+2023-10-02 15:51:20,777 - INFO - GW columns converted to float
+2023-10-02 15:51:20,782 - INFO - Starting the merge operation
+2023-10-02 15:51:20,876 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:51:24,740 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN    Burnley
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:51:24,740 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:51:24,740 - INFO - Attempting to style the final dataframe
+2023-10-02 15:51:24,740 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:51:29,114 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:51:29,114 - INFO - Styling completed, proceeding to display
+2023-10-02 15:51:32,723 - INFO - Main function completed successfully
+2023-10-02 15:52:34,714 - INFO - Starting main function
+2023-10-02 15:52:34,716 - INFO - Creating custom color maps
+2023-10-02 15:52:34,717 - INFO - Custom color maps created
+2023-10-02 15:52:34,717 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:52:34,806 - INFO - Data loaded and concatenated
+2023-10-02 15:52:34,806 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:52:34,847 - INFO - Cleaning dataframes before merging
+2023-10-02 15:52:34,939 - INFO - fbref_df cleaned
+2023-10-02 15:52:34,983 - INFO - gws_df cleaned
+2023-10-02 15:52:34,984 - INFO - GW columns converted to float
+2023-10-02 15:52:34,990 - INFO - Starting the merge operation
+2023-10-02 15:52:35,076 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:52:35,099 - INFO - Starting to update 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:52:35,099 - INFO - Creating a lookup DataFrame
+2023-10-02 15:52:35,109 - INFO - Lookup DataFrame created with 27 rows
+2023-10-02 15:52:35,109 - INFO - Starting the merge operation to update 'Opponent'
+2023-10-02 15:52:35,120 - INFO - Merge operation completed
+2023-10-02 15:52:35,121 - INFO - Successfully updated 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:52:35,219 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN        NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:52:35,219 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:52:35,219 - INFO - Attempting to style the final dataframe
+2023-10-02 15:52:35,220 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:52:38,838 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:52:38,838 - INFO - Styling completed, proceeding to display
+2023-10-02 15:52:41,939 - INFO - Main function completed successfully
+2023-10-02 15:53:10,673 - INFO - Starting main function
+2023-10-02 15:53:10,673 - INFO - Creating custom color maps
+2023-10-02 15:53:10,674 - INFO - Custom color maps created
+2023-10-02 15:53:10,674 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:53:10,682 - INFO - Data loaded and concatenated
+2023-10-02 15:53:10,682 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:53:10,689 - INFO - Cleaning dataframes before merging
+2023-10-02 15:53:10,724 - INFO - fbref_df cleaned
+2023-10-02 15:53:10,744 - INFO - gws_df cleaned
+2023-10-02 15:53:10,746 - INFO - GW columns converted to float
+2023-10-02 15:53:10,750 - INFO - Starting the merge operation
+2023-10-02 15:53:10,819 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:53:10,856 - INFO - Starting to update 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:53:10,856 - INFO - Creating a lookup DataFrame
+2023-10-02 15:53:10,865 - INFO - Lookup DataFrame created with 27 rows
+2023-10-02 15:53:10,865 - INFO - Starting the merge operation to update 'Opponent'
+2023-10-02 15:53:10,872 - INFO - Merge operation completed
+2023-10-02 15:53:10,872 - INFO - Successfully updated 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:53:10,926 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN        NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:53:10,926 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:53:10,926 - INFO - Attempting to style the final dataframe
+2023-10-02 15:53:10,926 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:53:15,116 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:53:15,116 - INFO - Styling completed, proceeding to display
+2023-10-02 15:53:18,525 - INFO - Main function completed successfully
+2023-10-02 15:55:27,808 - INFO - Starting main function
+2023-10-02 15:55:27,810 - INFO - Creating custom color maps
+2023-10-02 15:55:27,811 - INFO - Custom color maps created
+2023-10-02 15:55:27,811 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:55:27,832 - INFO - Data loaded and concatenated
+2023-10-02 15:55:27,832 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:55:27,855 - INFO - Cleaning dataframes before merging
+2023-10-02 15:55:27,892 - INFO - fbref_df cleaned
+2023-10-02 15:55:27,913 - INFO - gws_df cleaned
+2023-10-02 15:55:27,914 - INFO - GW columns converted to float
+2023-10-02 15:55:27,918 - INFO - Starting the merge operation
+2023-10-02 15:55:27,987 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:55:28,021 - INFO - Starting to update 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:55:28,022 - INFO - Creating a lookup DataFrame
+2023-10-02 15:55:28,067 - INFO - Lookup DataFrame created with 27 rows
+2023-10-02 15:55:28,068 - INFO - Starting the merge operation to update 'Opponent'
+2023-10-02 15:55:28,135 - INFO - Merge operation completed
+2023-10-02 15:55:28,136 - INFO - Successfully updated 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:55:28,229 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN        NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:55:28,229 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:55:28,229 - INFO - Attempting to style the final dataframe
+2023-10-02 15:55:28,230 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:55:32,261 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:55:32,261 - INFO - Styling completed, proceeding to display
+2023-10-02 15:55:35,285 - INFO - Main function completed successfully
+2023-10-02 15:55:53,469 - INFO - Starting main function
+2023-10-02 15:55:53,470 - INFO - Creating custom color maps
+2023-10-02 15:55:53,470 - INFO - Custom color maps created
+2023-10-02 15:55:53,470 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:55:53,479 - INFO - Data loaded and concatenated
+2023-10-02 15:55:53,480 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:55:53,494 - INFO - Cleaning dataframes before merging
+2023-10-02 15:55:53,538 - INFO - fbref_df cleaned
+2023-10-02 15:55:53,561 - INFO - gws_df cleaned
+2023-10-02 15:55:53,562 - INFO - GW columns converted to float
+2023-10-02 15:55:53,568 - INFO - Starting the merge operation
+2023-10-02 15:55:53,650 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 15:55:56,829 - INFO - Starting to update 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:55:56,829 - INFO - Creating a lookup DataFrame
+2023-10-02 15:55:56,833 - INFO - Lookup DataFrame created with 27 rows
+2023-10-02 15:55:56,833 - INFO - Starting the merge operation to update 'Opponent'
+2023-10-02 15:55:56,838 - INFO - Merge operation completed
+2023-10-02 15:55:56,838 - INFO - Successfully updated 'Opponent' based on 'Team' and 'GW'
+2023-10-02 15:55:56,877 - INFO - Merge operation completed. Resulting dataframe: (3840, 35)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  FP/G  ... PKM  PKD  OG  GAO  CS  GW  started   Home   Opponent
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  26.5  ...   0    0   0    1   0   1     True  False    Chelsea
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  26.5  ...   0    0   0    1   0   1     True  False    Burnley
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  25.5  ...   0    0   0    1   0   1     True  False  Brentford
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  24.5  ...   0    0   0    1   0   1     True    NaN    Burnley
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  23.5  ...   0    0   0    1   0   1     True  False    Burnley
+
+[5 rows x 35 columns]
+2023-10-02 15:55:56,878 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 15:55:56,878 - INFO - Attempting to style the final dataframe
+2023-10-02 15:55:56,878 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent']
+2023-10-02 15:56:00,803 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 15:56:00,803 - INFO - Styling completed, proceeding to display
+2023-10-02 15:56:03,613 - INFO - Main function completed successfully
+2023-10-02 15:57:39,294 - INFO - Starting main function
+2023-10-02 15:57:39,297 - INFO - Creating custom color maps
+2023-10-02 15:57:39,300 - INFO - Custom color maps created
+2023-10-02 15:57:39,300 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 15:57:39,348 - INFO - Data loaded and concatenated
+2023-10-02 15:57:39,348 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 15:57:39,365 - INFO - Cleaning dataframes before merging
+2023-10-02 15:57:39,460 - INFO - Starting clean_df() function. Initial DataFrame shape: (1624, 109)
+2023-10-02 15:57:39,472 - INFO - Dropped unnecessary columns. DataFrame shape: (1624, 109)
+2023-10-02 15:57:39,480 - INFO - clean_df() function complete. Final DataFrame shape: (1624, 109). Columns in df:
+['Player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'Home', 'Team_long', 'Opponent', 'GW', 'season', 'position_1', 'position_2', 'position_3']
+2023-10-02 15:57:39,496 - INFO - fbref_df cleaned
+2023-10-02 16:01:26,161 - INFO - Starting main function
+2023-10-02 16:01:26,164 - INFO - Creating custom color maps
+2023-10-02 16:01:26,169 - INFO - Custom color maps created
+2023-10-02 16:01:26,169 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:01:26,215 - INFO - Data loaded and concatenated
+2023-10-02 16:01:26,216 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:01:26,234 - INFO - Cleaning dataframes before merging
+2023-10-02 16:01:26,338 - INFO - fbref_df cleaned
+2023-10-02 16:03:03,950 - INFO - Starting main function
+2023-10-02 16:03:03,953 - INFO - Creating custom color maps
+2023-10-02 16:03:03,954 - INFO - Custom color maps created
+2023-10-02 16:03:03,954 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:03:03,973 - INFO - Data loaded and concatenated
+2023-10-02 16:03:03,973 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:03:04,010 - INFO - Cleaning dataframes before merging
+2023-10-02 16:03:04,070 - INFO - fbref_df cleaned
+2023-10-02 16:03:54,365 - INFO - Starting main function
+2023-10-02 16:03:54,367 - INFO - Creating custom color maps
+2023-10-02 16:03:54,367 - INFO - Custom color maps created
+2023-10-02 16:03:54,367 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:03:54,378 - INFO - Data loaded and concatenated
+2023-10-02 16:03:54,394 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:03:54,403 - INFO - Cleaning dataframes before merging
+2023-10-02 16:03:54,469 - INFO - fbref_df cleaned
+2023-10-02 16:03:54,527 - INFO - gws_df cleaned
+2023-10-02 16:03:54,528 - INFO - GW columns converted to float
+2023-10-02 16:03:54,533 - INFO - Starting the merge operation
+2023-10-02 16:03:54,634 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:05:11,936 - INFO - Starting main function
+2023-10-02 16:05:11,938 - INFO - Creating custom color maps
+2023-10-02 16:05:11,940 - INFO - Custom color maps created
+2023-10-02 16:05:11,940 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:05:11,974 - INFO - Data loaded and concatenated
+2023-10-02 16:05:11,974 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:05:11,996 - INFO - Cleaning dataframes before merging
+2023-10-02 16:05:12,069 - INFO - fbref_df cleaned
+2023-10-02 16:05:12,105 - INFO - gws_df cleaned
+2023-10-02 16:05:12,107 - INFO - GW columns converted to float
+2023-10-02 16:05:12,113 - INFO - Starting the merge operation
+2023-10-02 16:05:12,257 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:10:23,752 - INFO - Starting main function
+2023-10-02 16:10:23,756 - INFO - Creating custom color maps
+2023-10-02 16:10:23,760 - INFO - Custom color maps created
+2023-10-02 16:10:23,760 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:10:23,814 - INFO - Data loaded and concatenated
+2023-10-02 16:10:23,814 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:10:23,847 - INFO - Cleaning dataframes before merging
+2023-10-02 16:10:23,955 - INFO - fbref_df cleaned
+2023-10-02 16:10:24,031 - INFO - gws_df cleaned
+2023-10-02 16:10:24,034 - INFO - GW columns converted to float
+2023-10-02 16:10:24,039 - INFO - Starting the merge operation
+2023-10-02 16:10:24,141 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:10:27,924 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  ...  GAO  CS GW  started   Home   Opponent                     Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  ...    1   0  1     True  False    Chelsea        Liverpool Player Stats
+1    Bernardo Silva        90  2.0   M  MCI        M   129  ...    1   0  1     True  False    Burnley  Manchester City Player Stats
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  ...    1   0  1     True  False  Brentford        Tottenham Player Stats
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  ...    1   0  1     True    NaN    Burnley                           NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  ...    1   0  1     True  False    Burnley  Manchester City Player Stats
+
+[5 rows x 36 columns]
+2023-10-02 16:10:27,924 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:10:27,924 - INFO - Attempting to style the final dataframe
+2023-10-02 16:10:27,924 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:10:31,791 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:10:31,791 - INFO - Styling completed, proceeding to display
+2023-10-02 16:10:35,239 - INFO - Main function completed successfully
+2023-10-02 16:11:32,009 - INFO - Starting main function
+2023-10-02 16:11:32,013 - INFO - Creating custom color maps
+2023-10-02 16:11:32,017 - INFO - Custom color maps created
+2023-10-02 16:11:32,018 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:11:32,054 - INFO - Data loaded and concatenated
+2023-10-02 16:11:32,055 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:11:32,068 - INFO - Cleaning dataframes before merging
+2023-10-02 16:11:32,114 - INFO - fbref_df cleaned
+2023-10-02 16:11:32,147 - INFO - gws_df cleaned
+2023-10-02 16:11:32,150 - INFO - GW columns converted to float
+2023-10-02 16:11:32,157 - INFO - Starting the merge operation
+2023-10-02 16:11:32,307 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:11:36,009 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home   Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False    Chelsea        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False  Brentford        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN    Burnley              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:11:36,009 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:11:36,009 - INFO - Attempting to style the final dataframe
+2023-10-02 16:11:36,010 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:11:39,748 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:11:39,748 - INFO - Styling completed, proceeding to display
+2023-10-02 16:11:42,424 - INFO - Main function completed successfully
+2023-10-02 16:15:39,373 - INFO - Starting main function
+2023-10-02 16:15:39,376 - INFO - Creating custom color maps
+2023-10-02 16:15:39,383 - INFO - Custom color maps created
+2023-10-02 16:15:39,384 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:15:39,616 - INFO - Data loaded and concatenated
+2023-10-02 16:15:39,616 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:15:39,744 - INFO - Cleaning dataframes before merging
+2023-10-02 16:15:39,872 - INFO - fbref_df cleaned
+2023-10-02 16:15:39,920 - INFO - gws_df cleaned
+2023-10-02 16:15:39,921 - INFO - GW columns converted to float
+2023-10-02 16:15:39,928 - INFO - Starting the merge operation
+2023-10-02 16:15:40,113 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:15:40,221 - INFO - Team: LIV
+2023-10-02 16:15:40,239 - INFO - Team: MCI
+2023-10-02 16:15:40,241 - INFO - Team: TOT
+2023-10-02 16:15:40,244 - INFO - Team: NOT
+2023-10-02 16:15:40,249 - INFO - Team: ARS
+2023-10-02 16:15:40,252 - INFO - Team: WOL
+2023-10-02 16:15:40,257 - INFO - Team: AVL
+2023-10-02 16:15:40,259 - INFO - Team: WHU
+2023-10-02 16:15:40,262 - INFO - Team: NEW
+2023-10-02 16:15:40,265 - INFO - Team: BHA
+2023-10-02 16:15:40,268 - INFO - Team: SHU
+2023-10-02 16:15:40,272 - INFO - Team: CRY
+2023-10-02 16:15:40,274 - INFO - Team: FUL
+2023-10-02 16:15:40,275 - INFO - Team: BOU
+2023-10-02 16:15:40,277 - INFO - Team: BUR
+2023-10-02 16:15:40,279 - INFO - Team: LUT
+2023-10-02 16:15:40,280 - INFO - Team: BRF
+2023-10-02 16:15:40,282 - INFO - Team: CHE
+2023-10-02 16:15:40,284 - INFO - Team: MUN
+2023-10-02 16:15:40,286 - INFO - Team: EVE
+2023-10-02 16:15:46,586 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home   Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False    Chelsea        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False  Brentford        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN    Burnley              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:15:46,587 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:15:46,587 - INFO - Attempting to style the final dataframe
+2023-10-02 16:15:46,587 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:15:53,664 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:15:53,664 - INFO - Styling completed, proceeding to display
+2023-10-02 16:15:57,243 - INFO - Main function completed successfully
+2023-10-02 16:16:45,388 - INFO - Starting main function
+2023-10-02 16:16:45,388 - INFO - Creating custom color maps
+2023-10-02 16:16:45,389 - INFO - Custom color maps created
+2023-10-02 16:16:45,391 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:16:45,400 - INFO - Data loaded and concatenated
+2023-10-02 16:16:45,400 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:16:45,410 - INFO - Cleaning dataframes before merging
+2023-10-02 16:16:45,458 - INFO - fbref_df cleaned
+2023-10-02 16:16:45,490 - INFO - gws_df cleaned
+2023-10-02 16:16:45,492 - INFO - GW columns converted to float
+2023-10-02 16:16:45,501 - INFO - Starting the merge operation
+2023-10-02 16:16:45,575 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:16:45,599 - INFO - Team: LIV
+2023-10-02 16:16:45,603 - INFO - Team_long_values value of LIV: ['Liverpool' nan]
+2023-10-02 16:16:45,604 - INFO - Team: MCI
+2023-10-02 16:16:45,604 - INFO - Team_long_values value of MCI: ['Manchester City' nan 'Wolves']
+2023-10-02 16:16:45,605 - INFO - Team: TOT
+2023-10-02 16:16:45,607 - INFO - Team_long_values value of TOT: ['Tottenham' nan "Nott'ham Forest"]
+2023-10-02 16:16:45,607 - INFO - Team: NOT
+2023-10-02 16:16:45,608 - INFO - Team_long_values value of NOT: [nan "Nott'ham Forest"]
+2023-10-02 16:16:45,608 - INFO - Team: ARS
+2023-10-02 16:16:45,609 - INFO - Team_long_values value of ARS: ['Arsenal' nan]
+2023-10-02 16:16:45,609 - INFO - Team: WOL
+2023-10-02 16:16:45,610 - INFO - Team_long_values value of WOL: ['Wolves' nan]
+2023-10-02 16:16:45,610 - INFO - Team: AVL
+2023-10-02 16:16:45,611 - INFO - Team_long_values value of AVL: ['Aston Villa' nan]
+2023-10-02 16:16:45,611 - INFO - Team: WHU
+2023-10-02 16:16:45,612 - INFO - Team_long_values value of WHU: [nan 'West Ham' 'Tottenham']
+2023-10-02 16:16:45,612 - INFO - Team: NEW
+2023-10-02 16:16:45,614 - INFO - Team_long_values value of NEW: ['Newcastle Utd' nan]
+2023-10-02 16:16:45,614 - INFO - Team: BHA
+2023-10-02 16:16:45,615 - INFO - Team_long_values value of BHA: ['Brighton' nan]
+2023-10-02 16:16:45,615 - INFO - Team: SHU
+2023-10-02 16:16:45,616 - INFO - Team_long_values value of SHU: [nan 'Sheffield Utd' 'Manchester City']
+2023-10-02 16:16:45,616 - INFO - Team: CRY
+2023-10-02 16:16:45,617 - INFO - Team_long_values value of CRY: ['Crystal Palace' nan]
+2023-10-02 16:16:45,617 - INFO - Team: FUL
+2023-10-02 16:16:45,618 - INFO - Team_long_values value of FUL: ['Fulham' nan 'Everton']
+2023-10-02 16:16:45,618 - INFO - Team: BOU
+2023-10-02 16:16:45,619 - INFO - Team_long_values value of BOU: [nan 'Bournemouth']
+2023-10-02 16:16:45,619 - INFO - Team: BUR
+2023-10-02 16:16:45,620 - INFO - Team_long_values value of BUR: ['Burnley' nan]
+2023-10-02 16:16:45,620 - INFO - Team: LUT
+2023-10-02 16:16:45,621 - INFO - Team_long_values value of LUT: ['Luton Town' nan]
+2023-10-02 16:16:45,621 - INFO - Team: BRF
+2023-10-02 16:16:45,622 - INFO - Team_long_values value of BRF: ['Brentford' nan 'Everton']
+2023-10-02 16:16:45,622 - INFO - Team: CHE
+2023-10-02 16:16:45,623 - INFO - Team_long_values value of CHE: ['Chelsea' 'Manchester City' nan]
+2023-10-02 16:16:45,623 - INFO - Team: MUN
+2023-10-02 16:16:45,624 - INFO - Team_long_values value of MUN: [nan 'Manchester Utd']
+2023-10-02 16:16:45,624 - INFO - Team: EVE
+2023-10-02 16:16:45,625 - INFO - Team_long_values value of EVE: ['Everton' nan]
+2023-10-02 16:16:49,383 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home   Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False    Chelsea        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False  Brentford        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN    Burnley              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:16:49,383 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:16:49,383 - INFO - Attempting to style the final dataframe
+2023-10-02 16:16:49,383 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:16:54,392 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:16:54,392 - INFO - Styling completed, proceeding to display
+2023-10-02 16:16:57,119 - INFO - Main function completed successfully
+2023-10-02 16:19:29,844 - INFO - Starting main function
+2023-10-02 16:19:29,847 - INFO - Creating custom color maps
+2023-10-02 16:19:29,850 - INFO - Custom color maps created
+2023-10-02 16:19:29,850 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:19:29,933 - INFO - Data loaded and concatenated
+2023-10-02 16:19:29,933 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:19:29,974 - INFO - Cleaning dataframes before merging
+2023-10-02 16:19:30,049 - INFO - fbref_df cleaned
+2023-10-02 16:19:30,077 - INFO - gws_df cleaned
+2023-10-02 16:19:30,079 - INFO - GW columns converted to float
+2023-10-02 16:19:30,083 - INFO - Starting the merge operation
+2023-10-02 16:19:30,205 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:19:30,247 - INFO - Team: LIV
+2023-10-02 16:19:30,268 - INFO - Most frequent Team_long value of LIV: Liverpool
+2023-10-02 16:19:30,269 - INFO - Team: MCI
+2023-10-02 16:19:30,272 - INFO - Most frequent Team_long value of MCI: Manchester City
+2023-10-02 16:19:30,272 - INFO - Team: TOT
+2023-10-02 16:19:30,276 - INFO - Most frequent Team_long value of TOT: Tottenham
+2023-10-02 16:19:30,276 - INFO - Team: NOT
+2023-10-02 16:19:30,278 - INFO - Most frequent Team_long value of NOT: Nott'ham Forest
+2023-10-02 16:19:30,279 - INFO - Team: ARS
+2023-10-02 16:19:30,281 - INFO - Most frequent Team_long value of ARS: Arsenal
+2023-10-02 16:19:30,281 - INFO - Team: WOL
+2023-10-02 16:19:30,285 - INFO - Most frequent Team_long value of WOL: Wolves
+2023-10-02 16:19:30,286 - INFO - Team: AVL
+2023-10-02 16:19:30,288 - INFO - Most frequent Team_long value of AVL: Aston Villa
+2023-10-02 16:19:30,288 - INFO - Team: WHU
+2023-10-02 16:19:30,289 - INFO - Most frequent Team_long value of WHU: West Ham
+2023-10-02 16:19:30,289 - INFO - Team: NEW
+2023-10-02 16:19:30,292 - INFO - Most frequent Team_long value of NEW: Newcastle Utd
+2023-10-02 16:19:30,292 - INFO - Team: BHA
+2023-10-02 16:19:30,295 - INFO - Most frequent Team_long value of BHA: Brighton
+2023-10-02 16:19:30,295 - INFO - Team: SHU
+2023-10-02 16:19:30,298 - INFO - Most frequent Team_long value of SHU: Sheffield Utd
+2023-10-02 16:19:30,298 - INFO - Team: CRY
+2023-10-02 16:19:30,300 - INFO - Most frequent Team_long value of CRY: Crystal Palace
+2023-10-02 16:19:30,300 - INFO - Team: FUL
+2023-10-02 16:19:30,303 - INFO - Most frequent Team_long value of FUL: Fulham
+2023-10-02 16:19:30,303 - INFO - Team: BOU
+2023-10-02 16:19:30,305 - INFO - Most frequent Team_long value of BOU: Bournemouth
+2023-10-02 16:19:30,305 - INFO - Team: BUR
+2023-10-02 16:19:30,306 - INFO - Most frequent Team_long value of BUR: Burnley
+2023-10-02 16:19:30,306 - INFO - Team: LUT
+2023-10-02 16:19:30,308 - INFO - Most frequent Team_long value of LUT: Luton Town
+2023-10-02 16:19:30,308 - INFO - Team: BRF
+2023-10-02 16:19:30,310 - INFO - Most frequent Team_long value of BRF: Brentford
+2023-10-02 16:19:30,311 - INFO - Team: CHE
+2023-10-02 16:19:30,313 - INFO - Most frequent Team_long value of CHE: Chelsea
+2023-10-02 16:19:30,313 - INFO - Team: MUN
+2023-10-02 16:19:30,315 - INFO - Most frequent Team_long value of MUN: Manchester Utd
+2023-10-02 16:19:30,315 - INFO - Team: EVE
+2023-10-02 16:19:30,317 - INFO - Most frequent Team_long value of EVE: Everton
+2023-10-02 16:19:35,331 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home   Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False    Chelsea        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False  Brentford        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN    Burnley              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:19:35,331 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:19:35,332 - INFO - Attempting to style the final dataframe
+2023-10-02 16:19:35,332 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:19:39,972 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:19:39,972 - INFO - Styling completed, proceeding to display
+2023-10-02 16:19:44,575 - INFO - Main function completed successfully
+2023-10-02 16:20:48,736 - INFO - Starting main function
+2023-10-02 16:20:48,738 - INFO - Creating custom color maps
+2023-10-02 16:20:48,739 - INFO - Custom color maps created
+2023-10-02 16:20:48,740 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:20:48,779 - INFO - Data loaded and concatenated
+2023-10-02 16:20:48,779 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:20:48,834 - INFO - Cleaning dataframes before merging
+2023-10-02 16:20:48,909 - INFO - fbref_df cleaned
+2023-10-02 16:20:48,940 - INFO - gws_df cleaned
+2023-10-02 16:20:48,942 - INFO - GW columns converted to float
+2023-10-02 16:20:48,956 - INFO - Starting the merge operation
+2023-10-02 16:20:49,064 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:20:49,117 - INFO - Team: LIV
+2023-10-02 16:20:49,141 - INFO - Most frequent Team_long value of LIV: Liverpool
+2023-10-02 16:20:49,156 - INFO - Team: MCI
+2023-10-02 16:20:49,159 - INFO - Most frequent Team_long value of MCI: Manchester City
+2023-10-02 16:20:49,181 - INFO - Team: TOT
+2023-10-02 16:20:49,184 - INFO - Most frequent Team_long value of TOT: Tottenham
+2023-10-02 16:20:49,184 - INFO - Team: NOT
+2023-10-02 16:20:49,187 - INFO - Most frequent Team_long value of NOT: Nott'ham Forest
+2023-10-02 16:20:49,188 - INFO - Team: ARS
+2023-10-02 16:20:49,190 - INFO - Most frequent Team_long value of ARS: Arsenal
+2023-10-02 16:20:49,190 - INFO - Team: WOL
+2023-10-02 16:20:49,193 - INFO - Most frequent Team_long value of WOL: Wolves
+2023-10-02 16:20:49,193 - INFO - Team: AVL
+2023-10-02 16:20:49,196 - INFO - Most frequent Team_long value of AVL: Aston Villa
+2023-10-02 16:20:49,196 - INFO - Team: WHU
+2023-10-02 16:20:49,199 - INFO - Most frequent Team_long value of WHU: West Ham
+2023-10-02 16:20:49,199 - INFO - Team: NEW
+2023-10-02 16:20:49,201 - INFO - Most frequent Team_long value of NEW: Newcastle Utd
+2023-10-02 16:20:49,201 - INFO - Team: BHA
+2023-10-02 16:20:49,203 - INFO - Most frequent Team_long value of BHA: Brighton
+2023-10-02 16:20:49,204 - INFO - Team: SHU
+2023-10-02 16:20:49,207 - INFO - Most frequent Team_long value of SHU: Sheffield Utd
+2023-10-02 16:20:49,207 - INFO - Team: CRY
+2023-10-02 16:20:49,209 - INFO - Most frequent Team_long value of CRY: Crystal Palace
+2023-10-02 16:20:49,209 - INFO - Team: FUL
+2023-10-02 16:20:49,211 - INFO - Most frequent Team_long value of FUL: Fulham
+2023-10-02 16:20:49,211 - INFO - Team: BOU
+2023-10-02 16:20:49,212 - INFO - Most frequent Team_long value of BOU: Bournemouth
+2023-10-02 16:20:49,212 - INFO - Team: BUR
+2023-10-02 16:20:49,214 - INFO - Most frequent Team_long value of BUR: Burnley
+2023-10-02 16:20:49,214 - INFO - Team: LUT
+2023-10-02 16:20:49,217 - INFO - Most frequent Team_long value of LUT: Luton Town
+2023-10-02 16:20:49,218 - INFO - Team: BRF
+2023-10-02 16:20:49,220 - INFO - Most frequent Team_long value of BRF: Brentford
+2023-10-02 16:20:49,221 - INFO - Team: CHE
+2023-10-02 16:20:49,223 - INFO - Most frequent Team_long value of CHE: Chelsea
+2023-10-02 16:20:49,223 - INFO - Team: MUN
+2023-10-02 16:20:49,226 - INFO - Most frequent Team_long value of MUN: Manchester Utd
+2023-10-02 16:20:49,227 - INFO - Team: EVE
+2023-10-02 16:20:49,230 - INFO - Most frequent Team_long value of EVE: Everton
+2023-10-02 16:20:52,595 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home  Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False       NaN        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False       NaN  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False       NaN        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN       NaN              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False       NaN  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:20:52,595 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:20:52,595 - INFO - Attempting to style the final dataframe
+2023-10-02 16:20:52,595 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:20:56,740 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 30 columns]
+2023-10-02 16:20:56,740 - INFO - Styling completed, proceeding to display
+2023-10-02 16:20:59,759 - INFO - Main function completed successfully
+2023-10-02 16:30:08,818 - INFO - Starting main function
+2023-10-02 16:30:08,819 - INFO - Creating custom color maps
+2023-10-02 16:30:08,822 - INFO - Custom color maps created
+2023-10-02 16:30:08,823 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:30:08,860 - INFO - Data loaded and concatenated
+2023-10-02 16:30:08,861 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:30:08,875 - INFO - Cleaning dataframes before merging
+2023-10-02 16:30:08,930 - INFO - fbref_df cleaned
+2023-10-02 16:30:08,950 - INFO - gws_df cleaned
+2023-10-02 16:30:08,952 - INFO - GW columns converted to float
+2023-10-02 16:30:08,955 - INFO - Starting the merge operation
+2023-10-02 16:30:09,007 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:30:09,029 - INFO - Team: LIV
+2023-10-02 16:30:09,035 - INFO - Most frequent Team_long value of LIV: Liverpool
+2023-10-02 16:30:09,035 - INFO - Team: MCI
+2023-10-02 16:30:09,037 - INFO - Most frequent Team_long value of MCI: Manchester City
+2023-10-02 16:30:09,037 - INFO - Team: TOT
+2023-10-02 16:30:09,039 - INFO - Most frequent Team_long value of TOT: Tottenham
+2023-10-02 16:30:09,039 - INFO - Team: NOT
+2023-10-02 16:30:09,041 - INFO - Most frequent Team_long value of NOT: Nott'ham Forest
+2023-10-02 16:30:09,041 - INFO - Team: ARS
+2023-10-02 16:30:09,043 - INFO - Most frequent Team_long value of ARS: Arsenal
+2023-10-02 16:30:09,043 - INFO - Team: WOL
+2023-10-02 16:30:09,045 - INFO - Most frequent Team_long value of WOL: Wolves
+2023-10-02 16:30:09,045 - INFO - Team: AVL
+2023-10-02 16:30:09,047 - INFO - Most frequent Team_long value of AVL: Aston Villa
+2023-10-02 16:30:09,047 - INFO - Team: WHU
+2023-10-02 16:30:09,048 - INFO - Most frequent Team_long value of WHU: West Ham
+2023-10-02 16:30:09,049 - INFO - Team: NEW
+2023-10-02 16:30:09,051 - INFO - Most frequent Team_long value of NEW: Newcastle Utd
+2023-10-02 16:30:09,051 - INFO - Team: BHA
+2023-10-02 16:30:09,053 - INFO - Most frequent Team_long value of BHA: Brighton
+2023-10-02 16:30:09,053 - INFO - Team: SHU
+2023-10-02 16:30:09,054 - INFO - Most frequent Team_long value of SHU: Sheffield Utd
+2023-10-02 16:30:09,054 - INFO - Team: CRY
+2023-10-02 16:30:09,056 - INFO - Most frequent Team_long value of CRY: Crystal Palace
+2023-10-02 16:30:09,056 - INFO - Team: FUL
+2023-10-02 16:30:09,058 - INFO - Most frequent Team_long value of FUL: Fulham
+2023-10-02 16:30:09,058 - INFO - Team: BOU
+2023-10-02 16:30:09,059 - INFO - Most frequent Team_long value of BOU: Bournemouth
+2023-10-02 16:30:09,059 - INFO - Team: BUR
+2023-10-02 16:30:09,060 - INFO - Most frequent Team_long value of BUR: Burnley
+2023-10-02 16:30:09,060 - INFO - Team: LUT
+2023-10-02 16:30:09,061 - INFO - Most frequent Team_long value of LUT: Luton Town
+2023-10-02 16:30:09,062 - INFO - Team: BRF
+2023-10-02 16:30:09,064 - INFO - Most frequent Team_long value of BRF: Brentford
+2023-10-02 16:30:09,064 - INFO - Team: CHE
+2023-10-02 16:30:09,067 - INFO - Most frequent Team_long value of CHE: Chelsea
+2023-10-02 16:30:09,067 - INFO - Team: MUN
+2023-10-02 16:30:09,069 - INFO - Most frequent Team_long value of MUN: Manchester Utd
+2023-10-02 16:30:09,069 - INFO - Team: EVE
+2023-10-02 16:30:09,071 - INFO - Most frequent Team_long value of EVE: Everton
+2023-10-02 16:30:12,329 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home   Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False    Chelsea        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False  Brentford        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN    Burnley              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False    Burnley  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:30:12,332 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:30:12,332 - INFO - Attempting to style the final dataframe
+2023-10-02 16:30:12,332 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:30:16,243 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:30:16,243 - INFO - Styling completed, proceeding to display
+2023-10-02 16:30:19,607 - INFO - Main function completed successfully
+2023-10-02 16:34:07,452 - INFO - Starting main function
+2023-10-02 16:34:07,454 - INFO - Creating custom color maps
+2023-10-02 16:34:07,456 - INFO - Custom color maps created
+2023-10-02 16:34:07,457 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:34:07,489 - INFO - Data loaded and concatenated
+2023-10-02 16:34:07,489 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:34:07,508 - INFO - Cleaning dataframes before merging
+2023-10-02 16:34:07,575 - INFO - fbref_df cleaned
+2023-10-02 16:34:07,602 - INFO - gws_df cleaned
+2023-10-02 16:34:07,604 - INFO - GW columns converted to float
+2023-10-02 16:34:07,609 - INFO - Starting the merge operation
+2023-10-02 16:34:07,686 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:34:07,722 - INFO - Team: LIV
+2023-10-02 16:34:07,727 - INFO - Most frequent Team_long value of LIV: Liverpool
+2023-10-02 16:34:07,728 - INFO - Team: MCI
+2023-10-02 16:34:07,729 - INFO - Most frequent Team_long value of MCI: Manchester City
+2023-10-02 16:34:07,729 - INFO - Team: TOT
+2023-10-02 16:34:07,730 - INFO - Most frequent Team_long value of TOT: Tottenham
+2023-10-02 16:34:07,730 - INFO - Team: NOT
+2023-10-02 16:34:07,732 - INFO - Most frequent Team_long value of NOT: Nott'ham Forest
+2023-10-02 16:34:07,732 - INFO - Team: ARS
+2023-10-02 16:34:07,733 - INFO - Most frequent Team_long value of ARS: Arsenal
+2023-10-02 16:34:07,733 - INFO - Team: WOL
+2023-10-02 16:34:07,736 - INFO - Most frequent Team_long value of WOL: Wolves
+2023-10-02 16:34:07,736 - INFO - Team: AVL
+2023-10-02 16:34:07,738 - INFO - Most frequent Team_long value of AVL: Aston Villa
+2023-10-02 16:34:07,738 - INFO - Team: WHU
+2023-10-02 16:34:07,740 - INFO - Most frequent Team_long value of WHU: West Ham
+2023-10-02 16:34:07,741 - INFO - Team: NEW
+2023-10-02 16:34:07,743 - INFO - Most frequent Team_long value of NEW: Newcastle Utd
+2023-10-02 16:34:07,743 - INFO - Team: BHA
+2023-10-02 16:34:07,744 - INFO - Most frequent Team_long value of BHA: Brighton
+2023-10-02 16:34:07,745 - INFO - Team: SHU
+2023-10-02 16:34:07,746 - INFO - Most frequent Team_long value of SHU: Sheffield Utd
+2023-10-02 16:34:07,746 - INFO - Team: CRY
+2023-10-02 16:34:07,747 - INFO - Most frequent Team_long value of CRY: Crystal Palace
+2023-10-02 16:34:07,747 - INFO - Team: FUL
+2023-10-02 16:34:07,749 - INFO - Most frequent Team_long value of FUL: Fulham
+2023-10-02 16:34:07,749 - INFO - Team: BOU
+2023-10-02 16:34:07,750 - INFO - Most frequent Team_long value of BOU: Bournemouth
+2023-10-02 16:34:07,750 - INFO - Team: BUR
+2023-10-02 16:34:07,752 - INFO - Most frequent Team_long value of BUR: Burnley
+2023-10-02 16:34:07,752 - INFO - Team: LUT
+2023-10-02 16:34:07,754 - INFO - Most frequent Team_long value of LUT: Luton Town
+2023-10-02 16:34:07,754 - INFO - Team: BRF
+2023-10-02 16:34:07,755 - INFO - Most frequent Team_long value of BRF: Brentford
+2023-10-02 16:34:07,755 - INFO - Team: CHE
+2023-10-02 16:34:07,757 - INFO - Most frequent Team_long value of CHE: Chelsea
+2023-10-02 16:34:07,757 - INFO - Team: MUN
+2023-10-02 16:34:07,759 - INFO - Most frequent Team_long value of MUN: Manchester Utd
+2023-10-02 16:34:07,759 - INFO - Team: EVE
+2023-10-02 16:34:07,761 - INFO - Most frequent Team_long value of EVE: Everton
+2023-10-02 16:34:12,237 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home  Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False       CHE        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False       BUR  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False       BRF        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN       BUR              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False       BUR  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:34:12,237 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:34:12,237 - INFO - Attempting to style the final dataframe
+2023-10-02 16:34:12,237 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:34:16,226 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:34:16,226 - INFO - Styling completed, proceeding to display
+2023-10-02 16:34:19,855 - INFO - Main function completed successfully
+2023-10-02 16:36:06,780 - INFO - Starting main function
+2023-10-02 16:36:06,781 - INFO - Creating custom color maps
+2023-10-02 16:36:06,781 - INFO - Custom color maps created
+2023-10-02 16:36:06,782 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:36:06,793 - INFO - Data loaded and concatenated
+2023-10-02 16:36:06,794 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:36:06,805 - INFO - Cleaning dataframes before merging
+2023-10-02 16:36:06,857 - INFO - fbref_df cleaned
+2023-10-02 16:36:06,901 - INFO - gws_df cleaned
+2023-10-02 16:36:06,903 - INFO - GW columns converted to float
+2023-10-02 16:36:06,911 - INFO - Starting the merge operation
+2023-10-02 16:36:07,077 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:36:07,151 - INFO - Team: LIV
+2023-10-02 16:36:07,158 - INFO - Most frequent Team_long value of LIV: Liverpool
+2023-10-02 16:36:07,159 - INFO - Team: MCI
+2023-10-02 16:36:07,162 - INFO - Most frequent Team_long value of MCI: Manchester City
+2023-10-02 16:36:07,162 - INFO - Team: TOT
+2023-10-02 16:36:07,178 - INFO - Most frequent Team_long value of TOT: Tottenham
+2023-10-02 16:36:07,178 - INFO - Team: NOT
+2023-10-02 16:36:07,180 - INFO - Most frequent Team_long value of NOT: Nott'ham Forest
+2023-10-02 16:36:07,180 - INFO - Team: ARS
+2023-10-02 16:36:07,185 - INFO - Most frequent Team_long value of ARS: Arsenal
+2023-10-02 16:36:07,185 - INFO - Team: WOL
+2023-10-02 16:36:07,188 - INFO - Most frequent Team_long value of WOL: Wolves
+2023-10-02 16:36:07,195 - INFO - Team: AVL
+2023-10-02 16:36:07,197 - INFO - Most frequent Team_long value of AVL: Aston Villa
+2023-10-02 16:36:07,197 - INFO - Team: WHU
+2023-10-02 16:36:07,204 - INFO - Most frequent Team_long value of WHU: West Ham
+2023-10-02 16:36:07,218 - INFO - Team: NEW
+2023-10-02 16:36:07,224 - INFO - Most frequent Team_long value of NEW: Newcastle Utd
+2023-10-02 16:36:07,224 - INFO - Team: BHA
+2023-10-02 16:36:07,227 - INFO - Most frequent Team_long value of BHA: Brighton
+2023-10-02 16:36:07,228 - INFO - Team: SHU
+2023-10-02 16:36:07,232 - INFO - Most frequent Team_long value of SHU: Sheffield Utd
+2023-10-02 16:36:07,251 - INFO - Team: CRY
+2023-10-02 16:36:07,262 - INFO - Most frequent Team_long value of CRY: Crystal Palace
+2023-10-02 16:36:07,274 - INFO - Team: FUL
+2023-10-02 16:36:07,281 - INFO - Most frequent Team_long value of FUL: Fulham
+2023-10-02 16:36:07,281 - INFO - Team: BOU
+2023-10-02 16:36:07,327 - INFO - Most frequent Team_long value of BOU: Bournemouth
+2023-10-02 16:36:07,327 - INFO - Team: BUR
+2023-10-02 16:36:07,331 - INFO - Most frequent Team_long value of BUR: Burnley
+2023-10-02 16:36:07,331 - INFO - Team: LUT
+2023-10-02 16:36:07,338 - INFO - Most frequent Team_long value of LUT: Luton Town
+2023-10-02 16:36:07,339 - INFO - Team: BRF
+2023-10-02 16:36:07,342 - INFO - Most frequent Team_long value of BRF: Brentford
+2023-10-02 16:36:07,342 - INFO - Team: CHE
+2023-10-02 16:36:07,351 - INFO - Most frequent Team_long value of CHE: Chelsea
+2023-10-02 16:36:07,352 - INFO - Team: MUN
+2023-10-02 16:36:07,359 - INFO - Most frequent Team_long value of MUN: Manchester Utd
+2023-10-02 16:36:07,359 - INFO - Team: EVE
+2023-10-02 16:36:07,378 - INFO - Most frequent Team_long value of EVE: Everton
+2023-10-02 16:36:11,400 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home  Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False       CHE        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False       BUR  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False       BRF        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN       BUR              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False       BUR  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:36:11,400 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:36:11,400 - INFO - Attempting to style the final dataframe
+2023-10-02 16:36:11,400 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:36:15,622 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 29 columns]
+2023-10-02 16:36:15,622 - INFO - Styling completed, proceeding to display
+2023-10-02 16:36:19,689 - INFO - Main function completed successfully
+2023-10-02 16:40:07,483 - INFO - Starting main function
+2023-10-02 16:40:07,485 - INFO - Creating custom color maps
+2023-10-02 16:40:07,487 - INFO - Custom color maps created
+2023-10-02 16:40:07,488 - INFO - Loading and concatenating data from fantrax and ROS
+2023-10-02 16:40:07,531 - INFO - Data loaded and concatenated
+2023-10-02 16:40:07,543 - INFO - Applying unidecode to Player column for all dataframes
+2023-10-02 16:40:07,566 - INFO - Cleaning dataframes before merging
+2023-10-02 16:40:07,635 - INFO - fbref_df cleaned
+2023-10-02 16:40:07,664 - INFO - gws_df cleaned
+2023-10-02 16:40:07,665 - INFO - GW columns converted to float
+2023-10-02 16:40:07,670 - INFO - Starting the merge operation
+2023-10-02 16:40:07,739 - INFO - Merge operation completed. Resulting dataframe: (3840, 33)              Player  ROS Rank  +/- Team_ros Pos Team_gws Position  RkOv  FPts  FP/G  ... CLR  CoS  BS  AER  PKM  PKD  OG  GAO  CS  GW
+0     Mohamed Salah       3.0  0.0      LIV   F      LIV        F     8  26.5  26.5  ...   0    0   0    1    0    0   0    1   0   1
+1    Bernardo Silva      90.0  2.0      MCI   M      MCI        M   129  26.5  26.5  ...   0    1   0    0    0    0   0    1   0   1
+2  Dejan Kulusevski      28.0  5.0      TOT   M      TOT        M    19  25.5  25.5  ...   0    0   0    1    0    0   0    1   0   1
+3       Jeremy Doku      57.0 -2.0      MCI   F      MCI        F    80  24.5  24.5  ...   0    3   0    1    0    0   0    1   0   1
+4    Erling Haaland       1.0  0.0      MCI   F      MCI        F     2  23.5  23.5  ...   0    0   0    1    0    0   0    1   0   1
+
+[5 rows x 33 columns]
+2023-10-02 16:40:07,765 - INFO - Team: LIV
+2023-10-02 16:40:07,771 - INFO - Most frequent Team_long value of LIV: Liverpool
+2023-10-02 16:40:07,772 - INFO - Team: MCI
+2023-10-02 16:40:07,774 - INFO - Most frequent Team_long value of MCI: Manchester City
+2023-10-02 16:40:07,774 - INFO - Team: TOT
+2023-10-02 16:40:07,777 - INFO - Most frequent Team_long value of TOT: Tottenham
+2023-10-02 16:40:07,777 - INFO - Team: NOT
+2023-10-02 16:40:07,779 - INFO - Most frequent Team_long value of NOT: Nott'ham Forest
+2023-10-02 16:40:07,779 - INFO - Team: ARS
+2023-10-02 16:40:07,781 - INFO - Most frequent Team_long value of ARS: Arsenal
+2023-10-02 16:40:07,781 - INFO - Team: WOL
+2023-10-02 16:40:07,783 - INFO - Most frequent Team_long value of WOL: Wolves
+2023-10-02 16:40:07,783 - INFO - Team: AVL
+2023-10-02 16:40:07,784 - INFO - Most frequent Team_long value of AVL: Aston Villa
+2023-10-02 16:40:07,784 - INFO - Team: WHU
+2023-10-02 16:40:07,786 - INFO - Most frequent Team_long value of WHU: West Ham
+2023-10-02 16:40:07,786 - INFO - Team: NEW
+2023-10-02 16:40:07,787 - INFO - Most frequent Team_long value of NEW: Newcastle Utd
+2023-10-02 16:40:07,788 - INFO - Team: BHA
+2023-10-02 16:40:07,789 - INFO - Most frequent Team_long value of BHA: Brighton
+2023-10-02 16:40:07,789 - INFO - Team: SHU
+2023-10-02 16:40:07,791 - INFO - Most frequent Team_long value of SHU: Sheffield Utd
+2023-10-02 16:40:07,791 - INFO - Team: CRY
+2023-10-02 16:40:07,793 - INFO - Most frequent Team_long value of CRY: Crystal Palace
+2023-10-02 16:40:07,793 - INFO - Team: FUL
+2023-10-02 16:40:07,796 - INFO - Most frequent Team_long value of FUL: Fulham
+2023-10-02 16:40:07,796 - INFO - Team: BOU
+2023-10-02 16:40:07,799 - INFO - Most frequent Team_long value of BOU: Bournemouth
+2023-10-02 16:40:07,799 - INFO - Team: BUR
+2023-10-02 16:40:07,801 - INFO - Most frequent Team_long value of BUR: Burnley
+2023-10-02 16:40:07,801 - INFO - Team: LUT
+2023-10-02 16:40:07,803 - INFO - Most frequent Team_long value of LUT: Luton Town
+2023-10-02 16:40:07,803 - INFO - Team: BRF
+2023-10-02 16:40:07,805 - INFO - Most frequent Team_long value of BRF: Brentford
+2023-10-02 16:40:07,805 - INFO - Team: CHE
+2023-10-02 16:40:07,806 - INFO - Most frequent Team_long value of CHE: Chelsea
+2023-10-02 16:40:07,806 - INFO - Team: MUN
+2023-10-02 16:40:07,808 - INFO - Most frequent Team_long value of MUN: Manchester Utd
+2023-10-02 16:40:07,808 - INFO - Team: EVE
+2023-10-02 16:40:07,811 - INFO - Most frequent Team_long value of EVE: Everton
+2023-10-02 16:40:10,927 - INFO - Merge operation completed. Resulting dataframe: (3840, 36)              Player  ROS Rank  +/- Pos Team Position  RkOv  FPts  ...  OG GAO  CS  GW  started   Home  Opponent        Team_long
+0     Mohamed Salah         3  0.0   F  LIV        F     8  26.5  ...   0   1   0   1     True  False       CHE        Liverpool
+1    Bernardo Silva        90  2.0   M  MCI        M   129  26.5  ...   0   1   0   1     True  False       BUR  Manchester City
+2  Dejan Kulusevski        28  5.0   M  TOT        M    19  25.5  ...   0   1   0   1     True  False       BRF        Tottenham
+3       Jeremy Doku        57 -2.0   F  MCI        F    80  24.5  ...   0   1   0   1     True    NaN       BUR              NaN
+4    Erling Haaland         1  0.0   F  MCI        F     2  23.5  ...   0   1   0   1     True  False       BUR  Manchester City
+
+[5 rows x 36 columns]
+2023-10-02 16:40:10,928 - INFO - Columns to keep: ['Player', 'Position', 'Team', 'GW', 'Opponent', 'Home', 'ROS Rank', 'SellHighScore', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS']
+2023-10-02 16:40:10,929 - WARNING - Warning: These columns are missing in 'all_data': ['SellHighScore']
+2023-10-02 16:40:10,929 - INFO - Attempting to style the final dataframe
+2023-10-02 16:40:10,929 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 16:40:14,624 - INFO - Portion of styled DataFrame:                                   Position  ...                                       CS
+0  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+1  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+2  background-color: #08071d; color: white  ...  background-color: #140b04; color: white
+3  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+4  background-color: #370618; color: white  ...  background-color: #140b04; color: white
+
+[5 rows x 30 columns]
+2023-10-02 16:40:14,624 - INFO - Styling completed, proceeding to display
+2023-10-02 16:40:18,081 - INFO - Main function completed successfully
+2023-10-02 17:05:31,103 - INFO - Starting main function
+2023-10-02 17:05:31,105 - INFO - Creating custom color maps
+2023-10-02 17:05:31,106 - INFO - Custom color maps created
+2023-10-02 17:05:31,136 - INFO - Attempting to style the final dataframe
+2023-10-02 17:05:31,136 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', '+/-', 'Pos', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 17:05:35,835 - INFO - Portion of styled DataFrame:                                   Position  ...                                     Home
+0  background-color: #370618; color: white  ...  background-color: #1c1625; color: white
+1  background-color: #08071d; color: white  ...  background-color: #1c1625; color: white
+2  background-color: #08071d; color: white  ...  background-color: #1c1625; color: white
+3  background-color: #370618; color: white  ...                                         
+4  background-color: #370618; color: white  ...  background-color: #1c1625; color: white
+
+[5 rows x 31 columns]
+2023-10-02 17:05:35,836 - INFO - Styling completed, proceeding to display
+2023-10-02 17:05:38,910 - INFO - Main function completed successfully
