@@ -2173,3 +2173,37 @@
 [5 rows x 31 columns]
 2023-10-02 17:05:35,836 - INFO - Styling completed, proceeding to display
 2023-10-02 17:05:38,910 - INFO - Main function completed successfully
+2023-10-02 17:10:27,306 - INFO - Starting main function
+2023-10-02 17:10:27,307 - INFO - Creating custom color maps
+2023-10-02 17:10:27,319 - INFO - Custom color maps created
+2023-10-02 17:10:27,385 - INFO - Attempting to style the final dataframe
+2023-10-02 17:10:27,386 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 17:10:31,807 - INFO - Portion of styled DataFrame:                                   Position  ...                                     Home
+0  background-color: #370618; color: white  ...  background-color: #1c1625; color: white
+1  background-color: #08071d; color: white  ...  background-color: #1c1625; color: white
+2  background-color: #08071d; color: white  ...  background-color: #1c1625; color: white
+3  background-color: #370618; color: white  ...                                         
+4  background-color: #370618; color: white  ...  background-color: #1c1625; color: white
+
+[5 rows x 30 columns]
+2023-10-02 17:10:31,807 - INFO - Styling completed, proceeding to display
+2023-10-02 17:10:36,070 - INFO - Main function completed successfully
+2023-10-02 17:14:33,136 - INFO - Starting main function
+2023-10-02 17:14:33,143 - INFO - Creating custom color maps
+2023-10-02 17:14:33,156 - INFO - Custom color maps created
+2023-10-02 17:14:33,209 - INFO - Attempting to style the final dataframe
+2023-10-02 17:14:33,209 - INFO - Columns in all_data before styling: ['Player', 'ROS Rank', 'Team', 'Position', 'RkOv', 'FPts', 'FP/G', 'Ros %', 'GP', 'Min', 'G', 'KP', 'AT', 'SOT', 'TkW', 'DIS', 'YC', 'RC', 'ACNC', 'Int', 'CLR', 'CoS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'started', 'Home', 'Opponent', 'Team_long']
+2023-10-02 17:14:37,670 - INFO - Portion of styled DataFrame:                                   Position  ...                                     Home
+0  background-color: #370618; color: white  ...  background-color: #1c1625; color: white
+1  background-color: #08071d; color: white  ...  background-color: #1c1625; color: white
+2  background-color: #08071d; color: white  ...  background-color: #1c1625; color: white
+3  background-color: #370618; color: white  ...                                         
+4  background-color: #370618; color: white  ...  background-color: #1c1625; color: white
+
+[5 rows x 30 columns]
+2023-10-02 17:14:37,670 - INFO - Styling completed, proceeding to display
+2023-10-02 17:14:41,139 - INFO - Main function completed successfully
+2023-10-02 17:26:27,521 - INFO - Starting main function
+2023-10-02 17:26:27,523 - INFO - Creating custom color maps
+2023-10-02 17:26:27,579 - INFO - Attempting to style the final dataframe
+2023-10-02 17:26:34,814 - INFO - Main function completed successfully
