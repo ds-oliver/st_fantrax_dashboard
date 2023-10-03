@@ -31,6 +31,10 @@ st.set_page_config(
 
 load_css()
 
+@st.cache_data
+def load_csv_file(csv_file):
+    return pd.read_csv(csv_file)
+
 warnings.filterwarnings('ignore')
 
 scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
@@ -44,13 +48,14 @@ def main():
     custom_cmap = create_custom_sequential_cmap(*colors)
     custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
 
-    df = pd.read_csv('cleaned_transformed_data.csv')
+    df = load_csv_file('cleaned_transformed_data.csv')
+
     columns_to_keep = df.columns.tolist()
 
     try:
         logging.info("Attempting to style the final dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=1000)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=200)
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
