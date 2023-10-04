@@ -16,3 +16,4 @@ pages/info_streamlit_app_logs.log
 *.log
 pages/info_streamlit_app_logs.log
 __pycache__/functions.cpython-311.pyc
+__pycache__/functions.cpython-311.pyc
