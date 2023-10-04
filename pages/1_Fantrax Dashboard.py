@@ -50,7 +50,7 @@ def main():
 
     grouped_df = load_csv_file('all_game_weeks_data.csv')
 
-    lastgw_df = load_csv_file('last_game_week_data.csv')
+    lastgw_df = load_csv_file('recent_gw_data.csv')
 
     columns_to_keep = lastgw_df.columns.tolist()
 

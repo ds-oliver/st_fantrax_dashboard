@@ -11224,3 +11224,916 @@ dtype: int64
 2023-10-03 20:03:47,693 - INFO - Dataframe nans analysis for dataframe: FINAL
 2023-10-03 20:03:47,695 - INFO - Columns where there are some nans: []
 2023-10-03 20:03:47,706 - INFO - End of main function
+2023-10-03 20:16:16,714 - INFO - Starting main function
+2023-10-03 20:16:16,806 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:16:26,976 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:16:26,977 - INFO - Unique unique_ids in fbref_df: 432
+2023-10-03 20:16:26,979 - INFO - Dataframe name: ROS
+2023-10-03 20:16:26,979 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:16:26,979 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:16:26,996 - INFO - Dataframe info: None
+2023-10-03 20:16:27,004 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:16:27,007 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:16:27,017 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:16:27,018 - INFO - Columns where there are some nans: []
+2023-10-03 20:16:27,019 - INFO - Dataframe name: FBREF
+2023-10-03 20:16:27,019 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:16:27,019 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:16:27,027 - INFO - Dataframe info: None
+2023-10-03 20:16:27,084 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN      ZEK53
+1   Anass Zaroury           19  ...        NaN     ANA139
+2     Lyle Foster           17  ...        NaN     LYL516
+3  Nathan Redmond           15  ...        NaN     NAT455
+4     Josh Cullen           24  ...        NaN     JOS506
+
+[5 rows x 109 columns]
+2023-10-03 20:16:27,126 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV308
+2079    Thiago Silva            6  ...        NaN     THI180
+2080     Axel Disasi            2  ...        NaN     AXE569
+2081  Marc Cucurella            3  ...        NaN     MAR607
+2082  Robert Sanchez            1  ...        NaN     ROB649
+
+[5 rows x 109 columns]
+2023-10-03 20:16:27,242 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:16:27,245 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:16:27,248 - INFO - Dataframe name: GWS
+2023-10-03 20:16:27,248 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:16:27,248 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:16:27,257 - INFO - Dataframe info: None
+2023-10-03 20:16:27,277 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH453
+1    Bernardo Silva  MCI        M   129  ...    1   0  5      BER54
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ361
+3       Jeremy Doku  MCI        F    80  ...    1   0  5      JER51
+4    Erling Haaland  MCI        F     2  ...    1   0  5      ERL75
+
+[5 rows x 30 columns]
+2023-10-03 20:16:27,297 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL131
+4476       Luke Thomas  SHU        D   722  ...    8   0  6      LUK44
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH354
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6      ANE88
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC228
+
+[5 rows x 30 columns]
+2023-10-03 20:16:27,354 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:16:27,358 - INFO - Columns where there are some nans: []
+2023-10-03 20:16:27,361 - INFO - Merging dataframes
+2023-10-03 20:16:27,597 - INFO - Dataframe name: MERGED
+2023-10-03 20:16:27,597 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:16:27,597 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:16:27,605 - INFO - Dataframe info: None
+2023-10-03 20:16:27,631 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:16:27,655 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:16:27,725 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:16:27,727 - INFO - Columns where there are some nans: []
+2023-10-03 20:16:53,900 - INFO - Starting main function
+2023-10-03 20:16:53,994 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:17:02,178 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:17:02,178 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-03 20:17:02,180 - INFO - Dataframe name: ROS
+2023-10-03 20:17:02,180 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:17:02,180 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:17:02,188 - INFO - Dataframe info: None
+2023-10-03 20:17:02,193 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:17:02,196 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:17:02,209 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:17:02,210 - INFO - Columns where there are some nans: []
+2023-10-03 20:17:02,211 - INFO - Dataframe name: FBREF
+2023-10-03 20:17:02,212 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:17:02,212 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:17:02,219 - INFO - Dataframe info: None
+2023-10-03 20:17:02,273 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK444
+1   Anass Zaroury           19  ...        NaN      ANA71
+2     Lyle Foster           17  ...        NaN     LYL506
+3  Nathan Redmond           15  ...        NaN     NAT247
+4     Josh Cullen           24  ...        NaN     JOS125
+
+[5 rows x 109 columns]
+2023-10-03 20:17:02,316 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV103
+2079    Thiago Silva            6  ...        NaN     THI201
+2080     Axel Disasi            2  ...        NaN     AXE315
+2081  Marc Cucurella            3  ...        NaN     MAR239
+2082  Robert Sanchez            1  ...        NaN     ROB653
+
+[5 rows x 109 columns]
+2023-10-03 20:17:02,428 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:17:02,431 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:17:02,433 - INFO - Dataframe name: GWS
+2023-10-03 20:17:02,433 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:17:02,433 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:17:02,444 - INFO - Dataframe info: None
+2023-10-03 20:17:02,464 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH505
+1    Bernardo Silva  MCI        M   129  ...    1   0  5     BER585
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ192
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER320
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL357
+
+[5 rows x 30 columns]
+2023-10-03 20:17:02,484 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6       MIL9
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK593
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH562
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6      ANE65
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC431
+
+[5 rows x 30 columns]
+2023-10-03 20:17:02,541 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:17:02,545 - INFO - Columns where there are some nans: []
+2023-10-03 20:17:02,548 - INFO - Merging dataframes
+2023-10-03 20:17:02,770 - INFO - Dataframe name: MERGED
+2023-10-03 20:17:02,770 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:17:02,770 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:17:02,777 - INFO - Dataframe info: None
+2023-10-03 20:17:02,804 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:17:02,832 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:17:02,902 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:17:02,904 - INFO - Columns where there are some nans: []
+2023-10-03 20:17:56,089 - INFO - Starting main function
+2023-10-03 20:17:56,159 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:18:05,851 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:18:05,851 - INFO - Unique unique_ids in fbref_df: 430
+2023-10-03 20:18:05,853 - INFO - Dataframe name: ROS
+2023-10-03 20:18:05,853 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:18:05,853 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:18:05,858 - INFO - Dataframe info: None
+2023-10-03 20:18:05,862 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:18:05,866 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:18:05,882 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:18:05,883 - INFO - Columns where there are some nans: []
+2023-10-03 20:18:05,883 - INFO - Dataframe name: FBREF
+2023-10-03 20:18:05,884 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:18:05,884 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:18:05,893 - INFO - Dataframe info: None
+2023-10-03 20:18:05,952 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK598
+1   Anass Zaroury           19  ...        NaN     ANA220
+2     Lyle Foster           17  ...        NaN      LYL19
+3  Nathan Redmond           15  ...        NaN     NAT272
+4     Josh Cullen           24  ...        NaN     JOS463
+
+[5 rows x 109 columns]
+2023-10-03 20:18:06,000 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV179
+2079    Thiago Silva            6  ...        NaN     THI475
+2080     Axel Disasi            2  ...        NaN     AXE203
+2081  Marc Cucurella            3  ...        NaN     MAR594
+2082  Robert Sanchez            1  ...        NaN     ROB647
+
+[5 rows x 109 columns]
+2023-10-03 20:18:06,118 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:18:06,121 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:18:06,123 - INFO - Dataframe name: GWS
+2023-10-03 20:18:06,124 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:18:06,124 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:18:06,132 - INFO - Dataframe info: None
+2023-10-03 20:18:06,152 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH614
+1    Bernardo Silva  MCI        M   129  ...    1   0  5     BER315
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ105
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER103
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL550
+
+[5 rows x 30 columns]
+2023-10-03 20:18:06,172 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL548
+4476       Luke Thomas  SHU        D   722  ...    8   0  6      LUK70
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH438
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6     ANE263
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC180
+
+[5 rows x 30 columns]
+2023-10-03 20:18:06,231 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:18:06,235 - INFO - Columns where there are some nans: []
+2023-10-03 20:18:06,239 - INFO - Merging dataframes
+2023-10-03 20:18:06,474 - INFO - Dataframe name: MERGED
+2023-10-03 20:18:06,474 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:18:06,474 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:18:06,481 - INFO - Dataframe info: None
+2023-10-03 20:18:06,505 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:18:06,528 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:18:06,595 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:18:06,597 - INFO - Columns where there are some nans: []
+2023-10-03 20:18:57,800 - INFO - Starting main function
+2023-10-03 20:18:57,887 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:19:08,655 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:19:08,656 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-03 20:19:08,659 - INFO - Dataframe name: ROS
+2023-10-03 20:19:08,659 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:19:08,659 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:19:08,689 - INFO - Dataframe info: None
+2023-10-03 20:19:08,707 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:19:08,718 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:19:08,746 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:19:08,748 - INFO - Columns where there are some nans: []
+2023-10-03 20:19:08,749 - INFO - Dataframe name: FBREF
+2023-10-03 20:19:08,750 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:19:08,750 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:19:08,757 - INFO - Dataframe info: None
+2023-10-03 20:19:08,833 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK393
+1   Anass Zaroury           19  ...        NaN      ANA82
+2     Lyle Foster           17  ...        NaN     LYL451
+3  Nathan Redmond           15  ...        NaN      NAT84
+4     Josh Cullen           24  ...        NaN     JOS485
+
+[5 rows x 109 columns]
+2023-10-03 20:19:08,891 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV146
+2079    Thiago Silva            6  ...        NaN      THI95
+2080     Axel Disasi            2  ...        NaN     AXE130
+2081  Marc Cucurella            3  ...        NaN     MAR447
+2082  Robert Sanchez            1  ...        NaN     ROB646
+
+[5 rows x 109 columns]
+2023-10-03 20:19:09,038 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:19:09,040 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:19:09,044 - INFO - Dataframe name: GWS
+2023-10-03 20:19:09,044 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:19:09,044 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:19:09,054 - INFO - Dataframe info: None
+2023-10-03 20:19:09,081 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH607
+1    Bernardo Silva  MCI        M   129  ...    1   0  5      BER63
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ400
+3       Jeremy Doku  MCI        F    80  ...    1   0  5      JER20
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL122
+
+[5 rows x 30 columns]
+2023-10-03 20:19:09,101 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL497
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK265
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH199
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6     ANE125
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC611
+
+[5 rows x 30 columns]
+2023-10-03 20:19:09,247 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:19:09,254 - INFO - Columns where there are some nans: []
+2023-10-03 20:19:09,258 - INFO - Merging dataframes
+2023-10-03 20:19:09,601 - INFO - Dataframe name: MERGED
+2023-10-03 20:19:09,601 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:19:09,601 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:19:09,611 - INFO - Dataframe info: None
+2023-10-03 20:19:09,650 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:19:09,673 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971       Luke Thomas  SHU  ...        -9.25          -16.0
+1972         John Egan  SHU  ...       -10.25          -18.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:19:09,764 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:19:09,766 - INFO - Columns where there are some nans: []
+2023-10-03 20:20:12,843 - INFO - Starting main function
+2023-10-03 20:20:12,945 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:20:25,414 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:20:25,415 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-03 20:20:25,419 - INFO - Dataframe name: ROS
+2023-10-03 20:20:25,419 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:20:25,419 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:20:25,433 - INFO - Dataframe info: None
+2023-10-03 20:20:25,441 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:20:25,445 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:20:25,462 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:20:25,463 - INFO - Columns where there are some nans: []
+2023-10-03 20:20:25,464 - INFO - Dataframe name: FBREF
+2023-10-03 20:20:25,464 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:20:25,464 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:20:25,471 - INFO - Dataframe info: None
+2023-10-03 20:20:25,534 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK597
+1   Anass Zaroury           19  ...        NaN     ANA623
+2     Lyle Foster           17  ...        NaN     LYL220
+3  Nathan Redmond           15  ...        NaN     NAT503
+4     Josh Cullen           24  ...        NaN     JOS534
+
+[5 rows x 109 columns]
+2023-10-03 20:20:25,576 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV290
+2079    Thiago Silva            6  ...        NaN     THI542
+2080     Axel Disasi            2  ...        NaN      AXE12
+2081  Marc Cucurella            3  ...        NaN     MAR293
+2082  Robert Sanchez            1  ...        NaN     ROB644
+
+[5 rows x 109 columns]
+2023-10-03 20:20:25,691 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:20:25,694 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:20:25,696 - INFO - Dataframe name: GWS
+2023-10-03 20:20:25,696 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:20:25,696 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:20:25,706 - INFO - Dataframe info: None
+2023-10-03 20:20:25,726 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH347
+1    Bernardo Silva  MCI        M   129  ...    1   0  5     BER406
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ113
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER206
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL173
+
+[5 rows x 30 columns]
+2023-10-03 20:20:25,745 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL247
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK272
+4477         John Egan  SHU        D   304  ...    8   0  6      JOH93
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6      ANE24
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC269
+
+[5 rows x 30 columns]
+2023-10-03 20:20:25,803 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:20:25,807 - INFO - Columns where there are some nans: []
+2023-10-03 20:20:25,810 - INFO - Merging dataframes
+2023-10-03 20:20:26,043 - INFO - Dataframe name: MERGED
+2023-10-03 20:20:26,044 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:20:26,044 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:20:26,051 - INFO - Dataframe info: None
+2023-10-03 20:20:26,077 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:20:26,102 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971       Luke Thomas  SHU  ...        -9.25          -16.0
+1972         John Egan  SHU  ...       -10.25          -18.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:20:26,172 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:20:26,174 - INFO - Columns where there are some nans: []
+2023-10-03 20:21:54,192 - INFO - Starting main function
+2023-10-03 20:21:54,283 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:22:06,065 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:22:06,066 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-03 20:22:06,068 - INFO - Dataframe name: ROS
+2023-10-03 20:22:06,068 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:22:06,068 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:22:06,079 - INFO - Dataframe info: None
+2023-10-03 20:22:06,085 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:22:06,088 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:22:06,100 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:22:06,101 - INFO - Columns where there are some nans: []
+2023-10-03 20:22:06,101 - INFO - Dataframe name: FBREF
+2023-10-03 20:22:06,101 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:22:06,101 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:22:06,107 - INFO - Dataframe info: None
+2023-10-03 20:22:06,154 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK272
+1   Anass Zaroury           19  ...        NaN      ANA28
+2     Lyle Foster           17  ...        NaN     LYL202
+3  Nathan Redmond           15  ...        NaN     NAT126
+4     Josh Cullen           24  ...        NaN     JOS458
+
+[5 rows x 109 columns]
+2023-10-03 20:22:06,198 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV390
+2079    Thiago Silva            6  ...        NaN     THI147
+2080     Axel Disasi            2  ...        NaN     AXE251
+2081  Marc Cucurella            3  ...        NaN     MAR170
+2082  Robert Sanchez            1  ...        NaN     ROB651
+
+[5 rows x 109 columns]
+2023-10-03 20:22:06,303 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:22:06,306 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:22:06,309 - INFO - Dataframe name: GWS
+2023-10-03 20:22:06,309 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:22:06,309 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:22:06,318 - INFO - Dataframe info: None
+2023-10-03 20:22:06,336 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH394
+1    Bernardo Silva  MCI        M   129  ...    1   0  5      BER11
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ535
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER198
+4    Erling Haaland  MCI        F     2  ...    1   0  5      ERL21
+
+[5 rows x 30 columns]
+2023-10-03 20:22:06,355 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL163
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK176
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH439
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6     ANE463
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC509
+
+[5 rows x 30 columns]
+2023-10-03 20:22:06,403 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:22:06,407 - INFO - Columns where there are some nans: []
+2023-10-03 20:22:06,411 - INFO - Merging dataframes
+2023-10-03 20:22:06,631 - INFO - Dataframe name: MERGED
+2023-10-03 20:22:06,631 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:22:06,631 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:22:06,636 - INFO - Dataframe info: None
+2023-10-03 20:22:06,660 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:22:06,681 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:22:06,744 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:22:06,746 - INFO - Columns where there are some nans: []
+2023-10-03 20:24:21,833 - INFO - Starting main function
+2023-10-03 20:24:21,943 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:24:34,176 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:24:34,177 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-03 20:24:34,180 - INFO - Dataframe name: ROS
+2023-10-03 20:24:34,180 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:24:34,180 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:24:34,197 - INFO - Dataframe info: None
+2023-10-03 20:24:34,205 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:24:34,209 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:24:34,220 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:24:34,221 - INFO - Columns where there are some nans: []
+2023-10-03 20:24:34,222 - INFO - Dataframe name: FBREF
+2023-10-03 20:24:34,222 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:24:34,222 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:24:34,230 - INFO - Dataframe info: None
+2023-10-03 20:24:34,296 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK568
+1   Anass Zaroury           19  ...        NaN       ANA6
+2     Lyle Foster           17  ...        NaN     LYL326
+3  Nathan Redmond           15  ...        NaN     NAT270
+4     Josh Cullen           24  ...        NaN     JOS168
+
+[5 rows x 109 columns]
+2023-10-03 20:24:34,409 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV201
+2079    Thiago Silva            6  ...        NaN     THI153
+2080     Axel Disasi            2  ...        NaN     AXE439
+2081  Marc Cucurella            3  ...        NaN     MAR582
+2082  Robert Sanchez            1  ...        NaN     ROB645
+
+[5 rows x 109 columns]
+2023-10-03 20:24:34,774 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:24:34,777 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:24:34,780 - INFO - Dataframe name: GWS
+2023-10-03 20:24:34,780 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:24:34,780 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:24:34,794 - INFO - Dataframe info: None
+2023-10-03 20:24:34,827 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH260
+1    Bernardo Silva  MCI        M   129  ...    1   0  5      BER58
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ497
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER601
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL230
+
+[5 rows x 30 columns]
+2023-10-03 20:24:34,882 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6      MIL53
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK282
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH110
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6     ANE518
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC450
+
+[5 rows x 30 columns]
+2023-10-03 20:24:34,984 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:24:34,988 - INFO - Columns where there are some nans: []
+2023-10-03 20:24:34,997 - INFO - Merging dataframes
+2023-10-03 20:24:35,301 - INFO - Dataframe name: MERGED
+2023-10-03 20:24:35,301 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:24:35,301 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:24:35,310 - INFO - Dataframe info: None
+2023-10-03 20:24:35,351 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:24:35,380 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971       Luke Thomas  SHU  ...        -9.25          -16.0
+1972         John Egan  SHU  ...       -10.25          -18.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:24:35,455 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:24:35,457 - INFO - Columns where there are some nans: []
+2023-10-03 20:30:47,377 - INFO - Starting main function
+2023-10-03 20:30:47,642 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:31:00,127 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:31:00,128 - INFO - Unique unique_ids in fbref_df: 430
+2023-10-03 20:31:00,133 - INFO - Dataframe name: ROS
+2023-10-03 20:31:00,133 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:31:00,133 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:31:00,145 - INFO - Dataframe info: None
+2023-10-03 20:31:00,153 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:31:00,158 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:31:00,169 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:31:00,170 - INFO - Columns where there are some nans: []
+2023-10-03 20:31:00,170 - INFO - Dataframe name: FBREF
+2023-10-03 20:31:00,170 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:31:00,170 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:31:00,177 - INFO - Dataframe info: None
+2023-10-03 20:31:00,235 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK540
+1   Anass Zaroury           19  ...        NaN     ANA246
+2     Lyle Foster           17  ...        NaN     LYL465
+3  Nathan Redmond           15  ...        NaN     NAT373
+4     Josh Cullen           24  ...        NaN     JOS217
+
+[5 rows x 109 columns]
+2023-10-03 20:31:00,293 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV521
+2079    Thiago Silva            6  ...        NaN     THI431
+2080     Axel Disasi            2  ...        NaN      AXE72
+2081  Marc Cucurella            3  ...        NaN     MAR136
+2082  Robert Sanchez            1  ...        NaN     ROB649
+
+[5 rows x 109 columns]
+2023-10-03 20:31:00,417 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:31:00,420 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:31:00,423 - INFO - Dataframe name: GWS
+2023-10-03 20:31:00,423 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:31:00,423 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:31:00,432 - INFO - Dataframe info: None
+2023-10-03 20:31:00,453 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH538
+1    Bernardo Silva  MCI        M   129  ...    1   0  5     BER495
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ131
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER426
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL231
+
+[5 rows x 30 columns]
+2023-10-03 20:31:00,472 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL181
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK589
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH361
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6     ANE265
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC192
+
+[5 rows x 30 columns]
+2023-10-03 20:31:00,532 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:31:00,535 - INFO - Columns where there are some nans: []
+2023-10-03 20:31:00,540 - INFO - Merging dataframes
+2023-10-03 20:31:00,774 - INFO - Dataframe name: MERGED
+2023-10-03 20:31:00,774 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:31:00,774 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:31:00,781 - INFO - Dataframe info: None
+2023-10-03 20:31:00,826 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:31:00,850 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:31:00,921 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:31:00,923 - INFO - Columns where there are some nans: []
+2023-10-03 20:32:09,857 - INFO - Starting main function
+2023-10-03 20:32:09,945 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:32:20,663 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:32:20,664 - INFO - Unique unique_ids in fbref_df: 432
+2023-10-03 20:32:20,666 - INFO - Dataframe name: ROS
+2023-10-03 20:32:20,666 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:32:20,666 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:32:20,681 - INFO - Dataframe info: None
+2023-10-03 20:32:20,688 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:32:20,691 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:32:20,702 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:32:20,703 - INFO - Columns where there are some nans: []
+2023-10-03 20:32:20,705 - INFO - Dataframe name: FBREF
+2023-10-03 20:32:20,705 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:32:20,705 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:32:20,712 - INFO - Dataframe info: None
+2023-10-03 20:32:20,767 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN      ZEK97
+1   Anass Zaroury           19  ...        NaN     ANA549
+2     Lyle Foster           17  ...        NaN     LYL279
+3  Nathan Redmond           15  ...        NaN     NAT321
+4     Josh Cullen           24  ...        NaN     JOS105
+
+[5 rows x 109 columns]
+2023-10-03 20:32:20,808 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV487
+2079    Thiago Silva            6  ...        NaN     THI155
+2080     Axel Disasi            2  ...        NaN     AXE483
+2081  Marc Cucurella            3  ...        NaN     MAR181
+2082  Robert Sanchez            1  ...        NaN     ROB656
+
+[5 rows x 109 columns]
+2023-10-03 20:32:20,920 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:32:20,923 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:32:20,926 - INFO - Dataframe name: GWS
+2023-10-03 20:32:20,926 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:32:20,926 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:32:20,937 - INFO - Dataframe info: None
+2023-10-03 20:32:20,958 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH409
+1    Bernardo Silva  MCI        M   129  ...    1   0  5     BER216
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5      DEJ84
+3       Jeremy Doku  MCI        F    80  ...    1   0  5      JER49
+4    Erling Haaland  MCI        F     2  ...    1   0  5     ERL563
+
+[5 rows x 30 columns]
+2023-10-03 20:32:20,977 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL402
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK490
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH383
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6     ANE412
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC588
+
+[5 rows x 30 columns]
+2023-10-03 20:32:21,034 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:32:21,039 - INFO - Columns where there are some nans: []
+2023-10-03 20:32:21,043 - INFO - Merging dataframes
+2023-10-03 20:32:21,297 - INFO - Dataframe name: MERGED
+2023-10-03 20:32:21,297 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:32:21,297 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:32:21,304 - INFO - Dataframe info: None
+2023-10-03 20:32:21,329 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:32:21,355 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:32:21,429 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:32:21,432 - INFO - Columns where there are some nans: []
+2023-10-03 20:38:42,345 - INFO - Starting main function
+2023-10-03 20:38:42,496 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-03 20:38:52,718 - INFO - Unique unique_ids in gws_df: 640
+2023-10-03 20:38:52,718 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-03 20:38:52,720 - INFO - Dataframe name: ROS
+2023-10-03 20:38:52,720 - INFO - Dataframe shape: (150, 3)
+2023-10-03 20:38:52,720 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-03 20:38:52,728 - INFO - Dataframe info: None
+2023-10-03 20:38:52,738 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-03 20:38:52,742 - INFO - Dataframe tail:               player  ros rank team
+145     Ross Barkley       146  LUT
+146     Fabio Vieira       147  ARS
+147      Lyle Foster       148  BUR
+148    Matheus Nunes       149  MCI
+149  Conor Gallagher       150  CHE
+2023-10-03 20:38:52,759 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-03 20:38:52,760 - INFO - Columns where there are some nans: []
+2023-10-03 20:38:52,761 - INFO - Dataframe name: FBREF
+2023-10-03 20:38:52,761 - INFO - Dataframe shape: (2083, 109)
+2023-10-03 20:38:52,761 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-03 20:38:52,768 - INFO - Dataframe info: None
+2023-10-03 20:38:52,832 - INFO - Dataframe head:            player  shirtnumber  ... position_3  unique_id
+0    Zeki Amdouni           25  ...        NaN     ZEK368
+1   Anass Zaroury           19  ...        NaN      ANA19
+2     Lyle Foster           17  ...        NaN     LYL630
+3  Nathan Redmond           15  ...        NaN     NAT174
+4     Josh Cullen           24  ...        NaN     JOS567
+
+[5 rows x 109 columns]
+2023-10-03 20:38:52,880 - INFO - Dataframe tail:               player  shirtnumber  ... position_3  unique_id
+2078    Levi Colwill           26  ...        NaN     LEV392
+2079    Thiago Silva            6  ...        NaN     THI593
+2080     Axel Disasi            2  ...        NaN     AXE354
+2081  Marc Cucurella            3  ...        NaN     MAR449
+2082  Robert Sanchez            1  ...        NaN     ROB656
+
+[5 rows x 109 columns]
+2023-10-03 20:38:52,995 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-03 20:38:52,998 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-03 20:38:53,000 - INFO - Dataframe name: GWS
+2023-10-03 20:38:53,000 - INFO - Dataframe shape: (4480, 30)
+2023-10-03 20:38:53,000 - INFO - Dataframe columns: ['player', 'team', 'position', 'rkov', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-03 20:38:53,010 - INFO - Dataframe info: None
+2023-10-03 20:38:53,032 - INFO - Dataframe head:              player team position  rkov  ...  gao  cs gw  unique_id
+0     Mohamed Salah  LIV        F     8  ...    1   0  5     MOH272
+1    Bernardo Silva  MCI        M   129  ...    1   0  5     BER407
+2  Dejan Kulusevski  TOT        M    19  ...    1   0  5     DEJ320
+3       Jeremy Doku  MCI        F    80  ...    1   0  5     JER291
+4    Erling Haaland  MCI        F     2  ...    1   0  5      ERL88
+
+[5 rows x 30 columns]
+2023-10-03 20:38:53,053 - INFO - Dataframe tail:                 player team position  rkov  ...  gao  cs gw  unique_id
+4475      Milos Kerkez  BOU        D   247  ...    3   0  6     MIL602
+4476       Luke Thomas  SHU        D   722  ...    8   0  6     LUK288
+4477         John Egan  SHU        D   304  ...    8   0  6     JOH398
+4478  Anel Ahmedhodzic  SHU        D   319  ...    8   0  6      ANE51
+4479     Jack Robinson  SHU        D   288  ...    8   0  6     JAC385
+
+[5 rows x 30 columns]
+2023-10-03 20:38:53,113 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-03 20:38:53,117 - INFO - Columns where there are some nans: []
+2023-10-03 20:38:53,122 - INFO - Merging dataframes
+2023-10-03 20:38:53,354 - INFO - Dataframe name: MERGED
+2023-10-03 20:38:53,355 - INFO - Dataframe shape: (1976, 34)
+2023-10-03 20:38:53,355 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'RKOV', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'FPTS', 'Ghost Points', 'Negative Fpts']
+2023-10-03 20:38:53,362 - INFO - Dataframe info: None
+2023-10-03 20:38:53,392 - INFO - Dataframe head:              Player Team Position  ...  FPTS  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F  ...  26.5          14.5            0.0
+1    Bernardo Silva  MCI        M  ...  26.5          11.5           -0.5
+2  Dejan Kulusevski  TOT        M  ...  25.5          16.5            0.0
+3       Jeremy Doku  MCI        F  ...  24.5          15.5            0.0
+4    Erling Haaland  MCI        F  ...  23.5          14.5            0.0
+
+[5 rows x 34 columns]
+2023-10-03 20:38:53,418 - INFO - Dataframe tail:                 Player Team  ... Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU  ...        -7.50          -12.0
+1972       Luke Thomas  SHU  ...        -9.25          -16.0
+1973         John Egan  SHU  ...       -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU  ...       -12.75          -18.0
+1975     Jack Robinson  SHU  ...       -13.00          -18.0
+
+[5 rows x 34 columns]
+2023-10-03 20:38:53,504 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-03 20:38:53,506 - INFO - Columns where there are some nans: []
+2023-10-03 20:38:53,559 - INFO - Dataframe name: FINAL
+2023-10-03 20:38:53,559 - INFO - Dataframe shape: (291, 34)
+2023-10-03 20:38:53,559 - INFO - Dataframe columns: ['Player', 'Position', 'Team', 'GW', 'FPTS', 'Ghost Points', 'Negative Fpts', 'Ros Rank', 'RKOV', 'Started', 'GP', 'Home', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'MIN', 'FP/G']
+2023-10-03 20:38:53,568 - INFO - Dataframe info: None
+2023-10-03 20:38:53,613 - INFO - Dataframe head:              Player Position Team  GW  FPTS  ...  GAO  CS  ROS %  MIN  FP/G
+0     Ollie Watkins        F  AVL   7  59.5  ...    1   0    100   90  59.5
+1     Alfie Doughty        M  LUT   7  40.0  ...    3   0     42  172  20.0
+2   Martin Odegaard        M  ARS   7  34.0  ...    0   1    100   90  34.0
+3  Joachim Andersen        D  CRY   7  29.5  ...    0   1     92   90  29.5
+4   Kieran Trippier        D  NEW   7  29.0  ...    0   1    100   90  29.0
+
+[5 rows x 34 columns]
+2023-10-03 20:38:53,656 - INFO - Dataframe tail:                Player Position Team  GW  ...  CS  ROS %  MIN  FP/G
+286        Max Aarons        D  BOU   7  ...   0      7   90 -5.50
+287      Adam Webster        D  BHA   7  ...   0      6   90 -5.50
+288  Pervis Estupinan        D  BHA   7  ...   0    100   45 -6.75
+289      Curtis Jones        M  LIV   7  ...   0     21   25 -7.00
+290        Lewis Dunk        D  BHA   7  ...   0     49   90 -7.50
+
+[5 rows x 34 columns]
+2023-10-03 20:38:53,758 - INFO - Dataframe nans analysis for dataframe: FINAL
+2023-10-03 20:38:53,759 - INFO - Columns where there are some nans: []
+2023-10-03 20:38:53,766 - INFO - End of main function

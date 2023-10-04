@@ -2347,3 +2347,7 @@ def style_dataframe_custom(_custom_cmap, ...):
 2023-10-03 20:01:37,086 - INFO - Creating custom color maps
 2023-10-03 20:01:37,130 - INFO - Attempting to style the lastgw_df dataframe
 2023-10-03 20:01:42,778 - INFO - Main function completed successfully
+2023-10-03 20:04:59,264 - INFO - Starting main function
+2023-10-03 20:04:59,270 - INFO - Creating custom color maps
+2023-10-03 20:04:59,332 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-03 20:05:05,333 - INFO - Main function completed successfully
