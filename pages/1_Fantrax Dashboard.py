@@ -58,7 +58,7 @@ def main():
         st.write("## Most Recent Game Week Data")
         logging.info("Attempting to style the lastgw_df dataframe")
         styled_df = style_dataframe_custom(lastgw_df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True)
+        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(lastgw_df) * 2)
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
