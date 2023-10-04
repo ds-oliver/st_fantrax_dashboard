@@ -1627,7 +1627,7 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
     :return: DataFrame Styler object
     """
     object_cmap = plt.cm.get_cmap(custom_cmap)
-    divergent_cmap = plt.cm.get_cmap(custom_divergent_cmap)
+    divergent_cmap = custom_divergent_cmap
     styled_df = pd.DataFrame()
 
     position_column = 'Position' if 'Position' in df.columns else None
