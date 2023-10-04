@@ -1614,18 +1614,20 @@ def create_custom_cmap_1(*colors):
 
 #     return styled_df
 
-def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_cmap=False, is_percentile=False):
+def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_divergent_cmap="coolwarm", inverse_cmap=False, is_percentile=False):
     """
     Style the DataFrame based on the selected columns and color map.
-    
+
     :param df: DataFrame to style
     :param selected_columns: List of columns to style
-    :param custom_cmap: Color map name
+    :param custom_cmap: Color map name for positive values
+    :param custom_divergent_cmap: Color map name for negative values
     :param inverse_cmap: Whether to inverse the color map
     :param is_percentile: Whether to use divergent color map for percentiles
     :return: DataFrame Styler object
     """
     object_cmap = plt.cm.get_cmap(custom_cmap)
+    divergent_cmap = plt.cm.get_cmap(custom_divergent_cmap)
     styled_df = pd.DataFrame()
 
     position_column = 'Position' if 'Position' in df.columns else None
@@ -1641,7 +1643,7 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_c
             styled_df['Player'] = df[position_column].apply(lambda x: position_colors.get(x, ''))
 
     for col in selected_columns:
-        if col in ['Player', position_column]:
+        if col in ['Player', 'Position']:
             continue
 
         col_data = df[col]
@@ -1653,32 +1655,15 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_c
         except ValueError:
             min_val = max_val = None
 
-        unique_values = col_data.unique()
-
-        if len(unique_values) <= 3:
-            constant_colors = ["#140b04", "#1c1625", "#460202"]
-            text_colors = ['white', 'white', 'white']
-
-            most_common_list = Counter(col_data).most_common(1)
-            if most_common_list:
-                most_common_value, _ = most_common_list[0]
-            else:
-                most_common_value = None
-
-            other_values = [uv for uv in unique_values if uv != most_common_value]
-
-            color_mapping = {
-                val: f"background-color: {color}; color: {text}" 
-                for val, color, text in zip([most_common_value] + other_values, constant_colors, text_colors)
-            }
-
-            styled_df[col] = col_data.apply(lambda x: color_mapping.get(x, ''))
-        elif min_val is not None and max_val is not None:
-            if min_val != max_val:
+        if min_val is not None and max_val is not None:
+            if min_val < 0:  # This column has negative values
+                styled_df[col] = col_data.apply(
+                    lambda x: get_color((x - min_val) / (max_val - min_val), divergent_cmap)
+                )
+            elif min_val != max_val:  # This column has only non-negative values
                 styled_df[col] = col_data.apply(
                     lambda x: get_color((1 - (x - min_val) / (max_val - min_val)) if inverse_cmap else (x - min_val) / (max_val - min_val), object_cmap)
                 )
-
     return styled_df
 
 def create_custom_cmap(*colors, base_cmap=None, brightness_limit=None):
