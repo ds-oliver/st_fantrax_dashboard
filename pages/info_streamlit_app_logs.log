@@ -2246,3 +2246,36 @@
 2023-10-02 19:52:42,917 - INFO - Main function completed successfully
 2023-10-02 19:52:42,919 - INFO - Attempting to style the grouped_df dataframe
 2023-10-02 19:52:51,757 - INFO - Main function completed successfully
+2023-10-02 20:02:33,206 - INFO - Starting main function
+2023-10-02 20:02:33,207 - INFO - Creating custom color maps
+2023-10-02 20:02:33,226 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 20:02:40,701 - INFO - Main function completed successfully
+2023-10-02 20:02:40,702 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 20:02:49,878 - INFO - Main function completed successfully
+2023-10-02 20:11:49,685 - INFO - Starting main function
+2023-10-02 20:11:49,687 - INFO - Creating custom color maps
+2023-10-02 20:11:49,751 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-02 20:11:57,745 - INFO - Main function completed successfully
+2023-10-02 20:11:57,746 - INFO - Attempting to style the grouped_df dataframe
+2023-10-02 20:12:07,541 - INFO - Main function completed successfully
+2023-10-03 16:49:55,594 - INFO - Starting main function
+2023-10-03 16:49:55,596 - INFO - Creating custom color maps
+2023-10-03 16:49:55,654 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-03 16:49:55,661 - ERROR - An exception occurred: 'Team'
+2023-10-03 16:49:55,661 - INFO - Main function completed successfully
+2023-10-03 16:49:55,663 - INFO - Attempting to style the grouped_df dataframe
+2023-10-03 16:49:59,715 - INFO - Main function completed successfully
+2023-10-03 17:29:36,471 - INFO - Starting main function
+2023-10-03 17:29:36,474 - INFO - Creating custom color maps
+2023-10-03 17:29:36,500 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-03 17:29:36,506 - ERROR - An exception occurred: 'Team'
+2023-10-03 17:29:36,506 - INFO - Main function completed successfully
+2023-10-03 17:29:36,507 - INFO - Attempting to style the grouped_df dataframe
+2023-10-03 17:29:41,782 - INFO - Main function completed successfully
+2023-10-03 17:31:22,078 - INFO - Starting main function
+2023-10-03 17:31:22,078 - INFO - Creating custom color maps
+2023-10-03 17:31:22,084 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-03 17:31:22,085 - ERROR - An exception occurred: 'Team'
+2023-10-03 17:31:22,086 - INFO - Main function completed successfully
+2023-10-03 17:31:22,087 - INFO - Attempting to style the grouped_df dataframe
+2023-10-03 17:31:25,585 - INFO - Main function completed successfully
