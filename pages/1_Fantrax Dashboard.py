@@ -67,6 +67,7 @@ def main():
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
 
+    columns_to_keep = grouped_players_df.columns.tolist()
     try:
         st.write("## Grouped Player Data")
         logging.info("Attempting to style the grouped_players_df dataframe")
@@ -75,6 +76,8 @@ def main():
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
+
+    columns_to_keep = team_df.columns.tolist()
 
     try:
         st.write("## Team Data")
@@ -85,6 +88,9 @@ def main():
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
 
+
+    columns_to_keep = team_pos_df.columns.tolist()
+    
     try:
         st.write("## Team Position Data")
         logging.info("Attempting to style the team_pos_df dataframe")
