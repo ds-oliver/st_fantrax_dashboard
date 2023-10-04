@@ -24988,3 +24988,1393 @@ dtype: object
 2023-10-04 16:33:52,559 - INFO - Dataframe nans analysis for dataframe: FINAL
 2023-10-04 16:33:52,561 - INFO - Columns where there are some nans: []
 2023-10-04 16:33:52,566 - INFO - End of main function
+2023-10-04 16:40:51,283 - INFO - Current directory: /Users/hogan/dev/st_fantrax_dashboard/scripts
+2023-10-04 16:40:51,283 - INFO - Starting main function
+2023-10-04 16:40:51,366 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-04 16:40:58,827 - INFO - Unique unique_ids in gws_df: 640
+2023-10-04 16:40:58,827 - INFO - Unique unique_ids in fbref_df: 430
+2023-10-04 16:40:58,831 - INFO - Dataframe name: ROS
+2023-10-04 16:40:58,831 - INFO - Dataframe shape: (150, 3)
+2023-10-04 16:40:58,831 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-04 16:40:58,831 - INFO - Dataframe dtypes: player      object
+ros rank     int64
+team        object
+dtype: object
+2023-10-04 16:40:58,838 - INFO - Dataframe info: None
+2023-10-04 16:40:58,845 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-04 16:40:58,849 - INFO - Dataframe tail:               player  ros rank team
+145  Conor Gallagher       146  CHE
+146   Anthony Elanga       147  NOT
+147  Alphonse Areola       148  WHU
+148    Sandro Tonali       149  NEW
+149   Cameron Archer       150  SHU
+2023-10-04 16:40:58,860 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-04 16:40:58,860 - INFO - Columns where there are some nans: []
+2023-10-04 16:40:58,861 - INFO - Dataframe name: FBREF
+2023-10-04 16:40:58,861 - INFO - Dataframe shape: (2083, 109)
+2023-10-04 16:40:58,861 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-04 16:40:58,862 - INFO - Dataframe dtypes: player         object
+shirtnumber     int64
+nation         object
+age             int64
+minutes         int64
+                ...  
+season         object
+position_1     object
+position_2     object
+position_3     object
+unique_id      object
+Length: 109, dtype: object
+2023-10-04 16:40:58,868 - INFO - Dataframe info: None
+2023-10-04 16:40:58,928 - INFO - Dataframe head:            player  shirtnumber   nation  ...  position_2  position_3  unique_id
+0    Zeki Amdouni           25   ch SUI  ...         NaN         NaN     ZEK602
+1   Anass Zaroury           19   ma MAR  ...         NaN         NaN     ANA600
+2     Lyle Foster           17   za RSA  ...         NaN         NaN     LYL248
+3  Nathan Redmond           15  eng ENG  ...         NaN         NaN     NAT562
+4     Josh Cullen           24   ie IRL  ...         NaN         NaN     JOS299
+
+[5 rows x 109 columns]
+2023-10-04 16:40:58,980 - INFO - Dataframe tail:               player  shirtnumber   nation  ...  position_2  position_3  unique_id
+2078    Levi Colwill           26  eng ENG  ...         NaN         NaN     LEV561
+2079    Thiago Silva            6   br BRA  ...         NaN         NaN     THI442
+2080     Axel Disasi            2   fr FRA  ...         NaN         NaN      AXE61
+2081  Marc Cucurella            3   es ESP  ...         NaN         NaN     MAR331
+2082  Robert Sanchez            1   es ESP  ...         NaN         NaN     ROB652
+
+[5 rows x 109 columns]
+2023-10-04 16:40:59,121 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-04 16:40:59,124 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-04 16:40:59,127 - INFO - Dataframe name: GWS
+2023-10-04 16:40:59,127 - INFO - Dataframe shape: (4480, 30)
+2023-10-04 16:40:59,127 - INFO - Dataframe columns: ['player', 'team', 'position', 'LiveRkOv', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-04 16:40:59,128 - INFO - Dataframe dtypes: player        object
+team          object
+position      object
+LiveRkOv       int64
+fpts         float64
+fp/g         float64
+ros %         object
+gp             int64
+min            int64
+g              int64
+kp             int64
+at             int64
+sot            int64
+tkw            int64
+dis            int64
+yc             int64
+rc             int64
+acnc           int64
+int            int64
+clr            int64
+cos            int64
+bs             int64
+aer            int64
+pkm            int64
+pkd            int64
+og             int64
+gao            int64
+cs             int64
+gw             int64
+unique_id     object
+dtype: object
+2023-10-04 16:40:59,137 - INFO - Dataframe info: None
+2023-10-04 16:40:59,158 - INFO - Dataframe head:              player team position  LiveRkOv  fpts  fp/g  ... pkd  og  gao  cs  gw  unique_id
+0     Mohamed Salah  LIV        F         8  26.5  26.5  ...   0   0    1   0   5     MOH625
+1    Bernardo Silva  MCI        M       129  26.5  26.5  ...   0   0    1   0   5     BER334
+2  Dejan Kulusevski  TOT        M        19  25.5  25.5  ...   0   0    1   0   5     DEJ352
+3       Jeremy Doku  MCI        F        80  24.5  24.5  ...   0   0    1   0   5     JER223
+4    Erling Haaland  MCI        F         2  23.5  23.5  ...   0   0    1   0   5     ERL594
+
+[5 rows x 30 columns]
+2023-10-04 16:40:59,179 - INFO - Dataframe tail:                 player team position  LiveRkOv   fpts  ...  og gao  cs  gw  unique_id
+4475      Milos Kerkez  BOU        D       247  -7.50  ...   1   3   0   6     MIL410
+4476       Luke Thomas  SHU        D       722  -9.25  ...   0   8   0   6     LUK361
+4477         John Egan  SHU        D       304 -10.25  ...   0   8   0   6      JOH35
+4478  Anel Ahmedhodzic  SHU        D       319 -12.75  ...   0   8   0   6     ANE404
+4479     Jack Robinson  SHU        D       288 -13.00  ...   0   8   0   6     JAC592
+
+[5 rows x 30 columns]
+2023-10-04 16:40:59,239 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-04 16:40:59,242 - INFO - Columns where there are some nans: []
+2023-10-04 16:40:59,246 - INFO - Merging dataframes
+2023-10-04 16:40:59,476 - INFO - Dataframe name: MERGED
+2023-10-04 16:40:59,476 - INFO - Dataframe shape: (1976, 33)
+2023-10-04 16:40:59,476 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts']
+2023-10-04 16:40:59,477 - INFO - Dataframe dtypes: Player            object
+Team              object
+Position          object
+GW                 int64
+FPTS             float64
+Started          float64
+Home                bool
+FP/G             float64
+LiveRkOv           int64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+ROS %             object
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+dtype: object
+2023-10-04 16:40:59,482 - INFO - Dataframe info: None
+2023-10-04 16:40:59,507 - INFO - Dataframe head:              Player Team Position  GW  FPTS  ...  ROS %  GP  MIN  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F   5  26.5  ...   100%   1   88          14.5            0.0
+1    Bernardo Silva  MCI        M   5  26.5  ...    98%   1   88          11.5           -0.5
+2  Dejan Kulusevski  TOT        M   5  25.5  ...   100%   1   90          16.5            0.0
+3       Jeremy Doku  MCI        F   5  24.5  ...    82%   1   88          15.5            0.0
+4    Erling Haaland  MCI        F   5  23.5  ...   100%   1   88          14.5            0.0
+
+[5 rows x 33 columns]
+2023-10-04 16:40:59,528 - INFO - Dataframe tail:                 Player Team Position  GW  ...  GP  MIN  Ghost Points  Negative Fpts
+1971       Luke Thomas  SHU        D   6  ...   1   90         -9.25          -16.0
+1972         John Egan  SHU        D   6  ...   1   90        -10.25          -18.0
+1973         John Egan  SHU        D   6  ...   1   90        -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU        D   6  ...   1   90        -12.75          -18.0
+1975     Jack Robinson  SHU        D   6  ...   1   90        -13.00          -18.0
+
+[5 rows x 33 columns]
+2023-10-04 16:40:59,594 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-04 16:40:59,596 - INFO - Columns where there are some nans: []
+2023-10-04 16:40:59,618 - INFO - Aggregating column: Team, with function: first
+2023-10-04 16:40:59,620 - INFO - Aggregating column: Position, with function: first
+2023-10-04 16:40:59,621 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:40:59,622 - INFO - Aggregating column: Started, with function: sum
+2023-10-04 16:40:59,623 - INFO - Aggregating column: Home, with function: sum
+2023-10-04 16:40:59,625 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:40:59,627 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:40:59,628 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:40:59,629 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:40:59,630 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:40:59,631 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:40:59,633 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:40:59,634 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:40:59,636 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:40:59,637 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:40:59,638 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:40:59,639 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:40:59,639 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:40:59,640 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:40:59,641 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:40:59,642 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:40:59,642 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:40:59,643 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:40:59,644 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:40:59,644 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:40:59,645 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:40:59,646 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:40:59,646 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:40:59,647 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:40:59,661 - INFO - Dataframe name: GROUPED
+2023-10-04 16:40:59,661 - INFO - Dataframe shape: (412, 32)
+2023-10-04 16:40:59,661 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'FPTS', 'Started', 'Home', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:40:59,662 - INFO - Dataframe dtypes: Player            object
+Team              object
+Position          object
+FPTS             float64
+Started          float64
+Home               int64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:40:59,667 - INFO - Dataframe info: None
+2023-10-04 16:40:59,689 - INFO - Dataframe head:                Player Team Position   FPTS  ...  Ghost Points  Negative Fpts   90s  FPts/90
+0        Aaron Hickey  BRF        D   1.00  ...         -5.00          -30.0  6.00     0.17
+1        Aaron Ramsey  BUR        M   9.00  ...          9.00           -2.0  2.16     4.17
+2   Aaron Wan-Bissaka  MUN        D  34.75  ...         21.75          -17.0  3.77     9.22
+3  Abdoulaye Doucoure  EVE        M  80.50  ...         56.50           -4.5  6.51    12.37
+4        Adam Lallana  BHA        M   6.50  ...          5.50           -2.5  1.20     5.42
+
+[5 rows x 32 columns]
+2023-10-04 16:40:59,712 - INFO - Dataframe tail:                        Player Team Position  ...  Negative Fpts   90s  FPts/90
+407               Yoane Wissa  BRF        F  ...           -4.5  6.66    10.14
+408           Youri Tielemans  AVL        M  ...           -1.5  1.46     1.71
+409  Youssef Ramalho Chermiti  EVE        F  ...           -2.0  0.27    -3.70
+410             Yves Bissouma  TOT        M  ...          -15.5  6.79     7.88
+411              Zeki Amdouni  BUR        F  ...           -4.5  5.16     8.33
+
+[5 rows x 32 columns]
+2023-10-04 16:40:59,780 - INFO - Dataframe nans analysis for dataframe: GROUPED
+2023-10-04 16:40:59,781 - INFO - Columns where there are some nans: []
+2023-10-04 16:40:59,782 - INFO - Aggregating column: Player, with function: count
+2023-10-04 16:40:59,783 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:40:59,784 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:40:59,785 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:40:59,786 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:40:59,787 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:40:59,787 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:40:59,788 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:40:59,788 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:40:59,789 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:40:59,789 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:40:59,789 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:40:59,790 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:40:59,790 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:40:59,790 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:40:59,791 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:40:59,791 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:40:59,792 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:40:59,792 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:40:59,792 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:40:59,793 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:40:59,793 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:40:59,793 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:40:59,794 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:40:59,794 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:40:59,795 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:40:59,807 - INFO - Dataframe name: TEAM
+2023-10-04 16:40:59,807 - INFO - Dataframe shape: (20, 29)
+2023-10-04 16:40:59,807 - INFO - Dataframe columns: ['Team', 'Player', 'FPTS', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:40:59,808 - INFO - Dataframe dtypes: Team              object
+Player             int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:40:59,812 - INFO - Dataframe info: None
+2023-10-04 16:40:59,836 - INFO - Dataframe head:   Team  Player    FPTS  LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50    178.53  14  ...  5846        436.50          -99.0  64.96    11.12
+1  AVL      20  661.00    233.37  17  ...  6244        351.00         -166.0  69.38     9.53
+2  BHA      22  681.75    221.49  18  ...  6176        415.75         -185.0  68.62     9.94
+3  BOU      22  412.25    269.66   5  ...  6198        308.25         -180.0  68.87     5.99
+4  BRF      21  605.75    223.41  10  ...  6396        423.75         -141.0  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:40:59,856 - INFO - Dataframe tail:    Team  Player    FPTS  LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00    276.75   8  ...  5945        341.00         -168.5  66.06     7.54
+16  SHU      22  226.75    368.50   4  ...  5756        162.75         -292.0  63.96     3.55
+17  TOT      19  791.50    210.89  14  ...  6383        513.50         -149.0  70.92    11.16
+18  WHU      18  736.50    218.24  13  ...  7222        490.50         -196.0  80.24     9.18
+19  WOL      19  575.00    241.57   8  ...  6645        398.00         -211.0  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:40:59,928 - INFO - Dataframe nans analysis for dataframe: TEAM
+2023-10-04 16:40:59,940 - INFO - Columns where there are some nans: []
+2023-10-04 16:40:59,941 - INFO - Aggregating column: Player, with function: count
+2023-10-04 16:40:59,943 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:40:59,944 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:40:59,945 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:40:59,966 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:40:59,968 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:40:59,970 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:40:59,972 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:40:59,974 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:40:59,975 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:40:59,977 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:40:59,979 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:40:59,981 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:40:59,982 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:40:59,985 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:40:59,987 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:40:59,988 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:40:59,990 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:40:59,991 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:40:59,993 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:40:59,994 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:40:59,995 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:40:59,997 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:40:59,998 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:41:00,000 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:41:00,002 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:41:00,216 - INFO - Dataframe dtypes for TEAM_POS dataframe: Team              object
+Position          object
+Player Count       int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:41:00,217 - INFO - Dataframe name: TEAM_POS
+2023-10-04 16:41:00,217 - INFO - Dataframe shape: (60, 30)
+2023-10-04 16:41:00,217 - INFO - Dataframe columns: ['Team', 'Position', 'Player Count', 'FPTS', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:41:00,218 - INFO - Dataframe dtypes: Team              object
+Position          object
+Player Count       int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:41:00,223 - INFO - Dataframe info: None
+2023-10-04 16:41:00,248 - INFO - Dataframe head:   Team Position  Player Count   FPTS  ...  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS        D             6  160.5  ...          82.5          -51.5  21.03     7.63
+1  ARS        F             4  136.0  ...          82.0          -22.0  13.04    10.43
+2  ARS        M             9  426.0  ...         272.0          -25.5  30.88    13.80
+3  AVL        D             6  180.5  ...          84.5         -117.5  29.58     6.10
+4  AVL        F             4  281.0  ...         125.0          -19.0  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-04 16:41:00,276 - INFO - Dataframe tail:    Team Position  Player Count   FPTS  ...  Ghost Points  Negative Fpts    90s  FPts/90
+55  WHU        F             2   50.5  ...          26.5           -8.0   6.08     8.31
+56  WHU        M             9  419.0  ...         289.0          -42.0  35.08    11.94
+57  WOL        D             8  110.0  ...          86.0         -145.5  30.18     3.64
+58  WOL        F             5  368.5  ...         230.5          -34.5  26.60    13.85
+59  WOL        M             6   96.5  ...          81.5          -31.0  17.06     5.66
+
+[5 rows x 30 columns]
+2023-10-04 16:41:00,352 - INFO - Dataframe nans analysis for dataframe: TEAM_POS
+2023-10-04 16:41:00,353 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:00,295 - INFO - Current directory: /Users/hogan/dev/st_fantrax_dashboard/scripts
+2023-10-04 16:49:00,296 - INFO - Starting main function
+2023-10-04 16:49:00,394 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-04 16:49:09,065 - INFO - Unique unique_ids in gws_df: 640
+2023-10-04 16:49:09,065 - INFO - Unique unique_ids in fbref_df: 432
+2023-10-04 16:49:09,070 - INFO - Dataframe name: ROS
+2023-10-04 16:49:09,070 - INFO - Dataframe shape: (150, 3)
+2023-10-04 16:49:09,070 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-04 16:49:09,070 - INFO - Dataframe dtypes: player      object
+ros rank     int64
+team        object
+dtype: object
+2023-10-04 16:49:09,080 - INFO - Dataframe info: None
+2023-10-04 16:49:09,088 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-04 16:49:09,093 - INFO - Dataframe tail:               player  ros rank team
+145  Conor Gallagher       146  CHE
+146   Anthony Elanga       147  NOT
+147  Alphonse Areola       148  WHU
+148    Sandro Tonali       149  NEW
+149   Cameron Archer       150  SHU
+2023-10-04 16:49:09,108 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-04 16:49:09,109 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:09,110 - INFO - Dataframe name: FBREF
+2023-10-04 16:49:09,110 - INFO - Dataframe shape: (2083, 109)
+2023-10-04 16:49:09,110 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-04 16:49:09,113 - INFO - Dataframe dtypes: player         object
+shirtnumber     int64
+nation         object
+age             int64
+minutes         int64
+                ...  
+season         object
+position_1     object
+position_2     object
+position_3     object
+unique_id      object
+Length: 109, dtype: object
+2023-10-04 16:49:09,120 - INFO - Dataframe info: None
+2023-10-04 16:49:09,191 - INFO - Dataframe head:            player  shirtnumber   nation  ...  position_2  position_3  unique_id
+0    Zeki Amdouni           25   ch SUI  ...         NaN         NaN     ZEK109
+1   Anass Zaroury           19   ma MAR  ...         NaN         NaN     ANA252
+2     Lyle Foster           17   za RSA  ...         NaN         NaN     LYL116
+3  Nathan Redmond           15  eng ENG  ...         NaN         NaN     NAT385
+4     Josh Cullen           24   ie IRL  ...         NaN         NaN     JOS540
+
+[5 rows x 109 columns]
+2023-10-04 16:49:09,247 - INFO - Dataframe tail:               player  shirtnumber   nation  ...  position_2  position_3  unique_id
+2078    Levi Colwill           26  eng ENG  ...         NaN         NaN     LEV362
+2079    Thiago Silva            6   br BRA  ...         NaN         NaN      THI93
+2080     Axel Disasi            2   fr FRA  ...         NaN         NaN      AXE20
+2081  Marc Cucurella            3   es ESP  ...         NaN         NaN     MAR115
+2082  Robert Sanchez            1   es ESP  ...         NaN         NaN     ROB653
+
+[5 rows x 109 columns]
+2023-10-04 16:49:09,388 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-04 16:49:09,391 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-04 16:49:09,394 - INFO - Dataframe name: GWS
+2023-10-04 16:49:09,394 - INFO - Dataframe shape: (4480, 30)
+2023-10-04 16:49:09,394 - INFO - Dataframe columns: ['player', 'team', 'position', 'LiveRkOv', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-04 16:49:09,395 - INFO - Dataframe dtypes: player        object
+team          object
+position      object
+LiveRkOv       int64
+fpts         float64
+fp/g         float64
+ros %         object
+gp             int64
+min            int64
+g              int64
+kp             int64
+at             int64
+sot            int64
+tkw            int64
+dis            int64
+yc             int64
+rc             int64
+acnc           int64
+int            int64
+clr            int64
+cos            int64
+bs             int64
+aer            int64
+pkm            int64
+pkd            int64
+og             int64
+gao            int64
+cs             int64
+gw             int64
+unique_id     object
+dtype: object
+2023-10-04 16:49:09,402 - INFO - Dataframe info: None
+2023-10-04 16:49:09,425 - INFO - Dataframe head:              player team position  LiveRkOv  fpts  fp/g  ... pkd  og  gao  cs  gw  unique_id
+0     Mohamed Salah  LIV        F         8  26.5  26.5  ...   0   0    1   0   5     MOH103
+1    Bernardo Silva  MCI        M       129  26.5  26.5  ...   0   0    1   0   5      BER11
+2  Dejan Kulusevski  TOT        M        19  25.5  25.5  ...   0   0    1   0   5      DEJ55
+3       Jeremy Doku  MCI        F        80  24.5  24.5  ...   0   0    1   0   5     JER195
+4    Erling Haaland  MCI        F         2  23.5  23.5  ...   0   0    1   0   5     ERL366
+
+[5 rows x 30 columns]
+2023-10-04 16:49:09,446 - INFO - Dataframe tail:                 player team position  LiveRkOv   fpts  ...  og gao  cs  gw  unique_id
+4475      Milos Kerkez  BOU        D       247  -7.50  ...   1   3   0   6      MIL96
+4476       Luke Thomas  SHU        D       722  -9.25  ...   0   8   0   6     LUK633
+4477         John Egan  SHU        D       304 -10.25  ...   0   8   0   6     JOH590
+4478  Anel Ahmedhodzic  SHU        D       319 -12.75  ...   0   8   0   6     ANE481
+4479     Jack Robinson  SHU        D       288 -13.00  ...   0   8   0   6     JAC380
+
+[5 rows x 30 columns]
+2023-10-04 16:49:09,504 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-04 16:49:09,508 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:09,512 - INFO - Merging dataframes
+2023-10-04 16:49:09,740 - INFO - Dataframe name: MERGED
+2023-10-04 16:49:09,740 - INFO - Dataframe shape: (1976, 33)
+2023-10-04 16:49:09,740 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts']
+2023-10-04 16:49:09,741 - INFO - Dataframe dtypes: Player            object
+Team              object
+Position          object
+GW                 int64
+FPTS             float64
+Started          float64
+Home                bool
+FP/G             float64
+LiveRkOv           int64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+ROS %             object
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+dtype: object
+2023-10-04 16:49:09,747 - INFO - Dataframe info: None
+2023-10-04 16:49:09,772 - INFO - Dataframe head:              Player Team Position  GW  FPTS  ...  ROS %  GP  MIN  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F   5  26.5  ...   100%   1   88          14.5            0.0
+1    Bernardo Silva  MCI        M   5  26.5  ...    98%   1   88          11.5           -0.5
+2  Dejan Kulusevski  TOT        M   5  25.5  ...   100%   1   90          16.5            0.0
+3       Jeremy Doku  MCI        F   5  24.5  ...    82%   1   88          15.5            0.0
+4    Erling Haaland  MCI        F   5  23.5  ...   100%   1   88          14.5            0.0
+
+[5 rows x 33 columns]
+2023-10-04 16:49:09,797 - INFO - Dataframe tail:                 Player Team Position  GW  ...  GP  MIN  Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU        D   6  ...   1   90         -7.50          -12.0
+1972       Luke Thomas  SHU        D   6  ...   1   90         -9.25          -16.0
+1973         John Egan  SHU        D   6  ...   1   90        -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU        D   6  ...   1   90        -12.75          -18.0
+1975     Jack Robinson  SHU        D   6  ...   1   90        -13.00          -18.0
+
+[5 rows x 33 columns]
+2023-10-04 16:49:09,869 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-04 16:49:09,871 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:09,906 - INFO - Aggregating column: Team, with function: first
+2023-10-04 16:49:09,910 - INFO - Aggregating column: Position, with function: first
+2023-10-04 16:49:09,911 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:49:09,912 - INFO - Aggregating column: Started, with function: sum
+2023-10-04 16:49:09,913 - INFO - Aggregating column: Home, with function: sum
+2023-10-04 16:49:09,919 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:49:09,924 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:49:09,926 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:49:09,928 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:49:09,929 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:49:09,930 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:49:09,931 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:49:09,932 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:49:09,933 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:49:09,938 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:49:09,939 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:49:09,940 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:49:09,941 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:49:09,942 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:49:09,944 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:49:09,945 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:49:09,946 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:49:09,947 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:49:09,947 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:49:09,948 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:49:09,948 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:49:09,949 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:49:09,950 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:49:09,951 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:49:09,964 - INFO - Dataframe name: GROUPED
+2023-10-04 16:49:09,964 - INFO - Dataframe shape: (414, 32)
+2023-10-04 16:49:09,964 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'FPTS', 'Started', 'Home', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:49:09,965 - INFO - Dataframe dtypes: Player            object
+Team              object
+Position          object
+FPTS             float64
+Started          float64
+Home               int64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:09,970 - INFO - Dataframe info: None
+2023-10-04 16:49:09,993 - INFO - Dataframe head:                Player Team Position   FPTS  ...  Ghost Points  Negative Fpts   90s  FPts/90
+0        Aaron Hickey  BRF        D   1.00  ...         -5.00          -30.0  6.00     0.17
+1        Aaron Ramsey  BUR        M   9.00  ...          9.00           -2.0  2.16     4.17
+2   Aaron Wan-Bissaka  MUN        D  34.75  ...         21.75          -17.0  3.77     9.22
+3  Abdoulaye Doucoure  EVE        M  80.50  ...         56.50           -4.5  6.51    12.37
+4        Adam Lallana  BHA        M   6.50  ...          5.50           -2.5  1.20     5.42
+
+[5 rows x 32 columns]
+2023-10-04 16:49:10,017 - INFO - Dataframe tail:                        Player Team Position  ...  Negative Fpts   90s  FPts/90
+409               Yoane Wissa  BRF        F  ...           -4.5  6.66    10.14
+410           Youri Tielemans  AVL        M  ...           -1.5  1.46     1.71
+411  Youssef Ramalho Chermiti  EVE        F  ...           -2.0  0.27    -3.70
+412             Yves Bissouma  TOT        M  ...          -15.5  6.79     7.88
+413              Zeki Amdouni  BUR        F  ...           -4.5  5.16     8.33
+
+[5 rows x 32 columns]
+2023-10-04 16:49:10,110 - INFO - Dataframe nans analysis for dataframe: GROUPED
+2023-10-04 16:49:10,111 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:10,113 - INFO - Aggregating column: Player, with function: count
+2023-10-04 16:49:10,114 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:49:10,114 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:49:10,115 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:49:10,116 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:49:10,117 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:49:10,118 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:49:10,119 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:49:10,119 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:49:10,120 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:49:10,121 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:49:10,122 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:49:10,123 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:49:10,125 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:49:10,127 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:49:10,128 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:49:10,128 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:49:10,129 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:49:10,129 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:49:10,130 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:49:10,131 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:49:10,132 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:49:10,132 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:49:10,133 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:49:10,134 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:49:10,134 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:49:10,148 - INFO - Dataframe name: TEAM
+2023-10-04 16:49:10,148 - INFO - Dataframe shape: (20, 29)
+2023-10-04 16:49:10,148 - INFO - Dataframe columns: ['Team', 'Player', 'FPTS', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:49:10,149 - INFO - Dataframe dtypes: Team              object
+Player             int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:10,153 - INFO - Dataframe info: None
+2023-10-04 16:49:10,176 - INFO - Dataframe head:   Team  Player    FPTS  LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50    178.53  14  ...  5846        436.50          -99.0  64.96    11.12
+1  AVL      20  661.00    233.37  17  ...  6244        351.00         -166.0  69.38     9.53
+2  BHA      22  703.75    198.81  18  ...  6243        425.75         -187.0  69.37    10.14
+3  BOU      22  412.25    269.66   5  ...  6198        308.25         -180.0  68.87     5.99
+4  BRF      21  605.75    223.41  10  ...  6396        423.75         -141.0  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:49:10,197 - INFO - Dataframe tail:    Team  Player    FPTS  LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00    276.75   8  ...  5945        341.00         -168.5  66.06     7.54
+16  SHU      24  231.75    369.31   4  ...  5635        167.75         -263.5  62.61     3.70
+17  TOT      19  791.50    210.89  14  ...  6383        513.50         -149.0  70.92    11.16
+18  WHU      18  736.50    218.24  13  ...  7222        490.50         -196.0  80.24     9.18
+19  WOL      19  575.00    241.57   8  ...  6645        398.00         -211.0  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:49:10,261 - INFO - Dataframe nans analysis for dataframe: TEAM
+2023-10-04 16:49:10,262 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:10,263 - INFO - Aggregating column: Player, with function: count
+2023-10-04 16:49:10,265 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:49:10,266 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:49:10,267 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:49:10,268 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:49:10,269 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:49:10,270 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:49:10,271 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:49:10,272 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:49:10,273 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:49:10,275 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:49:10,276 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:49:10,277 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:49:10,278 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:49:10,279 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:49:10,280 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:49:10,281 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:49:10,281 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:49:10,282 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:49:10,283 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:49:10,283 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:49:10,284 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:49:10,285 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:49:10,285 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:49:10,287 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:49:10,288 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:49:10,537 - INFO - Dataframe dtypes for TEAM_POS dataframe: Team              object
+Position          object
+Player Count       int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:10,538 - INFO - Dataframe name: TEAM_POS
+2023-10-04 16:49:10,539 - INFO - Dataframe shape: (60, 30)
+2023-10-04 16:49:10,539 - INFO - Dataframe columns: ['Team', 'Position', 'Player Count', 'FPTS', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:49:10,540 - INFO - Dataframe dtypes: Team              object
+Position          object
+Player Count       int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:10,547 - INFO - Dataframe info: None
+2023-10-04 16:49:10,579 - INFO - Dataframe head:   Team Position  Player Count   FPTS  ...  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS        D             6  160.5  ...          82.5          -51.5  21.03     7.63
+1  ARS        F             4  136.0  ...          82.0          -22.0  13.04    10.43
+2  ARS        M             9  426.0  ...         272.0          -25.5  30.88    13.80
+3  AVL        D             6  180.5  ...          84.5         -117.5  29.58     6.10
+4  AVL        F             4  281.0  ...         125.0          -19.0  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-04 16:49:10,605 - INFO - Dataframe tail:    Team Position  Player Count   FPTS  ...  Ghost Points  Negative Fpts    90s  FPts/90
+55  WHU        F             2   50.5  ...          26.5           -8.0   6.08     8.31
+56  WHU        M             9  419.0  ...         289.0          -42.0  35.08    11.94
+57  WOL        D             8  110.0  ...          86.0         -145.5  30.18     3.64
+58  WOL        F             5  368.5  ...         230.5          -34.5  26.60    13.85
+59  WOL        M             6   96.5  ...          81.5          -31.0  17.06     5.66
+
+[5 rows x 30 columns]
+2023-10-04 16:49:10,679 - INFO - Dataframe nans analysis for dataframe: TEAM_POS
+2023-10-04 16:49:10,697 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:35,339 - INFO - Current directory: /Users/hogan/dev/st_fantrax_dashboard/scripts
+2023-10-04 16:49:35,339 - INFO - Starting main function
+2023-10-04 16:49:35,444 - INFO - Starting update_team_names() function. Updating team names.
+2023-10-04 16:49:48,785 - INFO - Unique unique_ids in gws_df: 640
+2023-10-04 16:49:48,785 - INFO - Unique unique_ids in fbref_df: 431
+2023-10-04 16:49:48,789 - INFO - Dataframe name: ROS
+2023-10-04 16:49:48,789 - INFO - Dataframe shape: (150, 3)
+2023-10-04 16:49:48,790 - INFO - Dataframe columns: ['player', 'ros rank', 'team']
+2023-10-04 16:49:48,791 - INFO - Dataframe dtypes: player      object
+ros rank     int64
+team        object
+dtype: object
+2023-10-04 16:49:48,797 - INFO - Dataframe info: None
+2023-10-04 16:49:48,801 - INFO - Dataframe head:             player  ros rank team
+0   Erling Haaland         1  MCI
+1  Bruno Fernandes         2  MUN
+2    Mohamed Salah         3  LIV
+3      Bukayo Saka         4  ARS
+4   James Maddison         5  TOT
+2023-10-04 16:49:48,808 - INFO - Dataframe tail:               player  ros rank team
+145  Conor Gallagher       146  CHE
+146   Anthony Elanga       147  NOT
+147  Alphonse Areola       148  WHU
+148    Sandro Tonali       149  NEW
+149   Cameron Archer       150  SHU
+2023-10-04 16:49:48,827 - INFO - Dataframe nans analysis for dataframe: ROS
+2023-10-04 16:49:48,828 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:48,829 - INFO - Dataframe name: FBREF
+2023-10-04 16:49:48,829 - INFO - Dataframe shape: (2083, 109)
+2023-10-04 16:49:48,829 - INFO - Dataframe columns: ['player', 'shirtnumber', 'nation', 'age', 'minutes', 'goals', 'assists', 'pens_made', 'pens_att', 'shots', 'shots_on_target', 'cards_yellow', 'cards_red', 'touches', 'tackles', 'interceptions', 'blocks', 'xg', 'npxg', 'xg_assist', 'sca', 'gca', 'passes_completed', 'passes', 'passes_pct', 'progressive_passes', 'carries', 'progressive_carries', 'take_ons', 'take_ons_won', 'started', 'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short', 'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium', 'passes_completed_long', 'passes_long', 'passes_pct_long', 'pass_xa', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area', 'crosses_into_penalty_area', 'passes_live', 'passes_dead', 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 'corner_kicks', 'corner_kicks_in', 'corner_kicks_out', 'corner_kicks_straight', 'passes_offsides', 'passes_blocked', 'tackles_won', 'tackles_def_3rd', 'tackles_mid_3rd', 'tackles_att_3rd', 'challenge_tackles', 'challenges', 'challenge_tackles_pct', 'challenges_lost', 'blocked_shots', 'blocked_passes', 'tackles_interceptions', 'clearances', 'errors', 'touches_def_pen_area', 'touches_def_3rd', 'touches_mid_3rd', 'touches_att_3rd', 'touches_att_pen_area', 'touches_live_ball', 'take_ons_won_pct', 'take_ons_tackled', 'take_ons_tackled_pct', 'carries_distance', 'carries_progressive_distance', 'carries_into_final_third', 'carries_into_penalty_area', 'miscontrols', 'dispossessed', 'passes_received', 'progressive_passes_received', 'cards_yellow_red', 'fouls', 'fouled', 'offsides', 'pens_won', 'pens_conceded', 'own_goals', 'ball_recoveries', 'aerials_won', 'aerials_lost', 'aerials_won_pct', 'home', 'team', 'gw', 'season', 'position_1', 'position_2', 'position_3', 'unique_id']
+2023-10-04 16:49:48,831 - INFO - Dataframe dtypes: player         object
+shirtnumber     int64
+nation         object
+age             int64
+minutes         int64
+                ...  
+season         object
+position_1     object
+position_2     object
+position_3     object
+unique_id      object
+Length: 109, dtype: object
+2023-10-04 16:49:48,841 - INFO - Dataframe info: None
+2023-10-04 16:49:48,921 - INFO - Dataframe head:            player  shirtnumber   nation  ...  position_2  position_3  unique_id
+0    Zeki Amdouni           25   ch SUI  ...         NaN         NaN     ZEK159
+1   Anass Zaroury           19   ma MAR  ...         NaN         NaN     ANA513
+2     Lyle Foster           17   za RSA  ...         NaN         NaN     LYL635
+3  Nathan Redmond           15  eng ENG  ...         NaN         NaN     NAT405
+4     Josh Cullen           24   ie IRL  ...         NaN         NaN     JOS143
+
+[5 rows x 109 columns]
+2023-10-04 16:49:48,988 - INFO - Dataframe tail:               player  shirtnumber   nation  ...  position_2  position_3  unique_id
+2078    Levi Colwill           26  eng ENG  ...         NaN         NaN      LEV65
+2079    Thiago Silva            6   br BRA  ...         NaN         NaN      THI27
+2080     Axel Disasi            2   fr FRA  ...         NaN         NaN     AXE527
+2081  Marc Cucurella            3   es ESP  ...         NaN         NaN     MAR509
+2082  Robert Sanchez            1   es ESP  ...         NaN         NaN     ROB644
+
+[5 rows x 109 columns]
+2023-10-04 16:49:49,153 - INFO - Dataframe nans analysis for dataframe: FBREF
+2023-10-04 16:49:49,156 - INFO - Columns where there are some nans: ['passes_pct', 'passes_pct_short', 'passes_pct_medium', 'passes_pct_long', 'challenge_tackles_pct', 'take_ons_won_pct', 'take_ons_tackled_pct', 'aerials_won_pct', 'position_2', 'position_3']
+2023-10-04 16:49:49,160 - INFO - Dataframe name: GWS
+2023-10-04 16:49:49,160 - INFO - Dataframe shape: (4480, 30)
+2023-10-04 16:49:49,160 - INFO - Dataframe columns: ['player', 'team', 'position', 'LiveRkOv', 'fpts', 'fp/g', 'ros %', 'gp', 'min', 'g', 'kp', 'at', 'sot', 'tkw', 'dis', 'yc', 'rc', 'acnc', 'int', 'clr', 'cos', 'bs', 'aer', 'pkm', 'pkd', 'og', 'gao', 'cs', 'gw', 'unique_id']
+2023-10-04 16:49:49,161 - INFO - Dataframe dtypes: player        object
+team          object
+position      object
+LiveRkOv       int64
+fpts         float64
+fp/g         float64
+ros %         object
+gp             int64
+min            int64
+g              int64
+kp             int64
+at             int64
+sot            int64
+tkw            int64
+dis            int64
+yc             int64
+rc             int64
+acnc           int64
+int            int64
+clr            int64
+cos            int64
+bs             int64
+aer            int64
+pkm            int64
+pkd            int64
+og             int64
+gao            int64
+cs             int64
+gw             int64
+unique_id     object
+dtype: object
+2023-10-04 16:49:49,177 - INFO - Dataframe info: None
+2023-10-04 16:49:49,213 - INFO - Dataframe head:              player team position  LiveRkOv  fpts  fp/g  ... pkd  og  gao  cs  gw  unique_id
+0     Mohamed Salah  LIV        F         8  26.5  26.5  ...   0   0    1   0   5     MOH524
+1    Bernardo Silva  MCI        M       129  26.5  26.5  ...   0   0    1   0   5     BER384
+2  Dejan Kulusevski  TOT        M        19  25.5  25.5  ...   0   0    1   0   5     DEJ288
+3       Jeremy Doku  MCI        F        80  24.5  24.5  ...   0   0    1   0   5     JER134
+4    Erling Haaland  MCI        F         2  23.5  23.5  ...   0   0    1   0   5     ERL469
+
+[5 rows x 30 columns]
+2023-10-04 16:49:49,238 - INFO - Dataframe tail:                 player team position  LiveRkOv   fpts  ...  og gao  cs  gw  unique_id
+4475      Milos Kerkez  BOU        D       247  -7.50  ...   1   3   0   6     MIL623
+4476       Luke Thomas  SHU        D       722  -9.25  ...   0   8   0   6     LUK256
+4477         John Egan  SHU        D       304 -10.25  ...   0   8   0   6     JOH359
+4478  Anel Ahmedhodzic  SHU        D       319 -12.75  ...   0   8   0   6     ANE322
+4479     Jack Robinson  SHU        D       288 -13.00  ...   0   8   0   6      JAC24
+
+[5 rows x 30 columns]
+2023-10-04 16:49:49,305 - INFO - Dataframe nans analysis for dataframe: GWS
+2023-10-04 16:49:49,310 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:49,315 - INFO - Merging dataframes
+2023-10-04 16:49:49,689 - INFO - Dataframe name: MERGED
+2023-10-04 16:49:49,689 - INFO - Dataframe shape: (1976, 33)
+2023-10-04 16:49:49,689 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Started', 'Home', 'FP/G', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts']
+2023-10-04 16:49:49,690 - INFO - Dataframe dtypes: Player            object
+Team              object
+Position          object
+GW                 int64
+FPTS             float64
+Started          float64
+Home                bool
+FP/G             float64
+LiveRkOv           int64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+ROS %             object
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+dtype: object
+2023-10-04 16:49:49,697 - INFO - Dataframe info: None
+2023-10-04 16:49:49,722 - INFO - Dataframe head:              Player Team Position  GW  FPTS  ...  ROS %  GP  MIN  Ghost Points  Negative Fpts
+0     Mohamed Salah  LIV        F   5  26.5  ...   100%   1   88          14.5            0.0
+1    Bernardo Silva  MCI        M   5  26.5  ...    98%   1   88          11.5           -0.5
+2  Dejan Kulusevski  TOT        M   5  25.5  ...   100%   1   90          16.5            0.0
+3       Jeremy Doku  MCI        F   5  24.5  ...    82%   1   88          15.5            0.0
+4    Erling Haaland  MCI        F   5  23.5  ...   100%   1   88          14.5            0.0
+
+[5 rows x 33 columns]
+2023-10-04 16:49:49,751 - INFO - Dataframe tail:                 Player Team Position  GW  ...  GP  MIN  Ghost Points  Negative Fpts
+1971      Milos Kerkez  BOU        D   6  ...   1   90         -7.50          -12.0
+1972       Luke Thomas  SHU        D   6  ...   1   90         -9.25          -16.0
+1973         John Egan  SHU        D   6  ...   1   90        -10.25          -18.0
+1974  Anel Ahmedhodzic  SHU        D   6  ...   1   90        -12.75          -18.0
+1975     Jack Robinson  SHU        D   6  ...   1   90        -13.00          -18.0
+
+[5 rows x 33 columns]
+2023-10-04 16:49:49,833 - INFO - Dataframe nans analysis for dataframe: MERGED
+2023-10-04 16:49:49,835 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:49,864 - INFO - Aggregating column: Team, with function: first
+2023-10-04 16:49:49,866 - INFO - Aggregating column: Position, with function: first
+2023-10-04 16:49:49,867 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:49:49,868 - INFO - Aggregating column: Started, with function: sum
+2023-10-04 16:49:49,869 - INFO - Aggregating column: Home, with function: sum
+2023-10-04 16:49:49,870 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:49:49,872 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:49:49,873 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:49:49,875 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:49:49,876 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:49:49,878 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:49:49,879 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:49:49,881 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:49:49,883 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:49:49,885 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:49:49,887 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:49:49,889 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:49:49,891 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:49:49,893 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:49:49,895 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:49:49,896 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:49:49,898 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:49:49,900 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:49:49,902 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:49:49,903 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:49:49,905 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:49:49,907 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:49:49,910 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:49:49,911 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:49:49,947 - INFO - Dataframe name: GROUPED
+2023-10-04 16:49:49,948 - INFO - Dataframe shape: (413, 32)
+2023-10-04 16:49:49,948 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'FPTS', 'Started', 'Home', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:49:49,949 - INFO - Dataframe dtypes: Player            object
+Team              object
+Position          object
+FPTS             float64
+Started          float64
+Home               int64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:49,963 - INFO - Dataframe info: None
+2023-10-04 16:49:50,025 - INFO - Dataframe head:                Player Team Position   FPTS  ...  Ghost Points  Negative Fpts   90s  FPts/90
+0        Aaron Hickey  BRF        D   1.00  ...         -5.00          -30.0  6.00     0.17
+1        Aaron Ramsey  BUR        M   9.00  ...          9.00           -2.0  2.16     4.17
+2   Aaron Wan-Bissaka  MUN        D  34.75  ...         21.75          -17.0  3.77     9.22
+3  Abdoulaye Doucoure  EVE        M  80.50  ...         56.50           -4.5  6.51    12.37
+4        Adam Lallana  BHA        M   6.50  ...          5.50           -2.5  1.20     5.42
+
+[5 rows x 32 columns]
+2023-10-04 16:49:50,108 - INFO - Dataframe tail:                        Player Team Position  ...  Negative Fpts   90s  FPts/90
+408               Yoane Wissa  BRF        F  ...           -4.5  6.66    10.14
+409           Youri Tielemans  AVL        M  ...           -1.5  1.46     1.71
+410  Youssef Ramalho Chermiti  EVE        F  ...           -2.0  0.27    -3.70
+411             Yves Bissouma  TOT        M  ...          -15.5  6.79     7.88
+412              Zeki Amdouni  BUR        F  ...           -4.5  5.16     8.33
+
+[5 rows x 32 columns]
+2023-10-04 16:49:50,363 - INFO - Dataframe nans analysis for dataframe: GROUPED
+2023-10-04 16:49:50,365 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:50,367 - INFO - Aggregating column: Player, with function: count
+2023-10-04 16:49:50,368 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:49:50,369 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:49:50,371 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:49:50,372 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:49:50,374 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:49:50,375 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:49:50,376 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:49:50,377 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:49:50,378 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:49:50,378 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:49:50,379 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:49:50,379 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:49:50,380 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:49:50,380 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:49:50,381 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:49:50,382 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:49:50,383 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:49:50,384 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:49:50,385 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:49:50,386 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:49:50,387 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:49:50,388 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:49:50,389 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:49:50,390 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:49:50,392 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:49:50,415 - INFO - Dataframe name: TEAM
+2023-10-04 16:49:50,415 - INFO - Dataframe shape: (20, 29)
+2023-10-04 16:49:50,415 - INFO - Dataframe columns: ['Team', 'Player', 'FPTS', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:49:50,417 - INFO - Dataframe dtypes: Team              object
+Player             int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:50,427 - INFO - Dataframe info: None
+2023-10-04 16:49:50,550 - INFO - Dataframe head:   Team  Player    FPTS  LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50    178.53  14  ...  5846        436.50          -99.0  64.96    11.12
+1  AVL      20  661.00    233.37  17  ...  6244        351.00         -166.0  69.38     9.53
+2  BHA      22  681.75    221.49  18  ...  6176        415.75         -185.0  68.62     9.94
+3  BOU      22  412.25    269.66   5  ...  6198        308.25         -180.0  68.87     5.99
+4  BRF      21  605.75    223.41  10  ...  6396        423.75         -141.0  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:49:50,792 - INFO - Dataframe tail:    Team  Player    FPTS  LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00    276.75   8  ...  5945        341.00         -168.5  66.06     7.54
+16  SHU      23  254.25    359.35   4  ...  5935        190.25         -265.5  65.94     3.86
+17  TOT      19  791.50    210.89  14  ...  6383        513.50         -149.0  70.92    11.16
+18  WHU      18  736.50    218.24  13  ...  7222        490.50         -196.0  80.24     9.18
+19  WOL      19  575.00    241.57   8  ...  6645        398.00         -211.0  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:49:51,197 - INFO - Dataframe nans analysis for dataframe: TEAM
+2023-10-04 16:49:51,199 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:51,201 - INFO - Aggregating column: Player, with function: count
+2023-10-04 16:49:51,205 - INFO - Aggregating column: FPTS, with function: sum
+2023-10-04 16:49:51,208 - INFO - Aggregating column: LiveRkOv, with function: mean
+2023-10-04 16:49:51,213 - INFO - Aggregating column: G, with function: sum
+2023-10-04 16:49:51,215 - INFO - Aggregating column: KP, with function: sum
+2023-10-04 16:49:51,218 - INFO - Aggregating column: AT, with function: sum
+2023-10-04 16:49:51,220 - INFO - Aggregating column: SOT, with function: sum
+2023-10-04 16:49:51,223 - INFO - Aggregating column: TKW, with function: sum
+2023-10-04 16:49:51,226 - INFO - Aggregating column: DIS, with function: sum
+2023-10-04 16:49:51,228 - INFO - Aggregating column: YC, with function: sum
+2023-10-04 16:49:51,233 - INFO - Aggregating column: RC, with function: sum
+2023-10-04 16:49:51,238 - INFO - Aggregating column: ACNC, with function: sum
+2023-10-04 16:49:51,241 - INFO - Aggregating column: INT, with function: sum
+2023-10-04 16:49:51,251 - INFO - Aggregating column: CLR, with function: sum
+2023-10-04 16:49:51,271 - INFO - Aggregating column: COS, with function: sum
+2023-10-04 16:49:51,292 - INFO - Aggregating column: BS, with function: sum
+2023-10-04 16:49:51,294 - INFO - Aggregating column: AER, with function: sum
+2023-10-04 16:49:51,296 - INFO - Aggregating column: PKM, with function: sum
+2023-10-04 16:49:51,297 - INFO - Aggregating column: PKD, with function: sum
+2023-10-04 16:49:51,300 - INFO - Aggregating column: OG, with function: sum
+2023-10-04 16:49:51,304 - INFO - Aggregating column: GAO, with function: sum
+2023-10-04 16:49:51,306 - INFO - Aggregating column: CS, with function: sum
+2023-10-04 16:49:51,309 - INFO - Aggregating column: GP, with function: sum
+2023-10-04 16:49:51,313 - INFO - Aggregating column: MIN, with function: sum
+2023-10-04 16:49:51,316 - INFO - Aggregating column: Ghost Points, with function: sum
+2023-10-04 16:49:51,318 - INFO - Aggregating column: Negative Fpts, with function: sum
+2023-10-04 16:49:51,635 - INFO - Dataframe dtypes for TEAM_POS dataframe: Team              object
+Position          object
+Player Count       int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:51,637 - INFO - Dataframe name: TEAM_POS
+2023-10-04 16:49:51,637 - INFO - Dataframe shape: (60, 30)
+2023-10-04 16:49:51,637 - INFO - Dataframe columns: ['Team', 'Position', 'Player Count', 'FPTS', 'LiveRkOv', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GP', 'MIN', 'Ghost Points', 'Negative Fpts', '90s', 'FPts/90']
+2023-10-04 16:49:51,638 - INFO - Dataframe dtypes: Team              object
+Position          object
+Player Count       int64
+FPTS             float64
+LiveRkOv         float64
+G                  int64
+KP                 int64
+AT                 int64
+SOT                int64
+TKW                int64
+DIS                int64
+YC                 int64
+RC                 int64
+ACNC               int64
+INT                int64
+CLR                int64
+COS                int64
+BS                 int64
+AER                int64
+PKM                int64
+PKD                int64
+OG                 int64
+GAO                int64
+CS                 int64
+GP                 int64
+MIN                int64
+Ghost Points     float64
+Negative Fpts    float64
+90s              float64
+FPts/90          float64
+dtype: object
+2023-10-04 16:49:51,646 - INFO - Dataframe info: None
+2023-10-04 16:49:51,682 - INFO - Dataframe head:   Team Position  Player Count   FPTS  ...  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS        D             6  160.5  ...          82.5          -51.5  21.03     7.63
+1  ARS        F             4  136.0  ...          82.0          -22.0  13.04    10.43
+2  ARS        M             9  426.0  ...         272.0          -25.5  30.88    13.80
+3  AVL        D             6  180.5  ...          84.5         -117.5  29.58     6.10
+4  AVL        F             4  281.0  ...         125.0          -19.0  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-04 16:49:51,716 - INFO - Dataframe tail:    Team Position  Player Count   FPTS  ...  Ghost Points  Negative Fpts    90s  FPts/90
+55  WHU        F             2   50.5  ...          26.5           -8.0   6.08     8.31
+56  WHU        M             9  419.0  ...         289.0          -42.0  35.08    11.94
+57  WOL        D             8  110.0  ...          86.0         -145.5  30.18     3.64
+58  WOL        F             5  368.5  ...         230.5          -34.5  26.60    13.85
+59  WOL        M             6   96.5  ...          81.5          -31.0  17.06     5.66
+
+[5 rows x 30 columns]
+2023-10-04 16:49:51,807 - INFO - Dataframe nans analysis for dataframe: TEAM_POS
+2023-10-04 16:49:51,809 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:51,819 - INFO - Dataframe name: FINAL
+2023-10-04 16:49:51,819 - INFO - Dataframe shape: (291, 37)
+2023-10-04 16:49:51,819 - INFO - Dataframe columns: ['Player', 'Team', 'Position', 'GW', 'FPTS', 'Ghost Points', 'Overperformance', 'Negative Fpts', 'Ros Rank', 'LiveRkOv', 'LiveRkOvByPos', 'Ros RankByPos', 'Started', 'GP', 'Home', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'MIN', 'FP/G']
+2023-10-04 16:49:51,821 - INFO - Dataframe dtypes: Player              object
+Team                object
+Position            object
+GW                   int64
+FPTS               float64
+Ghost Points       float64
+Overperformance      int64
+Negative Fpts      float64
+Ros Rank           float64
+LiveRkOv             int64
+LiveRkOvByPos        int64
+Ros RankByPos        int64
+Started            float64
+GP                   int64
+Home                  bool
+G                    int64
+KP                   int64
+AT                   int64
+SOT                  int64
+TKW                  int64
+DIS                  int64
+YC                   int64
+RC                   int64
+ACNC                 int64
+INT                  int64
+CLR                  int64
+COS                  int64
+BS                   int64
+AER                  int64
+PKM                  int64
+PKD                  int64
+OG                   int64
+GAO                  int64
+CS                   int64
+ROS %               object
+MIN                  int64
+FP/G               float64
+dtype: object
+2023-10-04 16:49:51,833 - INFO - Dataframe info: None
+2023-10-04 16:49:51,884 - INFO - Dataframe head:              Player Team Position  GW  FPTS  Ghost Points  ...  OG  GAO  CS  ROS %  MIN  FP/G
+0     Ollie Watkins  AVL        F   7  59.5          20.5  ...   0    1   0   100%   90  59.5
+1     Alfie Doughty  LUT        M   7  40.0          34.0  ...   0    3   0    42%  172  20.0
+2   Martin Odegaard  ARS        M   7  34.0          12.0  ...   0    0   1   100%   90  34.0
+3  Joachim Andersen  CRY        D   7  29.5          13.5  ...   0    0   1    92%   90  29.5
+4   Kieran Trippier  NEW        D   7  29.0          16.0  ...   0    0   1   100%   90  29.0
+
+[5 rows x 37 columns]
+2023-10-04 16:49:51,927 - INFO - Dataframe tail:                Player Team Position  GW  FPTS  ...  GAO  CS  ROS %  MIN  FP/G
+286        Max Aarons  BOU        D   7 -5.50  ...    4   0     7%   90 -5.50
+287      Adam Webster  BHA        D   7 -5.50  ...    6   0     6%   90 -5.50
+288  Pervis Estupinan  BHA        D   7 -6.75  ...    3   0   100%   45 -6.75
+289      Curtis Jones  LIV        M   7 -7.00  ...    0   0    21%   25 -7.00
+290        Lewis Dunk  BHA        D   7 -7.50  ...    6   0    49%   90 -7.50
+
+[5 rows x 37 columns]
+2023-10-04 16:49:52,049 - INFO - Dataframe nans analysis for dataframe: FINAL
+2023-10-04 16:49:52,061 - INFO - Columns where there are some nans: []
+2023-10-04 16:49:52,068 - INFO - End of main function
