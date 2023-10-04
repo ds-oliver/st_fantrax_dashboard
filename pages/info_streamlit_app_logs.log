@@ -2279,3 +2279,10 @@
 2023-10-03 17:31:22,086 - INFO - Main function completed successfully
 2023-10-03 17:31:22,087 - INFO - Attempting to style the grouped_df dataframe
 2023-10-03 17:31:25,585 - INFO - Main function completed successfully
+2023-10-03 17:39:30,128 - INFO - Starting main function
+2023-10-03 17:39:30,129 - INFO - Creating custom color maps
+2023-10-03 17:39:30,201 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-03 17:39:33,571 - INFO - Main function completed successfully
+2023-10-03 17:39:33,571 - INFO - Attempting to style the grouped_df dataframe
+2023-10-03 17:39:33,575 - ERROR - An exception occurred: 'Gw'
+2023-10-03 17:39:33,577 - INFO - Main function completed successfully
