@@ -3197,3 +3197,74 @@ def style_dataframe_custom(_custom_cmap, ...):
 
 [5 rows x 30 columns]
 2023-10-04 15:58:57,081 - INFO - Main function completed successfully
+2023-10-04 16:20:08,661 - INFO - Starting main function
+2023-10-04 16:20:08,664 - INFO - Creating custom color maps
+2023-10-04 16:20:08,786 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-04 16:20:09,963 - INFO - Most Recent Game Week Dataframe head:   Team  Player    FPTS    RKOV   G   KP  ...   GP   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50  178.53  14   79  ...   94  5846        436.50         -99.00  64.96    11.12
+1  AVL      20  661.00  233.37  17   75  ...   99  6244        351.00        -166.00  69.38     9.53
+2  BHA      22  703.75  198.81  18  102  ...  104  6243        425.75        -187.00  69.37    10.14
+3  BOU      22  412.25  269.66   5   56  ...   99  6198        308.25        -180.00  68.87     5.99
+4  BRF      21  605.75  223.41  10   70  ...  103  6396        423.75        -141.00  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:20:09,983 - INFO - Most Recent Game Week Dataframe tail:    Team  Player    FPTS    RKOV   G   KP  ...   GP   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00  276.75   8   52  ...  100  5945        341.00        -168.50  66.06     7.54
+16  SHU      24  231.75  369.31   4   39  ...   91  5635        167.75        -263.50  62.61     3.70
+17  TOT      19  791.50  210.89  14  107  ...  100  6383        513.50        -149.00  70.92    11.16
+18  WHU      18  736.50  218.24  13   76  ...  105  7222        490.50        -196.00  80.24     9.18
+19  WOL      19  575.00  241.57   8   75  ...  105  6645        398.00        -211.00  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:20:09,984 - INFO - Attempting to style the grouped_players_df dataframe
+2023-10-04 16:20:11,239 - INFO - Grouped Player Dataframe head:                Player Team Position   FPTS Started  ...  MIN Ghost Points  Negative Fpts   90s  FPts/90
+0        Aaron Hickey  BRF        D   1.00    7.00  ...  540        -5.00         -30.00  6.00     0.17
+1        Aaron Ramsey  BUR        M   9.00    6.00  ...  194         9.00          -2.00  2.16     4.17
+2   Aaron Wan-Bissaka  MUN        D  34.75    4.00  ...  339        21.75         -17.00  3.77     9.22
+3  Abdoulaye Doucoure  EVE        M  80.50    7.00  ...  586        56.50          -4.50  6.51    12.37
+4        Adam Lallana  BHA        M   6.50    1.00  ...  108         5.50          -2.50  1.20     5.42
+
+[5 rows x 32 columns]
+2023-10-04 16:20:11,279 - INFO - Grouped Player Dataframe tail:                        Player Team Position   FPTS  ... Ghost Points  Negative Fpts   90s  FPts/90
+409               Yoane Wissa  BRF        F  67.50  ...        43.50          -4.50  6.66    10.14
+410           Youri Tielemans  AVL        M   2.50  ...         2.50          -1.50  1.46     1.71
+411  Youssef Ramalho Chermiti  EVE        F  -1.00  ...        -1.00          -2.00  0.27    -3.70
+412             Yves Bissouma  TOT        M  53.50  ...        51.50         -15.50  6.79     7.88
+413              Zeki Amdouni  BUR        F  43.00  ...        34.00          -4.50  5.16     8.33
+
+[5 rows x 32 columns]
+2023-10-04 16:20:11,280 - INFO - Attempting to style the team_df dataframe
+2023-10-04 16:20:11,430 - INFO - Team Dataframe head:   Team  Player    FPTS    RKOV   G   KP  ...   GP   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50  178.53  14   79  ...   94  5846        436.50         -99.00  64.96    11.12
+1  AVL      20  661.00  233.37  17   75  ...   99  6244        351.00        -166.00  69.38     9.53
+2  BHA      22  703.75  198.81  18  102  ...  104  6243        425.75        -187.00  69.37    10.14
+3  BOU      22  412.25  269.66   5   56  ...   99  6198        308.25        -180.00  68.87     5.99
+4  BRF      21  605.75  223.41  10   70  ...  103  6396        423.75        -141.00  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:20:11,451 - INFO - Team Dataframe tail:    Team  Player    FPTS    RKOV   G   KP  ...   GP   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00  276.75   8   52  ...  100  5945        341.00        -168.50  66.06     7.54
+16  SHU      24  231.75  369.31   4   39  ...   91  5635        167.75        -263.50  62.61     3.70
+17  TOT      19  791.50  210.89  14  107  ...  100  6383        513.50        -149.00  70.92    11.16
+18  WHU      18  736.50  218.24  13   76  ...  105  7222        490.50        -196.00  80.24     9.18
+19  WOL      19  575.00  241.57   8   75  ...  105  6645        398.00        -211.00  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:20:11,452 - INFO - Attempting to style the team_pos_df dataframe
+2023-10-04 16:20:11,665 - INFO - Team Position Dataframe head:   Team Position  Player Count    FPTS    RKOV  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS        D             6  160.50  226.20  ...  1893         82.50         -51.50  21.03     7.63
+1  ARS        F             4  136.00  169.32  ...  1174         82.00         -22.00  13.04    10.43
+2  ARS        M             9  426.00  150.83  ...  2779        272.00         -25.50  30.88    13.80
+3  AVL        D             6  180.50  201.16  ...  2662         84.50        -117.50  29.58     6.10
+4  AVL        F             4  281.00   82.08  ...  1406        125.00         -19.00  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-04 16:20:11,686 - INFO - Team Position Dataframe tail:    Team Position  Player Count    FPTS    RKOV  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+55  WHU        F             2   50.50  233.43  ...   547         26.50          -8.00   6.08     8.31
+56  WHU        M             9  419.00  164.48  ...  3157        289.00         -42.00  35.08    11.94
+57  WOL        D             8  110.00  275.77  ...  2716         86.00        -145.50  30.18     3.64
+58  WOL        F             5  368.50  126.26  ...  2394        230.50         -34.50  26.60    13.85
+59  WOL        M             6   96.50  292.06  ...  1535         81.50         -31.00  17.06     5.66
+
+[5 rows x 30 columns]
+2023-10-04 16:20:11,686 - INFO - Main function completed successfully
