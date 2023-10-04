@@ -49,19 +49,19 @@ def main():
 
     lastgw_df = load_csv_file('data/display-data/recent_gw_data.csv')
 
-    lastgw_df = round_and_format(lastgw_df)
+    lastgw_df = lastgw_df.applymap(round_and_format)
 
     grouped_players_df = load_csv_file('data/display-data/grouped_player_data.csv')
 
-    grouped_players_df = round_and_format(grouped_players_df)
+    grouped_players_df = grouped_players_df.applymap(round_and_format)
 
     team_df = load_csv_file('data/display-data/team_data.csv')
 
-    team_df = round_and_format(team_df)
+    team_df = team_df.applymap(round_and_format)
 
     team_pos_df = load_csv_file('data/display-data/team_pos_data.csv')
 
-    team_pos_df = round_and_format(team_pos_df)
+    team_pos_df = team_pos_df.applymap(round_and_format)
 
     columns_to_keep = lastgw_df.columns.tolist()
 
