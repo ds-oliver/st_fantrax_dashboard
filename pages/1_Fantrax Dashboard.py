@@ -50,7 +50,7 @@ def main():
 
     grouped_df = load_csv_file('all_game_weeks_data.csv')
 
-    lastgw_df = load_csv_file('merged_data.csv')
+    lastgw_df = load_csv_file('last_game_week_data.csv')
 
     columns_to_keep = lastgw_df.columns.tolist()
 
@@ -58,7 +58,7 @@ def main():
         st.write("## Most Recent Game Week Data")
         logging.info("Attempting to style the lastgw_df dataframe")
         styled_df = style_dataframe_custom(lastgw_df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(lastgw_df) * 5)
+        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(lastgw_df))
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
