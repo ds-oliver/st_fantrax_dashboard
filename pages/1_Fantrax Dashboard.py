@@ -87,7 +87,7 @@ def main():
         st.write("## Team Data")
         logging.info("Attempting to style the team_df dataframe")
         styled_df = style_dataframe_custom(team_df, team_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_df) * 50)
+        st.dataframe(team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_df) * 30)
         logging.info(f"Team Dataframe head: {team_df.head()}")
         logging.info(f"Team Dataframe tail: {team_df.tail()}")
     except Exception as e:
@@ -109,17 +109,6 @@ def main():
         logging.error(f"An exception occurred: {e}")
 
     logging.info("Main function completed successfully")
-
-    # try:
-    #     st.write("## ROS Data")
-    #     logging.info("Attempting to style the grouped_df dataframe")
-    #     styled_df = style_dataframe_custom(grouped_df, columns_to_keep, custom_cmap=custom_cmap, inverse_cmap=False, is_percentile=False)
-    #     st.dataframe(grouped_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(grouped_df) * 20)
-    # except Exception as e:
-    #     st.write(f"An exception occurred: {e}")
-    #     logging.error(f"An exception occurred: {e}")
-
-    # logging.info("Main function completed successfully")
 
 if __name__ == "__main__":
     main()
