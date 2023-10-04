@@ -1614,7 +1614,6 @@ def create_custom_cmap_1(*colors):
 
 #     return styled_df
 
-@st.cache_data
 def style_dataframe_custom(df, selected_columns, custom_cmap="copper", inverse_cmap=False, is_percentile=False):
     """
     Style the DataFrame based on the selected columns and color map.

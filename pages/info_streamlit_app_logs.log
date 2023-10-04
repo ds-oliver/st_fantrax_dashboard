@@ -2293,3 +2293,31 @@
 2023-10-03 18:03:29,958 - INFO - Attempting to style the grouped_df dataframe
 2023-10-03 18:03:29,963 - ERROR - An exception occurred: 'Gw'
 2023-10-03 18:03:29,963 - INFO - Main function completed successfully
+2023-10-03 18:14:40,886 - INFO - Starting main function
+2023-10-03 18:14:40,888 - INFO - Creating custom color maps
+2023-10-03 18:14:40,972 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-03 18:14:41,035 - ERROR - An exception occurred: Cannot hash argument 'custom_cmap' (of type `matplotlib.colors.LinearSegmentedColormap`) in 'style_dataframe_custom'.
+
+To address this, you can tell Streamlit not to hash this argument by adding a
+leading underscore to the argument's name in the function signature:
+
+```
+@st.cache_data
+def style_dataframe_custom(_custom_cmap, ...):
+    ...
+```
+            
+2023-10-03 18:14:41,070 - INFO - Main function completed successfully
+2023-10-03 18:14:41,071 - INFO - Attempting to style the grouped_df dataframe
+2023-10-03 18:14:41,114 - ERROR - An exception occurred: Cannot hash argument 'custom_cmap' (of type `matplotlib.colors.LinearSegmentedColormap`) in 'style_dataframe_custom'.
+
+To address this, you can tell Streamlit not to hash this argument by adding a
+leading underscore to the argument's name in the function signature:
+
+```
+@st.cache_data
+def style_dataframe_custom(_custom_cmap, ...):
+    ...
+```
+            
+2023-10-03 18:14:41,115 - INFO - Main function completed successfully
