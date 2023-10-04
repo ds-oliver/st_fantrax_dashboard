@@ -2409,3 +2409,10 @@ def style_dataframe_custom(_custom_cmap, ...):
 2023-10-04 14:26:19,583 - INFO - Attempting to style the team_pos_df dataframe
 2023-10-04 14:26:19,721 - ERROR - An exception occurred: "['GW', 'Ros Rank', 'RKPOS', 'Ros RankPOS', 'Started', 'Home', 'ROS %', 'FP/G', 'Overperformance'] not in index"
 2023-10-04 14:26:19,721 - INFO - Main function completed successfully
+2023-10-04 14:28:18,328 - INFO - Starting main function
+2023-10-04 14:28:18,329 - INFO - Creating custom color maps
+2023-10-04 14:28:18,342 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-04 14:28:19,444 - INFO - Attempting to style the grouped_players_df dataframe
+2023-10-04 14:28:20,509 - INFO - Attempting to style the team_df dataframe
+2023-10-04 14:28:20,594 - INFO - Attempting to style the team_pos_df dataframe
+2023-10-04 14:28:20,765 - INFO - Main function completed successfully
