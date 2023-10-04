@@ -9,7 +9,7 @@ from datetime import datetime
 
 from constants import colors, divergent_colors
 from files import matches_data, ros_data
-from functions import load_css, add_construction, create_custom_sequential_cmap, style_dataframe_custom
+from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
@@ -45,8 +45,8 @@ def main():
     add_construction()
 
     logging.info("Creating custom color maps")
-    custom_cmap = create_custom_sequential_cmap(*colors)
-    custom_divergent_cmap = create_custom_sequential_cmap(*divergent_colors)
+    custom_cmap = create_custom_cmap(*colors)
+    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
 
     grouped_df = load_csv_file('all_game_weeks_data.csv')
 

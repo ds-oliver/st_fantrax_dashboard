@@ -1627,7 +1627,11 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
     :return: DataFrame Styler object
     """
     object_cmap = plt.cm.get_cmap(custom_cmap)
-    divergent_cmap = plt.cm.get_cmap(custom_divergent_cmap)
+
+    if isinstance(custom_divergent_cmap, str):
+        divergent_cmap = plt.cm.get_cmap(custom_divergent_cmap)
+    else:
+        divergent_cmap = custom_divergent_cmap
     styled_df = pd.DataFrame()
 
     position_column = 'Position' if 'Position' in df.columns else None
@@ -1675,8 +1679,8 @@ def create_custom_cmap(*colors, base_cmap=None, brightness_limit=None):
         color_list = [(r * brightness_limit, g * brightness_limit, b * brightness_limit, a) for r, g, b, a in color_list]
         return LinearSegmentedColormap.from_list(base_cmap, color_list)
 
-def create_custom_sequential_cmap(*colors):
-    return LinearSegmentedColormap.from_list('custom_sequential_cmap', colors)
+def create_custom_divergent_cmap(*colors):
+    return LinearSegmentedColormap.from_list('custom_divergent_cmap', colors)
 
 def create_custom_cmap_0(base_cmap='magma', brightness_limit=1):
     base = plt.cm.get_cmap(base_cmap)
