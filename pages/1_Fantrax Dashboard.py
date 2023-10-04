@@ -24,7 +24,7 @@ logging.basicConfig(
 
 st.set_page_config(
     page_title="Draft Alchemy",
-    page_icon=":",
+    page_icon=":ice:",
     layout="wide"
 )
 
