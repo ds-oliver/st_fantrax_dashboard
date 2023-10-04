@@ -9,7 +9,7 @@ from datetime import datetime
 
 from constants import colors, divergent_colors
 from files import matches_data, ros_data
-from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom
+from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
@@ -49,31 +49,19 @@ def main():
 
     lastgw_df = load_csv_file('data/display-data/recent_gw_data.csv')
 
-    # round to 2 decimal places
-    for col in lastgw_df.columns:
-        if lastgw_df[col].dtype == 'float64':
-            lastgw_df[col] = lastgw_df[col].round(2)
+    lastgw_df = round_and_format(lastgw_df)
 
     grouped_players_df = load_csv_file('data/display-data/grouped_player_data.csv')
 
-    # round to 2 decimal places
-    for col in grouped_players_df.columns:
-        if grouped_players_df[col].dtype == 'float64':
-            grouped_players_df[col] = grouped_players_df[col].round(2)
+    grouped_players_df = round_and_format(grouped_players_df)
 
     team_df = load_csv_file('data/display-data/team_data.csv')
 
-    # round to 2 decimal places
-    for col in team_df.columns:
-        if team_df[col].dtype == 'float64':
-            team_df[col] = team_df[col].round(2)
+    team_df = round_and_format(team_df)
 
     team_pos_df = load_csv_file('data/display-data/team_pos_data.csv')
 
-    # round to 2 decimal places
-    for col in team_pos_df.columns:
-        if team_pos_df[col].dtype == 'float64':
-            team_pos_df[col] = team_pos_df[col].round(2)
+    team_pos_df = round_and_format(team_pos_df)
 
     columns_to_keep = lastgw_df.columns.tolist()
 
