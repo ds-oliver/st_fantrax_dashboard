@@ -87,7 +87,7 @@ def main():
         st.write("## Team Data")
         logging.info("Attempting to style the team_df dataframe")
         styled_df = style_dataframe_custom(team_df, team_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_df) * 10)
+        st.dataframe(team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_df) * 50)
         logging.info(f"Team Dataframe head: {team_df.head()}")
         logging.info(f"Team Dataframe tail: {team_df.tail()}")
     except Exception as e:
