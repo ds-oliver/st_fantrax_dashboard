@@ -48,9 +48,13 @@ def main():
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
 
-    grouped_df = load_csv_file('all_game_weeks_data.csv')
+    lastgw_df = load_csv_file('data/display-data/recent_gw_data.csv')
 
-    lastgw_df = load_csv_file('recent_gw_data.csv')
+    grouped_players_df = load_csv_file('data/display-data/grouped_player_data.csv')
+
+    team_df = load_csv_file('data/display-data/team_data.csv')
+
+    team_pos_df = load_csv_file('data/display-data/team_pos_data.csv')
 
     columns_to_keep = lastgw_df.columns.tolist()
 
@@ -59,6 +63,33 @@ def main():
         logging.info("Attempting to style the lastgw_df dataframe")
         styled_df = style_dataframe_custom(lastgw_df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
         st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(lastgw_df) * 2)
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
+    try:
+        st.write("## Grouped Player Data")
+        logging.info("Attempting to style the grouped_players_df dataframe")
+        styled_df = style_dataframe_custom(grouped_players_df, grouped_players_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(grouped_players_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(grouped_players_df) * 2)
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
+    try:
+        st.write("## Team Data")
+        logging.info("Attempting to style the team_df dataframe")
+        styled_df = style_dataframe_custom(team_df, team_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_df) * 2)
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
+    try:
+        st.write("## Team Position Data")
+        logging.info("Attempting to style the team_pos_df dataframe")
+        styled_df = style_dataframe_custom(team_pos_df, team_pos_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(team_pos_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_pos_df) * 2)
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
