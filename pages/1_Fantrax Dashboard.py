@@ -38,111 +38,65 @@ warnings.filterwarnings('ignore')
 scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 sys.path.append(scripts_path)
 
+@st.cache_data
+def load_cached_css():
+    load_css()
+
+@st.cache_data
+def load_csv_file_cached(csv_file):
+    return pd.read_csv(csv_file).applymap(round_and_format)
+
+@st.cache_data
+def create_custom_cmap_cached(*colors):
+    return create_custom_cmap(*colors)
+
+@st.cache_data
+def create_custom_divergent_cmap_cached(*divergent_colors):
+    return create_custom_divergent_cmap(*divergent_colors)
+
+# Cache this function to avoid re-styling the DataFrame every time
+@st.cache_data
+def display_dataframe(df, title, colors, divergent_colors):
+    custom_cmap = create_custom_cmap(*colors)
+    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
+    columns_to_keep = df.columns.tolist()
+
+    try:
+        st.write(f"## {title}")
+        logging.info(f"Attempting to style the {title} dataframe")
+        styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(df) * 2)
+        logging.info(f"{title} Dataframe head: {df.head()}")
+        logging.info(f"{title} Dataframe tail: {df.tail()}")
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
 def main():
     logging.info("Starting main function")
     add_construction()
 
+    load_cached_css()
+
     logging.info("Creating custom color maps")
-    custom_cmap = create_custom_cmap(*colors)
-    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
+    custom_cmap = create_custom_cmap_cached(*colors)
+    custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
-    lastgw_df = load_csv_file('data/display-data/recent_gw_data.csv')
+    lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
+    grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
+    team_df = load_csv_file_cached('data/display-data/team_data.csv')
+    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv')
+    vs_team_df = load_csv_file_cached('data/display-data/vs_team_data.csv')
+    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
 
-    lastgw_df = lastgw_df.applymap(round_and_format)
-
-    grouped_players_df = load_csv_file('data/display-data/grouped_player_data.csv')
-
-    grouped_players_df = grouped_players_df.applymap(round_and_format)
-
-    team_df = load_csv_file('data/display-data/team_data.csv')
-
-    team_df = team_df.applymap(round_and_format)
-
-    team_pos_df = load_csv_file('data/display-data/team_pos_data.csv')
-
-    team_pos_df = team_pos_df.applymap(round_and_format)
-
-    vs_team_df = load_csv_file('data/display-data/vs_team_data.csv')
-
-    vs_team_df = vs_team_df.applymap(round_and_format)
-
-    vs_team_pos_df = load_csv_file('data/display-data/vs_team_pos_data.csv')
-
-    vs_team_pos_df = vs_team_pos_df.applymap(round_and_format)
-
-    columns_to_keep = lastgw_df.columns.tolist()
-
-    try:
-        st.write("## Most Recent Game Week Data")
-        logging.info("Attempting to style the lastgw_df dataframe")
-        styled_df = style_dataframe_custom(lastgw_df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(lastgw_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(lastgw_df) * 2)
-        logging.info(f"Most Recent Game Week Dataframe head: {team_df.head()}")
-        logging.info(f"Most Recent Game Week Dataframe tail: {team_df.tail()}")
-    except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")
-
-    columns_to_keep = grouped_players_df.columns.tolist()
-    try:
-        st.write("## Grouped Player Data")
-        logging.info("Attempting to style the grouped_players_df dataframe")
-        styled_df = style_dataframe_custom(grouped_players_df, grouped_players_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(grouped_players_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(grouped_players_df) * 2)
-        logging.info(f"Grouped Player Dataframe head: {grouped_players_df.head()}")
-        logging.info(f"Grouped Player Dataframe tail: {grouped_players_df.tail()}")
-    except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")
-
-    columns_to_keep = team_df.columns.tolist()
-
-    try:
-        st.write("## Team Data")
-        logging.info("Attempting to style the team_df dataframe")
-        styled_df = style_dataframe_custom(team_df, team_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_df) * 30)
-        logging.info(f"Team Dataframe head: {team_df.head()}")
-        logging.info(f"Team Dataframe tail: {team_df.tail()}")
-    except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")
-
-    try:
-        st.write("## vsTeam Data")
-        logging.info("Attempting to style the team_df dataframe")
-        styled_df = style_dataframe_custom(vs_team_df, vs_team_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(vs_team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(vs_team_df) * 30)
-        logging.info(f"vsTeam Dataframe head: {vs_team_df.head()}")
-        logging.info(f"vsTeam Dataframe tail: {vs_team_df.tail()}")
-    except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")            
-
-    columns_to_keep = team_pos_df.columns.tolist()
-    
-    try:
-        st.write("## Team Position Data")
-        logging.info("Attempting to style the team_pos_df dataframe")
-        styled_df = style_dataframe_custom(team_pos_df, team_pos_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(team_pos_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_pos_df) * 10)
-        logging.info(f"Team Position Dataframe head: {team_pos_df.head()}")
-        logging.info(f"Team Position Dataframe tail: {team_pos_df.tail()}")
-    except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")
-
-    try:
-        st.write("## vsTeam Position Data")
-        logging.info("Attempting to style the team_pos_df dataframe")
-        styled_df = style_dataframe_custom(vs_team_pos_df, vs_team_pos_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(vs_team_pos_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(vs_team_pos_df) * 10)
-        logging.info(f"vsTeam Position Dataframe head: {vs_team_pos_df.head()}")
-        logging.info(f"vsTeam Position Dataframe tail: {vs_team_pos_df.tail()}")
-    except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")
-
+    # Use the cached function to display DataFrames
+    display_dataframe(lastgw_df, "Most Recent Game Week Data", colors, divergent_colors)
+    display_dataframe(grouped_players_df, "Grouped Player Data", colors, divergent_colors)
+    display_dataframe(team_df, "Team Data", colors, divergent_colors)
+    display_dataframe(team_pos_df, "Team Position Data", colors, divergent_colors)
+    display_dataframe(vs_team_df, "vsTeam Data", colors, divergent_colors)
+    display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
+  
     logging.info("Main function completed successfully")
 
 if __name__ == "__main__":
