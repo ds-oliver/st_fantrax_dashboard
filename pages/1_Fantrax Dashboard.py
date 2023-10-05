@@ -62,6 +62,14 @@ def main():
 
     team_pos_df = team_pos_df.applymap(round_and_format)
 
+    vs_team_df = load_csv_file('data/display-data/vs_team_data.csv')
+
+    vs_team_df = vs_team_df.applymap(round_and_format)
+
+    vs_team_pos_df = load_csv_file('data/display-data/vs_team_pos_data.csv')
+
+    vs_team_pos_df = vs_team_pos_df.applymap(round_and_format)
+
     columns_to_keep = lastgw_df.columns.tolist()
 
     try:
@@ -100,6 +108,16 @@ def main():
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")
 
+    try:
+        st.write("## vsTeam Data")
+        logging.info("Attempting to style the team_df dataframe")
+        styled_df = style_dataframe_custom(vs_team_df, vs_team_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(vs_team_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(vs_team_df) * 30)
+        logging.info(f"vsTeam Dataframe head: {vs_team_df.head()}")
+        logging.info(f"vsTeam Dataframe tail: {vs_team_df.tail()}")
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")            
 
     columns_to_keep = team_pos_df.columns.tolist()
     
@@ -110,6 +128,17 @@ def main():
         st.dataframe(team_pos_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(team_pos_df) * 10)
         logging.info(f"Team Position Dataframe head: {team_pos_df.head()}")
         logging.info(f"Team Position Dataframe tail: {team_pos_df.tail()}")
+    except Exception as e:
+        st.write(f"An exception occurred: {e}")
+        logging.error(f"An exception occurred: {e}")
+
+    try:
+        st.write("## vsTeam Position Data")
+        logging.info("Attempting to style the team_pos_df dataframe")
+        styled_df = style_dataframe_custom(vs_team_pos_df, vs_team_pos_df.columns.tolist(), custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(vs_team_pos_df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(vs_team_pos_df) * 10)
+        logging.info(f"vsTeam Position Dataframe head: {vs_team_pos_df.head()}")
+        logging.info(f"vsTeam Position Dataframe tail: {vs_team_pos_df.tail()}")
     except Exception as e:
         st.write(f"An exception occurred: {e}")
         logging.error(f"An exception occurred: {e}")

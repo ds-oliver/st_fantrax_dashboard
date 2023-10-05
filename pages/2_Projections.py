@@ -19,9 +19,8 @@ from functions import load_csv, add_construction, load_css, create_custom_sequen
 st.set_page_config(
     page_title="Footy Magic",
     page_icon=":soccer:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+    layout="wide"
+    )
 
 load_css()
 
