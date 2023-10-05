@@ -3410,3 +3410,145 @@ def style_dataframe_custom(_custom_cmap, ...):
 
 [5 rows x 30 columns]
 2023-10-04 16:29:39,925 - INFO - Main function completed successfully
+2023-10-04 16:53:36,831 - INFO - Starting main function
+2023-10-04 16:53:36,834 - INFO - Creating custom color maps
+2023-10-04 16:53:36,963 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-04 16:53:38,593 - INFO - Most Recent Game Week Dataframe head:   Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50   178.53  14  ...  5846        436.50         -99.00  64.96    11.12
+1  AVL      20  661.00   233.37  17  ...  6244        351.00        -166.00  69.38     9.53
+2  BHA      22  681.75   221.49  18  ...  6176        415.75        -185.00  68.62     9.94
+3  BOU      22  412.25   269.66   5  ...  6198        308.25        -180.00  68.87     5.99
+4  BRF      21  605.75   223.41  10  ...  6396        423.75        -141.00  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:53:38,625 - INFO - Most Recent Game Week Dataframe tail:    Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00   276.75   8  ...  5945        341.00        -168.50  66.06     7.54
+16  SHU      23  254.25   359.35   4  ...  5935        190.25        -265.50  65.94     3.86
+17  TOT      19  791.50   210.89  14  ...  6383        513.50        -149.00  70.92    11.16
+18  WHU      18  736.50   218.24  13  ...  7222        490.50        -196.00  80.24     9.18
+19  WOL      19  575.00   241.57   8  ...  6645        398.00        -211.00  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:53:38,626 - INFO - Attempting to style the grouped_players_df dataframe
+2023-10-04 16:53:39,722 - INFO - Grouped Player Dataframe head:                Player Team Position   FPTS  ... Ghost Points  Negative Fpts   90s  FPts/90
+0        Aaron Hickey  BRF        D   1.00  ...        -5.00         -30.00  6.00     0.17
+1        Aaron Ramsey  BUR        M   9.00  ...         9.00          -2.00  2.16     4.17
+2   Aaron Wan-Bissaka  MUN        D  34.75  ...        21.75         -17.00  3.77     9.22
+3  Abdoulaye Doucoure  EVE        M  80.50  ...        56.50          -4.50  6.51    12.37
+4        Adam Lallana  BHA        M   6.50  ...         5.50          -2.50  1.20     5.42
+
+[5 rows x 32 columns]
+2023-10-04 16:53:39,751 - INFO - Grouped Player Dataframe tail:                        Player Team Position  ... Negative Fpts   90s  FPts/90
+408               Yoane Wissa  BRF        F  ...         -4.50  6.66    10.14
+409           Youri Tielemans  AVL        M  ...         -1.50  1.46     1.71
+410  Youssef Ramalho Chermiti  EVE        F  ...         -2.00  0.27    -3.70
+411             Yves Bissouma  TOT        M  ...        -15.50  6.79     7.88
+412              Zeki Amdouni  BUR        F  ...         -4.50  5.16     8.33
+
+[5 rows x 32 columns]
+2023-10-04 16:53:39,752 - INFO - Attempting to style the team_df dataframe
+2023-10-04 16:53:39,887 - INFO - Team Dataframe head:   Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50   178.53  14  ...  5846        436.50         -99.00  64.96    11.12
+1  AVL      20  661.00   233.37  17  ...  6244        351.00        -166.00  69.38     9.53
+2  BHA      22  681.75   221.49  18  ...  6176        415.75        -185.00  68.62     9.94
+3  BOU      22  412.25   269.66   5  ...  6198        308.25        -180.00  68.87     5.99
+4  BRF      21  605.75   223.41  10  ...  6396        423.75        -141.00  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:53:39,911 - INFO - Team Dataframe tail:    Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00   276.75   8  ...  5945        341.00        -168.50  66.06     7.54
+16  SHU      23  254.25   359.35   4  ...  5935        190.25        -265.50  65.94     3.86
+17  TOT      19  791.50   210.89  14  ...  6383        513.50        -149.00  70.92    11.16
+18  WHU      18  736.50   218.24  13  ...  7222        490.50        -196.00  80.24     9.18
+19  WOL      19  575.00   241.57   8  ...  6645        398.00        -211.00  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:53:39,911 - INFO - Attempting to style the team_pos_df dataframe
+2023-10-04 16:53:40,119 - INFO - Team Position Dataframe head:   Team Position  Player Count    FPTS  ... Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS        D             6  160.50  ...        82.50         -51.50  21.03     7.63
+1  ARS        F             4  136.00  ...        82.00         -22.00  13.04    10.43
+2  ARS        M             9  426.00  ...       272.00         -25.50  30.88    13.80
+3  AVL        D             6  180.50  ...        84.50        -117.50  29.58     6.10
+4  AVL        F             4  281.00  ...       125.00         -19.00  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-04 16:53:40,143 - INFO - Team Position Dataframe tail:    Team Position  Player Count    FPTS  ... Ghost Points  Negative Fpts    90s  FPts/90
+55  WHU        F             2   50.50  ...        26.50          -8.00   6.08     8.31
+56  WHU        M             9  419.00  ...       289.00         -42.00  35.08    11.94
+57  WOL        D             8  110.00  ...        86.00        -145.50  30.18     3.64
+58  WOL        F             5  368.50  ...       230.50         -34.50  26.60    13.85
+59  WOL        M             6   96.50  ...        81.50         -31.00  17.06     5.66
+
+[5 rows x 30 columns]
+2023-10-04 16:53:40,143 - INFO - Main function completed successfully
+2023-10-04 16:55:35,086 - INFO - Starting main function
+2023-10-04 16:55:35,087 - INFO - Creating custom color maps
+2023-10-04 16:55:35,177 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-04 16:55:36,069 - INFO - Most Recent Game Week Dataframe head:   Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50   178.53  14  ...  5846        436.50         -99.00  64.96    11.12
+1  AVL      20  661.00   233.37  17  ...  6244        351.00        -166.00  69.38     9.53
+2  BHA      22  681.75   221.49  18  ...  6176        415.75        -185.00  68.62     9.94
+3  BOU      22  412.25   269.66   5  ...  6198        308.25        -180.00  68.87     5.99
+4  BRF      21  605.75   223.41  10  ...  6396        423.75        -141.00  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:55:36,088 - INFO - Most Recent Game Week Dataframe tail:    Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00   276.75   8  ...  5945        341.00        -168.50  66.06     7.54
+16  SHU      23  254.25   359.35   4  ...  5935        190.25        -265.50  65.94     3.86
+17  TOT      19  791.50   210.89  14  ...  6383        513.50        -149.00  70.92    11.16
+18  WHU      18  736.50   218.24  13  ...  7222        490.50        -196.00  80.24     9.18
+19  WOL      19  575.00   241.57   8  ...  6645        398.00        -211.00  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:55:36,089 - INFO - Attempting to style the grouped_players_df dataframe
+2023-10-04 16:55:37,397 - INFO - Grouped Player Dataframe head:                Player Team Position   FPTS  ... Ghost Points  Negative Fpts   90s  FPts/90
+0        Aaron Hickey  BRF        D   1.00  ...        -5.00         -30.00  6.00     0.17
+1        Aaron Ramsey  BUR        M   9.00  ...         9.00          -2.00  2.16     4.17
+2   Aaron Wan-Bissaka  MUN        D  34.75  ...        21.75         -17.00  3.77     9.22
+3  Abdoulaye Doucoure  EVE        M  80.50  ...        56.50          -4.50  6.51    12.37
+4        Adam Lallana  BHA        M   6.50  ...         5.50          -2.50  1.20     5.42
+
+[5 rows x 32 columns]
+2023-10-04 16:55:37,431 - INFO - Grouped Player Dataframe tail:                        Player Team Position  ... Negative Fpts   90s  FPts/90
+408               Yoane Wissa  BRF        F  ...         -4.50  6.66    10.14
+409           Youri Tielemans  AVL        M  ...         -1.50  1.46     1.71
+410  Youssef Ramalho Chermiti  EVE        F  ...         -2.00  0.27    -3.70
+411             Yves Bissouma  TOT        M  ...        -15.50  6.79     7.88
+412              Zeki Amdouni  BUR        F  ...         -4.50  5.16     8.33
+
+[5 rows x 32 columns]
+2023-10-04 16:55:37,432 - INFO - Attempting to style the team_df dataframe
+2023-10-04 16:55:37,573 - INFO - Team Dataframe head:   Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS      19  722.50   178.53  14  ...  5846        436.50         -99.00  64.96    11.12
+1  AVL      20  661.00   233.37  17  ...  6244        351.00        -166.00  69.38     9.53
+2  BHA      22  681.75   221.49  18  ...  6176        415.75        -185.00  68.62     9.94
+3  BOU      22  412.25   269.66   5  ...  6198        308.25        -180.00  68.87     5.99
+4  BRF      21  605.75   223.41  10  ...  6396        423.75        -141.00  71.07     8.52
+
+[5 rows x 29 columns]
+2023-10-04 16:55:37,597 - INFO - Team Dataframe tail:    Team  Player    FPTS LiveRkOv   G  ...   MIN  Ghost Points  Negative Fpts    90s  FPts/90
+15  NOT      23  498.00   276.75   8  ...  5945        341.00        -168.50  66.06     7.54
+16  SHU      23  254.25   359.35   4  ...  5935        190.25        -265.50  65.94     3.86
+17  TOT      19  791.50   210.89  14  ...  6383        513.50        -149.00  70.92    11.16
+18  WHU      18  736.50   218.24  13  ...  7222        490.50        -196.00  80.24     9.18
+19  WOL      19  575.00   241.57   8  ...  6645        398.00        -211.00  73.83     7.79
+
+[5 rows x 29 columns]
+2023-10-04 16:55:37,613 - INFO - Attempting to style the team_pos_df dataframe
+2023-10-04 16:55:38,162 - INFO - Team Position Dataframe head:   Team Position  Player Count    FPTS  ... Ghost Points  Negative Fpts    90s  FPts/90
+0  ARS        D             6  160.50  ...        82.50         -51.50  21.03     7.63
+1  ARS        F             4  136.00  ...        82.00         -22.00  13.04    10.43
+2  ARS        M             9  426.00  ...       272.00         -25.50  30.88    13.80
+3  AVL        D             6  180.50  ...        84.50        -117.50  29.58     6.10
+4  AVL        F             4  281.00  ...       125.00         -19.00  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-04 16:55:38,221 - INFO - Team Position Dataframe tail:    Team Position  Player Count    FPTS  ... Ghost Points  Negative Fpts    90s  FPts/90
+55  WHU        F             2   50.50  ...        26.50          -8.00   6.08     8.31
+56  WHU        M             9  419.00  ...       289.00         -42.00  35.08    11.94
+57  WOL        D             8  110.00  ...        86.00        -145.50  30.18     3.64
+58  WOL        F             5  368.50  ...       230.50         -34.50  26.60    13.85
+59  WOL        M             6   96.50  ...        81.50         -31.00  17.06     5.66
+
+[5 rows x 30 columns]
+2023-10-04 16:55:38,221 - INFO - Main function completed successfully
