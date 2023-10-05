@@ -65,7 +65,7 @@ def display_dataframe(df, title, colors, divergent_colors):
         st.write(f"## {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=len(df) * 2)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")
     except Exception as e:

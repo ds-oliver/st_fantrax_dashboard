@@ -3730,3 +3730,114 @@ def style_dataframe_custom(_custom_cmap, ...):
 
 [5 rows x 30 columns]
 2023-10-05 10:18:20,610 - INFO - Main function completed successfully
+2023-10-05 10:19:47,913 - INFO - Starting main function
+2023-10-05 10:19:47,916 - INFO - Creating custom color maps
+2023-10-05 10:19:47,954 - INFO - Attempting to style the Most Recent Game Week Data dataframe
+2023-10-05 10:19:49,675 - INFO - Most Recent Game Week Data Dataframe head:              Player Team  ...  MIN   FP/G
+0     Ollie Watkins  AVL  ...   90  59.50
+1     Alfie Doughty  LUT  ...  172  20.00
+2   Martin Odegaard  ARS  ...   90  34.00
+3  Joachim Andersen  CRY  ...   90  29.50
+4   Kieran Trippier  NEW  ...   90  29.00
+
+[5 rows x 38 columns]
+2023-10-05 10:19:49,705 - INFO - Most Recent Game Week Data Dataframe tail:                Player Team  ... MIN   FP/G
+279        Max Aarons  BOU  ...  90  -5.50
+280      Adam Webster  BHA  ...  90  -5.50
+281  Pervis Estupinan  BHA  ...  45  -6.75
+282      Curtis Jones  LIV  ...  25  -7.00
+283        Lewis Dunk  BHA  ...  90  -7.50
+
+[5 rows x 38 columns]
+2023-10-05 10:19:49,731 - INFO - Attempting to style the Grouped Player Data dataframe
+2023-10-05 10:19:51,510 - INFO - Grouped Player Data Dataframe head:                Player Team  ...   90s FPts/90
+0        Aaron Hickey  BRF  ...  6.00    0.17
+1        Aaron Ramsey  BUR  ...  1.92    4.69
+2   Aaron Wan-Bissaka  MUN  ...  3.77    9.22
+3  Abdoulaye Doucoure  EVE  ...  6.51   12.37
+4        Adam Lallana  BHA  ...  1.20    5.42
+
+[5 rows x 32 columns]
+2023-10-05 10:19:51,553 - INFO - Grouped Player Data Dataframe tail:               Player Team  ...   90s FPts/90
+397   Yasser Larouci  SHU  ...  2.14    1.99
+398      Yoane Wissa  BRF  ...  6.66   10.14
+399  Youri Tielemans  AVL  ...  1.46    1.71
+400    Yves Bissouma  TOT  ...  6.79    7.88
+401     Zeki Amdouni  BUR  ...  5.16    8.33
+
+[5 rows x 32 columns]
+2023-10-05 10:19:51,587 - INFO - Attempting to style the Team Data dataframe
+2023-10-05 10:19:52,034 - INFO - Team Data Dataframe head:   Team  Player  ...    90s FPts/90
+0  ARS      19  ...  64.96   11.12
+1  AVL      20  ...  69.38    9.53
+2  BHA      21  ...  68.62    9.94
+3  BOU      21  ...  68.87    5.99
+4  BRF      21  ...  71.07    8.52
+
+[5 rows x 29 columns]
+2023-10-05 10:19:52,086 - INFO - Team Data Dataframe tail:    Team  Player  ...    90s FPts/90
+15  NOT      23  ...  66.06    7.54
+16  SHU      22  ...  60.21    3.70
+17  TOT      18  ...  65.76   11.17
+18  WHU      18  ...  73.24    9.51
+19  WOL      19  ...  73.83    7.79
+
+[5 rows x 29 columns]
+2023-10-05 10:19:52,110 - INFO - Attempting to style the Team Position Data dataframe
+2023-10-05 10:19:52,452 - INFO - Team Position Data Dataframe head:   Team Position  ...    90s FPts/90
+0  ARS        D  ...  21.03    7.63
+1  ARS        F  ...  13.04   10.43
+2  ARS        M  ...  30.88   13.80
+3  AVL        D  ...  29.58    6.10
+4  AVL        F  ...  15.62   17.99
+
+[5 rows x 30 columns]
+2023-10-05 10:19:52,480 - INFO - Team Position Data Dataframe tail:    Team Position  ...    90s FPts/90
+55  WHU        F  ...   6.08    8.31
+56  WHU        M  ...  35.08   11.94
+57  WOL        D  ...  30.18    3.64
+58  WOL        F  ...  26.60   13.85
+59  WOL        M  ...  17.06    5.66
+
+[5 rows x 30 columns]
+2023-10-05 10:19:52,490 - INFO - Attempting to style the vsTeam Data dataframe
+2023-10-05 10:19:52,621 - INFO - vsTeam Data Dataframe head:     Team  Player  ...    90s FPts/90
+0  vsARS      19  ...  70.48    7.37
+1  vsAVL      22  ...  69.08    9.26
+2  vsBHA      23  ...  69.53    8.18
+3  vsBOU      20  ...  64.17    8.78
+4  vsBRF      17  ...  63.13   11.49
+
+[5 rows x 29 columns]
+2023-10-05 10:19:52,795 - INFO - vsTeam Data Dataframe tail:      Team  Player  ...    90s FPts/90
+15  vsNOT      23  ...  70.28    4.82
+16  vsSHU      19  ...  66.72   11.35
+17  vsTOT      22  ...  57.44    4.84
+18  vsWHU      20  ...  70.72   10.99
+19  vsWOL      19  ...  66.62    9.59
+
+[5 rows x 29 columns]
+2023-10-05 10:19:52,818 - INFO - Attempting to style the vsTeam Position Data dataframe
+2023-10-05 10:19:53,446 - INFO - vsTeam Position Data Dataframe head:     Team Position  ...    90s FPts/90
+0  vsARS        D  ...  27.31    5.89
+1  vsARS        F  ...  12.03    9.77
+2  vsARS        M  ...  31.13    7.76
+3  vsAVL        D  ...  25.70    8.60
+4  vsAVL        F  ...  15.71   10.85
+
+[5 rows x 30 columns]
+2023-10-05 10:19:53,475 - INFO - vsTeam Position Data Dataframe tail:      Team Position  ...    90s FPts/90
+55  vsWHU        F  ...  16.93   18.16
+56  vsWHU        M  ...  21.41   11.89
+57  vsWOL        D  ...  23.31    7.21
+58  vsWOL        F  ...  21.94   14.49
+59  vsWOL        M  ...  21.37    7.16
+
+[5 rows x 30 columns]
+2023-10-05 10:19:53,476 - INFO - Main function completed successfully
+2023-10-05 10:31:05,718 - INFO - Starting main function
+2023-10-05 10:31:05,725 - INFO - Creating custom color maps
+2023-10-05 10:31:05,959 - INFO - Main function completed successfully
+2023-10-05 10:37:34,523 - INFO - Starting main function
+2023-10-05 10:37:34,525 - INFO - Creating custom color maps
+2023-10-05 10:37:34,753 - INFO - Main function completed successfully
