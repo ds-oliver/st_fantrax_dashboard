@@ -3841,3 +3841,108 @@ def style_dataframe_custom(_custom_cmap, ...):
 2023-10-05 10:37:34,523 - INFO - Starting main function
 2023-10-05 10:37:34,525 - INFO - Creating custom color maps
 2023-10-05 10:37:34,753 - INFO - Main function completed successfully
+2023-10-08 13:49:54,632 - INFO - Starting main function
+2023-10-08 13:49:54,636 - INFO - Creating custom color maps
+2023-10-08 13:49:54,800 - INFO - Attempting to style the Most Recent Game Week Data dataframe
+2023-10-08 13:49:56,155 - INFO - Most Recent Game Week Data Dataframe head:              Player Team Position  ...  ROS %  MIN   FP/G
+0     Ollie Watkins  AVL        F  ...   100%   90  59.50
+1     Alfie Doughty  LUT        M  ...    42%  172  20.00
+2   Martin Odegaard  ARS        M  ...   100%   90  34.00
+3  Joachim Andersen  CRY        D  ...    92%   90  29.50
+4   Kieran Trippier  NEW        D  ...   100%   90  29.00
+
+[5 rows x 37 columns]
+2023-10-08 13:49:56,185 - INFO - Most Recent Game Week Data Dataframe tail:                Player Team  ... MIN   FP/G
+285        Max Aarons  BOU  ...  90  -5.50
+286      Adam Webster  BHA  ...  90  -5.50
+287  Pervis Estupinan  BHA  ...  45  -6.75
+288      Curtis Jones  LIV  ...  25  -7.00
+289        Lewis Dunk  BHA  ...  90  -7.50
+
+[5 rows x 37 columns]
+2023-10-08 13:49:56,196 - INFO - Attempting to style the Grouped Player Data dataframe
+2023-10-08 13:49:57,573 - INFO - Grouped Player Data Dataframe head:                Player Team  ...   90s FPts/90
+0        Aaron Hickey  BRF  ...  6.00    0.17
+1        Aaron Ramsey  BUR  ...  1.92    4.69
+2   Aaron Wan-Bissaka  MUN  ...  3.77    9.22
+3  Abdoulaye Doucoure  EVE  ...  6.51   12.37
+4        Adam Lallana  BHA  ...  1.20    5.42
+
+[5 rows x 31 columns]
+2023-10-08 13:49:57,617 - INFO - Grouped Player Data Dataframe tail:                        Player Team  ...   90s FPts/90
+410           Youri Tielemans  AVL  ...  1.46    1.71
+411  Youssef Ramalho Chermiti  EVE  ...  0.27   -3.70
+412             Yves Bissouma  TOT  ...  6.79    7.88
+413                     Zanka  BRF  ...  0.06   66.67
+414              Zeki Amdouni  BUR  ...  5.16    8.33
+
+[5 rows x 31 columns]
+2023-10-08 13:49:57,627 - INFO - Attempting to style the Team Data dataframe
+2023-10-08 13:49:57,776 - INFO - Team Data Dataframe head:   Team  Player    FPTS  ... Negative Fpts    90s  FPts/90
+0  ARS      20  755.50  ...       -107.00  69.20    10.92
+1  AVL      20  661.00  ...       -166.00  69.38     9.53
+2  BHA      22  703.75  ...       -187.00  69.37    10.14
+3  BOU      22  422.25  ...       -180.50  69.32     6.09
+4  BRF      22  601.25  ...       -140.50  70.59     8.52
+
+[5 rows x 29 columns]
+2023-10-08 13:49:57,814 - INFO - Team Data Dataframe tail:    Team  Player    FPTS  ... Negative Fpts    90s  FPts/90
+15  NOT      23  498.00  ...       -168.50  66.06     7.54
+16  SHU      24  268.25  ...       -268.50  69.46     3.86
+17  TOT      20  801.00  ...       -155.50  71.98    11.13
+18  WHU      18  676.75  ...       -151.50  69.24     9.77
+19  WOL      19  463.00  ...       -202.50  66.83     6.93
+
+[5 rows x 29 columns]
+2023-10-08 13:49:57,827 - INFO - Attempting to style the Team Position Data dataframe
+2023-10-08 13:49:58,234 - INFO - Team Position Data Dataframe head:   Team Position  Player  ... Negative Fpts    90s  FPts/90
+0  ARS        D       7  ...        -59.50  25.28     7.65
+1  ARS        F       4  ...        -22.00  13.04    10.43
+2  ARS        M       9  ...        -25.50  30.88    13.80
+3  AVL        D       6  ...       -117.50  29.58     6.10
+4  AVL        F       4  ...        -19.00  15.62    17.99
+
+[5 rows x 30 columns]
+2023-10-08 13:49:58,279 - INFO - Team Position Data Dataframe tail:    Team Position  ...    90s FPts/90
+55  WHU        F  ...   6.08    8.31
+56  WHU        M  ...  35.08   11.94
+57  WOL        D  ...  30.18    3.64
+58  WOL        F  ...  19.60   13.09
+59  WOL        M  ...  17.06    5.66
+
+[5 rows x 30 columns]
+2023-10-08 13:49:58,291 - INFO - Attempting to style the vsTeam Data dataframe
+2023-10-08 13:49:58,433 - INFO - vsTeam Data Dataframe head:     Team  Player  ...    90s FPts/90
+0  vsARS      20  ...  70.74    7.33
+1  vsAVL      22  ...  69.08    9.26
+2  vsBHA      23  ...  69.53    8.18
+3  vsBOU      21  ...  64.20    8.79
+4  vsBRF      17  ...  63.13   11.49
+
+[5 rows x 29 columns]
+2023-10-08 13:49:58,456 - INFO - vsTeam Data Dataframe tail:      Team  Player  ...    90s FPts/90
+15  vsNOT      23  ...  71.17    4.92
+16  vsSHU      21  ...  72.94   11.29
+17  vsTOT      25  ...  63.69    5.08
+18  vsWHU      21  ...  73.69   10.85
+19  vsWOL      21  ...  71.94    9.67
+
+[5 rows x 29 columns]
+2023-10-08 13:49:58,471 - INFO - Attempting to style the vsTeam Position Data dataframe
+2023-10-08 13:49:58,709 - INFO - vsTeam Position Data Dataframe head:     Team Position  ...    90s FPts/90
+0  vsARS        D  ...  27.31    5.89
+1  vsARS        F  ...  12.30    9.47
+2  vsARS        M  ...  31.13    7.76
+3  vsAVL        D  ...  25.70    8.60
+4  vsAVL        F  ...  15.71   10.85
+
+[5 rows x 30 columns]
+2023-10-08 13:49:58,733 - INFO - vsTeam Position Data Dataframe tail:      Team Position  ...    90s FPts/90
+55  vsWHU        F  ...  16.93   18.16
+56  vsWHU        M  ...  24.38   11.36
+57  vsWOL        D  ...  27.89    7.26
+58  vsWOL        F  ...  22.69   14.98
+59  vsWOL        M  ...  21.37    7.16
+
+[5 rows x 30 columns]
+2023-10-08 13:49:58,734 - INFO - Main function completed successfully
