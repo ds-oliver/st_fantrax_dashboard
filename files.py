@@ -7,8 +7,8 @@ import os
 
 projections = 'data/projections/GW8 Projections.csv'
 
-shots_data = 'data/fbref-data/all_shots_all_20231005.csv'
-new_matches_data = 'data/fbref-data/full_season_matchreports_20231005.csv'
+shots_data = 'data/data_out/scraped_big5_data/pl_data/all_shots_all_20231008.csv'
+new_matches_data = 'data/fbref-data/full_season_matchreports_20231008.csv'
 ros_data = 'data/ros-data/Weekly ROS Ranks_GW8.csv'
 
 # files paths
