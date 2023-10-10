@@ -43,8 +43,32 @@ def load_cached_css():
     load_css()
 
 # @st.cache_data
-def load_csv_file_cached(csv_file):
-    return pd.read_csv(csv_file).applymap(round_and_format)
+def load_csv_file_cached(csv_file, set_index_cols=None):
+    """
+    Loads a CSV file and applies a function to round and format its values.
+    Optionally sets one or more columns as the DataFrame index.
+
+    Parameters:
+        csv_file (str): Path to the CSV file.
+        set_index_cols (list, str, optional): Column(s) to set as DataFrame index. Defaults to None.
+
+    Returns:
+        pd.DataFrame: The loaded and formatted DataFrame.
+    """
+    # Load the CSV file into a DataFrame
+    df = pd.read_csv(csv_file).applymap(round_and_format)
+    
+    # Check if set_index_cols is provided
+    if set_index_cols:
+        # Check if all columns in set_index_cols exist in the DataFrame
+        missing_cols = [col for col in set_index_cols if col not in df.columns]
+        if missing_cols:
+            raise ValueError(f"Columns {missing_cols} not found in DataFrame. Cannot set as index.")
+        
+        # Set the specified columns as the DataFrame index
+        df.set_index(set_index_cols, inplace=True)
+        
+    return df
 
 @st.cache_data
 def create_custom_cmap_cached(*colors):
@@ -84,9 +108,9 @@ def main():
 
     lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
-    team_df = load_csv_file_cached('data/display-data/team_data.csv')
-    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv')
-    vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv')
+    team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
+    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
+    vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['Team'])
     # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
 
     # Use the cached function to display DataFrames
