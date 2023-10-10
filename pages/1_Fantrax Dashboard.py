@@ -118,6 +118,7 @@ def main():
 
     # Use the cached function to display DataFrames
     display_dataframe(lastgw_df, f"GW {last_gw} Player Data", colors, divergent_colors)
+    st.info("Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. If HeatStreak values are missing, it means there was insufficient data over the last 3 gameweeks to calculate a value.", icon=":information_source:")
     display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors)
     display_dataframe(team_df, "Team Data", colors, divergent_colors)
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
