@@ -1,21 +1,112 @@
 Player,Team,Position,FPTS,LiveRkOv,GS,G,SOT,YC,RC,CS,MIN
-114,ARS,M,846.5,143.89,80,15,46,12,1,39,7122
-112,AVL,F,724.25,159.94,80,18,47,19,0,20,7138
-117,BHA,D,780.0,168.72,80,20,54,23,0,0,7138
-117,BOU,F,464.75,224.63,80,5,31,10,0,10,7131
-116,BRF,F,667.5,180.18,81,11,38,17,0,10,7247
-106,BUR,D,361.25,322.61,80,7,23,16,2,0,7133
-111,CHE,D,687.75,162.6,80,10,37,25,1,29,7126
-96,CRY,D,721.0,147.28,80,7,36,11,0,40,7173
-100,EVE,M,628.75,190.08,77,9,38,12,0,10,6912
-116,FUL,M,496.75,236.02,82,7,29,17,2,27,7240
-116,LIV,F,757.25,158.09,80,16,40,14,4,10,6952
-104,LUT,F,521.25,202.85,80,6,18,14,0,0,7130
-105,MCI,M,840.25,137.73,82,17,54,13,2,27,7282
-114,MUN,D,647.25,211.46,80,9,40,17,0,19,7139
-113,NEW,F,859.5,128.42,80,20,52,21,0,30,7139
-115,NOT,F,583.5,241.34,77,8,26,22,2,18,6837
-114,SHU,M,305.0,318.58,80,4,24,23,1,0,7143
-119,TOT,M,918.25,157.54,83,16,56,26,1,26,7326
-106,WHU,M,734.25,148.7,80,15,38,19,1,10,7128
-112,WOL,F,514.5,203.95,78,8,26,23,2,9,6907
+"['Bukayo Saka' 'Gabriel Martinelli' 'Eddie Nketiah' 'Declan Rice'
+ 'Thomas Partey' 'William Saliba' 'Kai Havertz' 'Leandro Trossard'
+ 'Takehiro Tomiyasu' 'Martin Odegaard' 'Gabriel Magalhaes'
+ 'Jurrien Timber' 'Ben White' 'Oleksandr Zinchenko' 'Gabriel Jesus'
+ 'Emile Smith Rowe' 'Fabio Vieira' 'Reiss Nelson' 'Jorginho'
+ 'Jakub Kiwior']",ARS,M,846.5,143.89,80,15,46,12,1,39,7122
+"['Moussa Diaby' 'Ollie Watkins' 'Boubacar Kamara' 'Douglas Luiz'
+ 'John McGinn' 'Youri Tielemans' 'Diego Carlos' 'Philippe Coutinho'
+ 'Tyrone Mings' 'Jaden Philogene-Bidace' 'Pau Torres' 'Leon Bailey'
+ 'Lucas Digne' 'Ezri Konsa' 'Matty Cash' 'Jacob Ramsey' 'Nicolo Zaniolo'
+ 'Jhon Duran' 'Leander Dendoncker' 'Bertrand Traore']",AVL,F,724.25,159.94,80,18,47,19,0,20,7138
+"['Pervis Estupinan' 'Solly March' 'Pascal Gross' 'Joao Pedro'
+ 'Kaoru Mitoma' 'Evan Ferguson' 'Simon Adingra' 'Jan-Paul van Hecke'
+ 'Mahmoud Dahoud' 'James Milner' 'Billy Gilmour' 'Danny Welbeck'
+ 'Julio Enciso' 'Lewis Dunk' 'Joel Veltman' 'Ansu Fati' 'Jack Hinshelwood'
+ 'Carlos Baleba' 'Tariq Lamptey' 'Adam Webster' 'Facundo Buonanotte'
+ 'Adam Lallana' 'Igor Julio dos Santos de Paulo']",BHA,D,780.0,168.72,80,20,54,23,0,0,7138
+"['Dominic Solanke' 'Philip Billing' 'Milos Kerkez' 'Antoine Semenyo'
+ 'Ryan Christie' 'David Brooks' 'Joe Rothwell' 'Illia Zabarnyi'
+ 'Marcos Senesi' 'Max Aarons' 'Jaidon Anthony' 'Chris Mepham'
+ 'Justin Kluivert' 'Kieffer Moore' 'James Hill' 'Luis Sinisterra'
+ 'Lewis Cook' 'Marcus Tavernier' 'Dango Ouattara' 'Adam Smith'
+ 'Lloyd Kelly' 'Hamed Traore']",BOU,F,464.75,224.63,80,5,31,10,0,10,7131
+"['Yoane Wissa' 'Rico Henry' 'Bryan Mbeumo' 'Mathias Jensen' 'Neal Maupay'
+ 'Ethan Pinnock' 'Vitaly Janelt' 'Zanka' 'Mikkel Damsgaard'
+ 'Christian Norgaard' 'Nathan Collins' 'Kristoffer Ajer' 'Mads Roerslev'
+ 'Kevin Schade' 'Shandon Baptiste' 'Aaron Hickey' 'Saman Ghoddos'
+ 'Keane Lewis-Potter' 'Michael Olakigbe' 'Frank Onyeka' 'Ben Mee'
+ 'Josh Dasilva']",BRF,F,667.5,180.18,81,11,38,17,0,10,7247
+"['Jordan Beyer' 'Zeki Amdouni' 'Lyle Foster' 'Luca Koleosho'
+ 'Sander Berge' 'Josh Cullen' 'Jacob Bruun Larsen' 'Josh Brownhill'
+ 'Benson Manuel' 'Nathan Redmond' 'Ameen Al Dakhil' ""Dara O'Shea""
+ 'Vitinho' 'Connor Roberts' 'Anass Zaroury' 'Wilson Odobert'
+ 'Charlie Taylor' 'Jay Rodriguez' 'Aaron Ramsey' 'Hannes Delcroix'
+ 'Mike Tresor' 'Johann Gudmundsson' 'Jack Cork']",BUR,D,361.25,322.61,80,7,23,16,2,0,7133
+"['Axel Disasi' 'Ben Chilwell' 'Reece James' 'Thiago Silva'
+ 'Enzo Fernandez' 'Levi Colwill' 'Conor Gallagher' 'Raheem Sterling'
+ 'Nicolas Jackson' 'Mykhailo Mudryk' 'Lesley Ugochukwu' 'Ian Maatsen'
+ 'Malo Gusto' 'Cole Palmer' 'Carney Chukwuemeka' 'Armando Broja'
+ 'Marc Cucurella' 'Moises Caicedo' 'Noni Madueke' 'Alex Matos'
+ 'Mason Burstow']",CHE,D,687.75,162.6,80,10,37,25,1,29,7126
+"['Joachim Andersen' 'Odsonne Edouard' 'Eberechi Eze' 'Marc Guehi'
+ 'Jefferson Lerma' 'Jordan Ayew' 'Jeffrey Schlupp' 'Cheick Doucoure'
+ 'Joel Ward' 'Tyrick Mitchell' 'James Tomkins' 'Will Hughes'
+ 'Jean-Philippe Mateta' 'Jairo Riedewald' 'Chris Richards'
+ 'Jesurun Rak-Sakyi' 'Naouirou Ahamada' 'Nathaniel Clyne']",CRY,D,721.0,147.28,80,7,36,11,0,40,7173
+"['Amadou Onana' 'Abdoulaye Doucoure' 'James Garner' 'Michael Keane'
+ 'James Tarkowski' 'Idrissa Gueye' 'Ashley Young'
+ 'Arnaut Danjuma Groeneveld' 'Nathan Patterson' 'Lewis Dobbin'
+ 'Dominic Calvert-Lewin' 'Dwight McNeil' 'Vitalii Mykolenko'
+ 'Jack Harrison' 'Beto' 'Jarrad Branthwaite' 'Youssef Ramalho Chermiti'
+ 'Ben Godfrey' 'Thomas Cannon' 'Tyler Onyango']",EVE,M,628.75,190.08,77,9,38,12,0,10,6912
+"['Alex Iwobi' 'Bobby De Cordova-Reid' 'Kenny Tete' 'Issa Diop'
+ 'Antonee Robinson' 'Tim Ream' 'Harry Wilson' 'Andreas Pereira'
+ 'Aleksandar Mitrovic' 'Harrison Reed' 'Sasa Lukic' 'Willian'
+ 'Tom Cairney' 'Raul Jimenez' 'Carlos Vinicius' 'Joao Palhinha'
+ 'Timothy Castagne' 'Calvin Bassey' 'Rodrigo Muniz' 'Luke Harris'
+ 'Adama Traore' 'Tosin Adarabioyo']",FUL,M,496.75,236.02,82,7,29,17,2,27,7240
+"['Luis Diaz' 'Mohamed Salah' 'Dominik Szoboszlai' 'Andrew Robertson'
+ 'Ibrahima Konate' 'Virgil van Dijk' 'Alexis Mac Allister'
+ 'Harvey Elliott' 'Cody Gakpo' 'Diogo Jota' 'Darwin Nunez' 'Curtis Jones'
+ 'Ben Doak' 'Trent Alexander-Arnold' 'Joseph Gomez' 'Joel Matip'
+ 'Ryan Gravenberch' 'Wataru Endo' 'Jarell Quansah' 'Konstantinos Tsimikas']",LIV,F,757.25,158.09,80,16,40,14,4,10,6952
+"['Carlton Morris' 'Jacob Brown' 'Ryan Giles' 'Cauley Woodrow'
+ 'Marvelous Nakamba' 'Elijah Adebayo' 'Pelly Ruddock' 'Issa Kabore'
+ 'Alfie Doughty' 'Chiedozie Ogbene' 'Tahith Chong' 'Luke Berry'
+ 'Tom Lockyer' 'Mads Andersen' ""Amari'i Bell"" 'Reece Burke' 'Teden Mengi'
+ 'Albert Sambi Lokonga' 'Ross Barkley']",LUT,F,521.25,202.85,80,6,18,14,0,0,7130
+"['Rodri' 'Erling Haaland' 'Julian Alvarez' 'Matheus Nunes' 'Nathan Ake'
+ 'Manuel Akanji' 'Kyle Walker' 'Phil Foden' 'Rico Lewis' 'Mateo Kovacic'
+ 'Kevin De Bruyne' 'Josko Gvardiol' 'Aymeric Laporte' 'Bernardo Silva'
+ 'Jeremy Doku' 'Oscar Bobb' 'Jack Grealish' 'Kalvin Phillips' 'Ruben Dias'
+ 'Sergio Gomez' 'John Stones']",MCI,M,840.25,137.73,82,17,54,13,2,27,7282
+"['Aaron Wan-Bissaka' 'Raphael Varane' 'Bruno Fernandes' 'Luke Shaw'
+ 'Antony' 'Casemiro' 'Marcus Rashford' 'Jadon Sancho' 'Alejandro Garnacho'
+ 'Mason Mount' 'Scott McTominay' 'Facundo Pellistri' 'Victor Lindelof'
+ 'Christian Eriksen' 'Lisandro Martinez' 'Rasmus Hojlund' 'Diogo Dalot'
+ 'Anthony Martial' 'Sofyan Amrabat' 'Harry Maguire' 'Donny van de Beek'
+ 'Jonny Evans' 'Hannibal Mejbri' 'Sergio Reguilon']",MUN,D,647.25,211.46,80,9,40,17,0,19,7139
+"['Alexander Isak' 'Harvey Barnes' 'Sandro Tonali' 'Callum Wilson'
+ 'Jacob Murphy' 'Sven Botman' 'Anthony Gordon' 'Kieran Trippier'
+ 'Miguel Almiron' 'Joelinton' 'Dan Burn' 'Fabian Schar' 'Bruno Guimaraes'
+ 'Sean Longstaff' 'Elliot Anderson' 'Jamaal Lascelles'
+ 'Valentino Livramento' 'Lewis Hall' 'Matt Targett']",NEW,F,859.5,128.42,80,20,52,21,0,30,7139
+"['Taiwo Awoniyi' 'Anthony Elanga' 'Morgan Gibbs-White' 'Willy Boly'
+ 'Joe Worrall' 'Danilo' 'Scott McKenna' 'Neco Williams' 'Ryan Yates'
+ 'Cheikhou Kouyate' 'Serge Aurier' 'Orel Mangala' 'Chris Wood' 'Ola Aina'
+ 'Nicolas Dominguez' 'Harry Toffolo' 'Ibrahim Sangare'
+ 'Callum Hudson-Odoi' 'Divock Origi' 'Murillo' 'Moussa Niakhate'
+ 'Gonzalo Montiel' 'Nuno Tavares']",NOT,F,583.5,241.34,77,8,26,22,2,18,6837
+"['Oliver Norwood' 'John Egan' 'Max Lowe' 'Benie Traore' 'Chris Basham'
+ 'Anel Ahmedhodzic' 'Yasser Larouci' 'Jack Robinson' 'George Baldock'
+ 'James Mcatee' 'Vinicius de Souza Costa' 'Ben Osborn' 'Andre Brooks'
+ 'Antwoine Hackford' 'William Osula' 'Anis Ben Slimane' 'Gustavo Hamer'
+ 'Luke Thomas' 'Cameron Archer' 'Oliver McBurnie' 'Tom Davies'
+ 'Rhian Brewster' 'Auston Trusty' 'Jayden Bogle']",SHU,M,305.0,318.58,80,4,24,23,1,0,7143
+"['James Maddison' 'Cristian Romero' 'Yves Bissouma' 'Emerson Royal'
+ 'Dejan Kulusevski' 'Ivan Perisic' 'Richarlison' 'Micky van de Ven'
+ 'Iyenoma Destiny Udogie' 'Pape Sarr' 'Son Heung-Min' 'Davinson Sanchez'
+ 'Brennan Johnson' 'Oliver Skipp' 'Pedro Porro' 'Manor Solomon'
+ 'Ben Davies' 'Pierre-Emile Hojbjerg' 'Alejo Veliz' 'Giovani Lo Celso']",TOT,M,918.25,157.54,83,16,56,26,1,26,7326
+"['Jarrod Bowen' 'Tomas Soucek' 'Lucas Paqueta' 'Emerson' 'Vladimir Coufal'
+ 'Said Benrahma' 'Nayef Aguerd' 'Pablo Fornals' 'Kurt Zouma'
+ 'Michail Antonio' 'Danny Ings' 'Thilo Kehrer' 'Maxwel Cornet'
+ 'James Ward-Prowse' 'Mohammed Kudus' 'Edson Alvarez'
+ 'Konstantinos Mavropanos' 'Angelo Ogbonna']",WHU,M,734.25,148.7,80,15,38,19,1,10,7128
+"['Pedro Neto' 'Craig Dawson' 'Max Kilman' 'Joao Gomes' 'Matheus Cunha'
+ 'Nelson Semedo' 'Fabio Silva' 'Pablo Sarabia' 'Hugo Bueno'
+ 'Rayan Ait-Nouri' 'Hwang Hee-Chan' 'Sasa Kalajdzic' 'Mario Lemina'
+ 'Matt Doherty' 'Toti' 'Boubacar Traore' 'Jonny' 'Tommy Doyle'
+ 'Jean-Ricner Bellegarde']",WOL,F,514.5,203.95,78,8,26,23,2,9,6907
