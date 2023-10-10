@@ -179,7 +179,7 @@ st-annotated-text==4.0.0
 stack-data==0.6.2
 statsmodels==0.14.0
 stevedore==5.1.0
-streamlit==1.27.1
+streamlit==1.27.2
 streamlit-aggrid==0.3.4.post3
 streamlit-camera-input-live==0.2.0
 streamlit-card==0.0.61
