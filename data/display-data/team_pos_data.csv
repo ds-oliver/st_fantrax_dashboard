@@ -1,125 +1,61 @@
 Player,Team,Position,FPTS,Ghost Points,Negative Fpts,GP,G,KP,AT,SOT,TKW,DIS,YC,RC,ACNC,INT,CLR,COS,BS,AER,PKM,PKD,OG,GAO,CS,MIN
-"['Ben White' 'Gabriel Magalhaes' 'Jakub Kiwior' 'Jurrien Timber'
- 'Oleksandr Zinchenko' 'Takehiro Tomiyasu' 'William Saliba']",ARS,D,237.5,123.5,-59.5,39,1,16,2,6,24,5,3,1,4,27,56,6,24,40,0,0,0,22,15,2633
-['Eddie Nketiah' 'Gabriel Jesus' 'Kai Havertz' 'Reiss Nelson'],ARS,F,147.5,87.5,-26.5,25,4,18,4,7,15,29,6,0,1,9,8,21,1,26,0,2,0,10,9,1352
-"['Bukayo Saka' 'Declan Rice' 'Emile Smith Rowe' 'Fabio Vieira'
- 'Gabriel Martinelli' 'Jorginho' 'Leandro Trossard' 'Martin Odegaard'
- 'Thomas Partey']",ARS,M,461.5,295.5,-30.5,50,10,55,10,33,41,49,3,0,17,28,21,45,6,18,0,2,0,28,16,3137
-"['Diego Carlos' 'Ezri Konsa' 'Lucas Digne' 'Matty Cash' 'Pau Torres'
- 'Tyrone Mings']",AVL,D,209.75,103.75,-128.0,38,3,22,4,13,35,10,7,0,12,33,79,15,16,31,0,0,1,52,8,3103
-['Jhon Duran' 'Leon Bailey' 'Moussa Diaby' 'Ollie Watkins'],AVL,F,296.5,134.5,-20.0,28,10,33,12,23,4,28,3,0,6,3,8,19,1,11,0,2,0,27,5,1564
-"['Bertrand Traore' 'Boubacar Kamara' 'Douglas Luiz' 'Jacob Ramsey'
- 'Jaden Philogene-Bidace' 'John McGinn' 'Leander Dendoncker'
- 'Nicolo Zaniolo' 'Philippe Coutinho' 'Youri Tielemans']",AVL,M,218.0,160.0,-34.0,46,5,33,1,11,34,32,9,0,8,19,14,34,5,12,0,0,0,41,7,2471
-"['Adam Webster' 'Igor Julio dos Santos de Paulo' 'Jan-Paul van Hecke'
- 'Joel Veltman' 'Lewis Dunk' 'Pervis Estupinan' 'Tariq Lamptey']",BHA,D,141.0,79.0,-146.0,35,2,22,6,8,34,6,9,0,7,30,68,11,25,41,0,0,1,60,0,2577
-"['Ansu Fati' 'Danny Welbeck' 'Evan Ferguson' 'Joao Pedro' 'Julio Enciso'
- 'Simon Adingra']",BHA,F,260.5,146.5,-25.5,36,10,27,4,25,17,35,4,0,4,11,17,26,1,14,0,1,0,39,4,1658
-"['Adam Lallana' 'Billy Gilmour' 'Carlos Baleba' 'Facundo Buonanotte'
- 'Jack Hinshelwood' 'James Milner' 'Kaoru Mitoma' 'Mahmoud Dahoud'
- 'Pascal Gross' 'Solly March']",BHA,M,378.5,251.5,-34.5,46,8,61,8,21,32,29,10,0,12,31,25,34,6,14,0,0,0,61,7,2903
-"['Adam Smith' 'Chris Mepham' 'Illia Zabarnyi' 'James Hill' 'Lloyd Kelly'
- 'Marcos Senesi' 'Max Aarons' 'Milos Kerkez']",BOU,D,77.25,46.25,-171.0,40,0,13,1,1,37,16,6,0,10,27,97,25,27,39,0,0,1,73,4,2852
-"['Antoine Semenyo' 'Dango Ouattara' 'Dominic Solanke' 'Jaidon Anthony'
- 'Kieffer Moore' 'Luis Sinisterra']",BOU,F,137.5,89.5,-24.5,28,4,16,2,16,8,37,3,0,3,5,15,24,1,18,0,0,0,37,2,1447
-"['David Brooks' 'Hamed Traore' 'Joe Rothwell' 'Justin Kluivert'
- 'Lewis Cook' 'Marcus Tavernier' 'Philip Billing' 'Ryan Christie']",BOU,M,250.0,225.0,-22.5,49,1,38,2,14,25,41,1,0,9,39,30,49,9,25,0,0,0,70,4,2832
-"['Aaron Hickey' 'Ben Mee' 'Ethan Pinnock' 'Kristoffer Ajer'
- 'Mads Roerslev' 'Nathan Collins' 'Rico Henry' 'Zanka']",BRF,D,190.5,145.5,-133.0,44,0,20,3,3,39,22,8,0,8,38,126,23,16,77,0,0,0,53,4,3069
-"['Bryan Mbeumo' 'Keane Lewis-Potter' 'Michael Olakigbe' 'Neal Maupay'
- 'Saman Ghoddos' 'Yoane Wissa']",BRF,F,203.0,137.0,-20.0,33,6,23,2,22,12,24,4,0,11,8,13,18,2,28,0,1,0,33,4,1813
-"['Christian Norgaard' 'Frank Onyeka' 'Josh Dasilva' 'Kevin Schade'
- 'Mathias Jensen' 'Mikkel Damsgaard' 'Shandon Baptiste' 'Vitaly Janelt']",BRF,M,274.0,192.0,-19.0,39,5,38,5,13,40,18,5,0,12,25,32,7,6,34,0,1,0,36,7,2365
-"['Ameen Al Dakhil' 'Charlie Taylor' 'Connor Roberts' ""Dara O'Shea""
- 'Hannes Delcroix' 'Jordan Beyer' 'Vitinho']",BUR,D,12.75,5.75,-195.5,39,0,12,1,3,26,9,8,0,4,36,97,6,27,48,0,0,1,85,0,2976
-"['Anass Zaroury' 'Benson Manuel' 'Jacob Bruun Larsen' 'Jay Rodriguez'
- 'Luca Koleosho' 'Lyle Foster' 'Mike Tresor' 'Wilson Odobert'
- 'Zeki Amdouni']",BUR,F,203.0,131.0,-32.5,43,6,25,3,18,15,29,2,2,2,1,18,47,4,17,0,0,0,59,3,2030
-"['Aaron Ramsey' 'Jack Cork' 'Johann Gudmundsson' 'Josh Brownhill'
- 'Josh Cullen' 'Nathan Redmond' 'Sander Berge']",BUR,M,142.0,115.0,-21.5,36,1,25,3,2,30,19,6,0,3,17,32,7,11,29,0,0,0,56,0,2127
-"['Axel Disasi' 'Ben Chilwell' 'Ian Maatsen' 'Levi Colwill' 'Malo Gusto'
- 'Marc Cucurella' 'Reece James' 'Thiago Silva']",CHE,D,287.75,171.75,-94.5,45,1,27,4,7,30,15,9,1,11,26,93,18,18,72,0,0,0,31,13,3222
-"['Alex Matos' 'Armando Broja' 'Lesley Ugochukwu' 'Mason Burstow'
- 'Nicolas Jackson' 'Noni Madueke' 'Raheem Sterling']",CHE,F,175.5,103.5,-31.0,29,6,17,3,16,13,34,7,0,6,2,9,35,3,11,0,2,0,16,7,1486
-"['Carney Chukwuemeka' 'Cole Palmer' 'Conor Gallagher' 'Enzo Fernandez'
- 'Moises Caicedo' 'Mykhailo Mudryk']",CHE,M,224.5,167.5,-38.0,37,3,33,3,14,34,32,9,0,7,23,18,27,10,21,1,0,0,22,12,2418
-"['Chris Richards' 'James Tomkins' 'Joachim Andersen' 'Joel Ward'
- 'Marc Guehi' 'Nathaniel Clyne' 'Tyrick Mitchell']",CRY,D,285.5,162.5,-68.5,35,2,16,1,4,33,9,4,0,11,22,132,16,25,51,0,0,0,28,16,2886
-['Jean-Philippe Mateta' 'Jordan Ayew' 'Odsonne Edouard'],CRY,F,166.5,100.5,-29.0,21,4,19,5,16,13,50,2,0,2,8,10,22,0,29,0,0,0,12,9,1557
-"['Cheick Doucoure' 'Eberechi Eze' 'Jairo Riedewald' 'Jefferson Lerma'
- 'Jeffrey Schlupp' 'Jesurun Rak-Sakyi' 'Naouirou Ahamada' 'Will Hughes']",CRY,M,269.0,239.0,-35.0,40,1,40,1,16,37,50,5,0,7,35,36,54,10,38,0,0,0,30,15,2730
-"['Ashley Young' 'Ben Godfrey' 'James Tarkowski' 'Jarrad Branthwaite'
- 'Michael Keane' 'Nathan Patterson' 'Vitalii Mykolenko']",EVE,D,201.75,153.75,-118.5,37,1,25,2,6,47,13,8,0,10,39,89,12,21,59,0,0,0,48,4,2887
-"['Arnaut Danjuma Groeneveld' 'Beto' 'Dominic Calvert-Lewin' 'Lewis Dobbin'
- 'Thomas Cannon' 'Youssef Ramalho Chermiti']",EVE,F,105.0,78.0,-12.0,24,3,9,0,11,5,20,1,0,0,4,7,20,1,40,0,0,0,18,3,1005
-"['Abdoulaye Doucoure' 'Amadou Onana' 'Dwight McNeil' 'Idrissa Gueye'
- 'Jack Harrison' 'James Garner' 'Tyler Onyango']",EVE,M,322.0,248.0,-22.0,39,5,50,4,21,45,32,3,0,11,19,16,26,5,44,0,0,0,49,5,3020
-"['Antonee Robinson' 'Calvin Bassey' 'Issa Diop' 'Kenny Tete' 'Tim Ream'
- 'Timothy Castagne' 'Tosin Adarabioyo']",FUL,D,149.75,67.75,-141.0,37,1,9,0,3,36,16,7,2,10,39,107,17,8,48,0,0,1,50,12,2860
-"['Adama Traore' 'Aleksandar Mitrovic' 'Bobby De Cordova-Reid'
- 'Carlos Vinicius' 'Raul Jimenez' 'Rodrigo Muniz' 'Willian']",FUL,F,149.5,101.5,-23.5,32,4,20,2,16,12,35,3,0,1,4,12,17,3,32,0,0,0,30,5,1609
-"['Alex Iwobi' 'Andreas Pereira' 'Harrison Reed' 'Harry Wilson'
- 'Joao Palhinha' 'Luke Harris' 'Sasa Lukic' 'Tom Cairney']",FUL,M,197.5,144.5,-34.5,47,2,36,4,10,26,41,7,0,9,19,22,16,5,24,0,0,0,51,11,2771
-"['Andrew Robertson' 'Ibrahima Konate' 'Jarell Quansah' 'Joel Matip'
- 'Joseph Gomez' 'Konstantinos Tsimikas' 'Trent Alexander-Arnold'
- 'Virgil van Dijk']",LIV,D,259.25,204.25,-100.0,42,1,39,3,5,37,8,5,1,10,43,125,12,19,64,0,0,1,37,4,2877
-"['Ben Doak' 'Cody Gakpo' 'Darwin Nunez' 'Diogo Jota' 'Luis Diaz'
- 'Mohamed Salah']",LIV,F,350.0,170.0,-36.5,38,14,35,9,29,23,39,3,1,2,5,7,34,3,19,1,1,0,26,3,2140
-"['Alexis Mac Allister' 'Curtis Jones' 'Dominik Szoboszlai'
- 'Harvey Elliott' 'Ryan Gravenberch' 'Wataru Endo']",LIV,M,148.0,112.0,-38.0,36,1,23,4,6,27,24,6,2,3,24,23,24,5,10,0,2,0,24,3,1935
-"[""Amari'i Bell"" 'Issa Kabore' 'Mads Andersen' 'Reece Burke' 'Teden Mengi'
- 'Tom Lockyer']",LUT,D,149.75,115.75,-120.0,37,2,12,2,4,41,8,6,0,8,41,103,10,21,57,0,0,0,52,0,2682
-"['Carlton Morris' 'Cauley Woodrow' 'Chiedozie Ogbene' 'Elijah Adebayo'
- 'Jacob Brown']",LUT,F,185.0,137.0,-26.0,38,4,26,2,11,15,40,3,0,4,8,23,26,0,72,0,0,0,41,0,1914
-"['Albert Sambi Lokonga' 'Alfie Doughty' 'Luke Berry' 'Marvelous Nakamba'
- 'Pelly Ruddock' 'Ross Barkley' 'Ryan Giles' 'Tahith Chong']",LUT,M,183.5,177.5,-20.5,41,0,42,1,3,35,21,5,0,18,22,27,15,6,24,0,0,0,57,0,2534
-"['Aymeric Laporte' 'John Stones' 'Josko Gvardiol' 'Kyle Walker'
- 'Manuel Akanji' 'Nathan Ake' 'Rico Lewis' 'Ruben Dias' 'Sergio Gomez']",MCI,D,228.75,126.75,-67.5,42,1,20,2,10,27,13,3,0,6,27,49,13,12,37,0,0,1,25,13,2998
-['Erling Haaland' 'Jeremy Doku' 'Julian Alvarez'],MCI,F,314.5,170.5,-17.0,21,12,37,6,31,10,14,3,0,5,7,9,22,0,11,1,1,0,16,6,1692
-"['Bernardo Silva' 'Jack Grealish' 'Kalvin Phillips' 'Kevin De Bruyne'
- 'Mateo Kovacic' 'Matheus Nunes' 'Oscar Bobb' 'Phil Foden' 'Rodri']",MCI,M,297.0,202.0,-45.5,42,4,52,8,13,32,35,7,2,12,14,22,49,4,13,0,0,0,24,11,2592
-"['Aaron Wan-Bissaka' 'Diogo Dalot' 'Harry Maguire' 'Jonny Evans'
- 'Lisandro Martinez' 'Luke Shaw' 'Raphael Varane' 'Sergio Reguilon'
- 'Victor Lindelof']",MUN,D,187.25,107.25,-121.5,39,1,33,4,3,30,13,8,0,9,27,91,20,14,34,0,0,1,47,7,2747
-['Anthony Martial' 'Antony' 'Marcus Rashford' 'Rasmus Hojlund'],MUN,F,134.0,113.0,-18.0,24,1,26,2,14,5,28,2,0,0,5,8,32,1,12,0,1,0,26,4,1542
-"['Alejandro Garnacho' 'Bruno Fernandes' 'Casemiro' 'Christian Eriksen'
- 'Donny van de Beek' 'Facundo Pellistri' 'Hannibal Mejbri' 'Jadon Sancho'
- 'Mason Mount' 'Scott McTominay' 'Sofyan Amrabat']",MUN,M,326.0,243.0,-34.5,51,7,51,2,23,45,41,7,0,9,24,37,25,13,27,0,0,0,47,8,2850
-"['Dan Burn' 'Fabian Schar' 'Jamaal Lascelles' 'Kieran Trippier'
- 'Lewis Hall' 'Matt Targett' 'Sven Botman' 'Valentino Livramento']",NEW,D,308.5,174.5,-87.0,39,2,34,6,4,28,10,5,0,16,23,74,11,20,69,0,0,0,36,12,2887
-['Alexander Isak' 'Callum Wilson'],NEW,F,151.5,61.5,-9.0,14,10,4,0,22,0,14,1,0,0,0,2,17,0,3,0,0,0,11,4,722
-"['Anthony Gordon' 'Bruno Guimaraes' 'Elliot Anderson' 'Harvey Barnes'
- 'Jacob Murphy' 'Joelinton' 'Miguel Almiron' 'Sandro Tonali'
- 'Sean Longstaff']",NEW,M,399.5,250.5,-55.5,60,8,52,10,26,49,51,15,0,12,19,23,46,10,20,0,2,0,43,17,3530
-"['Gonzalo Montiel' 'Harry Toffolo' 'Joe Worrall' 'Moussa Niakhate'
- 'Neco Williams' 'Nuno Tavares' 'Ola Aina' 'Scott McKenna' 'Serge Aurier'
- 'Willy Boly']",NOT,D,222.0,149.0,-130.5,44,1,16,3,7,43,13,10,2,7,35,134,10,25,80,0,0,0,45,7,3035
-"['Anthony Elanga' 'Callum Hudson-Odoi' 'Chris Wood' 'Divock Origi'
- 'Taiwo Awoniyi']",NOT,F,165.0,93.0,-14.0,31,6,22,3,12,4,20,2,0,2,2,12,22,0,18,0,0,0,12,3,1191
-"['Cheikhou Kouyate' 'Danilo' 'Ibrahim Sangare' 'Morgan Gibbs-White'
- 'Murillo' 'Nicolas Dominguez' 'Orel Mangala' 'Ryan Yates']",NOT,M,196.5,167.5,-31.0,40,1,24,2,7,38,22,10,0,4,37,47,26,13,37,0,0,0,36,8,2611
-"['Anel Ahmedhodzic' 'Auston Trusty' 'Chris Basham' 'George Baldock'
- 'Jack Robinson' 'Jayden Bogle' 'John Egan' 'Luke Thomas' 'Max Lowe'
- 'Yasser Larouci']",SHU,D,83.0,53.0,-244.5,53,1,12,2,5,42,25,9,0,6,53,170,23,38,59,0,0,0,107,1,3551
-"['Antwoine Hackford' 'Benie Traore' 'Cameron Archer' 'Oliver McBurnie'
- 'Rhian Brewster' 'William Osula']",SHU,F,70.5,49.5,-33.5,23,1,13,2,7,4,33,5,1,2,3,8,12,4,36,0,0,0,40,0,1368
-"['Andre Brooks' 'Anis Ben Slimane' 'Ben Osborn' 'Gustavo Hamer'
- 'James Mcatee' 'Oliver Norwood' 'Tom Davies' 'Vinicius de Souza Costa']",SHU,M,151.5,131.5,-31.0,38,2,22,0,12,34,26,9,0,7,22,42,12,6,27,0,0,0,73,2,2224
-"['Ben Davies' 'Cristian Romero' 'Davinson Sanchez' 'Emerson Royal'
- 'Iyenoma Destiny Udogie' 'Micky van de Ven' 'Pedro Porro']",TOT,D,306.25,159.25,-93.0,41,4,20,5,5,53,12,8,0,3,33,109,19,20,47,0,0,1,33,12,2881
-"['Alejo Veliz' 'Brennan Johnson' 'Manor Solomon' 'Richarlison'
- 'Son Heung-Min']",TOT,F,228.5,141.5,-18.5,28,7,32,4,21,8,21,4,0,4,9,6,24,3,12,0,0,0,20,4,1516
-"['Dejan Kulusevski' 'Giovani Lo Celso' 'Ivan Perisic' 'James Maddison'
- 'Oliver Skipp' 'Pape Sarr' 'Pierre-Emile Hojbjerg' 'Yves Bissouma']",TOT,M,383.5,286.5,-58.5,50,5,66,7,30,41,47,14,1,10,30,26,55,8,18,0,0,0,32,10,2929
-"['Angelo Ogbonna' 'Emerson' 'Konstantinos Mavropanos' 'Kurt Zouma'
- 'Nayef Aguerd' 'Thilo Kehrer' 'Vladimir Coufal']",WHU,D,222.25,136.25,-120.0,37,2,20,6,4,33,6,6,1,8,45,129,8,29,51,0,1,0,49,4,2888
-['Danny Ings' 'Michail Antonio'],WHU,F,51.0,27.0,-10.0,13,2,4,1,3,1,12,2,0,0,1,2,13,4,8,0,0,0,8,4,621
-"['Edson Alvarez' 'James Ward-Prowse' 'Jarrod Bowen' 'Lucas Paqueta'
- 'Maxwel Cornet' 'Mohammed Kudus' 'Pablo Fornals' 'Said Benrahma'
- 'Tomas Soucek']",WHU,M,461.0,313.0,-46.0,56,11,46,7,31,62,48,11,0,7,43,75,44,16,66,0,0,0,63,7,3619
-"['Craig Dawson' 'Hugo Bueno' 'Jonny' 'Matt Doherty' 'Max Kilman'
- 'Nelson Semedo' 'Rayan Ait-Nouri' 'Toti']",WOL,D,124.0,100.0,-159.5,48,0,15,0,4,35,25,10,0,7,32,126,29,34,53,0,0,1,61,4,3166
-"['Fabio Silva' 'Hwang Hee-Chan' 'Matheus Cunha' 'Pedro Neto'
- 'Sasa Kalajdzic']",WOL,F,290.0,176.0,-28.5,35,8,34,7,18,16,33,6,0,15,10,7,50,4,11,0,0,0,40,3,2030
-"['Boubacar Traore' 'Jean-Ricner Bellegarde' 'Joao Gomes' 'Mario Lemina'
- 'Pablo Sarabia' 'Tommy Doyle']",WOL,M,100.5,85.5,-39.0,29,0,15,2,4,35,22,7,2,3,21,26,14,6,15,0,0,0,33,3,1711
+7,ARS,D,237.5,123.5,-59.5,39,1,16,2,6,24,5,3,1,4,27,56,6,24,40,0,0,0,22,15,2633
+4,ARS,F,147.5,87.5,-26.5,25,4,18,4,7,15,29,6,0,1,9,8,21,1,26,0,2,0,10,9,1352
+9,ARS,M,461.5,295.5,-30.5,50,10,55,10,33,41,49,3,0,17,28,21,45,6,18,0,2,0,28,16,3137
+6,AVL,D,209.75,103.75,-128.0,38,3,22,4,13,35,10,7,0,12,33,79,15,16,31,0,0,1,52,8,3103
+4,AVL,F,296.5,134.5,-20.0,28,10,33,12,23,4,28,3,0,6,3,8,19,1,11,0,2,0,27,5,1564
+10,AVL,M,218.0,160.0,-34.0,46,5,33,1,11,34,32,9,0,8,19,14,34,5,12,0,0,0,41,7,2471
+7,BHA,D,141.0,79.0,-146.0,35,2,22,6,8,34,6,9,0,7,30,68,11,25,41,0,0,1,60,0,2577
+6,BHA,F,260.5,146.5,-25.5,36,10,27,4,25,17,35,4,0,4,11,17,26,1,14,0,1,0,39,4,1658
+10,BHA,M,378.5,251.5,-34.5,46,8,61,8,21,32,29,10,0,12,31,25,34,6,14,0,0,0,61,7,2903
+8,BOU,D,77.25,46.25,-171.0,40,0,13,1,1,37,16,6,0,10,27,97,25,27,39,0,0,1,73,4,2852
+6,BOU,F,137.5,89.5,-24.5,28,4,16,2,16,8,37,3,0,3,5,15,24,1,18,0,0,0,37,2,1447
+8,BOU,M,250.0,225.0,-22.5,49,1,38,2,14,25,41,1,0,9,39,30,49,9,25,0,0,0,70,4,2832
+8,BRF,D,190.5,145.5,-133.0,44,0,20,3,3,39,22,8,0,8,38,126,23,16,77,0,0,0,53,4,3069
+6,BRF,F,203.0,137.0,-20.0,33,6,23,2,22,12,24,4,0,11,8,13,18,2,28,0,1,0,33,4,1813
+8,BRF,M,274.0,192.0,-19.0,39,5,38,5,13,40,18,5,0,12,25,32,7,6,34,0,1,0,36,7,2365
+7,BUR,D,12.75,5.75,-195.5,39,0,12,1,3,26,9,8,0,4,36,97,6,27,48,0,0,1,85,0,2976
+9,BUR,F,203.0,131.0,-32.5,43,6,25,3,18,15,29,2,2,2,1,18,47,4,17,0,0,0,59,3,2030
+7,BUR,M,142.0,115.0,-21.5,36,1,25,3,2,30,19,6,0,3,17,32,7,11,29,0,0,0,56,0,2127
+8,CHE,D,287.75,171.75,-94.5,45,1,27,4,7,30,15,9,1,11,26,93,18,18,72,0,0,0,31,13,3222
+7,CHE,F,175.5,103.5,-31.0,29,6,17,3,16,13,34,7,0,6,2,9,35,3,11,0,2,0,16,7,1486
+6,CHE,M,224.5,167.5,-38.0,37,3,33,3,14,34,32,9,0,7,23,18,27,10,21,1,0,0,22,12,2418
+7,CRY,D,285.5,162.5,-68.5,35,2,16,1,4,33,9,4,0,11,22,132,16,25,51,0,0,0,28,16,2886
+3,CRY,F,166.5,100.5,-29.0,21,4,19,5,16,13,50,2,0,2,8,10,22,0,29,0,0,0,12,9,1557
+8,CRY,M,269.0,239.0,-35.0,40,1,40,1,16,37,50,5,0,7,35,36,54,10,38,0,0,0,30,15,2730
+7,EVE,D,201.75,153.75,-118.5,37,1,25,2,6,47,13,8,0,10,39,89,12,21,59,0,0,0,48,4,2887
+6,EVE,F,105.0,78.0,-12.0,24,3,9,0,11,5,20,1,0,0,4,7,20,1,40,0,0,0,18,3,1005
+7,EVE,M,322.0,248.0,-22.0,39,5,50,4,21,45,32,3,0,11,19,16,26,5,44,0,0,0,49,5,3020
+7,FUL,D,149.75,67.75,-141.0,37,1,9,0,3,36,16,7,2,10,39,107,17,8,48,0,0,1,50,12,2860
+7,FUL,F,149.5,101.5,-23.5,32,4,20,2,16,12,35,3,0,1,4,12,17,3,32,0,0,0,30,5,1609
+8,FUL,M,197.5,144.5,-34.5,47,2,36,4,10,26,41,7,0,9,19,22,16,5,24,0,0,0,51,11,2771
+8,LIV,D,259.25,204.25,-100.0,42,1,39,3,5,37,8,5,1,10,43,125,12,19,64,0,0,1,37,4,2877
+6,LIV,F,350.0,170.0,-36.5,38,14,35,9,29,23,39,3,1,2,5,7,34,3,19,1,1,0,26,3,2140
+6,LIV,M,148.0,112.0,-38.0,36,1,23,4,6,27,24,6,2,3,24,23,24,5,10,0,2,0,24,3,1935
+6,LUT,D,149.75,115.75,-120.0,37,2,12,2,4,41,8,6,0,8,41,103,10,21,57,0,0,0,52,0,2682
+5,LUT,F,185.0,137.0,-26.0,38,4,26,2,11,15,40,3,0,4,8,23,26,0,72,0,0,0,41,0,1914
+8,LUT,M,183.5,177.5,-20.5,41,0,42,1,3,35,21,5,0,18,22,27,15,6,24,0,0,0,57,0,2534
+9,MCI,D,228.75,126.75,-67.5,42,1,20,2,10,27,13,3,0,6,27,49,13,12,37,0,0,1,25,13,2998
+3,MCI,F,314.5,170.5,-17.0,21,12,37,6,31,10,14,3,0,5,7,9,22,0,11,1,1,0,16,6,1692
+9,MCI,M,297.0,202.0,-45.5,42,4,52,8,13,32,35,7,2,12,14,22,49,4,13,0,0,0,24,11,2592
+9,MUN,D,187.25,107.25,-121.5,39,1,33,4,3,30,13,8,0,9,27,91,20,14,34,0,0,1,47,7,2747
+4,MUN,F,134.0,113.0,-18.0,24,1,26,2,14,5,28,2,0,0,5,8,32,1,12,0,1,0,26,4,1542
+11,MUN,M,326.0,243.0,-34.5,51,7,51,2,23,45,41,7,0,9,24,37,25,13,27,0,0,0,47,8,2850
+8,NEW,D,308.5,174.5,-87.0,39,2,34,6,4,28,10,5,0,16,23,74,11,20,69,0,0,0,36,12,2887
+2,NEW,F,151.5,61.5,-9.0,14,10,4,0,22,0,14,1,0,0,0,2,17,0,3,0,0,0,11,4,722
+9,NEW,M,399.5,250.5,-55.5,60,8,52,10,26,49,51,15,0,12,19,23,46,10,20,0,2,0,43,17,3530
+10,NOT,D,222.0,149.0,-130.5,44,1,16,3,7,43,13,10,2,7,35,134,10,25,80,0,0,0,45,7,3035
+5,NOT,F,165.0,93.0,-14.0,31,6,22,3,12,4,20,2,0,2,2,12,22,0,18,0,0,0,12,3,1191
+8,NOT,M,196.5,167.5,-31.0,40,1,24,2,7,38,22,10,0,4,37,47,26,13,37,0,0,0,36,8,2611
+10,SHU,D,83.0,53.0,-244.5,53,1,12,2,5,42,25,9,0,6,53,170,23,38,59,0,0,0,107,1,3551
+6,SHU,F,70.5,49.5,-33.5,23,1,13,2,7,4,33,5,1,2,3,8,12,4,36,0,0,0,40,0,1368
+8,SHU,M,151.5,131.5,-31.0,38,2,22,0,12,34,26,9,0,7,22,42,12,6,27,0,0,0,73,2,2224
+7,TOT,D,306.25,159.25,-93.0,41,4,20,5,5,53,12,8,0,3,33,109,19,20,47,0,0,1,33,12,2881
+5,TOT,F,228.5,141.5,-18.5,28,7,32,4,21,8,21,4,0,4,9,6,24,3,12,0,0,0,20,4,1516
+8,TOT,M,383.5,286.5,-58.5,50,5,66,7,30,41,47,14,1,10,30,26,55,8,18,0,0,0,32,10,2929
+7,WHU,D,222.25,136.25,-120.0,37,2,20,6,4,33,6,6,1,8,45,129,8,29,51,0,1,0,49,4,2888
+2,WHU,F,51.0,27.0,-10.0,13,2,4,1,3,1,12,2,0,0,1,2,13,4,8,0,0,0,8,4,621
+9,WHU,M,461.0,313.0,-46.0,56,11,46,7,31,62,48,11,0,7,43,75,44,16,66,0,0,0,63,7,3619
+8,WOL,D,124.0,100.0,-159.5,48,0,15,0,4,35,25,10,0,7,32,126,29,34,53,0,0,1,61,4,3166
+5,WOL,F,290.0,176.0,-28.5,35,8,34,7,18,16,33,6,0,15,10,7,50,4,11,0,0,0,40,3,2030
+6,WOL,M,100.5,85.5,-39.0,29,0,15,2,4,35,22,7,2,3,21,26,14,6,15,0,0,0,33,3,1711
