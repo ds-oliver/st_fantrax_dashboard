@@ -86,7 +86,7 @@ def main():
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
     team_df = load_csv_file_cached('data/display-data/team_data.csv')
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv')
-    vs_team_df = load_csv_file_cached('data/display-data/vs_team_data.csv')
+    vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv')
     vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
 
     # Use the cached function to display DataFrames

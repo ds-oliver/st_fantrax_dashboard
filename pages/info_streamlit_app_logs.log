@@ -3946,3 +3946,108 @@ def style_dataframe_custom(_custom_cmap, ...):
 
 [5 rows x 30 columns]
 2023-10-08 13:49:58,734 - INFO - Main function completed successfully
+2023-10-09 19:04:33,300 - INFO - Starting main function
+2023-10-09 19:04:33,363 - INFO - Creating custom color maps
+2023-10-09 19:04:33,535 - INFO - Attempting to style the Most Recent Game Week Data dataframe
+2023-10-09 19:04:34,434 - INFO - Most Recent Game Week Data Dataframe head:             Player  ...   FP/G
+0  Raheem Sterling  ...  32.00
+1    Mohamed Salah  ...  27.00
+2   Alexander Isak  ...  26.50
+3          Willian  ...  26.00
+4    Jack Harrison  ...  23.50
+
+[5 rows x 37 columns]
+2023-10-09 19:04:34,466 - INFO - Most Recent Game Week Data Dataframe tail:               Player  ...   FP/G
+270   Charlie Taylor  ...  -4.00
+271   Yasser Larouci  ...  -4.25
+272    Yves Bissouma  ...  -5.00
+273  Ameen Al Dakhil  ...  -5.00
+274     Aaron Hickey  ...  -6.25
+
+[5 rows x 37 columns]
+2023-10-09 19:04:34,479 - INFO - Attempting to style the Grouped Player Data dataframe
+2023-10-09 19:04:35,633 - INFO - Grouped Player Data Dataframe head:                Player  ... FPts/90
+0        Aaron Hickey  ...   -0.75
+1        Aaron Ramsey  ...    4.71
+2   Aaron Wan-Bissaka  ...    9.22
+3  Abdoulaye Doucoure  ...   13.82
+4        Adam Lallana  ...    5.42
+
+[5 rows x 31 columns]
+2023-10-09 19:04:35,660 - INFO - Grouped Player Data Dataframe tail:                        Player  ... FPts/90
+413           Youri Tielemans  ...    1.63
+414  Youssef Ramalho Chermiti  ...   -3.57
+415             Yves Bissouma  ...    6.65
+416                     Zanka  ...   66.67
+417              Zeki Amdouni  ...    8.33
+
+[5 rows x 31 columns]
+2023-10-09 19:04:35,675 - INFO - Attempting to style the Team Data dataframe
+2023-10-09 19:04:35,788 - INFO - Team Data Dataframe head:   Team  ...  FPts/90
+0  ARS  ...    10.70
+1  AVL  ...     9.13
+2  BHA  ...     9.83
+3  BOU  ...     5.87
+4  BRF  ...     8.29
+
+[5 rows x 28 columns]
+2023-10-09 19:04:35,822 - INFO - Team Data Dataframe tail:    Team  ...  FPts/90
+15  NOT  ...     7.68
+16  SHU  ...     3.84
+17  TOT  ...    11.28
+18  WHU  ...     9.27
+19  WOL  ...     6.70
+
+[5 rows x 28 columns]
+2023-10-09 19:04:35,834 - INFO - Attempting to style the Team Position Data dataframe
+2023-10-09 19:04:36,075 - INFO - Team Position Data Dataframe head:   Team  ... FPts/90
+0  ARS  ...    8.12
+1  ARS  ...    9.82
+2  ARS  ...   13.24
+3  AVL  ...    6.08
+4  AVL  ...   17.06
+
+[5 rows x 29 columns]
+2023-10-09 19:04:36,098 - INFO - Team Position Data Dataframe tail:    Team  ... FPts/90
+55  WHU  ...    7.39
+56  WHU  ...   11.46
+57  WOL  ...    3.52
+58  WOL  ...   12.85
+59  WOL  ...    5.29
+
+[5 rows x 29 columns]
+2023-10-09 19:04:36,125 - INFO - Attempting to style the vsTeam Data dataframe
+2023-10-09 19:04:36,775 - INFO - vsTeam Data Dataframe head:             team  ... position_1_WB
+0      vsArsenal  ...             0
+1  vsAston Villa  ...             2
+2  vsBournemouth  ...             0
+3    vsBrentford  ...             0
+4     vsBrighton  ...             3
+
+[5 rows x 168 columns]
+2023-10-09 19:04:36,798 - INFO - vsTeam Data Dataframe tail:                  team  ... position_1_WB
+15  vsNott'ham Forest  ...             6
+16    vsSheffield Utd  ...             0
+17        vsTottenham  ...             3
+18         vsWest Ham  ...             6
+19           vsWolves  ...             0
+
+[5 rows x 168 columns]
+2023-10-09 19:04:36,816 - INFO - Attempting to style the vsTeam Position Data dataframe
+2023-10-09 19:04:37,045 - INFO - vsTeam Position Data Dataframe head:     Team  ... FPts/90
+0  vsARS  ...    5.89
+1  vsARS  ...    9.47
+2  vsARS  ...    7.76
+3  vsAVL  ...    8.60
+4  vsAVL  ...   10.85
+
+[5 rows x 30 columns]
+2023-10-09 19:04:37,080 - INFO - vsTeam Position Data Dataframe tail:      Team  ... FPts/90
+55  vsWHU  ...   18.16
+56  vsWHU  ...   11.36
+57  vsWOL  ...    7.26
+58  vsWOL  ...   14.98
+59  vsWOL  ...    7.16
+
+[5 rows x 30 columns]
+2023-10-09 19:04:37,081 - INFO - Main function completed successfully
