@@ -113,12 +113,15 @@ def main():
     vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['team'])
     # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
 
+    # get the most recent gameweek value
+    last_gw = lastgw_df['GW'].max()
+
     # Use the cached function to display DataFrames
-    display_dataframe(lastgw_df, "Most Recent Game Week Data", colors, divergent_colors)
-    display_dataframe(grouped_players_df, "Grouped Player Data", colors, divergent_colors)
+    display_dataframe(lastgw_df, f"GW {last_gw} Player Data", colors, divergent_colors)
+    display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors)
     display_dataframe(team_df, "Team Data", colors, divergent_colors)
-    display_dataframe(team_pos_df, "Team Position Data", colors, divergent_colors)
-    display_dataframe(vs_team_df, "vsTeam Data", colors, divergent_colors)
+    display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
+    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors)
     # display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
   
     logging.info("Main function completed successfully")
