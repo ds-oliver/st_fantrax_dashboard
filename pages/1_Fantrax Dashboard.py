@@ -87,7 +87,7 @@ def main():
     team_df = load_csv_file_cached('data/display-data/team_data.csv')
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv')
     vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv')
-    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
+    # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
 
     # Use the cached function to display DataFrames
     display_dataframe(lastgw_df, "Most Recent Game Week Data", colors, divergent_colors)
@@ -95,7 +95,7 @@ def main():
     display_dataframe(team_df, "Team Data", colors, divergent_colors)
     display_dataframe(team_pos_df, "Team Position Data", colors, divergent_colors)
     display_dataframe(vs_team_df, "vsTeam Data", colors, divergent_colors)
-    display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
+    # display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
   
     logging.info("Main function completed successfully")
 
