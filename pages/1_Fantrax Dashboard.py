@@ -80,7 +80,7 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, title, colors, divergent_colors):
+def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
@@ -92,9 +92,11 @@ def display_dataframe(df, title, colors, divergent_colors):
         st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")
+        if info_text:
+            st.info(info_text)
     except Exception as e:
-        st.write(f"An exception occurred: {e}")
-        logging.error(f"An exception occurred: {e}")
+        logging.error(f"Error styling the {title} dataframe: {e}")
+        st.error(f"Error styling the {title} dataframe: {e}")
 
 def main():
     logging.info("Starting main function")
@@ -111,7 +113,8 @@ def main():
     team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
     vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['team'])
-    # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_data.csv')
+
+    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv.csv', set_index_cols=['team', 'position'])
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
@@ -123,6 +126,7 @@ def main():
     display_dataframe(team_df, "Team Data", colors, divergent_colors)
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
     display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors)
+    display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show how each respective position has performed against the team in question. For example, the 'shots_on_target' column shows how many shots the team has allowed to the given position.")
     # display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
   
     logging.info("Main function completed successfully")
