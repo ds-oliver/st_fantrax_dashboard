@@ -10,6 +10,8 @@ def main():
     
     add_construction()
 
+    st.info('This is a work in progress. None of the links on this page work yet. Use the sidebar to navigate to the other pages.')
+
     st.title('This is part of @draftalchemy | @ds-oliver FPL Data Science Project')
     st.write("""
     Welcome to the FPL Data Science Platform! Our platform provides access to comprehensive datasets including player statistics, match results, historical performance, and more. Analyze data from top leagues around the world or dive into specific player performance metrics.
