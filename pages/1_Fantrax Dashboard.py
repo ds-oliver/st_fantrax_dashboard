@@ -42,6 +42,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+@st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
