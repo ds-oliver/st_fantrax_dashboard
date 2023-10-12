@@ -112,9 +112,9 @@ def main():
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
     team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
-    vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['team'])
+    vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['Team'])
 
-    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['team', 'position'])
+    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['Team', 'Position'])
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
