@@ -126,7 +126,7 @@ def main():
     display_dataframe(team_df, "Team Data", colors, divergent_colors)
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
     display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors)
-    display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show how each respective position has performed against the team in question. For example, the 'shots_on_target' column shows how many shots the team has allowed to the given position.")
+    display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position.")
     # display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
   
     logging.info("Main function completed successfully")
