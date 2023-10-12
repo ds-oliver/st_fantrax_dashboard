@@ -121,12 +121,12 @@ def main():
 
     # Use the cached function to display DataFrames
     display_dataframe(lastgw_df, f"GW {last_gw} Player Data", colors, divergent_colors)
-    st.info("Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.")
-    display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors)
-    display_dataframe(team_df, "Team Data", colors, divergent_colors)
+    st.info("Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.")
+    display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors, info_text=f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(lastgw_df['GW'])} gameweeks of data.")
+    display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
-    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors)
-    display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position.")
+    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.")
+    display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position, per game.")
     # display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
   
     logging.info("Main function completed successfully")
