@@ -86,6 +86,8 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 def display_dataframe_pos(df, title=None, info_text=None):
     columns_to_keep = df.columns.tolist()
 
+    df.round(1)
+
     try:
         if title:
             st.write(f"### {title}")
@@ -432,7 +434,10 @@ def main():
                 df.drop(columns=[col for col in ['Pos', '+/-'] if col in df.columns], inplace=True)
 
             projections['ROS Rank'].fillna(200, inplace=True)
-            
+
+            # reorder columns Player, Position, Team, ProjFPts, ProjGS, ROS Rank then rest of columns
+            projections = projections[['Player', 'Position', 'Team', 'ProjFPts', 'ProjGS', 'ROS Rank'] + [col for col in projections.columns if col not in ['Player', 'Position', 'Team', 'ProjFPts', 'ProjGS', 'ROS Rank']]]
+
             debug_filtering(projections, players)
 
             players['Status'] = players['Status'].apply(lambda x: 'Waivers' if x.startswith('W (') else x)
