@@ -404,17 +404,20 @@ if 'only_starters' not in st.session_state:
 if 'lineup_clicked' not in st.session_state:
     st.session_state.lineup_clicked = False
 
+if 'status' not in st.session_state:
+    st.session_state.status = ""
+
 def main():
 
     # Initialize session states
-    if 'only_starters' not in st.session_state:
-        st.session_state.only_starters = False
+    # if 'only_starters' not in st.session_state:
+    #     st.session_state.only_starters = False
 
-    if 'lineup_clicked' not in st.session_state:
-        st.session_state.lineup_clicked = False
+    # if 'lineup_clicked' not in st.session_state:
+    #     st.session_state.lineup_clicked = False
 
-    if 'status' not in st.session_state:
-        st.session_state.status = ""
+    # if 'status' not in st.session_state:
+    #     st.session_state.status = ""
         
     # Adding construction banner or any other initial setups
     add_construction()
