@@ -405,6 +405,14 @@ if 'lineup_clicked' not in st.session_state:
     st.session_state.lineup_clicked = False
 
 def main():
+
+    # Initialize session states
+    if 'only_starters' not in st.session_state:
+        st.session_state.only_starters = False
+
+    if 'lineup_clicked' not in st.session_state:
+        st.session_state.lineup_clicked = False
+        
     # Adding construction banner or any other initial setups
     add_construction()
 
