@@ -206,14 +206,15 @@ def filter_by_status_and_position(players, projections, status):
         status = [status]
 
     filtered_players = players[players['Status'].isin(status)]
+
     if filtered_players.empty:
-        return pd.DataFrame(), pd.DataFrame(), 0, pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame(), 0, 0, pd.DataFrame()
 
     player_list = filtered_players['Player'].unique().tolist()
     projections = projections[projections['Player'].isin(player_list)]
 
     if projections.empty:
-        return pd.DataFrame(), pd.DataFrame(), 0, pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame(), 0, 0, pd.DataFrame()
 
     projections['Priority'] = projections['ProjGS'].apply(lambda x: 0 if x == 0 else 1)
     projections.sort_values(by=['Priority', 'ProjFPts'], ascending=[False, False], inplace=True)
@@ -222,6 +223,7 @@ def filter_by_status_and_position(players, projections, status):
     max_players = 10
     best_combination = None
     best_score = 0
+    best_starting_score = 0  # New variable to track the best score with only starters
 
     position_combinations = product(
         range(pos_limits['D'][0], pos_limits['D'][1] + 1),
@@ -243,6 +245,7 @@ def filter_by_status_and_position(players, projections, status):
         if current_score > best_score:
             best_combination = current_combination
             best_score = current_score
+            best_starting_score = best_combination[best_combination['ProjGS'] != 0]['ProjFPts'].sum()  # Update the starting score
 
     reserves = projections[~projections['Player'].isin(best_combination['Player'])].head(5).reset_index(drop=True)
 
@@ -268,11 +271,13 @@ def filter_by_status_and_position(players, projections, status):
     best_combination.reset_index(drop=True, inplace=True)
 
     best_score = round(best_combination['ProjFPts'].sum(), 1)
+    best_starting_score = round(best_combination[best_combination['ProjGS'] != 0]['ProjFPts'].sum(), 1)  # Finalize the starting score
 
     best_combination.drop(columns=['Priority'], inplace=True, errors='ignore')
     reserves.drop(columns=['Priority'], inplace=True, errors='ignore')
 
-    return best_combination, reserves, best_score, projections
+    return best_combination, reserves, best_score, best_starting_score, projections
+
 
 # Filter available players by their ProjGS and status
 def filter_available_players_by_projgs(players, projections, status, projgs_value):
@@ -461,7 +466,7 @@ def main():
 
                 with col1:
                     status_list = [status]
-                    top_10, reserves, top_10_proj_pts, roster = filter_by_status_and_position(players, projections, status_list)
+                    top_10, reserves, top_10_proj_pts, top_10_proj_pts_starters, roster = filter_by_status_and_position(players, projections, status_list)
                     # if top_10 contains player with ProjGS == 0, print Debug message and the top_10 dataframe and the reserves dataframe
                     if top_10[top_10['ProjGS'] == 0].empty:
                         logging.info("Debug - Top 10 does not contain player with ProjGS == 0")
@@ -516,7 +521,7 @@ def main():
                         value_score_df = pd.DataFrame(columns=['Status', 'Value Score'])
 
                         for status in players['Status'].unique():
-                            top_10, _, top_10_proj_pts, _ = filter_by_status_and_position(players, projections, status)
+                            top_10, _, top_10_proj_pts, top_10_proj_pts_starters, _ = filter_by_status_and_position(players, projections, status)
                             average_ros_rank_of_roster = round(top_10['ROS Rank'].mean(), 1)
                             top_10['performance_index'] = top_10['ProjFPts'] * top_10['ROS Rank']
                             performance_index_avg = top_10['performance_index'].mean()
@@ -531,8 +536,13 @@ def main():
                         # Rank the statuses based on the normalized value score
                         value_score_df.sort_values(by=['Value Score'], ascending=False, inplace=True)
                         value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=False).astype(int)
+                        
+                        # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
+                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
 
-                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts)
+                        # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
+                        # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
+
                         st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster)
                         st.metric(label="📊 Value Score", value=value_score)
                         st.metric(label="💹 Avg Projected FPts of Best XIs across the Division", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
