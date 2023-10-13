@@ -34,6 +34,22 @@ sys.path.append(os.path.abspath(os.path.join('./scripts')))
 
 from constants import color1, color2, color3, color4, color5, cm
 
+def display_dataframe_pos(df, title=None, info_text=None):
+    columns_to_keep = df.columns.tolist()
+
+    try:
+        st.write(f"## {title}")
+        logging.info(f"Attempting to style the {title} dataframe")
+        styled_df = style_position_player_only(df)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
+        logging.info(f"{title} Dataframe head: {df.head()}")
+        logging.info(f"{title} Dataframe tail: {df.tail()}")
+        if info_text:
+            st.info(info_text)
+    except Exception as e:
+        logging.error(f"Error styling the {title} dataframe: {e}")
+        st.error(f"Error styling the {title} dataframe: {e}")
+
 def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)

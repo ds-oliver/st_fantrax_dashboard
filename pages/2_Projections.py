@@ -81,14 +81,14 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, colors, divergent_colors, title=None, info_text=None):
-    custom_cmap = create_custom_cmap(*colors)
-    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
+def display_dataframe_pos(df, title=None, info_text=None):
     columns_to_keep = df.columns.tolist()
 
     try:
-        st.write(f"## {title}")
+        if title:
+            st.write(f"### {title}")
         logging.info(f"Attempting to style the {title} dataframe")
+        # Style the DataFrame
         styled_df = style_position_player_only(df)
         st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
         logging.info(f"{title} Dataframe head: {df.head()}")
@@ -98,30 +98,7 @@ def display_dataframe(df, colors, divergent_colors, title=None, info_text=None):
     except Exception as e:
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
-
-def apply_styles(box_shadow, background_color, border_size_px, border_color, border_radius_px, border_left_color):
-    # Determine box shadow string based on the box_shadow argument
-    box_shadow_str = (
-        "box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;"
-        if box_shadow
-        else "box-shadow: none !important;"
-    )
-    # Inject CSS via a markdown block
-    st.markdown(
-        f"""
-        <style>
-            div[data-testid="metric-container"] {{
-                background-color: {background_color};
-                border: {border_size_px}px solid {border_color};
-                padding: 5% 5% 5% 10%;
-                border-radius: {border_radius_px}px;
-                border-left: 0.5rem solid {border_left_color} !important;
-                {box_shadow_str}
-            }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+        styled_df = df
 
 def local_gif(file_path):
     with open(file_path, "rb") as file_:
@@ -478,9 +455,9 @@ def main():
                     status_list = [status]
                     top_10, reserves, top_10_proj_pts, roster = filter_by_status_and_position(players, projections, status_list)
                     st.write(f"### 🥇 {status} Best XI")
-                    display_dataframe(top_10)
+                    display_dataframe_pos(top_10)
                     st.write("### 🔄 Reserves")
-                    display_dataframe(reserves)
+                    display_dataframe_pos(reserves)
 
                 with col2:
                     available_players = pd.merge(available_players, projections[['Player', 'ProjGS', 'ROS Rank']], on='Player', how='left')
@@ -488,9 +465,9 @@ def main():
                         available_players, projections, ['Waivers', 'FA'], 1 if st.session_state.only_starters else None
                     )
                     st.write("### 🚀 Waivers & FA Best XI")
-                    display_dataframe(top_10_waivers)
+                    display_dataframe_pos(top_10_waivers)
                     st.write("### 🔄 Reserves")
-                    display_dataframe(reserves_waivers)
+                    display_dataframe_pos(reserves_waivers)
 
                 average_proj_pts = get_avg_proj_pts(players, projections)
 
