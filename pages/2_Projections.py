@@ -256,6 +256,11 @@ def filter_by_status_and_position(players, projections, status):
                 replacement = replacement_candidates.iloc[0]
                 best_combination = best_combination[best_combination['Player'] != player_row['Player']]
                 best_combination = pd.concat([best_combination, replacement.to_frame().T])
+                
+                # Add the removed player back into the reserves
+                reserves = pd.concat([reserves, player_row.to_frame().T])
+                
+                # Remove the replacement player from the reserves
                 reserves = reserves[reserves['Player'] != replacement['Player']]
 
     # Sort DataFrame by 'Position' in the order 'D', 'M', 'F' and then by 'ProjFPts'
