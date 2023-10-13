@@ -436,7 +436,7 @@ def main():
             projections['ROS Rank'].fillna(200, inplace=True)
 
             # reorder columns Player, Position, Team, ProjFPts, ProjGS, ROS Rank then rest of columns
-            projections = projections[['Player', 'Position', 'Team', 'ProjFPts', 'ProjGS', 'ROS Rank'] + [col for col in projections.columns if col not in ['Player', 'Position', 'Team', 'ProjFPts', 'ProjGS', 'ROS Rank']]]
+            projections = projections[['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank'] + [col for col in projections.columns if col not in ['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank']]]
 
             debug_filtering(projections, players)
 
