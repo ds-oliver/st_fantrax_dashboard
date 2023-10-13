@@ -86,15 +86,13 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 def display_dataframe_pos(df, title=None, info_text=None):
     columns_to_keep = df.columns.tolist()
 
-    df.round(1)
-
     try:
         if title:
             st.write(f"### {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         # Style the DataFrame
         styled_df = style_position_player_only(df, columns_to_keep)
-        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=450)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")
         if info_text:
@@ -461,6 +459,11 @@ def main():
                 with col1:
                     status_list = [status]
                     top_10, reserves, top_10_proj_pts, roster = filter_by_status_and_position(players, projections, status_list)
+                    # round the ProjFPts, ProjGPts columns to 1 decimal place
+                    top_10 = top_10.round({'ProjFPts': 1, 'ProjGPts': 1})
+                    # ensure ROS Rank is an integer
+                    top_10['ROS Rank'] = top_10['ROS Rank'].astype(int)
+
                     st.write(f"### 🥇 {status} Best XI")
                     display_dataframe_pos(top_10)
                     st.write("### 🔄 Reserves")
@@ -471,6 +474,10 @@ def main():
                     top_10_waivers, reserves_waivers = filter_available_players_by_projgs(
                         available_players, projections, ['Waivers', 'FA'], 1 if st.session_state.only_starters else None
                     )
+                    # round the ProjFPts, ProjGPts columns to 1 decimal place
+                    top_10_waivers = top_10_waivers.round({'ProjFPts': 1, 'ProjGPts': 1})
+                    # ensure ROS Rank is an integer
+                    top_10_waivers['ROS Rank'] = top_10_waivers['ROS Rank'].astype(int)
                     st.write("### 🚀 Waivers & FA Best XI")
                     display_dataframe_pos(top_10_waivers)
                     st.write("### 🔄 Reserves")
