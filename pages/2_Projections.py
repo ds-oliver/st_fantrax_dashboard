@@ -412,6 +412,9 @@ def main():
 
     if 'lineup_clicked' not in st.session_state:
         st.session_state.lineup_clicked = False
+
+    if 'status' not in st.session_state:
+        st.session_state.status = ""
         
     # Adding construction banner or any other initial setups
     add_construction()
@@ -469,8 +472,7 @@ def main():
 
             if st.button('🚀 Get my optimal lineup') or st.session_state.lineup_clicked:
                 st.session_state.lineup_clicked = True
-                status_list = [status]
-
+                status_list = [st.session_state.status]
                 
                 col1, col2 = st.columns(2)
 
