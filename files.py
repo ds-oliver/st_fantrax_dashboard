@@ -4,11 +4,14 @@ import os
 
 # match reports 
 # data/data_out/scraped_big5_data/pl_data/all_shots_all_20230820.csv data/data_out/scraped_big5_data/pl_data/full_season_matchreports_20230820.csv
+# list comprehension that gets the file in 'data/projections/' where filename matches 'GW{is_number} Projections.csv' 
+projections = [f'data/projections/{file}' for file in os.listdir('data/projections/') if re.match(r'GW\d+ Projections.csv', file)][0]
 
-projections = 'data/projections/GW8 Projections.csv'
+ros_ranks = [f'data/ros_ranks/{file}' for file in os.listdir('data/ros_ranks/') if re.match(r'Weekly ROS Ranks_GW\d+.csv', file)][0]
 
-shots_data = 'data/data_out/scraped_big5_data/pl_data/all_shots_all_20231008.csv'
-new_matches_data = 'data/fbref-data/full_season_matchreports_20231008.csv'
+
+shots_data = 'data/fbref-data/all_shots_all_20231005.csv'
+new_matches_data = 'data/fbref-data/full_season_matchreports_20231005.csv'
 ros_data = 'data/ros-data/Weekly ROS Ranks_GW8.csv'
 
 # files paths
