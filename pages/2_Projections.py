@@ -412,9 +412,6 @@ def main():
 
     if 'lineup_clicked' not in st.session_state:
         st.session_state.lineup_clicked = False
-
-    if 'status' not in st.session_state:
-        st.session_state.status = ""
         
     # Adding construction banner or any other initial setups
     add_construction()
@@ -452,7 +449,7 @@ def main():
 
             projections['ROS Rank'].fillna(200, inplace=True)
 
-            # reorder columns Player, Position, Team, ProjFPts, ProjGPts, ProjGS, ROS Rank then rest of columns
+            # reorder columns Player, Position, Team, ProjFPts, ProjGS, ROS Rank then rest of columns
             projections = projections[['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank'] + [col for col in projections.columns if col not in ['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank']]]
 
             debug_filtering(projections, players)
@@ -465,21 +462,30 @@ def main():
 
             with col_a:
                 st.write("### 🛡️ Select your Fantasy team")
-                st.session_state.status = st.selectbox('', unique_statuses)
+                status = st.selectbox('', unique_statuses)
 
             with col_b:
                 st.session_state.only_starters = st.checkbox('Only consider starters?')
 
             if st.button('🚀 Get my optimal lineup') or st.session_state.lineup_clicked:
                 st.session_state.lineup_clicked = True
+                status_list = [status]
+
                 
                 col1, col2 = st.columns(2)
 
                 with col1:
-                    status_list = [status]
                     top_10, reserves, top_10_proj_pts, top_10_proj_pts_starters, roster = filter_by_status_and_position(players, projections, status_list)
-                    
+                    # if top_10 contains player with ProjGS == 0, print Debug message and the top_10 dataframe and the reserves dataframe
+                    if top_10[top_10['ProjGS'] == 0].empty:
+                        logging.info("Debug - Top 10 does not contain player with ProjGS == 0")
+                    else:
+                        logging.info("Debug - Top 10 contains player with ProjGS == 0")
+                        logging.info("Debug - Top 10:", top_10[['Player', 'ProjGS', 'Position', 'ProjFPts']])
+                        logging.info("Debug - Reserves:", reserves[['Player', 'ProjGS', 'Position', 'ProjFPts']])
+                    # round the ProjFPts, ProjGPts columns to 1 decimal place
                     top_10 = top_10.round({'ProjFPts': 1, 'ProjGPts': 1})
+                    # ensure ROS Rank is an integer
                     top_10['ROS Rank'] = top_10['ROS Rank'].astype(int)
 
                     st.write(f"### 🥇 {status} Best XI")
@@ -492,7 +498,9 @@ def main():
                     top_10_waivers, reserves_waivers = filter_available_players_by_projgs(
                         available_players, projections, ['Waivers', 'FA'], 1 if st.session_state.only_starters else None
                     )
+                    # round the ProjFPts, ProjGPts columns to 1 decimal place
                     top_10_waivers = top_10_waivers.round({'ProjFPts': 1, 'ProjGPts': 1})
+                    # ensure ROS Rank is an integer
                     top_10_waivers['ROS Rank'] = top_10_waivers['ROS Rank'].astype(int)
                     st.write("### 🚀 Waivers & FA Best XI")
                     display_dataframe_pos(top_10_waivers)
@@ -511,11 +519,14 @@ def main():
                         average_ros_rank_of_roster = round(roster['ROS Rank'].mean(), 1)
                         ros_rank_diff = round(average_ros_rank_of_roster - avg_ros_of_top_fas, 1)
 
-                        top_10['performance_index'] = top_10['ProjFPts'] * top_10['ROS Rank']
+                        # Compute the performance index for the top 10
+                        top_10['performance_index'] = top_10['ProjFPts'] * top_10['ROS Rank']  # Multiply here to give higher score to players with higher ProjFPts and lower ROS Rank
                         performance_index_avg = top_10['performance_index'].mean()
 
+                        # Compute the value score
                         value_score = performance_index_avg * ros_rank_diff
 
+                        # Initialize the dataframe for value scores
                         value_score_df = pd.DataFrame(columns=['Status', 'Value Score'])
 
                         for status in players['Status'].unique():
@@ -526,19 +537,28 @@ def main():
                             value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
                             value_score_df.loc[len(value_score_df)] = [status, value_score_for_status]
 
+                        # Normalize value score using MinMax scaling
                         min_value_score = value_score_df['Value Score'].min()
                         max_value_score = value_score_df['Value Score'].max()
                         value_score_df['Value Score'] = (value_score_df['Value Score'] - min_value_score) / (max_value_score - min_value_score)
+
+                        # Rank the statuses based on the normalized value score
                         value_score_df.sort_values(by=['Value Score'], ascending=False, inplace=True)
                         value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=False).astype(int)
                         
+                        # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
                         st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
+
+                        # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
+                        # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
+
                         st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster)
                         st.metric(label="📊 Value Score", value=value_score)
                         st.metric(label="💹 Avg Projected FPts of Best XIs across the Division", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
 
                 with col_d:
                     with st.expander("Value Score Rankings"):
+                        # sort the value score dataframe by the value score column ascending
                         value_score_df.sort_values(by=['Value Score'], ascending=True, inplace=True)
                         st.dataframe(value_score_df)
 
