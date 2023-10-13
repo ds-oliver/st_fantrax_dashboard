@@ -459,6 +459,13 @@ def main():
                 with col1:
                     status_list = [status]
                     top_10, reserves, top_10_proj_pts, roster = filter_by_status_and_position(players, projections, status_list)
+                    # if top_10 contains player with ProjGS == 0, print Debug message and the top_10 dataframe and the reserves dataframe
+                    if top_10[top_10['ProjGS'] == 0].empty:
+                        logging.info("Debug - Top 10 does not contain player with ProjGS == 0")
+                    else:
+                        logging.info("Debug - Top 10 contains player with ProjGS == 0")
+                        logging.info("Debug - Top 10:", top_10)
+                        logging.info("Debug - Reserves:", reserves)
                     # round the ProjFPts, ProjGPts columns to 1 decimal place
                     top_10 = top_10.round({'ProjFPts': 1, 'ProjGPts': 1})
                     # ensure ROS Rank is an integer
