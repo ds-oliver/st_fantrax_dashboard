@@ -412,6 +412,9 @@ def main():
 
     if 'lineup_clicked' not in st.session_state:
         st.session_state.lineup_clicked = False
+
+    if 'status' not in st.session_state:
+        st.session_state.status = ""
         
     # Adding construction banner or any other initial setups
     add_construction()
@@ -462,7 +465,7 @@ def main():
 
             with col_a:
                 st.write("### 🛡️ Select your Fantasy team")
-                status = st.selectbox('', unique_statuses)
+                st.session_state.status = st.selectbox('', unique_statuses)
 
             with col_b:
                 st.session_state.only_starters = st.checkbox('Only consider starters?')
