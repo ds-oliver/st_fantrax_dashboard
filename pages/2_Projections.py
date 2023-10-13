@@ -217,8 +217,8 @@ def filter_by_status_and_position(players, projections, status):
         logging.info(f"Total Midfielders: {len(best_combination[best_combination['Position'] == 'M'])}")
         logging.info(f"Total Forwards: {len(best_combination[best_combination['Position'] == 'F'])}")
 
-        # Sort DataFrame by 'Position' and then by 'ProjFPts'
-        best_combination.sort_values(by=['Position', 'ProjFPts'], ascending=[True, False], inplace=True)
+        # Sort DataFrame by 'Pos' in the order 'D', 'M', 'F' and then by 'ProjFPts'
+        best_combination.sort_values(by=['Position', 'ProjFPts'], key=lambda x: x.map({'D': 1, 'M': 2, 'F': 3}) if x.name == 'Position' else x, ascending=[True, False], inplace=True)
         best_combination.reset_index(drop=True, inplace=True)
 
         reserves = projections[~projections['Player'].isin(best_combination['Player'])].head(5).reset_index(drop=True)
