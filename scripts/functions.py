@@ -34,6 +34,68 @@ sys.path.append(os.path.abspath(os.path.join('./scripts')))
 
 from constants import color1, color2, color3, color4, color5, cm
 
+def display_quant_stats(selected_teams_df, selected_team, selected_opponent, final_df):
+    def format_dataframe(team_df, team, prefix, opponent_prefix, final_df):
+        stats_dict = {}
+        for stat in ['score', 'xg']:
+            stats_dict[stat] = [team_df[prefix + stat].tolist(), team_df[prefix + stat].sum(), team_df[prefix + stat].mean()]
+
+        stats_dict['clean_sheets'] = [(team_df[opponent_prefix + 'score'] == 0).astype(int).tolist(),
+                                      (team_df[opponent_prefix + 'score'] == 0).astype(int).sum(),
+                                      (team_df[opponent_prefix + 'score'] == 0).astype(int).mean()]
+
+        # Add the Last5GW_FPTS to the stats_dict
+        last_5_gw_data = final_df[final_df['Player'] == team]['Last5GW_FPTS'].tolist()
+        if last_5_gw_data:
+            stats_dict['Last5GW_FPTS'] = last_5_gw_data[0]
+        else:
+            stats_dict['Last5GW_FPTS'] = []
+
+        stats_df = pd.DataFrame.from_dict(stats_dict, orient='index').round(2)
+        team_sum = f'Sum ({team})'
+        team_mean = f'Mean ({team})'
+        stats_df.columns = [team, team_sum, team_mean]
+
+        return stats_df
+
+    # Sort by date before creating the stats
+    selected_teams_df = selected_teams_df.sort_values(by='date', ascending=True)
+
+    team_stats_df = format_dataframe(selected_teams_df, selected_team, 'selected_team_', 'selected_opponent_', final_df)
+    opponent_stats_df = format_dataframe(selected_teams_df, selected_opponent, 'selected_opponent_', 'selected_team_', final_df)
+
+    combined_df = pd.concat([team_stats_df, opponent_stats_df], axis=1)
+    linechart_df = combined_df.drop(columns=[f'Sum ({selected_team})', f'Mean ({selected_team})', f'Sum ({selected_opponent})', f'Mean ({selected_opponent})'])
+    linechart_df = linechart_df.rename(index={'score': 'Goals', 'xg': 'xG', 'clean_sheets': 'Clean Sheets'})
+
+    # Now, let's add the Last5GW_FPTS to the linechart_df
+    linechart_df = linechart_df.append({'Goals': None, 'xG': None, 'Clean Sheets': None, selected_team: stats_dict['Last5GW_FPTS'], selected_opponent: []}, ignore_index=True)
+
+    st.dataframe(
+        linechart_df,
+        column_config={
+            selected_team: st.column_config.LineChartColumn(
+                f"Stats Over Time ({selected_team})",
+                width="medium",
+                help=f"Line chart of {selected_team}'s stats over time",
+            ),
+            selected_opponent: st.column_config.LineChartColumn(
+                f"Stats Over Time ({selected_opponent})",
+                width="medium",
+                help=f"Line chart of {selected_opponent}'s stats over time",
+            ),
+        },
+        use_container_width=True,
+    )
+
+    sum_mean_df = combined_df.drop(columns=[selected_team, selected_opponent])
+    sum_mean_df = sum_mean_df.reindex(columns=[f'Mean ({selected_team})', f'Mean ({selected_opponent})', f'Sum ({selected_team})', f'Sum ({selected_opponent})'])
+
+    # rename the indexes to be more readable
+    sum_mean_df = sum_mean_df.rename(index={'score': 'Goals', 'xg': 'xG', 'clean_sheets': 'Clean Sheets'})
+
+    st.dataframe(sum_mean_df, use_container_width=True)
+
 def add_construction():
     return st.info("""🏗️ **:orange[This app is under construction and might break, please let the author know if you break the app]**""")
 
