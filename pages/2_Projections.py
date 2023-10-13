@@ -26,6 +26,9 @@ logging.basicConfig(
     filename="logs.log",
 )
 
+# create logger in path
+logger = logging.getLogger(__name__)
+
 st.set_page_config(
     page_title="Footy Magic",
     page_icon=":soccer:",
@@ -80,7 +83,6 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
     return create_custom_divergent_cmap(*divergent_colors)
 
 # Cache this function to avoid re-styling the DataFrame every time
-@st.cache_data
 def display_dataframe_pos(df, title=None, info_text=None):
     columns_to_keep = df.columns.tolist()
 
