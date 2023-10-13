@@ -294,9 +294,9 @@ def main():
     """### To get your optimal lineup head to -> @(https://www.fantrax.com/fantasy/league/d41pycnmlj3bmk8y/players;statusOrTeamFilter=ALL;pageNumber=1;positionOrGroup=SOCCER_NON_GOALIE;miscDisplayType=1) & follow the GIF below to populate and download the Players' data.
         """
         ) 
-
-    add_vertical_space(2)
-    local_gif(fx_gif)
+    with st.expander("How to download your data? (Click to expand instructions)"):
+        add_vertical_space(2)
+        local_gif(fx_gif)
 
     uploaded_file = st.file_uploader("Upload your player data", type="csv")
 
