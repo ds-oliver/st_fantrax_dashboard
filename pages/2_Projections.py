@@ -85,7 +85,9 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 # Cache this function to avoid re-styling the DataFrame every time
 def display_dataframe_pos(df, title=None, info_text=None):
     columns_to_keep = df.columns.tolist()
-
+    # apply round_and_format
+    df = df.applymap(round_and_format)
+    
     try:
         if title:
             st.write(f"### {title}")
@@ -464,8 +466,8 @@ def main():
                         logging.info("Debug - Top 10 does not contain player with ProjGS == 0")
                     else:
                         logging.info("Debug - Top 10 contains player with ProjGS == 0")
-                        logging.info("Debug - Top 10:", top_10)
-                        logging.info("Debug - Reserves:", reserves)
+                        logging.info("Debug - Top 10:", top_10[['Player', 'ProjGS']])
+                        logging.info("Debug - Reserves:", reserves[['Player', 'ProjGS']]])
                     # round the ProjFPts, ProjGPts columns to 1 decimal place
                     top_10 = top_10.round({'ProjFPts': 1, 'ProjGPts': 1})
                     # ensure ROS Rank is an integer
