@@ -1741,6 +1741,9 @@ def create_custom_cmap(*colors, base_cmap=None, brightness_limit=None):
         color_list = [(r * brightness_limit, g * brightness_limit, b * brightness_limit, a) for r, g, b, a in color_list]
         return LinearSegmentedColormap.from_list(base_cmap, color_list)
 
+def create_custom_sequential_cmap(*colors):
+    return LinearSegmentedColormap.from_list('custom_sequential_cmap', colors)
+
 def create_custom_divergent_cmap(*colors):
     return LinearSegmentedColormap.from_list('custom_divergent_cmap', colors)
 
