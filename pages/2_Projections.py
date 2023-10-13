@@ -91,7 +91,7 @@ def display_dataframe_pos(df, title=None, info_text=None):
             st.write(f"### {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         # Style the DataFrame
-        styled_df = style_position_player_only(df)
+        styled_df = style_position_player_only(df, columns_to_keep)
         st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")

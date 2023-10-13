@@ -1710,7 +1710,7 @@ def create_custom_cmap_1(*colors):
 
 #     return styled_df
 
-def style_position_player_only(df):
+def style_position_player_only(df, selected_columns):
     object_cmap = plt.cm.get_cmap('copper')
 
     # Create an empty DataFrame with the same shape as df
