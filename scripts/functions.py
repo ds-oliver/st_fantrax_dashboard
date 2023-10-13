@@ -34,6 +34,24 @@ sys.path.append(os.path.abspath(os.path.join('./scripts')))
 
 from constants import color1, color2, color3, color4, color5, cm
 
+def display_dataframe(df, title, colors, divergent_colors, info_text=None):
+    custom_cmap = create_custom_cmap(*colors)
+    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
+    columns_to_keep = df.columns.tolist()
+
+    try:
+        st.write(f"## {title}")
+        logging.info(f"Attempting to style the {title} dataframe")
+        styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
+        logging.info(f"{title} Dataframe head: {df.head()}")
+        logging.info(f"{title} Dataframe tail: {df.tail()}")
+        if info_text:
+            st.info(info_text)
+    except Exception as e:
+        logging.error(f"Error styling the {title} dataframe: {e}")
+        st.error(f"Error styling the {title} dataframe: {e}")
+
 def display_quant_stats(selected_teams_df, selected_team, selected_opponent, final_df):
     def format_dataframe(team_df, team, prefix, opponent_prefix, final_df):
         stats_dict = {}
@@ -1675,6 +1693,48 @@ def create_custom_cmap_1(*colors):
 #             styled_df[col] = df[col].apply(lambda x: f'color: {matplotlib.colors.to_hex(object_cmap((float(x) - min_val) / (max_val - min_val)))}' if min_val != max_val else '')
 
 #     return styled_df
+
+def style_position_player_only(df):
+    object_cmap = plt.cm.get_cmap('copper')
+
+    # Create an empty DataFrame with the same shape as df
+    styled_df = pd.DataFrame('', index=df.index, columns=df.columns)
+
+    position_column = 'Pos' if 'Pos' in df.columns else 'Position' if 'Position' in df.columns else None
+
+    if position_column:
+        position_colors = {
+            "D": "background-color: #6d597a",
+            "M": "background-color: #370617",
+            "F": "background-color: #03071e"
+        }
+        styled_df[position_column] = df[position_column].apply(lambda x: position_colors.get(x, ''))
+        if 'Player' in df.columns:
+            styled_df['Player'] = df[position_column].apply(lambda x: position_colors.get(x, ''))
+
+    for col in selected_columns:
+        if col in ['Player', position_column]:
+            continue
+
+        try:
+            unique_values = df[col].unique()
+        except AttributeError as e:
+            print(f"AttributeError occurred for column: {col}. Error message: {e}")
+            continue
+
+        if len(unique_values) <= 3:
+            constant_colors = ["color: #eae2b7", "color: #FDFEFE", "color: #FDFAF9"]
+            most_common_value, _ = Counter(df[col]).most_common(1)[0]
+            other_colors = [color for val, color in zip(unique_values, constant_colors[1:]) if val != most_common_value]
+            color_mapping = {most_common_value: constant_colors[0], **{val: color for val, color in zip([uv for uv in unique_values if uv != most_common_value], other_colors)}}
+            styled_df[col] = df[col].apply(lambda x: color_mapping.get(x, ''))
+        
+        else:
+            min_val = float(df[col].min())
+            max_val = float(df[col].max())
+            styled_df[col] = df[col].apply(lambda x: f'color: {matplotlib.colors.to_hex(object_cmap((float(x) - min_val) / (max_val - min_val)))}' if min_val != max_val else '')
+
+    return styled_df
 
 def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_divergent_cmap="coolwarm", inverse_cmap=False, is_percentile=False):
     """

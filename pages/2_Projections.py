@@ -14,9 +14,9 @@ from streamlit_extras.customize_running import center_running
 import logging
 from itertools import product
 
-from constants import colors
+from constants import colors, divergent_colors
 from files import projections as proj_csv, fx_gif, ros_ranks
-from functions import load_csv, add_construction, load_css, create_custom_sequential_cmap
+from functions import load_csv, add_construction, load_css, create_custom_sequential_cmap, create_custom_cmap, create_custom_divergent_cmap, style_dataframe_custom, round_and_format, style_position_player_only
 
 # set up logging
 logging.basicConfig(
@@ -38,6 +38,66 @@ filterwarnings('ignore')
 
 scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 sys.path.append(scripts_path)
+
+@st.cache_data
+def load_cached_css():
+    load_css()
+
+@st.cache_data
+def load_csv_file_cached(csv_file, set_index_cols=None):
+    """
+    Loads a CSV file and applies a function to round and format its values.
+    Optionally sets one or more columns as the DataFrame index.
+
+    Parameters:
+        csv_file (str): Path to the CSV file.
+        set_index_cols (list, str, optional): Column(s) to set as DataFrame index. Defaults to None.
+
+    Returns:
+        pd.DataFrame: The loaded and formatted DataFrame.
+    """
+    # Load the CSV file into a DataFrame
+    df = pd.read_csv(csv_file).applymap(round_and_format)
+    
+    # Check if set_index_cols is provided
+    if set_index_cols:
+        # Check if all columns in set_index_cols exist in the DataFrame
+        missing_cols = [col for col in set_index_cols if col not in df.columns]
+        if missing_cols:
+            raise ValueError(f"Columns {missing_cols} not found in DataFrame. Cannot set as index.")
+        
+        # Set the specified columns as the DataFrame index
+        df.set_index(set_index_cols, inplace=True)
+        
+    return df
+
+@st.cache_data
+def create_custom_cmap_cached(*colors):
+    return create_custom_cmap(*colors)
+
+@st.cache_data
+def create_custom_divergent_cmap_cached(*divergent_colors):
+    return create_custom_divergent_cmap(*divergent_colors)
+
+# Cache this function to avoid re-styling the DataFrame every time
+@st.cache_data
+def display_dataframe(df, colors, divergent_colors, title=None, info_text=None):
+    custom_cmap = create_custom_cmap(*colors)
+    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
+    columns_to_keep = df.columns.tolist()
+
+    try:
+        st.write(f"## {title}")
+        logging.info(f"Attempting to style the {title} dataframe")
+        styled_df = style_position_player_only(df)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
+        logging.info(f"{title} Dataframe head: {df.head()}")
+        logging.info(f"{title} Dataframe tail: {df.tail()}")
+        if info_text:
+            st.info(info_text)
+    except Exception as e:
+        logging.error(f"Error styling the {title} dataframe: {e}")
+        st.error(f"Error styling the {title} dataframe: {e}")
 
 def apply_styles(box_shadow, background_color, border_size_px, border_color, border_radius_px, border_left_color):
     # Determine box shadow string based on the box_shadow argument
@@ -418,9 +478,9 @@ def main():
                     status_list = [status]
                     top_10, reserves, top_10_proj_pts, roster = filter_by_status_and_position(players, projections, status_list)
                     st.write(f"### 🥇 {status} Best XI")
-                    st.dataframe(top_10)
+                    display_dataframe(top_10)
                     st.write("### 🔄 Reserves")
-                    st.dataframe(reserves)
+                    display_dataframe(reserves)
 
                 with col2:
                     available_players = pd.merge(available_players, projections[['Player', 'ProjGS', 'ROS Rank']], on='Player', how='left')
@@ -428,9 +488,9 @@ def main():
                         available_players, projections, ['Waivers', 'FA'], 1 if st.session_state.only_starters else None
                     )
                     st.write("### 🚀 Waivers & FA Best XI")
-                    st.dataframe(top_10_waivers)
+                    display_dataframe(top_10_waivers)
                     st.write("### 🔄 Reserves")
-                    st.dataframe(reserves_waivers)
+                    display_dataframe(reserves_waivers)
 
                 average_proj_pts = get_avg_proj_pts(players, projections)
 
@@ -496,5 +556,8 @@ if __name__ == "__main__":
 
     # if 'lineup_clicked' not in st.session_state:
     #     st.session_state.lineup_clicked = False
+
+    custom_cmap = create_custom_cmap_cached(*colors)
+    custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
     main()
