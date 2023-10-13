@@ -466,8 +466,8 @@ def main():
                         logging.info("Debug - Top 10 does not contain player with ProjGS == 0")
                     else:
                         logging.info("Debug - Top 10 contains player with ProjGS == 0")
-                        logging.info("Debug - Top 10:", top_10[['Player', 'ProjGS']])
-                        logging.info("Debug - Reserves:", reserves[['Player', 'ProjGS']])
+                        logging.info("Debug - Top 10:", top_10[['Player', 'ProjGS', 'Position', 'ProjFPts']])
+                        logging.info("Debug - Reserves:", reserves[['Player', 'ProjGS', 'Position', 'ProjFPts']])
                     # round the ProjFPts, ProjGPts columns to 1 decimal place
                     top_10 = top_10.round({'ProjFPts': 1, 'ProjGPts': 1})
                     # ensure ROS Rank is an integer
