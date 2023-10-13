@@ -1724,31 +1724,13 @@ def style_position_player_only(df, selected_columns):
             "M": "background-color: #370617",
             "F": "background-color: #03071e"
         }
+        # Apply colors based on position
         styled_df[position_column] = df[position_column].apply(lambda x: position_colors.get(x, ''))
         if 'Player' in df.columns:
             styled_df['Player'] = df[position_column].apply(lambda x: position_colors.get(x, ''))
 
-    for col in selected_columns:
-        if col in ['Player', position_column]:
-            continue
-
-        try:
-            unique_values = df[col].unique()
-        except AttributeError as e:
-            print(f"AttributeError occurred for column: {col}. Error message: {e}")
-            continue
-
-        if len(unique_values) <= 3:
-            constant_colors = ["color: #eae2b7", "color: #FDFEFE", "color: #FDFAF9"]
-            most_common_value, _ = Counter(df[col]).most_common(1)[0]
-            other_colors = [color for val, color in zip(unique_values, constant_colors[1:]) if val != most_common_value]
-            color_mapping = {most_common_value: constant_colors[0], **{val: color for val, color in zip([uv for uv in unique_values if uv != most_common_value], other_colors)}}
-            styled_df[col] = df[col].apply(lambda x: color_mapping.get(x, ''))
-        
-        else:
-            min_val = float(df[col].min())
-            max_val = float(df[col].max())
-            styled_df[col] = df[col].apply(lambda x: f'color: {matplotlib.colors.to_hex(object_cmap((float(x) - min_val) / (max_val - min_val)))}' if min_val != max_val else '')
+    # Remove unnecessary code since we are only styling the 'Player' and position columns
+    # based on the position value
 
     return styled_df
 
