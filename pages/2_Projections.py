@@ -412,7 +412,7 @@ def main():
 
     if 'lineup_clicked' not in st.session_state:
         st.session_state.lineup_clicked = False
-
+        
     # Adding construction banner or any other initial setups
     add_construction()
 
@@ -508,7 +508,7 @@ def main():
 
                 average_proj_pts = get_avg_proj_pts(players, projections)
 
-                col_c, col_d = st.columns(2)
+            col_c, col_d = st.columns(2)
                 
             with col_c:
                 with st.expander("Performance Metrics"):
@@ -536,24 +536,24 @@ def main():
                         value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
                         value_score_df.loc[len(value_score_df)] = [status, value_score_for_status]
 
-                        # Normalize value score using MinMax scaling
-                        min_value_score = value_score_df['Value Score'].min()
-                        max_value_score = value_score_df['Value Score'].max()
-                        value_score_df['Value Score'] = (value_score_df['Value Score'] - min_value_score) / (max_value_score - min_value_score)
+                    # Normalize value score using MinMax scaling
+                    min_value_score = value_score_df['Value Score'].min()
+                    max_value_score = value_score_df['Value Score'].max()
+                    value_score_df['Value Score'] = (value_score_df['Value Score'] - min_value_score) / (max_value_score - min_value_score)
 
-                        # Rank the statuses based on the normalized value score
-                        value_score_df.sort_values(by=['Value Score'], ascending=False, inplace=True)
-                        value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=False).astype(int)
-                        
-                        # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
-                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
+                    # Rank the statuses based on the normalized value score
+                    value_score_df.sort_values(by=['Value Score'], ascending=False, inplace=True)
+                    value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=False).astype(int)
+                    
+                    # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
+                    st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
 
-                        # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
-                        # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
+                    # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
+                    # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
 
-                        st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster)
-                        st.metric(label="📊 Value Score", value=value_score)
-                        st.metric(label="💹 Avg Projected FPts of Best XIs across the Division", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
+                    st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster)
+                    st.metric(label="📊 Value Score", value=value_score)
+                    st.metric(label="💹 Avg Projected FPts of Best XIs across the Division", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
 
             with col_d:
                 with st.expander("Value Score Rankings"):
