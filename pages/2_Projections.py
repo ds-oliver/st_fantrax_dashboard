@@ -206,7 +206,6 @@ def filter_by_status_and_position(players, projections, status):
         status = [status]
 
     filtered_players = players[players['Status'].isin(status)]
-
     if filtered_players.empty:
         return pd.DataFrame(), pd.DataFrame(), 0, pd.DataFrame()
 
@@ -216,7 +215,6 @@ def filter_by_status_and_position(players, projections, status):
     if projections.empty:
         return pd.DataFrame(), pd.DataFrame(), 0, pd.DataFrame()
 
-    # Prioritize players with ProjGS not equal to 0
     projections['Priority'] = projections['ProjGS'].apply(lambda x: 0 if x == 0 else 1)
     projections.sort_values(by=['Priority', 'ProjFPts'], ascending=[False, False], inplace=True)
 
@@ -225,7 +223,6 @@ def filter_by_status_and_position(players, projections, status):
     best_combination = None
     best_score = 0
 
-    # Create a list of position combinations within the min and max limits
     position_combinations = product(
         range(pos_limits['D'][0], pos_limits['D'][1] + 1),
         range(pos_limits['M'][0], pos_limits['M'][1] + 1),
@@ -243,35 +240,34 @@ def filter_by_status_and_position(players, projections, status):
         current_combination = pd.concat([defenders, midfielders, forwards])
         current_score = current_combination['ProjFPts'].sum()
 
-        # New condition: Check if the combination includes a player with ProjGS == 0
-        zero_projgs_players = current_combination[current_combination['ProjGS'] == 0]
-        if zero_projgs_players.empty or any(
-            len(projections[(projections['Position'] == pos) & (projections['ProjGS'] != 0)]) > count
-            for pos, count in zero_projgs_players['Position'].value_counts().items()
-        ):
-            if current_score > best_score:
-                best_combination = current_combination
-                best_score = current_score
+        if current_score > best_score:
+            best_combination = current_combination
+            best_score = current_score
 
-    if best_combination is not None:
-        logging.info(f"Total Defenders: {len(best_combination[best_combination['Position'] == 'D'])}")
-        logging.info(f"Total Midfielders: {len(best_combination[best_combination['Position'] == 'M'])}")
-        logging.info(f"Total Forwards: {len(best_combination[best_combination['Position'] == 'F'])}")
+    reserves = projections[~projections['Player'].isin(best_combination['Player'])].head(5).reset_index(drop=True)
 
-        # Sort DataFrame by 'Pos' in the order 'D', 'M', 'F' and then by 'ProjFPts'
-        best_combination.sort_values(by=['Position', 'ProjFPts'], key=lambda x: x.map({'D': 1, 'M': 2, 'F': 3}) if x.name == 'Position' else x, ascending=[True, False], inplace=True)
-        best_combination.reset_index(drop=True, inplace=True)
+    # Replace players with ProjGS == 0, if possible
+    for _, player_row in best_combination.iterrows():
+        if player_row['ProjGS'] == 0:
+            pos = player_row['Position']
+            replacement_candidates = reserves[(reserves['Position'] == pos) & (reserves['ProjGS'] != 0)]
 
-        reserves = projections[~projections['Player'].isin(best_combination['Player'])].head(5).reset_index(drop=True)
-        best_score = round(best_score, 1)
+            if not replacement_candidates.empty:
+                replacement = replacement_candidates.iloc[0]
+                best_combination = best_combination[best_combination['Player'] != player_row['Player']]
+                best_combination = pd.concat([best_combination, replacement.to_frame().T])
+                reserves = reserves[reserves['Player'] != replacement['Player']]
 
-        # Drop the 'Priority' column before returning
-        best_combination.drop(columns=['Priority'], inplace=True, errors='ignore')
-        reserves.drop(columns=['Priority'], inplace=True, errors='ignore')
+    # Sort DataFrame by 'Position' in the order 'D', 'M', 'F' and then by 'ProjFPts'
+    best_combination.sort_values(by=['Position', 'ProjFPts'], key=lambda x: x.map({'D': 1, 'M': 2, 'F': 3}) if x.name == 'Position' else x, ascending=[True, False], inplace=True)
+    best_combination.reset_index(drop=True, inplace=True)
 
-        return best_combination, reserves, best_score, projections
-    else:
-        return pd.DataFrame(), pd.DataFrame(), 0, pd.DataFrame()
+    best_score = round(best_combination['ProjFPts'].sum(), 1)
+
+    best_combination.drop(columns=['Priority'], inplace=True, errors='ignore')
+    reserves.drop(columns=['Priority'], inplace=True, errors='ignore')
+
+    return best_combination, reserves, best_score, projections
 
 # Filter available players by their ProjGS and status
 def filter_available_players_by_projgs(players, projections, status, projgs_value):
