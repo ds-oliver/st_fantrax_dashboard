@@ -593,7 +593,11 @@ def main():
                             performance_index_avg = top_10['performance_index'].mean()
                             value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
 
+                            # filter df for all status except Waivers
+                            value_score_df = value_score_df[value_score_df['Status'] != 'Waivers']
+
                             value_score_df.loc[len(value_score_df)] = [status, value_score_for_status, top_10_proj_pts, top_10_proj_pts_starters, average_ros_rank_of_roster]
+
 
                         # Normalize value score using MinMax scaling
                         min_value_score = value_score_df['Value Score'].min()
