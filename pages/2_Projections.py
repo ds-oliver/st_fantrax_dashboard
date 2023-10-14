@@ -583,7 +583,7 @@ def main():
                         value_score = performance_index_avg * ros_rank_diff
 
                         # Initialize the dataframe for value scores
-                        value_score_df = pd.DataFrame(columns=['Status', 'Value Score', 'ProjFPts', 'Avg ROS Rank'])
+                        value_score_df = pd.DataFrame(columns=['Status', 'Value Score', 'ProjFPts', 'ProjFPts*', 'Avg ROS Rank'])
 
                         for status in players['Status'].unique():
                             top_10, _, top_10_proj_pts, top_10_proj_pts_starters, _ = filter_by_status_and_position(players, projections, status)
@@ -605,9 +605,11 @@ def main():
                         
                         # all metrics should be for the specific status_list selected
                         top_10_proj_pts = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts'].values[0]
+                        
+                        top_10_proj_pts_starters = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts*'].values[0]
                         st.write(f"### 🏆 {st.session_state.status} Performance Metrics")
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
-                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None)
+                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
 
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
                         # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
