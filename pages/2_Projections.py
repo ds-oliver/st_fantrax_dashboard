@@ -468,15 +468,20 @@ def main():
 
             with col_a:
                 st.write("### 🛡️ Select your Fantasy team")
-                status = st.selectbox('', unique_statuses)
+                new_status = st.selectbox('', unique_statuses)
+
+                if new_status != st.session_state.status:
+                    st.session_state.status = new_status
+                    st.session_state.lineup_clicked = False  # Reset this state to trigger re-calculation
+
 
             with col_b:
                 st.session_state.only_starters = st.checkbox('Only consider starters?')
 
             if st.button('🚀 Get my optimal lineup') or st.session_state.lineup_clicked:
                 st.session_state.lineup_clicked = True
-                # status_list = [st.session_state.status]
-                
+                status_list = [st.session_state.status]                
+
                 col1, col2 = st.columns(2)
 
                 with col1:
@@ -536,6 +541,9 @@ def main():
                             performance_index_avg = top_10['performance_index'].mean()
                             value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
                             value_score_df.loc[len(value_score_df)] = [status, value_score_for_status]
+
+                            # add column for ProjFPts in the value_score_df
+                            value_score_df['ProjFPts'] = top_10_proj_pts
 
                         # Normalize value score using MinMax scaling
                         min_value_score = value_score_df['Value Score'].min()
