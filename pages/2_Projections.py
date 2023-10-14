@@ -493,7 +493,7 @@ def main():
                     # ensure ROS Rank is an integer
                     top_10['ROS Rank'] = top_10['ROS Rank'].astype(int)
 
-                    st.write(f"### 🥇 {status} Best XI")
+                    st.write(f"### 🥇 {st.session_state.status} Best XI")
                     display_dataframe_pos(top_10)
                     st.write("### 🔄 Reserves")
                     display_dataframe_pos(reserves)
