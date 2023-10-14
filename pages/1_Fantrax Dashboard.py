@@ -132,9 +132,9 @@ def main():
     lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
     
-    lastgw_df = set_index_based_on_radio_button(lastgw_df)
+    lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df')
     # Call the function to set the index based on radio button selection
-    grouped_players_df = set_index_based_on_radio_button(grouped_players_df)
+    grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df')
     
     team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
