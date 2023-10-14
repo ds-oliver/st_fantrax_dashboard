@@ -625,7 +625,7 @@ def main():
                         # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
 
                         st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster, delta=round((avg_ros_rank_of_other_managers - average_ros_rank_of_roster), 1))
-                        st.metric(label=f"📊 Value Score Rank (out of {len(value_score_df)} statuses)", value=roster_rank)
+                        st.metric(label=f"📊 Value Score Rank (out of {len(value_score_df)} managers)", value=roster_rank)
                         st.metric(label="💹 Projected FPts of Opponents' Best XIs", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
 
                 with col_d:
