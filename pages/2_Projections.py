@@ -620,7 +620,7 @@ def main():
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
                         # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
 
-                        st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster, delta=round((average_ros_rank_of_roster - avg_ros_rank_of_other_managers), 1))
+                        st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster, delta=round((avg_ros_rank_of_other_managers - average_ros_rank_of_roster), 1))
                         st.metric(label="📊 Value Score", value=value_score)
                         st.metric(label="💹 Projected FPts of Opponents' Best XIs", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
 
