@@ -455,6 +455,15 @@ def main():
 
             projections['ROS Rank'].fillna(200, inplace=True)
 
+            # merge players and projections dataframes on Player column
+            merged_df = pd.merge(players, projections, on='Player', how='left')
+
+            # print columns in merged_df
+            print(merged_df.columns)
+
+            # create a new dataframe grouped by Status and aggregate the ProjFPts and ROS Rank columns
+            grouped_status_df = merged_df.groupby('Status').agg({'ProjFPts': 'sum', 'ROS Rank': 'mean'}).reset_index()
+
             # reorder columns Player, Position, Team, ProjFPts, ProjGS, ROS Rank then rest of columns
             projections = projections[['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank'] + [col for col in projections.columns if col not in ['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank']]]
 
