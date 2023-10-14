@@ -607,6 +607,11 @@ def main():
                         top_10_proj_pts = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts'].values[0]
                         
                         top_10_proj_pts_starters = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts*'].values[0]
+
+                        average_ros_rank_of_roster = value_score_df[value_score_df['Status'].isin(status_list)]['Avg ROS Rank'].values[0]
+
+                        value_score = value_score_df[value_score_df['Status'].isin(status_list)]['Value Score'].values[0]
+
                         st.write(f"### 🏆 {st.session_state.status} Metrics")
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
                         st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1), delta_color="normal")
@@ -616,7 +621,7 @@ def main():
 
                         st.metric(label="🌟 Average XI ROS Rank", value=average_ros_rank_of_roster)
                         st.metric(label="📊 Value Score", value=value_score)
-                        st.metric(label="💹 Avg Projected FPts of Best XIs across the Division", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
+                        st.metric(label="💹 Projected FPts of Opponents' Best XIs", value=average_proj_pts, delta=round((top_10_proj_pts - average_proj_pts), 1))
 
                 with col_d:
                     with st.expander("Value Score Rankings"):
