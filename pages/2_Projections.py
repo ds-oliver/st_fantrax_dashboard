@@ -477,7 +477,7 @@ def main():
 
             projections['ROS Rank'].fillna(200, inplace=True)
 
-            merged_df = merge_and_drop_cols(projections, ros_ranks_data)
+            merged_df = merge_and_drop_cols(projections, players)
 
             # print columns in merged_df
             st.write(f"Columns in merged_df: {merged_df.columns}")
