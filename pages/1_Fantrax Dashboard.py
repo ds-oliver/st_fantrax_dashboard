@@ -6,6 +6,7 @@ import warnings
 import streamlit as st
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
+import uuid
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -98,23 +99,25 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
 
-def set_index_based_on_radio_button(df):
+def set_index_based_on_radio_button(df, widget_key):
     """
     Set DataFrame index based on a Streamlit radio button.
 
     Parameters:
         df (pd.DataFrame): DataFrame to modify.
+        widget_key (str): Unique key for the radio widget.
 
     Returns:
         pd.DataFrame: DataFrame with "Player" set as index if radio button is ticked.
     """
-    set_index_option = st.radio("Would you like to set 'Player' as the DataFrame index?", ('No', 'Yes'))
+    set_index_option = st.radio("Would you like to set 'Player' as the DataFrame index?", ('No', 'Yes'), key=widget_key)
     if set_index_option == 'Yes':
         if 'Player' in df.columns:
             df.set_index('Player', inplace=True)
         else:
             st.warning("The DataFrame does not have a 'Player' column.")
     return df
+
 
 def main():
     logging.info("Starting main function")
