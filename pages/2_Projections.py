@@ -614,7 +614,7 @@ def main():
                 with col_d:
                     with st.expander("Value Score Rankings"):
                         # merge the value_score_df with the grouped_status_df
-                        value_score_df = pd.merge(value_score_df, grouped_status_df, on='Status', how='left')
+                        value_score_df = pd.merge(value_score_df, grouped_status_df, on='Status', how='left', suffixes=('', '_grouped'))
                         # sort the value score dataframe by the value score column ascending
                         value_score_df.sort_values(by=['Value Score'], ascending=True, inplace=True)
 
