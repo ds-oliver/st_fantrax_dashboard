@@ -415,7 +415,7 @@ def merge_and_drop_cols(df1, df2):
     merged_df = pd.merge(df1, df2, on='Player', how='left', suffixes=('', '_y'))
     # cols with '_y' suffix
     cols_to_drop = merged_df.filter(regex='_y').columns.tolist()
-    st.write(f"Columns to drop: {cols_to_drop}")
+    # st.write(f"Columns to drop: {cols_to_drop}")
     # drop cols with '_y' suffix
     merged_df.drop(columns=merged_df.filter(regex='_y'), inplace=True)
     return merged_df
@@ -501,8 +501,8 @@ def main():
             projections = merged_df.copy()
 
             # print columns in merged_df
-            st.write(f"Columns in merged_df: {merged_df.columns}")
-            print(f"Columns in merged_df: {merged_df.columns}")
+            # st.write(f"Columns in merged_df: {merged_df.columns}")
+            # print(f"Columns in merged_df: {merged_df.columns}")
 
             # create a new dataframe grouped by Status and aggregate the ProjFPts and ROS Rank columns that we will use later to display the average projected points and average ROS Rank for each status
             grouped_status_df = compute_aggregated_metrics(merged_df)
