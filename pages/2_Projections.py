@@ -399,6 +399,23 @@ def get_filtered_players(players, projections, status, projgs_value=None):
 
     return filtered_projections, filtered_players
 
+def merge_and_drop_cols(df1, df2):
+    """
+    Merge two DataFrames and drop the specified columns.
+    
+    Args:
+    - df1 (pd.DataFrame): First DataFrame to merge.
+    - df2 (pd.DataFrame): Second DataFrame to merge.
+    - cols_to_drop (list): List of columns to drop.
+    
+    Returns:
+    - pd.DataFrame: Merged DataFrame.
+    """
+    merged_df = pd.merge(df1, df2, on='Player', how='left', suffixes=('', '_y'))
+    # drop cols with '_y' suffix
+    merged_df.drop(columns=merged_df.filter(regex='_y'), inplace=True)
+    return merged_df
+
 # Initialize session states
 if 'only_starters' not in st.session_state:
     st.session_state.only_starters = False
@@ -457,8 +474,7 @@ def main():
 
             projections['ROS Rank'].fillna(200, inplace=True)
 
-            # merge players and projections dataframes on Player column
-            merged_df = pd.merge(players, projections, on='Player', how='left')
+            merged_df = merge_and_drop_cols(projections, ros_ranks_data)
 
             # print columns in merged_df
             st.write(f"Columns in merged_df: {merged_df.columns}")
