@@ -23,13 +23,13 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s - %(message)s",
     level=logging.INFO,
     datefmt="%Y-%m-%d %H:%M:%S",
-    filename="proj-logs.log",
+    filename="pages/proj_logs.log",
 )
 
 # create logger in path
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
-log_file_path = os.path.join(current_directory, 'proj-logs.log')
+log_file_path = os.path.join(current_directory, 'pages/proj_logs.log')
 
 st.set_page_config(
     page_title="Footy Magic",
