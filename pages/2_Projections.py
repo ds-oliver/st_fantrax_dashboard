@@ -599,7 +599,7 @@ def main():
 
                         # Rank the statuses based on the normalized value score
                         value_score_df.sort_values(by=['Value Score'], ascending=False, inplace=True)
-                        value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=False).astype(int)
+                        value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=True).astype(int)
                         
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
                         st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
