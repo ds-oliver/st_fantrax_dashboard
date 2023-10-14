@@ -23,11 +23,13 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s - %(message)s",
     level=logging.INFO,
     datefmt="%Y-%m-%d %H:%M:%S",
-    filename="logs.log",
+    filename="proj-logs.log",
 )
 
 # create logger in path
-logger = logging.getLogger(__name__)
+# Set up relative path for the log file
+current_directory = os.path.dirname(__file__)
+log_file_path = os.path.join(current_directory, 'proj-logs.log')
 
 st.set_page_config(
     page_title="Footy Magic",
@@ -459,7 +461,7 @@ def main():
             merged_df = pd.merge(players, projections, on='Player', how='left')
 
             # print columns in merged_df
-            print(merged_df.columns)
+            logging.info(f"Columns in merged_df: {merged_df.columns}")
 
             # create a new dataframe grouped by Status and aggregate the ProjFPts and ROS Rank columns
             grouped_status_df = merged_df.groupby('Status').agg({'ProjFPts': 'sum', 'ROS Rank': 'mean'}).reset_index()
