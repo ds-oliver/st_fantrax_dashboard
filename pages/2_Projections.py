@@ -412,6 +412,9 @@ def merge_and_drop_cols(df1, df2):
     - pd.DataFrame: Merged DataFrame.
     """
     merged_df = pd.merge(df1, df2, on='Player', how='left', suffixes=('', '_y'))
+    # cols with '_y' suffix
+    cols_to_drop = merged_df.filter(regex='_y').columns.tolist()
+    st.write(f"Columns to drop: {cols_to_drop}")
     # drop cols with '_y' suffix
     merged_df.drop(columns=merged_df.filter(regex='_y'), inplace=True)
     return merged_df
