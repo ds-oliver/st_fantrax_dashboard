@@ -532,7 +532,7 @@ def main():
                         value_score = performance_index_avg * ros_rank_diff
 
                         # Initialize the dataframe for value scores
-                        value_score_df = pd.DataFrame(columns=['Status', 'Value Score'])
+                        value_score_df = pd.DataFrame(columns=['Status', 'Value Score', 'ProjFPts'])
 
                         for status in players['Status'].unique():
                             top_10, _, top_10_proj_pts, top_10_proj_pts_starters, _ = filter_by_status_and_position(players, projections, status)
@@ -540,10 +540,11 @@ def main():
                             top_10['performance_index'] = top_10['ProjFPts'] * top_10['ROS Rank']
                             performance_index_avg = top_10['performance_index'].mean()
                             value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
-                            value_score_df.loc[len(value_score_df)] = [status, value_score_for_status]
 
                             # add column for ProjFPts in the value_score_df
                             value_score_df['ProjFPts'] = top_10_proj_pts
+                            
+                            value_score_df.loc[len(value_score_df)] = [status, value_score_for_status, top_10_proj_pts]
 
                         # Normalize value score using MinMax scaling
                         min_value_score = value_score_df['Value Score'].min()
