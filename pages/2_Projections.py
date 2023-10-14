@@ -461,7 +461,7 @@ def main():
             merged_df = pd.merge(players, projections, on='Player', how='left')
 
             # print columns in merged_df
-            logging.info(f"Columns in merged_df: {merged_df.columns}")
+            st.write(f"Columns in merged_df: {merged_df.columns}")
             print(f"Columns in merged_df: {merged_df.columns}")
 
             # create a new dataframe grouped by Status and aggregate the ProjFPts and ROS Rank columns
