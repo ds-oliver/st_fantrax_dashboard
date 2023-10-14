@@ -592,7 +592,7 @@ def main():
                             performance_index_avg = top_10['performance_index'].mean()
                             value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
 
-                            value_score_df.loc[len(value_score_df)] = [status, value_score_for_status, top_10_proj_pts_starters, average_ros_rank_of_roster]
+                            value_score_df.loc[len(value_score_df)] = [status, value_score_for_status, top_10_proj_pts, top_10_proj_pts_starters, average_ros_rank_of_roster]
 
                         # Normalize value score using MinMax scaling
                         min_value_score = value_score_df['Value Score'].min()
@@ -607,7 +607,7 @@ def main():
                         top_10_proj_pts = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts'].values[0]
                         
                         top_10_proj_pts_starters = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts*'].values[0]
-                        st.write(f"### 🏆 {st.session_state.status} Performance Metrics")
+                        st.write(f"### 🏆 {st.session_state.status} Metrics")
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
                         st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
 
