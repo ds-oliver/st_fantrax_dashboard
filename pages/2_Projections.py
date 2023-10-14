@@ -531,7 +531,7 @@ def main():
 
             if st.button('🚀 Get my optimal lineup') or st.session_state.lineup_clicked:
                 st.session_state.lineup_clicked = True
-                status_list = [st.session_state.status]                
+                status_list = [st.session_state.status]    
 
                 col1, col2 = st.columns(2)
 
@@ -603,8 +603,11 @@ def main():
                         value_score_df.sort_values(by=['Value Score'], ascending=False, inplace=True)
                         value_score_df['Roster Rank'] = value_score_df['Value Score'].rank(method='dense', ascending=True).astype(int)
                         
+                        # all metrics should be for the specific status_list selected
+                        top_10_proj_pts = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts'].values[0]
+                        st.write(f"### 🏆 {st.session_state.status} Performance Metrics")
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
-                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
+                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None)
 
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
                         # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
