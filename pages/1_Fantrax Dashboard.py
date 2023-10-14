@@ -132,10 +132,6 @@ def main():
     lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
     
-    lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df')
-    # Call the function to set the index based on radio button selection
-    grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df')
-    
     team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
     vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['Team'])
@@ -145,9 +141,12 @@ def main():
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
 
+    lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df')
     # Use the cached function to display DataFrames
-    display_dataframe(lastgw_df, f"Player Data **(:orange[GW {last_gw}])**", colors, divergent_colors)
-    st.info("Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.")
+    display_dataframe(lastgw_df, f"Player Data **(:orange[GW {last_gw}])**", colors, divergent_colors, info_text=f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.")
+
+    # Call the function to set the index based on radio button selection
+    grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df')
     display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors, info_text=f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at **:orange[{max(lastgw_df['GW'])}]** gameweeks of data.")
     display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
