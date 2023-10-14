@@ -27,7 +27,7 @@ logger.setLevel(logging.INFO)
 
 # Create a file handler and add it to the logger
 current_directory = os.path.dirname(__file__)
-log_file_path = os.path.join(current_directory, 'pages/proj_logs.log')
+log_file_path = os.path.join(current_directory, 'proj_logs.log')
 file_handler = logging.FileHandler(log_file_path)
 file_handler.setFormatter(log_formatter)
 logger.addHandler(file_handler)
