@@ -498,6 +498,8 @@ def main():
 
             merged_df = merge_and_drop_cols(projections, players)
 
+            projections = merged_df.copy()
+
             # print columns in merged_df
             st.write(f"Columns in merged_df: {merged_df.columns}")
             print(f"Columns in merged_df: {merged_df.columns}")
