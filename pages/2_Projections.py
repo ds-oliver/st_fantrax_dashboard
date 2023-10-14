@@ -432,7 +432,7 @@ def compute_aggregated_metrics(df):
     """
     # Group by 'Status' and compute the mean of 'ProjFPts' and 'ROS Rank'
     aggregated = df.groupby('Status').agg({
-        'ProjFPts': 'mean',
+        'ProjFPts': 'sum',
         'ROS Rank': 'mean'
     }).reset_index()
     
