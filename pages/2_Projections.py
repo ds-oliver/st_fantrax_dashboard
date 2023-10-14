@@ -609,7 +609,7 @@ def main():
                         top_10_proj_pts_starters = value_score_df[value_score_df['Status'].isin(status_list)]['ProjFPts*'].values[0]
                         st.write(f"### 🏆 {st.session_state.status} Metrics")
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta using lambda
-                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1) if top_10_proj_pts_starters < top_10_proj_pts else None, delta_color="normal")
+                        st.metric(label="🔥 Total Projected FPts", value=top_10_proj_pts, delta=round((top_10_proj_pts - top_10_proj_pts_starters), 1), delta_color="normal")
 
                         # if top_10_proj_pts_starters is less than top_10_proj_pts, then add a delta 
                         # st.metric(label="🔥 Total Projected FPts considering Projected Starts", value=top_10_proj_pts)
