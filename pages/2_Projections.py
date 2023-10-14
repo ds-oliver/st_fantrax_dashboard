@@ -485,7 +485,7 @@ def main():
                 col1, col2 = st.columns(2)
 
                 with col1:
-                    status_list = [status] 
+                    # status_list = [status] 
                     top_10, reserves, top_10_proj_pts, top_10_proj_pts_starters, roster = filter_by_status_and_position(players, projections, status_list)
                     # if top_10 contains player with ProjGS == 0, print Debug message and the top_10 dataframe and the reserves dataframe
                     # round the ProjFPts, ProjGPts columns to 1 decimal place
