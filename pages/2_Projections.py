@@ -420,6 +420,24 @@ def merge_and_drop_cols(df1, df2):
     merged_df.drop(columns=merged_df.filter(regex='_y'), inplace=True)
     return merged_df
 
+def compute_aggregated_metrics(df):
+    """
+    Compute aggregated metrics for each unique Status.
+    
+    Parameters:
+    - df (pd.DataFrame): DataFrame containing the player data with 'Status', 'ProjFPts', and 'ROS Rank' columns.
+    
+    Returns:
+    - pd.DataFrame: Aggregated metrics for each unique Status.
+    """
+    # Group by 'Status' and compute the mean of 'ProjFPts' and 'ROS Rank'
+    aggregated = df.groupby('Status').agg({
+        'ProjFPts': 'mean',
+        'ROS Rank': 'mean'
+    }).reset_index()
+    
+    return aggregated
+
 # Initialize session states
 if 'only_starters' not in st.session_state:
     st.session_state.only_starters = False
@@ -484,8 +502,8 @@ def main():
             st.write(f"Columns in merged_df: {merged_df.columns}")
             print(f"Columns in merged_df: {merged_df.columns}")
 
-            # create a new dataframe grouped by Status and aggregate the ProjFPts and ROS Rank columns
-            grouped_status_df = merged_df.groupby('Status').agg({'ProjFPts': 'sum', 'ROS Rank': 'mean'}).reset_index()
+            # create a new dataframe grouped by Status and aggregate the ProjFPts and ROS Rank columns that we will use later to display the average projected points and average ROS Rank for each status
+            grouped_status_df = compute_aggregated_metrics(merged_df)
 
             # reorder columns Player, Position, Team, ProjFPts, ProjGS, ROS Rank then rest of columns
             projections = projections[['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank'] + [col for col in projections.columns if col not in ['Player', 'Position', 'Team', 'ProjFPts', 'ProjGPts', 'ProjGS', 'ROS Rank']]]
@@ -505,7 +523,6 @@ def main():
                 if new_status != st.session_state.status:
                     st.session_state.status = new_status
                     st.session_state.lineup_clicked = False  # Reset this state to trigger re-calculation
-
 
             with col_b:
                 st.session_state.only_starters = st.checkbox('Only consider starters?')
@@ -602,6 +619,8 @@ def main():
 
                 with col_d:
                     with st.expander("Value Score Rankings"):
+                        # merge the value_score_df with the grouped_status_df
+                        value_score_df = pd.merge(value_score_df, grouped_status_df, on='Status', how='left')
                         # sort the value score dataframe by the value score column ascending
                         value_score_df.sort_values(by=['Value Score'], ascending=True, inplace=True)
                         st.dataframe(value_score_df)
