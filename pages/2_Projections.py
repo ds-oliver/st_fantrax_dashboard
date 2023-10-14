@@ -592,7 +592,7 @@ def main():
                             performance_index_avg = top_10['performance_index'].mean()
                             value_score_for_status = performance_index_avg * (average_ros_rank_of_roster - avg_ros_of_top_fas)
 
-                            value_score_df.loc[len(value_score_df)] = [status, value_score_for_status, top_10_proj_pts, average_ros_rank_of_roster]
+                            value_score_df.loc[len(value_score_df)] = [status, value_score_for_status, top_10_proj_pts_starters, average_ros_rank_of_roster]
 
                         # Normalize value score using MinMax scaling
                         min_value_score = value_score_df['Value Score'].min()
@@ -616,7 +616,7 @@ def main():
                 with col_d:
                     with st.expander("Value Score Rankings"):
                         # merge the value_score_df with the grouped_status_df
-                        value_score_df = pd.merge(value_score_df, grouped_status_df, on='Status', how='left', suffixes=('', '_grouped'))
+                        # value_score_df = pd.merge(value_score_df, grouped_status_df, on='Status', how='left', suffixes=('', '_grouped'))
                         # sort the value score dataframe by the value score column ascending
                         value_score_df.sort_values(by=['Value Score'], ascending=True, inplace=True)
 
