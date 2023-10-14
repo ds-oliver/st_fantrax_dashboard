@@ -19,17 +19,18 @@ from files import projections as proj_csv, fx_gif, ros_ranks
 from functions import load_csv, add_construction, load_css, create_custom_sequential_cmap, create_custom_cmap, create_custom_divergent_cmap, style_dataframe_custom, round_and_format, style_position_player_only
 
 # set up logging
-logging.basicConfig(
-    format="%(asctime)s %(levelname)s - %(message)s",
-    level=logging.INFO,
-    datefmt="%Y-%m-%d %H:%M:%S",
-    filename="pages/proj_logs.log",
-)
+log_formatter = logging.Formatter("%(asctime)s %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)  # Create logger with the script's name
 
-# create logger in path
-# Set up relative path for the log file
+# Set logging level
+logger.setLevel(logging.INFO)
+
+# Create a file handler and add it to the logger
 current_directory = os.path.dirname(__file__)
 log_file_path = os.path.join(current_directory, 'pages/proj_logs.log')
+file_handler = logging.FileHandler(log_file_path)
+file_handler.setFormatter(log_formatter)
+logger.addHandler(file_handler)
 
 st.set_page_config(
     page_title="Footy Magic",
