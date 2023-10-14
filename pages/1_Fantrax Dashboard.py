@@ -98,6 +98,24 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
 
+def set_index_based_on_radio_button(df):
+    """
+    Set DataFrame index based on a Streamlit radio button.
+
+    Parameters:
+        df (pd.DataFrame): DataFrame to modify.
+
+    Returns:
+        pd.DataFrame: DataFrame with "Player" set as index if radio button is ticked.
+    """
+    set_index_option = st.radio("Would you like to set 'Player' as the DataFrame index?", ('No', 'Yes'))
+    if set_index_option == 'Yes':
+        if 'Player' in df.columns:
+            df.set_index('Player', inplace=True)
+        else:
+            st.warning("The DataFrame does not have a 'Player' column.")
+    return df
+
 def main():
     logging.info("Starting main function")
     add_construction()
@@ -110,6 +128,10 @@ def main():
 
     lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
+    
+    # Call the function to set the index based on radio button selection
+    grouped_players_df = set_index_based_on_radio_button(grouped_players_df)
+    
     team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
     vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['Team'])
@@ -127,9 +149,9 @@ def main():
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
     display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.")
     display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position, per game.")
-    # display_dataframe(vs_team_pos_df, "vsTeam Position Data", colors, divergent_colors)
   
     logging.info("Main function completed successfully")
+
 
 if __name__ == "__main__":
     main()
