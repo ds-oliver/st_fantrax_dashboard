@@ -99,7 +99,7 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
 
-def set_index_based_on_radio_button(df, widget_key):
+def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
     """
     Set DataFrame index based on a Streamlit radio button.
 
@@ -110,7 +110,7 @@ def set_index_based_on_radio_button(df, widget_key):
     Returns:
         pd.DataFrame: DataFrame with "Player" set as index if radio button is ticked.
     """
-    set_index_option = st.radio("Would you like to set 'Player' as the DataFrame index?", ('No', 'Yes'), key=widget_key)
+    set_index_option = st.radio(f"Would you like to set 'Player' as the {df_name} table index?", ('No', 'Yes'), key=widget_key)
     if set_index_option == 'Yes':
         if 'Player' in df.columns:
             df.set_index('Player', inplace=True)
@@ -141,12 +141,12 @@ def main():
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
 
-    lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df')
+    lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df', df_name=f'GW {last_gw}')
     # Use the cached function to display DataFrames
     display_dataframe(lastgw_df, f"Player Data **(:orange[GW {last_gw}])**", colors, divergent_colors, info_text=f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.")
 
     # Call the function to set the index based on radio button selection
-    grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df')
+    grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df', df_name='All GWs')
     display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors, info_text=f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at **:orange[{max(lastgw_df['GW'])}]** gameweeks of data.")
     display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
