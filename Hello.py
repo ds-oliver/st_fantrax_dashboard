@@ -15,6 +15,7 @@ st.set_page_config(
     page_title="Draft Alchemy",
     page_icon=":soccer:",
     initial_sidebar_state="expanded"
+
 )
 
 def main():
