@@ -23,9 +23,7 @@ def main():
                                 icons=['house', 'list-columns', 'lightning-charge', 'person-plus',
                                     'calculator', 'calendar-range', 'graph-up-arrow', 'list-ol', 'book', 'arrow-clockwise'],
                                 menu_icon="menu-app", default_index=0)
-        
-        if choose == "Home":
-            
+                    
 
     st.title('This is part of @draftalchemy | @ds-oliver FPL Data Science Project')
     st.write("""
