@@ -4,7 +4,10 @@ from streamlit_option_menu import option_menu
 from functions import add_construction
 
 st.set_page_config(
-    layout="wide"
+    layout="wide",
+    page_title="Draft Alchemy",
+    page_icon=":soccer:",
+    initial_sidebar_state="expanded"
 )
 
 def main():
@@ -12,6 +15,17 @@ def main():
     add_construction()
 
     st.info('This is a work in progress. None of the links on this page work yet. Use the sidebar to navigate to the other pages.')
+
+    with st.sidebar:
+        choose = option_menu("Toolkit Menu",
+                                ["Home", "Optimal Lineup", "Matchup Projections", "Add/Drop Suggestions",
+                                "Trade Calculator", "Fixture Difficulty Tracker", "GW Transaction Data", "Team Power Rankings", "Glossary", "Pick Diff Team"],
+                                icons=['house', 'list-columns', 'lightning-charge', 'person-plus',
+                                    'calculator', 'calendar-range', 'graph-up-arrow', 'list-ol', 'book', 'arrow-clockwise'],
+                                menu_icon="menu-app", default_index=0)
+        
+        if choose == "Home":
+            
 
     st.title('This is part of @draftalchemy | @ds-oliver FPL Data Science Project')
     st.write("""
