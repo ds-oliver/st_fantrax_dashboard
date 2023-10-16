@@ -1,151 +1,151 @@
-﻿Consensus Rank,ROS Rank,+/-,Team,Pos
-1: Bruno Fernandes,1,0,MUN,M
-2: Erling Haaland,2,0,MCI,F
-3: Mohamed Salah,3,2,LIV,F
-4: Bukayo Saka,4,-1,ARS,M
-5: James Maddison,5,-1,TOT,M
-6: Kieran Trippier,6,9,NEW,D
-7: Son Heung-Min,7,5,TOT,F
-8: Trent Alexander-Arnold,8,-2,LIV,D
-9: Julian Alvarez,9,8,MCI,F
-10: Gabriel Jesus,10,-3,ARS,F
-11: Martin Odegaard,11,2,ARS,M
-12: Kaoru Mitoma,12,-3,BHA,M
-13: Phil Foden,13,-3,MCI,M
-14: James Ward-Prowse,14,7,WHU,M
-15: Pedro Neto,15,15,WOL,F
-16: Solly March,16,-5,BHA,M
-17: Gabriel Martinelli,17,-1,ARS,M
-18: Jarrod Bowen,18,2,WHU,M
-19: Ollie Watkins,19,5,AVL,F
-20: Dominik Szoboszlai,20,3,LIV,M
-21: Morgan Gibbs-White,21,-3,NOT,M
-22: Dejan Kulusevski,22,13,TOT,M
-23: Darwin Nunez,23,5,LIV,F
-24: Marcus Rashford,24,-10,MUN,F
-25: Pascal Gross,25,1,BHA,M
-26: Alexander Isak,26,1,NEW,F
-27: Jack Grealish,27,-8,MCI,M
-28: Eberechi Eze,28,-20,CRY,M
-29: Moussa Diaby,29,4,AVL,F
-30: Luis Diaz,30,-8,LIV,F
-31: Bryan Mbeumo,31,-6,BRF,F
-32: Dwight McNeil,32,-3,EVE,M
-33: Raheem Sterling,33,3,CHE,F
-34: Jeremy Doku,34,29,MCI,F
-35: Pedro Porro,35,10,TOT,D
-36: Lucas Paqueta,36,-2,WHU,M
-37: Mohammed Kudus,37,1,WHU,M
-38: Pervis Estupinan,38,-6,BHA,D
-39: Ethan Pinnock,39,4,BRF,D
-40: Abdoulaye Doucoure,40,10,EVE,M
-41: Mathias Jensen,41,12,BRF,M
-42: Andrew Robertson,42,12,LIV,D
-43: Rodri,43,-2,MCI,M
-44: Iyenoma Destiny Udogie,44,0,TOT,D
-45: Michael Olise,45,-6,CRY,M
-46: Rasmus Hojlund,46,-6,MUN,F
-47: Virgil van Dijk,47,5,LIV,D
-48: Diogo Jota,48,-6,LIV,F
-49: Reece James,49,-3,CHE,D
-50: James Tarkowski,50,9,EVE,D
-51: Anthony Gordon,51,18,NEW,M
-52: Nicolas Jackson,52,-15,CHE,F
-53: Joao Pedro,53,-6,BHA,F
-54: Joachim Andersen,54,19,CRY,D
-55: Jack Harrison,55,42,EVE,M
-56: Alfie Doughty,56,,LUT,M
-57: Richarlison,57,37,TOT,F
-58: Diogo Dalot,58,4,MUN,D
-59: Cristian Romero,59,27,TOT,D
-60: Marcus Tavernier,60,30,BOU,M
-61: Callum Wilson,61,-1,NEW,F
-62: Dominic Solanke,62,-6,BOU,F
-63: Willian,63,21,FUL,F
-64: Kevin De Bruyne,64,-13,MCI,M
-65: Cody Gakpo,65,-17,LIV,F
-66: Miguel Almiron,66,-2,NEW,M
-67: Matty Cash,67,9,AVL,D
-68: Declan Rice,68,-7,ARS,M
-69: Cole Palmer,69,34,CHE,M
-70: Evan Ferguson,70,-21,BHA,F
-71: Yoane Wissa,71,-6,BRF,F
-72: Ivan Toney,72,7,BRF,F
-73: Dominic Calvert-Lewin,73,39,EVE,F
-74: Casemiro,74,-19,MUN,M
-75: Antony,75,,MUN,F
-76: Mason Mount,76,-1,MUN,M
-77: Tomas Soucek,77,62,WHU,M
-78: Willy Boly,78,42,NOT,D
-79: Fabian Schar,79,-9,NEW,D
-80: Andreas Pereira,80,-22,FUL,M
-81: Douglas Luiz,81,11,AVL,M
-82: Joelinton,82,-14,NEW,M
-83: Ben White,83,,ARS,D
-84: Simon Adingra,84,,BHA,F
-85: Taiwo Awoniyi,85,-11,NOT,F
-86: Carlton Morris,86,2,LUT,F
-87: Yves Bissouma,87,-21,TOT,M
-88: Bernardo Silva,88,8,MCI,M
-89: Dan Burn,89,45,NEW,D
-90: Luke Shaw,90,25,MUN,D
-91: Odsonne Edouard,91,0,CRY,F
-92: Vladimir Coufal,92,,WHU,D
-93: Christopher Nkunku,93,7,CHE,F
-94: Brennan Johnson,94,-9,TOT,F
-95: Mykhailo Mudryk,95,31,CHE,M
-96: James Garner,96,,EVE,M
-97: Alex Moreno,97,-25,AVL,D
-98: Ansu Fati,98,10,BHA,F
-99: Gustavo Hamer,99,3,SHU,M
-100: Conor Gallagher,100,18,CHE,M
-101: Leandro Trossard,101,8,ARS,M
-102: Lucas Digne,102,26,AVL,D
-103: Kai Havertz,103,-20,ARS,F
-104: Lyle Foster,104,26,BUR,F
-105: Alex Iwobi,105,-27,FUL,M
-106: Bruno Guimaraes,106,15,NEW,M
-107: Ben Chilwell,107,-76,CHE,D
-108: Enzo Fernandez,108,-37,CHE,M
-109: Aaron Wan-Bissaka,109,-52,MUN,D
-110: Jordan Ayew,110,-4,CRY,F
-111: Kurt Zouma,111,12,WHU,D
-112: Gabriel Magalhaes,112,28,ARS,D
-113: Christian Norgaard,113,14,BRF,M
-114: Matheus Franca,114,,CRY,F
-115: Luis Sinisterra,115,-8,BOU,F
-116: John McGinn,116,16,AVL,M
-117: Callum Hudson-Odoi,117,8,NOT,F
-118: Ibrahima Konate,118,-1,LIV,D
-119: Alexis Mac Allister,119,-38,LIV,M
-120: Thiago Silva,120,-38,CHE,D
-121: Sven Botman,121,,NEW,D
-122: Philip Billing,122,-6,BOU,M
-123: Beto,123,-46,EVE,F
-124: Matheus Cunha,124,-5,WOL,F
-125: Levi Colwill,125,-3,CHE,D
-126: Ryan Christie,126,,BOU,M
-127: Ben Mee,127,-28,BRF,D
-128: Jean-Ricner Bellegarde,128,22,WOL,M
-129: Said Benrahma,129,-49,WHU,M
-130: William Saliba,130,16,ARS,D
-131: Hwang Hee-Chan,131,,WOL,F
-132: Josh Brownhill,132,,BUR,M
-133: Oliver McBurnie,133,-38,SHU,F
-134: Michail Antonio,134,-21,WHU,F
-135: Kyle Walker,135,,MCI,D
-136: Dango Ouattara,136,,BOU,F
-137: Pape Sarr,137,,TOT,M
-138: Bernd Leno,138,-1,FUL,G
-139: Oleksandr Zinchenko,139,-6,ARS,D
-140: Emerson,140,,WHU,D
-141: Jose Sa,141,4,WOL,G
-142: Christian Eriksen,142,-41,MUN,M
-143: Ryan Gravenberch,143,,LIV,M
-144: Micky van de Ven,144,,TOT,D
-145: Alisson,145,-10,LIV,G
-146: Guglielmo Vicario,146,,TOT,G
-147: Sergio Reguilon,147,,MUN,D
-148: Konstantinos Tsimikas,148,,LIV,D
-149: Jacob Ramsey,149,-35,AVL,M
-150: Elliot Anderson,150,,NEW,M
+Player,ROS Rank,+/-,Team,Pos
+Bruno Fernandes,1,0.0,MUN,M
+Erling Haaland,2,0.0,MCI,F
+Mohamed Salah,3,2.0,LIV,F
+Bukayo Saka,4,-1.0,ARS,M
+James Maddison,5,-1.0,TOT,M
+Kieran Trippier,6,9.0,NEW,D
+Son Heung-Min,7,5.0,TOT,F
+Trent Alexander-Arnold,8,-2.0,LIV,D
+Julian Alvarez,9,8.0,MCI,F
+Gabriel Jesus,10,-3.0,ARS,F
+Martin Odegaard,11,2.0,ARS,M
+Kaoru Mitoma,12,-3.0,BHA,M
+Phil Foden,13,-3.0,MCI,M
+James Ward-Prowse,14,7.0,WHU,M
+Pedro Neto,15,15.0,WOL,F
+Solly March,16,-5.0,BHA,M
+Gabriel Martinelli,17,-1.0,ARS,M
+Jarrod Bowen,18,2.0,WHU,M
+Ollie Watkins,19,5.0,AVL,F
+Dominik Szoboszlai,20,3.0,LIV,M
+Morgan Gibbs-White,21,-3.0,NOT,M
+Dejan Kulusevski,22,13.0,TOT,M
+Darwin Nunez,23,5.0,LIV,F
+Marcus Rashford,24,-10.0,MUN,F
+Pascal Gross,25,1.0,BHA,M
+Alexander Isak,26,1.0,NEW,F
+Jack Grealish,27,-8.0,MCI,M
+Eberechi Eze,28,-20.0,CRY,M
+Moussa Diaby,29,4.0,AVL,F
+Luis Diaz,30,-8.0,LIV,F
+Bryan Mbeumo,31,-6.0,BRF,F
+Dwight McNeil,32,-3.0,EVE,M
+Raheem Sterling,33,3.0,CHE,F
+Jeremy Doku,34,29.0,MCI,F
+Pedro Porro,35,10.0,TOT,D
+Lucas Paqueta,36,-2.0,WHU,M
+Mohammed Kudus,37,1.0,WHU,M
+Pervis Estupinan,38,-6.0,BHA,D
+Ethan Pinnock,39,4.0,BRF,D
+Abdoulaye Doucoure,40,10.0,EVE,M
+Mathias Jensen,41,12.0,BRF,M
+Andrew Robertson,42,12.0,LIV,D
+Rodri,43,-2.0,MCI,M
+Iyenoma Destiny Udogie,44,0.0,TOT,D
+Michael Olise,45,-6.0,CRY,M
+Rasmus Hojlund,46,-6.0,MUN,F
+Virgil van Dijk,47,5.0,LIV,D
+Diogo Jota,48,-6.0,LIV,F
+Reece James,49,-3.0,CHE,D
+James Tarkowski,50,9.0,EVE,D
+Anthony Gordon,51,18.0,NEW,M
+Nicolas Jackson,52,-15.0,CHE,F
+Joao Pedro,53,-6.0,BHA,F
+Joachim Andersen,54,19.0,CRY,D
+Jack Harrison,55,42.0,EVE,M
+Alfie Doughty,56,,LUT,M
+Richarlison,57,37.0,TOT,F
+Diogo Dalot,58,4.0,MUN,D
+Cristian Romero,59,27.0,TOT,D
+Marcus Tavernier,60,30.0,BOU,M
+Callum Wilson,61,-1.0,NEW,F
+Dominic Solanke,62,-6.0,BOU,F
+Willian,63,21.0,FUL,F
+Kevin De Bruyne,64,-13.0,MCI,M
+Cody Gakpo,65,-17.0,LIV,F
+Miguel Almiron,66,-2.0,NEW,M
+Matty Cash,67,9.0,AVL,D
+Declan Rice,68,-7.0,ARS,M
+Cole Palmer,69,34.0,CHE,M
+Evan Ferguson,70,-21.0,BHA,F
+Yoane Wissa,71,-6.0,BRF,F
+Ivan Toney,72,7.0,BRF,F
+Dominic Calvert-Lewin,73,39.0,EVE,F
+Casemiro,74,-19.0,MUN,M
+Antony,75,,MUN,F
+Mason Mount,76,-1.0,MUN,M
+Tomas Soucek,77,62.0,WHU,M
+Willy Boly,78,42.0,NOT,D
+Fabian Schar,79,-9.0,NEW,D
+Andreas Pereira,80,-22.0,FUL,M
+Douglas Luiz,81,11.0,AVL,M
+Joelinton,82,-14.0,NEW,M
+Ben White,83,,ARS,D
+Simon Adingra,84,,BHA,F
+Taiwo Awoniyi,85,-11.0,NOT,F
+Carlton Morris,86,2.0,LUT,F
+Yves Bissouma,87,-21.0,TOT,M
+Bernardo Silva,88,8.0,MCI,M
+Dan Burn,89,45.0,NEW,D
+Luke Shaw,90,25.0,MUN,D
+Odsonne Edouard,91,0.0,CRY,F
+Vladimir Coufal,92,,WHU,D
+Christopher Nkunku,93,7.0,CHE,F
+Brennan Johnson,94,-9.0,TOT,F
+Mykhailo Mudryk,95,31.0,CHE,M
+James Garner,96,,EVE,M
+Alex Moreno,97,-25.0,AVL,D
+Ansu Fati,98,10.0,BHA,F
+Gustavo Hamer,99,3.0,SHU,M
+Conor Gallagher,100,18.0,CHE,M
+Leandro Trossard,101,8.0,ARS,M
+Lucas Digne,102,26.0,AVL,D
+Kai Havertz,103,-20.0,ARS,F
+Lyle Foster,104,26.0,BUR,F
+Alex Iwobi,105,-27.0,FUL,M
+Bruno Guimaraes,106,15.0,NEW,M
+Ben Chilwell,107,-76.0,CHE,D
+Enzo Fernandez,108,-37.0,CHE,M
+Aaron Wan-Bissaka,109,-52.0,MUN,D
+Jordan Ayew,110,-4.0,CRY,F
+Kurt Zouma,111,12.0,WHU,D
+Gabriel Magalhaes,112,28.0,ARS,D
+Christian Norgaard,113,14.0,BRF,M
+Matheus Franca,114,,CRY,F
+Luis Sinisterra,115,-8.0,BOU,F
+John McGinn,116,16.0,AVL,M
+Callum Hudson-Odoi,117,8.0,NOT,F
+Ibrahima Konate,118,-1.0,LIV,D
+Alexis Mac Allister,119,-38.0,LIV,M
+Thiago Silva,120,-38.0,CHE,D
+Sven Botman,121,,NEW,D
+Philip Billing,122,-6.0,BOU,M
+Beto,123,-46.0,EVE,F
+Matheus Cunha,124,-5.0,WOL,F
+Levi Colwill,125,-3.0,CHE,D
+Ryan Christie,126,,BOU,M
+Ben Mee,127,-28.0,BRF,D
+Jean-Ricner Bellegarde,128,22.0,WOL,M
+Said Benrahma,129,-49.0,WHU,M
+William Saliba,130,16.0,ARS,D
+Hwang Hee-Chan,131,,WOL,F
+Josh Brownhill,132,,BUR,M
+Oliver McBurnie,133,-38.0,SHU,F
+Michail Antonio,134,-21.0,WHU,F
+Kyle Walker,135,,MCI,D
+Dango Ouattara,136,,BOU,F
+Pape Sarr,137,,TOT,M
+Bernd Leno,138,-1.0,FUL,G
+Oleksandr Zinchenko,139,-6.0,ARS,D
+Emerson,140,,WHU,D
+Jose Sa,141,4.0,WOL,G
+Christian Eriksen,142,-41.0,MUN,M
+Ryan Gravenberch,143,,LIV,M
+Micky van de Ven,144,,TOT,D
+Alisson,145,-10.0,LIV,G
+Guglielmo Vicario,146,,TOT,G
+Sergio Reguilon,147,,MUN,D
+Konstantinos Tsimikas,148,,LIV,D
+Jacob Ramsey,149,-35.0,AVL,M
+Elliot Anderson,150,,NEW,M
