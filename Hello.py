@@ -1,5 +1,13 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import streamlit.components.v1 as html
+from  PIL import Image
+import numpy as np
+import cv2
+import pandas as pd
+from st_aggrid import AgGrid
+import plotly.express as px
+import io 
 
 from functions import add_construction
 
@@ -16,13 +24,13 @@ def main():
 
     st.info('This is a work in progress. None of the links on this page work yet. Use the sidebar to navigate to the other pages.')
 
-    with st.sidebar:
-        choose = option_menu("Toolkit Menu",
-                                ["Home", "Optimal Lineup", "Matchup Projections", "Add/Drop Suggestions",
-                                "Trade Calculator", "Fixture Difficulty Tracker", "GW Transaction Data", "Team Power Rankings", "Glossary", "Pick Diff Team"],
-                                icons=['house', 'list-columns', 'lightning-charge', 'person-plus',
-                                    'calculator', 'calendar-range', 'graph-up-arrow', 'list-ol', 'book', 'arrow-clockwise'],
-                                menu_icon="menu-app", default_index=0)
+    # with st.sidebar:
+    #     choose = option_menu("Toolkit Menu",
+    #                             ["Home", "Optimal Lineup", "Matchup Projections", "Add/Drop Suggestions",
+    #                             "Trade Calculator", "Fixture Difficulty Tracker", "GW Transaction Data", "Team Power Rankings", "Glossary", "Pick Diff Team"],
+    #                             icons=['house', 'list-columns', 'lightning-charge', 'person-plus',
+    #                                 'calculator', 'calendar-range', 'graph-up-arrow', 'list-ol', 'book', 'arrow-clockwise'],
+    #                             menu_icon="menu-app", default_index=0)
                     
 
     st.title('This is part of @draftalchemy | @ds-oliver FPL Data Science Project')
