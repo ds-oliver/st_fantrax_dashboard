@@ -135,7 +135,7 @@ def main():
     grouped_players_df = load_csv_file_cached(f'{data_path}/grouped_player_data.csv')
     
     team_df = load_csv_file_cached(f'{data_path}/for_team.csv', set_index_cols=['team'])
-    team_pos_df = load_csv_file_cached(f'{data_path}/team_pos_data.csv', set_index_cols=['Team', 'Position'])
+    team_pos_df = load_csv_file_cached(f'{data_path}/d_detail_bypos_forteam.csv', set_index_cols=['team', 'position'])
     vs_team_df = load_csv_file_cached(f'{data_path}/vs_team.csv', set_index_cols=['opponent'])
 
     # vs_team_pos_df = load_csv_file_cached(f'{data_path}/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
