@@ -134,7 +134,7 @@ def main():
     
     team_df = load_csv_file_cached('data/display-data/for_team.csv', set_index_cols=['team'])
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
-    vs_team_df = load_csv_file_cached('data/display-data/vs_team.csv', set_index_cols=['team'])
+    vs_team_df = load_csv_file_cached('data/display-data/vs_team.csv', set_index_cols=['opponent'])
 
     vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['team', 'position'])
 
