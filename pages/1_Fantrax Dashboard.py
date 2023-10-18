@@ -149,6 +149,8 @@ def main():
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
 
+    # display all_pos
+    display_dataframe(all_pos, "All Positions Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific position, per game.")
     # display d_df_pos
     display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
     display_dataframe(m_df_pos, "Granular Midfielder Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific midfield position, per game.")
