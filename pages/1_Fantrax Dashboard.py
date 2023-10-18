@@ -136,7 +136,7 @@ def main():
     team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
     vs_team_df = load_csv_file_cached('data/display-data/vs_team.csv', set_index_cols=['opponent'])
 
-    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
+    # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
 
     d_df_pos = load_csv_file_cached('data/display-data/d_df_pos.csv', set_index_cols=['postition'])
     m_df_pos = load_csv_file_cached('data/display-data/m_df_pos.csv', set_index_cols=['postition'])
@@ -167,7 +167,7 @@ def main():
     display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
     display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.")
-    display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position, per game.")
+    # display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position, per game.")
   
     logging.info("Main function completed successfully")
 
