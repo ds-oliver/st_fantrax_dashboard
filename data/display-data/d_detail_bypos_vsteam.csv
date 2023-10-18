@@ -1,4 +1,4 @@
-opponent,position_1,player (nunique),fpts (mean),team (nunique),opponent (nunique),g (mean),kp (mean),at (mean),sot (mean),tkw (mean),dis (mean),yc (mean),rc (mean),acnc (mean),int (mean),clr (mean),cos (mean),bs (mean),aer (mean),pkm (mean),pkd (mean),og (mean),gao (mean),pts (mean),dpt (mean),off (mean),pkg (mean),ghost points (mean),negative fpts (mean),home (mean)
+opponent,position,player (nunique),fpts (mean),team (nunique),opponent (nunique),g (mean),kp (mean),at (mean),sot (mean),tkw (mean),dis (mean),yc (mean),rc (mean),acnc (mean),int (mean),clr (mean),cos (mean),bs (mean),aer (mean),pkm (mean),pkd (mean),og (mean),gao (mean),pts (mean),dpt (mean),off (mean),pkg (mean),ghost points (mean),negative fpts (mean),home (mean)
 vsLUT,WB,1,16.0,1,1,0.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,10.0,0.0,1.0
 vsBUR,WB,6,13.54,2,1,0.5,1.67,0.17,0.67,0.83,0.17,0.0,0.0,0.5,0.5,0.83,0.67,0.0,1.5,0.0,0.0,0.0,1.0,0.67,1.0,0.17,0.0,7.54,-1.08,0.5
 vsSHU,RB,9,11.68,7,1,0.0,2.0,0.5,0.0,0.9,0.4,0.0,0.0,0.9,0.4,0.7,0.8,0.3,0.7,0.0,0.0,0.0,0.8,0.5,0.6,0.0,0.0,6.38,-1.8,0.5
