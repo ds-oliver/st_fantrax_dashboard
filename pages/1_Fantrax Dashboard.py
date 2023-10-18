@@ -120,7 +120,7 @@ def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
 
 def main():
     
-    data_path = f'{data_path}/final'
+    data_path = 'data/display-data/final'
 
     logging.info("Starting main function")
     add_construction()
