@@ -156,19 +156,19 @@ def main():
     away_team_byteam = load_csv_file_cached(f'{data_path}/away_team_byteam.csv', set_index_cols=['team'])
 
     # load all big_six_df_teampos, newly_promoted_df_teampos, mid_table_df_teampos, spotlight_teams_df_teampos
-    big_six_df_teampos = load_csv_file_cached(f'{data_path}/big_six_teampos.csv', set_index_cols=['team', 'position'])
-    newly_promoted_df_teampos = load_csv_file_cached(f'{data_path}/newly_promoted_teampos.csv', set_index_cols=['team', 'position'])
-    mid_table_df_teampos = load_csv_file_cached(f'{data_path}/mid_table_teampos.csv', set_index_cols=['team', 'position'])
-    spotlight_teams_df_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
+    big_six_teampos = load_csv_file_cached(f'{data_path}/big_six_teampos.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos = load_csv_file_cached(f'{data_path}/newly_promoted_teampos.csv', set_index_cols=['team', 'position'])
+    mid_table_teampos = load_csv_file_cached(f'{data_path}/mid_table_teampos.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
 
     # display big_six_df_teampos
-    display_dataframe(spotlight_teams_df_teampos, "Spotlight Teams Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played against the spotlight teams.")
-    display_dataframe(big_six_df_teampos, "Big Six Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played against the Big Six.")
-    display_dataframe(newly_promoted_df_teampos, "Newly Promoted Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played against the newly promoted teams.")
-    display_dataframe(mid_table_df_teampos, "Mid Table Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played against the mid table teams.")
+    display_dataframe(spotlight_teams_teampos, "Spotlight Teams Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}.")
+    display_dataframe(big_six_teampos, "Big Six Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(big_six_teampos.index.get_level_values('team').unique().tolist())}.")
+    display_dataframe(newly_promoted_teampos, "Newly Promoted Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}.")
+    display_dataframe(mid_table_teampos, "Mid Table Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(mid_table_teampos.index.get_level_values('team').unique().tolist())}.")
 
     # display all_pos
     display_dataframe(all_pos, "All Positions Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific position, per game.")
