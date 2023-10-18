@@ -137,9 +137,9 @@ def main():
 
     # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
 
-    d_df_pos = load_csv_file_cached('data/display-data/f_detail_bypos.csv', set_index_cols=['postition'])
-    m_df_pos = load_csv_file_cached('data/display-data/m_detail_bypos.csv', set_index_cols=['postition'])
-    f_df_pos = load_csv_file_cached('data/display-data/f_detail_bypos.csv', set_index_cols=['postition'])
+    d_df_pos = load_csv_file_cached('data/display-data/f_detail_bypos.csv', set_index_cols=['position'])
+    m_df_pos = load_csv_file_cached('data/display-data/m_detail_bypos.csv', set_index_cols=['position'])
+    f_df_pos = load_csv_file_cached('data/display-data/f_detail_bypos.csv', set_index_cols=['position'])
 
     home_team_byteam = load_csv_file_cached('data/display-data/home_team_byteam.csv', set_index_cols=['team'])
     away_team_byteam = load_csv_file_cached('data/display-data/away_team_byteam.csv', set_index_cols=['team'])
