@@ -86,11 +86,15 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
 
+    # Dynamically calculate the height based on the number of rows
+    # Set a minimum height of 300 and a maximum height of 800
+    height = max(300, min(800, df.shape[0] * 25))
+
     try:
         st.write(f"## {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=600)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=height)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")
         if info_text:
@@ -98,6 +102,7 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     except Exception as e:
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
+
 
 def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
     """
