@@ -56,7 +56,7 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         pd.DataFrame: The loaded and formatted DataFrame.
     """
     # Load the CSV file into a DataFrame
-    df = pd.read_csv(csv_file).applymap(round_and_format)
+    df = pd.read_csv(csv_file, index_col=0 if 'Unnamed: 0' in pd.read_csv(csv_file).columns else None).applymap(round_and_format)
     
     # Check if set_index_cols is provided
     if set_index_cols:
@@ -69,6 +69,7 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         df.set_index(set_index_cols, inplace=True)
         
     return df
+
 
 @st.cache_data
 def create_custom_cmap_cached(*colors):
