@@ -88,7 +88,7 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
 
     # Dynamically calculate the height based on the number of rows
     # Set a minimum height of 300 and a maximum height of 800
-    height = max(300, min(800, df.shape[0] * 25))
+    height = max(500, min(800, df.shape[0] * 25))
 
     try:
         st.write(f"## {title}")
@@ -161,9 +161,9 @@ def main():
     # display all_pos
     display_dataframe(all_pos, "All Positions Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific position, per game.")
     # display d_df_pos
-    display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
-    display_dataframe(m_df_pos, "Granular Midfielder Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific midfield position, per game.")
-    display_dataframe(f_df_pos, "Granular Forward Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific forward position, per game.")
+    # display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
+    # display_dataframe(m_df_pos, "Granular Midfielder Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific midfield position, per game.")
+    # display_dataframe(f_df_pos, "Granular Forward Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific forward position, per game.")
 
     # display home_team_byteam
     display_dataframe(home_team_byteam, "Home Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played at home.")
