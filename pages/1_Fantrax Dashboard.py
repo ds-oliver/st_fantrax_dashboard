@@ -43,6 +43,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+@st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
@@ -132,7 +133,7 @@ def main():
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
     
     team_df = load_csv_file_cached('data/display-data/for_team.csv', set_index_cols=['team'])
-    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['team', 'position'])
+    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
     vs_team_df = load_csv_file_cached('data/display-data/vs_team.csv', set_index_cols=['team'])
 
     vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['team', 'position'])
