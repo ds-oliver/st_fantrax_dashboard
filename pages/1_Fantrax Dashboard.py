@@ -119,6 +119,9 @@ def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
 
 
 def main():
+    
+    data_path = f'{data_path}/final'
+
     logging.info("Starting main function")
     add_construction()
 
@@ -128,23 +131,23 @@ def main():
     custom_cmap = create_custom_cmap_cached(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
-    lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
-    grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
+    lastgw_df = load_csv_file_cached(f'{data_path}/recent_gw_data.csv')
+    grouped_players_df = load_csv_file_cached(f'{data_path}/grouped_player_data.csv')
     
-    team_df = load_csv_file_cached('data/display-data/for_team.csv', set_index_cols=['team'])
-    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
-    vs_team_df = load_csv_file_cached('data/display-data/vs_team.csv', set_index_cols=['opponent'])
+    team_df = load_csv_file_cached(f'{data_path}/for_team.csv', set_index_cols=['team'])
+    team_pos_df = load_csv_file_cached(f'{data_path}/team_pos_data.csv', set_index_cols=['Team', 'Position'])
+    vs_team_df = load_csv_file_cached(f'{data_path}/vs_team.csv', set_index_cols=['opponent'])
 
-    # vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
+    # vs_team_pos_df = load_csv_file_cached(f'{data_path}/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
 
-    all_pos = load_csv_file_cached('data/display-data/all_pos.csv', set_index_cols=['position'])
+    all_pos = load_csv_file_cached(f'{data_path}/all_pos.csv', set_index_cols=['position'])
 
-    d_df_pos = load_csv_file_cached('data/display-data/d_detail_bypos.csv', set_index_cols=['position'])
-    m_df_pos = load_csv_file_cached('data/display-data/m_detail_bypos.csv', set_index_cols=['position'])
-    f_df_pos = load_csv_file_cached('data/display-data/f_detail_bypos.csv', set_index_cols=['position'])
+    d_df_pos = load_csv_file_cached(f'{data_path}/d_detail_bypos.csv', set_index_cols=['position'])
+    m_df_pos = load_csv_file_cached(f'{data_path}/m_detail_bypos.csv', set_index_cols=['position'])
+    f_df_pos = load_csv_file_cached(f'{data_path}/f_detail_bypos.csv', set_index_cols=['position'])
 
-    home_team_byteam = load_csv_file_cached('data/display-data/home_team_byteam.csv', set_index_cols=['team'])
-    away_team_byteam = load_csv_file_cached('data/display-data/away_team_byteam.csv', set_index_cols=['team'])
+    home_team_byteam = load_csv_file_cached(f'{data_path}/home_team_byteam.csv', set_index_cols=['team'])
+    away_team_byteam = load_csv_file_cached(f'{data_path}/away_team_byteam.csv', set_index_cols=['team'])
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
