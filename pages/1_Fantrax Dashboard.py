@@ -64,7 +64,7 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         # Check if all columns in set_index_cols exist in the DataFrame
         missing_cols = [col for col in set_index_cols if col not in df.columns]
         if missing_cols:
-            raise ValueError(f"Columns {missing_cols} not found in DataFrame. Cannot set as index.")
+            raise ValueError(f"Columns {missing_cols} not found in DataFrame. Cannot set as index.\nDataFrame columns: {df.columns}")
         
         # Set the specified columns as the DataFrame index
         df.set_index(set_index_cols, inplace=True)
