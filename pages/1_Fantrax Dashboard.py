@@ -156,10 +156,10 @@ def main():
     away_team_byteam = load_csv_file_cached(f'{data_path}/away_team_byteam.csv', set_index_cols=['team'])
 
     # load all big_six_df_teampos, newly_promoted_df_teampos, mid_table_df_teampos, spotlight_teams_df_teampos
-    big_six_df_teampos = load_csv_file_cached(f'{data_path}/big_six_df_teampos.csv', set_index_cols=['team', 'position'])
-    newly_promoted_df_teampos = load_csv_file_cached(f'{data_path}/newly_promoted_df_teampos.csv', set_index_cols=['team', 'position'])
-    mid_table_df_teampos = load_csv_file_cached(f'{data_path}/mid_table_df_teampos.csv', set_index_cols=['team', 'position'])
-    spotlight_teams_df_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_df_teampos.csv', set_index_cols=['team', 'position'])
+    big_six_df_teampos = load_csv_file_cached(f'{data_path}/big_six_teampos.csv', set_index_cols=['team', 'position'])
+    newly_promoted_df_teampos = load_csv_file_cached(f'{data_path}/newly_promoted_teampos.csv', set_index_cols=['team', 'position'])
+    mid_table_df_teampos = load_csv_file_cached(f'{data_path}/mid_table_teampos.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_df_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
