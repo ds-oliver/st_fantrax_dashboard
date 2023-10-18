@@ -145,7 +145,7 @@ def main():
     away_team_byteam = load_csv_file_cached('data/display-data/away_team_byteam.csv', set_index_cols=['team'])
 
     # get the most recent gameweek value
-    last_gw = lastgw_df['gw'].max()
+    last_gw = lastgw_df['GW'].max()
 
     # display d_df_pos
     display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
