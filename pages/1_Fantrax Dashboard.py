@@ -88,7 +88,7 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
 
     # Dynamically calculate the height based on the number of rows
     # Set a minimum height of 300 and a maximum height of 800
-    height = max(500, min(800, df.shape[0] * 25))
+    height = max(400, min(800, df.shape[0] * 25))
 
     try:
         st.write(f"## {title}")
