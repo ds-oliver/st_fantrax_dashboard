@@ -161,11 +161,26 @@ def main():
     mid_table_teampos = load_csv_file_cached(f'{data_path}/mid_table_teampos.csv', set_index_cols=['team', 'position'])
     spotlight_teams_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
 
+    # load all positional team group dfs
+    big_six_teampos_d = load_csv_file_cached(f'{data_path}/big_six_players_d.csv', set_index_cols=['team', 'position'])
+    big_six_teampos_m = load_csv_file_cached(f'{data_path}/big_six_players_m.csv', set_index_cols=['team', 'position'])
+    big_six_teampos_f = load_csv_file_cached(f'{data_path}/big_six_players_f.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos_d = load_csv_file_cached(f'{data_path}/newly_promoted_players_d.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos_m = load_csv_file_cached(f'{data_path}/newly_promoted_players_m.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos_f = load_csv_file_cached(f'{data_path}/newly_promoted_players_f.csv', set_index_cols=['team', 'position'])
+    mid_table_teampos_d = load_csv_file_cached(f'{data_path}/mid_table_players_d.csv', set_index_cols=['team', 'position'])
+    mid_table_teampos_m = load_csv_file_cached(f'{data_path}/mid_table_players_m.csv', set_index_cols=['team', 'position'])
+    mid_table_teampos_f = load_csv_file_cached(f'{data_path}/mid_table_players_f.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos_d = load_csv_file_cached(f'{data_path}/spotlight_teams_players_d.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
+
+
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
 
     # display big_six_df_teampos
-    display_dataframe(spotlight_teams_teampos, "Spotlight Teams Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}.")
+    display_dataframe(spotlight_teams_teampos_d, "Spotlight Teams Data", colors, divergent_colors, info_text=f"Note: This is positional data ({spotlight_teams_teampos_d.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}.")
     display_dataframe(big_six_teampos, "Big Six Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(big_six_teampos.index.get_level_values('team').unique().tolist())}.")
     display_dataframe(newly_promoted_teampos, "Newly Promoted Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}.")
     display_dataframe(mid_table_teampos, "Mid Table Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(mid_table_teampos.index.get_level_values('team').unique().tolist())}.")
