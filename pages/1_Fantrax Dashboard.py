@@ -132,14 +132,30 @@ def main():
     lastgw_df = load_csv_file_cached('data/display-data/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached('data/display-data/grouped_player_data.csv')
     
-    team_df = load_csv_file_cached('data/display-data/team_data.csv', set_index_cols=['Team'])
-    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['Team', 'Position'])
-    vs_team_df = load_csv_file_cached('data/display-data/vs_team_fbref.csv', set_index_cols=['Team'])
+    team_df = load_csv_file_cached('data/display-data/for_team.csv', set_index_cols=['team'])
+    team_pos_df = load_csv_file_cached('data/display-data/team_pos_data.csv', set_index_cols=['team', 'position'])
+    vs_team_df = load_csv_file_cached('data/display-data/vs_team.csv', set_index_cols=['team'])
 
-    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['Team', 'Position'])
+    vs_team_pos_df = load_csv_file_cached('data/display-data/vs_team_pos_fbref.csv', set_index_cols=['team', 'position'])
+
+    d_df_pos = load_csv_file_cached('data/display-data/d_df_pos.csv', set_index_cols=['postition'])
+    m_df_pos = load_csv_file_cached('data/display-data/m_df_pos.csv', set_index_cols=['postition'])
+    f_df_pos = load_csv_file_cached('data/display-data/f_df_pos.csv', set_index_cols=['postition'])
+
+    home_team_byteam = load_csv_file_cached('data/display-data/home_team_byteam.csv', set_index_cols=['team'])
+    away_team_byteam = load_csv_file_cached('data/display-data/away_team_byteam.csv', set_index_cols=['team'])
 
     # get the most recent gameweek value
-    last_gw = lastgw_df['GW'].max()
+    last_gw = lastgw_df['gw'].max()
+
+    # display d_df_pos
+    display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
+    display_dataframe(m_df_pos, "Granular Midfielder Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific midfield position, per game.")
+    display_dataframe(f_df_pos, "Granular Forward Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific forward position, per game.")
+
+    # display home_team_byteam
+    display_dataframe(home_team_byteam, "Home Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played at home.")
+    display_dataframe(away_team_byteam, "Away Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played away from home.")
 
     lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df', df_name=f'GW {last_gw}')
     # Use the cached function to display DataFrames
@@ -147,7 +163,7 @@ def main():
 
     # Call the function to set the index based on radio button selection
     grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df', df_name='All GWs')
-    display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors, info_text=f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at **:orange[{max(lastgw_df['GW'])}]** gameweeks of data.")
+    display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors, info_text=f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at **:orange[{max(lastgw_df['gw'])}]** gameweeks of data.")
     display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
     display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.")
