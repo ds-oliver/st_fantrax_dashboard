@@ -190,7 +190,7 @@ def main():
 
     # get the most recent gameweek value
     last_gw = all_gws_df['GW'].max()
-    first_gw = all_gws_df['GW'].min()
+    first_gw = lastgw_df['GW'].min()
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
@@ -291,35 +291,20 @@ def main():
         }
     }
 
-    # Create a dictionary to categorize DataFrames
-    category_dict = {
-        "Player Data": [df_dict["lastgw_df"]["title"], df_dict["grouped_players_df"]["title"]],
-        "Team Data": [df_dict["team_df"]["title"], df_dict["team_pos_df"]["title"]],
-        "vsTeam Data": [df_dict["vs_team_df"]["title"]],
-        "Positional Data": [df_dict["all_pos"]["title"], df_dict["d_df_pos"]["title"], df_dict["m_df_pos"]["title"], df_dict["f_df_pos"]["title"]],
-        "Home vs Away Data": [df_dict["home_team_byteam"]["title"], df_dict["away_team_byteam"]["title"]],
-        "Team Group Data": [df_dict["spotlight_teams_teampos"]["title"], df_dict["big_six_teampos"]["title"], df_dict["newly_promoted_teampos"]["title"], df_dict["rest_teams_teampos"]["title"]]
-    }
     # create a list of the DataFrames to display based on the titles in the df_dict
-    # dfs_to_display = [df_dict[key]["title"] for key in df_dict]
-    # Flatten the category_dict to a list
-    dfs_to_display = []
-    for category, df_titles in category_dict.items():
-        dfs_to_display.append(f"--- {category} ---")  # Separator with the category name
-        dfs_to_display.extend(df_titles)  # DataFrames in the category
+    dfs_to_display = [df_dict[key]["title"] for key in df_dict]
 
     # Streamlit Option Menu for DataFrame selection
     with st.sidebar:
-        selected_df_name = option_menu("Select DataFrame", dfs_to_display,
-                                       icons=['table' for _ in range(len(dfs_to_display))],
-                                       menu_icon="list")
+        selected_df_name = option_menu("Select DataFrame", dfs_to_display, 
+                                        icons=['table' for _ in range(len(dfs_to_display))],
+                                        menu_icon="list")
 
-    # Reverse lookup to find the corresponding DataFrame key
+    # Conditionally display the selected DataFrame and info text
+    # Reverse lookup
     selected_df_key = [key for key, val in df_dict.items() if val["title"] == selected_df_name]
 
-    if selected_df_name.startswith("---"):
-        st.warning("Please select a DataFrame, not a category.")
-    elif selected_df_key:
+    if selected_df_key:
         st.toast("Loading data...")
 
         selected_df_key = selected_df_key[0]  # Take the first match
@@ -329,9 +314,9 @@ def main():
         display_dataframe(selected_df_data, selected_df_title, colors, divergent_colors, info_text=selected_df_info_text)
     else:
         st.error(f"DataFrame '{selected_df_name}' not found where expected.")
-        # Display the first DataFrame in the list
-        first_df_key = list(df_dict.keys())[0]
-        display_dataframe(df_dict[first_df_key]["data"], df_dict[first_df_key]["title"], colors, divergent_colors, info_text=df_dict[first_df_key]["info_text"])
+        # display the first DataFrame in the list
+        display_dataframe(df_dict[dfs_to_display[0]]["data"], df_dict[dfs_to_display[0]]["title"], colors, divergent_colors, info_text=df_dict[dfs_to_display[0]]["info_text"])
+
 
     logging.info("Main function completed successfully")
 
