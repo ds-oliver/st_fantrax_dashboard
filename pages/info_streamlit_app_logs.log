@@ -4607,3 +4607,43 @@ vsMCI                  116        2.33  ...        0.62        1
 2023-10-19 15:01:41,273 - INFO - Starting main function
 2023-10-19 15:01:41,277 - INFO - Creating custom color maps
 2023-10-19 15:01:41,376 - INFO - Main function completed successfully
+2023-10-19 15:09:03,959 - INFO - Starting main function
+2023-10-19 15:09:03,964 - INFO - Creating custom color maps
+2023-10-19 15:09:04,251 - INFO - Attempting to style the Player Data GW 8 dataframe
+2023-10-19 15:09:06,050 - INFO - Player Data GW 8 Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 15:09:06,102 - INFO - Player Data GW 8 Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 15:09:06,106 - INFO - Main function completed successfully
+2023-10-19 15:09:23,832 - INFO - Starting main function
+2023-10-19 15:09:23,835 - INFO - Creating custom color maps
+2023-10-19 15:09:23,885 - INFO - Attempting to style the Player Data (All Gameweeks) dataframe
+2023-10-19 15:09:24,925 - INFO - Player Data (All Gameweeks) Dataframe head:             Player Team Position    FPTS  ... OG GAO CS  MIN
+0  Kieran Trippier  NEW        D  143.75  ...  0   9  3  699
+1   James Maddison  TOT        M  140.50  ...  0   7  3  667
+2      Bukayo Saka  ARS        M  138.50  ...  0   6  3  611
+3    Ollie Watkins  AVL        F  138.00  ...  0  12  2  676
+4   Erling Haaland  MCI        F  136.00  ...  0   6  3  707
+
+[5 rows x 30 columns]
+2023-10-19 15:09:24,949 - INFO - Player Data (All Gameweeks) Dataframe tail:               Player Team Position   FPTS  ... OG GAO CS  MIN
+413          Vitinho  BUR        D  -3.75  ...  0   5  0  151
+414     Aaron Hickey  BRF        D  -5.25  ...  0  12  1  630
+415    Calvin Bassey  FUL        D  -7.00  ...  0   3  0  123
+416  Ameen Al Dakhil  BUR        D  -7.50  ...  1  17  0  675
+417     Matt Targett  NEW        D  -7.50  ...  0   4  0   76
+
+[5 rows x 30 columns]
+2023-10-19 15:09:24,951 - INFO - Main function completed successfully

@@ -132,8 +132,6 @@ def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
 
 
 def main():
-    
-    st.toast("Loading data...")
 
     data_path = 'data/display-data/final'
 
@@ -190,7 +188,7 @@ def main():
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
         "lastgw_df": {
-            "title": f"Player Data GW {last_gw}",
+            "title": f"GW {last_gw} Player Data",
             "data": lastgw_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
         },
@@ -285,6 +283,8 @@ def main():
     selected_df_key = [key for key, val in df_dict.items() if val["title"] == selected_df_name]
 
     if selected_df_key:
+        st.toast("Loading data...")
+
         selected_df_key = selected_df_key[0]  # Take the first match
         selected_df_title = df_dict[selected_df_key]["title"]
         selected_df_data = df_dict[selected_df_key]["data"]
