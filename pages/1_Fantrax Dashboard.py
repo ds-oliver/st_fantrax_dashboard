@@ -213,7 +213,7 @@ def main():
     display_dataframe(away_team_byteam, "Away Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played away from home.", use_expander=True, expander_label="Away Team Data (Click to expand)")
     display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
     display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, by position, per game.")
-    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.", use_expander=True, expander_label="vsTeam Data (from FBRef) (Click to expand)"
+    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.", use_expander=True, expander_label="vsTeam Data (from FBRef) (Click to expand)")
     # display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position, per game.")
   
     logging.info("Main function completed successfully")
