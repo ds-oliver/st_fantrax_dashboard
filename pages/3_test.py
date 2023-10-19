@@ -190,6 +190,7 @@ def main():
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
+    first_gw = lastgw_df['GW'].min()
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
@@ -214,7 +215,7 @@ def main():
             "info_text": f"Note: This table shows team-specific data by position for GW {last_gw}."
         },
         "grouped_players_df": {
-            "title": "Player Data GW {min(all_gws_df['GW'])} - GW {max(all_gws_df['GW'])}",
+            "title": f"Player Data GW {first_gw} - GW {last_gw}",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(lastgw_df['GW'])} gameweeks of data."
         },

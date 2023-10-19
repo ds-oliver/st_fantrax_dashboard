@@ -4647,3 +4647,26 @@ vsMCI                  116        2.33  ...        0.62        1
 
 [5 rows x 30 columns]
 2023-10-19 15:09:24,951 - INFO - Main function completed successfully
+2023-10-19 15:34:20,758 - INFO - Starting main function
+2023-10-19 15:34:20,766 - INFO - Creating custom color maps
+2023-10-19 15:34:21,395 - INFO - Attempting to style the GW 8 Player Data dataframe
+2023-10-19 15:34:22,764 - INFO - GW 8 Player Data Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 15:34:22,822 - INFO - GW 8 Player Data Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 15:34:22,824 - INFO - Main function completed successfully
+2023-10-19 15:36:07,145 - INFO - Starting main function
+2023-10-19 15:36:07,154 - INFO - Creating custom color maps
+2023-10-19 15:36:07,354 - INFO - Main function completed successfully
