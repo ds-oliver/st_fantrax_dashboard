@@ -49,6 +49,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+@st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
@@ -87,7 +88,7 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_expander=False, expander_label=None):
+def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
@@ -96,24 +97,19 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_e
     # Set a minimum height of 300 and a maximum height of 800
     height = max(400, min(800, df.shape[0] * 25))
 
-    # Choose either the main Streamlit instance or the expander to write to
-    target_st = st
-    if use_expander:
-        expander_label = expander_label if expander_label else f"{title} (Click to expand)"
-        target_st = st.expander(expander_label, expanded=False)
-
     try:
-        target_st.write(f"## {title}")
+        st.write(f"## {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        target_st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=height)
+        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=height)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")
         if info_text:
-            target_st.info(info_text)
+            st.info(info_text)
     except Exception as e:
         logging.error(f"Error styling the {title} dataframe: {e}")
-        target_st.error(f"Error styling the {title} dataframe: {e}")
+        st.error(f"Error styling the {title} dataframe: {e}")
+
 
 def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
     """
@@ -188,18 +184,109 @@ def main():
     spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
     spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
 
-
-    # create a list of dataframes to display
-    dfs = [lastgw_df, grouped_players_df, team_df, team_pos_df, vs_team_df, all_pos, d_df_pos, m_df_pos, f_df_pos, home_team_byteam, away_team_byteam, big_six_teampos, newly_promoted_teampos, rest_teams_teampos, spotlight_teams_teampos, big_six_teampos_d, big_six_teampos_m, big_six_teampos_f, newly_promoted_teampos_d, newly_promoted_teampos_m, newly_promoted_teampos_f, rest_teams_teampos_d, rest_teams_teampos_m, rest_teams_teampos_f, spotlight_teams_teampos_d, spotlight_teams_teampos_m, spotlight_teams_teampos_f]
-
-    # Streamlit Option Menu for DataFrame selection
-    selected_df_name = option_menu("Select DataFrame", dfs, 
-                                icons=['table', 'table'],
-                                menu_icon="list")
-
-
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
+    
+    # Create a dictionary to map dataframe names to actual dataframes and info_text
+    df_dict = {
+        "lastgw_df": {
+            "title": f"Player Data GW {last_gw}",
+            "data": lastgw_df,
+            "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+        },
+        "Player Data (All Gameweeks)": {
+            "title": "Player Data (All Gameweeks)",
+            "data": grouped_players_df,
+            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(lastgw_df['GW'])} gameweeks of data."
+        },
+        "team_df": {
+            "title": "Team Data",
+            "data": team_df,
+            "info_text": "Note: This table shows team-specific data."
+        },
+        "team_pos_df": {
+            "title": "Team, Position Data",
+            "data": team_pos_df,
+            "info_text": "Note: This table shows team-specific data by position."
+        },
+        "vs_team_df": {
+            "title": "vsTeam Data (from FBRef)",
+            "data": vs_team_df,
+            "info_text": "Note: This table shows team-specific data against the respective opponent."
+        },
+        "all_pos": {
+            "title": "All Positions Data",
+            "data": all_pos,
+            "info_text": "Note: This table shows data by position."
+        },
+        "d_df_pos": {
+            "title": "Granular Defender Data",
+            "data": d_df_pos,
+            "info_text": "Note: This table shows data by defensive position."
+        },
+        "m_df_pos": {
+            "title": "Granular Midfielder Data",
+            "data": m_df_pos,
+            "info_text": "Note: This table shows data by midfield position."
+        },
+        "f_df_pos": {
+            "title": "Granular Forward Data",
+            "data": f_df_pos,
+            "info_text": "Note: This table shows data by forward position."
+        },
+        "home_team_byteam": {
+            "title": "Home Team Data",
+            "data": home_team_byteam,
+            "info_text": "Note: This table shows data for the home team."
+        },
+        "away_team_byteam": {
+            "title": "Away Team Data",
+            "data": away_team_byteam,
+            "info_text": "Note: This table shows data for the away team."
+        },
+        "big_six_teampos": {
+            "title": "Big Six Data",
+            "data": big_six_teampos,
+            "info_text": "Note: This table shows data for the big six teams by position."
+        },
+        "newly_promoted_teampos": {
+            "title": "Newly Promoted Data",
+            "data": newly_promoted_teampos,
+            "info_text": "Note: This table shows data for the newly promoted teams by position."
+        },
+        "rest_teams_teampos": {
+            "title": "Mid Table Data",
+            "data": rest_teams_teampos,
+            "info_text": "Note: This table shows data for the rest of the teams by position."
+        },
+        "spotlight_teams_teampos": {
+            "title": "Spotlight Teams Data",
+            "data": spotlight_teams_teampos,
+            "info_text": "Note: This table shows data for the spotlight teams by position."
+        },
+        "big_six_teampos_d": {
+            "title": "Big Six Data (Defenders)",
+            "data": big_six_teampos_d,
+            "info_text": "Note: This table shows data for the big six teams' defenders."
+        }
+    }
+
+    # create a list of the DataFrames to display based on the titles in the df_dict
+    dfs_to_display = [df_dict[key]["title"] for key in df_dict]
+
+    # Streamlit Option Menu for DataFrame selection
+    with st.sidebar:
+        selected_df_name = option_menu("Select DataFrame", dfs_to_display, 
+                                        icons=['table' for _ in range(len(dfs_to_display))],
+                                        menu_icon="list")
+
+    # Conditionally display the selected DataFrame and info text
+    if selected_df_name in df_dict:
+        with st.spinner(f"Loading {selected_df_name}..."):
+            selected_df_title = df_dict[selected_df_name]["title"]  
+            selected_df_data = df_dict[selected_df_name]["data"]
+            selected_df_info_text = df_dict[selected_df_name]["info_text"]
+            display_dataframe(selected_df_data, selected_df_title, colors, divergent_colors, info_text=selected_df_info_text)
 
     lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df', df_name=f'GW {last_gw}')
     # Use the cached function to display DataFrames

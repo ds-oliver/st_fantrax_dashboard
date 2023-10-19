@@ -4318,3 +4318,258 @@ vsMCI                  116        2.33  ...        0.62        1
 2023-10-19 14:21:05,067 - INFO - Main function completed successfully
 2023-10-19 14:24:10,845 - INFO - Starting main function
 2023-10-19 14:24:10,868 - INFO - Creating custom color maps
+2023-10-19 14:26:25,593 - INFO - Starting main function
+2023-10-19 14:26:25,599 - INFO - Creating custom color maps
+2023-10-19 14:26:26,441 - INFO - Main function completed successfully
+2023-10-19 14:26:53,651 - INFO - Starting main function
+2023-10-19 14:26:53,653 - INFO - Creating custom color maps
+2023-10-19 14:26:54,114 - INFO - Main function completed successfully
+2023-10-19 14:27:01,810 - INFO - Starting main function
+2023-10-19 14:27:01,813 - INFO - Creating custom color maps
+2023-10-19 14:27:02,335 - INFO - Main function completed successfully
+2023-10-19 14:27:21,212 - INFO - Starting main function
+2023-10-19 14:27:21,216 - INFO - Creating custom color maps
+2023-10-19 14:27:21,648 - INFO - Main function completed successfully
+2023-10-19 14:35:27,303 - INFO - Starting main function
+2023-10-19 14:35:27,353 - INFO - Creating custom color maps
+2023-10-19 14:35:28,225 - INFO - Attempting to style the lastgw_df dataframe
+2023-10-19 14:35:30,120 - INFO - lastgw_df Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 14:35:30,156 - INFO - lastgw_df Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 14:35:30,690 - INFO - Main function completed successfully
+2023-10-19 14:36:11,237 - INFO - Starting main function
+2023-10-19 14:36:11,239 - INFO - Creating custom color maps
+2023-10-19 14:36:17,377 - INFO - Starting main function
+2023-10-19 14:36:17,379 - INFO - Creating custom color maps
+2023-10-19 14:36:20,997 - INFO - Starting main function
+2023-10-19 14:36:21,002 - INFO - Creating custom color maps
+2023-10-19 14:36:22,909 - INFO - Starting main function
+2023-10-19 14:36:22,932 - INFO - Creating custom color maps
+2023-10-19 14:36:25,568 - INFO - Main function completed successfully
+2023-10-19 14:36:36,427 - INFO - Starting main function
+2023-10-19 14:36:36,431 - INFO - Creating custom color maps
+2023-10-19 14:36:37,376 - INFO - Main function completed successfully
+2023-10-19 14:38:00,045 - INFO - Starting main function
+2023-10-19 14:38:00,046 - INFO - Creating custom color maps
+2023-10-19 14:38:00,920 - INFO - Main function completed successfully
+2023-10-19 14:38:06,730 - INFO - Starting main function
+2023-10-19 14:38:06,733 - INFO - Creating custom color maps
+2023-10-19 14:38:09,929 - INFO - Starting main function
+2023-10-19 14:38:09,934 - INFO - Creating custom color maps
+2023-10-19 14:38:11,638 - INFO - Main function completed successfully
+2023-10-19 14:38:17,191 - INFO - Starting main function
+2023-10-19 14:38:17,198 - INFO - Creating custom color maps
+2023-10-19 14:38:17,762 - INFO - Main function completed successfully
+2023-10-19 14:38:20,805 - INFO - Starting main function
+2023-10-19 14:38:20,835 - INFO - Creating custom color maps
+2023-10-19 14:38:21,582 - INFO - Main function completed successfully
+2023-10-19 14:38:25,088 - INFO - Starting main function
+2023-10-19 14:38:25,090 - INFO - Creating custom color maps
+2023-10-19 14:38:26,174 - INFO - Main function completed successfully
+2023-10-19 14:38:33,494 - INFO - Starting main function
+2023-10-19 14:38:33,518 - INFO - Creating custom color maps
+2023-10-19 14:38:36,471 - INFO - Starting main function
+2023-10-19 14:38:36,473 - INFO - Creating custom color maps
+2023-10-19 14:38:37,291 - INFO - Main function completed successfully
+2023-10-19 14:38:43,040 - INFO - Starting main function
+2023-10-19 14:38:43,059 - INFO - Creating custom color maps
+2023-10-19 14:38:43,708 - INFO - Main function completed successfully
+2023-10-19 14:38:44,796 - INFO - Starting main function
+2023-10-19 14:38:44,806 - INFO - Creating custom color maps
+2023-10-19 14:38:45,718 - INFO - Main function completed successfully
+2023-10-19 14:38:49,491 - INFO - Starting main function
+2023-10-19 14:38:49,493 - INFO - Creating custom color maps
+2023-10-19 14:38:50,102 - INFO - Main function completed successfully
+2023-10-19 14:38:50,667 - INFO - Starting main function
+2023-10-19 14:38:50,670 - INFO - Creating custom color maps
+2023-10-19 14:38:51,652 - INFO - Main function completed successfully
+2023-10-19 14:38:52,055 - INFO - Starting main function
+2023-10-19 14:38:52,057 - INFO - Creating custom color maps
+2023-10-19 14:38:52,976 - INFO - Main function completed successfully
+2023-10-19 14:38:57,590 - INFO - Starting main function
+2023-10-19 14:38:57,595 - INFO - Creating custom color maps
+2023-10-19 14:38:59,072 - INFO - Main function completed successfully
+2023-10-19 14:38:59,459 - INFO - Starting main function
+2023-10-19 14:38:59,462 - INFO - Creating custom color maps
+2023-10-19 14:39:00,529 - INFO - Main function completed successfully
+2023-10-19 14:39:01,016 - INFO - Starting main function
+2023-10-19 14:39:01,082 - INFO - Creating custom color maps
+2023-10-19 14:39:02,110 - INFO - Main function completed successfully
+2023-10-19 14:39:02,426 - INFO - Starting main function
+2023-10-19 14:39:02,428 - INFO - Creating custom color maps
+2023-10-19 14:39:03,295 - INFO - Main function completed successfully
+2023-10-19 14:39:03,555 - INFO - Starting main function
+2023-10-19 14:39:03,575 - INFO - Creating custom color maps
+2023-10-19 14:39:04,159 - INFO - Main function completed successfully
+2023-10-19 14:39:56,333 - INFO - Starting main function
+2023-10-19 14:39:56,335 - INFO - Creating custom color maps
+2023-10-19 14:39:56,682 - INFO - Attempting to style the Player Data **(:orange[GW 8])** dataframe
+2023-10-19 14:39:57,416 - INFO - Player Data **(:orange[GW 8])** Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 14:39:57,440 - INFO - Player Data **(:orange[GW 8])** Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 14:39:57,593 - INFO - Main function completed successfully
+2023-10-19 14:40:07,073 - INFO - Starting main function
+2023-10-19 14:40:07,075 - INFO - Creating custom color maps
+2023-10-19 14:40:14,339 - INFO - Starting main function
+2023-10-19 14:40:14,340 - INFO - Creating custom color maps
+2023-10-19 14:40:20,567 - INFO - Starting main function
+2023-10-19 14:40:20,569 - INFO - Creating custom color maps
+2023-10-19 14:40:22,753 - INFO - Starting main function
+2023-10-19 14:40:22,755 - INFO - Creating custom color maps
+2023-10-19 14:40:24,560 - INFO - Starting main function
+2023-10-19 14:40:24,565 - INFO - Creating custom color maps
+2023-10-19 14:40:38,049 - INFO - Starting main function
+2023-10-19 14:40:38,054 - INFO - Creating custom color maps
+2023-10-19 14:40:39,650 - INFO - Starting main function
+2023-10-19 14:40:39,670 - INFO - Creating custom color maps
+2023-10-19 14:40:41,741 - INFO - Starting main function
+2023-10-19 14:40:41,747 - INFO - Creating custom color maps
+2023-10-19 14:40:42,787 - INFO - Starting main function
+2023-10-19 14:40:42,793 - INFO - Creating custom color maps
+2023-10-19 14:40:44,103 - INFO - Starting main function
+2023-10-19 14:40:44,125 - INFO - Creating custom color maps
+2023-10-19 14:40:45,501 - INFO - Starting main function
+2023-10-19 14:40:45,514 - INFO - Creating custom color maps
+2023-10-19 14:40:46,827 - INFO - Starting main function
+2023-10-19 14:40:46,831 - INFO - Creating custom color maps
+2023-10-19 14:40:48,254 - INFO - Starting main function
+2023-10-19 14:40:48,257 - INFO - Creating custom color maps
+2023-10-19 14:40:49,321 - INFO - Starting main function
+2023-10-19 14:40:49,325 - INFO - Creating custom color maps
+2023-10-19 14:40:50,460 - INFO - Starting main function
+2023-10-19 14:40:50,464 - INFO - Creating custom color maps
+2023-10-19 14:40:52,390 - INFO - Starting main function
+2023-10-19 14:40:52,412 - INFO - Creating custom color maps
+2023-10-19 14:40:53,598 - INFO - Starting main function
+2023-10-19 14:40:53,600 - INFO - Creating custom color maps
+2023-10-19 14:40:56,205 - INFO - Starting main function
+2023-10-19 14:40:56,209 - INFO - Creating custom color maps
+2023-10-19 14:40:58,715 - INFO - Starting main function
+2023-10-19 14:40:58,718 - INFO - Creating custom color maps
+2023-10-19 14:41:00,516 - INFO - Starting main function
+2023-10-19 14:41:00,521 - INFO - Creating custom color maps
+2023-10-19 14:41:01,611 - INFO - Starting main function
+2023-10-19 14:41:01,635 - INFO - Creating custom color maps
+2023-10-19 14:41:02,818 - INFO - Starting main function
+2023-10-19 14:41:02,843 - INFO - Creating custom color maps
+2023-10-19 14:41:03,961 - INFO - Starting main function
+2023-10-19 14:41:03,975 - INFO - Creating custom color maps
+2023-10-19 14:41:05,807 - INFO - Starting main function
+2023-10-19 14:41:05,810 - INFO - Creating custom color maps
+2023-10-19 14:41:07,689 - INFO - Starting main function
+2023-10-19 14:41:07,707 - INFO - Creating custom color maps
+2023-10-19 14:41:08,555 - INFO - Main function completed successfully
+2023-10-19 14:41:37,440 - INFO - Starting main function
+2023-10-19 14:41:37,445 - INFO - Creating custom color maps
+2023-10-19 14:41:39,022 - INFO - Main function completed successfully
+2023-10-19 14:41:40,040 - INFO - Starting main function
+2023-10-19 14:41:40,043 - INFO - Creating custom color maps
+2023-10-19 14:41:41,627 - INFO - Main function completed successfully
+2023-10-19 14:43:28,572 - INFO - Starting main function
+2023-10-19 14:43:28,578 - INFO - Creating custom color maps
+2023-10-19 14:43:29,671 - INFO - Main function completed successfully
+2023-10-19 14:44:29,515 - INFO - Starting main function
+2023-10-19 14:44:29,517 - INFO - Creating custom color maps
+2023-10-19 14:44:29,816 - INFO - Attempting to style the Player Data (All Gameweeks) dataframe
+2023-10-19 14:44:30,851 - INFO - Player Data (All Gameweeks) Dataframe head:             Player Team Position    FPTS  ... OG GAO CS  MIN
+0  Kieran Trippier  NEW        D  143.75  ...  0   9  3  699
+1   James Maddison  TOT        M  140.50  ...  0   7  3  667
+2      Bukayo Saka  ARS        M  138.50  ...  0   6  3  611
+3    Ollie Watkins  AVL        F  138.00  ...  0  12  2  676
+4   Erling Haaland  MCI        F  136.00  ...  0   6  3  707
+
+[5 rows x 30 columns]
+2023-10-19 14:44:30,870 - INFO - Player Data (All Gameweeks) Dataframe tail:               Player Team Position   FPTS  ... OG GAO CS  MIN
+413          Vitinho  BUR        D  -3.75  ...  0   5  0  151
+414     Aaron Hickey  BRF        D  -5.25  ...  0  12  1  630
+415    Calvin Bassey  FUL        D  -7.00  ...  0   3  0  123
+416  Ameen Al Dakhil  BUR        D  -7.50  ...  1  17  0  675
+417     Matt Targett  NEW        D  -7.50  ...  0   4  0   76
+
+[5 rows x 30 columns]
+2023-10-19 14:44:31,037 - INFO - Main function completed successfully
+2023-10-19 14:45:09,130 - INFO - Starting main function
+2023-10-19 14:45:09,133 - INFO - Creating custom color maps
+2023-10-19 14:45:09,791 - INFO - Main function completed successfully
+2023-10-19 14:46:51,508 - INFO - Starting main function
+2023-10-19 14:46:51,514 - INFO - Creating custom color maps
+2023-10-19 14:46:52,403 - INFO - Main function completed successfully
+2023-10-19 14:47:00,206 - INFO - Starting main function
+2023-10-19 14:47:00,207 - INFO - Creating custom color maps
+2023-10-19 14:47:01,080 - INFO - Main function completed successfully
+2023-10-19 14:47:55,939 - INFO - Starting main function
+2023-10-19 14:47:55,941 - INFO - Creating custom color maps
+2023-10-19 14:47:56,486 - INFO - Main function completed successfully
+2023-10-19 14:49:37,479 - INFO - Starting main function
+2023-10-19 14:49:37,483 - INFO - Creating custom color maps
+2023-10-19 14:49:38,275 - INFO - Main function completed successfully
+2023-10-19 14:49:43,063 - INFO - Starting main function
+2023-10-19 14:49:43,069 - INFO - Creating custom color maps
+2023-10-19 14:49:47,179 - INFO - Main function completed successfully
+2023-10-19 14:49:47,766 - INFO - Starting main function
+2023-10-19 14:49:47,768 - INFO - Creating custom color maps
+2023-10-19 14:49:49,464 - INFO - Main function completed successfully
+2023-10-19 14:50:08,919 - INFO - Starting main function
+2023-10-19 14:50:08,921 - INFO - Creating custom color maps
+2023-10-19 14:50:09,029 - INFO - Attempting to style the Player Data **(:orange[GW 8])** dataframe
+2023-10-19 14:50:11,447 - INFO - Player Data **(:orange[GW 8])** Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 14:50:11,505 - INFO - Player Data **(:orange[GW 8])** Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 14:50:11,526 - INFO - Attempting to style the Player Data (All Gameweeks) dataframe
+2023-10-19 14:50:14,014 - INFO - Player Data (All Gameweeks) Dataframe head:             Player Team Position    FPTS  ... OG GAO CS  MIN
+0  Kieran Trippier  NEW        D  143.75  ...  0   9  3  699
+1   James Maddison  TOT        M  140.50  ...  0   7  3  667
+2      Bukayo Saka  ARS        M  138.50  ...  0   6  3  611
+3    Ollie Watkins  AVL        F  138.00  ...  0  12  2  676
+4   Erling Haaland  MCI        F  136.00  ...  0   6  3  707
+
+[5 rows x 30 columns]
+2023-10-19 14:50:14,048 - INFO - Player Data (All Gameweeks) Dataframe tail:               Player Team Position   FPTS  ... OG GAO CS  MIN
+413          Vitinho  BUR        D  -3.75  ...  0   5  0  151
+414     Aaron Hickey  BRF        D  -5.25  ...  0  12  1  630
+415    Calvin Bassey  FUL        D  -7.00  ...  0   3  0  123
+416  Ameen Al Dakhil  BUR        D  -7.50  ...  1  17  0  675
+417     Matt Targett  NEW        D  -7.50  ...  0   4  0   76
+
+[5 rows x 30 columns]
+2023-10-19 14:51:38,453 - INFO - Starting main function
+2023-10-19 14:51:38,456 - INFO - Creating custom color maps
