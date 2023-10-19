@@ -1,4 +1,4 @@
-,opponent,player,fpts,g,kp,at,sot,tkw,dis,yc,rc,acnc,int,clr,cos,bs,aer,pkm,pkd,og,gao,cs,pts,dpt,off,pkg,ghost points,negative fpts,home,gp
+,opponent,player (nunique),fpts (mean),g (mean),kp (mean),at (mean),sot (mean),tkw (mean),dis (mean),yc (mean),rc (mean),acnc (mean),int (mean),clr (mean),cos (mean),bs (mean),aer (mean),pkm (mean),pkd (mean),og (mean),gao (mean),cs (sum),pts (mean),dpt (mean),off (mean),pkg (mean),ghost points (mean),negative fpts (mean),home (sum),gp (max)
 0,vsARS,109,3.16,0.05,0.47,0.05,0.15,0.77,0.61,0.15,0.01,0.05,0.51,1.36,0.48,0.34,0.82,0.0,0.0,0.01,1.45,5,0.1,1.27,0.08,0.0,2.33,-1.92,41,1
 1,vsAVL,115,4.32,0.1,0.65,0.1,0.3,0.7,0.56,0.18,0.02,0.11,0.53,1.12,0.59,0.3,0.57,0.0,0.0,0.01,1.64,13,0.18,1.57,0.29,0.0,2.62,-2.15,73,1
 2,vsBHA,114,5.11,0.13,0.7,0.13,0.33,0.85,0.72,0.2,0.01,0.11,0.58,1.14,0.89,0.33,0.5,0.0,0.01,0.01,1.84,1,0.23,1.68,0.12,0.02,3.11,-2.27,42,1
