@@ -86,6 +86,8 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_e
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
 
+    st.toast("Applying styles to tables...")
+
     # Dynamically calculate the height based on the number of rows
     # Set a minimum height of 300 and a maximum height of 800
     height = max(400, min(800, df.shape[0] * 25))
