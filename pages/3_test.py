@@ -146,6 +146,7 @@ def main():
 
     lastgw_df = load_csv_file_cached(f'{data_path}/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached(f'{data_path}/grouped_player_data.csv')
+    all_gws_df = load_csv_file_cached(f'{data_path}/all_gws_data.csv')
     
     team_df = load_csv_file_cached(f'{data_path}/for_team.csv', set_index_cols=['team'])
     team_pos_df = load_csv_file_cached(f'{data_path}/d_detail_bypos_forteam.csv', set_index_cols=['team', 'position'])
@@ -182,6 +183,11 @@ def main():
     spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
     spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
 
+    recent_gw_data_team = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_team.csv', set_index_cols=['Team'])
+    recent_gw_data_pos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_pos.csv', set_index_cols=['Position'])
+    recent_gw_data_teampos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_team_pos.csv', set_index_cols=['Team', 'Position'])
+
+
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
     
@@ -192,8 +198,23 @@ def main():
             "data": lastgw_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
         },
+        "recent_gw_data_team": {
+            "title": f"GW {last_gw} Team Data",
+            "data": recent_gw_data_team,
+            "info_text": f"Note: This table shows team-specific data for GW {last_gw}."
+        },
+        "recent_gw_data_pos": {
+            "title": f"GW {last_gw} Position Data",
+            "data": recent_gw_data_pos,
+            "info_text": f"Note: This table shows position-specific data for GW {last_gw}."
+        },
+        "recent_gw_data_teampos": {
+            "title": f"GW {last_gw} Team, Position Data",
+            "data": recent_gw_data_teampos,
+            "info_text": f"Note: This table shows team-specific data by position for GW {last_gw}."
+        },
         "grouped_players_df": {
-            "title": "Player Data (All Gameweeks)",
+            "title": "Player Data GW {min(all_gws_df['GW'])} - GW {max(all_gws_df['GW'])}",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(lastgw_df['GW'])} gameweeks of data."
         },
