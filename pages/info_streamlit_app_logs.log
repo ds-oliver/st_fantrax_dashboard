@@ -4713,3 +4713,54 @@ WOL       14  3.68  1  ...  892          2.61          -1.75
 
 [5 rows x 24 columns]
 2023-10-19 15:38:43,636 - INFO - Main function completed successfully
+2023-10-19 15:43:18,096 - INFO - Starting main function
+2023-10-19 15:43:18,109 - INFO - Creating custom color maps
+2023-10-19 15:43:18,346 - INFO - Main function completed successfully
+2023-10-19 15:43:39,221 - INFO - Starting main function
+2023-10-19 15:43:39,224 - INFO - Creating custom color maps
+2023-10-19 15:43:39,279 - INFO - Main function completed successfully
+2023-10-19 15:45:24,957 - INFO - Starting main function
+2023-10-19 15:45:24,960 - INFO - Creating custom color maps
+2023-10-19 15:45:25,532 - INFO - Attempting to style the GW 8 Player Data dataframe
+2023-10-19 15:45:26,642 - INFO - GW 8 Player Data Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 15:45:26,681 - INFO - GW 8 Player Data Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 15:45:26,684 - INFO - Main function completed successfully
+2023-10-19 15:45:32,478 - INFO - Starting main function
+2023-10-19 15:45:32,480 - INFO - Creating custom color maps
+2023-10-19 15:45:32,532 - INFO - Attempting to style the GW 8 Team Data dataframe
+2023-10-19 15:45:32,616 - INFO - GW 8 Team Data Dataframe head:       Player  FPTS  G  ...  MIN  Ghost Points  Negative Fpts
+Team                   ...                                  
+ARS       14  6.50  1  ...  894          3.50          -0.68
+AVL       13  4.87  1  ...  894          3.63          -1.23
+BHA       13  5.87  2  ...  895          3.94          -1.46
+BOU       15  2.83  0  ...  892          2.83          -2.50
+BRF       13  5.10  1  ...  894          3.79          -2.42
+
+[5 rows x 24 columns]
+2023-10-19 15:45:32,634 - INFO - GW 8 Team Data Dataframe tail:       Player  FPTS  G  ...  MIN  Ghost Points  Negative Fpts
+Team                   ...                                  
+NOT       15  5.70  0  ...  892          4.57          -0.47
+SHU       14  2.62  0  ...  892          2.12          -2.89
+TOT       15  7.82  1  ...  848          4.95          -0.97
+WHU       12  4.79  2  ...  896          2.12          -2.04
+WOL       14  3.68  1  ...  892          2.61          -1.75
+
+[5 rows x 24 columns]
+2023-10-19 15:45:32,636 - INFO - Main function completed successfully
+2023-10-19 15:47:04,338 - INFO - Starting main function
+2023-10-19 15:47:04,357 - INFO - Creating custom color maps
+2023-10-19 15:47:05,115 - INFO - Main function completed successfully
