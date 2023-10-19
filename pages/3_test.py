@@ -190,7 +190,7 @@ def main():
 
     # get the most recent gameweek value
     last_gw = all_gws_df['GW'].max()
-    first_gw = lastgw_df['GW'].min()
+    first_gw = all_gws_df['GW'].min()
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
