@@ -81,7 +81,7 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, title, colors, divergent_colors, info_text=None):
+def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_expander=False, expander_label=None):
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
@@ -90,19 +90,24 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     # Set a minimum height of 300 and a maximum height of 800
     height = max(400, min(800, df.shape[0] * 25))
 
+    # Choose either the main Streamlit instance or the expander to write to
+    target_st = st
+    if use_expander:
+        expander_label = expander_label if expander_label else f"{title} (Click to expand)"
+        target_st = st.expander(expander_label, expanded=False)
+
     try:
-        st.write(f"## {title}")
+        target_st.write(f"## {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
-        st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=height)
+        target_st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=height)
         logging.info(f"{title} Dataframe head: {df.head()}")
         logging.info(f"{title} Dataframe tail: {df.tail()}")
         if info_text:
-            st.info(info_text)
+            target_st.info(info_text)
     except Exception as e:
         logging.error(f"Error styling the {title} dataframe: {e}")
-        st.error(f"Error styling the {title} dataframe: {e}")
-
+        target_st.error(f"Error styling the {title} dataframe: {e}")
 
 def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
     """
@@ -179,35 +184,36 @@ def main():
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
 
-    # display big_six_df_teampos
-    display_dataframe(spotlight_teams_teampos_f, "Spotlight Teams' Forwards' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_f.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_f.index.get_level_values('team').unique().tolist())}.") 
-    display_dataframe(spotlight_teams_teampos_m, "Spotlight Teams' Midfielders' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_m.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_m.index.get_level_values('team').unique().tolist())}.")
-    display_dataframe(spotlight_teams_teampos_d, "Spotlight Teams' Defenders' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_d.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_d.index.get_level_values('team').unique().tolist())}.")
-    display_dataframe(big_six_teampos, "Big Six Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(big_six_teampos.index.get_level_values('team').unique().tolist())}.")
-    display_dataframe(newly_promoted_teampos, "Newly Promoted Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}.")
-    display_dataframe(rest_teams_teampos, "Mid Table Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(rest_teams_teampos.index.get_level_values('team').unique().tolist())}.")
-
-    # display all_pos
-    display_dataframe(all_pos, "All Positions Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific position, per game.")
-    # display d_df_pos
-    # display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
-    # display_dataframe(m_df_pos, "Granular Midfielder Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific midfield position, per game.")
-    # display_dataframe(f_df_pos, "Granular Forward Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific forward position, per game.")
-
-    # display home_team_byteam
-    display_dataframe(home_team_byteam, "Home Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played at home.")
-    display_dataframe(away_team_byteam, "Away Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played away from home.")
-
     lastgw_df = set_index_based_on_radio_button(lastgw_df, 'lastgw_df', df_name=f'GW {last_gw}')
     # Use the cached function to display DataFrames
     display_dataframe(lastgw_df, f"Player Data **(:orange[GW {last_gw}])**", colors, divergent_colors, info_text=f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.")
 
     # Call the function to set the index based on radio button selection
     grouped_players_df = set_index_based_on_radio_button(grouped_players_df, 'grouped_players_df', df_name='All GWs')
+
     display_dataframe(grouped_players_df, "Player Data (All Gameweeks)", colors, divergent_colors, info_text=f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at **:orange[{max(lastgw_df['GW'])}]** gameweeks of data.")
+
+    # display spotlight_teams_teampos_f
+    display_dataframe(spotlight_teams_teampos_f, "Spotlight Teams' Forwards' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_f.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_f.index.get_level_values('team').unique().tolist())}.", use_expander=True, expander_label="Spotlight Teams' Forwards' Data (Click to expand)") 
+    display_dataframe(spotlight_teams_teampos_m, "Spotlight Teams' Midfielders' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_m.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_m.index.get_level_values('team').unique().tolist())}.", use_expander=True, expander_label="Spotlight Teams' Midfielders' Data (Click to expand)")
+    display_dataframe(spotlight_teams_teampos_d, "Spotlight Teams' Defenders' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_d.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_d.index.get_level_values('team').unique().tolist())}.", use_expander=True, expander_label="Spotlight Teams' Defenders' Data (Click to expand)")
+    display_dataframe(big_six_teampos, "Big Six Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(big_six_teampos.index.get_level_values('team').unique().tolist())}.", use_expander=True, expander_label="Big Six Data (Click to expand)")
+    display_dataframe(newly_promoted_teampos, "Newly Promoted Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}.", use_expander=True, expander_label="Newly Promoted Data (Click to expand)")
+    display_dataframe(rest_teams_teampos, "Mid Table Data", colors, divergent_colors, info_text=f"Note: This data is comprised of the following teams: {', '.join(rest_teams_teampos.index.get_level_values('team').unique().tolist())}.", use_expander=True, expander_label="Mid Table Data (Click to expand)")
+
+    # display all_pos
+    display_dataframe(all_pos, "All Positions Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific position, per game.", use_expander=True, expander_label="All Positions Data (Click to expand)")
+    # display d_df_pos
+    # display_dataframe(d_df_pos, "Granular Defender Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific defensive position, per game.")
+    # display_dataframe(m_df_pos, "Granular Midfielder Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific midfield position, per game.")
+    # display_dataframe(f_df_pos, "Granular Forward Data", colors, divergent_colors, info_text="Note: This table will show the statistics by specific forward position, per game.")
+
+    # display home_team_byteam
+    display_dataframe(home_team_byteam, "Home Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played at home.", use_expander=True, expander_label="Home Team Data (Click to expand)")
+    display_dataframe(away_team_byteam, "Away Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team in games played away from home.", use_expander=True, expander_label="Away Team Data (Click to expand)")
     display_dataframe(team_df, "Team Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
-    display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors)
-    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.")
+    display_dataframe(team_pos_df, "Team, Position Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, by position, per game.")
+    display_dataframe(vs_team_df, "vsTeam Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent, per game.", use_expander=True, expander_label="vsTeam Data (from FBRef) (Click to expand)"
     # display_dataframe(vs_team_pos_df, "vsTeam by Position Data (from FBRef)", colors, divergent_colors, info_text="Note: This table will show the statistics conceded by each respective team to the respective opponent by position, per game.")
   
     logging.info("Main function completed successfully")
