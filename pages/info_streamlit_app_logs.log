@@ -4051,3 +4051,270 @@ def style_dataframe_custom(_custom_cmap, ...):
 
 [5 rows x 30 columns]
 2023-10-09 19:04:37,081 - INFO - Main function completed successfully
+2023-10-19 14:20:57,444 - INFO - Starting main function
+2023-10-19 14:20:57,450 - INFO - Creating custom color maps
+2023-10-19 14:20:58,008 - INFO - Attempting to style the Player Data **(:orange[GW 8])** dataframe
+2023-10-19 14:20:59,077 - INFO - Player Data **(:orange[GW 8])** Dataframe head:             Player Team Position  GW  ... GAO CS  ROS % MIN
+0  Raheem Sterling  CHE        F   8  ...   1  0   100%  82
+1    Mohamed Salah  LIV        F   8  ...   2  0   100%  90
+2   Alexander Isak  NEW        F   8  ...   1  0   100%  85
+3          Willian  FUL        F   8  ...   1  0    58%  90
+4    Jack Harrison  EVE        M   8  ...   0  1    38%  77
+
+[5 rows x 36 columns]
+2023-10-19 14:20:59,122 - INFO - Player Data **(:orange[GW 8])** Dataframe tail:               Player Team Position  GW  ... GAO CS  ROS % MIN
+270   Charlie Taylor  BUR        D   8  ...   4  0     1%  90
+271   Yasser Larouci  SHU        D   8  ...   2  0     1%  23
+272  Ameen Al Dakhil  BUR        D   8  ...   1  0     1%  45
+273    Yves Bissouma  TOT        M   8  ...   0  0    81%  45
+274     Aaron Hickey  BRF        D   8  ...   2  0     8%  90
+
+[5 rows x 36 columns]
+2023-10-19 14:20:59,133 - INFO - Attempting to style the Player Data (All Gameweeks) dataframe
+2023-10-19 14:21:00,878 - INFO - Player Data (All Gameweeks) Dataframe head:             Player Team Position    FPTS  ... OG GAO CS  MIN
+0  Kieran Trippier  NEW        D  143.75  ...  0   9  3  699
+1   James Maddison  TOT        M  140.50  ...  0   7  3  667
+2      Bukayo Saka  ARS        M  138.50  ...  0   6  3  611
+3    Ollie Watkins  AVL        F  138.00  ...  0  12  2  676
+4   Erling Haaland  MCI        F  136.00  ...  0   6  3  707
+
+[5 rows x 30 columns]
+2023-10-19 14:21:00,900 - INFO - Player Data (All Gameweeks) Dataframe tail:               Player Team Position   FPTS  ... OG GAO CS  MIN
+413          Vitinho  BUR        D  -3.75  ...  0   5  0  151
+414     Aaron Hickey  BRF        D  -5.25  ...  0  12  1  630
+415    Calvin Bassey  FUL        D  -7.00  ...  0   3  0  123
+416  Ameen Al Dakhil  BUR        D  -7.50  ...  1  17  0  675
+417     Matt Targett  NEW        D  -7.50  ...  0   4  0   76
+
+[5 rows x 30 columns]
+2023-10-19 14:21:00,914 - INFO - Attempting to style the Spotlight Teams' Forwards' Data dataframe
+2023-10-19 14:21:01,052 - INFO - Spotlight Teams' Forwards' Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+MCI  FW                       1  ...        1
+ARS  RW                       3  ...        1
+LIV  RW                       3  ...        1
+BHA  LW                       3  ...        1
+NEW  FW                       3  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:01,074 - INFO - Spotlight Teams' Forwards' Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+NEW  RW                       4  ...        1
+CHE  FW                       4  ...        1
+MUN  FW                       5  ...        1
+WHU  FW                       3  ...        1
+     LW                       3  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:01,086 - INFO - Attempting to style the Spotlight Teams' Midfielders' Data dataframe
+2023-10-19 14:21:01,324 - INFO - Spotlight Teams' Midfielders' Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+WHU  LM                       1  ...        1
+TOT  AM                       3  ...        1
+WHU  RM                       2  ...        1
+MCI  AM                       2  ...        1
+WHU  AM                       7  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:01,352 - INFO - Spotlight Teams' Midfielders' Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+BHA  CM                       3  ...        1
+MCI  CM                       5  ...        1
+BHA  RM                       1  ...        1
+TOT  LM                       2  ...        1
+     CM                       1  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:01,367 - INFO - Attempting to style the Spotlight Teams' Defenders' Data dataframe
+2023-10-19 14:21:01,668 - INFO - Spotlight Teams' Defenders' Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+NEW  RB                       2  ...        1
+AVL  WB                       3  ...        1
+ARS  RB                       2  ...        1
+LIV  LB                       1  ...        1
+BHA  LB                       4  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:01,963 - INFO - Spotlight Teams' Defenders' Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+ARS  LB                       4  ...        1
+AVL  CB                       4  ...        1
+BHA  CB                       4  ...        1
+     RB                       2  ...        1
+LIV  WB                       1  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:02,039 - INFO - Attempting to style the Big Six Data dataframe
+2023-10-19 14:21:02,791 - INFO - Big Six Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+MCI  FW                       1  ...        1
+ARS  RW                       3  ...        1
+LIV  RW                       3  ...        1
+TOT  AM                       3  ...        1
+ARS  RB                       2  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:02,850 - INFO - Big Six Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+LIV  LM                       7  ...        1
+MCI  CM                       5  ...        1
+LIV  WB                       1  ...        1
+TOT  LM                       2  ...        1
+     CM                       1  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:02,879 - INFO - Attempting to style the Newly Promoted Data dataframe
+2023-10-19 14:21:03,182 - INFO - Newly Promoted Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+LUT  WB                       5  ...        1
+SHU  LM                       1  ...        1
+BUR  WB                       2  ...        1
+LUT  FW                       4  ...        1
+     LB                       3  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:03,225 - INFO - Newly Promoted Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+SHU  RM                       2  ...        1
+     LW                       2  ...        1
+BUR  RB                       3  ...        1
+     LB                       3  ...        1
+SHU  LB                       2  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:03,252 - INFO - Attempting to style the Mid Table Data dataframe
+2023-10-19 14:21:03,765 - INFO - Mid Table Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+BRF  RW                       1  ...        1
+CRY  CB                       4  ...        1
+WOL  RM                       4  ...        1
+CRY  RM                       4  ...        1
+WOL  LW                       3  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:03,801 - INFO - Mid Table Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+EVE  DM                       2  ...        1
+BOU  RB                       3  ...        1
+WOL  AM                       1  ...        1
+BRF  WB                       4  ...        1
+EVE  LW                       2  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:03,818 - INFO - Attempting to style the All Positions Data dataframe
+2023-10-19 14:21:03,924 - INFO - All Positions Data Dataframe head:           player (nunique) fpts (mean)  ... home (mean) gp (max)
+position                                ...                     
+AM                      63        7.76  ...        0.53        1
+RW                      67        7.61  ...        0.53        1
+FW                      84        6.74  ...        0.48        1
+LW                      71        6.68  ...        0.52        1
+RM                      63        6.45  ...        0.55        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:03,958 - INFO - All Positions Data Dataframe tail:           player (nunique) fpts (mean)  ... home (mean) gp (max)
+position                                ...                     
+LM                      67        5.21  ...        0.54        1
+LB                      53        5.14  ...        0.49        1
+CB                      92        4.69  ...        0.49        1
+WB                      32        4.67  ...        0.36        1
+CM                      87        4.29  ...        0.47        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:03,976 - INFO - Attempting to style the Home Team Data dataframe
+2023-10-19 14:21:04,176 - INFO - Home Team Data Dataframe head:       player (nunique) fpts (mean)  ... home (mean) gp (max)
+team                                ...                     
+NEW                 18       26.64  ...        3.06        4
+ARS                 20       24.18  ...        3.55        5
+BHA                 22       23.47  ...        3.27        5
+AVL                 17       22.75  ...        2.41        3
+WHU                 17       22.37  ...        3.53       11
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,200 - INFO - Home Team Data Dataframe tail:       player (nunique) fpts (mean)  ... home (mean) gp (max)
+team                                ...                     
+WOL                 19       11.03  ...        2.95        4
+NOT                 24       10.92  ...        1.88        3
+BOU                 22       10.85  ...        2.68        4
+BUR                 23        8.42  ...        3.26        5
+SHU                 22        5.22  ...        2.59        4
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,231 - INFO - Attempting to style the Away Team Data dataframe
+2023-10-19 14:21:04,344 - INFO - Away Team Data Dataframe head:       player (nunique) fpts (mean)  ... home (mean) gp (max)
+team                                ...                     
+TOT                 19       29.11  ...        0.00        5
+MCI                 21       25.55  ...        0.00        5
+CRY                 17       23.79  ...        0.00        4
+WHU                 17       23.72  ...        0.00       12
+NEW                 19       20.00  ...        0.00        4
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,366 - INFO - Away Team Data Dataframe tail:       player (nunique) fpts (mean)  ... home (mean) gp (max)
+team                                ...                     
+BOU                 21       10.76  ...        0.00        4
+FUL                 22       10.52  ...        0.00        4
+MUN                 23        9.18  ...        0.00        3
+BUR                 19        8.82  ...        0.00        3
+SHU                 23        8.27  ...        0.00        4
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,378 - INFO - Attempting to style the Team Data dataframe
+2023-10-19 14:21:04,492 - INFO - Team Data Dataframe head:       player (nunique) fpts (mean)  ... home (mean) gp (max)
+team                                ...                     
+MCI                 23        7.84  ...        0.36        1
+TOT                 20        7.76  ...        0.39        1
+NEW                 19        7.61  ...        0.49        1
+CRY                 18        7.51  ...        0.50        1
+ARS                 20        7.43  ...        0.62        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,516 - INFO - Team Data Dataframe tail:       player (nunique) fpts (mean)  ... home (mean) gp (max)
+team                                ...                     
+LUT                 19        4.49  ...        0.49        1
+FUL                 22        4.20  ...        0.52        1
+BOU                 22        3.97  ...        0.50        1
+BUR                 23        3.06  ...        0.64        1
+SHU                 24        2.74  ...        0.50        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,532 - INFO - Attempting to style the Team, Position Data dataframe
+2023-10-19 14:21:04,800 - INFO - Team, Position Data Dataframe head:                player (nunique)  ... gp (max)
+team position                    ...         
+NEW  RB                       2  ...        1
+AVL  WB                       3  ...        1
+ARS  RB                       2  ...        1
+CRY  CB                       4  ...        1
+LIV  LB                       1  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,823 - INFO - Team, Position Data Dataframe tail:                player (nunique)  ... gp (max)
+team position                    ...         
+LIV  WB                       1  ...        1
+BRF  WB                       4  ...        1
+BUR  RB                       3  ...        1
+     LB                       3  ...        1
+SHU  LB                       2  ...        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:04,835 - INFO - Attempting to style the vsTeam Data (from FBRef) dataframe
+2023-10-19 14:21:05,029 - INFO - vsTeam Data (from FBRef) Dataframe head:           player (nunique) fpts (mean)  ... home (mean) gp (max)
+opponent                                ...                     
+vsSHU                  106       10.25  ...        0.55        1
+vsBUR                  109        8.39  ...        0.37        1
+vsBOU                  114        8.35  ...        0.50        1
+vsLUT                  113        7.38  ...        0.49        1
+vsMUN                  113        6.85  ...        0.40        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:05,066 - INFO - vsTeam Data (from FBRef) Dataframe tail:           player (nunique) fpts (mean)  ... home (mean) gp (max)
+opponent                                ...                     
+vsAVL                  115        4.32  ...        0.63        1
+vsTOT                  117        4.05  ...        0.63        1
+vsNEW                  111        3.85  ...        0.46        1
+vsARS                  109        3.16  ...        0.37        1
+vsMCI                  116        2.33  ...        0.62        1
+
+[5 rows x 29 columns]
+2023-10-19 14:21:05,067 - INFO - Main function completed successfully
+2023-10-19 14:24:10,845 - INFO - Starting main function
+2023-10-19 14:24:10,868 - INFO - Creating custom color maps
