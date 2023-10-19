@@ -194,7 +194,7 @@ def main():
             "data": lastgw_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
         },
-        "Player Data (All Gameweeks)": {
+        "grouped_players_df": {
             "title": "Player Data (All Gameweeks)",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(lastgw_df['GW'])} gameweeks of data."
@@ -281,14 +281,20 @@ def main():
                                         menu_icon="list")
 
     # Conditionally display the selected DataFrame and info text
-    if selected_df_name in df_dict:
-        selected_df_title = df_dict[selected_df_name]["title"]  
-        selected_df_data = df_dict[selected_df_name]["data"]
-        selected_df_info_text = df_dict[selected_df_name]["info_text"]
+    # Reverse lookup
+    selected_df_key = [key for key, val in df_dict.items() if val["title"] == selected_df_name]
+
+    if selected_df_key:
+        selected_df_key = selected_df_key[0]  # Take the first match
+        selected_df_title = df_dict[selected_df_key]["title"]
+        selected_df_data = df_dict[selected_df_key]["data"]
+        selected_df_info_text = df_dict[selected_df_key]["info_text"]
         display_dataframe(selected_df_data, selected_df_title, colors, divergent_colors, info_text=selected_df_info_text)
     else:
         st.error(f"DataFrame '{selected_df_name}' not found where expected.")
-        
+        # display the first DataFrame in the list
+        display_dataframe(df_dict[dfs_to_display[0]]["data"], df_dict[dfs_to_display[0]]["title"], colors, divergent_colors, info_text=df_dict[dfs_to_display[0]]["info_text"])
+
 
     logging.info("Main function completed successfully")
 
