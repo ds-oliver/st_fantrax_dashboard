@@ -93,8 +93,9 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_e
     # Choose either the main Streamlit instance or the expander to write to
     target_st = st
     if use_expander:
-        expander_label = expander_label if expander_label else f"{title} (Click to expand)"
-        target_st = st.expander(expander_label, expanded=False)
+        with st.spinner('Wait for it...'):
+            expander_label = expander_label if expander_label else f"{title} (Click to expand)"
+            target_st = st.expander(expander_label, expanded=False)
 
     try:
         target_st.write(f"## {title}")
@@ -131,6 +132,8 @@ def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
 
 def main():
     
+    st.toast("Loading data...")
+
     data_path = 'data/display-data/final'
 
     logging.info("Starting main function")
