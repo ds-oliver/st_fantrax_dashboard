@@ -7,6 +7,11 @@ import streamlit as st
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 import uuid
+import streamlit_extras
+from streamlit_extras.dataframe_explorer import dataframe_explorer
+from markdownlit import mdlit
+from streamlit_extras.metric_cards import style_metric_cards
+from streamlit_extras.stylable_container import stylable_container
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -85,8 +90,6 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_e
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
-
-    st.toast("Applying styles to tables...")
 
     # Dynamically calculate the height based on the number of rows
     # Set a minimum height of 300 and a maximum height of 800
