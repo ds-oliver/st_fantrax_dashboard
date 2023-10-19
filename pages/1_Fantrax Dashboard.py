@@ -95,9 +95,8 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, use_e
     # Choose either the main Streamlit instance or the expander to write to
     target_st = st
     if use_expander:
-        with st.spinner('Dispaying data...'):
-            expander_label = expander_label if expander_label else f"{title} (Click to expand)"
-            target_st = st.expander(expander_label, expanded=False)
+        expander_label = expander_label if expander_label else f"{title} (Click to expand)"
+        target_st = st.expander(expander_label, expanded=False)
 
     try:
         target_st.write(f"## {title}")
