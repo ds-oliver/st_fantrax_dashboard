@@ -282,10 +282,13 @@ def main():
 
     # Conditionally display the selected DataFrame and info text
     if selected_df_name in df_dict:
-            selected_df_title = df_dict[selected_df_name]["title"]  
-            selected_df_data = df_dict[selected_df_name]["data"]
-            selected_df_info_text = df_dict[selected_df_name]["info_text"]
-            display_dataframe(selected_df_data, selected_df_title, colors, divergent_colors, info_text=selected_df_info_text)
+        selected_df_title = df_dict[selected_df_name]["title"]  
+        selected_df_data = df_dict[selected_df_name]["data"]
+        selected_df_info_text = df_dict[selected_df_name]["info_text"]
+        display_dataframe(selected_df_data, selected_df_title, colors, divergent_colors, info_text=selected_df_info_text)
+    else:
+        st.error(f"DataFrame '{selected_df_name}' not found where expected.")
+        
 
     logging.info("Main function completed successfully")
 
