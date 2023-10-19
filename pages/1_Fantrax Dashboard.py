@@ -171,9 +171,14 @@ def main():
     spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
     spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
 
+    test_df = load_csv_file_cached(f'{data_path}/test_df.csv', set_index_cols=['team', 'position'])
+
 
     # get the most recent gameweek value
     last_gw = lastgw_df['GW'].max()
+
+    # display test_df
+    display_dataframe(test_df, "Test Data", colors, divergent_colors, info_text="Note: This table will show the statistics earned by each respective team, per game.")
 
     # display big_six_df_teampos
     display_dataframe(spotlight_teams_teampos_f, "Spotlight Teams' Forwards' Data", colors, divergent_colors, info_text=f"Note: This data is comprised of specific positions ({spotlight_teams_teampos_f.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos_f.index.get_level_values('team').unique().tolist())}.") 
