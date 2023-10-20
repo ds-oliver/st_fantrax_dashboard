@@ -231,51 +231,44 @@ def main():
             "title": f"GW {recent_gw} Player Data",
             "data": recent_gw_players_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
-            "icon": f"{recent_gw}-square",
-            "styles": default_style
+            "icon": f"{recent_gw}-square"
         },
         "grouped_players_df": {
             "title": f"GW {first_gw} - {recent_gw} Player Data (Grouped)",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
-            "icon": "table",
-            "styles": default_style
+            "icon": "table"
         },
         "set_piece_studs": {
             "title": "Set Piece Studs",
             "data": set_piece_studs,
             "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
-            "icon": "table",
-            "styles": default_style
+            "icon": "table"
         },
         # team-level data
         "set_piece_studs_teams": {
             "title": "Set Piece Studs (Team)",
             "data": set_piece_studs_teams,
             "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
-            "icon": "table",
-            "styles": default_style
+            "icon": "table"
         },
         "recent_gw_data_team": {
             "title": f"GW {recent_gw} Team Data",
             "data": recent_gw_data_team,
             "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
-            "icon": "table",
-            "styles": default_style
+            "icon": "table"
         },
         "recent_gw_data_pos": {
             "title": f"GW {recent_gw} Position Data",
             "data": recent_gw_data_pos,
             "info_text": f"Note: This table shows position-specific data for GW {recent_gw}.",
-            "icon": "table",
-            "styles": default_style
+            "icon": "table"
         },
         "recent_gw_data_teampos": {
             "title": f"GW {recent_gw} Team, Position Data",
             "data": recent_gw_data_teampos,
             "info_text": f"Note: This table shows team-specific data by position for GW {recent_gw}.",
-            "icon": "table",
-            "styles": default_style
+            "icon": "table"
         }
         # "team_df": {
         #     "title": "Team Data",
@@ -349,16 +342,17 @@ def main():
         # }
     }
 
-    dfs_to_display = [(df_dict[key]["title"], df_dict[key]["icon"], df_dict[key]["styles"]) for key in df_dict]
-    dfs_titles = [df_title for df_title, _, _ in dfs_to_display]
-    dfs_icons = [df_icon for _, df_icon, _ in dfs_to_display]
-    dfs_styles = [df_styles for _, _, df_styles in dfs_to_display]
-    
+    # Modified dfs_to_display to remove "styles"
+    dfs_to_display = [(df_dict[key]["title"], df_dict[key]["icon"]) for key in df_dict]
+    dfs_titles = [df_title for df_title, _ in dfs_to_display]
+    dfs_icons = [df_icon for _, df_icon in dfs_to_display]
+
+    # Use default_style for all dataframes
     with st.sidebar:
-        selected_df_name = option_menu("Select DataFrame", dfs_titles, 
-                                       icons=dfs_icons, menu_icon="list",
-                                       styles=dfs_styles)
-    
+        selected_df_name = option_menu("Select DataFrame", dfs_titles,
+                                    icons=dfs_icons, menu_icon="list",
+                                    styles=default_style)
+        
     # Conditionally display the selected DataFrame and info text
     selected_df_key = [key for key, val in df_dict.items() if val["title"] == selected_df_name]
     
