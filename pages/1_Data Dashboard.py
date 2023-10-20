@@ -220,8 +220,8 @@ def main():
     default_style = {
         "container": {"padding": "0!important", "background-color": "#08061c"},
         "icon": {"color": "#fefae0", "font-size": "25px"},
-        "nav-link": {"font-size": "25px", "text-align": "left", "margin": "0px", "--hover-color": "#6d597a"},
-        "nav-link-selected": {"background-color": "green"}
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#6d597a"},
+        "nav-link-selected": {"background-color": "#852225"}
     }
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
