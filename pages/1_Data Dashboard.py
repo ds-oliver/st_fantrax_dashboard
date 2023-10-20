@@ -223,10 +223,11 @@ def main():
         "recent_gw_players_df": {
             "title": f"GW {last_gw} Player Data",
             "data": recent_gw_players_df,
-            "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+            "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
+            "icon":
         },
         "grouped_players_df": {
-            "title": f"GW {first_gw} - GW {last_gw} Player Data (Grouped)",
+            "title": f"GW {first_gw} - {last_gw} Player Data (Grouped)",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
         },
