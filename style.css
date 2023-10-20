@@ -122,6 +122,12 @@ td,
     padding: var(--common-padding);
 }
 
+/* Set a maximum column width for DataFrames */
+.dataframe td {
+    max-width: 80px;
+    word-wrap: break-word;
+}
+
 /* New additions */
 body {
     /*background: #353535; */
