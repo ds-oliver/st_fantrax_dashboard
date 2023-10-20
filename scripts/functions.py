@@ -1755,8 +1755,10 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
     styled_df = pd.DataFrame()
 
     pos_cols = ['ftx_position', 'Position']
+    player_cols = ['Player', 'player']
 
     position_column = next((col for col in pos_cols if col in df.columns), None)
+    player_column = next((col for col in player_cols if col in df.columns), None)
     
     if position_column:
         position_colors = {
@@ -1766,8 +1768,8 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
         }
         styled_df[position_column] = df[position_column].apply(lambda x: position_colors.get(x, ''))
 
-        if 'Player' in df.columns:
-            styled_df['Player'] = df[position_column].apply(lambda x: position_colors.get(x, ''))
+        if player_column:
+            styled_df[player_column] = df[position_column].apply(lambda x: position_colors.get(x, ''))
 
     for col in selected_columns:
         if col in ['Player', 'Position']:
