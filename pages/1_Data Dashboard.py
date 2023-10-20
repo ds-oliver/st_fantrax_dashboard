@@ -218,11 +218,11 @@ def main():
     first_gw = all_gws_df['GW'].min()
 
     default_style = {
-                "container": {"padding": "0!important", "background-color": "#fafafa"},
-                "icon": {"color": "#fefae0", "font-size": "25px"},
-                "nav-link": {"font-size": "25px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-                "nav-link-selected": {"background-color": "green"}
-            }
+        "container": {"padding": "0!important", "background-color": "#08061c"},
+        "icon": {"color": "#fefae0", "font-size": "25px"},
+        "nav-link": {"font-size": "25px", "text-align": "left", "margin": "0px", "--hover-color": "#6d597a"},
+        "nav-link-selected": {"background-color": "green"}
+    }
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
