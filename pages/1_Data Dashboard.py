@@ -136,6 +136,9 @@ def main():
     data_path = 'data/display-data/final'
 
     logging.info("Starting main function")
+
+    st.cache_data.clear()
+    
     add_construction()
 
     load_cached_css()
