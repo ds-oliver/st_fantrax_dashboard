@@ -130,6 +130,13 @@ def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
             st.warning("The DataFrame does not have a 'Player' column.")
     return df
 
+def clear_cache_button():
+    """
+    Adds a button to the Streamlit sidebar to clear the cache.
+    """
+    if st.sidebar.button("Clear cache"):
+        st.cache_data.clear()
+        st.experimental_rerun()
 
 def main():
 
@@ -137,8 +144,9 @@ def main():
 
     logging.info("Starting main function")
 
-    st.cache_data.clear()
-    
+    # Add a button to the sidebar to clear the cache
+    clear_cache_button()
+
     add_construction()
 
     load_cached_css()
