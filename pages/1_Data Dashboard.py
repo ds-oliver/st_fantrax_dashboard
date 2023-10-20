@@ -216,6 +216,13 @@ def main():
     # get the most recent gameweek value
     recent_gw = all_gws_df['GW'].max()
     first_gw = all_gws_df['GW'].min()
+
+    default_style = {
+                "container": {"padding": "0!important", "background-color": "#fafafa"},
+                "icon": {"color": "#fefae0", "font-size": "25px"},
+                "nav-link": {"font-size": "25px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+                "nav-link-selected": {"background-color": "green"}
+            }
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
@@ -224,137 +231,149 @@ def main():
             "title": f"GW {recent_gw} Player Data",
             "data": recent_gw_players_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
-            "icon": f"{recent_gw}-square"
+            "icon": f"{recent_gw}-square",
+            "styles": default_style
         },
         "grouped_players_df": {
             "title": f"GW {first_gw} - {recent_gw} Player Data (Grouped)",
             "data": grouped_players_df,
-            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
+            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
+            "icon": "table",
+            "styles": default_style
         },
         "set_piece_studs": {
             "title": "Set Piece Studs",
             "data": set_piece_studs,
-            "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
+            "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
+            "icon": "table",
+            "styles": default_style
         },
         # team-level data
         "set_piece_studs_teams": {
             "title": "Set Piece Studs (Team)",
             "data": set_piece_studs_teams,
-            "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
+            "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
+            "icon": "table",
+            "styles": default_style
         },
         "recent_gw_data_team": {
             "title": f"GW {recent_gw} Team Data",
             "data": recent_gw_data_team,
-            "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
+            "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
+            "icon": "table",
+            "styles": default_style
         },
         "recent_gw_data_pos": {
             "title": f"GW {recent_gw} Position Data",
             "data": recent_gw_data_pos,
-            "info_text": f"Note: This table shows position-specific data for GW {recent_gw}."
+            "info_text": f"Note: This table shows position-specific data for GW {recent_gw}.",
+            "icon": "table",
+            "styles": default_style
         },
         "recent_gw_data_teampos": {
             "title": f"GW {recent_gw} Team, Position Data",
             "data": recent_gw_data_teampos,
-            "info_text": f"Note: This table shows team-specific data by position for GW {recent_gw}."
-        },
-        "team_df": {
-            "title": "Team Data",
-            "data": team_df,
-            "info_text": "Note: This table shows team-specific data."
-        },
-        "team_pos_df": {
-            "title": "Team, Position Data",
-            "data": team_pos_df,
-            "info_text": "Note: This table shows team-specific data by position."
-        },
-        "vs_team_df": {
-            "title": "vsTeam Data (from FBRef)",
-            "data": vs_team_df,
-            "info_text": "Note: This table shows team-specific data against the respective opponent."
-        },
-        "all_pos": {
-            "title": "All Positions Data",
-            "data": all_pos,
-            "info_text": "Note: This table shows data by position."
-        },
-        "d_df_pos": {
-            "title": "Granular Defender Data",
-            "data": d_df_pos,
-            "info_text": "Note: This table shows data by defensive position."
-        },
-        "m_df_pos": {
-            "title": "Granular Midfielder Data",
-            "data": m_df_pos,
-            "info_text": "Note: This table shows data by midfield position."
-        },
-        "f_df_pos": {
-            "title": "Granular Forward Data",
-            "data": f_df_pos,
-            "info_text": "Note: This table shows data by forward position."
-        },
-        "home_team_byteam": {
-            "title": "Home Team Data",
-            "data": home_team_byteam,
-            "info_text": "Note: This table shows data for the home team."
-        },
-        "away_team_byteam": {
-            "title": "Away Team Data",
-            "data": away_team_byteam,
-            "info_text": "Note: This table shows data for the away team."
-        },
-        "spotlight_teams_teampos": {
-            "title": "Spotlight Teams Data",
-            "data": spotlight_teams_teampos,
-            "info_text": f"Note: This data is comprised of specific positions ({spotlight_teams_teampos.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}."
-        },
-        "big_six_teampos": {
-            "title": "Big Six Data",
-            "data": big_six_teampos,
-            "info_text": "Note: This table shows data for the big six teams by position."
-        },
-        "newly_promoted_teampos": {
-            "title": "Newly Promoted Data",
-            "data": newly_promoted_teampos,
-            "info_text": "Note: This table shows data for the newly promoted teams by position."
-        },
-        "rest_teams_teampos": {
-            "title": "Mid Table Data",
-            "data": rest_teams_teampos,
-            "info_text": "Note: This table shows data for the rest of the teams by position."
-        },
-        "big_six_teampos_d": {
-            "title": "Big Six Data (Defenders)",
-            "data": big_six_teampos_d,
-            "info_text": "Note: This table shows data for the big six teams' defenders."
+            "info_text": f"Note: This table shows team-specific data by position for GW {recent_gw}.",
+            "icon": "table",
+            "styles": default_style
         }
+        # "team_df": {
+        #     "title": "Team Data",
+        #     "data": team_df,
+        #     "info_text": "Note: This table shows team-specific data."
+        # },
+        # "team_pos_df": {
+        #     "title": "Team, Position Data",
+        #     "data": team_pos_df,
+        #     "info_text": "Note: This table shows team-specific data by position."
+        # },
+        # "vs_team_df": {
+        #     "title": "vsTeam Data (from FBRef)",
+        #     "data": vs_team_df,
+        #     "info_text": "Note: This table shows team-specific data against the respective opponent."
+        # },
+        # "all_pos": {
+        #     "title": "All Positions Data",
+        #     "data": all_pos,
+        #     "info_text": "Note: This table shows data by position."
+        # },
+        # "d_df_pos": {
+        #     "title": "Granular Defender Data",
+        #     "data": d_df_pos,
+        #     "info_text": "Note: This table shows data by defensive position."
+        # },
+        # "m_df_pos": {
+        #     "title": "Granular Midfielder Data",
+        #     "data": m_df_pos,
+        #     "info_text": "Note: This table shows data by midfield position."
+        # },
+        # "f_df_pos": {
+        #     "title": "Granular Forward Data",
+        #     "data": f_df_pos,
+        #     "info_text": "Note: This table shows data by forward position."
+        # },
+        # "home_team_byteam": {
+        #     "title": "Home Team Data",
+        #     "data": home_team_byteam,
+        #     "info_text": "Note: This table shows data for the home team."
+        # },
+        # "away_team_byteam": {
+        #     "title": "Away Team Data",
+        #     "data": away_team_byteam,
+        #     "info_text": "Note: This table shows data for the away team."
+        # },
+        # "spotlight_teams_teampos": {
+        #     "title": "Spotlight Teams Data",
+        #     "data": spotlight_teams_teampos,
+        #     "info_text": f"Note: This data is comprised of specific positions ({spotlight_teams_teampos.index.get_level_values('position').unique().tolist()}) comprised of the following teams: {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}."
+        # },
+        # "big_six_teampos": {
+        #     "title": "Big Six Data",
+        #     "data": big_six_teampos,
+        #     "info_text": "Note: This table shows data for the big six teams by position."
+        # },
+        # "newly_promoted_teampos": {
+        #     "title": "Newly Promoted Data",
+        #     "data": newly_promoted_teampos,
+        #     "info_text": "Note: This table shows data for the newly promoted teams by position."
+        # },
+        # "rest_teams_teampos": {
+        #     "title": "Mid Table Data",
+        #     "data": rest_teams_teampos,
+        #     "info_text": "Note: This table shows data for the rest of the teams by position."
+        # },
+        # "big_six_teampos_d": {
+        #     "title": "Big Six Data (Defenders)",
+        #     "data": big_six_teampos_d,
+        #     "info_text": "Note: This table shows data for the big six teams' defenders."
+        # }
     }
 
-    # create a list of the DataFrames to display based on the titles in the df_dict
-    dfs_to_display = [df_dict[key]["title"] for key in df_dict]
-
-    # Streamlit Option Menu for DataFrame selection
+    dfs_to_display = [(df_dict[key]["title"], df_dict[key]["icon"], df_dict[key]["styles"]) for key in df_dict]
+    dfs_titles = [df_title for df_title, _, _ in dfs_to_display]
+    dfs_icons = [df_icon for _, df_icon, _ in dfs_to_display]
+    dfs_styles = [df_styles for _, _, df_styles in dfs_to_display]
+    
     with st.sidebar:
-        selected_df_name = option_menu("Select DataFrame", dfs_to_display, 
-                                        icons=['table' for _ in range(len(dfs_to_display))],
-                                        menu_icon="list")
-
+        selected_df_name = option_menu("Select DataFrame", dfs_titles, 
+                                       icons=dfs_icons, menu_icon="list",
+                                       styles=dfs_styles)
+    
     # Conditionally display the selected DataFrame and info text
-    # Reverse lookup
     selected_df_key = [key for key, val in df_dict.items() if val["title"] == selected_df_name]
-
+    
     if selected_df_key:
         st.toast("Loading data...")
-
-        selected_df_key = selected_df_key[0]  # Take the first match
+        
+        selected_df_key = selected_df_key[0]
         selected_df_title = df_dict[selected_df_key]["title"]
         selected_df_data = df_dict[selected_df_key]["data"]
         selected_df_info_text = df_dict[selected_df_key]["info_text"]
+        
         display_dataframe(selected_df_data, selected_df_title, colors, divergent_colors, info_text=selected_df_info_text)
     else:
         st.error(f"DataFrame '{selected_df_name}' not found where expected.")
-        # display the first DataFrame in the list
         display_dataframe(df_dict[dfs_to_display[0]]["data"], df_dict[dfs_to_display[0]]["title"], colors, divergent_colors, info_text=df_dict[dfs_to_display[0]]["info_text"])
-
 
     logging.info("Main function completed successfully")
 
