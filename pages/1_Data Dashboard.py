@@ -214,20 +214,20 @@ def main():
     set_piece_studs_pos = load_csv_file_cached(f'{data_path}/set_piece_stats_pos.csv', set_index_cols=['ftx_position', 'position'])
 
     # get the most recent gameweek value
-    last_gw = all_gws_df['GW'].max()
+    recent_gw = all_gws_df['GW'].max()
     first_gw = all_gws_df['GW'].min()
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
         # player-level data
         "recent_gw_players_df": {
-            "title": f"GW {last_gw} Player Data",
+            "title": f"GW {recent_gw} Player Data",
             "data": recent_gw_players_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
-            "icon":
+            "icon": f"{recent_gw}-square"
         },
         "grouped_players_df": {
-            "title": f"GW {first_gw} - {last_gw} Player Data (Grouped)",
+            "title": f"GW {first_gw} - {recent_gw} Player Data (Grouped)",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
         },
@@ -243,19 +243,19 @@ def main():
             "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
         },
         "recent_gw_data_team": {
-            "title": f"GW {last_gw} Team Data",
+            "title": f"GW {recent_gw} Team Data",
             "data": recent_gw_data_team,
-            "info_text": f"Note: This table shows team-specific data for GW {last_gw}."
+            "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
         },
         "recent_gw_data_pos": {
-            "title": f"GW {last_gw} Position Data",
+            "title": f"GW {recent_gw} Position Data",
             "data": recent_gw_data_pos,
-            "info_text": f"Note: This table shows position-specific data for GW {last_gw}."
+            "info_text": f"Note: This table shows position-specific data for GW {recent_gw}."
         },
         "recent_gw_data_teampos": {
-            "title": f"GW {last_gw} Team, Position Data",
+            "title": f"GW {recent_gw} Team, Position Data",
             "data": recent_gw_data_teampos,
-            "info_text": f"Note: This table shows team-specific data by position for GW {last_gw}."
+            "info_text": f"Note: This table shows team-specific data by position for GW {recent_gw}."
         },
         "team_df": {
             "title": "Team Data",
