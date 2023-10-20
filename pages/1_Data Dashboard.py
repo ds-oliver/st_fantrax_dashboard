@@ -142,11 +142,14 @@ def main():
 
     # player data
     ## single gw: / recent_gw_players_df
-    ## grouped: / all_gws_df
+    ## grouped: / grouped_players_df
+    ## grouped: / set_piece_studs
 
     # team data
     ## single gw: / recent_gw_data_team
-    
+    ## grouped: / team_df
+    ## grouped: / vs_team_df
+
 
     logging.info("Creating custom color maps")
     custom_cmap = create_custom_cmap_cached(*colors)
@@ -195,6 +198,9 @@ def main():
     recent_gw_data_pos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_pos.csv', set_index_cols=['Position'])
     recent_gw_data_teampos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_team_pos.csv', set_index_cols=['Team', 'Position'])
 
+    set_piece_studs = load_csv_file_cached(f'{data_path}/top_5_players_per_team.csv')
+    set_piece_studs_teams = load_csv_file_cached(f'{data_path}/set_piece_stats_team.csv', set_index_cols=['team'])
+    set_piece_studs_pos = load_csv_file_cached(f'{data_path}/set_piece_stats_pos.csv', set_index_cols=['ftx_position', 'position'])
 
     # get the most recent gameweek value
     last_gw = all_gws_df['GW'].max()
@@ -202,10 +208,27 @@ def main():
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
+        # player-level data
         "recent_gw_players_df": {
             "title": f"GW {last_gw} Player Data",
             "data": recent_gw_players_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+        },
+        "grouped_players_df": {
+            "title": f"GW {first_gw} - GW {last_gw} Player Data (Grouped)",
+            "data": grouped_players_df,
+            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
+        },
+        "set_piece_studs": {
+            "title": "Set Piece Studs",
+            "data": set_piece_studs,
+            "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
+        },
+        # team-level data
+        "set_piece_studs_teams": {
+            "title": "Set Piece Studs (Team)",
+            "data": set_piece_studs_teams,
+            "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
         },
         "recent_gw_data_team": {
             "title": f"GW {last_gw} Team Data",
@@ -221,11 +244,6 @@ def main():
             "title": f"GW {last_gw} Team, Position Data",
             "data": recent_gw_data_teampos,
             "info_text": f"Note: This table shows team-specific data by position for GW {last_gw}."
-        },
-        "grouped_players_df": {
-            "title": f"Player Data GW {first_gw} - GW {last_gw}",
-            "data": grouped_players_df,
-            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
         },
         "team_df": {
             "title": "Team Data",
