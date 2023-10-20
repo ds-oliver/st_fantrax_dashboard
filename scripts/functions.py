@@ -1754,7 +1754,10 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
         divergent_cmap = custom_divergent_cmap
     styled_df = pd.DataFrame()
 
-    position_column = 'Position' if 'Position' in df.columns else None
+    pos_cols = ['ftx_position', 'Position']
+
+    position_column = next((col for col in pos_cols if col in df.columns), None)
+    
     if position_column:
         position_colors = {
             "D": "background-color: #6d597a; color: white",

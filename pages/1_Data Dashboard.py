@@ -45,9 +45,11 @@ warnings.filterwarnings('ignore')
 scripts_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 sys.path.append(scripts_path)
 
+@st.cache_data
 def load_cached_css():
     load_css()
 
+@st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
@@ -76,13 +78,16 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     return df
 
 
+@st.cache_data
 def create_custom_cmap_cached(*colors):
     return create_custom_cmap(*colors)
 
+@st.cache_data
 def create_custom_divergent_cmap_cached(*divergent_colors):
     return create_custom_divergent_cmap(*divergent_colors)
 
 # Cache this function to avoid re-styling the DataFrame every time
+@st.cache_data
 def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
