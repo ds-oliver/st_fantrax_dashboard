@@ -218,9 +218,9 @@ def main():
     first_gw = all_gws_df['GW'].min()
 
     default_style = {
-        "container": {"padding": "0!important", "background-color": "#08061c"},
+        "container": {"padding": "5!important", "background-color": "#08061c"},
         "icon": {"color": "#fefae0", "font-size": "25px"},
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#6d597a"},
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#460202"},
         "nav-link-selected": {"background-color": "#852225"}
     }
     
