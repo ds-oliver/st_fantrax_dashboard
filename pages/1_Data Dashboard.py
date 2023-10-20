@@ -140,11 +140,19 @@ def main():
 
     load_cached_css()
 
+    # player data
+    ## single gw: / recent_gw_players_df
+    ## grouped: / all_gws_df
+
+    # team data
+    ## single gw: / recent_gw_data_team
+    
+
     logging.info("Creating custom color maps")
     custom_cmap = create_custom_cmap_cached(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
-    lastgw_df = load_csv_file_cached(f'{data_path}/recent_gw_data.csv')
+    recent_gw_players_df = load_csv_file_cached(f'{data_path}/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached(f'{data_path}/grouped_player_data.csv')
     all_gws_df = load_csv_file_cached(f'{data_path}/all_gws_data.csv')
     
@@ -194,9 +202,9 @@ def main():
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
-        "lastgw_df": {
+        "recent_gw_players_df": {
             "title": f"GW {last_gw} Player Data",
-            "data": lastgw_df,
+            "data": recent_gw_players_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
         },
         "recent_gw_data_team": {
@@ -217,7 +225,7 @@ def main():
         "grouped_players_df": {
             "title": f"Player Data GW {first_gw} - GW {last_gw}",
             "data": grouped_players_df,
-            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(lastgw_df['GW'])} gameweeks of data."
+            "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
         },
         "team_df": {
             "title": "Team Data",
