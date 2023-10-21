@@ -231,19 +231,19 @@ def main():
             "title": f"GW {recent_gw} Player Data",
             "data": recent_gw_players_df,
             "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
-            "icon": f"{recent_gw}-square"
+            "icon": "arrow-clockwise"
         },
         "grouped_players_df": {
             "title": f"GW {first_gw} - {recent_gw} Player Data (Grouped)",
             "data": grouped_players_df,
             "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
-            "icon": "table"
+            "icon": "minecart-loaded"
         },
         "set_piece_studs": {
             "title": "Set Piece Studs",
             "data": set_piece_studs,
             "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
-            "icon": "table"
+            "icon": "fire"
         },
         # team-level data
         "set_piece_studs_teams": {
