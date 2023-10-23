@@ -160,6 +160,8 @@ def main():
     ## single gw: / recent_gw_data_team
     ## grouped: / team_df
     ## grouped: / vs_team_df
+    ## grouped: / home_team_byteam
+    ## grouped: / away_team_byteam
 
 
     logging.info("Creating custom color maps")
@@ -226,39 +228,44 @@ def main():
     
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
-        # player-level data
+        # recent gw data
         "recent_gw_players_df": {
             "frames": [{
+                # players who played in the most recent gameweek
                 "title": f"GW {recent_gw} Player Data",
                 "data": recent_gw_players_df,
                 "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
-            }],
+            }, {
+                # players who played in the most recent gameweek by team
+                "title": f"GW {recent_gw} Team Data",
+                "data": recent_gw_data_team,
+                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
+            }, 
+            ],
             "icon": "arrow-clockwise"
         },
         "grouped_players_df": {
             "frames": [{
-                "title": f"GW {first_gw} - {recent_gw} Player Data (Grouped)",
+                # all players, all gameweeks
+                "title": f"Player Data GW {first_gw} - {recent_gw}",
                 "data": grouped_players_df,
                 "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
-            }],
+            }, 
+            ],
             "icon": "minecart-loaded"
         },
+        # set piece data
         "set_piece_studs": {
             "frames": [{
                 "title": "Set Piece Studs",
                 "data": set_piece_studs,
-                "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
-            }],
-            "icon": "fire"
-        },
-        # team-level data
-        "set_piece_studs_teams": {
-            "frames": [{
+                "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."}, 
+                {
                 "title": "Set Piece Studs (Team)",
                 "data": set_piece_studs_teams,
-                "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
-            }],
-            "icon": "table"
+                "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."}
+        ],
+            "icon": "fire"
         },
         "recent_gw_data_team": {
             "frames": [{
