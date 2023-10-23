@@ -293,20 +293,18 @@ def main():
         }
     }
 
-    # Modified dfs_to_display to correctly extract "title" and "icon"
-    dfs_to_display = [(key, df_dict[key]["frames"][0]["title"], df_dict[key]["icon"]) for key in df_dict]
-    dfs_keys = [df_key for df_key, _, _ in dfs_to_display]
-    dfs_titles = [df_title for _, df_title, _ in dfs_to_display]
-    dfs_icons = [df_icon for _, _, df_icon in dfs_to_display]
+    # List of the DataFrames to display based on the keys in the df_dict
+    dfs_to_display = [(key, df_dict[key]["icon"]) for key in df_dict]
 
-    # Use default_style for all dataframes
+    # Define icons for each DataFrame
+    dfs_keys = [df_key for df_key, _ in dfs_to_display]
+    dfs_icons = [df_icon for _, df_icon in dfs_to_display]
+
+    # Streamlit Option Menu for DataFrame selection
     with st.sidebar:
-        selected_df_name = option_menu("Select DataFrame", dfs_keys,
-                                    icons=dfs_icons, menu_icon="list",
-                                    styles=default_style)
-
-    # Find the key associated with the selected DataFrame title
-    selected_df_key = [key for key, title, _ in dfs_to_display if title == selected_df_name][0]
+        selected_df_key = option_menu("Select DataFrame", dfs_keys,
+                                       icons=dfs_icons,
+                                       menu_icon="list")
 
     # Conditionally display the selected DataFrame and info text
     if selected_df_key:
@@ -316,7 +314,7 @@ def main():
         for frame in selected_frames:
             display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame["info_text"])
     else:
-        st.error(f"DataFrame '{selected_df_name}' not found where expected.")
+        st.error(f"DataFrame '{selected_df_key}' not found where expected.")
 
     logging.info("Main function completed successfully")
 
