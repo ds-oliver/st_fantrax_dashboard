@@ -232,7 +232,7 @@ def main():
         "recent_gw_players_df": {
             "frames": [{
                 # players who played in the most recent gameweek
-                "title": f"GW {recent_gw} Player Data",
+                "title": f"Player Data (GW {recent_gw})",
                 "data": recent_gw_players_df,
                 "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
             }, {
@@ -247,7 +247,7 @@ def main():
         "grouped_players_df": {
             "frames": [{
                 # all players, all gameweeks
-                "title": f"Player Data GW {first_gw} - {recent_gw}",
+                "title": f"Player Data (GW {first_gw} - {recent_gw})",
                 "data": grouped_players_df,
                 "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
             }, 
@@ -301,7 +301,7 @@ def main():
 
     # Use default_style for all dataframes
     with st.sidebar:
-        selected_df_name = option_menu("Select DataFrame", dfs_titles,
+        selected_df_name = option_menu("Select DataFrame", dfs_keys,
                                     icons=dfs_icons, menu_icon="list",
                                     styles=default_style)
 
