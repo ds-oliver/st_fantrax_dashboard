@@ -229,7 +229,7 @@ def main():
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
         # recent gw data
-        "recent_gw_players_df": {
+        f"Recent GW Data (GW {recent_gw})": {
             "frames": [{
                 # players who played in the most recent gameweek
                 "title": f"Player Data (GW {recent_gw})",
@@ -244,18 +244,25 @@ def main():
             ],
             "icon": "arrow-clockwise"
         },
-        "grouped_players_df": {
+        f"All GWs Data (GW {first_gw} - {recent_gw})": {
             "frames": [{
                 # all players, all gameweeks
-                "title": f"Player Data (GW {first_gw} - {recent_gw})",
+                "title": f"Player Data",
                 "data": grouped_players_df,
-                "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
-            }, 
+                "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
+            }, {
+                "title": f"Team Data",
+                "data": team_df,
+                "info_text": f"Note: This table shows team-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
+            }, {
+                "title": f"Positional Data",
+                "data": all_pos,
+                "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
             ],
             "icon": "minecart-loaded"
         },
         # set piece data
-        "set_piece_studs": {
+        "Set Piece Data": {
             "frames": [{
                 "title": "Set Piece Studs",
                 "data": set_piece_studs,
@@ -304,7 +311,8 @@ def main():
     with st.sidebar:
         selected_df_key = option_menu("Select DataFrame", dfs_keys,
                                        icons=dfs_icons,
-                                       menu_icon="list")
+                                       menu_icon="list",
+                                       styles=default_style)
 
     # Conditionally display the selected DataFrame and info text
     if selected_df_key:
