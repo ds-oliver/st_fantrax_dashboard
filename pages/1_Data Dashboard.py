@@ -299,19 +299,33 @@ def main():
         "Teams Data by Status": {
             "frames": [{
                 "title": f"Spotlight",
-                "data": recent_gw_data_pos,
-                "info_text": f"Note: This table shows position-specific data for GW {recent_gw}."
-            }],
-            "icon": "table"
+                "data": spotlight_teams_teampos,
+                "info_text": f"Note: This table shows team-specific data by 'Spotlight' teams which include {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}."
+            }, {
+                "title": f"Newly Promoted",
+                "data": newly_promoted_teampos,
+                "info_text": f"Note: This table shows team-specific data by 'Newly Promoted' teams which include {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}."
+                }, {
+                "title": f"Rest of League",
+                "data": rest_teams_teampos,
+                "info_text": f"Note: This table shows team-specific data by 'Rest of League' teams which include {', '.join(rest_teams_teampos.index.get_level_values('team').unique().tolist())}."
+                    }],
+            "icon": "bar-chart-steps"
         },
-        "recent_gw_data_teampos": {
+        # positional data
+        "Granular Positional Data": {
             "frames": [{
-                "title": f"GW {recent_gw} Team, Position Data",
-                "data": recent_gw_data_teampos,
-                "info_text": f"Note: This table shows team-specific data by position for GW {recent_gw}."
-            }],
-            "icon": "table"
-        }
+                "title": f"Positional Data (GW {first_gw} - {recent_gw})",
+                "data": all_pos,
+                "info_text": f"Note: This table shows position-specific data for GW {recent_gw}."
+            }, {
+                "title": f"Team Positional Data (GW {first_gw} - {recent_gw})",
+                "data": team_pos_df,
+                "info_text": f"Note: This table shows team-specific position data for GW {recent_gw}."
+            }
+            ],
+            "icon": "gem"
+        },
     }
 
     # List of the DataFrames to display based on the keys in the df_dict
