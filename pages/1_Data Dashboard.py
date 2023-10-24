@@ -184,28 +184,28 @@ def main():
     # m_df_pos = load_csv_file_cached(f'{data_path}/m_detail_bypos.csv', set_index_cols=['position'])
     # f_df_pos = load_csv_file_cached(f'{data_path}/f_detail_bypos.csv', set_index_cols=['position'])
 
-    # home_team_byteam = load_csv_file_cached(f'{data_path}/home_team_byteam.csv', set_index_cols=['team'])
-    # away_team_byteam = load_csv_file_cached(f'{data_path}/away_team_byteam.csv', set_index_cols=['team'])
+    home_team_byteam = load_csv_file_cached(f'{data_path}/home_team_byteam.csv', set_index_cols=['team'])
+    away_team_byteam = load_csv_file_cached(f'{data_path}/away_team_byteam.csv', set_index_cols=['team'])
 
     # # load all big_six_df_teampos, newly_promoted_df_teampos, rest_teams_df_teampos, spotlight_teams_df_teampos
-    # big_six_teampos = load_csv_file_cached(f'{data_path}/big_six_teampos.csv', set_index_cols=['team', 'position'])
-    # newly_promoted_teampos = load_csv_file_cached(f'{data_path}/newly_promoted_teampos.csv', set_index_cols=['team', 'position'])
-    # rest_teams_teampos = load_csv_file_cached(f'{data_path}/rest_teams_teampos.csv', set_index_cols=['team', 'position'])
-    # spotlight_teams_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
+    big_six_teampos = load_csv_file_cached(f'{data_path}/big_six_teampos.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos = load_csv_file_cached(f'{data_path}/newly_promoted_teampos.csv', set_index_cols=['team', 'position'])
+    rest_teams_teampos = load_csv_file_cached(f'{data_path}/rest_teams_teampos.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
 
-    # # load all positional team group dfs
-    # big_six_teampos_d = load_csv_file_cached(f'{data_path}/big_six_players_d.csv', set_index_cols=['team', 'position'])
-    # big_six_teampos_m = load_csv_file_cached(f'{data_path}/big_six_players_m.csv', set_index_cols=['team', 'position'])
-    # big_six_teampos_f = load_csv_file_cached(f'{data_path}/big_six_players_f.csv', set_index_cols=['team', 'position'])
-    # newly_promoted_teampos_d = load_csv_file_cached(f'{data_path}/newly_promoted_players_d.csv', set_index_cols=['team', 'position'])
-    # newly_promoted_teampos_m = load_csv_file_cached(f'{data_path}/newly_promoted_players_m.csv', set_index_cols=['team', 'position'])
-    # newly_promoted_teampos_f = load_csv_file_cached(f'{data_path}/newly_promoted_players_f.csv', set_index_cols=['team', 'position'])
-    # rest_teams_teampos_d = load_csv_file_cached(f'{data_path}/rest_teams_players_d.csv', set_index_cols=['team', 'position'])
-    # rest_teams_teampos_m = load_csv_file_cached(f'{data_path}/rest_teams_players_m.csv', set_index_cols=['team', 'position'])
-    # rest_teams_teampos_f = load_csv_file_cached(f'{data_path}/rest_teams_players_f.csv', set_index_cols=['team', 'position'])
-    # spotlight_teams_teampos_d = load_csv_file_cached(f'{data_path}/spotlight_teams_players_d.csv', set_index_cols=['team', 'position'])
-    # spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
-    # spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
+    # load all positional team group dfs
+    big_six_teampos_d = load_csv_file_cached(f'{data_path}/big_six_players_d.csv', set_index_cols=['team', 'position'])
+    big_six_teampos_m = load_csv_file_cached(f'{data_path}/big_six_players_m.csv', set_index_cols=['team', 'position'])
+    big_six_teampos_f = load_csv_file_cached(f'{data_path}/big_six_players_f.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos_d = load_csv_file_cached(f'{data_path}/newly_promoted_players_d.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos_m = load_csv_file_cached(f'{data_path}/newly_promoted_players_m.csv', set_index_cols=['team', 'position'])
+    newly_promoted_teampos_f = load_csv_file_cached(f'{data_path}/newly_promoted_players_f.csv', set_index_cols=['team', 'position'])
+    rest_teams_teampos_d = load_csv_file_cached(f'{data_path}/rest_teams_players_d.csv', set_index_cols=['team', 'position'])
+    rest_teams_teampos_m = load_csv_file_cached(f'{data_path}/rest_teams_players_m.csv', set_index_cols=['team', 'position'])
+    rest_teams_teampos_f = load_csv_file_cached(f'{data_path}/rest_teams_players_f.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos_d = load_csv_file_cached(f'{data_path}/spotlight_teams_players_d.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
+    spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
 
     recent_gw_data_team = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_team.csv', set_index_cols=['Team'])
     recent_gw_data_pos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_pos.csv', set_index_cols=['Position'])
@@ -275,17 +275,30 @@ def main():
         ],
             "icon": "fire"
         },
-        "recent_gw_data_team": {
+        "Granular Team Data": {
             "frames": [{
-                "title": f"GW {recent_gw} Team Data",
-                "data": recent_gw_data_team,
+                "title": f"Team Data (GW {first_gw} - {recent_gw})",
+                "data": team_df,
                 "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
-            }],
+            },{
+                "title": f"vsTeam Data (GW {first_gw} - {recent_gw})",
+                "data": vs_team_df,
+                "info_text": f"Note: This table shows statistical categories teams have conceeded GW {recent_gw}."
+            }, {
+                "title": f"Home Team Data (GW {first_gw} - {recent_gw})",
+                "data": home_team_byteam,
+                "info_text": f"Note: This table shows data team-specific data based on Home performances for GW {recent_gw}."
+            }, {
+                "title": f"Away Team Data (GW {first_gw} - {recent_gw})",
+                "data": away_team_byteam,
+                "info_text": f"Note: This table shows data team-specific data based on Away performances for GW {recent_gw}."
+            }
+            ],
             "icon": "table"
         },
-        "recent_gw_data_pos": {
+        "Teams Data by Status": {
             "frames": [{
-                "title": f"GW {recent_gw} Position Data",
+                "title": f"Spotlight",
                 "data": recent_gw_data_pos,
                 "info_text": f"Note: This table shows position-specific data for GW {recent_gw}."
             }],
