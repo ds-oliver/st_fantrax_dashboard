@@ -138,6 +138,7 @@ def clear_cache_button():
         st.cache_data.clear()
         st.experimental_rerun()
 
+@st.cache_data
 def get_sell_high_players(df, head=50):
     # create copy
     df = df.copy()
