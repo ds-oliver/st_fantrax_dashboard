@@ -148,9 +148,9 @@ def get_sell_high_players(df, head=50):
         df = df[df['Overperformance'] > 0]
         # convert Overperformance to int and HeatStreak to float
         df['Overperformance'] = df['Overperformance'].astype(int)
-        df['HeatStreak'] = df['HeatStreak'].astype(float).round(2)
+        df['HeatStreak'] = df['HeatStreak'].astype(float).apply(lambda x: round(x, 2))
         # OvpAgg should be Overperformance * HeatStreak
-        df['OvpAgg'] = df['Overperformance'] * df['HeatStreak']
+        df['OvpAgg'] = round((df['Overperformance'] * df['HeatStreak']) * df['FPts/90'], 2)
         # sort by OvpAgg
         df = df.sort_values(by=['OvpAgg'], ascending=False).head(head)
         # return top 50
