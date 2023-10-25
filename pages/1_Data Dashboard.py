@@ -138,6 +138,19 @@ def clear_cache_button():
         st.cache_data.clear()
         st.experimental_rerun()
 
+@st.cache_data
+def get_sell_high_players(df, head=50):
+    # create copy
+    df = df.copy()
+    # sort by overperformance
+    if 'Overperformance' in df.columns:
+        # OvpAgg should be Overperformance * HeatStreak
+        df['OvpAgg'] = df['Overperformance'] * df['HeatStreak']
+        # sort by OvpAgg
+        df.sort_values(by=['OvpAgg'], ascending=False, inplace=True).head(head)
+        # return top 50
+        return df
+
 def main():
 
     data_path = 'data/display-data/final'
@@ -216,6 +229,9 @@ def main():
     set_piece_studs_teams = load_csv_file_cached(f'{data_path}/set_piece_stats_team.csv', set_index_cols=['team'])
     set_piece_studs_pos = load_csv_file_cached(f'{data_path}/set_piece_stats_pos.csv', set_index_cols=['ftx_position', 'position'])
 
+    # call get_sell_high_players
+    sell_high_players = get_sell_high_players(recent_gw_players_df, head=50)
+
     # get the most recent gameweek value
     recent_gw = all_gws_df['GW'].max()
     first_gw = all_gws_df['GW'].min()
@@ -263,7 +279,7 @@ def main():
                 "info_text": f"Note: This table shows basic position-specific data for all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data."
             },
             {
-                "title": f"Positional Data",
+                "title": f"Granular Positional Data",
                 "data": all_pos,
                 "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
             }
@@ -333,6 +349,15 @@ def main():
             }
             ],
             "icon": "gem"
+        },
+        "Fantasy Insights": {
+            "frames": [{
+                "title": f"Fantasy Insights",
+                "data": sell_high_players,
+                "info_text": f"Note: This table shows fantasy insights."
+            }
+            ],
+            "icon": "lightbulb"
         },
     }
 
