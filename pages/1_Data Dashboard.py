@@ -138,12 +138,14 @@ def clear_cache_button():
         st.cache_data.clear()
         st.experimental_rerun()
 
-@st.cache_data
 def get_sell_high_players(df, head=50):
     # create copy
     df = df.copy()
     # sort by overperformance
-    if 'Overperformance' in df.columns:
+    if 'Overperformance' in df.columns and 'HeatStreak' in df.columns:
+        # convert both to int
+        df['Overperformance'] = df['Overperformance'].astype(int)
+        df['HeatStreak'] = df['HeatStreak'].astype(int)
         # OvpAgg should be Overperformance * HeatStreak
         df['OvpAgg'] = df['Overperformance'] * df['HeatStreak']
         # sort by OvpAgg
