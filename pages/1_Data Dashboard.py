@@ -261,7 +261,7 @@ def main():
                 "title": f"Basic Positional Data",
                 "data": ftx_pos_df,
                 "info_text": f"Note: This table shows basic position-specific data for all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data."
-                }
+            },
             {
                 "title": f"Positional Data",
                 "data": all_pos,
