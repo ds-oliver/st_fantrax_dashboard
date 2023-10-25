@@ -155,6 +155,8 @@ def get_sell_high_players(df, head=50):
         df['OvpAgg'] = round((df['Overperformance'] * df['HeatStreak']), 2)
         # sort by OvpAgg
         df = df.sort_values(by=['OvpAgg'], ascending=False).head(head)
+        # reset index
+        df = df.reset_index(drop=True)
         # return top 50
         return df
 
