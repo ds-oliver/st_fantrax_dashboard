@@ -352,9 +352,9 @@ def main():
         },
         "Fantasy Insights": {
             "frames": [{
-                "title": f"Fantasy Insights",
+                "title": f"Sell-High Candidates",
                 "data": sell_high_players,
-                "info_text": f"Note: This table shows fantasy insights."
+                "info_text": f"Note: This table shows top 50 players who are currently overperforming their RoS value and are on a good run of form."
             }
             ],
             "icon": "lightbulb"
