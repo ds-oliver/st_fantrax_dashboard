@@ -179,6 +179,7 @@ def main():
     # vs_team_pos_df = load_csv_file_cached(f'{data_path}/vs_team_pos_fbref.csv', set_index_cols=['opponent', 'position'])
 
     all_pos = load_csv_file_cached(f'{data_path}/all_pos.csv', set_index_cols=['position'])
+    ftx_pos_df = load_csv_file_cached(f'{data_path}/ftx_pos.csv', set_index_cols=['ftx_position'])
 
     # d_df_pos = load_csv_file_cached(f'{data_path}/d_detail_bypos.csv', set_index_cols=['position'])
     # m_df_pos = load_csv_file_cached(f'{data_path}/m_detail_bypos.csv', set_index_cols=['position'])
@@ -250,11 +251,18 @@ def main():
                 "title": f"Player Data",
                 "data": grouped_players_df,
                 "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
-            }, {
+            }, 
+            {
                 "title": f"Team Data",
                 "data": team_df,
                 "info_text": f"Note: This table shows team-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
-            }, {
+            }, 
+            {
+                "title": f"Basic Positional Data",
+                "data": ftx_pos_df,
+                "info_text": f"Note: This table shows basic position-specific data for all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data."
+                }
+            {
                 "title": f"Positional Data",
                 "data": all_pos,
                 "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
