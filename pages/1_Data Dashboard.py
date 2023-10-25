@@ -149,6 +149,7 @@ def get_sell_high_players(df, head=50):
         # convert Overperformance to int and HeatStreak to float
         df['Overperformance'] = df['Overperformance'].astype(int)
         df['HeatStreak'] = df['HeatStreak'].astype(float).apply(lambda x: round(x, 2))
+        print(df.columns)
         # OvpAgg should be Overperformance * HeatStreak
         df['OvpAgg'] = round(((df['Overperformance'] * df['HeatStreak']) * df['FPts/90']) / df['Ghost Points'], 2)
         # sort by OvpAgg
