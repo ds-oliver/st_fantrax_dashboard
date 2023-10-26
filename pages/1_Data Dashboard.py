@@ -269,8 +269,7 @@ def main():
                 # players who played in the most recent gameweek by team
                 "title": f"GW {recent_gw} Team Data",
                 "data": recent_gw_data_team,
-                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
-            }, 
+                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."            }, 
             ],
             "icon": "arrow-clockwise"
         },
@@ -279,7 +278,8 @@ def main():
                 # all players, all gameweeks
                 "title": f"Player Data",
                 "data": grouped_players_df,
-                "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
+                "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data.",
+                "upper_info_text": f"" 
             }, 
             {
                 "title": f"Team Data",
@@ -394,7 +394,7 @@ def main():
 
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
-            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame["info_text"], upper_info_text=frame["upper_info_text"])
+            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame["info_text"], upper_info_text=frame.get("upper_info_text"))
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
 
