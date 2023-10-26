@@ -384,10 +384,11 @@ def main():
 
     # Streamlit Option Menu for DataFrame selection
     with st.sidebar:
-        selected_df_key = option_menu("Select DataFrame", dfs_keys,
-                                       icons=dfs_icons,
-                                       menu_icon="list",
-                                       styles=default_style)
+        selected_df_key = option_menu(
+                    "Select DataFrame", dfs_keys,
+                    icons=dfs_icons,
+                    menu_icon="list",
+                    styles=default_style)
 
     # Conditionally display the selected DataFrame and info text
     if selected_df_key:
