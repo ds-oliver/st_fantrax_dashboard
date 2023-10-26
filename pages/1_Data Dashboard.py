@@ -395,7 +395,7 @@ def main():
 
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
-            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame["info_text"], upper_info_text=frame.get("upper_info_text"))
+            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame.get("info_text"), upper_info_text=frame.get("upper_info_text"))
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
 
