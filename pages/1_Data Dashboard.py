@@ -367,7 +367,8 @@ def main():
             "frames": [{
                 "title": f"Sell-High Candidates",
                 "data": sell_high_players,
-                "info_text": f"Note: This table shows top 50 players who are currently overperforming their RoS value and are on a good run of form."
+                "info_text": f"Note: This table shows top 50 players who are currently overperforming their RoS value and are on a good run of form.",
+                "upper_info_text": f"NGR stands for Non-Ghost Reliance, a lower value means the player is a better ghoster and relies less on non-ghost returns."
             }
             ],
             "icon": "lightbulb"
