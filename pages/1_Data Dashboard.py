@@ -88,7 +88,7 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, title, colors, divergent_colors, info_text=None):
+def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper_info_text=None):
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
@@ -98,6 +98,9 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None):
     height = max(400, min(800, df.shape[0] * 25))
 
     try:
+        if upper_info_text:
+            st.info(upper_info_text)
+
         st.write(f"## {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
@@ -260,7 +263,8 @@ def main():
                 # players who played in the most recent gameweek
                 "title": f"Player Data (GW {recent_gw})",
                 "data": recent_gw_players_df,
-                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
+                "upper_info_text": f"NGR stands for Non-Ghost Reliance, a lower value means the player is a better ghoster and relies less on non-ghost returns."
             }, {
                 # players who played in the most recent gameweek by team
                 "title": f"GW {recent_gw} Team Data",
@@ -390,7 +394,7 @@ def main():
 
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
-            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame["info_text"])
+            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame["info_text"], upper_info_text=frame["upper_info_text"])
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
 
