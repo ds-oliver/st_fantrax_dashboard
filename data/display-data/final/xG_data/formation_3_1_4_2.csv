@@ -1,0 +1,4 @@
+id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,against_xG
+10,Manchester United,2023,3-1-4-2,0,0,0.0,1,0,0.5051724910736084
+62,Aston Villa,2023,3-1-4-2,2,0,0.17236224561929703,6,2,1.9051744267344475
+69,Burnley,2023,3-1-4-2,2,0,0.39088786393404007,5,0,0.32033247873187065
