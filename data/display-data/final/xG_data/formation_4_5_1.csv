@@ -1,2 +1,2 @@
-id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,against_xG
-81,Everton,2023,4-5-1,8,0,0.283169811591506,13,1,0.8250224553048611
+id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,xGA,shots_per_xG,shots_per_goal
+46,Everton,2023,4-5-1,8,0,0.3,13,1,0.8,28.3,inf

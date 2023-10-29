@@ -1,21 +1,21 @@
-id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,against_xG
-5,Luton,2023,DirectFreekick,1,0,0.045249998569488525,4,0,0.2059072107076645
-9,Manchester United,2023,DirectFreekick,4,0,0.2332693301141262,0,0,0.0
-14,Wolverhampton Wanderers,2023,DirectFreekick,1,0,0.10827798396348953,2,1,0.11597691848874092
-19,Crystal Palace,2023,DirectFreekick,6,0,0.3420814946293831,1,0,0.07708635926246643
-24,Brentford,2023,DirectFreekick,4,1,0.194964362308383,3,0,0.16792694479227066
-29,West Ham,2023,DirectFreekick,3,0,0.2444785162806511,5,0,0.2663628086447716
-34,Nottingham Forest,2023,DirectFreekick,1,0,0.11162830889225006,4,0,0.2866806238889694
-40,Arsenal,2023,DirectFreekick,0,0,0.0,1,0,0.08211032301187515
-43,Chelsea,2023,DirectFreekick,6,0,0.32901581935584545,4,0,0.33893008157610893
-49,Fulham,2023,DirectFreekick,4,0,0.2548952288925648,3,0,0.07008677162230015
-55,Newcastle United,2023,DirectFreekick,1,0,0.10195392370223999,4,0,0.26031531766057014
-59,Manchester City,2023,DirectFreekick,7,1,0.41060909628868103,1,0,0.11162830889225006
-64,Bournemouth,2023,DirectFreekick,4,0,0.33188502863049507,4,1,0.22590217925608158
-69,Tottenham,2023,DirectFreekick,2,0,0.1113421842455864,2,0,0.16809846460819244
-75,Aston Villa,2023,DirectFreekick,3,0,0.17485753819346428,1,0,0.07968739420175552
-79,Burnley,2023,DirectFreekick,2,0,0.15994204580783844,1,0,0.06443863362073898
-84,Liverpool,2023,DirectFreekick,5,0,0.2547988872975111,5,0,0.32761318422853947
-89,Brighton,2023,DirectFreekick,3,0,0.23166391998529434,4,0,0.22553255409002304
-94,Everton,2023,DirectFreekick,2,0,0.14942598715424538,3,0,0.293496809899807
-100,Sheffield United,2023,DirectFreekick,0,0,0.0,7,0,0.4225587658584118
+id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,xGA,shots_per_xG,shots_per_goal
+29,Nottingham Forest,2023,DirectFreekick,1,0,0.1,4,0,0.3,9.0,inf
+40,Newcastle United,2023,DirectFreekick,1,0,0.1,5,0,0.3,9.8,inf
+94,Wolverhampton Wanderers,2023,DirectFreekick,2,0,0.2,2,1,0.1,11.1,inf
+9,West Ham,2023,DirectFreekick,3,0,0.2,5,0,0.3,12.3,inf
+79,Burnley,2023,DirectFreekick,2,0,0.2,3,0,0.1,12.5,inf
+84,Brighton,2023,DirectFreekick,3,0,0.2,4,0,0.2,12.9,inf
+54,Everton,2023,DirectFreekick,2,0,0.1,3,0,0.3,13.4,inf
+69,Bournemouth,2023,DirectFreekick,6,0,0.4,4,1,0.2,14.6,inf
+14,Fulham,2023,DirectFreekick,4,0,0.3,3,0,0.1,15.7,inf
+89,Manchester City,2023,DirectFreekick,7,1,0.4,1,0,0.1,17.0,7.0
+44,Manchester United,2023,DirectFreekick,4,0,0.2,0,0,0.0,17.1,inf
+35,Aston Villa,2023,DirectFreekick,3,0,0.2,1,0,0.1,17.2,inf
+74,Crystal Palace,2023,DirectFreekick,6,0,0.3,2,0,0.1,17.5,inf
+3,Chelsea,2023,DirectFreekick,7,0,0.4,4,0,0.3,17.6,inf
+19,Liverpool,2023,DirectFreekick,5,0,0.3,5,0,0.3,19.6,inf
+24,Tottenham,2023,DirectFreekick,3,0,0.2,2,0,0.2,19.8,inf
+64,Brentford,2023,DirectFreekick,4,1,0.2,4,0,0.2,20.5,4.0
+100,Luton,2023,DirectFreekick,1,0,0.0,4,0,0.2,22.1,inf
+50,Sheffield United,2023,DirectFreekick,0,0,0.0,7,0,0.4,,
+60,Arsenal,2023,DirectFreekick,0,0,0.0,1,0,0.1,,
