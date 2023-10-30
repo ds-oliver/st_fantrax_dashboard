@@ -277,7 +277,8 @@ def main():
                 # players who played in the most recent gameweek by team
                 "title": f"GW {recent_gw} Team Data",
                 "data": recent_gw_data_team,
-                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."            }, 
+                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
+            }, 
             ],
             "icon": "arrow-clockwise"
         },
@@ -325,19 +326,24 @@ def main():
                 "title": f"Team Data (GW {first_gw} - {recent_gw})",
                 "data": team_df,
                 "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
-                "drop_cols": ["gp", "gp"]  # Example columns to drop
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
             },{
                 "title": f"vsTeam Data (GW {first_gw} - {recent_gw})",
                 "data": vs_team_df,
-                "info_text": f"Note: This table shows statistical categories teams have conceeded GW {recent_gw}."
+                "info_text": f"Note: This table shows statistical categories teams have conceeded GW {recent_gw}.",
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
+
             }, {
                 "title": f"Home Team Data (GW {first_gw} - {recent_gw})",
                 "data": home_team_byteam,
-                "info_text": f"Note: This table shows data team-specific data based on Home performances for GW {recent_gw}."
+                "info_text": f"Note: This table shows data team-specific data based on Home performances for GW {recent_gw}.",
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
+
             }, {
                 "title": f"Away Team Data (GW {first_gw} - {recent_gw})",
                 "data": away_team_byteam,
-                "info_text": f"Note: This table shows data team-specific data based on Away performances for GW {recent_gw}."
+                "info_text": f"Note: This table shows data team-specific data based on Away performances for GW {recent_gw}.",
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
             }
             ],
             "icon": "table"
