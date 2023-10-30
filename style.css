@@ -91,7 +91,7 @@ td,
     background-color: #370617;
     color: #fefae0;
     font-size: 16px;
-    padding: 12px 24px;
+    padding: --common-padding;
     border-radius: 4px;
 }
 
@@ -437,7 +437,7 @@ footer {
 }
 
 .css-uokr8j {
-    color: #fefae0smoke;
+    color: #fefae0;
 }
 
 .stTimeInput>div>div {
@@ -498,7 +498,7 @@ footer {
 }
 
 .stAlert>div {
-    padding: 0.25rem;
+    padding: --common-padding;
     border-radius: 0px 9px 9px 0px;
     border-left-width: 5px;
 }
