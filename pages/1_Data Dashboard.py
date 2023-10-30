@@ -268,8 +268,7 @@ def main():
                 # players who played in the most recent gameweek
                 "title": f"Player Data (GW {recent_gw})",
                 "data": recent_gw_players_df,
-                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value.",
-                "upper_info_text": f"NGR stands for Non-Ghost Reliance, a lower value means the player is a better ghoster and relies less on non-ghost returns."
+                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
             }, {
                 # players who played in the most recent gameweek by team
                 "title": f"GW {recent_gw} Team Data",

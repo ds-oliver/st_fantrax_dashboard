@@ -1,21 +1,21 @@
 id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,xGA,shots_per_xG,shots_per_goal
-23,Nottingham Forest,2023,Fast,8,4,2.8,4,0,0.4,2.9,2.0
-52,Brentford,2023,Fast,7,2,2.0,9,2,1.7,3.5,3.5
-48,Arsenal,2023,Fast,3,1,0.8,8,2,1.0,3.7,3.0
-16,Liverpool,2023,Fast,9,3,2.3,3,0,0.4,3.9,3.0
-43,Everton,2023,Fast,10,1,2.3,9,1,1.1,4.4,10.0
-64,Burnley,2023,Fast,5,1,1.1,11,2,1.7,4.4,5.0
-8,West Ham,2023,Fast,4,1,0.9,5,0,0.2,4.7,4.0
-32,Newcastle United,2023,Fast,7,1,1.3,13,1,1.5,5.5,7.0
-12,Fulham,2023,Fast,4,1,0.7,6,0,0.9,5.9,4.0
-68,Brighton,2023,Fast,8,1,1.3,7,2,2.3,6.0,8.0
-20,Tottenham,2023,Fast,5,1,0.8,7,0,1.2,6.3,5.0
-75,Wolverhampton Wanderers,2023,Fast,9,1,1.4,7,2,1.5,6.4,9.0
-27,Aston Villa,2023,Fast,12,1,1.7,5,0,1.6,7.2,12.0
-4,Chelsea,2023,Fast,10,2,1.4,9,4,2.0,7.3,5.0
-79,Luton,2023,Fast,10,0,1.4,7,2,1.2,7.4,inf
-59,Crystal Palace,2023,Fast,8,1,0.9,5,1,1.1,8.6,8.0
-36,Manchester United,2023,Fast,7,0,0.8,4,2,1.4,9.2,inf
-72,Manchester City,2023,Fast,2,0,0.2,1,0,0.1,9.2,inf
-39,Sheffield United,2023,Fast,5,0,0.3,9,1,1.2,17.2,inf
-56,Bournemouth,2023,Fast,4,1,0.2,8,1,1.9,20.2,4.0
+71,Nottingham Forest,2023,Fast,8,4,2.8,7,2,1.1,2.9,2.0
+76,Brentford,2023,Fast,7,2,2.0,9,2,1.7,3.5,3.5
+36,Arsenal,2023,Fast,3,1,0.8,8,2,1.0,3.7,3.0
+44,Liverpool,2023,Fast,12,5,3.1,3,0,0.4,3.9,2.4
+55,Everton,2023,Fast,11,1,2.6,9,1,1.1,4.3,11.0
+52,Burnley,2023,Fast,5,1,1.1,11,2,1.7,4.4,5.0
+40,West Ham,2023,Fast,4,1,0.9,6,0,0.5,4.7,4.0
+12,Newcastle United,2023,Fast,7,1,1.3,13,1,1.5,5.5,7.0
+16,Fulham,2023,Fast,4,1,0.7,6,0,0.9,5.9,4.0
+24,Brighton,2023,Fast,8,1,1.3,7,2,2.3,6.0,8.0
+68,Tottenham,2023,Fast,5,1,0.8,7,0,1.2,6.3,5.0
+31,Wolverhampton Wanderers,2023,Fast,9,1,1.4,7,2,1.5,6.4,9.0
+3,Aston Villa,2023,Fast,12,1,1.7,5,0,1.6,7.2,12.0
+60,Chelsea,2023,Fast,10,2,1.4,9,4,2.0,7.3,5.0
+27,Luton,2023,Fast,10,0,1.4,7,2,1.2,7.4,inf
+19,Crystal Palace,2023,Fast,8,1,0.9,5,1,1.1,8.6,8.0
+64,Manchester United,2023,Fast,7,0,0.8,4,2,1.4,9.2,inf
+8,Manchester City,2023,Fast,2,0,0.2,1,0,0.1,9.2,inf
+79,Sheffield United,2023,Fast,5,0,0.3,9,1,1.2,17.2,inf
+48,Bournemouth,2023,Fast,4,1,0.2,8,1,1.9,20.2,4.0

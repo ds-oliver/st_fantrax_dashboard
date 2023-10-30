@@ -1,21 +1,21 @@
 id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,xGA,shots_per_xG,shots_per_goal
-87,Manchester City,2023,FromCorner,20,2,2.9,15,1,2.1,6.8,10.0
-52,Everton,2023,FromCorner,28,4,3.9,21,2,2.8,7.1,7.0
-7,West Ham,2023,FromCorner,25,2,3.4,34,1,4.0,7.4,12.5
-12,Fulham,2023,FromCorner,20,2,2.6,20,1,1.7,7.7,10.0
-37,Newcastle United,2023,FromCorner,22,1,2.4,22,1,1.3,9.0,22.0
-67,Bournemouth,2023,FromCorner,9,0,1.0,38,3,4.0,9.4,inf
-97,Luton,2023,FromCorner,29,1,3.0,23,2,2.5,9.6,29.0
-17,Liverpool,2023,FromCorner,29,3,3.0,19,1,1.4,9.7,9.7
-2,Chelsea,2023,FromCorner,15,1,1.5,24,1,1.9,9.8,15.0
-82,Brighton,2023,FromCorner,23,1,2.3,8,1,0.4,10.1,23.0
-57,Arsenal,2023,FromCorner,36,5,3.2,10,1,1.2,11.2,7.2
-77,Burnley,2023,FromCorner,22,1,1.9,26,2,1.9,11.3,22.0
-47,Sheffield United,2023,FromCorner,15,1,1.2,38,5,5.4,12.1,15.0
-62,Brentford,2023,FromCorner,25,0,2.0,21,2,2.4,12.3,inf
-72,Crystal Palace,2023,FromCorner,28,0,2.1,21,0,2.4,13.6,inf
-42,Manchester United,2023,FromCorner,19,0,1.4,20,1,1.2,14.0,inf
-22,Tottenham,2023,FromCorner,24,3,1.7,34,0,1.7,14.4,8.0
-32,Aston Villa,2023,FromCorner,23,0,1.5,19,2,2.1,15.4,inf
-92,Wolverhampton Wanderers,2023,FromCorner,18,2,1.1,23,0,1.7,15.9,9.0
-27,Nottingham Forest,2023,FromCorner,22,0,1.3,16,2,1.3,16.4,inf
+7,Manchester City,2023,FromCorner,21,2,2.9,18,1,2.2,7.1,10.5
+67,Everton,2023,FromCorner,30,4,4.0,22,2,2.8,7.5,7.5
+47,West Ham,2023,FromCorner,26,2,3.4,36,1,4.1,7.7,13.0
+17,Fulham,2023,FromCorner,22,2,2.6,23,1,1.8,8.3,11.0
+12,Newcastle United,2023,FromCorner,22,1,2.4,22,1,1.3,9.0,22.0
+52,Liverpool,2023,FromCorner,34,3,3.7,22,1,1.5,9.3,11.3
+57,Bournemouth,2023,FromCorner,9,0,1.0,38,3,4.0,9.4,inf
+72,Chelsea,2023,FromCorner,15,1,1.5,24,1,1.9,9.8,15.0
+32,Luton,2023,FromCorner,32,1,3.2,24,2,2.6,10.1,32.0
+27,Brighton,2023,FromCorner,26,1,2.4,10,1,0.4,10.9,26.0
+42,Arsenal,2023,FromCorner,36,5,3.2,10,1,1.2,11.2,7.2
+62,Burnley,2023,FromCorner,22,1,1.9,26,2,1.9,11.3,22.0
+97,Sheffield United,2023,FromCorner,15,1,1.2,38,5,5.4,12.1,15.0
+92,Brentford,2023,FromCorner,25,0,2.0,21,2,2.4,12.3,inf
+22,Crystal Palace,2023,FromCorner,28,0,2.1,21,0,2.4,13.6,inf
+82,Tottenham,2023,FromCorner,24,3,1.7,34,0,1.7,14.4,8.0
+77,Manchester United,2023,FromCorner,22,0,1.4,21,1,1.3,15.2,inf
+2,Aston Villa,2023,FromCorner,24,0,1.6,22,2,2.2,15.2,inf
+37,Wolverhampton Wanderers,2023,FromCorner,18,2,1.1,23,0,1.7,15.9,9.0
+87,Nottingham Forest,2023,FromCorner,25,0,1.5,21,2,2.0,17.2,inf
