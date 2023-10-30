@@ -88,7 +88,11 @@ def create_custom_divergent_cmap_cached(*divergent_colors):
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper_info_text=None):
+def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper_info_text=None, drop_cols=[]):
+    df = df.copy()
+
+    df = df.drop(columns=[col for col in drop_cols if col in df.columns], errors='ignore')
+
     custom_cmap = create_custom_cmap(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
@@ -320,7 +324,8 @@ def main():
             "frames": [{
                 "title": f"Team Data (GW {first_gw} - {recent_gw})",
                 "data": team_df,
-                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
+                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
+                "drop_cols": ["gp", "gp"]  # Example columns to drop
             },{
                 "title": f"vsTeam Data (GW {first_gw} - {recent_gw})",
                 "data": vs_team_df,
@@ -397,10 +402,12 @@ def main():
     # Conditionally display the selected DataFrame and info text
     if selected_df_key:
         st.toast("Loading data...")
-
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
-            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, info_text=frame.get("info_text"), upper_info_text=frame.get("upper_info_text"))
+            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
+                            info_text=frame.get("info_text"), 
+                            upper_info_text=frame.get("upper_info_text"),
+                            drop_cols=frame.get("drop_cols", []))
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
 
