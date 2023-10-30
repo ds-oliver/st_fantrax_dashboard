@@ -35,7 +35,7 @@ st.set_page_config(
     layout="wide"
 )
 
-load_css()
+# load_css()
 
 def load_csv_file(csv_file):
     return pd.read_csv(csv_file)
@@ -177,8 +177,6 @@ def main():
     add_construction()
 
     add_datadump_info()
-    
-    load_cached_css()
 
     # player data
     ## single gw: / recent_gw_players_df
