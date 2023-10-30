@@ -330,7 +330,7 @@ footer {
     font-size: 14px;
     text-overflow: none;
     z-index: 1;
-    #fefae0-space: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
