@@ -171,6 +171,9 @@ def main():
 
     logging.info("Starting main function")
 
+    # Load the custom CSS file
+    load_cached_css()
+
     # Add a button to the sidebar to clear the cache
     clear_cache_button()
 
