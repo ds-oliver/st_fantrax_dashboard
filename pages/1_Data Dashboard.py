@@ -176,6 +176,8 @@ def main():
 
     add_construction()
 
+    add_datadump_info()
+    
     load_cached_css()
 
     # player data
