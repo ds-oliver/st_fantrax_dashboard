@@ -134,7 +134,7 @@ def add_construction():
     return st.info("""🏗️ **:orange[This app is under construction and might break, please let the author know if you break the app]**""")
 
 def add_datadump_info():
-    return st.info("""📊 **:red[This app gets a data-dump within 12 hours of the last match of the gameweek.]**""")
+    return st.info("""📊 :red[This app gets a data-dump within 12 hours of the last match of the gameweek.]""")
 
 def load_css(file_name="style.css"):
     with open("style.css") as f:
