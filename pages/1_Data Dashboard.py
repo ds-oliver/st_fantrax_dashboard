@@ -179,7 +179,7 @@ def main():
 
     add_construction()
 
-    add_datadump_info()
+    # add_datadump_info()
 
     # player data
     ## single gw: / recent_gw_players_df
