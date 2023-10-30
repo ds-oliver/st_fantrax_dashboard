@@ -47,7 +47,7 @@ body {
 
 
 /* Streamlit specific selectors for text */
-/*
+
 .stButton>button,
 .stMarkdown,
 .stText,
@@ -66,7 +66,7 @@ li {
 }
 
 /* Streamlit specific selectors for numbers, metrics, and data */
-/*
+
 table,
 th,
 td,
