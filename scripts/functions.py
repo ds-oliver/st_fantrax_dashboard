@@ -140,9 +140,9 @@ def load_css(file_name="style.css"):
     with open("style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-def display_date_of_update(date_of_update):
-    st.write(f'Last data refresh: {date_of_update}')
-
+def display_date_of_update(date_of_update, title="Last Data Refresh"):
+    st.info(f"{title}: {date_of_update}")
+    
 def load_data_from_db():
     """
     This function loads data from two tables in a SQLite database.
