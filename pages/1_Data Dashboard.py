@@ -207,7 +207,7 @@ def main():
 
     date_created = get_date_created(file_path)
 
-    display_date_of_update(date_created, title="Ros Data Last Updated:")
+    display_date_of_update(date_created, title="Ros Data Last Updated")
 
     # add_datadump_info()
 
