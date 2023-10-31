@@ -224,7 +224,6 @@ def main():
     ## grouped: / home_team_byteam
     ## grouped: / away_team_byteam
 
-
     logging.info("Creating custom color maps")
     custom_cmap = create_custom_cmap_cached(*colors)
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
