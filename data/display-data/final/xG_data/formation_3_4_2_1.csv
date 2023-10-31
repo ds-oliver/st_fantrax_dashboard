@@ -1,8 +1,0 @@
-id,team_name,season,stat_name,shots,goals,xG,against_shots,against_goals,xGA,shots_per_xG,shots_per_goal
-3,Aston Villa,2023,3-4-2-1,18,4,3.5,10,1,0.7,5.2,4.5
-61,Chelsea,2023,3-4-2-1,46,3,5.5,31,4,3.3,8.3,15.3
-75,Nottingham Forest,2023,3-4-2-1,19,3,2.2,39,3,5.3,8.6,6.3
-28,Luton,2023,3-4-2-1,27,3,3.1,37,3,5.1,8.8,9.0
-52,Burnley,2023,3-4-2-1,8,0,0.7,6,3,0.8,11.4,inf
-22,Brighton,2023,3-4-2-1,18,1,1.3,10,1,0.6,13.5,18.0
-87,Sheffield United,2023,3-4-2-1,13,1,1.0,28,5,3.5,13.6,13.0
