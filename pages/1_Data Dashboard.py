@@ -203,7 +203,7 @@ def main():
 
     add_construction()
 
-    file_path = "data/ros-data/Weekly ROS Ranks_GW10.csv"
+    file_path = "data/ros-data/Weekly ROS Ranks_GW11.csv"
 
     date_created = get_date_created(file_path)
 
