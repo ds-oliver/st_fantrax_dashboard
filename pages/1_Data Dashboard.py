@@ -102,10 +102,11 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper
     height = max(400, min(800, df.shape[0] * 25))
 
     try:
+        st.write(f"## {title}")
+
         if upper_info_text:
             st.info(upper_info_text)
 
-        st.write(f"## {title}")
         logging.info(f"Attempting to style the {title} dataframe")
         styled_df = style_dataframe_custom(df, columns_to_keep, custom_cmap=custom_cmap, custom_divergent_cmap=custom_divergent_cmap, inverse_cmap=False, is_percentile=False)
         st.dataframe(df[columns_to_keep].style.apply(lambda _: styled_df, axis=None), use_container_width=True, height=height)
@@ -283,12 +284,13 @@ def main():
                 # players who played in the most recent gameweek
                 "title": f"Player Data (GW {recent_gw})",
                 "data": recent_gw_players_df,
-                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. GPR stands for Ghost Points Ratio, the higher the value the better a ghoster the player is. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW rolling sum of FPTS. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. GPR is a measure of Ghost Points over Total FPts; the higher the value the better a ghoster the player is. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW rolling sum of FPTS. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
             }, {
                 # players who played in the most recent gameweek by team
                 "title": f"GW {recent_gw} Team Data",
                 "data": recent_gw_data_team,
-                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}."
+                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             }, 
             ],
             "icon": "arrow-clockwise"
@@ -304,17 +306,21 @@ def main():
             {
                 "title": f"Team Data",
                 "data": team_df,
-                "info_text": f"Note: This table shows team-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
+                "info_text": f"Note: This table shows team-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
+
             }, 
             {
                 "title": f"Basic Positional Data",
                 "data": ftx_pos_df,
-                "info_text": f"Note: This table shows basic position-specific data for all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data."
+                "info_text": f"Note: This table shows basic position-specific data for all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             },
             {
                 "title": f"Granular Positional Data",
                 "data": all_pos,
-                "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data."
+                "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             }
             ],
             "icon": "minecart-loaded"
@@ -324,11 +330,14 @@ def main():
             "frames": [{
                 "title": "Set Piece Studs",
                 "data": set_piece_studs,
-                "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."}, 
+                "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."
+                }, 
                 {
                 "title": "Set Piece Studs (Team)",
                 "data": set_piece_studs_teams,
-                "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data."}
+                "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
+                }
         ],
             "icon": "fire"
         },
@@ -337,24 +346,28 @@ def main():
                 "title": f"Team Data (GW {first_gw} - {recent_gw})",
                 "data": team_df,
                 "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
-                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"],
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"  # Example columns to drop
             },{
                 "title": f"vsTeam Data (GW {first_gw} - {recent_gw})",
                 "data": vs_team_df,
                 "info_text": f"Note: This table shows statistical categories teams have conceeded GW {recent_gw}.",
-                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"],  # Example columns to drop
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
 
             }, {
                 "title": f"Home Team Data (GW {first_gw} - {recent_gw})",
                 "data": home_team_byteam,
                 "info_text": f"Note: This table shows data team-specific data based on Home performances for GW {recent_gw}.",
-                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"],  # Example columns to drop
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
 
             }, {
                 "title": f"Away Team Data (GW {first_gw} - {recent_gw})",
                 "data": away_team_byteam,
                 "info_text": f"Note: This table shows data team-specific data based on Away performances for GW {recent_gw}.",
-                "drop_cols": ["gp", "gp (max)", "gp (mean)"]  # Example columns to drop
+                "drop_cols": ["gp", "gp (max)", "gp (mean)"],  # Example columns to drop
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             }
             ],
             "icon": "table"
@@ -363,16 +376,19 @@ def main():
             "frames": [{
                 "title": f"Spotlight",
                 "data": spotlight_teams_teampos,
-                "info_text": f"Note: This table shows team-specific data by 'Spotlight' teams which include {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}."
+                "info_text": f"Note: This table shows team-specific data by 'Spotlight' teams which include {', '.join(spotlight_teams_teampos.index.get_level_values('team').unique().tolist())}.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             }, {
                 "title": f"Newly Promoted",
                 "data": newly_promoted_teampos,
-                "info_text": f"Note: This table shows team-specific data by 'Newly Promoted' teams which include {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}."
-                }, {
+                "info_text": f"Note: This table shows team-specific data by 'Newly Promoted' teams which include {', '.join(newly_promoted_teampos.index.get_level_values('team').unique().tolist())}.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
+            }, {
                 "title": f"Rest of League",
                 "data": rest_teams_teampos,
-                "info_text": f"Note: This table shows team-specific data by 'Rest of League' teams which include {', '.join(rest_teams_teampos.index.get_level_values('team').unique().tolist())}."
-                    }],
+                "info_text": f"Note: This table shows team-specific data by 'Rest of League' teams which include {', '.join(rest_teams_teampos.index.get_level_values('team').unique().tolist())}.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
+            }],
             "icon": "bar-chart-steps"
         },
         # positional data
@@ -380,11 +396,13 @@ def main():
             "frames": [{
                 "title": f"Positional Data (GW {first_gw} - {recent_gw})",
                 "data": all_pos,
-                "info_text": f"Note: This table shows position-specific data for GW {recent_gw}."
+                "info_text": f"Note: This table shows position-specific data for GW {recent_gw}.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             }, {
                 "title": f"Team Positional Data (GW {first_gw} - {recent_gw})",
                 "data": team_pos_df,
-                "info_text": f"Note: This table shows team-specific position data for GW {recent_gw}."
+                "info_text": f"Note: This table shows team-specific position data for GW {recent_gw}.",
+                "upper_info_text": f"Aggregated data is filtered first for players who played more than 45 minutes"
             }
             ],
             "icon": "gem"
