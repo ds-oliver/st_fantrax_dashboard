@@ -17,7 +17,7 @@ import time
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
-from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format, add_datadump_info, display_date_of_update
+from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format, add_datadump_info
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
@@ -186,6 +186,8 @@ def get_date_created(file_path: str) -> str:
     else:
         return "File does not exist."
     
+def display_date_of_update(date_of_update, title="Last Data Refresh"):
+    return st.write(f"{title}: {date_of_update}")
 
 def main():
 
