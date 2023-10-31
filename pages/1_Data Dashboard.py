@@ -235,7 +235,6 @@ def main():
     set_piece_studs = load_csv_file_cached(f'{data_path}/top_5_players_per_team.csv')
     set_piece_studs_teams = load_csv_file_cached(f'{data_path}/set_piece_stats_team.csv', set_index_cols=['team'])
 
-
     # call get_sell_high_players
     sell_high_players = get_sell_high_players(recent_gw_players_df, head=50)
 
@@ -258,7 +257,7 @@ def main():
                 # players who played in the most recent gameweek
                 "title": f"Player Data (GW {recent_gw})",
                 "data": recent_gw_players_df,
-                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW total. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. GPR stands for Ghost Points Ratio, the higher the value the better a ghoster the player is. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW rolling sum of FPTS. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
             }, {
                 # players who played in the most recent gameweek by team
                 "title": f"GW {recent_gw} Team Data",
