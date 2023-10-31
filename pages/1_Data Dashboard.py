@@ -228,27 +228,13 @@ def main():
     rest_teams_teampos = load_csv_file_cached(f'{data_path}/rest_teams_teampos.csv', set_index_cols=['team', 'position'])
     spotlight_teams_teampos = load_csv_file_cached(f'{data_path}/spotlight_teams_teampos.csv', set_index_cols=['team', 'position'])
 
-    # load all positional team group dfs
-    big_six_teampos_d = load_csv_file_cached(f'{data_path}/big_six_players_d.csv', set_index_cols=['team', 'position'])
-    big_six_teampos_m = load_csv_file_cached(f'{data_path}/big_six_players_m.csv', set_index_cols=['team', 'position'])
-    big_six_teampos_f = load_csv_file_cached(f'{data_path}/big_six_players_f.csv', set_index_cols=['team', 'position'])
-    newly_promoted_teampos_d = load_csv_file_cached(f'{data_path}/newly_promoted_players_d.csv', set_index_cols=['team', 'position'])
-    newly_promoted_teampos_m = load_csv_file_cached(f'{data_path}/newly_promoted_players_m.csv', set_index_cols=['team', 'position'])
-    newly_promoted_teampos_f = load_csv_file_cached(f'{data_path}/newly_promoted_players_f.csv', set_index_cols=['team', 'position'])
-    rest_teams_teampos_d = load_csv_file_cached(f'{data_path}/rest_teams_players_d.csv', set_index_cols=['team', 'position'])
-    rest_teams_teampos_m = load_csv_file_cached(f'{data_path}/rest_teams_players_m.csv', set_index_cols=['team', 'position'])
-    rest_teams_teampos_f = load_csv_file_cached(f'{data_path}/rest_teams_players_f.csv', set_index_cols=['team', 'position'])
-    spotlight_teams_teampos_d = load_csv_file_cached(f'{data_path}/spotlight_teams_players_d.csv', set_index_cols=['team', 'position'])
-    spotlight_teams_teampos_m = load_csv_file_cached(f'{data_path}/spotlight_teams_players_m.csv', set_index_cols=['team', 'position'])
-    spotlight_teams_teampos_f = load_csv_file_cached(f'{data_path}/spotlight_teams_players_f.csv', set_index_cols=['team', 'position'])
-
     recent_gw_data_team = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_team.csv', set_index_cols=['Team'])
     recent_gw_data_pos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_pos.csv', set_index_cols=['Position'])
     recent_gw_data_teampos = load_csv_file_cached(f'{data_path}/recent_gw_data_agg_team_pos.csv', set_index_cols=['Team', 'Position'])
 
     set_piece_studs = load_csv_file_cached(f'{data_path}/top_5_players_per_team.csv')
     set_piece_studs_teams = load_csv_file_cached(f'{data_path}/set_piece_stats_team.csv', set_index_cols=['team'])
-    set_piece_studs_pos = load_csv_file_cached(f'{data_path}/set_piece_stats_pos.csv', set_index_cols=['ftx_position', 'position'])
+
 
     # call get_sell_high_players
     sell_high_players = get_sell_high_players(recent_gw_players_df, head=50)
