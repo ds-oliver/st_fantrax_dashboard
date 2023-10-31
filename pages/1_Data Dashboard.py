@@ -13,10 +13,11 @@ from markdownlit import mdlit
 from streamlit_extras.metric_cards import style_metric_cards
 from streamlit_extras.stylable_container import stylable_container
 from streamlit_option_menu import option_menu
+import time
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
-from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format, add_datadump_info
+from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format, add_datadump_info, display_date_of_update
 
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
@@ -77,7 +78,6 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         
     return df
 
-
 @st.cache_data
 def create_custom_cmap_cached(*colors):
     return create_custom_cmap(*colors)
@@ -116,7 +116,6 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper
     except Exception as e:
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
-
 
 def set_index_based_on_radio_button(df, widget_key, df_name='DataFrame'):
     """
@@ -167,7 +166,26 @@ def get_sell_high_players(df, head=50):
         # return top 50
         return df
     
+def get_date_created(file_path: str) -> str:
+    """
+    Get the creation date of a file.
 
+    Parameters:
+        file_path (str): The path of the file.
+
+    Returns:
+        str: The creation date in human-readable format.
+    """
+    if os.path.exists(file_path):
+        # Getting the timestamp for the file creation date
+        timestamp = os.path.getctime(file_path)
+        
+        # Converting the timestamp to human-readable format
+        date_created = time.strftime('%Y-%m-%d', time.localtime(timestamp))
+        return date_created
+    else:
+        return "File does not exist."
+    
 
 def main():
 
@@ -182,6 +200,12 @@ def main():
     clear_cache_button()
 
     add_construction()
+
+    file_path = "data/ros-data/Weekly ROS Ranks_GW10.csv"
+
+    date_created = get_date_created(file_path)
+
+    display_date_of_update(date_created)
 
     # add_datadump_info()
 
