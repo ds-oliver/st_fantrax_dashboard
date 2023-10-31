@@ -141,7 +141,7 @@ def load_css(file_name="style.css"):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 def display_date_of_update(date_of_update, title="Last Data Refresh"):
-    st.info(f"{title}: {date_of_update}")
+    return st.info(f"{title}: {date_of_update}")
     
 def load_data_from_db():
     """
