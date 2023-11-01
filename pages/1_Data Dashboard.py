@@ -495,7 +495,7 @@ def main():
 
 
             else:
-                display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
+                display_dataframe(frame["data"], frame["title"], simple_colors, divergent_colors, 
                                 info_text=frame.get("info_text"), 
                                 upper_info_text=frame.get("upper_info_text"),
                                 drop_cols=frame.get("drop_cols", []))
