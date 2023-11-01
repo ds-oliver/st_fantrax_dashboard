@@ -221,6 +221,9 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Create the Bumpy object and plot the data
     bumpy = Bumpy(**kwargs)
     bumpy.plot(x_list, y_list, values, highlight_dict=highlight_dict)
+
+    plt.yticks(range(len(y_list)), y_list)
+
     st.pyplot(plt.gcf())
 
 def main():
