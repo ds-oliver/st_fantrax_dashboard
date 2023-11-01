@@ -235,7 +235,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Create lists for x and y axes
     x_list = sorted(df[x_column].unique())
-    y_list = np.linspace(df[y_column].min(), df[y_column].max(), len(df[y_column].unique())).tolist()
+    y_list = np.linspace(df[y_column].max(), df[y_column].min(), len(df[y_column].unique())).tolist()
 
     # Create a dictionary of values for plotting
     values = {}
@@ -286,6 +286,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Display the plot in Streamlit
     st.pyplot(fig)
 
+    
 def main():
 
     data_path = 'data/display-data/final'
