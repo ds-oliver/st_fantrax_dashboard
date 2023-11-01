@@ -274,7 +274,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     font_bold.set_weight('bold')
 
     # Title
-    TITLE = "Bumpy Chart Example:"
+    TITLE = "Chart:"
     fig.text(0.09, 0.95, TITLE, size=26, color=TEXT_COLOR, fontproperties=font_bold)
 
     # Subtitle with highlighted text
