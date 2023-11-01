@@ -283,7 +283,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
         size=16, fig=fig, fontproperties=font_bold
     )
 
-    plt.tight_layout(pad=0.5)
+    plt.tight_layout(pad=1.5)
 
     # Display the plot in Streamlit
     st.pyplot(fig)
