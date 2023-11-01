@@ -15,7 +15,7 @@ from streamlit_extras.stylable_container import stylable_container
 from streamlit_option_menu import option_menu
 import time
 import numpy as np
-import mplsoccer as mpl
+import mplsoccer
 from mplsoccer import Bumpy
 import matplotlib.pyplot as plt
 import matplotlib.colors
@@ -210,7 +210,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Create the Bumpy object and plot the data
     bumpy = Bumpy(**kwargs)
-    bumpy.plot(x_list, y_list, values, highlight_dict=highlight_dict)
+    return bumpy.plot(x_list, y_list, values, highlight_dict=highlight_dict)
 
 
 def main():
