@@ -270,7 +270,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Title
     TITLE = "Bumpy Chart Example:"
-    fig.text(0.09, 0.95, TITLE, size=29, color="#F2F2F2", fontproperties=font_bold)
+    fig.text(0.09, 0.95, TITLE, size=29, color="#fefae0", fontproperties=font_bold)
 
     # Subtitle with highlighted text
     SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
@@ -278,15 +278,17 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     fig_text(
         0.09, 0.9, SUB_TITLE,
-        color="#F2F2F2",
+        color="#fefae0",
         highlight_textprops=highlight_colors,
-        size=25, fig=fig, fontproperties=font_bold
+        size=16, fig=fig, fontproperties=font_bold
     )
+
+    plt.tight_layout(pad=0.5)
 
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-    
+
 def main():
 
     data_path = 'data/display-data/final'
