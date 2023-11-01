@@ -17,6 +17,7 @@ import time
 import numpy as np
 import mplsoccer as mpl
 from mplsoccer import Bumpy
+import matplotlib.pyplot as plt
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -486,8 +487,8 @@ def main():
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
                 # Generate highlight_dict based on user selection
-                colors = plt.cm.rainbow(np.linspace(0, 1, len(selected_players)))
-                highlight_dict = {player: colors[i] for i, player in enumerate(selected_players)}
+                bumpy_colors = plt.cm.rainbow(np.linspace(0, 1, len(selected_players)))
+                highlight_dict = {player: bumpy_colors[i] for i, player in enumerate(selected_players)}
 
                 plot_bumpy_chart(filtered_df, frame['x_column'], selected_metric, frame['label_column'], highlight_dict=highlight_dict)
 
