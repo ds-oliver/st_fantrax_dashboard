@@ -235,11 +235,11 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Create lists for x and y axes
     x_list = sorted(df[x_column].unique())
-    y_list = df[label_column].unique().tolist()
+    y_list = np.linspace(df[y_column].min(), df[y_column].max(), len(df[y_column].unique())).tolist()
 
     # Create a dictionary of values for plotting
     values = {}
-    for player in y_list:
+    for player in df[label_column].unique():
         player_df = df[df[label_column] == player]
         values[player] = player_df[y_column].tolist()
 
@@ -285,7 +285,6 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-
 
 def main():
 
@@ -568,9 +567,6 @@ def main():
                 # Filter the DataFrame based on selected players
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
-                # Debug: Check what filtered_df looks like
-                # st.write("Filtered DataFrame:", filtered_df)
-
                 # Debug: Check if DataFrame is empty
                 if filtered_df.empty:
                     st.write("Filtered DataFrame is empty.")
@@ -585,7 +581,6 @@ def main():
                                 drop_cols=frame.get("drop_cols", []))
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
-
 
     logging.info("Main function completed successfully")
 
