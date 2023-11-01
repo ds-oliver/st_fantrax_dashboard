@@ -196,17 +196,27 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
     return st.write(f"{title}: {date_of_update}")
 
 def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, **kwargs):
+    # Check if the required columns exist in the DataFrame
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
 
+    # Create lists for x and y axes
     x_list = sorted(df[x_column].unique())
     y_list = df[label_column].unique().tolist()
+
+    # Check if x_list and y_list are empty
+    if not x_list or not y_list:
+        raise ValueError("x_list or y_list is empty. Cannot plot an empty chart.")
 
     # Create a dictionary of values for plotting
     values = {}
     for player in y_list:
         player_df = df[df[label_column] == player]
         values[player] = player_df[y_column].tolist()
+
+    # Check if values dictionary is empty
+    if not values:
+        raise ValueError("No data to plot.")
 
     # Create the Bumpy object and plot the data
     bumpy = Bumpy(**kwargs)
