@@ -263,6 +263,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Create the bumpy chart plot
     fig, ax = bumpy.plot(
         x_list, y_list, values,
+        primary_alpha=0.8,
         secondary_alpha=0.2,
         highlight_dict=highlight_dict,
         upside_down=True,    # <--- to flip the y-axis
