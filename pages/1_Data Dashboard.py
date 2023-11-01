@@ -263,7 +263,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Create the bumpy chart plot
     fig, ax = bumpy.plot(
         x_list, y_list, values,
-        secondary_alpha=0.5,
+        secondary_alpha=0.2,
         highlight_dict=highlight_dict,
         upside_down=True,    # <--- to flip the y-axis
         lw=2.5
@@ -285,7 +285,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
         0.09, 0.9, SUB_TITLE,
         color=TEXT_COLOR,
         highlight_textprops=highlight_colors,
-        size=25, fig=fig, fontproperties=font_bold
+        size=18, fig=fig, fontproperties=font_bold
     )
 
     # Display the plot in Streamlit
