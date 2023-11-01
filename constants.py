@@ -1,7 +1,7 @@
 import seaborn as sns
 
 # constants.py
-colors = ['#140b04', '#1c1625', '#B82A2A']
+simple_colors = ['#140b04', '#1c1625', '#B82A2A']
 
 divergent_colors = ['#100993', '#140b04', '#1c1625', '#B82A2A']
 
