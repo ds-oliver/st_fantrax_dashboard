@@ -193,28 +193,14 @@ def get_date_created(file_path: str) -> str:
 def display_date_of_update(date_of_update, title="Last Data Refresh"):
     return st.write(f"{title}: {date_of_update}")
 
-def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict, **kwargs):
-    """
-    Plot a bumpy chart using mplsoccer's Bumpy class.
-
-    Parameters:
-        df (pd.DataFrame): DataFrame containing the data.
-        x_column (str): Name of the column to use for the x-axis.
-        y_column (str): Name of the column to use for the y-axis.
-        label_column (str): Name of the column to use for labeling data points.
-        highlight_dict (dict): Dictionary containing players to highlight and their corresponding colors.
-        **kwargs: Additional keyword arguments for Bumpy.
-
-    Returns:
-        None: The function will display the plot.
-    """
-
+def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, **kwargs):
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
 
-    # Create lists and dictionaries for plotting
     x_list = sorted(df[x_column].unique())
     y_list = df[label_column].unique().tolist()
+
+    # Create a dictionary of values for plotting
     values = {}
     for player in y_list:
         player_df = df[df[label_column] == player]
@@ -455,14 +441,12 @@ def main():
             {
                 "title": "Bumpy Chart Example",
                 "type": "bumpy",
-                "data": pd.DataFrame({
-                    'GW': ["GW 1", "GW 2", "GW 3", "GW 1", "GW 2", "GW 3"],
-                    'Player': ["Player A", "Player A", "Player A", "Player B", "Player B", "Player B"],
-                    'Rank': [1, 2, 1, 2, 1, 2]
-                }),  # Example DataFrame
+                "data": all_gws_df,  # Example DataFrame
                 "x_column": "GW",
                 "y_column": "Rank",
-                "label_column": "Player"
+                "label_column": "Player",
+                "highlight_dict": {"Player A": "red", "Player B": "blue"}  # Example highlight_dict
+
             }
         ],
         "icon": "chart-line"
@@ -490,26 +474,23 @@ def main():
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
             if frame.get("type") == "bumpy":
-                # Get the list of players from the DataFrame
-                player_list = frame['data'][frame['label_column']].unique().tolist()
-                
-                # Create a Streamlit multi-select widget for selecting players
-                selected_players = st.multiselect(
-                    'Select Players', player_list, default=player_list)
-                
-                # Create a Streamlit multi-select widget for selecting players to highlight
-                highlight_players = st.multiselect(
-                    'Select Players to Highlight', player_list, default=[])
-                
-                # Create highlight_dict
-                highlight_dict = {player: 'red' for player in highlight_players}  # Replace 'red' with the color you want
-                
-                # Filter the DataFrame based on selected players
+                # Get the list of available metrics (columns) and players from the DataFrame
+                available_metrics = [col for col in frame['data'].columns if col not in [frame['x_column'], frame['label_column']]]
+                available_players = frame['data'][frame['label_column']].unique().tolist()
+
+                # Streamlit widgets to let the user select the metric and the players
+                selected_metric = st.selectbox('Select Metric for Y-axis', available_metrics)
+                selected_players = st.multiselect('Select up to 3 Players to Highlight', available_players, default=available_players[:3])
+
+                # Filter the DataFrame based on the selected metric and players
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
-                
-                # Plot the bumpy chart
-                plot_bumpy_chart(filtered_df, frame['x_column'],
-                                frame['y_column'], frame['label_column'], highlight_dict)
+
+                # Generate highlight_dict based on user selection
+                colors = plt.cm.rainbow(np.linspace(0, 1, len(selected_players)))
+                highlight_dict = {player: colors[i] for i, player in enumerate(selected_players)}
+
+                plot_bumpy_chart(filtered_df, frame['x_column'], selected_metric, frame['label_column'], highlight_dict=highlight_dict)
+
             else:
                 display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
                                 info_text=frame.get("info_text"), 
