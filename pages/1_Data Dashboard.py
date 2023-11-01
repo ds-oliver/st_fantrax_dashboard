@@ -250,7 +250,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Instantiate the Bumpy object
     bumpy = Bumpy(
         scatter_color=BG_COLOR, line_color="#252525",
-        rotate_xticks=90,
+        rotate_xticks=45,
         ticklabel_size=17, label_size=30,
         scatter_primary='D',
         show_right=True,
