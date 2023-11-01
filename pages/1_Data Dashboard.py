@@ -193,14 +193,28 @@ def get_date_created(file_path: str) -> str:
 def display_date_of_update(date_of_update, title="Last Data Refresh"):
     return st.write(f"{title}: {date_of_update}")
 
-def plot_bumpy_chart(df, x_column, y_column, label_column, **kwargs):
+def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict, **kwargs):
+    """
+    Plot a bumpy chart using mplsoccer's Bumpy class.
+
+    Parameters:
+        df (pd.DataFrame): DataFrame containing the data.
+        x_column (str): Name of the column to use for the x-axis.
+        y_column (str): Name of the column to use for the y-axis.
+        label_column (str): Name of the column to use for labeling data points.
+        highlight_dict (dict): Dictionary containing players to highlight and their corresponding colors.
+        **kwargs: Additional keyword arguments for Bumpy.
+
+    Returns:
+        None: The function will display the plot.
+    """
+
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
 
+    # Create lists and dictionaries for plotting
     x_list = sorted(df[x_column].unique())
     y_list = df[label_column].unique().tolist()
-
-    # Create a dictionary of values for plotting
     values = {}
     for player in y_list:
         player_df = df[df[label_column] == player]
@@ -208,7 +222,8 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, **kwargs):
 
     # Create the Bumpy object and plot the data
     bumpy = Bumpy(**kwargs)
-    bumpy.plot(x_list, y_list, values)
+    bumpy.plot(x_list, y_list, values, highlight_dict=highlight_dict)
+
 
 def main():
 
