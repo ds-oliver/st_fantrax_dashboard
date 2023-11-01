@@ -477,15 +477,24 @@ def main():
             if frame.get("type") == "bumpy":
                 # Get the list of players from the DataFrame
                 player_list = frame['data'][frame['label_column']].unique().tolist()
+                
                 # Create a Streamlit multi-select widget for selecting players
                 selected_players = st.multiselect(
                     'Select Players', player_list, default=player_list)
+                
+                # Create a Streamlit multi-select widget for selecting players to highlight
+                highlight_players = st.multiselect(
+                    'Select Players to Highlight', player_list, default=[])
+                
+                # Create highlight_dict
+                highlight_dict = {player: 'red' for player in highlight_players}  # Replace 'red' with the color you want
+                
                 # Filter the DataFrame based on selected players
-                filtered_df = frame['data'][frame['data'][frame['label_column']].isin(
-                    selected_players)]
+                filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
+                
                 # Plot the bumpy chart
                 plot_bumpy_chart(filtered_df, frame['x_column'],
-                                frame['y_column'], frame['label_column'])
+                                frame['y_column'], frame['label_column'], highlight_dict)
             else:
                 display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
                                 info_text=frame.get("info_text"), 
