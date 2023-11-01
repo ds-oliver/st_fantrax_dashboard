@@ -193,6 +193,23 @@ def get_date_created(file_path: str) -> str:
 def display_date_of_update(date_of_update, title="Last Data Refresh"):
     return st.write(f"{title}: {date_of_update}")
 
+def plot_bumpy_chart(df, x_column, y_column, label_column, **kwargs):
+    if not all(col in df.columns for col in [x_column, y_column, label_column]):
+        raise ValueError("The specified columns do not exist in the DataFrame.")
+
+    x_list = sorted(df[x_column].unique())
+    y_list = df[label_column].unique().tolist()
+
+    # Create a dictionary of values for plotting
+    values = {}
+    for player in y_list:
+        player_df = df[df[label_column] == player]
+        values[player] = player_df[y_column].tolist()
+
+    # Create the Bumpy object and plot the data
+    bumpy = Bumpy(**kwargs)
+    bumpy.plot(x_list, y_list, values)
+
 def main():
 
     data_path = 'data/display-data/final'
