@@ -264,10 +264,9 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
         x_list, y_list, values,
         secondary_alpha=0.2,
         highlight_dict=highlight_dict,
-        upside_down=True,
-        x_label='GW', y_label=y_column,
-        lw=2.5,
-        ylim=(df[y_column].min(), df[y_column].max())  # <--- set y-axis limits here
+        upside_down=True,    # <--- to flip the y-axis
+        x_label='GW', y_label=y_column,  # label name
+        lw=2.5
     )
 
     # Font properties
