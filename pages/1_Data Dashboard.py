@@ -496,6 +496,8 @@ def main():
                 colors = ['red', 'blue', 'green']
                 highlight_dict = {player: color for player, color in zip(selected_players, colors)}
 
+                logging.info(f"Selected players: {highlight_dict}")
+
                 # User selects the metric for the y-axis
                 selected_metric = st.selectbox('Select Y-Axis Metric', available_metrics)
 
