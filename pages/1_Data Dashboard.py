@@ -20,7 +20,7 @@ from mplsoccer import Bumpy
 import matplotlib.pyplot as plt
 import matplotlib.colors
 
-from constants import colors, divergent_colors
+from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
 from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format, add_datadump_info
 
@@ -88,18 +88,18 @@ def create_custom_cmap_cached(*simple_colors):
     return create_custom_cmap(*simple_colors)
 
 @st.cache_data
-def create_custom_divergent_cmap_cached(*divergent_simple_colors):
-    return create_custom_divergent_cmap(*divergent_simple_colors)
+def create_custom_divergent_cmap_cached(*divergent_colors):
+    return create_custom_divergent_cmap(*divergent_colors)
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
-def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper_info_text=None, drop_cols=[]):
+def display_dataframe(df, title, simple_colors, divergent_colors, info_text=None, upper_info_text=None, drop_cols=[]):
     df = df.copy()
 
     df = df.drop(columns=[col for col in drop_cols if col in df.columns], errors='ignore')
 
     custom_cmap = create_custom_cmap(*simple_colors)
-    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_simple_colors)
+    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
     columns_to_keep = df.columns.tolist()
 
     # Dynamically calculate the height based on the number of rows
@@ -249,7 +249,7 @@ def main():
 
     logging.info("Creating custom color maps")
     custom_cmap = create_custom_cmap_cached(*simple_colors)
-    custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_simple_colors)
+    custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
     recent_gw_players_df = load_csv_file_cached(f'{data_path}/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached(f'{data_path}/grouped_player_data.csv')
