@@ -259,7 +259,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Create the bumpy chart plot
     fig, ax = bumpy.plot(
         x_list, y_list, values,
-        secondary_alpha=0.5,
+        secondary_alpha=0.2,
         highlight_dict=highlight_dict,
         lw=2.5
     )
