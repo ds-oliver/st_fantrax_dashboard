@@ -103,6 +103,7 @@ mitoinstaller==0.0.239
 mitosheet==0.1.505
 monotonic==1.6
 more-itertools==10.1.0
+mplsoccer==1.2.2
 multimethod==1.9.1
 nbclassic==1.0.0
 nbclient==0.8.0

@@ -14,6 +14,9 @@ from streamlit_extras.metric_cards import style_metric_cards
 from streamlit_extras.stylable_container import stylable_container
 from streamlit_option_menu import option_menu
 import time
+import numpy as np
+import mplsoccer as mpl
+from mplsoccer import Bumpy
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
