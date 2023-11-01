@@ -418,6 +418,23 @@ def main():
             ],
             "icon": "lightbulb"
         },
+        "Bumpy Charts": {
+        "frames": [
+            {
+                "title": "Bumpy Chart Example",
+                "type": "bumpy",
+                "data": pd.DataFrame({
+                    'GW': ["GW 1", "GW 2", "GW 3", "GW 1", "GW 2", "GW 3"],
+                    'Player': ["Player A", "Player A", "Player A", "Player B", "Player B", "Player B"],
+                    'Rank': [1, 2, 1, 2, 1, 2]
+                }),  # Example DataFrame
+                "x_column": "GW",
+                "y_column": "Rank",
+                "label_column": "Player"
+            }
+        ],
+        "icon": "chart-line"
+        }
     }
 
     # List of the DataFrames to display based on the keys in the df_dict
@@ -440,12 +457,26 @@ def main():
         st.toast("Loading data...")
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
-            display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
-                            info_text=frame.get("info_text"), 
-                            upper_info_text=frame.get("upper_info_text"),
-                            drop_cols=frame.get("drop_cols", []))
+            if frame.get("type") == "bumpy":
+                # Get the list of players from the DataFrame
+                player_list = frame['data'][frame['label_column']].unique().tolist()
+                # Create a Streamlit multi-select widget for selecting players
+                selected_players = st.multiselect(
+                    'Select Players', player_list, default=player_list)
+                # Filter the DataFrame based on selected players
+                filtered_df = frame['data'][frame['data'][frame['label_column']].isin(
+                    selected_players)]
+                # Plot the bumpy chart
+                plot_bumpy_chart(filtered_df, frame['x_column'],
+                                frame['y_column'], frame['label_column'])
+            else:
+                display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
+                                info_text=frame.get("info_text"), 
+                                upper_info_text=frame.get("upper_info_text"),
+                                drop_cols=frame.get("drop_cols", []))
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
+
 
     logging.info("Main function completed successfully")
 
