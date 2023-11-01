@@ -26,6 +26,9 @@ from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
 from functions import load_css, add_construction, create_custom_cmap,create_custom_divergent_cmap, style_dataframe_custom, round_and_format, add_datadump_info
 
+TEXT_COLOR = "#fefae0"
+BG_COLOR = "#370617"
+
 # Set up relative path for the log file
 current_directory = os.path.dirname(__file__)
 log_file_path = os.path.join(current_directory, 'info_streamlit_app_logs.log')
@@ -228,14 +231,15 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 
     st.pyplot(plt.gcf())
 
-def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, **kwargs):
+def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, text_color=TEXT_COLOR, bg_color=BG_COLOR, **kwargs):
+    
     # Check if the required columns exist in the DataFrame
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
 
     # Create lists for x and y axes
     x_list = sorted(df[x_column].unique())
-    y_list = np.linspace(df[y_column].max(), df[y_column].min(), len(df[y_column].unique())).tolist()
+    y_list = np.linspace(df[y_column].min(), df[y_column].max(), len(df[y_column].unique())).tolist()
 
     # Create a dictionary of values for plotting
     values = {}
@@ -245,7 +249,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Instantiate the Bumpy object
     bumpy = Bumpy(
-        scatter_color="#282A2C", line_color="#252525",
+        scatter_color=BG_COLOR, line_color="#252525",
         rotate_xticks=90,
         ticklabel_size=17, label_size=30,
         scatter_primary='D',
@@ -259,8 +263,9 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Create the bumpy chart plot
     fig, ax = bumpy.plot(
         x_list, y_list, values,
-        secondary_alpha=0.2,
+        secondary_alpha=0.5,
         highlight_dict=highlight_dict,
+        upside_down=True,    # <--- to flip the y-axis
         lw=2.5
     )
 
@@ -270,7 +275,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Title
     TITLE = "Bumpy Chart Example:"
-    fig.text(0.09, 0.95, TITLE, size=29, color="#fefae0", fontproperties=font_bold)
+    fig.text(0.09, 0.95, TITLE, size=29, color=TEXT_COLOR, fontproperties=font_bold)
 
     # Subtitle with highlighted text
     SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
@@ -278,16 +283,13 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     fig_text(
         0.09, 0.9, SUB_TITLE,
-        color="#fefae0",
+        color=TEXT_COLOR,
         highlight_textprops=highlight_colors,
-        size=16, fig=fig, fontproperties=font_bold
+        size=25, fig=fig, fontproperties=font_bold
     )
-
-    plt.tight_layout(pad=1.5)
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-
 
 def main():
 
