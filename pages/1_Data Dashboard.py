@@ -266,6 +266,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
         secondary_alpha=0.2,
         highlight_dict=highlight_dict,
         upside_down=True,    # <--- to flip the y-axis
+        x_label='GW', y_label=y_column,  # label name
         lw=2.5
     )
 
