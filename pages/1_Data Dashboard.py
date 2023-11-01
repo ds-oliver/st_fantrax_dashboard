@@ -492,6 +492,13 @@ def main():
                 # Filter the DataFrame based on selected players
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
+                # Debug: Check what filtered_df looks like
+                st.write("Filtered DataFrame:", filtered_df)
+
+                # Debug: Check if DataFrame is empty
+                if filtered_df.empty:
+                    st.write("Filtered DataFrame is empty.")
+
                 # Plot the bumpy chart
                 plot_bumpy_chart(filtered_df, frame['x_column'], selected_metric, frame['label_column'], highlight_dict=highlight_dict)
 
