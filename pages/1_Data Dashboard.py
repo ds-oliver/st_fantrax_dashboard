@@ -16,11 +16,11 @@ from streamlit_option_menu import option_menu
 import time
 import numpy as np
 import mplsoccer
-from mplsoccer import Bumpy
 import matplotlib.pyplot as plt
 import matplotlib.colors
 from matplotlib.font_manager import FontProperties
-
+from highlight_text import fig_text
+from mplsoccer import Bumpy, FontManager, add_image
 
 from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -257,22 +257,35 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     )
 
     # Create the bumpy chart plot
-    fig, ax = bumpy.plot(x_list, y_list, values, secondary_alpha=0.5, highlight_dict=highlight_dict, lw=2.5)
+    fig, ax = bumpy.plot(
+        x_list, y_list, values,
+        secondary_alpha=0.5,
+        highlight_dict=highlight_dict,
+        lw=2.5
+    )
 
     # Font properties
     font_bold = FontProperties()
     font_bold.set_weight('bold')
 
-    # Title and Subtitle
+    # Title
     TITLE = "Bumpy Chart Example:"
-    SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
-
-    # Add title and subtitle
     fig.text(0.09, 0.95, TITLE, size=29, color="#F2F2F2", fontproperties=font_bold)
-    fig.text(0.09, 0.9, SUB_TITLE, size=25, color="#F2F2F2")
+
+    # Subtitle with highlighted text
+    SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
+    highlight_colors = [{"color": color} for color in highlight_dict.values()]
+
+    fig_text(
+        0.09, 0.9, SUB_TITLE,
+        color="#F2F2F2",
+        highlight_textprops=highlight_colors,
+        size=25, fig=fig, fontproperties=font_bold
+    )
 
     # Display the plot in Streamlit
     st.pyplot(fig)
+
 
 def main():
 
