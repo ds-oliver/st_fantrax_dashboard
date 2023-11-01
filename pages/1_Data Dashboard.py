@@ -250,7 +250,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Instantiate the Bumpy object
     bumpy = Bumpy(
         scatter_color=BG_COLOR, line_color="#252525",
-        ticklabel_size=14, label_size=22,
+        ticklabel_size=14, label_size=18,
         scatter_primary='D',
         show_right=True,
         plot_labels=True,
@@ -274,8 +274,8 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     font_bold.set_weight('bold')
 
     # Title
-    TITLE = "Chart:"
-    fig.text(0.09, 0.95, TITLE, size=26, color=TEXT_COLOR, fontproperties=font_bold)
+    TITLE = "Bumpy Chart Example:"
+    fig.text(0.09, 0.95, TITLE, size=29, color=TEXT_COLOR, fontproperties=font_bold)
 
     # Subtitle with highlighted text
     SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
