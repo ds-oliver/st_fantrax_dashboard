@@ -445,10 +445,7 @@ def main():
                 "type": "bumpy",
                 "data": all_gws_df,  # Example DataFrame
                 "x_column": "GW",
-                "y_column": "Rank",
-                "label_column": "Player",
-                "highlight_dict": {"Player A": "red", "Player B": "blue"}  # Example highlight_dict
-
+                "label_column": "Player"
             }
         ],
         "icon": "chart-line"
@@ -476,23 +473,27 @@ def main():
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
             if frame.get("type") == "bumpy":
-                # Get the list of available numerical metrics (columns) and players from the DataFrame
-                available_metrics = [col for col in frame['data'].select_dtypes(include=[np.number]).columns if col not in [frame['x_column'], frame['label_column']]]
+                # Filter the DataFrame based on selected players
+                available_metrics = [col for col in frame['data'].select_dtypes(include=[np.number]).columns 
+                                    if col not in [frame['x_column'], frame['label_column'], 'GP', 'MIN']]
                 available_players = frame['data'][frame['label_column']].unique().tolist()
 
-                # Streamlit widgets to let the user select the metric and the players
-                selected_metric = st.selectbox('Select Metric for Y-axis', available_metrics)
-                selected_players = st.multiselect('Select up to 3 Players to Highlight', available_players, default=available_players[:3])
+                # Create a Streamlit multi-select widget for selecting players
+                selected_players = st.multiselect(
+                    'Select Players', available_players, default=available_players[:3])  # Default to first 3 players
 
-                # Filter the DataFrame based on the selected metric and players
+                # Automatically assign colors to the selected players
+                colors = ['red', 'blue', 'green']
+                highlight_dict = {player: color for player, color in zip(selected_players, colors)}
+
+                # User selects the metric for the y-axis
+                selected_metric = st.selectbox('Select Y-Axis Metric', available_metrics)
+
+                # Filter the DataFrame based on selected players
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
-                # Generate highlight_dict based on user selection
-                colors = plt.cm.rainbow(np.linspace(0, 1, len(selected_players)))
-                highlight_dict = {player: matplotlib.colors.to_hex(colors[i]) for i, player in enumerate(selected_players)}
-
+                # Plot the bumpy chart
                 plot_bumpy_chart(filtered_df, frame['x_column'], selected_metric, frame['label_column'], highlight_dict=highlight_dict)
-
 
             else:
                 display_dataframe(frame["data"], frame["title"], simple_colors, divergent_colors, 
