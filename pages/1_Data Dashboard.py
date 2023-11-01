@@ -19,6 +19,8 @@ import mplsoccer
 from mplsoccer import Bumpy
 import matplotlib.pyplot as plt
 import matplotlib.colors
+from matplotlib.font_manager import FontProperties
+
 
 from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -195,7 +197,7 @@ def get_date_created(file_path: str) -> str:
 def display_date_of_update(date_of_update, title="Last Data Refresh"):
     return st.write(f"{title}: {date_of_update}")
 
-def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, **kwargs):
+# def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, **kwargs):
     # Check if the required columns exist in the DataFrame
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
@@ -225,6 +227,52 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     plt.yticks(range(len(y_list)), y_list)
 
     st.pyplot(plt.gcf())
+
+def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, **kwargs):
+    # Check if the required columns exist in the DataFrame
+    if not all(col in df.columns for col in [x_column, y_column, label_column]):
+        raise ValueError("The specified columns do not exist in the DataFrame.")
+
+    # Create lists for x and y axes
+    x_list = sorted(df[x_column].unique())
+    y_list = df[label_column].unique().tolist()
+
+    # Create a dictionary of values for plotting
+    values = {}
+    for player in y_list:
+        player_df = df[df[label_column] == player]
+        values[player] = player_df[y_column].tolist()
+
+    # Instantiate the Bumpy object
+    bumpy = Bumpy(
+        scatter_color="#282A2C", line_color="#252525",
+        rotate_xticks=90,
+        ticklabel_size=17, label_size=30,
+        scatter_primary='D',
+        show_right=True,
+        plot_labels=True,
+        alignment_yvalue=0.1,
+        alignment_xvalue=0.065,
+        **kwargs
+    )
+
+    # Create the bumpy chart plot
+    fig, ax = bumpy.plot(x_list, y_list, values, secondary_alpha=0.5, highlight_dict=highlight_dict, lw=2.5)
+
+    # Font properties
+    font_bold = FontProperties()
+    font_bold.set_weight('bold')
+
+    # Title and Subtitle
+    TITLE = "Bumpy Chart Example:"
+    SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
+
+    # Add title and subtitle
+    fig.text(0.09, 0.95, TITLE, size=29, color="#F2F2F2", fontproperties=font_bold)
+    fig.text(0.09, 0.9, SUB_TITLE, size=25, color="#F2F2F2")
+
+    # Display the plot in Streamlit
+    st.pyplot(fig)
 
 def main():
 
