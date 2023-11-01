@@ -18,6 +18,7 @@ import numpy as np
 import mplsoccer as mpl
 from mplsoccer import Bumpy
 import matplotlib.pyplot as plt
+import matplotlib.colors
 
 from constants import colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -83,12 +84,12 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     return df
 
 @st.cache_data
-def create_custom_cmap_cached(*colors):
-    return create_custom_cmap(*colors)
+def create_custom_cmap_cached(*simple_colors):
+    return create_custom_cmap(*simple_colors)
 
 @st.cache_data
-def create_custom_divergent_cmap_cached(*divergent_colors):
-    return create_custom_divergent_cmap(*divergent_colors)
+def create_custom_divergent_cmap_cached(*divergent_simple_colors):
+    return create_custom_divergent_cmap(*divergent_simple_colors)
 
 # Cache this function to avoid re-styling the DataFrame every time
 @st.cache_data
@@ -97,8 +98,8 @@ def display_dataframe(df, title, colors, divergent_colors, info_text=None, upper
 
     df = df.drop(columns=[col for col in drop_cols if col in df.columns], errors='ignore')
 
-    custom_cmap = create_custom_cmap(*colors)
-    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_colors)
+    custom_cmap = create_custom_cmap(*simple_colors)
+    custom_divergent_cmap = create_custom_divergent_cmap(*divergent_simple_colors)
     columns_to_keep = df.columns.tolist()
 
     # Dynamically calculate the height based on the number of rows
@@ -247,8 +248,8 @@ def main():
     ## grouped: / away_team_byteam
 
     logging.info("Creating custom color maps")
-    custom_cmap = create_custom_cmap_cached(*colors)
-    custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
+    custom_cmap = create_custom_cmap_cached(*simple_colors)
+    custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_simple_colors)
 
     recent_gw_players_df = load_csv_file_cached(f'{data_path}/recent_gw_data.csv')
     grouped_players_df = load_csv_file_cached(f'{data_path}/grouped_player_data.csv')
@@ -475,8 +476,8 @@ def main():
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
             if frame.get("type") == "bumpy":
-                # Get the list of available metrics (columns) and players from the DataFrame
-                available_metrics = [col for col in frame['data'].columns if col not in [frame['x_column'], frame['label_column']]]
+                # Get the list of available numerical metrics (columns) and players from the DataFrame
+                available_metrics = [col for col in frame['data'].select_dtypes(include=[np.number]).columns if col not in [frame['x_column'], frame['label_column']]]
                 available_players = frame['data'][frame['label_column']].unique().tolist()
 
                 # Streamlit widgets to let the user select the metric and the players
@@ -487,10 +488,11 @@ def main():
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
                 # Generate highlight_dict based on user selection
-                bumpy_colors = plt.cm.rainbow(np.linspace(0, 1, len(selected_players)))
-                highlight_dict = {player: bumpy_colors[i] for i, player in enumerate(selected_players)}
+                colors = plt.cm.rainbow(np.linspace(0, 1, len(selected_players)))
+                highlight_dict = {player: matplotlib.colors.to_hex(colors[i]) for i, player in enumerate(selected_players)}
 
                 plot_bumpy_chart(filtered_df, frame['x_column'], selected_metric, frame['label_column'], highlight_dict=highlight_dict)
+
 
             else:
                 display_dataframe(frame["data"], frame["title"], colors, divergent_colors, 
