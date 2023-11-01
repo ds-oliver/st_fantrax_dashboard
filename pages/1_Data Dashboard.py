@@ -220,8 +220,8 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Create the Bumpy object and plot the data
     bumpy = Bumpy(**kwargs)
-    return bumpy.plot(x_list, y_list, values, highlight_dict=highlight_dict)
-
+    bumpy.plot(x_list, y_list, values, highlight_dict=highlight_dict)
+    plt.show()
 
 def main():
 
@@ -498,8 +498,6 @@ def main():
                 colors = ['red', 'blue', 'green']
                 highlight_dict = {player: color for player, color in zip(selected_players, colors)}
 
-                st.write(f"Selected players: {highlight_dict}")
-
                 # User selects the metric for the y-axis
                 selected_metric = st.selectbox('Select Y-Axis Metric', available_metrics)
 
@@ -507,7 +505,7 @@ def main():
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
                 # Debug: Check what filtered_df looks like
-                st.write("Filtered DataFrame:", filtered_df)
+                # st.write("Filtered DataFrame:", filtered_df)
 
                 # Debug: Check if DataFrame is empty
                 if filtered_df.empty:
