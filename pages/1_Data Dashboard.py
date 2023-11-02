@@ -308,6 +308,63 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     st.pyplot(fig)
 
 
+def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
+    
+    # Calculate the percentile ranks for each player in the selected metrics
+    for metric in metrics:
+        df[f"{metric} Percentile"] = df[metric].rank(pct=True) * 100
+    
+    # Create lists for x and y axes
+    x_list = [f"{metric}\nPercentile" for metric in metrics]
+    y_list = np.linspace(0, 100, 11).astype(int).tolist()
+    
+    # Create a dictionary of values for plotting
+    values = {}
+    for player in df[label_column].unique():
+        player_df = df[df[label_column] == player]
+        player_values = [player_df[f"{metric} Percentile"].values[0] for metric in metrics]
+        values[player] = player_values
+
+    # Instantiate the Bumpy object
+    bumpy = Bumpy(
+        rotate_xticks=0, ticklabel_size=23, label_size=28, scatter="value",
+        show_right=True, alignment_yvalue=0.15, alignment_xvalue=0.06,
+        **kwargs
+    )
+
+    # Create the bumpy chart plot
+    fig, ax = bumpy.plot(
+        x_list, y_list, values,
+        secondary_alpha=0.05, highlight_dict=highlight_dict,
+        figsize=(20, 12), upside_down=True,
+        x_label="Metrics", y_label="Percentile Rank", ylim=(0.5, 105),
+        lw=2.5
+    )
+
+    # Font properties
+    font_bold = FontProperties()
+    font_bold.set_weight('bold')
+
+    # Title
+    TITLE = "Player Percentile Rank Comparison"
+    fig.text(0.02, 0.98, TITLE, size=34, color=text_color, fontproperties=font_bold)
+
+    # Subtitle with highlighted text
+    SUB_TITLE = ", ".join([f"<{player}>" for player in highlight_dict.keys()])
+    highlight_colors = [{"color": color} for color in highlight_dict.values()]
+
+    fig_text(
+        0.02, 0.93, SUB_TITLE,
+        color=text_color,
+        highlight_textprops=highlight_colors,
+        size=28, fig=fig, fontproperties=font_bold
+    )
+
+    # Display the plot in Streamlit
+    st.pyplot(fig)
+
+
+
 def main():
     
     epl = Image.open(
@@ -540,16 +597,16 @@ def main():
             "icon": "lightbulb"
         },
         "Bumpy Charts": {
-        "frames": [
-            {
-                "title": "Percentile Plot",
-                "type": "bumpy",
-                "data": grouped_players_df,  # Example DataFrame
-                "x_column": "GW",
-                "label_column": "Player"
-            }
-        ],
-        "icon": "chart-line"
+            "frames": [
+                {
+                    "title": "Percentile Plot",
+                    "type": "percentile_bumpy",
+                    "data": grouped_players_df,  # Example DataFrame
+                    "label_column": "Player",
+                    "metrics": ["Attacking Stats", "Defensive Stats", "Duel Stats", "Liability Stats", "FPts/90", "Ghosts/90"]
+                }
+            ],
+            "icon": "chart-line"
         }
     }
 
@@ -563,30 +620,20 @@ def main():
     # Streamlit Option Menu for DataFrame selection
     with st.sidebar:
         selected_df_key = option_menu(
-                    "Select DataFrame", dfs_keys,
-                    icons=dfs_icons,
-                    menu_icon="list",
-                    styles=default_style)
+            "Select DataFrame", dfs_keys,
+            icons=dfs_icons,
+            menu_icon="list",
+            styles=default_style
+        )
 
     # Conditionally display the selected DataFrame and info text
     if selected_df_key:
         st.toast("Loading data...")
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
-            if frame.get("type") == "bumpy":
-                    # Convert specified columns to numeric if they exist in the DataFrame
-                list_of_cols = ['FPTS', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
-                
-                for col in list_of_cols:
-                    if col in frame['data'].columns:
-                        frame['data'][col] = pd.to_numeric(frame['data'][col], errors='coerce')
-
+            if frame.get("type") == "percentile_bumpy":
                 # Filter the DataFrame based on selected players
-                available_metrics = [col for col in frame['data'].select_dtypes(include=[np.number]).columns 
-                                    if col not in [frame['x_column'], frame['label_column'], 'GP', 'MIN']]
                 available_players = frame['data'][frame['label_column']].unique().tolist()
-
-                st.write(f"frame['data'].columns: {frame['data'].columns}")
 
                 # Create a Streamlit multi-select widget for selecting players
                 selected_players = st.multiselect(
@@ -596,9 +643,6 @@ def main():
                 colors = ['red', 'blue', 'green']
                 highlight_dict = {player: color for player, color in zip(selected_players, colors)}
 
-                # User selects the metric for the y-axis
-                selected_metric = st.selectbox('Select Y-Axis Metric', available_metrics)
-
                 # Filter the DataFrame based on selected players
                 filtered_df = frame['data'][frame['data'][frame['label_column']].isin(selected_players)]
 
@@ -606,19 +650,22 @@ def main():
                 if filtered_df.empty:
                     st.write("Filtered DataFrame is empty.")
 
-                # Plot the bumpy chart
-                plot_bumpy_chart(filtered_df, frame['x_column'], selected_metric, frame['label_column'], highlight_dict=highlight_dict)
+                # Plot the percentile bumpy chart
+                plot_percentile_bumpy_chart(
+                    filtered_df, frame['label_column'], 
+                    frame['metrics'], highlight_dict=highlight_dict
+                )
 
             else:
+                # ... (handling for other visualization and data types)
                 display_dataframe(frame["data"], frame["title"], simple_colors, divergent_colors, 
-                                info_text=frame.get("info_text"), 
-                                upper_info_text=frame.get("upper_info_text"),
-                                drop_cols=frame.get("drop_cols", []))
+                                  info_text=frame.get("info_text"), 
+                                  upper_info_text=frame.get("upper_info_text"),
+                                  drop_cols=frame.get("drop_cols", []))
     else:
         st.error(f"DataFrame '{selected_df_key}' not found where expected.")
 
     logging.info("Main function completed successfully")
-
 
 if __name__ == "__main__":
     main()
