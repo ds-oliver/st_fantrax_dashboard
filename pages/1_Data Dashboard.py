@@ -234,7 +234,6 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 #     st.pyplot(plt.gcf())
 
 
-
 def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
     
     # log columns to check
