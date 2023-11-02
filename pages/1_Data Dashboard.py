@@ -235,6 +235,13 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 
 def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
     
+    # if col is one of these cols convert to numeric:
+    list_of_cols = ['FPTS', 'FP/G', 'ros', 'GP', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
+    
+    for col in list_of_cols:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    
     # Check if the required columns exist in the DataFrame
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
