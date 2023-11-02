@@ -344,6 +344,9 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
         lw=2.5
     )
 
+    # Adjust plot position
+    fig.subplots_adjust(left=0.1, bottom=0.15, right=0.9, top=0.85)
+
     # Font properties
     font_bold = FontProperties()
     font_bold.set_weight('bold')
