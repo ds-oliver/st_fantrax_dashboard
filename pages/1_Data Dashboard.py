@@ -238,13 +238,6 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # log columns to check
     st.write(f"Columns in df: {df.columns}")
     
-    # Convert specified columns to numeric if they exist in the DataFrame
-    list_of_cols = ['FPTS', 'FP/G', 'ros', 'GP', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
-    
-    for col in list_of_cols:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
-    
     # Check if the required columns exist in the DataFrame
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
@@ -575,10 +568,19 @@ def main():
         selected_frames = df_dict.get(selected_df_key, {}).get('frames', [])
         for frame in selected_frames:
             if frame.get("type") == "bumpy":
+                    # Convert specified columns to numeric if they exist in the DataFrame
+                list_of_cols = ['FPTS', 'FP/G', 'ros', 'GP', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
+                
+                for col in list_of_cols:
+                    if col in frame['data'].columns:
+                        frame['data'][col] = pd.to_numeric(frame['data'][col], errors='coerce')
+
                 # Filter the DataFrame based on selected players
                 available_metrics = [col for col in frame['data'].select_dtypes(include=[np.number]).columns 
                                     if col not in [frame['x_column'], frame['label_column'], 'GP', 'MIN']]
                 available_players = frame['data'][frame['label_column']].unique().tolist()
+
+                st.write(f"frame['data'].columns: {frame['data'].columns}")
 
                 # Create a Streamlit multi-select widget for selecting players
                 selected_players = st.multiselect(
