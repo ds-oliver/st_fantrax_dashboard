@@ -257,7 +257,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     values = {}
     for player in df[label_column].unique():
         player_df = df[df[label_column] == player]
-        rankings = player_df.set_index(x_column)['Rank'].reindex(x_list).fillna(method='ffill').tolist()
+        rankings = player_df.set_index(x_column)['Rank'].reindex(x_list).fillna(0).tolist()
         values[player] = rankings
 
     # Instantiate the Bumpy object
