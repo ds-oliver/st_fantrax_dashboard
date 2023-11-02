@@ -569,7 +569,7 @@ def main():
         for frame in selected_frames:
             if frame.get("type") == "bumpy":
                     # Convert specified columns to numeric if they exist in the DataFrame
-                list_of_cols = ['FPTS', 'FP/G', 'ros', 'GP', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
+                list_of_cols = ['FPTS', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
                 
                 for col in list_of_cols:
                     if col in frame['data'].columns:
