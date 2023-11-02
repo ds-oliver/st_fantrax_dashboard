@@ -308,9 +308,9 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     st.pyplot(fig)
 
 
-def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
+def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, text_color="#fefae0", bg_color="#370617", **kwargs):
     
-    # st.write the columns in df
+    # Log the columns in df
     st.write(f"Columns in df: {df.columns}")
 
     # Calculate the percentile ranks for each player in the selected metrics
@@ -340,7 +340,7 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
         x_list, y_list, values,
         secondary_alpha=0.05, highlight_dict=highlight_dict,
         figsize=(20, 12), upside_down=True,
-        x_label="Metrics", y_label="Percentile Rank", ylim=(0.5, 105),
+        x_label="Metrics", y_label="Percentile Rank", ylim=(0, 100),
         lw=2.5
     )
 
@@ -353,19 +353,19 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
     fig.text(0.02, 0.98, TITLE, size=34, color=text_color, fontproperties=font_bold)
 
     # Subtitle with highlighted text
-    SUB_TITLE = ", ".join([f"<{player}>" for player in highlight_dict.keys()])
-    highlight_colors = [{"color": color} for color in highlight_dict.values()]
+    if highlight_dict:
+        SUB_TITLE = ", ".join([f"<{player}>" for player in highlight_dict.keys()])
+        highlight_colors = [{"color": color} for color in highlight_dict.values()]
 
-    fig_text(
-        0.02, 0.93, SUB_TITLE,
-        color=text_color,
-        highlight_textprops=highlight_colors,
-        size=28, fig=fig, fontproperties=font_bold
-    )
+        fig_text(
+            0.02, 0.93, SUB_TITLE,
+            color=text_color,
+            highlight_textprops=highlight_colors,
+            size=28, fig=fig, fontproperties=font_bold
+        )
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-
 
 
 def main():
@@ -643,7 +643,7 @@ def main():
                     'Select Players', available_players, default=available_players[:3])  # Default to first 3 players
 
                 # Automatically assign colors to the selected players
-                colors = ['red', 'blue', 'green']
+                colors = ['salmon', 'cornflowerblue', 'mint']
                 highlight_dict = {player: color for player, color in zip(selected_players, colors)}
 
                 # Filter the DataFrame based on selected players
