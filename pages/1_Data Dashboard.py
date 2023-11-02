@@ -231,25 +231,32 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 
 #     st.pyplot(plt.gcf())
 
-def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, text_color=TEXT_COLOR, bg_color=BG_COLOR, **kwargs):
+
+
+def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
     
     # Check if the required columns exist in the DataFrame
     if not all(col in df.columns for col in [x_column, y_column, label_column]):
         raise ValueError("The specified columns do not exist in the DataFrame.")
 
+    # Sort DataFrame based on x_column and calculate rankings based on y_column
+    df = df.sort_values(by=[x_column, y_column], ascending=[True, False])
+    df['Rank'] = df.groupby(x_column)[y_column].rank(method='min', ascending=False)
+
     # Create lists for x and y axes
     x_list = sorted(df[x_column].unique())
-    y_list = np.linspace(df[y_column].min(), df[y_column].max(), len(df[y_column].unique())).tolist()
+    y_list = np.arange(1, df['Rank'].max() + 1).tolist()  # Rankings start from 1
 
     # Create a dictionary of values for plotting
     values = {}
     for player in df[label_column].unique():
         player_df = df[df[label_column] == player]
-        values[player] = player_df[y_column].tolist()
+        rankings = player_df.set_index(x_column)['Rank'].reindex(x_list).fillna(method='ffill').tolist()
+        values[player] = rankings
 
     # Instantiate the Bumpy object
     bumpy = Bumpy(
-        scatter_color=BG_COLOR, line_color="#252525",
+        scatter_color=bg_color, line_color="#252525",
         ticklabel_size=14, label_size=18,
         scatter_primary='D',
         show_right=True,
@@ -265,7 +272,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
         secondary_alpha=0.2,
         highlight_dict=highlight_dict,
         upside_down=True,    # <--- to flip the y-axis
-        x_label='GW', y_label=y_column,  # label name
+        x_label='GW', y_label="Rank",  # label name
         lw=2.5
     )
 
@@ -275,7 +282,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Title
     TITLE = "Bumpy Chart Example:"
-    fig.text(0.09, 0.95, TITLE, size=29, color=TEXT_COLOR, fontproperties=font_bold)
+    fig.text(0.09, 0.95, TITLE, size=29, color=text_color, fontproperties=font_bold)
 
     # Subtitle with highlighted text
     SUB_TITLE = "A comparison between " + ', '.join([f"<{player}>" for player in highlight_dict.keys()])
@@ -283,13 +290,14 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     fig_text(
         0.09, 0.9, SUB_TITLE,
-        color=TEXT_COLOR,
+        color=text_color,
         highlight_textprops=highlight_colors,
         size=18, fig=fig, fontproperties=font_bold
     )
 
     # Display the plot in Streamlit
     st.pyplot(fig)
+
 
 def main():
 
