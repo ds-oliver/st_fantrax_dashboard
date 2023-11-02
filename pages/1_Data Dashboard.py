@@ -643,7 +643,7 @@ def main():
                     'Select Players', available_players, default=available_players[:3])  # Default to first 3 players
 
                 # Automatically assign colors to the selected players
-                colors = ['salmon', 'cornflowerblue', 'mint']
+                colors = ['salmon', 'cornflowerblue', 'gold']
                 highlight_dict = {player: color for player, color in zip(selected_players, colors)}
 
                 # Filter the DataFrame based on selected players
