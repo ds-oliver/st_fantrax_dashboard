@@ -60,6 +60,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+@st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
@@ -234,9 +235,9 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 
 def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
     
-    # if col is one of these cols convert to numeric:
+    # Convert specified columns to numeric if they exist in the DataFrame
     list_of_cols = ['FPTS', 'FP/G', 'ros', 'GP', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
-
+    
     for col in list_of_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -248,6 +249,9 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     # Sort DataFrame based on x_column and calculate rankings based on y_column
     df = df.sort_values(by=[x_column, y_column], ascending=[True, False])
     df['Rank'] = df.groupby(x_column)[y_column].rank(method='min', ascending=False)
+
+    # Fill forward any missing rankings (if a player is missing for a particular game week)
+    df['Rank'] = df.groupby(label_column)['Rank'].fillna(method='ffill')
 
     # Create lists for x and y axes
     x_list = sorted(df[x_column].unique())
@@ -279,7 +283,8 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
         highlight_dict=highlight_dict,
         upside_down=True,    # <--- to flip the y-axis
         x_label='GW', y_label="Rank",  # label name
-        lw=2.5
+        lw=2.5,
+        ylim=(1, max(y_list))  # Explicitly set y-axis limits
     )
 
     # Font properties
@@ -303,7 +308,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-
+    
 
 def main():
 
