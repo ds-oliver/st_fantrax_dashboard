@@ -606,7 +606,7 @@ def main():
                     "metrics": ["Attacking Stats", "Defensive Stats", "Duel Stats", "Liability Stats", "FPts/90", "Ghosts/90"]
                 }
             ],
-            "icon": "chart-line"
+            "icon": "graph-up"
         }
     }
 
