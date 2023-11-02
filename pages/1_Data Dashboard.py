@@ -308,7 +308,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     st.pyplot(fig)
 
 
-def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, text_color="#fefae0", bg_color="#370617", **kwargs):
+def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
     
     # Log the columns in df
     st.write(f"Columns in df: {df.columns}")
