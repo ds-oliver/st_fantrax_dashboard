@@ -309,9 +309,6 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
 def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, text_color="white", bg_color="black", **kwargs):
     
-    # Log the columns in df
-    st.write(f"Columns in df: {df.columns}")
-
     # Calculate the percentile ranks for each player in the selected metrics
     for metric in metrics:
         df[f"{metric} Percentile"] = df[metric].rank(pct=True) * 100
@@ -368,7 +365,7 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-
+    
 
 def main():
     
