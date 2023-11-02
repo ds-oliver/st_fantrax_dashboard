@@ -21,6 +21,8 @@ import matplotlib.colors
 from matplotlib.font_manager import FontProperties
 from highlight_text import fig_text
 from mplsoccer import Bumpy, FontManager, add_image
+from urllib.request import urlopen
+from PIL import Image
 
 from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -307,6 +309,10 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
 
 
 def main():
+    
+    epl = Image.open(
+    urlopen("https://raw.githubusercontent.com/andrewRowlinson/mplsoccer-assets/main/epl.png")
+    )
 
     data_path = 'data/display-data/final'
 
@@ -536,9 +542,9 @@ def main():
         "Bumpy Charts": {
         "frames": [
             {
-                "title": "Bumpy Chart Example",
+                "title": "Percentile Plot",
                 "type": "bumpy",
-                "data": all_gws_df,  # Example DataFrame
+                "data": grouped_players_df,  # Example DataFrame
                 "x_column": "GW",
                 "label_column": "Player"
             }
@@ -569,7 +575,7 @@ def main():
         for frame in selected_frames:
             if frame.get("type") == "bumpy":
                     # Convert specified columns to numeric if they exist in the DataFrame
-                list_of_cols = ['FPTS', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
+                list_of_cols = ['FPTS', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
                 
                 for col in list_of_cols:
                     if col in frame['data'].columns:
