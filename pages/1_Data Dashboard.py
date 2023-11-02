@@ -60,7 +60,6 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
-@st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
@@ -153,7 +152,7 @@ def clear_cache_button():
     """
     if st.sidebar.button("Clear cache"):
         st.cache_data.clear()
-        st.experimental_rerun()
+        st.rerun()
 
 @st.cache_data
 def get_sell_high_players(df, head=50):
@@ -237,7 +236,7 @@ def plot_bumpy_chart(df, x_column, y_column, label_column, highlight_dict=None, 
     
     # if col is one of these cols convert to numeric:
     list_of_cols = ['FPTS', 'FP/G', 'ros', 'GP', 'MIN', 'G', 'KP', 'AT', 'SOT', 'TKW', 'DIS', 'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG', 'GAO', 'CS', 'GW', 'ROS %', 'GS', 'PTS', 'DPT', 'OFF', 'PKG', 'Ghost Points', 'Negative Fpts', 'GPR']
-    
+
     for col in list_of_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
