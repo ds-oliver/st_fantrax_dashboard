@@ -625,7 +625,7 @@ def main():
                 "data": pilot_grouped_players_df,
                 "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
                 "upper_info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes"
-            }, 
+            }
             ],
             "icon": "moon-stars-fill"
         },
