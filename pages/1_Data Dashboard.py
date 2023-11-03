@@ -375,6 +375,8 @@ def main():
 
     data_path = 'data/display-data/final'
 
+    pilot_scoring_data_path = 'data/display-data/final/pilot'
+
     # initialize logging
 
     logging.info("Starting main function")
@@ -446,6 +448,19 @@ def main():
 
     # call get_sell_high_players
     sell_high_players = get_sell_high_players(recent_gw_players_df, head=50)
+
+
+    ### PILOT SCORING DATA ###
+    # load pilot scoring data
+    pilot_gw_data = load_csv_file_cached(f'{pilot_scoring_data_path}/recent_gw_data.csv')
+    pilot_grouped_players_df = load_csv_file_cached(f'{pilot_scoring_data_path}/grouped_player_data.csv')
+    pilot_all_gws_df = load_csv_file_cached(f'{pilot_scoring_data_path}/all_gws_data.csv')
+
+    pilot_team_df = load_csv_file_cached(f'{pilot_scoring_data_path}/for_team.csv', set_index_cols=['team'])
+    pilot_team_pos_df = load_csv_file_cached(f'{pilot_scoring_data_path}/d_detail_bypos_forteam.csv', set_index_cols=['team', 'position'])
+
+    pilot_all_pos = load_csv_file_cached(f'{pilot_scoring_data_path}/all_pos.csv', set_index_cols=['position'])
+    pilot_ftx_pos_df = load_csv_file_cached(f'{pilot_scoring_data_path}/ftx_pos.csv', set_index_cols=['ftx_position'])
 
     # get the most recent gameweek value
     recent_gw = all_gws_df['GW'].max()
@@ -609,7 +624,23 @@ def main():
                 }
             ],
             "icon": "graph-up"
-        }
+        },
+        "Pilot Scoring Data": {
+            "frames": [{
+                # players who played in the most recent gameweek
+                "title": f"Player Data (GW {recent_gw})",
+                "data": pilot_gw_data,
+                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. GPR is a measure of Ghost Points over Total FPts; the higher the value the better a ghoster the player is. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW rolling sum of FPTS. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+            }, {
+                # players who played in the most recent gameweek by team
+                "title": f"GW {recent_gw} Team Data",
+                "data": recent_gw_data_team,
+                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
+                "upper_info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes"
+            }, 
+            ],
+            "icon": "moon-stars-fill"
+        },
     }
 
     # List of the DataFrames to display based on the keys in the df_dict
