@@ -621,15 +621,34 @@ def main():
                 # players who played in the most recent gameweek by team
                 "title": f"All GWs Data (GW {first_gw} - {recent_gw}) | **:orange[Pilot Scoring]**",
                 "data": pilot_grouped_players_df,
-                "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
-                "upper_info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes", 
+                "info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes",
+                "upper_info_text": f"The table below shows {recent_gw} matches.", 
                 "drop_cols": ["gp", "gp (max)", "gp (mean)"]
-            }
+            },
+            {
+                # for_team
+                "title": f"Team Data (GW {first_gw} - {recent_gw}) | **:orange[Pilot Scoring]**",
+                "data": pilot_team_df,
+                "info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes",
+                "upper_info_text": f"The table below shows {recent_gw} matches."
+            },
+            {   # ftx_pos
+                "title": f"Basic Positional Data (GW {first_gw} - {recent_gw}) | **:orange[Pilot Scoring]**",
+                "data": pilot_ftx_pos_df,
+                "info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes",
+                "upper_info_text": f"The table below shows {recent_gw} matches."
+            },
+            {   # position
+                "title": f"Positional Data (GW {first_gw} - {recent_gw}) | **:orange[Pilot Scoring]**",
+                "data": pilot_all_pos,
+                "info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes",
+                "upper_info_text": f"The table below shows {recent_gw} matches."
+            },
             ,{
                 # players who played in the most recent gameweek
-                "title": f"Player Data (GW {recent_gw}) | Pilot Scoring",
+                "title": f"Player Data (GW {recent_gw}) | **:orange[Pilot Scoring]**",
                 "data": pilot_gw_data,
-                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. GPR is a measure of Ghost Points over Total FPts; the higher the value the better a ghoster the player is. The overperformance metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW rolling sum of FPTS. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
+                "info_text": f"Note: The above table is a subset of the full player data, filtered to show only players who have played in the most recent gameweek. GPR is a measure of Ghost Points over Total FPts; the higher the value the better a ghoster the player is. The 'Overperformance' metric is a simple difference of LiveRkOv (rank by Total FPts) less Ros Rank. A higher value will tell you the player is currently overperforming. HeatStreak is a 3 GW rolling sum of FPTS. If HeatStreak values are missing or null, it means there was insufficient data over the last 3 gameweeks to calculate a value."
             }
             ],
             "icon": "moon-stars-fill"
