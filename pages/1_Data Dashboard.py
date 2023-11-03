@@ -452,12 +452,15 @@ def main():
 
     ### PILOT SCORING DATA ###
     # load pilot scoring data
+    # data/display-data/final/pilot/recent_gw_data.csv
     pilot_gw_data = load_csv_file_cached(f'{pilot_scoring_data_path}/recent_gw_data.csv')
     pilot_grouped_players_df = load_csv_file_cached(f'{pilot_scoring_data_path}/grouped_player_data.csv')
-    pilot_all_gws_df = load_csv_file_cached(f'{pilot_scoring_data_path}/all_gws_data.csv')
+    pilot_all_gws_df = load_csv_file_cached(f'{pilot_scoring_data_path}/pilot_scoring_all_gws_data.csv')
 
     pilot_team_df = load_csv_file_cached(f'{pilot_scoring_data_path}/for_team.csv', set_index_cols=['team'])
-    pilot_team_pos_df = load_csv_file_cached(f'{pilot_scoring_data_path}/d_detail_bypos_forteam.csv', set_index_cols=['team', 'position'])
+    pilot_vs_team_df = load_csv_file_cached(f'{pilot_scoring_data_path}/vs_team.csv', set_index_cols=['opponent'])
+    pilot_team_pos_df = load_csv_file_cached(f'{pilot_scoring_data_path}/team_gran_pos.csv', set_index_cols=['team', 'position'])
+    pilot_team_ftx_pos_df = load_csv_file_cached(f'{pilot_scoring_data_path}/team_ftx_pos.csv', set_index_cols=['team', 'ftx_position'])
 
     pilot_all_pos = load_csv_file_cached(f'{pilot_scoring_data_path}/all_pos.csv', set_index_cols=['position'])
     pilot_ftx_pos_df = load_csv_file_cached(f'{pilot_scoring_data_path}/ftx_pos.csv', set_index_cols=['ftx_position'])
