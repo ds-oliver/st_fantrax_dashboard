@@ -619,7 +619,7 @@ def main():
         "Pilot Scoring Data": {
             "frames": [{
                 # players who played in the most recent gameweek by team
-                "title": f"All GWs Data (GW {first_gw} - {recent_gw}) **red:[|]** **:orange[Pilot Scoring]**",
+                "title": f"All GWs Data (GW {first_gw} - {recent_gw}) | **:orange[Pilot Scoring]**",
                 "data": pilot_grouped_players_df,
                 "info_text": f"Note: This table shows team-specific data for GW {recent_gw}.",
                 "upper_info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes", 
