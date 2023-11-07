@@ -25,6 +25,7 @@ from urllib.request import urlopen
 from PIL import Image
 import plotly.figure_factory as ff
 import plotly.express as px
+import altair as alt
 
 from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -747,7 +748,7 @@ def main():
 
             elif frame.get("type") == "scoring_distplot":
                 # Call your distribution plot function here
-                create_scoring_distplot(frame["data"])
+                create_scoring_distplot(frame["data"], use_container_width=True)
 
             else:
                 # ... (handling for other visualization and data types)
