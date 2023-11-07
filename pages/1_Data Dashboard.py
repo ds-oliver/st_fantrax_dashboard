@@ -623,7 +623,7 @@ def main():
                 "data": pilot_grouped_players_df,
                 "info_text": f"Aggregated data is filtered to include only players who played more than 45 minutes",
                 "upper_info_text": f"The table below shows {recent_gw} matches.", 
-                "drop_cols": ["gp", "gp (max)", "gp (mean)"]
+                "drop_cols": ["gp", "gp (max)", "gp (mean)", "GW"]
             },{
                 # for_team
                 "title": f"Team Data (GW {first_gw} - {recent_gw}) | **:orange[Pilot Scoring]**",
