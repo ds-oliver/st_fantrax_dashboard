@@ -23,6 +23,8 @@ from highlight_text import fig_text
 from mplsoccer import Bumpy, FontManager, add_image
 from urllib.request import urlopen
 from PIL import Image
+import plotly.figure_factory as ff
+import plotly.express as px
 
 from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -366,6 +368,22 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
     # Display the plot in Streamlit
     st.pyplot(fig)
     
+def create_scoring_distplot(pilot_scoring_all_gws_data):
+    # Extract the scoring data into Series
+    default_scoring = pilot_scoring_all_gws_data['Default FPTS']
+    new_scoring = pilot_scoring_all_gws_data['FPTS']
+
+    # Group the data together
+    hist_data = [default_scoring, new_scoring]
+
+    # Labels for the different datasets
+    group_labels = ['Default Scoring', 'New Scoring']
+
+    # Create the distribution plot
+    fig = ff.create_distplot(hist_data, group_labels, show_hist=False, show_rug=False)
+
+    # Display the plot in a Streamlit application
+    st.plotly_chart(fig, use_container_width=True)
 
 def main():
     
@@ -649,7 +667,7 @@ def main():
             ],
             "icon": "moon-stars-fill"
         },
-        "Bumpy Charts": {
+        "Charts": {
             "frames": [
                 {
                     "title": "Percentile Plot",
@@ -660,7 +678,18 @@ def main():
                 }
             ],
             "icon": "graph-up"
-        }
+        }, 
+        # Adding a new chart type in the 'Charts' section
+        "Scoring Distribution": {
+            "frames": [
+                {
+                    "title": "Scoring System Comparison",
+                    "type": "scoring_distplot",
+                    "data": pilot_all_gws_df,  # Your DataFrame
+                }
+            ],
+            "icon": "bar-chart-fill"  # Choose an appropriate icon
+}
     }
 
     # List of the DataFrames to display based on the keys in the df_dict
@@ -708,6 +737,10 @@ def main():
                     filtered_df, frame['label_column'], 
                     frame['metrics'], highlight_dict=highlight_dict
                 )
+
+            elif frame.get("type") == "scoring_distplot":
+                # Call your distribution plot function here
+                create_scoring_distplot(frame["data"])
 
             else:
                 # ... (handling for other visualization and data types)
