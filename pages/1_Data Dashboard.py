@@ -781,7 +781,7 @@ def main():
 
             elif frame.get("type") == "scoring_distplot":
                 # Call your distribution plot function here
-                create_scoring_distplot(frame["data"], use_container_width=True)
+                # create_scoring_distplot(frame["data"], use_container_width=True)
                 plot_grouped_bar_chart(frame["data"])
 
             else:
