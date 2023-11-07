@@ -688,8 +688,8 @@ def main():
                     "data": pilot_all_gws_df,  # Your DataFrame
                 }
             ],
-            "icon": "bar-chart-fill"  # Choose an appropriate icon
-}
+            "icon": "graph-up-fill"  # Choose an appropriate icon
+        }
     }
 
     # List of the DataFrames to display based on the keys in the df_dict
