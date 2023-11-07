@@ -370,8 +370,8 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
     
 def create_scoring_distplot(pilot_scoring_all_gws_data):
     # Extract the scoring data into Series
-    default_scoring = pilot_scoring_all_gws_data['Default FPTS']
-    new_scoring = pilot_scoring_all_gws_data['FPTS']
+    default_scoring = pilot_scoring_all_gws_data['Default FPTS'].astype(float)
+    new_scoring = pilot_scoring_all_gws_data['FPTS'].astype(float)
 
     # Group the data together
     hist_data = [default_scoring, new_scoring]
