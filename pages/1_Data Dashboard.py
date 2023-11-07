@@ -26,6 +26,8 @@ from PIL import Image
 import plotly.figure_factory as ff
 import plotly.express as px
 import altair as alt
+import plotly.graph_objects as go
+
 
 from constants import simple_colors, divergent_colors
 from files import new_matches_data, ros_data
@@ -393,6 +395,34 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
     # Display the chart in a Streamlit application
     st.altair_chart(chart, use_container_width=use_container_width)
 
+def plot_grouped_bar_chart(df):
+    # Create traces for each scoring system with new colors
+    trace1 = go.Bar(
+        x=df['Player'],
+        y=df['Default FPTS'],
+        name='Default Scoring',
+        marker=dict(color='#1f77b4')  # Example of a blue color in hex
+    )
+    trace2 = go.Bar(
+        x=df['Player'],
+        y=df['New FPTS'],
+        name='New Scoring',
+        marker=dict(color='#ff7f0e')  # Example of an orange color in hex
+    )
+
+    # Arrange the traces to form a grouped bar chart
+    data = [trace1, trace2]
+    layout = go.Layout(
+        barmode='group',
+        title='Comparison of Scoring Systems',
+        xaxis=dict(title='Players'),
+        yaxis=dict(title='Fantasy Points')
+    )
+
+    fig = go.Figure(data=data, layout=layout)
+    fig.show()
+
+
 def main():
     
     epl = Image.open(
@@ -749,6 +779,7 @@ def main():
             elif frame.get("type") == "scoring_distplot":
                 # Call your distribution plot function here
                 create_scoring_distplot(frame["data"], use_container_width=True)
+                plot_grouped_bar_chart(frame["data"])
 
             else:
                 # ... (handling for other visualization and data types)
