@@ -1,0 +1,2 @@
+id,team_name,season,stat_name,shots,goals,xG,against_shots,GA,xGA,GP,xG-G,xGA-GA,xG-xGA,xG_per_shot,xG_per_shot_against,shots_per_goal_against,shots_against_per_game,xG_diff
+93,BHA,2023,4-2-2-2,5.0,1.0,1.2298473194241524,8.0,0.0,1.2,11.0,0.22984731942415237,1.2,0.02984731942415242,0.24596946388483049,0.15,inf,0.7272727272727273,0.02984731942415242

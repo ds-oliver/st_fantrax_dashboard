@@ -1,0 +1,2 @@
+id,team_name,season,stat_name,shots,goals,xG,against_shots,GA,xGA,GP,xG-G,xGA-GA,xG-xGA,xG_per_shot,xG_per_shot_against,shots_per_goal_against,shots_against_per_game,xG_diff
+36,MCI,2023,3-2-4-1,10.0,2.0,0.9625086281448603,5.0,1.0,1.0,11.0,-1.0374913718551397,0.0,-0.03749137185513973,0.09625086281448603,0.2,5.0,0.45454545454545453,-0.03749137185513973
