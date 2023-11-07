@@ -396,6 +396,9 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
     st.altair_chart(chart, use_container_width=use_container_width)
 
 def plot_grouped_bar_chart(df):
+    # if FPTS exists rename to Pilot FPTS
+    if 'FPTS' in df.columns:
+        df = df.rename(columns={'FPTS': 'Pilot FPTS'})
     # Create traces for each scoring system with new colors
     trace1 = go.Bar(
         x=df['Player'],
@@ -405,7 +408,7 @@ def plot_grouped_bar_chart(df):
     )
     trace2 = go.Bar(
         x=df['Player'],
-        y=df['New FPTS'],
+        y=df['Pilot FPTS'],
         name='New Scoring',
         marker=dict(color='#ff7f0e')  # Example of an orange color in hex
     )
