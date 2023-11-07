@@ -368,22 +368,29 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
     # Display the plot in Streamlit
     st.pyplot(fig)
     
-def create_scoring_distplot(pilot_scoring_all_gws_data):
-    # Extract the scoring data into Series
-    default_scoring = pilot_scoring_all_gws_data['Default FPTS'].astype(float)
-    new_scoring = pilot_scoring_all_gws_data['FPTS'].astype(float)
+def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: bool):
+    # Assuming 'pilot_scoring_all_gws_data' is your DataFrame with the scoring data
+    # Ensuring the scoring columns are numeric and clean
+    pilot_scoring_all_gws_data['Default FPTS'] = pd.to_numeric(pilot_scoring_all_gws_data['Default FPTS'], errors='coerce')
+    pilot_scoring_all_gws_data['FPTS'] = pd.to_numeric(pilot_scoring_all_gws_data['FPTS'], errors='coerce')
+    pilot_scoring_all_gws_data.dropna(subset=['Default FPTS', 'FPTS'], inplace=True)
 
-    # Group the data together
-    hist_data = [default_scoring, new_scoring]
+    # Create a long-form DataFrame suitable for Altair
+    long_form = pilot_scoring_all_gws_data.melt(value_vars=['Default FPTS', 'FPTS'], 
+                                                var_name='Scoring System', value_name='Score')
 
-    # Labels for the different datasets
-    group_labels = ['Default Scoring', 'New Scoring']
+    # Altair Chart
+    chart = alt.Chart(long_form).mark_bar(
+        opacity=0.3,
+        binSpacing=0
+    ).encode(
+        alt.X('Score:Q', bin=alt.Bin(maxbins=100)),
+        alt.Y('count()', stack=None),
+        alt.Color('Scoring System:N')
+    )
 
-    # Create the distribution plot
-    fig = ff.create_distplot(hist_data, group_labels, show_hist=False, show_rug=False)
-
-    # Display the plot in a Streamlit application
-    st.plotly_chart(fig, use_container_width=True)
+    # Display the chart in a Streamlit application
+    st.altair_chart(chart, use_container_width=use_container_width)
 
 def main():
     
