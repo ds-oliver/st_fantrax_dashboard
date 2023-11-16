@@ -4,27 +4,27 @@ import logging
 import pandas as pd
 import warnings
 import streamlit as st
-from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
-import uuid
-import streamlit_extras
-from streamlit_extras.dataframe_explorer import dataframe_explorer
-from markdownlit import mdlit
-from streamlit_extras.metric_cards import style_metric_cards
-from streamlit_extras.stylable_container import stylable_container
+# from concurrent.futures import ThreadPoolExecutor
+# from datetime import datetime
+# import uuid
+# import streamlit_extras
+# from streamlit_extras.dataframe_explorer import dataframe_explorer
+# from markdownlit import mdlit
+# from streamlit_extras.metric_cards import style_metric_cards
+# from streamlit_extras.stylable_container import stylable_container
 from streamlit_option_menu import option_menu
 import time
 import numpy as np
-import mplsoccer
+# import mplsoccer
 import matplotlib.pyplot as plt
-import matplotlib.colors
+# import matplotlib.colors
 from matplotlib.font_manager import FontProperties
 from highlight_text import fig_text
-from mplsoccer import Bumpy, FontManager, add_image
+# from mplsoccer import Bumpy, FontManager, add_image
 from urllib.request import urlopen
 from PIL import Image
-import plotly.figure_factory as ff
-import plotly.express as px
+# import plotly.figure_factory as ff
+# import plotly.express as px
 import altair as alt
 import plotly.graph_objects as go
 
