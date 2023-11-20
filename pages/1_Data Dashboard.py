@@ -967,7 +967,7 @@ def main():
                 "data": grouped_players_df,
             }
         ],
-        "icon": "people-fill",
+        "icon": "graph-up",
     }
 
     # List of the DataFrames to display based on the keys in the df_dict
