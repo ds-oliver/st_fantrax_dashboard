@@ -370,6 +370,28 @@ def plot_percentile_bumpy_chart(df, label_column, metrics, highlight_dict=None, 
 
     # Display the plot in Streamlit
     st.pyplot(fig)
+
+def compare_players(player_1_name, player_2_name, player_stats_df):
+    # This function assumes there is a DataFrame that contains stats for all players
+    # and that 'Player' is a column in this DataFrame.
+    player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name]
+    player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name]
+
+    # Check if both players are found in the DataFrame
+    if player_1_stats.empty or player_2_stats.empty:
+        st.error("Player not found.")
+        return
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.header(player_1_name)
+        # Display the player's stats here, you can customize as needed
+        st.write(player_1_stats.to_dict(orient='records')[0])
+
+    with col2:
+        st.header(player_2_name)
+        # Display the player's stats here, you can customize as needed
+        st.write(player_2_stats.to_dict(orient='records')[0])
     
 def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: bool):
     # Assuming 'pilot_scoring_all_gws_data' is your DataFrame with the scoring data
@@ -733,6 +755,17 @@ def main():
         }
     }
 
+    # Update the df_dict with a new entry for player comparison
+    df_dict["Player Comparison"] = {
+        "frames": [{
+            "title": "Compare Players",
+            "type": "player_comparison",
+            # Assuming 'grouped_players_df' contains the stats for all players
+            "data": grouped_players_df
+        }],
+        "icon": "people-fill"
+    }
+
     # List of the DataFrames to display based on the keys in the df_dict
     dfs_to_display = [(key, df_dict[key]["icon"]) for key in df_dict]
 
@@ -783,6 +816,15 @@ def main():
                 # Call your distribution plot function here
                 # create_scoring_distplot(frame["data"], use_container_width=True)
                 plot_grouped_bar_chart(frame["data"])
+
+            elif frame.get("type") == "player_comparison":
+                # Logic for selecting players to compare
+                all_players = frame["data"]['Player'].unique().tolist()
+                player_1_name = st.selectbox('Select Player 1', all_players)
+                player_2_name = st.selectbox('Select Player 2', all_players)
+                
+                if st.button('Compare'):
+                    compare_players(player_1_name, player_2_name, frame["data"])
 
             else:
                 # ... (handling for other visualization and data types)
