@@ -1220,8 +1220,10 @@ def main():
                 # Define the stats you want to include in your pizza chart
                 stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT']
 
-                # Call the function to create and display the pizza chart
-                create_pizza_chart(frame["data"], selected_player, stats_to_include)
+                if st.button("Display"):
+
+                    # Call the function to create and display the pizza chart
+                    create_pizza_chart(frame["data"], selected_player, stats_to_include)
 
             # elif frame.get("type") == "player_comparison":
             #     # Logic for selecting players to compare
