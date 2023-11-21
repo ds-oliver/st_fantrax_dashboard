@@ -4,10 +4,11 @@ import logging
 import pandas as pd
 import warnings
 import streamlit as st
+
 # import plottable
 # from plottable import Table
 import mplsoccer
-from mplsoccer import Radar, FontManager
+from mplsoccer import Radar, FontManager, PyPizza
 
 # from concurrent.futures import ThreadPoolExecutor
 # from datetime import datetime
@@ -471,16 +472,38 @@ def plot_percentile_bumpy_chart(
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT', 'TKW', 'DIS',
-    'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
-    'GAO', 'CS']
+
+relevant_stats = [
+    "FPTS",
+    "G",
+    "Ghost Points",
+    "Negative Fpts",
+    "KP",
+    "AT",
+    "SOT",
+    "TKW",
+    "DIS",
+    "YC",
+    "RC",
+    "ACNC",
+    "INT",
+    "CLR",
+    "COS",
+    "BS",
+    "AER",
+    "PKM",
+    "PKD",
+    "OG",
+    "GAO",
+    "CS",
+]
 
 # def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah", player_stats_df):
 #     player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name].iloc[0]
 #     player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name].iloc[0]
 
 #     col1, col2 = st.columns(2)
-    
+
 #     with col1:
 #         st.image(player_1_stats['image_url'])  # Assuming there's a column with image URLs
 #         st.subheader(player_1_name)
@@ -503,14 +526,25 @@ relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT
 #         fig.update_layout(barmode='group')
 #         st.plotly_chart(fig, use_container_width=True)
 
-def compare_players_radar(player_stats_df, player_1_name, player_2_name, stats_to_include):
+
+def compare_players_radar(
+    player_stats_df, player_1_name, player_2_name, stats_to_include
+):
     # Ensure stats_to_include is not empty
     if not stats_to_include:
         raise ValueError("No statistics provided for the radar chart.")
 
     # Filter the dataframe for the two players
-    player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name][stats_to_include].values.flatten().tolist()
-    player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name][stats_to_include].values.flatten().tolist()
+    player_1_stats = (
+        player_stats_df[player_stats_df["Player"] == player_1_name][stats_to_include]
+        .values.flatten()
+        .tolist()
+    )
+    player_2_stats = (
+        player_stats_df[player_stats_df["Player"] == player_2_name][stats_to_include]
+        .values.flatten()
+        .tolist()
+    )
 
     # Calculate the min and max values for each stat to define the range for the radar chart
     mins = player_stats_df[stats_to_include].min().values.flatten().tolist()
@@ -520,13 +554,17 @@ def compare_players_radar(player_stats_df, player_1_name, player_2_name, stats_t
     radar = Radar(params=stats_to_include, min_range=mins, max_range=maxs)
 
     # Define a figure
-    fig, ax = radar.plot_radar(ranges=zip(mins, maxs), params=stats_to_include, 
-                               values=[player_1_stats, player_2_stats], 
-                               radar_color=['#1A78CF', '#FF920B'],
-                               alpha=0.25, compare=True)
+    fig, ax = radar.plot_radar(
+        ranges=zip(mins, maxs),
+        params=stats_to_include,
+        values=[player_1_stats, player_2_stats],
+        radar_color=["#1A78CF", "#FF920B"],
+        alpha=0.25,
+        compare=True,
+    )
     # Add legends and titles
-    ax.set_title(f'{player_1_name} vs {player_2_name}', size=20)
-    plt.legend(labels=[player_1_name, player_2_name], loc='upper right', fontsize=12)
+    ax.set_title(f"{player_1_name} vs {player_2_name}", size=20)
+    plt.legend(labels=[player_1_name, player_2_name], loc="upper right", fontsize=12)
 
     # Show the radar chart
     st.pyplot(fig)
@@ -563,6 +601,64 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 
     # Display the chart in a Streamlit application
     st.altair_chart(chart, use_container_width=use_container_width)
+
+
+from matplotlib.font_manager import FontProperties
+
+
+def create_pizza_chart(player_name, player_values, params, slice_colors, text_colors):
+    # Instantiate PyPizza class
+    baker = PyPizza(
+        params=params,
+        background_color="#222222",
+        straight_line_color="#000000",
+        straight_line_lw=1,
+        last_circle_color="#000000",
+        last_circle_lw=1,
+        other_circle_lw=0,
+        inner_circle_size=20,
+    )
+
+    # Plot pizza
+    fig, ax = baker.make_pizza(
+        player_values,
+        figsize=(8, 8.5),
+        color_blank_space="same",
+        slice_colors=slice_colors,
+        value_colors=text_colors,
+        value_bck_colors=slice_colors,
+        blank_alpha=0.4,
+        kwargs_slices=dict(edgecolor="#000000", zorder=2, linewidth=1),
+        kwargs_params=dict(
+            color="#F2F2F2", fontsize=11, fontproperties=FontProperties(), va="center"
+        ),
+        kwargs_values=dict(
+            color="#F2F2F2",
+            fontsize=11,
+            fontproperties=FontProperties(),
+            zorder=3,
+            bbox=dict(
+                edgecolor="#000000",
+                facecolor="cornflowerblue",
+                boxstyle="round,pad=0.2",
+                lw=1,
+            ),
+        ),
+    )
+
+    # Add texts and titles
+    fig.text(
+        0.515,
+        0.975,
+        f"{player_name} - Performance",
+        size=16,
+        ha="center",
+        fontproperties=FontProperties(),
+        color="#F2F2F2",
+    )
+
+    # Display the chart in Streamlit
+    st.pyplot(fig)
 
 
 def plot_grouped_bar_chart(df):
@@ -1011,6 +1107,17 @@ def main():
         "icon": "graph-up",
     }
 
+    df_dict["Player Stats Chart"] = {
+        "frames": [
+            {
+                "title": "Player Stats Chart",
+                "type": "player_pizza_chart",
+                "data": grouped_players_df,
+            }
+        ],
+        "icon": "chart-pie",
+    }
+
     # List of the DataFrames to display based on the keys in the df_dict
     dfs_to_display = [(key, df_dict[key]["icon"]) for key in df_dict]
 
@@ -1075,14 +1182,46 @@ def main():
             elif frame.get("type") == "player_comparison":
                 # Logic for selecting players to compare
                 all_players = frame["data"]["Player"].unique().tolist()
-                player_1_name = st.selectbox("Select Player 1", all_players, index=all_players.index("Erling Haaland") if "Erling Haaland" in all_players else 0)
-                player_2_name = st.selectbox("Select Player 2", all_players, index=all_players.index("Mohamed Salah") if "Mohamed Salah" in all_players else 1)
+                player_1_name = st.selectbox(
+                    "Select Player 1",
+                    all_players,
+                    index=all_players.index("Erling Haaland")
+                    if "Erling Haaland" in all_players
+                    else 0,
+                )
+                player_2_name = st.selectbox(
+                    "Select Player 2",
+                    all_players,
+                    index=all_players.index("Mohamed Salah")
+                    if "Mohamed Salah" in all_players
+                    else 1,
+                )
 
                 # Define the stats you want to include in your radar chart
-                stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT']
+                stats_to_include = [
+                    "FPTS",
+                    "G",
+                    "Ghost Points",
+                    "Negative Fpts",
+                    "KP",
+                    "AT",
+                ]
 
                 if st.button("Compare"):
-                    compare_players_radar(frame["data"], player_1_name, player_2_name, stats_to_include)
+                    compare_players_radar(
+                        frame["data"], player_1_name, player_2_name, stats_to_include
+                    )
+
+            if frame.get("type") == "player_pizza_chart":
+                # Logic to handle player selection for pizza chart
+                all_players = frame["data"]["Player"].unique().tolist()
+                selected_player = st.selectbox("Select Player", all_players)
+                
+                # Define the stats you want to include in your pizza chart
+                stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT']
+
+                # Call the function to create and display the pizza chart
+                create_pizza_chart(frame["data"], selected_player, stats_to_include)
 
             # elif frame.get("type") == "player_comparison":
             #     # Logic for selecting players to compare
