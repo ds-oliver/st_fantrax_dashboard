@@ -606,32 +606,48 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 from matplotlib.font_manager import FontProperties
 
 
-def create_pizza_chart(player_name, player_values, params, slice_colors, text_colors):
+def create_pizza_chart(player_stats_df, player_name, params, slice_colors, text_colors):
+    # Ensure the player is in the DataFrame
+    if player_name not in player_stats_df["Player"].values:
+        st.error(f"Player {player_name} not found in the data.")
+        return
+
+    # Extract player's stats
+    player_data = player_stats_df[player_stats_df["Player"] == player_name]
+    player_values = [player_data[stat].values[0] for stat in params]
+
+    # Check if the length of params, slice_colors, and text_colors are equal
+    if not (len(params) == len(slice_colors) == len(text_colors)):
+        st.error("The lengths of params, slice_colors, and text_colors do not match.")
+        return
+
     # Instantiate PyPizza class
     baker = PyPizza(
-        params=params,
-        background_color="#222222",
-        straight_line_color="#000000",
-        straight_line_lw=1,
-        last_circle_color="#000000",
-        last_circle_lw=1,
-        other_circle_lw=0,
-        inner_circle_size=20,
+        params=params,  # list of parameters
+        background_color="#222222",  # background color
+        straight_line_color="#000000",  # color for straight lines
+        straight_line_lw=1,  # linewidth for straight lines
+        last_circle_color="#000000",  # color for last line
+        last_circle_lw=1,  # linewidth of last circle
+        other_circle_lw=0,  # linewidth for other circles
+        inner_circle_size=20,  # size of inner circle
     )
 
     # Plot pizza
     fig, ax = baker.make_pizza(
-        player_values,
-        figsize=(8, 8.5),
-        color_blank_space="same",
-        slice_colors=slice_colors,
-        value_colors=text_colors,
-        value_bck_colors=slice_colors,
-        blank_alpha=0.4,
-        kwargs_slices=dict(edgecolor="#000000", zorder=2, linewidth=1),
+        player_values,  # list of values
+        figsize=(8, 8.5),  # adjust the figsize according to your need
+        color_blank_space="same",  # use the same color to fill blank space
+        slice_colors=slice_colors,  # color for individual slices
+        value_colors=text_colors,  # color for the value-text
+        value_bck_colors=slice_colors,  # color for the blank spaces
+        blank_alpha=0.4,  # alpha for blank-space colors
+        kwargs_slices=dict(
+            edgecolor="#000000", zorder=2, linewidth=1
+        ),  # values to be used when plotting slices
         kwargs_params=dict(
             color="#F2F2F2", fontsize=11, fontproperties=FontProperties(), va="center"
-        ),
+        ),  # values to be used when adding parameter labels
         kwargs_values=dict(
             color="#F2F2F2",
             fontsize=11,
@@ -643,7 +659,7 @@ def create_pizza_chart(player_name, player_values, params, slice_colors, text_co
                 boxstyle="round,pad=0.2",
                 lw=1,
             ),
-        ),
+        ),  # values to be used when adding parameter-values labels
     )
 
     # Add texts and titles
@@ -1218,18 +1234,52 @@ def main():
                 selected_player = st.selectbox("Select Player", all_players)
 
                 # Define the stats you want to include in your pizza chart
-                stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT']
+                stats_to_include = [
+                    "FPTS",
+                    "G",
+                    "Ghost Points",
+                    "Negative Fpts",
+                    "KP",
+                    "AT",
+                ]
 
                 # Define default slice and text colors
-                default_slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F", "#FFCD00"]
-                default_text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#FFFFFF", "#000000", "#000000"]
+                default_slice_colors = [
+                    "#1A78CF",
+                    "#FF9300",
+                    "#D70232",
+                    "#F05B4F",
+                    "#8A9B0F",
+                    "#FFCD00",
+                ]
+                default_text_colors = [
+                    "#FFFFFF",
+                    "#000000",
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#000000",
+                    "#000000",
+                ]
 
                 if st.button("Display"):
                     # Extract player values for the selected stats
-                    player_values = frame["data"].loc[frame["data"]["Player"] == selected_player, stats_to_include].values.flatten().tolist()
+                    player_values = (
+                        frame["data"]
+                        .loc[
+                            frame["data"]["Player"] == selected_player, stats_to_include
+                        ]
+                        .values.flatten()
+                        .tolist()
+                    )
 
                     # Call the function to create and display the pizza chart
-                    create_pizza_chart(selected_player, player_values, stats_to_include, default_slice_colors, default_text_colors)
+                    create_pizza_chart(
+                        selected_player,
+                        player_values,
+                        stats_to_include,
+                        default_slice_colors,
+                        default_text_colors,
+                    )
 
             # elif frame.get("type") == "player_comparison":
             #     # Logic for selecting players to compare
