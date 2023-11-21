@@ -475,33 +475,33 @@ relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT
     'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
     'GAO', 'CS']
 
-def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah", player_stats_df):
-    player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name].iloc[0]
-    player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name].iloc[0]
+# def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah", player_stats_df):
+#     player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name].iloc[0]
+#     player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name].iloc[0]
 
-    col1, col2 = st.columns(2)
+#     col1, col2 = st.columns(2)
     
-    with col1:
-        st.image(player_1_stats['image_url'])  # Assuming there's a column with image URLs
-        st.subheader(player_1_name)
-        for stat in relevant_stats:
-            st.metric(label=stat, value=player_1_stats[stat])
+#     with col1:
+#         st.image(player_1_stats['image_url'])  # Assuming there's a column with image URLs
+#         st.subheader(player_1_name)
+#         for stat in relevant_stats:
+#             st.metric(label=stat, value=player_1_stats[stat])
 
-    with col2:
-        st.image(player_2_stats['image_url'])  # Assuming there's a column with image URLs
-        st.subheader(player_2_name)
-        for stat in relevant_stats:
-            st.metric(label=stat, value=player_2_stats[stat])
+#     with col2:
+#         st.image(player_2_stats['image_url'])  # Assuming there's a column with image URLs
+#         st.subheader(player_2_name)
+#         for stat in relevant_stats:
+#             st.metric(label=stat, value=player_2_stats[stat])
 
-    # Create a side-by-side bar chart for comparison
-    for stat in relevant_stats:
-        fig = go.Figure(data=[
-            go.Bar(name=player_1_name, x=[stat], y=[player_1_stats[stat]]),
-            go.Bar(name=player_2_name, x=[stat], y=[player_2_stats[stat]])
-        ])
-        # Change the bar mode
-        fig.update_layout(barmode='group')
-        st.plotly_chart(fig, use_container_width=True)
+#     # Create a side-by-side bar chart for comparison
+#     for stat in relevant_stats:
+#         fig = go.Figure(data=[
+#             go.Bar(name=player_1_name, x=[stat], y=[player_1_stats[stat]]),
+#             go.Bar(name=player_2_name, x=[stat], y=[player_2_stats[stat]])
+#         ])
+#         # Change the bar mode
+#         fig.update_layout(barmode='group')
+#         st.plotly_chart(fig, use_container_width=True)
 
 def compare_players_radar(player_stats_df, player_1_name="Erling Haaland", player_2_name="Mohamed Salah", stats_to_include=None):
     if stats_to_include is None:
