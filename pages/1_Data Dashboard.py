@@ -618,6 +618,14 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
         for stat in params
     ]
 
+    # Debugging: Print types and values
+    print("Player Values:", player_values, "Types:", [type(value) for value in player_values])
+    print("Slice Colors:", slice_colors, "Types:", [type(color) for color in slice_colors])
+    print("Text Colors:", text_colors, "Types:", [type(color) for color in text_colors])
+
+    # Ensure player_values are in the correct type, e.g., convert to strings if necessary
+    player_values = [str(value) for value in player_values]
+
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
         st.error("The lengths of params, slice_colors, and text_colors do not match.")
