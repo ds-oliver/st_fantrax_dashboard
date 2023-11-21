@@ -606,15 +606,17 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 from matplotlib.font_manager import FontProperties
 
 
-def create_pizza_chart(player_stats_df, player_name, params, slice_colors, text_colors):
-    # Ensure the player is in the DataFrame
-    if player_name not in player_stats_df["Player"].values:
-        st.error(f"Player {player_name} not found in the data.")
+def create_pizza_chart(player_data, player_name, params, slice_colors, text_colors):
+    # Check if the DataFrame is empty
+    if player_data.empty:
+        st.error(f"No data available for player {player_name}.")
         return
 
     # Extract player's stats
-    player_data = player_stats_df[player_stats_df["Player"] == player_name]
-    player_values = [player_data[stat].values[0] for stat in params]
+    player_values = [
+        player_data[stat].values[0] if stat in player_data.columns else 0
+        for stat in params
+    ]
 
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
@@ -642,12 +644,8 @@ def create_pizza_chart(player_stats_df, player_name, params, slice_colors, text_
         value_colors=text_colors,  # color for the value-text
         value_bck_colors=slice_colors,  # color for the blank spaces
         blank_alpha=0.4,  # alpha for blank-space colors
-        kwargs_slices=dict(
-            edgecolor="#000000", zorder=2, linewidth=1
-        ),  # values to be used when plotting slices
-        kwargs_params=dict(
-            color="#F2F2F2", fontsize=11, va="center"
-        ),  # values to be used when adding parameter labels
+        kwargs_slices=dict(edgecolor="#000000", zorder=2, linewidth=1),
+        kwargs_params=dict(color="#F2F2F2", fontsize=11, va="center"),
         kwargs_values=dict(
             color="#F2F2F2",
             fontsize=11,
@@ -658,7 +656,7 @@ def create_pizza_chart(player_stats_df, player_name, params, slice_colors, text_
                 boxstyle="round,pad=0.2",
                 lw=1,
             ),
-        ),  # values to be used when adding parameter-values labels
+        ),
     )
 
     # Add texts and titles
@@ -1260,20 +1258,22 @@ def main():
                 ]
 
                 if st.button("Display"):
+                    # Check if selected stats are in the dataframe
+                    if not all(
+                        stat in frame["data"].columns for stat in stats_to_include
+                    ):
+                        st.error("One or more selected stats are not in the DataFrame.")
+                        continue
+
                     # Extract player values for the selected stats
-                    player_values = (
-                        frame["data"]
-                        .loc[
-                            frame["data"]["Player"] == selected_player, stats_to_include
-                        ]
-                        .values.flatten()
-                        .tolist()
-                    )
+                    player_data = frame["data"][
+                        frame["data"]["Player"] == selected_player
+                    ]
 
                     # Call the function to create and display the pizza chart
                     create_pizza_chart(
+                        player_data,
                         selected_player,
-                        player_values,
                         stats_to_include,
                         default_slice_colors,
                         default_text_colors,
