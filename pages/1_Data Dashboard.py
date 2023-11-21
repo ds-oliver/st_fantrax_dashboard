@@ -6,6 +6,8 @@ import warnings
 import streamlit as st
 import plottable
 from plottable import Table
+from mplsoccer import Radar, FontManager
+
 
 # from concurrent.futures import ThreadPoolExecutor
 # from datetime import datetime
@@ -501,6 +503,32 @@ def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah
         fig.update_layout(barmode='group')
         st.plotly_chart(fig, use_container_width=True)
 
+# Define a function to compare players using a radar chart
+def compare_players_radar(player_1_name="Erling Haaland", player_2_name="Mohamed Salah", player_stats_df, stats_to_include):
+    # Filter the dataframe for the two players
+    player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name][stats_to_include].values.flatten().tolist()
+    player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name][stats_to_include].values.flatten().tolist()
+
+    # Calculate the min and max values for each stat to define the range for the radar chart
+    mins = player_stats_df[stats_to_include].min().values.flatten().tolist()
+    maxs = player_stats_df[stats_to_include].max().values.flatten().tolist()
+    labels = stats_to_include
+    ranges = list(zip(mins, maxs))
+
+    # Instantiate Radar class
+    radar = Radar()
+
+    # Define a figure
+    fig, ax = radar.plot_radar(ranges=ranges, params=labels, 
+                               values=[player_1_stats, player_2_stats], 
+                               radar_color=['#1A78CF', '#FF920B'],
+                               alpha=0.25, compare=True)
+    # Add legends and titles
+    ax.set_title(f'{player_1_name} vs {player_2_name}', size=20)
+    plt.legend(labels=[player_1_name, player_2_name], loc='upper right', fontsize=12)
+
+    # Show the radar chart
+    st.pyplot(fig)
 
 def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: bool):
     # Assuming 'pilot_scoring_all_gws_data' is your DataFrame with the scoring data
@@ -1046,10 +1074,23 @@ def main():
                 # Logic for selecting players to compare
                 all_players = frame["data"]["Player"].unique().tolist()
                 player_1_name = st.selectbox("Select Player 1", all_players)
-                player_2_name = st.selectbox("Select Player 2", all_players)
+                player_2_name = st.selectbox("Select Player 2", all_players, index=1)  # Ensure default is not the same as Player 1
+
+                relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT', 'TKW', 'DIS',
+                'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
+                'GAO', 'CS']  # Define the stats you want to include in your radar chart
 
                 if st.button("Compare"):
-                    compare_players(player_1_name, player_2_name, frame["data"])
+                    compare_players_radar(player_1_name, player_2_name, frame["data"], relevant_stats)
+
+            # elif frame.get("type") == "player_comparison":
+            #     # Logic for selecting players to compare
+            #     all_players = frame["data"]["Player"].unique().tolist()
+            #     player_1_name = st.selectbox("Select Player 1", all_players)
+            #     player_2_name = st.selectbox("Select Player 2", all_players)
+
+            #     if st.button("Compare"):
+            #         compare_players(player_1_name, player_2_name, frame["data"])
 
             else:
                 # ... (handling for other visualization and data types)
