@@ -1076,14 +1076,17 @@ def main():
                 plot_grouped_bar_chart(frame["data"])
 
             elif frame.get("type") == "player_comparison":
-                # Assume 'grouped_players_df' contains the stats for all players
-                player_stats_df = grouped_players_df  # Replace with the actual DataFrame variable
-                stats_to_include = ['FPTS', 'G', 'Ghost Points']  # Replace with your actual list of stats
-                compare_players_radar(player_stats_df, stats_to_include=stats_to_include)
+                # Logic for selecting players to compare
+                all_players = frame["data"]["Player"].unique().tolist()
+                player_1_name = st.selectbox("Select Player 1", all_players, index=all_players.index("Erling Haaland") if "Erling Haaland" in all_players else 0)
+                player_2_name = st.selectbox("Select Player 2", all_players, index=all_players.index("Mohamed Salah") if "Mohamed Salah" in all_players else 1)
 
+                # Define the stats you want to include in your radar chart
+                stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT']
 
                 if st.button("Compare"):
-                    compare_players_radar(player_1_name, player_2_name, frame["data"], relevant_stats)
+                    compare_players_radar(frame["data"], player_1_name, player_2_name, stats_to_include)
+
 
             # elif frame.get("type") == "player_comparison":
             #     # Logic for selecting players to compare
