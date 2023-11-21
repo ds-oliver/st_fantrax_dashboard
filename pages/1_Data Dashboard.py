@@ -4,6 +4,8 @@ import logging
 import pandas as pd
 import warnings
 import streamlit as st
+import plottable
+from plottable import Table
 
 # from concurrent.futures import ThreadPoolExecutor
 # from datetime import datetime
@@ -471,7 +473,7 @@ relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT
     'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
     'GAO', 'CS']
 
-def compare_players(player_1_name, player_2_name, player_stats_df):
+def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah", player_stats_df):
     player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name].iloc[0]
     player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name].iloc[0]
 
