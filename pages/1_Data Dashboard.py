@@ -503,8 +503,13 @@ def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah
         fig.update_layout(barmode='group')
         st.plotly_chart(fig, use_container_width=True)
 
-# Define a function to compare players using a radar chart
-def compare_players_radar(player_stats_df, stats_to_include, player_1_name="Erling Haaland", player_2_name="Mohamed Salah"):
+def compare_players_radar(player_stats_df, player_1_name="Erling Haaland", player_2_name="Mohamed Salah", stats_to_include=None):
+    if stats_to_include is None:
+        # Default stats if none provided
+        stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT', 'TKW', 'DIS',
+                            'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
+                            'GAO', 'CS']
+
     # Filter the dataframe for the two players
     player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name][stats_to_include].values.flatten().tolist()
     player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name][stats_to_include].values.flatten().tolist()
@@ -1071,14 +1076,11 @@ def main():
                 plot_grouped_bar_chart(frame["data"])
 
             elif frame.get("type") == "player_comparison":
-                # Logic for selecting players to compare
-                all_players = frame["data"]["Player"].unique().tolist()
-                player_1_name = st.selectbox("Select Player 1", all_players)
-                player_2_name = st.selectbox("Select Player 2", all_players, index=1)  # Ensure default is not the same as Player 1
+                # Assume 'grouped_players_df' contains the stats for all players
+                player_stats_df = grouped_players_df  # Replace with the actual DataFrame variable
+                stats_to_include = ['FPTS', 'G', 'Ghost Points']  # Replace with your actual list of stats
+                compare_players_radar(player_stats_df, stats_to_include=stats_to_include)
 
-                relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT', 'TKW', 'DIS',
-                'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
-                'GAO', 'CS']  # Define the stats you want to include in your radar chart
 
                 if st.button("Compare"):
                     compare_players_radar(player_1_name, player_2_name, frame["data"], relevant_stats)
