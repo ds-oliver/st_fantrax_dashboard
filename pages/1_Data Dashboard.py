@@ -1212,7 +1212,7 @@ def main():
                         frame["data"], player_1_name, player_2_name, stats_to_include
                     )
 
-            if frame.get("type") == "player_pizza_chart":
+            elif frame.get("type") == "player_pizza_chart":
                 # Logic to handle player selection for pizza chart
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Select Player", all_players)
