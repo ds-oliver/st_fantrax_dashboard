@@ -8,7 +8,6 @@ import streamlit as st
 # from plottable import Table
 from mplsoccer import Radar, FontManager
 
-
 # from concurrent.futures import ThreadPoolExecutor
 # from datetime import datetime
 # import uuid
@@ -503,12 +502,10 @@ relevant_stats = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT
 #         fig.update_layout(barmode='group')
 #         st.plotly_chart(fig, use_container_width=True)
 
-def compare_players_radar(player_stats_df, player_1_name="Erling Haaland", player_2_name="Mohamed Salah", stats_to_include=None):
-    if stats_to_include is None:
-        # Default stats if none provided
-        stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT', 'SOT', 'TKW', 'DIS',
-                            'YC', 'RC', 'ACNC', 'INT', 'CLR', 'COS', 'BS', 'AER', 'PKM', 'PKD', 'OG',
-                            'GAO', 'CS']
+def compare_players_radar(player_stats_df, player_1_name, player_2_name, stats_to_include):
+    # Ensure stats_to_include is not empty
+    if not stats_to_include:
+        raise ValueError("No statistics provided for the radar chart.")
 
     # Filter the dataframe for the two players
     player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name][stats_to_include].values.flatten().tolist()
@@ -517,14 +514,12 @@ def compare_players_radar(player_stats_df, player_1_name="Erling Haaland", playe
     # Calculate the min and max values for each stat to define the range for the radar chart
     mins = player_stats_df[stats_to_include].min().values.flatten().tolist()
     maxs = player_stats_df[stats_to_include].max().values.flatten().tolist()
-    labels = stats_to_include
-    ranges = list(zip(mins, maxs))
 
-    # Instantiate Radar class
-    radar = Radar()
+    # Instantiate Radar class with params, min_range, and max_range
+    radar = Radar(params=stats_to_include, min_range=mins, max_range=maxs)
 
     # Define a figure
-    fig, ax = radar.plot_radar(ranges=ranges, params=labels, 
+    fig, ax = radar.plot_radar(ranges=zip(mins, maxs), params=stats_to_include, 
                                values=[player_1_stats, player_2_stats], 
                                radar_color=['#1A78CF', '#FF920B'],
                                alpha=0.25, compare=True)
@@ -534,6 +529,7 @@ def compare_players_radar(player_stats_df, player_1_name="Erling Haaland", playe
 
     # Show the radar chart
     st.pyplot(fig)
+
 
 def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: bool):
     # Assuming 'pilot_scoring_all_gws_data' is your DataFrame with the scoring data
