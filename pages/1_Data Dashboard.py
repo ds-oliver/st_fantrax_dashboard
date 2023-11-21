@@ -6,6 +6,7 @@ import warnings
 import streamlit as st
 # import plottable
 # from plottable import Table
+import mplsoccer
 from mplsoccer import Radar, FontManager
 
 # from concurrent.futures import ThreadPoolExecutor
