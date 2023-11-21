@@ -1221,8 +1221,8 @@ def main():
                 stats_to_include = ['FPTS', 'G', 'Ghost Points', 'Negative Fpts', 'KP', 'AT']
 
                 # Define default slice and text colors
-                default_slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F"]
-                default_text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#FFFFFF", "#000000"]
+                default_slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F", "#FFCD00"]
+                default_text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#FFFFFF", "#000000", "#000000"]
 
                 if st.button("Display"):
                     # Extract player values for the selected stats
