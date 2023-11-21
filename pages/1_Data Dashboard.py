@@ -1087,7 +1087,6 @@ def main():
                 if st.button("Compare"):
                     compare_players_radar(frame["data"], player_1_name, player_2_name, stats_to_include)
 
-
             # elif frame.get("type") == "player_comparison":
             #     # Logic for selecting players to compare
             #     all_players = frame["data"]["Player"].unique().tolist()
