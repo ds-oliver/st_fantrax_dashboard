@@ -4,8 +4,8 @@ import logging
 import pandas as pd
 import warnings
 import streamlit as st
-import plottable
-from plottable import Table
+# import plottable
+# from plottable import Table
 from mplsoccer import Radar, FontManager
 
 
