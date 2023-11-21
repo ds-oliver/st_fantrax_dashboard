@@ -646,12 +646,11 @@ def create_pizza_chart(player_stats_df, player_name, params, slice_colors, text_
             edgecolor="#000000", zorder=2, linewidth=1
         ),  # values to be used when plotting slices
         kwargs_params=dict(
-            color="#F2F2F2", fontsize=11, fontproperties=FontProperties(), va="center"
+            color="#F2F2F2", fontsize=11, va="center"
         ),  # values to be used when adding parameter labels
         kwargs_values=dict(
             color="#F2F2F2",
             fontsize=11,
-            fontproperties=FontProperties(),
             zorder=3,
             bbox=dict(
                 edgecolor="#000000",
@@ -669,7 +668,6 @@ def create_pizza_chart(player_stats_df, player_name, params, slice_colors, text_
         f"{player_name} - Performance",
         size=16,
         ha="center",
-        fontproperties=FontProperties(),
         color="#F2F2F2",
     )
 
