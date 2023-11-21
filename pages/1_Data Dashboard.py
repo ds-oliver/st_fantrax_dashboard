@@ -504,7 +504,7 @@ def compare_players(player_1_name="Erling Haaland", player_2_name="Mohamed Salah
         st.plotly_chart(fig, use_container_width=True)
 
 # Define a function to compare players using a radar chart
-def compare_players_radar(player_1_name="Erling Haaland", player_2_name="Mohamed Salah", player_stats_df, stats_to_include):
+def compare_players_radar(player_stats_df, stats_to_include, player_1_name="Erling Haaland", player_2_name="Mohamed Salah"):
     # Filter the dataframe for the two players
     player_1_stats = player_stats_df[player_stats_df['Player'] == player_1_name][stats_to_include].values.flatten().tolist()
     player_2_stats = player_stats_df[player_stats_df['Player'] == player_2_name][stats_to_include].values.flatten().tolist()
