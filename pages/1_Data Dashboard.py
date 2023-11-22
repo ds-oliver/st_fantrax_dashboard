@@ -126,7 +126,25 @@ def plot_radar_chart(
     if text_colors is None:
         text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#000000"]
 
-    # [existing code to prepare player_data and player_percentiles]
+    # Filter the DataFrame for the selected player and position
+    player_data = df[(df["Player"] == player_name) & (df["Position"] == position)]
+
+    # Check if player data is available
+    if player_data.empty:
+        st.error(f"No data available for player {player_name} in position {position}.")
+        return
+
+    # Filter the DataFrame for the specified position and calculate percentiles
+    position_data = df[df["Position"] == position]
+    percentiles = position_data[params].rank(pct=True)
+    player_percentiles = percentiles.loc[player_data.index]
+
+    # Convert percentiles to a 0-1 scale for the radar chart
+    stats = [
+        player_percentiles[param].values[0]
+        for param in params
+        if param in position_data.columns
+    ]
 
     # Create the radar chart
     fig = go.Figure()
@@ -138,7 +156,7 @@ def plot_radar_chart(
             theta=params,
             marker=dict(
                 color=slice_colors, line=dict(color="black", width=2), opacity=0.5
-            ),  # Adjust opacity here
+            ),  # Adjusted opacity
             text=[
                 f"{stat*100:.0f}%" for stat in stats
             ],  # Display the percentile as a percentage
