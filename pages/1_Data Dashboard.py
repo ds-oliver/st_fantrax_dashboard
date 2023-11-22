@@ -1359,22 +1359,23 @@ def main():
                         frame["data"][stat].rank(pct=True).values[0]
                         if stat in frame["data"].columns
                         else 0
-                        for stat in params
+                        for stat in stats_to_include
                     ]
                     display_values = [
                         frame["data"][stat].values[0]
                         if stat in frame["data"].columns
                         else 0
-                        for stat in params
+                        for stat in stats_to_include
                     ]
 
                     create_pizza_chart(
                         player_data,
                         selected_player,
-                        params,
+                        stats_to_include,
                         default_slice_colors,
                         default_text_colors,
-                        display_values
+                        display_values,
+                        player_values
                     )
 
             # elif frame.get("type") == "player_comparison":
