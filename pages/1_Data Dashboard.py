@@ -124,49 +124,36 @@ def plot_radar_chart(
             "#FFCD00",
         ]
     if text_colors is None:
-        text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#000000", "#FFFFFF", "#000000"]
+        text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#000000"]
 
-    # Filter the DataFrame for the selected player and position
-    player_data = df[(df["Player"] == player_name) & (df["Position"] == position)]
-
-    # Check if player data is available
-    if player_data.empty:
-        st.error(f"No data available for player {player_name} in position {position}.")
-        return
-
-    # Filter the DataFrame for the specified position and calculate percentiles
-    position_data = df[df["Position"] == position]
-    percentiles = position_data[params].rank(pct=True)
-    player_percentiles = percentiles.loc[player_data.index]
-
-    # Convert percentiles to a 0-1 scale for the radar chart
-    stats = [
-        player_percentiles[param].values[0]
-        for param in params
-        if param in position_data.columns
-    ]
+    # [existing code to prepare player_data and player_percentiles]
 
     # Create the radar chart
     fig = go.Figure()
 
-    # Add the radar chart "slices"
+    # Add the radar chart "slices" with adjusted opacity for marker
     fig.add_trace(
         go.Barpolar(
             r=stats,
             theta=params,
-            marker=dict(color=slice_colors, line=dict(color="black", width=2)),
+            marker=dict(
+                color=slice_colors, line=dict(color="black", width=2), opacity=0.5
+            ),  # Adjust opacity here
             text=[
                 f"{stat*100:.0f}%" for stat in stats
             ],  # Display the percentile as a percentage
         )
     )
 
-    # Set layout options
+    # Set layout options with adjusted axis tick colors
     fig.update_layout(
         polar=dict(
             radialaxis=dict(
-                visible=True, range=[0, 1]
-            ),  # Percentiles range from 0 to 1
+                visible=True,
+                range=[0, 1],
+                tickcolor="black",  # Set axis tick color
+                tickfont=dict(color="black"),  # Set font color for the ticks
+            )
         ),
         showlegend=False,
         title={
@@ -1327,7 +1314,6 @@ def main():
 
     # Conditionally display the selected DataFrame and info text
 
-
     if selected_df_key:
         st.toast("Loading data...")
         selected_frames = df_dict.get(selected_df_key, {}).get("frames", [])
@@ -1349,12 +1335,30 @@ def main():
                 selected_player = st.selectbox("Choose a player:", all_players)
 
                 # Example colors
-                slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F", "#FFCD00"]
-                text_colors = ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#000000", "#000000"]
+                slice_colors = [
+                    "#1A78CF",
+                    "#FF9300",
+                    "#D70232",
+                    "#F05B4F",
+                    "#8A9B0F",
+                    "#FFCD00",
+                ]
+                text_colors = [
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#000000",
+                    "#000000",
+                ]
 
                 if st.button(f"Show Radar Chart for {selected_player}"):
                     # Retrieve the position of the selected player
-                    selected_position = frame["data"].loc[frame["data"]["Player"] == selected_player, "Position"].iloc[0]
+                    selected_position = (
+                        frame["data"]
+                        .loc[frame["data"]["Player"] == selected_player, "Position"]
+                        .iloc[0]
+                    )
 
                     plot_radar_chart(
                         frame["data"],
