@@ -622,8 +622,10 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
         for stat in params
     ]
 
+    st.write(player_values)
+
     # Print the data types of the columns
-    print(player_data[params].dtypes)
+    st.write(player_data[params].dtypes)
 
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
