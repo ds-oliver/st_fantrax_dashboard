@@ -1366,7 +1366,7 @@ def main():
                     "#8A9B0F",
                     "#FFCD00",
                     "#1A78CF",
-                    "#FF9300",
+                    "#e81825"
                 ]
                 text_colors = [
                     "#FFFFFF",
