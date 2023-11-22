@@ -109,6 +109,10 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
 
+    # Take the absolute value of 'Negative Fpts' if it exists
+    if 'Negative Fpts' in df.columns:
+        df['Negative Fpts'] = df['Negative Fpts'].abs()
+
     # Check if set_index_cols is provided
     if set_index_cols:
         # Check if all columns in set_index_cols exist in the DataFrame
