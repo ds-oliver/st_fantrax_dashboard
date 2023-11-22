@@ -87,14 +87,14 @@ def load_cached_css():
 
 def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
     import plotly.graph_objects as go
-
+    
     # Filter the DataFrame for the selected player
-    player_data = df[df["Player"] == player_name]
+    player_data = df[df['Player'] == player_name]
 
     # Check if player data is available
     if player_data.empty:
-        print(f"No data available for player {player_name}.")
-        return None
+        st.error(f"No data available for player {player_name}.")
+        return
 
     # Extract the stats for the radar chart
     stats = [player_data.iloc[0][param] for param in params]
@@ -103,33 +103,33 @@ def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
     fig = go.Figure()
 
     # Add the radar chart "slices"
-    fig.add_trace(
-        go.Barpolar(
-            r=stats,
-            theta=params,
-            marker=dict(color=slice_colors, line=dict(color="black", width=2)),
-            text=stats,
-            textfont=dict(color=text_colors),
-        )
-    )
+    fig.add_trace(go.Barpolar(
+        r=stats,
+        theta=params,
+        marker=dict(color=slice_colors, line=dict(color='black', width=2)),
+        text=stats,
+    ))
 
     # Set layout options
     fig.update_layout(
         polar=dict(
-            radialaxis=dict(visible=True, range=[min(stats), max(stats)]),
+            radialaxis=dict(
+                visible=True,
+                range=[0, max(stats)]
+            ),
         ),
         showlegend=False,
         title={
-            "text": f"{player_name}'s Radar Chart",
-            "y": 0.9,
-            "x": 0.5,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
+            'text': f"{player_name}'s Radar Chart",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'
+        }
     )
 
-    # Show the figure
-    fig.show()
+    # Display the figure in Streamlit
+    st.plotly_chart(fig)
 
 
 @st.cache_data
