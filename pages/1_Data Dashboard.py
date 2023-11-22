@@ -103,6 +103,12 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         csv_file, index_col=0 if "Unnamed: 0" in pd.read_csv(csv_file).columns else None
     ).applymap(round_and_format)
 
+    # Convert specified columns to numeric if they exist
+    cols_to_convert = ['FPTS', 'FPts/90', 'Ghost Points', 'Ghosts/90', 'GPR', 'Negative Fpts']
+    for col in cols_to_convert:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+
     # Check if set_index_cols is provided
     if set_index_cols:
         # Check if all columns in set_index_cols exist in the DataFrame
