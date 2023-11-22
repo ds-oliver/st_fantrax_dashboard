@@ -1160,46 +1160,46 @@ def main():
         st.toast("Loading data...")
         selected_frames = df_dict.get(selected_df_key, {}).get("frames", [])
         for frame in selected_frames:
-            if frame.get("type") == "percentile_bumpy":
-                # Filter the DataFrame based on selected players
-                available_players = (
-                    frame["data"][frame["label_column"]].unique().tolist()
-                )
+            # if frame.get("type") == "percentile_bumpy":
+            #     # Filter the DataFrame based on selected players
+            #     available_players = (
+            #         frame["data"][frame["label_column"]].unique().tolist()
+            #     )
 
-                # Create a Streamlit multi-select widget for selecting players
-                selected_players = st.multiselect(
-                    "Select Players", available_players, default=available_players[:3]
-                )  # Default to first 3 players
+            #     # Create a Streamlit multi-select widget for selecting players
+            #     selected_players = st.multiselect(
+            #         "Select Players", available_players, default=available_players[:3]
+            #     )  # Default to first 3 players
 
-                # Automatically assign colors to the selected players
-                colors = ["salmon", "cornflowerblue", "gold"]
-                highlight_dict = {
-                    player: color for player, color in zip(selected_players, colors)
-                }
+            #     # Automatically assign colors to the selected players
+            #     colors = ["salmon", "cornflowerblue", "gold"]
+            #     highlight_dict = {
+            #         player: color for player, color in zip(selected_players, colors)
+            #     }
 
-                # Filter the DataFrame based on selected players
-                filtered_df = frame["data"][
-                    frame["data"][frame["label_column"]].isin(selected_players)
-                ]
+            #     # Filter the DataFrame based on selected players
+            #     filtered_df = frame["data"][
+            #         frame["data"][frame["label_column"]].isin(selected_players)
+            #     ]
 
-                # Debug: Check if DataFrame is empty
-                if filtered_df.empty:
-                    st.write("Filtered DataFrame is empty.")
+            #     # Debug: Check if DataFrame is empty
+            #     if filtered_df.empty:
+            #         st.write("Filtered DataFrame is empty.")
 
-                # Plot the percentile bumpy chart
-                plot_percentile_bumpy_chart(
-                    filtered_df,
-                    frame["label_column"],
-                    frame["metrics"],
-                    highlight_dict=highlight_dict,
-                )
+            #     # Plot the percentile bumpy chart
+            #     plot_percentile_bumpy_chart(
+            #         filtered_df,
+            #         frame["label_column"],
+            #         frame["metrics"],
+            #         highlight_dict=highlight_dict,
+            #     )
 
-            elif frame.get("type") == "scoring_distplot":
-                # Call your distribution plot function here
-                # create_scoring_distplot(frame["data"], use_container_width=True)
-                plot_grouped_bar_chart(frame["data"])
+            # elif frame.get("type") == "scoring_distplot":
+            #     # Call your distribution plot function here
+            #     # create_scoring_distplot(frame["data"], use_container_width=True)
+            #     plot_grouped_bar_chart(frame["data"])
 
-            elif frame.get("type") == "player_comparison":
+            if frame.get("type") == "player_comparison":
                 # Logic for selecting players to compare
                 all_players = frame["data"]["Player"].unique().tolist()
                 player_1_name = st.selectbox(
