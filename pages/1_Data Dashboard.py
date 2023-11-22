@@ -1348,32 +1348,14 @@ def main():
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Choose a player:", all_players)
 
-                # Get the positions associated with the selected player
-                selected_position = (
-                    frame["data"][frame["data"]["Player"] == selected_player]["Position"]
-                    .unique()
-                    .tolist()
-                )
-
                 # Example colors
-                slice_colors = [
-                    "#1A78CF",
-                    "#FF9300",
-                    "#D70232",
-                    "#F05B4F",
-                    "#8A9B0F",
-                    "#FFCD00",
-                ]
-                text_colors = [
-                    "#FFFFFF",
-                    "#FFFFFF",
-                    "#FFFFFF",
-                    "#FFFFFF",
-                    "#000000",
-                    "#000000",
-                ]
+                slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F", "#FFCD00"]
+                text_colors = ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#000000", "#000000"]
 
                 if st.button(f"Show Radar Chart for {selected_player}"):
+                    # Retrieve the position of the selected player
+                    selected_position = frame["data"].loc[frame["data"]["Player"] == selected_player, "Position"].iloc[0]
+
                     plot_radar_chart(
                         frame["data"],
                         selected_player,
