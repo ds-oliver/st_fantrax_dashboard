@@ -676,6 +676,7 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
     # Display the chart in Streamlit
     st.pyplot(fig)
 
+
 def plot_grouped_bar_chart(df):
     # if FPTS exists rename to Pilot FPTS
     if "FPTS" in df.columns:
