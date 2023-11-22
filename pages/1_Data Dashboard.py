@@ -693,57 +693,6 @@ def create_pizza_chart(
             ha="center",  # horizontal alignment
         )
 
-    # Add texts and titles
-    fig.text(
-        0.515,
-        0.975,
-        f"{player_name} - Performance",
-        size=16,
-        ha="center",
-        color="#F2F2F2",
-    )
-
-    # Add title on the top
-    fig.text(
-        0.34,
-        0.93,
-        "Percentile Rank vs Peers",
-        size=13,
-        color=text_colors[0],
-        ha="center",
-    )
-
-    # Add subtitle
-    fig.text(
-        0.515,
-        0.915,
-        "Compared to all players in dataset",
-        size=10,
-        ha="center",
-        color="#F2F2F2",
-    )
-
-    # Add text
-    fig.text(
-        0.18,
-        0.02,
-        "Stats",
-        size=11,
-        color="#F2F2F2",
-        ha="center",
-    )
-
-    # Add actual values as text
-    for i, (param, value) in enumerate(zip(params, display_values)):
-        ax.text(
-            0,
-            i,  # x, y position
-            f"{param}: {value}",  # text
-            size=12,  # text size
-            color="#F2F2F2",  # text color
-            ha="center",  # horizontal alignment
-        )
-
     # Display the plot
     st.pyplot(fig)
 
