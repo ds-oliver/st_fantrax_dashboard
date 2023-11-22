@@ -605,7 +605,6 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 
 from matplotlib.font_manager import FontProperties
 
-
 def create_pizza_chart(player_data, player_name, params, slice_colors, text_colors):
     # Check if the DataFrame is empty
     if player_data.empty:
@@ -676,6 +675,7 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
 
     # Display the chart in Streamlit
     st.pyplot(fig)
+
 
 def plot_grouped_bar_chart(df):
     # if FPTS exists rename to Pilot FPTS
