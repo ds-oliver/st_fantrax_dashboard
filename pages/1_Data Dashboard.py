@@ -980,7 +980,10 @@ def main():
         set_index_cols=["Team", "Position"],
     )
 
-    set_piece_studs = load_csv_file_cached(f"{data_path}/top_5_players_per_team.csv")
+    set_piece_studs = load_csv_file_cached(f"{data_path}/top_10_players_per_team.csv")
+
+    set_piece_studs_p90 = create_per_90s_stats(set_piece_studs, stats_columns, "90s")
+
     set_piece_studs_teams = load_csv_file_cached(
         f"{data_path}/set_piece_stats_team.csv", set_index_cols=["team"]
     )
@@ -1308,7 +1311,7 @@ def main():
             {
                 "title": "Player Radar Chart",
                 "type": "radar_chart",  # A new type to trigger radar chart plotting
-                "data": grouped_players_df_p90,  # The DataFrame containing player stats
+                "data": set_piece_studs_p90,  # The DataFrame containing player stats
             }
         ],
         "icon": "activity",  # Choose an appropriate FontAwesome icon
@@ -1346,6 +1349,7 @@ def main():
                     "Defensive Stats per 90",
                     "Duel Stats per 90",
                     "90s",
+                    "deadball_agg",
                 ]
 
                 # Radar chart specific logic
@@ -1362,6 +1366,7 @@ def main():
                     "#8A9B0F",
                     "#FFCD00",
                     "#1A78CF",
+                    "#FF9300",
                 ]
                 text_colors = [
                     "#FFFFFF",
@@ -1370,6 +1375,7 @@ def main():
                     "#FFFFFF",
                     "#000000",
                     "#000000",
+                    "#FFFFFF",
                     "#FFFFFF",
                 ]
 
