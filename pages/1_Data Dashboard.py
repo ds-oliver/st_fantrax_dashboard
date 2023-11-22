@@ -635,7 +635,7 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
     st.write(player_values)
 
     # Print the data types of the columns
-    st.write(player_data[params].dtypes)
+    # st.write(player_data[params].dtypes)
 
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
@@ -1284,15 +1284,15 @@ def main():
                         st.error("One or more selected stats are not in the DataFrame.")
                         continue
                     
+                    # Convert selected stats to percentile ranks
+                    for stat in stats_to_include:
+                        if stat in frame["data"].columns:
+                            frame["data"][stat] = frame["data"][stat].rank(pct=True)
+
                     # Extract player values for the selected stats
                     player_data = frame["data"][
                         frame["data"]["Player"] == selected_player
                     ]
-
-                    # Convert selected stats to percentile ranks
-                    for stat in stats_to_include:
-                        if stat in player_data.columns:
-                            player_data[stat] = player_data[stat].rank(pct=True)
 
                     st.write(player_data)
 
