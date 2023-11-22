@@ -1326,11 +1326,14 @@ def main():
         )
 
     # Conditionally display the selected DataFrame and info text
+
+
     if selected_df_key:
         st.toast("Loading data...")
         selected_frames = df_dict.get(selected_df_key, {}).get("frames", [])
         for frame in selected_frames:
             if frame.get("type") == "radar_chart":
+                # Example stats
                 params = [
                     "FPTS per 90",
                     "Ghost Points per 90",
@@ -1338,18 +1341,22 @@ def main():
                     "G per 90",
                     "KP per 90",
                     "AT per 90",
-                ]  # Example stats
-                # calculate percentile values for params
-                for param in params:
-                    grouped_players_df_p90[
-                        f"{param} Percentile"
-                    ] = grouped_players_df_p90[param].rank(pct=True)
+                ]
 
                 # Radar chart specific logic
                 st.subheader(frame["title"])
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Choose a player:", all_players)
 
+                # Get the positions associated with the selected player
+                player_positions = (
+                    frame["data"][frame["data"]["Player"] == selected_player]["Position"]
+                    .unique()
+                    .tolist()
+                )
+                selected_position = st.selectbox("Choose a position:", player_positions)
+
+                # Example colors
                 slice_colors = [
                     "#1A78CF",
                     "#FF9300",
@@ -1357,7 +1364,7 @@ def main():
                     "#F05B4F",
                     "#8A9B0F",
                     "#FFCD00",
-                ]  # Example colors
+                ]
                 text_colors = [
                     "#FFFFFF",
                     "#FFFFFF",
@@ -1365,12 +1372,13 @@ def main():
                     "#FFFFFF",
                     "#000000",
                     "#000000",
-                ]  # Example text colors
+                ]
 
                 if st.button(f"Show Radar Chart for {selected_player}"):
                     plot_radar_chart(
                         frame["data"],
                         selected_player,
+                        selected_position,
                         params,
                         slice_colors=slice_colors,
                         text_colors=text_colors,
