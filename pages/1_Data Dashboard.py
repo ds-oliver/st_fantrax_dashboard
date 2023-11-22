@@ -1279,6 +1279,8 @@ def main():
                         frame["data"]["Player"] == selected_player
                     ]
 
+                    st.write(player_data)
+
                     # Call the function to create and display the pizza chart
                     create_pizza_chart(
                         player_data,
