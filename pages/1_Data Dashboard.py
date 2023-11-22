@@ -109,6 +109,11 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
 def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
     import plotly.graph_objects as go
 
+    if slice_colors is None:
+        slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F", "#FFCD00"]
+    if text_colors is None:
+        text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#000000", "#FFFFFF", "#000000"]
+
     # Filter the DataFrame for the selected player
     player_data = df[df["Player"] == player_name]
 
