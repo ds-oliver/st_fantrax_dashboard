@@ -86,19 +86,25 @@ def load_cached_css():
 
 
 def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
-    # Check if the '90s' column exists
+    # Ensure the '90s' column is numeric
     if minutes_column not in df.columns:
-        raise ValueError(
-            f"The column '{minutes_column}' does not exist in the DataFrame."
-        )
+        raise ValueError(f"The column '{minutes_column}' does not exist in the DataFrame.")
+    df[minutes_column] = pd.to_numeric(df[minutes_column], errors='coerce')
+    
+    # Handle NaN values in '90s' column if any
+    if df[minutes_column].isna().any():
+        df[minutes_column].fillna(0, inplace=True)
 
     # Create per 90s columns for the given stats
     for stat in stats_columns:
         if stat in df.columns:
+            # Convert the stat column to numeric
+            df[stat] = pd.to_numeric(df[stat], errors='coerce')
             per_90_col_name = f"{stat} per 90"
             df[per_90_col_name] = df[stat] / df[minutes_column]
 
     return df
+
 
 def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
     import plotly.graph_objects as go
