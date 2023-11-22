@@ -1342,9 +1342,10 @@ def main():
                     "FPTS per 90",
                     "Ghost Points per 90",
                     "Negative Fpts per 90",
-                    "G per 90",
-                    "KP per 90",
-                    "AT per 90",
+                    "Attacking Stats per 90",
+                    "Defensive Stats per 90",
+                    "Duel Stats per 90",
+                    "Liability Stats per 90",
                 ]
 
                 # Radar chart specific logic
@@ -1360,6 +1361,7 @@ def main():
                     "#F05B4F",
                     "#8A9B0F",
                     "#FFCD00",
+                    "#1A78CF",
                 ]
                 text_colors = [
                     "#FFFFFF",
@@ -1368,6 +1370,7 @@ def main():
                     "#FFFFFF",
                     "#000000",
                     "#000000",
+                    "#FFFFFF",
                 ]
 
                 if st.button(f"Show Radar Chart for {selected_player}"):
