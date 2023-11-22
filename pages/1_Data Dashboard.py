@@ -613,14 +613,9 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
 
     # Extract player's stats
     player_values = [
-        player_data[stat].values[0] if stat in player_data.columns else 0
+        player_data[stat].values[0] if stat in player_data.columns and not np.isnan(player_data[stat].values[0]) else 0
         for stat in params
     ]
-
-    # Debugging: Print types and values
-    print("Player Values:", player_values, "Types:", [type(value) for value in player_values])
-    print("Slice Colors:", slice_colors, "Types:", [type(color) for color in slice_colors])
-    print("Text Colors:", text_colors, "Types:", [type(color) for color in text_colors])
 
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
@@ -675,7 +670,6 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
 
     # Display the chart in Streamlit
     st.pyplot(fig)
-
 
 def plot_grouped_bar_chart(df):
     # if FPTS exists rename to Pilot FPTS
