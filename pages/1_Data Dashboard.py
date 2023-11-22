@@ -623,9 +623,7 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 from matplotlib.font_manager import FontProperties
 
 
-def create_pizza_chart(
-    player_data, player_name, params, slice_colors, text_colors, display_values
-):
+def create_pizza_chart(player_data, player_name, params, slice_colors, text_colors):
     # Check if the DataFrame is empty
     if player_data.empty:
         st.error(f"No data available for player {player_name}.")
@@ -640,6 +638,11 @@ def create_pizza_chart(
         else 0
         for stat in params
     ]
+
+    st.write(player_values)
+
+    # Print the data types of the columns
+    st.write(player_data[params].dtypes)
 
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
@@ -682,18 +685,17 @@ def create_pizza_chart(
         ),
     )
 
-    # Add actual values as text
-    for i, (param, value) in enumerate(zip(params, display_values)):
-        ax.text(
-            0,
-            i,  # x, y position
-            f"{param}: {value}",  # text
-            size=12,  # text size
-            color="#F2F2F2",  # text color
-            ha="center",  # horizontal alignment
-        )
+    # Add texts and titles
+    fig.text(
+        0.515,
+        0.975,
+        f"{player_name} - Performance",
+        size=16,
+        ha="center",
+        color="#F2F2F2",
+    )
 
-    # Display the plot
+    # Display the chart in Streamlit
     st.pyplot(fig)
 
 
@@ -1309,7 +1311,6 @@ def main():
                         stats_to_include,
                         default_slice_colors,
                         default_text_colors,
-                        display_values,
                     )
 
             # elif frame.get("type") == "player_comparison":
