@@ -990,8 +990,8 @@ def main():
     )
 
     # set deadball agg as first column after player, team, position, and ftx_position
-    set_piece_studs = set_piece_studs[["player", "team", "position", "ftx_position", "deadball agg"] + [
-        col for col in set_piece_studs.columns if col not in ["player", "team", "position", "ftx_position", "deadball agg"]]]
+    set_piece_studs = set_piece_studs[["Player", "Team", "Position", "deadball agg"] + [
+        col for col in set_piece_studs.columns if col not in ["Player", "Team", "Position", "deadball agg"]]]
 
     set_piece_studs_teams = load_csv_file_cached(
         f"{data_path}/set_piece_stats_team.csv", set_index_cols=["team"]
