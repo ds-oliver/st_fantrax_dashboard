@@ -1372,8 +1372,8 @@ def main():
                         frame["data"],
                         selected_player,
                         params,
-                        slice_colors,
-                        text_colors,
+                        slice_colors=slice_colors,
+                        text_colors=text_colors,
                     )
             # if frame.get("type") == "percentile_bumpy":
             #     # Filter the DataFrame based on selected players
