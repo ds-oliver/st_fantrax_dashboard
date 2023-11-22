@@ -1340,13 +1340,6 @@ def main():
                         st.error("One or more selected stats are not in the DataFrame.")
                         continue
 
-                    # Convert selected stats to percentile ranks
-                    for stat in stats_to_include:
-                        if stat in frame["data"].columns:
-                            frame["data"][stat] = (
-                                frame["data"][stat].rank(pct=True).round(2)
-                            )
-
                     # Extract player values for the selected stats
                     player_data = frame["data"][
                         frame["data"]["Player"] == selected_player
