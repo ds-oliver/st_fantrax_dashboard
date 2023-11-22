@@ -104,14 +104,21 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     ).applymap(round_and_format)
 
     # Convert specified columns to numeric if they exist
-    cols_to_convert = ['FPTS', 'FPts/90', 'Ghost Points', 'Ghosts/90', 'GPR', 'Negative Fpts']
+    cols_to_convert = [
+        "FPTS",
+        "FPts/90",
+        "Ghost Points",
+        "Ghosts/90",
+        "GPR",
+        "Negative Fpts",
+    ]
     for col in cols_to_convert:
         if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
+            df[col] = pd.to_numeric(df[col], errors="coerce")
 
     # Take the absolute value of 'Negative Fpts' if it exists
-    if 'Negative Fpts' in df.columns:
-        df['Negative Fpts'] = df['Negative Fpts'].abs()
+    if "Negative Fpts" in df.columns:
+        df["Negative Fpts"] = df["Negative Fpts"].abs()
 
     # Check if set_index_cols is provided
     if set_index_cols:
@@ -616,7 +623,9 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 from matplotlib.font_manager import FontProperties
 
 
-def create_pizza_chart(player_data, player_name, params, slice_colors, text_colors):
+def create_pizza_chart(
+    player_data, player_name, params, slice_colors, text_colors, display_values
+):
     # Check if the DataFrame is empty
     if player_data.empty:
         st.error(f"No data available for player {player_name}.")
@@ -631,11 +640,6 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
         else 0
         for stat in params
     ]
-
-    st.write(player_values)
-
-    # Print the data types of the columns
-    # st.write(player_data[params].dtypes)
 
     # Check if the length of params, slice_colors, and text_colors are equal
     if not (len(params) == len(slice_colors) == len(text_colors)):
@@ -678,6 +682,17 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
         ),
     )
 
+    # Add actual values as text
+    for i, (param, value) in enumerate(zip(params, display_values)):
+        ax.text(
+            0,
+            i,  # x, y position
+            f"{param}: {value}",  # text
+            size=12,  # text size
+            color="#F2F2F2",  # text color
+            ha="center",  # horizontal alignment
+        )
+
     # Add texts and titles
     fig.text(
         0.515,
@@ -688,7 +703,48 @@ def create_pizza_chart(player_data, player_name, params, slice_colors, text_colo
         color="#F2F2F2",
     )
 
-    # Display the chart in Streamlit
+    # Add title on the top
+    fig.text(
+        0.34,
+        0.93,
+        "Percentile Rank vs Peers",
+        size=13,
+        color=text_colors[0],
+        ha="center",
+    )
+
+    # Add subtitle
+    fig.text(
+        0.515,
+        0.915,
+        "Compared to all players in dataset",
+        size=10,
+        ha="center",
+        color="#F2F2F2",
+    )
+
+    # Add text
+    fig.text(
+        0.18,
+        0.02,
+        "Stats",
+        size=11,
+        color="#F2F2F2",
+        ha="center",
+    )
+
+    # Add actual values as text
+    for i, (param, value) in enumerate(zip(params, display_values)):
+        ax.text(
+            0,
+            i,  # x, y position
+            f"{param}: {value}",  # text
+            size=12,  # text size
+            color="#F2F2F2",  # text color
+            ha="center",  # horizontal alignment
+        )
+
+    # Display the plot
     st.pyplot(fig)
 
 
@@ -1283,11 +1339,13 @@ def main():
                     ):
                         st.error("One or more selected stats are not in the DataFrame.")
                         continue
-                    
+
                     # Convert selected stats to percentile ranks
                     for stat in stats_to_include:
                         if stat in frame["data"].columns:
-                            frame["data"][stat] = frame["data"][stat].rank(pct=True)
+                            frame["data"][stat] = (
+                                frame["data"][stat].rank(pct=True).round(2)
+                            )
 
                     # Extract player values for the selected stats
                     player_data = frame["data"][
