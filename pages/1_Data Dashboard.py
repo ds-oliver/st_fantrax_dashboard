@@ -1391,68 +1391,68 @@ def main():
             #             frame["data"], player_1_name, player_2_name, stats_to_include
             #         )
 
-            elif frame.get("type") == "player_pizza_chart":
-                # Logic to handle player selection for pizza chart
-                all_players = frame["data"]["Player"].unique().tolist()
-                selected_player = st.selectbox("Select Player", all_players)
+            # elif frame.get("type") == "player_pizza_chart":
+            #     # Logic to handle player selection for pizza chart
+            #     all_players = frame["data"]["Player"].unique().tolist()
+            #     selected_player = st.selectbox("Select Player", all_players)
 
-                # Define the stats you want to include in your pizza chart
-                stats_to_include = [
-                    "FPTS",
-                    "G",
-                    "Ghost Points",
-                    "Negative Fpts",
-                    "KP",
-                    "AT",
-                ]
+            #     # Define the stats you want to include in your pizza chart
+            #     stats_to_include = [
+            #         "FPTS",
+            #         "G",
+            #         "Ghost Points",
+            #         "Negative Fpts",
+            #         "KP",
+            #         "AT",
+            #     ]
 
-                # Define default slice and text colors
-                default_slice_colors = [
-                    "#1A78CF",
-                    "#FF9300",
-                    "#D70232",
-                    "#F05B4F",
-                    "#8A9B0F",
-                    "#FFCD00",
-                ]
-                default_text_colors = [
-                    "#FFFFFF",
-                    "#000000",
-                    "#FFFFFF",
-                    "#FFFFFF",
-                    "#000000",
-                    "#000000",
-                ]
+            #     # Define default slice and text colors
+            #     default_slice_colors = [
+            #         "#1A78CF",
+            #         "#FF9300",
+            #         "#D70232",
+            #         "#F05B4F",
+            #         "#8A9B0F",
+            #         "#FFCD00",
+            #     ]
+            #     default_text_colors = [
+            #         "#FFFFFF",
+            #         "#000000",
+            #         "#FFFFFF",
+            #         "#FFFFFF",
+            #         "#000000",
+            #         "#000000",
+            #     ]
 
-                if st.button("Display"):
-                    # Check if selected stats are in the dataframe
-                    if not all(
-                        stat in frame["data"].columns for stat in stats_to_include
-                    ):
-                        st.error("One or more selected stats are not in the DataFrame.")
-                        continue
+            #     if st.button("Display"):
+            #         # Check if selected stats are in the dataframe
+            #         if not all(
+            #             stat in frame["data"].columns for stat in stats_to_include
+            #         ):
+            #             st.error("One or more selected stats are not in the DataFrame.")
+            #             continue
 
-                    # Extract player values for the selected stats
-                    player_data = frame["data"][
-                        frame["data"]["Player"] == selected_player
-                    ]
+            #         # Extract player values for the selected stats
+            #         player_data = frame["data"][
+            #             frame["data"]["Player"] == selected_player
+            #         ]
 
-                    st.write(player_data)
+            #         st.write(player_data)
 
-                    display_values = [
-                        frame["data"][stat].values[0]
-                        if stat in frame["data"].columns
-                        else 0
-                        for stat in stats_to_include
-                    ]
+            #         display_values = [
+            #             frame["data"][stat].values[0]
+            #             if stat in frame["data"].columns
+            #             else 0
+            #             for stat in stats_to_include
+            #         ]
 
-                    create_pizza_chart(
-                        player_data,
-                        selected_player,
-                        stats_to_include,
-                        default_slice_colors,
-                        default_text_colors,
-                    )
+            #         create_pizza_chart(
+            #             player_data,
+            #             selected_player,
+            #             stats_to_include,
+            #             default_slice_colors,
+            #             default_text_colors,
+            #         )
 
             # elif frame.get("type") == "player_comparison":
             #     # Logic for selecting players to compare
