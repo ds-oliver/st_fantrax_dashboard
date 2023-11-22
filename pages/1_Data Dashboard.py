@@ -69,8 +69,10 @@ st.set_page_config(page_title="Draft Alchemy", page_icon=":soccer:", layout="wid
 
 # load_css()
 
+
 def load_csv_file(csv_file):
     return pd.read_csv(csv_file)
+
 
 warnings.filterwarnings("ignore")
 
@@ -81,6 +83,53 @@ sys.path.append(scripts_path)
 @st.cache_data
 def load_cached_css():
     load_css()
+
+
+def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
+    import plotly.graph_objects as go
+
+    # Filter the DataFrame for the selected player
+    player_data = df[df["Player"] == player_name]
+
+    # Check if player data is available
+    if player_data.empty:
+        print(f"No data available for player {player_name}.")
+        return None
+
+    # Extract the stats for the radar chart
+    stats = [player_data.iloc[0][param] for param in params]
+
+    # Create the radar chart
+    fig = go.Figure()
+
+    # Add the radar chart "slices"
+    fig.add_trace(
+        go.Barpolar(
+            r=stats,
+            theta=params,
+            marker=dict(color=slice_colors, line=dict(color="black", width=2)),
+            text=stats,
+            textfont=dict(color=text_colors),
+        )
+    )
+
+    # Set layout options
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(visible=True, range=[min(stats), max(stats)]),
+        ),
+        showlegend=False,
+        title={
+            "text": f"{player_name}'s Radar Chart",
+            "y": 0.9,
+            "x": 0.5,
+            "xanchor": "center",
+            "yanchor": "top",
+        },
+    )
+
+    # Show the figure
+    fig.show()
 
 
 @st.cache_data
@@ -1159,6 +1208,17 @@ def main():
         "icon": "chart-pie",
     }
 
+    # Add a new section for radar chart
+    df_dict["Player Radar Chart"] = {
+        "frames": [
+            {
+                "title": "Player Radar Chart",
+                "type": "radar_chart",  # A new type to trigger radar chart plotting
+                "data": grouped_players_df,  # The DataFrame containing player stats
+            }
+        ],
+        "icon": "activity",  # Choose an appropriate FontAwesome icon
+    }
     # List of the DataFrames to display based on the keys in the df_dict
     dfs_to_display = [(key, df_dict[key]["icon"]) for key in df_dict]
 
@@ -1181,6 +1241,44 @@ def main():
         st.toast("Loading data...")
         selected_frames = df_dict.get(selected_df_key, {}).get("frames", [])
         for frame in selected_frames:
+            if frame.get("type") == "radar_chart":
+                # Radar chart specific logic
+                st.subheader(frame["title"])
+                all_players = frame["data"]["Player"].unique().tolist()
+                selected_player = st.selectbox("Choose a player:", all_players)
+                params = [
+                    "FPTS",
+                    "G",
+                    "Ghost Points",
+                    "Negative Fpts",
+                    "KP",
+                    "AT",
+                ]  # Example stats
+                slice_colors = [
+                    "#1A78CF",
+                    "#FF9300",
+                    "#D70232",
+                    "#F05B4F",
+                    "#8A9B0F",
+                    "#FFCD00",
+                ]  # Example colors
+                text_colors = [
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#FFFFFF",
+                    "#000000",
+                    "#000000",
+                ]  # Example text colors
+
+                if st.button(f"Show Radar Chart for {selected_player}"):
+                    plot_radar_chart(
+                        frame["data"],
+                        selected_player,
+                        params,
+                        slice_colors,
+                        text_colors,
+                    )
             # if frame.get("type") == "percentile_bumpy":
             #     # Filter the DataFrame based on selected players
             #     available_players = (
@@ -1253,7 +1351,7 @@ def main():
             #             frame["data"], player_1_name, player_2_name, stats_to_include
             #         )
 
-            if frame.get("type") == "player_pizza_chart":
+            elif frame.get("type") == "player_pizza_chart":
                 # Logic to handle player selection for pizza chart
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Select Player", all_players)
