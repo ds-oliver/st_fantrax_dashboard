@@ -69,10 +69,8 @@ st.set_page_config(page_title="Draft Alchemy", page_icon=":soccer:", layout="wid
 
 # load_css()
 
-
 def load_csv_file(csv_file):
     return pd.read_csv(csv_file)
-
 
 warnings.filterwarnings("ignore")
 
