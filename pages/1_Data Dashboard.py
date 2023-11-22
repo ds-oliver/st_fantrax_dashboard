@@ -1339,9 +1339,9 @@ def main():
             if frame.get("type") == "radar_chart":
                 # Example stats
                 params = [
-                    "FPTS per 90",
-                    "Ghost Points per 90",
                     "Negative Fpts per 90",
+                    "Ghost Points per 90",
+                    "FPTS per 90",
                     "Attacking Stats per 90",
                     "Defensive Stats per 90",
                     "Duel Stats per 90",
