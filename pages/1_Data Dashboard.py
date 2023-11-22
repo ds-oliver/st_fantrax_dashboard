@@ -1349,12 +1349,11 @@ def main():
                 selected_player = st.selectbox("Choose a player:", all_players)
 
                 # Get the positions associated with the selected player
-                player_positions = (
+                selected_position = (
                     frame["data"][frame["data"]["Player"] == selected_player]["Position"]
                     .unique()
                     .tolist()
                 )
-                selected_position = st.selectbox("Choose a position:", player_positions)
 
                 # Example colors
                 slice_colors = [
