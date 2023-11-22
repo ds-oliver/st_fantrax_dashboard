@@ -1083,36 +1083,36 @@ def main():
             ],
             "icon": "moon-stars-fill",
         },
-        "Charts": {
-            "frames": [
-                {
-                    "title": "Percentile Plot",
-                    "type": "percentile_bumpy",
-                    "data": grouped_players_df,  # Example DataFrame
-                    "label_column": "Player",
-                    "metrics": [
-                        "Attacking Stats",
-                        "Defensive Stats",
-                        "Duel Stats",
-                        "Liability Stats",
-                        "FPts/90",
-                        "Ghosts/90",
-                    ],
-                }
-            ],
-            "icon": "graph-up",
-        },
-        # Adding a new chart type in the 'Charts' section
-        "Scoring Distribution": {
-            "frames": [
-                {
-                    "title": "Scoring System Comparison",
-                    "type": "scoring_distplot",
-                    "data": pilot_all_gws_df,  # Your DataFrame
-                }
-            ],
-            "icon": "graph-up-fill",  # Choose an appropriate icon
-        },
+        # "Charts": {
+        #     "frames": [
+        #         {
+        #             "title": "Percentile Plot",
+        #             "type": "percentile_bumpy",
+        #             "data": grouped_players_df,  # Example DataFrame
+        #             "label_column": "Player",
+        #             "metrics": [
+        #                 "Attacking Stats",
+        #                 "Defensive Stats",
+        #                 "Duel Stats",
+        #                 "Liability Stats",
+        #                 "FPts/90",
+        #                 "Ghosts/90",
+        #             ],
+        #         }
+        #     ],
+        #     "icon": "graph-up",
+        # },
+        # # Adding a new chart type in the 'Charts' section
+        # "Scoring Distribution": {
+        #     "frames": [
+        #         {
+        #             "title": "Scoring System Comparison",
+        #             "type": "scoring_distplot",
+        #             "data": pilot_all_gws_df,  # Your DataFrame
+        #         }
+        #     ],
+        #     "icon": "graph-up-fill",  # Choose an appropriate icon
+        # },
     }
 
     # Update the df_dict with a new entry for player comparison
