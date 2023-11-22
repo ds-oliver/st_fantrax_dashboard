@@ -120,6 +120,10 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     if "Negative Fpts" in df.columns:
         df["Negative Fpts"] = df["Negative Fpts"].abs()
 
+    # if float, round to 2 decimal places
+    if "FPTS" in df.columns:
+        df["FPTS"] = df["FPTS"].round(2)
+
     # Check if set_index_cols is provided
     if set_index_cols:
         # Check if all columns in set_index_cols exist in the DataFrame
