@@ -1345,7 +1345,7 @@ def main():
                     "Attacking Stats per 90",
                     "Defensive Stats per 90",
                     "Duel Stats per 90",
-                    "MIN",
+                    "90s",
                 ]
 
                 # Radar chart specific logic
