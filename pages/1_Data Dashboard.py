@@ -1200,40 +1200,40 @@ def main():
             #     # create_scoring_distplot(frame["data"], use_container_width=True)
             #     plot_grouped_bar_chart(frame["data"])
 
-            if frame.get("type") == "player_comparison":
-                # Logic for selecting players to compare
-                all_players = frame["data"]["Player"].unique().tolist()
-                player_1_name = st.selectbox(
-                    "Select Player 1",
-                    all_players,
-                    index=all_players.index("Erling Haaland")
-                    if "Erling Haaland" in all_players
-                    else 0,
-                )
-                player_2_name = st.selectbox(
-                    "Select Player 2",
-                    all_players,
-                    index=all_players.index("Mohamed Salah")
-                    if "Mohamed Salah" in all_players
-                    else 1,
-                )
+            # if frame.get("type") == "player_comparison":
+            #     # Logic for selecting players to compare
+            #     all_players = frame["data"]["Player"].unique().tolist()
+            #     player_1_name = st.selectbox(
+            #         "Select Player 1",
+            #         all_players,
+            #         index=all_players.index("Erling Haaland")
+            #         if "Erling Haaland" in all_players
+            #         else 0,
+            #     )
+            #     player_2_name = st.selectbox(
+            #         "Select Player 2",
+            #         all_players,
+            #         index=all_players.index("Mohamed Salah")
+            #         if "Mohamed Salah" in all_players
+            #         else 1,
+            #     )
 
-                # Define the stats you want to include in your radar chart
-                stats_to_include = [
-                    "FPTS",
-                    "G",
-                    "Ghost Points",
-                    "Negative Fpts",
-                    "KP",
-                    "AT",
-                ]
+            #     # Define the stats you want to include in your radar chart
+            #     stats_to_include = [
+            #         "FPTS",
+            #         "G",
+            #         "Ghost Points",
+            #         "Negative Fpts",
+            #         "KP",
+            #         "AT",
+            #     ]
 
-                if st.button("Compare"):
-                    compare_players_radar(
-                        frame["data"], player_1_name, player_2_name, stats_to_include
-                    )
+            #     if st.button("Compare"):
+            #         compare_players_radar(
+            #             frame["data"], player_1_name, player_2_name, stats_to_include
+            #         )
 
-            elif frame.get("type") == "player_pizza_chart":
+            if frame.get("type") == "player_pizza_chart":
                 # Logic to handle player selection for pizza chart
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Select Player", all_players)
