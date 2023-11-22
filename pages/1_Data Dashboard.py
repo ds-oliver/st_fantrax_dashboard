@@ -120,9 +120,9 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     if "Negative Fpts" in df.columns:
         df["Negative Fpts"] = df["Negative Fpts"].abs()
 
-    # if float, round to 2 decimal places
+    # if numeric, round to 2 decimal places
     for col in df.columns:
-        if df[col].dtype == float:
+        if np.issubdtype(df[col].dtype, np.number):
             df[col] = df[col].round(2)
 
     # Check if set_index_cols is provided
