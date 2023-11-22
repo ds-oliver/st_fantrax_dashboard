@@ -85,52 +85,72 @@ def load_cached_css():
     load_css()
 
 
+def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
+    # Check if the '90s' column exists
+    if minutes_column not in df.columns:
+        raise ValueError(
+            f"The column '{minutes_column}' does not exist in the DataFrame."
+        )
+
+    # Create per 90s columns for the given stats
+    for stat in stats_columns:
+        if stat in df.columns:
+            per_90_col_name = f"{stat} per 90"
+            df[per_90_col_name] = df[stat] / df[minutes_column]
+
+    return df
+
+
 def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
     import plotly.graph_objects as go
-    
+
     # Filter the DataFrame for the selected player
-    player_data = df[df['Player'] == player_name]
+    player_data = df[df["Player"] == player_name]
 
     # Check if player data is available
     if player_data.empty:
         st.error(f"No data available for player {player_name}.")
         return
 
-    # Extract the stats for the radar chart
-    stats = [player_data.iloc[0][param] for param in params]
+    # Calculate percentile ranks for the stats of the selected player
+    percentiles = {}
+    for param in params:
+        if param in df.columns:
+            percentiles[param] = player_data[param].rank(pct=True).iloc[0]
+
+    # Convert percentiles to a 0-1 scale for the radar chart
+    stats = [percentiles[param] for param in params]
 
     # Create the radar chart
     fig = go.Figure()
 
     # Add the radar chart "slices"
-    fig.add_trace(go.Barpolar(
-        r=stats,
-        theta=params,
-        marker=dict(color=slice_colors, line=dict(color='black', width=2)),
-        text=stats,
-    ))
+    fig.add_trace(
+        go.Barpolar(
+            r=stats,
+            theta=params,
+            marker=dict(color=slice_colors, line=dict(color="black", width=2)),
+            text=[f"{percentiles[param]*100:.0f}%" for param in params],  # Display the percentile as a percentage
+        )
+    )
 
     # Set layout options
     fig.update_layout(
         polar=dict(
-            radialaxis=dict(
-                visible=True,
-                range=[0, max(stats)]
-            ),
+            radialaxis=dict(visible=True, range=[0, 1]),  # Percentiles range from 0 to 1
         ),
         showlegend=False,
         title={
-            'text': f"{player_name}'s Radar Chart",
-            'y':0.9,
-            'x':0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'
-        }
+            "text": f"{player_name}'s Radar Chart (Percentile Rank)",
+            "y": 0.9,
+            "x": 0.5,
+            "xanchor": "center",
+            "yanchor": "top",
+        },
     )
 
     # Display the figure in Streamlit
     st.plotly_chart(fig)
-
 
 @st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
@@ -830,7 +850,18 @@ def main():
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
     recent_gw_players_df = load_csv_file_cached(f"{data_path}/recent_gw_data.csv")
+    
     grouped_players_df = load_csv_file_cached(f"{data_path}/grouped_player_data.csv")
+    # create per 90s stats
+    # List of columns for which we want to create per 90s stats
+    stats_columns = [
+        "FPTS", "Ghost Points", "Negative Fpts", "GS", "GP", "G", "KP", "AT", "SOT",
+        "TKW", "DIS", "YC", "RC", "ACNC", "INT", "CLR", "COS", "BS", "AER", "PKM",
+        "PKD", "OG", "GAO", "CS", "MIN", "90s", "Attacking Stats", "Defensive Stats",
+        "Duel Stats", "Liability Stats"
+    ]
+    grouped_players_df_p90 = create_per_90s_stats(grouped_players_df, stats_columns, "90s")
+
     all_gws_df = load_csv_file_cached(f"{data_path}/all_gws_data.csv")
 
     team_df = load_csv_file_cached(f"{data_path}/for_team.csv", set_index_cols=["team"])
@@ -1214,7 +1245,7 @@ def main():
             {
                 "title": "Player Radar Chart",
                 "type": "radar_chart",  # A new type to trigger radar chart plotting
-                "data": grouped_players_df,  # The DataFrame containing player stats
+                "data": grouped_players_df_p90,  # The DataFrame containing player stats
             }
         ],
         "icon": "activity",  # Choose an appropriate FontAwesome icon
@@ -1242,18 +1273,23 @@ def main():
         selected_frames = df_dict.get(selected_df_key, {}).get("frames", [])
         for frame in selected_frames:
             if frame.get("type") == "radar_chart":
+                params = [
+                    "FPTS per 90",
+                    "Ghost Points per 90",
+                    "Negative Fpts per 90",
+                    "G per 90",
+                    "KP per 90",
+                    "AT per 90",
+                ]  # Example stats
+                # calculate percentile values for params
+                for param in params:
+                    grouped_players_df_p90[f"{param} Percentile"] = grouped_players_df_p90[param].rank(pct=True)
+
                 # Radar chart specific logic
                 st.subheader(frame["title"])
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Choose a player:", all_players)
-                params = [
-                    "FPTS",
-                    "G",
-                    "Ghost Points",
-                    "Negative Fpts",
-                    "KP",
-                    "AT",
-                ]  # Example stats
+                
                 slice_colors = [
                     "#1A78CF",
                     "#FF9300",
