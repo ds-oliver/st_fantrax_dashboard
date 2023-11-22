@@ -1279,28 +1279,28 @@ def main():
     }
 
     # Update the df_dict with a new entry for player comparison
-    df_dict["Player Comparison"] = {
-        "frames": [
-            {
-                "title": "Compare Players",
-                "type": "player_comparison",
-                # Assuming 'grouped_players_df' contains the stats for all players
-                "data": grouped_players_df,
-            }
-        ],
-        "icon": "graph-up",
-    }
+    # df_dict["Player Comparison"] = {
+    #     "frames": [
+    #         {
+    #             "title": "Compare Players",
+    #             "type": "player_comparison",
+    #             # Assuming 'grouped_players_df' contains the stats for all players
+    #             "data": grouped_players_df,
+    #         }
+    #     ],
+    #     "icon": "graph-up",
+    # }
 
-    df_dict["Player Stats Chart"] = {
-        "frames": [
-            {
-                "title": "Player Stats Chart",
-                "type": "player_pizza_chart",
-                "data": grouped_players_df,
-            }
-        ],
-        "icon": "chart-pie",
-    }
+    # df_dict["Player Stats Chart"] = {
+    #     "frames": [
+    #         {
+    #             "title": "Player Stats Chart",
+    #             "type": "player_pizza_chart",
+    #             "data": grouped_players_df,
+    #         }
+    #     ],
+    #     "icon": "chart-pie",
+    # }
 
     # Add a new section for radar chart
     df_dict["Player Radar Chart"] = {
