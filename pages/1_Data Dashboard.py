@@ -1354,13 +1354,27 @@ def main():
 
                     st.write(player_data)
 
-                    # Call the function to create and display the pizza chart
+                    # Extract player's stats as percentile ranks and actual values
+                    player_values = [
+                        frame["data"][stat].rank(pct=True).values[0]
+                        if stat in frame["data"].columns
+                        else 0
+                        for stat in params
+                    ]
+                    display_values = [
+                        frame["data"][stat].values[0]
+                        if stat in frame["data"].columns
+                        else 0
+                        for stat in params
+                    ]
+
                     create_pizza_chart(
                         player_data,
                         selected_player,
-                        stats_to_include,
+                        params,
                         default_slice_colors,
                         default_text_colors,
+                        display_values
                     )
 
             # elif frame.get("type") == "player_comparison":
