@@ -88,9 +88,11 @@ def load_cached_css():
 def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
     # Ensure the '90s' column is numeric
     if minutes_column not in df.columns:
-        raise ValueError(f"The column '{minutes_column}' does not exist in the DataFrame.")
-    df[minutes_column] = pd.to_numeric(df[minutes_column], errors='coerce')
-    
+        raise ValueError(
+            f"The column '{minutes_column}' does not exist in the DataFrame."
+        )
+    df[minutes_column] = pd.to_numeric(df[minutes_column], errors="coerce")
+
     # Handle NaN values in '90s' column if any
     if df[minutes_column].isna().any():
         df[minutes_column].fillna(0, inplace=True)
@@ -99,35 +101,50 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
     for stat in stats_columns:
         if stat in df.columns:
             # Convert the stat column to numeric
-            df[stat] = pd.to_numeric(df[stat], errors='coerce')
+            df[stat] = pd.to_numeric(df[stat], errors="coerce")
             per_90_col_name = f"{stat} per 90"
             df[per_90_col_name] = df[stat] / df[minutes_column]
 
     return df
 
 
-def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
+def plot_radar_chart(
+    df, player_name, position, params, slice_colors=None, text_colors=None
+):
     import plotly.graph_objects as go
 
+    # Set default colors if not provided
     if slice_colors is None:
-        slice_colors = ["#1A78CF", "#FF9300", "#D70232", "#F05B4F", "#8A9B0F", "#FFCD00"]
+        slice_colors = [
+            "#1A78CF",
+            "#FF9300",
+            "#D70232",
+            "#F05B4F",
+            "#8A9B0F",
+            "#FFCD00",
+        ]
     if text_colors is None:
         text_colors = ["#FFFFFF", "#000000", "#FFFFFF", "#000000", "#FFFFFF", "#000000"]
 
-    # Filter the DataFrame for the selected player
-    player_data = df[df["Player"] == player_name]
+    # Filter the DataFrame for the selected player and position
+    player_data = df[(df["Player"] == player_name) & (df["Position"] == position)]
 
     # Check if player data is available
     if player_data.empty:
-        st.error(f"No data available for player {player_name}.")
+        st.error(f"No data available for player {player_name} in position {position}.")
         return
 
-    # Calculate percentile ranks for the stats of the selected player
-    percentiles = df.rank(pct=True)
+    # Filter the DataFrame for the specified position and calculate percentiles
+    position_data = df[df["Position"] == position]
+    percentiles = position_data[params].rank(pct=True)
     player_percentiles = percentiles.loc[player_data.index]
 
     # Convert percentiles to a 0-1 scale for the radar chart
-    stats = [player_percentiles[param].values[0] for param in params if param in df.columns]
+    stats = [
+        player_percentiles[param].values[0]
+        for param in params
+        if param in position_data.columns
+    ]
 
     # Create the radar chart
     fig = go.Figure()
@@ -138,18 +155,22 @@ def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
             r=stats,
             theta=params,
             marker=dict(color=slice_colors, line=dict(color="black", width=2)),
-            text=[f"{stat*100:.0f}%" for stat in stats],  # Display the percentile as a percentage
+            text=[
+                f"{stat*100:.0f}%" for stat in stats
+            ],  # Display the percentile as a percentage
         )
     )
 
     # Set layout options
     fig.update_layout(
         polar=dict(
-            radialaxis=dict(visible=True, range=[0, 1]),  # Percentiles range from 0 to 1
+            radialaxis=dict(
+                visible=True, range=[0, 1]
+            ),  # Percentiles range from 0 to 1
         ),
         showlegend=False,
         title={
-            "text": f"{player_name}'s Radar Chart (Percentile Rank)",
+            "text": f"{player_name}'s Radar Chart (Percentile Rank) - {position}",
             "y": 0.9,
             "x": 0.5,
             "xanchor": "center",
@@ -859,17 +880,45 @@ def main():
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
     recent_gw_players_df = load_csv_file_cached(f"{data_path}/recent_gw_data.csv")
-    
+
     grouped_players_df = load_csv_file_cached(f"{data_path}/grouped_player_data.csv")
     # create per 90s stats
     # List of columns for which we want to create per 90s stats
     stats_columns = [
-        "FPTS", "Ghost Points", "Negative Fpts", "GS", "GP", "G", "KP", "AT", "SOT",
-        "TKW", "DIS", "YC", "RC", "ACNC", "INT", "CLR", "COS", "BS", "AER", "PKM",
-        "PKD", "OG", "GAO", "CS", "MIN", "90s", "Attacking Stats", "Defensive Stats",
-        "Duel Stats", "Liability Stats"
+        "FPTS",
+        "Ghost Points",
+        "Negative Fpts",
+        "GS",
+        "GP",
+        "G",
+        "KP",
+        "AT",
+        "SOT",
+        "TKW",
+        "DIS",
+        "YC",
+        "RC",
+        "ACNC",
+        "INT",
+        "CLR",
+        "COS",
+        "BS",
+        "AER",
+        "PKM",
+        "PKD",
+        "OG",
+        "GAO",
+        "CS",
+        "MIN",
+        "90s",
+        "Attacking Stats",
+        "Defensive Stats",
+        "Duel Stats",
+        "Liability Stats",
     ]
-    grouped_players_df_p90 = create_per_90s_stats(grouped_players_df, stats_columns, "90s")
+    grouped_players_df_p90 = create_per_90s_stats(
+        grouped_players_df, stats_columns, "90s"
+    )
 
     all_gws_df = load_csv_file_cached(f"{data_path}/all_gws_data.csv")
 
@@ -1292,13 +1341,15 @@ def main():
                 ]  # Example stats
                 # calculate percentile values for params
                 for param in params:
-                    grouped_players_df_p90[f"{param} Percentile"] = grouped_players_df_p90[param].rank(pct=True)
+                    grouped_players_df_p90[
+                        f"{param} Percentile"
+                    ] = grouped_players_df_p90[param].rank(pct=True)
 
                 # Radar chart specific logic
                 st.subheader(frame["title"])
                 all_players = frame["data"]["Player"].unique().tolist()
                 selected_player = st.selectbox("Choose a player:", all_players)
-                
+
                 slice_colors = [
                     "#1A78CF",
                     "#FF9300",
