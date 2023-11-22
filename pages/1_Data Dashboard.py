@@ -100,7 +100,6 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
 
     return df
 
-
 def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
     import plotly.graph_objects as go
 
@@ -113,13 +112,11 @@ def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
         return
 
     # Calculate percentile ranks for the stats of the selected player
-    percentiles = {}
-    for param in params:
-        if param in df.columns:
-            percentiles[param] = player_data[param].rank(pct=True).iloc[0]
+    percentiles = df.rank(pct=True)
+    player_percentiles = percentiles.loc[player_data.index]
 
     # Convert percentiles to a 0-1 scale for the radar chart
-    stats = [percentiles[param] for param in params]
+    stats = [player_percentiles[param].values[0] for param in params if param in df.columns]
 
     # Create the radar chart
     fig = go.Figure()
@@ -130,7 +127,7 @@ def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
             r=stats,
             theta=params,
             marker=dict(color=slice_colors, line=dict(color="black", width=2)),
-            text=[f"{percentiles[param]*100:.0f}%" for param in params],  # Display the percentile as a percentage
+            text=[f"{stat*100:.0f}%" for stat in stats],  # Display the percentile as a percentage
         )
     )
 
@@ -151,6 +148,7 @@ def plot_radar_chart(df, player_name, params, slice_colors, text_colors):
 
     # Display the figure in Streamlit
     st.plotly_chart(fig)
+
 
 @st.cache_data
 def load_csv_file_cached(csv_file, set_index_cols=None):
