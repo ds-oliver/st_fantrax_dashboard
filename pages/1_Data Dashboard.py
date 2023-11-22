@@ -175,7 +175,7 @@ def plot_radar_chart(
         ),
         showlegend=False,
         title={
-            "text": f"{player_name}'s Radar Chart (Percentile Rank) - {position}",
+            "text": f"{player_name}'s Radar Chart (Percentile Rank) among position: {position}",
             "y": 0.9,
             "x": 0.5,
             "xanchor": "center",
