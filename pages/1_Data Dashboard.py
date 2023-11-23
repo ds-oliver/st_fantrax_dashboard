@@ -182,8 +182,8 @@ def plot_radar_chart(
             "yanchor": "top",
         },
         # Set the size of the chart here
-        width=800,  # Adjust the width as needed
-        height=600,  # Adjust the height as needed
+        width=1200,  # Adjust the width as needed
+        height=1000,  # Adjust the height as needed
     )
 
     # Display the figure in Streamlit with container width set to False
