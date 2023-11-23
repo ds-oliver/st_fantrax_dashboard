@@ -1333,8 +1333,17 @@ def main():
         "icon": "activity",  # Choose an appropriate FontAwesome icon
     }
 
-    # move Player Radar Chart to the top of the dict
-    df_dict = {k: df_dict[k] for k in ["Player Radar Chart"]}
+    # Insert 'Player Radar Chart' at the beginning of the OrderedDict
+    from collections import OrderedDict
+
+    # Ensure 'Player Radar Chart' is the first key in the ordered dictionary
+    ordered_df_dict = OrderedDict([('Player Radar Chart', df_dict.pop('Player Radar Chart'))])
+
+    # Add the rest of the items from df_dict
+    ordered_df_dict.update(df_dict)
+
+    # Update df_dict with the ordered dictionary
+    df_dict = ordered_df_dict
 
     # List of the DataFrames to display based on the keys in the df_dict
     dfs_to_display = [(key, df_dict[key]["icon"]) for key in df_dict]
