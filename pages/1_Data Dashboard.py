@@ -181,10 +181,13 @@ def plot_radar_chart(
             "xanchor": "center",
             "yanchor": "top",
         },
+        # Set the size of the chart here
+        width=800,  # Adjust the width as needed
+        height=600,  # Adjust the height as needed
     )
 
-    # Display the figure in Streamlit
-    st.plotly_chart(fig)
+    # Display the figure in Streamlit with container width set to False
+    st.plotly_chart(fig, use_container_width=False)
 
 
 @st.cache_data
@@ -985,13 +988,17 @@ def main():
     set_piece_studs_p90 = create_per_90s_stats(set_piece_studs, stats_columns, "90s")
 
     # sort by deadball agg
-    set_piece_studs = set_piece_studs.sort_values(
-        by=["deadball agg"], ascending=False
-    )
+    set_piece_studs = set_piece_studs.sort_values(by=["deadball agg"], ascending=False)
 
     # set deadball agg as first column after player, team, position, and ftx_position
-    set_piece_studs = set_piece_studs[["Player", "Team", "Position", "deadball agg"] + [
-        col for col in set_piece_studs.columns if col not in ["Player", "Team", "Position", "deadball agg"]]]
+    set_piece_studs = set_piece_studs[
+        ["Player", "Team", "Position", "deadball agg"]
+        + [
+            col
+            for col in set_piece_studs.columns
+            if col not in ["Player", "Team", "Position", "deadball agg"]
+        ]
+    ]
 
     set_piece_studs_teams = load_csv_file_cached(
         f"{data_path}/set_piece_stats_team.csv", set_index_cols=["team"]
