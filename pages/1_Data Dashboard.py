@@ -1332,6 +1332,10 @@ def main():
         ],
         "icon": "activity",  # Choose an appropriate FontAwesome icon
     }
+
+    # move Player Radar Chart to the top of the dict
+    df_dict = {k: df_dict[k] for k in ["Player Radar Chart"]}
+
     # List of the DataFrames to display based on the keys in the df_dict
     dfs_to_display = [(key, df_dict[key]["icon"]) for key in df_dict]
 
