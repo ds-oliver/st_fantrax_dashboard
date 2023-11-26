@@ -5,8 +5,8 @@ import pandas as pd
 import warnings
 import streamlit as st
 
-# import plottable
-# from plottable import Table
+import plottable
+from plottable import Table
 import mplsoccer
 from mplsoccer import Radar, FontManager, PyPizza
 
@@ -839,6 +839,26 @@ def plot_grouped_bar_chart(df):
     fig = go.Figure(data=data, layout=layout)
     fig.show()
 
+def create_plottable_table(data_frame, fig_size=(5, 8)):
+    """
+    Creates and displays a table using the plottable library.
+
+    Parameters:
+        data_frame (pd.DataFrame): The pandas DataFrame you want to display as a table.
+        fig_size (tuple): The size of the figure to display the table on, default is (5, 8).
+    """
+    # Ensure data_frame is a pandas DataFrame
+    if not isinstance(data_frame, pd.DataFrame):
+        raise ValueError("The data_frame argument must be a pandas DataFrame.")
+    
+    # Create the matplotlib figure and axes
+    fig, ax = plt.subplots(figsize=fig_size)
+    
+    # Create the Table object using the plottable library
+    tab = Table(data_frame)
+    
+    # Render the table
+    plt.show()
 
 def main():
     epl = Image.open(
@@ -1333,6 +1353,19 @@ def main():
         "icon": "activity",  # Choose an appropriate FontAwesome icon
     }
 
+    # Add a new section for the Plottable Table
+    df_dict["Special Plottable Table"] = {
+        "frames": [
+            {
+                "title": "Special Table with Plottable",
+                "type": "plottable_table",  # A new type to trigger Plottable Table
+                "data": grouped_players_df,  # The DataFrame containing data for the table
+            }
+        ],
+        "icon": "table",  # Choose an appropriate FontAwesome icon
+    }
+
+
     # Insert 'Player Radar Chart' at the beginning of the OrderedDict
     from collections import OrderedDict
 
@@ -1567,6 +1600,20 @@ def main():
 
             #     if st.button("Compare"):
             #         compare_players(player_1_name, player_2_name, frame["data"])
+
+            # Inside your main function, where you check the 'type' of each frame
+            wlif frame.get("type") == "plottable_table":
+                # Assuming 'grouped_players_df' contains the data you want to display in the table
+                # Retrieve the DataFrame
+                data_for_table = frame["data"]
+                
+                # Create the special table with Plottable
+                # You need to define 'create_plottable_table' according to the Plottable documentation
+                plottable_table = create_plottable_table(data_for_table)
+                
+                # Display the table in the Streamlit app
+                st.write(plottable_table)
+
 
             else:
                 # ... (handling for other visualization and data types)
