@@ -268,6 +268,10 @@ def display_dataframe(
 ):
     df = df.copy()
 
+    # Round all numeric columns to 2 decimal points
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    df[numeric_cols] = df[numeric_cols].round(2)
+
     df = df.drop(
         columns=[col for col in drop_cols if col in df.columns], errors="ignore"
     )
@@ -307,7 +311,6 @@ def display_dataframe(
     except Exception as e:
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
-
 
 def set_index_based_on_radio_button(df, widget_key, df_name="DataFrame"):
     """
