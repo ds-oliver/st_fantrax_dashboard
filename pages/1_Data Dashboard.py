@@ -84,7 +84,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
-
+@st.cache_data
 def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
     # Ensure the '90s' column is numeric
     if minutes_column not in df.columns:
@@ -107,7 +107,7 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
 
     return df
 
-
+@st.cache_data
 def plot_radar_chart(
     df, player_name, position, params, slice_colors=None, text_colors=None
 ):
@@ -421,7 +421,7 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 
 #     st.pyplot(plt.gcf())
 
-
+@st.cache_data
 def plot_bumpy_chart(
     df,
     x_column,
@@ -515,7 +515,7 @@ def plot_bumpy_chart(
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-
+@st.cache_data
 def plot_percentile_bumpy_chart(
     df,
     label_column,
@@ -653,7 +653,7 @@ relevant_stats = [
 #         fig.update_layout(barmode='group')
 #         st.plotly_chart(fig, use_container_width=True)
 
-
+@st.cache_data
 def compare_players_radar(
     player_stats_df, player_1_name, player_2_name, stats_to_include
 ):
@@ -696,7 +696,7 @@ def compare_players_radar(
     # Show the radar chart
     st.pyplot(fig)
 
-
+@st.cache_data
 def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: bool):
     # Assuming 'pilot_scoring_all_gws_data' is your DataFrame with the scoring data
     # Ensuring the scoring columns are numeric and clean
@@ -732,7 +732,7 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 
 from matplotlib.font_manager import FontProperties
 
-
+@st.cache_data
 def create_pizza_chart(player_data, player_name, params, slice_colors, text_colors):
     # Check if the DataFrame is empty
     if player_data.empty:
@@ -839,6 +839,7 @@ def plot_grouped_bar_chart(df):
     fig = go.Figure(data=data, layout=layout)
     fig.show()
 
+@st.cache_data
 def create_plottable_table(data_frame, fig_size=(5, 8)):
     """
     Creates and displays a table using the plottable library.
@@ -850,15 +851,11 @@ def create_plottable_table(data_frame, fig_size=(5, 8)):
     # Ensure data_frame is a pandas DataFrame
     if not isinstance(data_frame, pd.DataFrame):
         raise ValueError("The data_frame argument must be a pandas DataFrame.")
+    
+    fig, ax = plt.subplots(figsize=fig_size)
 
-    # Create a plottable Table object
-    table = Table(data_frame)
-
-    # Display the table on the specified figure size
-    table.figsize(fig_size)
-
-    # Display the table
-    table.show()
+    # Create the table
+    
 
 def main():
     epl = Image.open(
