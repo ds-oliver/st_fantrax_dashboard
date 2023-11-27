@@ -850,15 +850,15 @@ def create_plottable_table(data_frame, fig_size=(5, 8)):
     # Ensure data_frame is a pandas DataFrame
     if not isinstance(data_frame, pd.DataFrame):
         raise ValueError("The data_frame argument must be a pandas DataFrame.")
-    
-    # Create the matplotlib figure and axes
-    fig, ax = plt.subplots(figsize=fig_size)
-    
-    # Create the Table object using the plottable library
-    tab = Table(data_frame)
-    
-    # Render the table
-    plt.show()
+
+    # Create a plottable Table object
+    table = Table(data_frame)
+
+    # Display the table on the specified figure size
+    table.figsize(fig_size)
+
+    # Display the table
+    table.show()
 
 def main():
     epl = Image.open(
