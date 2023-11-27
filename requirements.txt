@@ -133,6 +133,7 @@ platformdirs==3.5.1
 Plost==0.2.5
 plotly==5.15.0
 plotly-express==0.4.1
+plottable==0.1.5
 prometheus-client==0.17.0
 prompt-toolkit==3.0.38
 protobuf==4.23.4
