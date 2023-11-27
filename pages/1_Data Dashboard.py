@@ -1602,7 +1602,7 @@ def main():
             #         compare_players(player_1_name, player_2_name, frame["data"])
 
             # Inside your main function, where you check the 'type' of each frame
-            wlif frame.get("type") == "plottable_table":
+            elif frame.get("type") == "plottable_table":
                 # Assuming 'grouped_players_df' contains the data you want to display in the table
                 # Retrieve the DataFrame
                 data_for_table = frame["data"]
