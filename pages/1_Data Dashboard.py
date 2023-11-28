@@ -1036,20 +1036,22 @@ def main():
 
     set_piece_studs = load_csv_file_cached(f"{data_path}/top_10_players_per_team.csv")
 
-    set_piece_studs_p90 = create_per_90s_stats(set_piece_studs, stats_columns, "90s")
+    set_piece_studs_merge = load_csv_file_cached(f"{data_path}/top_10_players_per_team_merge.csv")
+
+    set_piece_studs_p90 = create_per_90s_stats(set_piece_studs_merge, stats_columns, "90s")
 
     # sort by deadball agg
     set_piece_studs = set_piece_studs.sort_values(by=["deadball agg"], ascending=False)
 
     # set deadball agg as first column after player, team, position, and ftx_position
-    set_piece_studs = set_piece_studs[
-        ["Player", "Team", "Position", "deadball agg"]
-        + [
-            col
-            for col in set_piece_studs.columns
-            if col not in ["Player", "Team", "Position", "deadball agg"]
-        ]
-    ]
+    # set_piece_studs = set_piece_studs[
+    #     ["Player", "Team", "Position", "deadball agg"]
+    #     + [
+    #         col
+    #         for col in set_piece_studs.columns
+    #         if col not in ["Player", "Team", "Position", "deadball agg"]
+    #     ]
+    # ]
 
     set_piece_studs_teams = load_csv_file_cached(
         f"{data_path}/set_piece_stats_team.csv", set_index_cols=["team"]
