@@ -883,7 +883,8 @@ def create_plottable_table(data_frame, fig_size=(20, 22)):
     ax.axis('off')
 
     # Display the figure in Streamlit
-    st.pyplot(fig)
+    # st.pyplot(fig)
+    fig
 
 def main():
     epl = Image.open(
