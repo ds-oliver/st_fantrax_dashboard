@@ -880,7 +880,6 @@ def create_plottable_table(data_frame, fig_size=(20, 22)):
     )
 
     # Render the table onto the axes and hide the axes
-    table.render(ax=ax)
     ax.axis('off')
 
     # Display the figure in Streamlit
