@@ -6,7 +6,7 @@ import warnings
 import streamlit as st
 
 import plottable
-from plottable import Table
+from plottable import Table, ColumnDefinition
 import mplsoccer
 from mplsoccer import Radar, FontManager, PyPizza
 
@@ -843,37 +843,50 @@ def plot_grouped_bar_chart(df):
     fig.show()
 
 @st.cache_data
-def create_plottable_table(data_frame, fig_size=(5, 8)):
+def create_plottable_table(data_frame, fig_size=(20, 22)):
     """
     Creates and displays a table using the plottable library.
 
     Parameters:
         data_frame (pd.DataFrame): The pandas DataFrame you want to display as a table.
-        fig_size (tuple): The size of the figure to display the table on, default is (5, 8).
+        fig_size (tuple): The size of the figure to display the table on, default is (20, 22).
     """
     # Ensure data_frame is a pandas DataFrame
     if not isinstance(data_frame, pd.DataFrame):
         raise ValueError("The data_frame argument must be a pandas DataFrame.")
     
-    fig, ax = plt.subplots(figsize=fig_size)
+    # Dynamically create column definitions based on DataFrame columns
+    col_defs = []
+    for col_name, dtype in data_frame.dtypes.iteritems():
+        # Infer column type for plottable based on dtype
+        if pd.api.types.is_numeric_dtype(dtype):
+            col_type = 'number'
+        elif pd.api.types.is_datetime64_any_dtype(dtype):
+            col_type = 'datetime'
+        elif pd.api.types.is_string_dtype(dtype):
+            col_type = 'text'
+        elif pd.api.types.is_categorical_dtype(dtype):
+            col_type = 'categorical'
+        elif pd.api.types.is_bool_dtype(dtype):
+            col_type = 'boolean'
+        else:
+            col_type = 'text'  # Default to text for any other types
+        col_defs.append(ColumnDefinition(col_name, col_type))
 
-    # Create the table
-    table = ax.table(
-        cellText=data_frame.values,
-        colLabels=data_frame.columns,
-        loc="center",
-        cellLoc="center",
+    # Create a Table object with the DataFrame and column definitions
+    fig, ax = plt.subplots(figsize=fig_size)
+    table = Table(
+        data_frame,
+        column_definitions=col_defs,
+        row_headers=True  # Assuming the first column of your DataFrame is row headers; set to False otherwise
     )
 
-    # Set the font size
-    table.auto_set_font_size(False)
-    table.set_fontsize(12)
+    # Render the table onto the axes and hide the axes
+    table.render(ax=ax)
+    ax.axis('off')
 
-    # Hide the axes
-    ax.axis("off")
-
-    # Display the table
-    st.pyplot(fig)    
+    # Display the figure in Streamlit
+    st.pyplot(fig)
 
 def main():
     epl = Image.open(
