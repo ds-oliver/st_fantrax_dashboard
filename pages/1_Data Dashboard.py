@@ -842,7 +842,6 @@ def plot_grouped_bar_chart(df):
     fig = go.Figure(data=data, layout=layout)
     fig.show()
 
-@st.cache_data
 def create_plottable_table(data_frame, fig_size=(20, 22)):
     """
     Creates and displays a table using the plottable library.
