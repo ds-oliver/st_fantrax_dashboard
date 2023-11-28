@@ -230,6 +230,10 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
         if np.issubdtype(df[col].dtype, np.number):
             df[col] = df[col].round(2)
 
+    # if GPR exists, format it as a percentage
+    if "GPR" in df.columns:
+        df["GPR"] = df["GPR"].apply(lambda x: f"{x:.0%}")
+
     # Check if set_index_cols is provided
     if set_index_cols:
         # Check if all columns in set_index_cols exist in the DataFrame
