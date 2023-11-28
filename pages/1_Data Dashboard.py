@@ -219,7 +219,7 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     ]
     for col in cols_to_convert:
         if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce").applymap(round_and_format)
+            df[col] = pd.to_numeric(df[col], errors="coerce")
 
     # Take the absolute value of 'Negative Fpts' if it exists
     if "Negative Fpts" in df.columns:
