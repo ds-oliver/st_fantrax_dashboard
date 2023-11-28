@@ -312,6 +312,7 @@ def display_dataframe(
         logging.error(f"Error styling the {title} dataframe: {e}")
         st.error(f"Error styling the {title} dataframe: {e}")
 
+
 def set_index_based_on_radio_button(df, widget_key, df_name="DataFrame"):
     """
     Set DataFrame index based on a Streamlit radio button.
