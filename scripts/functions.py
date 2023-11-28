@@ -1778,25 +1778,26 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
         if col in ['Player', 'Position']:
             continue
 
-        col_data = df[col]
+        else:
+            col_data = df[col]
 
-        try:
-            col_data = col_data.astype(float)
-            col_data = col_data.round(2)  # Round to 2 decimal places
-            min_val = col_data.min()
-            max_val = col_data.max()
-        except ValueError:
-            min_val = max_val = None
+            try:
+                col_data = col_data.astype(float)
+                col_data = col_data.round(2)  # Round to 2 decimal places
+                min_val = col_data.min()
+                max_val = col_data.max()
+            except ValueError:
+                min_val = max_val = None
 
-        if min_val is not None and max_val is not None:
-            if min_val < 0:  # This column has negative values
-                styled_df[col] = col_data.apply(
-                    lambda x: get_color((x - min_val) / (max_val - min_val), divergent_cmap)
-                )
-            elif min_val != max_val:  # This column has only non-negative values
-                styled_df[col] = col_data.apply(
-                    lambda x: get_color((1 - (x - min_val) / (max_val - min_val)) if inverse_cmap else (x - min_val) / (max_val - min_val), object_cmap)
-                )
+            if min_val is not None and max_val is not None:
+                if min_val < 0:  # This column has negative values
+                    styled_df[col] = col_data.apply(
+                        lambda x: get_color((x - min_val) / (max_val - min_val), divergent_cmap)
+                    )
+                elif min_val != max_val:  # This column has only non-negative values
+                    styled_df[col] = col_data.apply(
+                        lambda x: get_color((1 - (x - min_val) / (max_val - min_val)) if inverse_cmap else (x - min_val) / (max_val - min_val), object_cmap)
+                    )
     return styled_df
 
 def create_custom_cmap(*colors, base_cmap=None, brightness_limit=None):
