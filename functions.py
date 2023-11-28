@@ -1782,6 +1782,7 @@ def style_dataframe_custom(df, selected_columns, custom_cmap="copper", custom_di
 
         try:
             col_data = col_data.astype(float)
+            col_data = col_data.round(2)  # Round to 2 decimal places
             min_val = col_data.min()
             max_val = col_data.max()
         except ValueError:
