@@ -877,7 +877,6 @@ def create_plottable_table(data_frame, fig_size=(20, 22)):
     table = Table(
         data_frame,
         column_definitions=col_defs,
-        row_headers=True  # Assuming the first column of your DataFrame is row headers; set to False otherwise
     )
 
     # Render the table onto the axes and hide the axes
