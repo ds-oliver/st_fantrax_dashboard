@@ -858,7 +858,22 @@ def create_plottable_table(data_frame, fig_size=(5, 8)):
     fig, ax = plt.subplots(figsize=fig_size)
 
     # Create the table
-    
+    table = ax.table(
+        cellText=data_frame.values,
+        colLabels=data_frame.columns,
+        loc="center",
+        cellLoc="center",
+    )
+
+    # Set the font size
+    table.auto_set_font_size(False)
+    table.set_fontsize(12)
+
+    # Hide the axes
+    ax.axis("off")
+
+    # Display the table
+    st.pyplot(fig)    
 
 def main():
     epl = Image.open(
