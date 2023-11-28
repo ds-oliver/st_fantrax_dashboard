@@ -1041,7 +1041,7 @@ def main():
     set_piece_studs_p90 = create_per_90s_stats(set_piece_studs_merge, stats_columns, "90s")
 
     # sort by deadball agg
-    set_piece_studs = set_piece_studs.sort_values(by=["deadball agg"], ascending=False)
+    # set_piece_studs = set_piece_studs.sort_values(by=["deadball agg"], ascending=False)
 
     # set deadball agg as first column after player, team, position, and ftx_position
     # set_piece_studs = set_piece_studs[
