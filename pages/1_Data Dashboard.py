@@ -270,7 +270,7 @@ def display_dataframe(
 
     # Round all numeric columns to 2 decimal points
     numeric_cols = df.select_dtypes(include=[np.number]).columns
-    df[numeric_cols] = df[numeric_cols].applymap(round_and_format)
+    df[numeric_cols] = df[numeric_cols]
 
     df = df.drop(
         columns=[col for col in drop_cols if col in df.columns], errors="ignore"
@@ -300,7 +300,7 @@ def display_dataframe(
             is_percentile=False,
         )
         st.dataframe(
-            df[columns_to_keep].style.apply(lambda _: styled_df, axis=None),
+            df[columns_to_keep].applymap(round_and_format).style.apply(lambda _: styled_df, axis=None),
             use_container_width=True,
             height=height,
         )
