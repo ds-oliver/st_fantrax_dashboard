@@ -84,6 +84,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+
 @st.cache_data
 def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
     # Ensure the '90s' column is numeric
@@ -106,6 +107,7 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
             df[per_90_col_name] = df[stat] / df[minutes_column]
 
     return df
+
 
 @st.cache_data
 def plot_radar_chart(
@@ -304,7 +306,9 @@ def display_dataframe(
             is_percentile=False,
         )
         st.dataframe(
-            df[columns_to_keep].applymap(round_and_format).style.apply(lambda _: styled_df, axis=None),
+            df[columns_to_keep]
+            .applymap(round_and_format)
+            .style.apply(lambda _: styled_df, axis=None),
             use_container_width=True,
             height=height,
         )
@@ -429,6 +433,7 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 
 #     st.pyplot(plt.gcf())
 
+
 @st.cache_data
 def plot_bumpy_chart(
     df,
@@ -522,6 +527,7 @@ def plot_bumpy_chart(
 
     # Display the plot in Streamlit
     st.pyplot(fig)
+
 
 @st.cache_data
 def plot_percentile_bumpy_chart(
@@ -661,6 +667,7 @@ relevant_stats = [
 #         fig.update_layout(barmode='group')
 #         st.plotly_chart(fig, use_container_width=True)
 
+
 @st.cache_data
 def compare_players_radar(
     player_stats_df, player_1_name, player_2_name, stats_to_include
@@ -704,6 +711,7 @@ def compare_players_radar(
     # Show the radar chart
     st.pyplot(fig)
 
+
 @st.cache_data
 def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: bool):
     # Assuming 'pilot_scoring_all_gws_data' is your DataFrame with the scoring data
@@ -739,6 +747,7 @@ def create_scoring_distplot(pilot_scoring_all_gws_data, use_container_width: boo
 
 
 from matplotlib.font_manager import FontProperties
+
 
 @st.cache_data
 def create_pizza_chart(player_data, player_name, params, slice_colors, text_colors):
@@ -847,6 +856,7 @@ def plot_grouped_bar_chart(df):
     fig = go.Figure(data=data, layout=layout)
     fig.show()
 
+
 def create_plottable_table(data_frame, fig_size=(20, 22)):
     """
     Creates and displays a table using the plottable library.
@@ -858,23 +868,23 @@ def create_plottable_table(data_frame, fig_size=(20, 22)):
     # Ensure data_frame is a pandas DataFrame
     if not isinstance(data_frame, pd.DataFrame):
         raise ValueError("The data_frame argument must be a pandas DataFrame.")
-    
+
     # Dynamically create column definitions based on DataFrame columns
     col_defs = []
     for col_name, dtype in data_frame.dtypes.iteritems():
         # Infer column type for plottable based on dtype
         if pd.api.types.is_numeric_dtype(dtype):
-            col_type = 'number'
+            col_type = "number"
         elif pd.api.types.is_datetime64_any_dtype(dtype):
-            col_type = 'datetime'
+            col_type = "datetime"
         elif pd.api.types.is_string_dtype(dtype):
-            col_type = 'text'
+            col_type = "text"
         elif pd.api.types.is_categorical_dtype(dtype):
-            col_type = 'categorical'
+            col_type = "categorical"
         elif pd.api.types.is_bool_dtype(dtype):
-            col_type = 'boolean'
+            col_type = "boolean"
         else:
-            col_type = 'text'  # Default to text for any other types
+            col_type = "text"  # Default to text for any other types
         col_defs.append(ColumnDefinition(col_name, col_type))
 
     # Create a Table object with the DataFrame and column definitions
@@ -885,11 +895,12 @@ def create_plottable_table(data_frame, fig_size=(20, 22)):
     )
 
     # Render the table onto the axes and hide the axes
-    ax.axis('off')
+    ax.axis("off")
 
     # Display the figure in Streamlit
     # st.pyplot(fig)
     fig
+
 
 def main():
     epl = Image.open(
@@ -985,6 +996,7 @@ def main():
     team_pos_df = load_csv_file_cached(
         f"{data_path}/d_detail_bypos_forteam.csv", set_index_cols=["team", "position"]
     )
+
     vs_team_df = load_csv_file_cached(
         f"{data_path}/vs_team.csv", set_index_cols=["opponent"]
     )
@@ -996,6 +1008,10 @@ def main():
     )
     ftx_pos_df = load_csv_file_cached(
         f"{data_path}/ftx_pos.csv", set_index_cols=["ftx_position"]
+    )
+
+    ftx_team_pos_df = load_csv_file_cached(
+        f"{data_path}/ftx_team_pos.csv", set_index_cols=["team", "ftx_position"]
     )
 
     # d_df_pos = load_csv_file_cached(f'{data_path}/d_detail_bypos.csv', set_index_cols=['position'])
@@ -1036,9 +1052,13 @@ def main():
 
     set_piece_studs = load_csv_file_cached(f"{data_path}/top_10_players_per_team.csv")
 
-    set_piece_studs_merge = load_csv_file_cached(f"{data_path}/top_10_players_per_team_merge.csv")
+    set_piece_studs_merge = load_csv_file_cached(
+        f"{data_path}/top_10_players_per_team_merge.csv"
+    )
 
-    set_piece_studs_p90 = create_per_90s_stats(set_piece_studs_merge, stats_columns, "90s")
+    set_piece_studs_p90 = create_per_90s_stats(
+        set_piece_studs_merge, stats_columns, "90s"
+    )
 
     # sort by deadball agg
     # set_piece_studs = set_piece_studs.sort_values(by=["deadball agg"], ascending=False)
@@ -1151,6 +1171,12 @@ def main():
                     "title": f"Basic Positional Data",
                     "data": ftx_pos_df,
                     "info_text": f"Note: This table shows basic position-specific data for all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data.",
+                    "upper_info_text": f"Aggregated data is pre-filtered for player data in matches were they played more than 45 minutes",
+                },
+                {
+                    "title": f"Team x Positional Data",
+                    "data": ftx_team_pos_df,
+                    "info_text": f"Note: This table shows basic position-specific data for all teams across all gameweeks. These are the simple Fantrax positions including {', '.join(ftx_pos_df.index.get_level_values('ftx_position').unique().tolist())}. At this time we are looking at :orange[{recent_gw}] gameweeks of data.",
                     "upper_info_text": f"Aggregated data is pre-filtered for player data in matches were they played more than 45 minutes",
                 },
                 {
@@ -1398,12 +1424,13 @@ def main():
         "icon": "table",  # Choose an appropriate FontAwesome icon
     }
 
-
     # Insert 'Player Radar Chart' at the beginning of the OrderedDict
     from collections import OrderedDict
 
     # Ensure 'Player Radar Chart' is the first key in the ordered dictionary
-    ordered_df_dict = OrderedDict([('Player Radar Chart', df_dict.pop('Player Radar Chart'))])
+    ordered_df_dict = OrderedDict(
+        [("Player Radar Chart", df_dict.pop("Player Radar Chart"))]
+    )
 
     # Add the rest of the items from df_dict
     ordered_df_dict.update(df_dict)
@@ -1639,14 +1666,13 @@ def main():
                 # Assuming 'grouped_players_df' contains the data you want to display in the table
                 # Retrieve the DataFrame
                 data_for_table = frame["data"]
-                
+
                 # Create the special table with Plottable
                 # You need to define 'create_plottable_table' according to the Plottable documentation
                 plottable_table = create_plottable_table(data_for_table)
-                
+
                 # Display the table in the Streamlit app
                 st.write(plottable_table)
-
 
             else:
                 # ... (handling for other visualization and data types)
