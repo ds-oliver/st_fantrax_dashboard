@@ -189,7 +189,7 @@ def plot_radar_chart(
     )
 
     # Display the figure in Streamlit with container width set to False
-    st.plotly_chart(fig, use_container_width=False)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 @st.cache_data
