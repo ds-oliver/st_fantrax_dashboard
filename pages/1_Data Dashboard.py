@@ -154,34 +154,36 @@ def plot_radar_chart(
     # Add the radar chart "slices" with adjusted opacity for marker
     fig.add_trace(
         go.Barpolar(
-            r=stats,
-            theta=params,
+            r=stats, # Set the percentile values for the player
+            theta=params, # Set the parameters for the radar chart
             marker=dict(
-                color=slice_colors, line=dict(color="black", width=2), opacity=0.5
-            ),  # Adjusted opacity
+                color=slice_colors, # Set the color of the slices
+                line=dict(color="black", width=2), # Set the color of the slice borders
+                opacity=0.5 # Adjust the opacity of the slices
+            ), # Set the marker options
             text=[
                 f"{stat*100:.0f}%" for stat in stats
             ],  # Display the percentile as a percentage
         )
-    )
+    ) # Add the trace to the figure
 
     # Set layout options with adjusted axis tick colors
     fig.update_layout(
         polar=dict(
             radialaxis=dict(
-                visible=True,
-                range=[0, 1],
+                visible=True, # Set the radial axis to be visible
+                range=[0, 1], # Set the radial axis range
                 tickcolor="black",  # Set axis tick color
                 tickfont=dict(color="black"),  # Set font color for the ticks
             )
-        ),
-        showlegend=False,
+        ), # Set the layout for the polar axis
+        showlegend=False, # Hide the legend
         title={
-            "text": f"{player_name}'s Radar Chart (Percentile Rank) among position: {position}",
-            "y": 0.9,
-            "x": 0.5,
-            "xanchor": "center",
-            "yanchor": "top",
+            "text": f"{player_name}'s Radar Chart (Percentile Rank) among position: {position}", # Set the title
+            "y": 1.0, # Set the y position of the title
+            "x": 0.5, # Set the x position of the title
+            "xanchor": "center", # Set the x anchor of the title
+            "yanchor": "top", # Set the y anchor of the title
         },
         # Set the size of the chart here
         width=900,  # Adjust the width as needed
