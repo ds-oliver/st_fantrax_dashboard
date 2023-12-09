@@ -180,7 +180,7 @@ def plot_radar_chart(
         showlegend=False, # Hide the legend
         title={
             "text": f"{player_name}'s Radar Chart (Percentile Rank) among position: {position}", # Set the title
-            "y": 1.0, # Set the y position of the title
+            "y": 0.95, # Set the y position of the title
             "x": 0.5, # Set the x position of the title
             "xanchor": "center", # Set the x anchor of the title
             "yanchor": "top", # Set the y anchor of the title
