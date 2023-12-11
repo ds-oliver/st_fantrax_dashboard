@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 
 # Read the CSV file
-df = pd.read_csv('/Users/hogan/Library/CloudStorage/Dropbox/Mac/Documents/GitHub/st_fantrax_dashboard/data/specific-csvs/fdr_best.csv')
+df = pd.read_csv('data/specific-csvs/fdr-pts-vs.csv')
 
 # Create a color-coded table
 colors = {
