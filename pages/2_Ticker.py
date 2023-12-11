@@ -50,7 +50,8 @@ for index, row in df.iterrows():
             # Determine the difficulty based on the numeric value
             difficulty = float(fixture.split('(')[1].split(')')[0])            
             # Create a color-coded cell based on the difficulty
-            cell = f'<font color="{colors[opponent]}">{opponent}</font>'
+            color = colors.get(opponent, 'black')  # Use 'black' as the default color
+            cell = f'<font color="{color}">{opponent}</font>'
             
             # Add the fixture to the table data
             table_data = table_data.append({'Team': team, 'Fixture': cell, 'Difficulty': difficulty}, ignore_index=True)
