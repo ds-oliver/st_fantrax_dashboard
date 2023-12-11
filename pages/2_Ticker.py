@@ -42,17 +42,18 @@ for index, row in df.iterrows():
     
     # Iterate over each fixture for the team
     for i, fixture in enumerate(fixtures):
-        opponent = fixture.split(' ')[0]  # Extract the opponent code
-        is_home = fixture.islower()  # Check if it's a home fixture
-        
-        # Determine the difficulty based on the numeric value
-        difficulty = int(fixture.split('(')[1].split(')')[0])
-        
-        # Create a color-coded cell based on the difficulty
-        cell = f'<font color="{colors[opponent]}">{opponent}</font>'
-        
-        # Add the fixture to the table data
-        table_data = table_data.append({'Team': team, 'Fixture': cell, 'Difficulty': difficulty}, ignore_index=True)
+        if pd.notna(fixture):  # Check if fixture is not NaN
+            opponent = fixture.split(' ')[0]  # Extract the opponent code
+            is_home = fixture.islower()  # Check if it's a home fixture
+            
+            # Determine the difficulty based on the numeric value
+            difficulty = int(fixture.split('(')[1].split(')')[0])
+            
+            # Create a color-coded cell based on the difficulty
+            cell = f'<font color="{colors[opponent]}">{opponent}</font>'
+            
+            # Add the fixture to the table data
+            table_data = table_data.append({'Team': team, 'Fixture': cell, 'Difficulty': difficulty}, ignore_index=True)
 
 # Sort the table data by difficulty in descending order
 table_data = table_data.sort_values(by='Difficulty', ascending=False)
