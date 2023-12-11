@@ -48,8 +48,7 @@ for index, row in df.iterrows():
             is_home = fixture.islower()  # Check if it's a home fixture
             
             # Determine the difficulty based on the numeric value
-            difficulty = int(fixture.split('(')[1].split(')')[0])
-            
+            difficulty = float(fixture.split('(')[1].split(')')[0])            
             # Create a color-coded cell based on the difficulty
             cell = f'<font color="{colors[opponent]}">{opponent}</font>'
             
