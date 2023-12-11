@@ -42,7 +42,8 @@ for index, row in df.iterrows():
     
     # Iterate over each fixture for the team
     for i, fixture in enumerate(fixtures):
-        if pd.notna(fixture):  # Check if fixture is not NaN
+        fixture = str(fixture)  # Convert fixture to string
+        if ' ' in fixture:  # Check if fixture can be split
             opponent = fixture.split(' ')[0]  # Extract the opponent code
             is_home = fixture.islower()  # Check if it's a home fixture
             
