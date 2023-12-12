@@ -1065,6 +1065,9 @@ def main():
         set_piece_studs_merge, stats_columns, "90s"
     )
 
+    # save to csv
+    set_piece_studs_p90.to_csv("data/display-data/final/grouped_player_data_p90.csv")
+
     # sort by deadball agg
     # set_piece_studs = set_piece_studs.sort_values(by=["deadball agg"], ascending=False)
 
