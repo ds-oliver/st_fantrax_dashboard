@@ -990,6 +990,7 @@ def main():
         "Defensive Stats",
         "Duel Stats",
         "Liability Stats",
+        "deadball agg",
     ]
     grouped_players_df_p90 = create_per_90s_stats(
         grouped_players_df, stats_columns, "90s"
