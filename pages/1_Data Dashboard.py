@@ -84,6 +84,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+@st.cache_data
 def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
     # Ensure the '90s' column is numeric
     if minutes_column not in df.columns:
