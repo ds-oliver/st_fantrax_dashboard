@@ -1524,6 +1524,13 @@ def main():
                         slice_colors=slice_colors,
                         text_colors=text_colors,
                     )
+
+                    # display the data for the selected player as dict
+                    st.write(
+                        frame["data"][
+                            frame["data"]["Player"] == selected_player
+                        ].to_dict()
+                    )
             # if frame.get("type") == "percentile_bumpy":
             #     # Filter the DataFrame based on selected players
             #     available_players = (
