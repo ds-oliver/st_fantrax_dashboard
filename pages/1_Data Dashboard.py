@@ -105,6 +105,9 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
             df[stat] = pd.to_numeric(df[stat], errors="coerce")
             per_90_col_name = f"{stat} per 90"
             df[per_90_col_name] = df[stat] / df[minutes_column]
+    
+    # save to csv
+    df.to_csv("data/display-data/final/grouped_player_data_p90.csv")
 
     return df
 
