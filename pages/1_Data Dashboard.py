@@ -1478,7 +1478,7 @@ def main():
                     "Defensive Stats per 90",
                     "Duel Stats per 90",
                     "90s",
-                    "deadball agg",
+                    "deadball agg per 90",
                 ]
 
                 # Radar chart specific logic
