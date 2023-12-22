@@ -30,6 +30,20 @@ def fetch_season_events():
     season_events = events.leagueSeasonEvents(league_id="4328", season="2023")
     return season_events
 
+# Function to get all events from a season for a specific league
+def get_events_from_season(league_id, season):
+    url = base_url + "eventsseason.php"
+    params = {"id": league_id, "s": season}
+    response = requests.get(url, params=params)
+    return response.json()
+
+# Function to get live scores
+def get_live_scores(sport):
+    url = base_url + "livescore.php"
+    params = {"s": sport}
+    response = requests.get(url, params=params)
+    return response.json()
+
 
 def main():
     add_construction()
@@ -66,7 +80,6 @@ def main():
             f'<a href="https://fx-dash.streamlit.app/Data_Dashboard" target="_blank"><input type="button" value="Go to data dashboard"></a>',
             unsafe_allow_html=True,
         )
-            
 
     with col2:
         st.subheader("Current Season")
@@ -89,10 +102,32 @@ def main():
     # st.write("""
     # Navigate through our platform using the buttons above or the sidebar menu. Whether you're a soccer fan, fantasy manager, or data enthusiast, we have something for you!
     # """)
-        
+
     # now we will fetch the live scores
-    live_scores = fetch_live_scores()
-    st.write(live_scores)
+    # Your unique API key
+
+    api_key = "60130162"
+
+    # Base URL for TheSportsDB API
+    base_url = "https://www.thesportsdb.com/api/v1/json/{}/".format(api_key)
+
+    # Streamlit UI components to trigger API requests and display data
+    st.title("TheSportsDB API Data")
+
+    # Fetch and display league season events
+    league_id = "4328"  # Example league ID for English Premier League
+    season = "2023"  # Example season
+    if st.button("Get Season Events"):
+        events_data = get_events_from_season(league_id, season)
+        st.write("League Season Events Data:")
+        st.write(events_data)
+
+    # Fetch and display live scores
+    sport = "Soccer"  # Example sport
+    if st.button("Get Live Scores"):
+        live_scores_data = get_live_scores(sport)
+        st.write("Live Scores Data:")
+        st.write(live_scores_data)
 
 
 if __name__ == "__main__":
