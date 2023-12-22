@@ -1,28 +1,42 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
-from  PIL import Image
+from PIL import Image
 import numpy as np
 import pandas as pd
 from st_aggrid import AgGrid
 import plotly.express as px
-import io 
-
+import io
 from functions import add_construction
+from thesportsdb import events, leagues
+
 
 st.set_page_config(
     layout="wide",
     page_title="Draft Alchemy",
     page_icon=":soccer:",
-    initial_sidebar_state="expanded"
-
+    initial_sidebar_state="expanded",
 )
 
+
+# Function to fetch live scores for soccer
+def fetch_live_scores():
+    live_scores = events.leagueSeasonEvents(league_id="4328", season="2023")
+    return live_scores
+
+
+# Function to fetch all events from a particular season
+def fetch_season_events():
+    season_events = events.leagueSeasonEvents(league_id="4328", season="2023")
+    return season_events
+
+
 def main():
-    
     add_construction()
 
-    st.info('This is a work in progress. None of the links on this page work yet. Use the sidebar to navigate to the other pages.')
+    st.info(
+        "This is a work in progress. None of the links on this page work yet. Use the sidebar to navigate to the other pages."
+    )
 
     # with st.sidebar:
     #     choose = option_menu("Toolkit Menu",
@@ -31,25 +45,30 @@ def main():
     #                             icons=['house', 'list-columns', 'lightning-charge', 'person-plus',
     #                                 'calculator', 'calendar-range', 'graph-up-arrow', 'list-ol', 'book', 'arrow-clockwise'],
     #                             menu_icon="menu-app", default_index=0)
-                    
 
-    st.title('This is part of @draftalchemy | @ds-oliver FPL Data Science Project')
-    st.write("""
+    st.title("This is part of @draftalchemy | @ds-oliver FPL Data Science Project")
+    st.write(
+        """
     Welcome to the FPL Data Science Platform! Our platform provides access to comprehensive datasets including player statistics, match results, historical performance, and more. Analyze data from top leagues around the world or dive into specific player performance metrics.
-    """)
+    """
+    )
 
-    st.header('Features')
+    st.header("Features")
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader('Historical Data')
-        st.write('Analyze player performance over time, compare players, and identify trends.')
-        st.button('Explore Historical Data')
+        st.subheader("Historical Data")
+        st.write(
+            "Analyze player performance over time, compare players, and identify trends."
+        )
+        st.button("Explore Historical Data")
 
     with col2:
-        st.subheader('Current Season')
-        st.write('View player statistics for the current season, including live data during matches.')
-        st.button('Explore Current Season')
+        st.subheader("Current Season")
+        st.write(
+            "View player statistics for the current season, including live data during matches."
+        )
+        st.button("Explore Current Season")
 
     # with col3:
     #     st.subheader('Fantasy Tools')
@@ -65,6 +84,7 @@ def main():
     # st.write("""
     # Navigate through our platform using the buttons above or the sidebar menu. Whether you're a soccer fan, fantasy manager, or data enthusiast, we have something for you!
     # """)
+
 
 if __name__ == "__main__":
     main()
