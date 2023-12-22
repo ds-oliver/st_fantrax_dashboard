@@ -9,7 +9,9 @@ import plotly.express as px
 import io
 from functions import add_construction
 from thesportsdb import events, leagues
-
+import requests
+import json
+import os
 
 st.set_page_config(
     layout="wide",
@@ -18,6 +20,12 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Your unique API key
+
+api_key = "60130162"
+
+# Base URL for TheSportsDB API
+base_url = "https://www.thesportsdb.com/api/v1/json/{}/".format(api_key)
 
 # Function to fetch live scores for soccer
 def fetch_live_scores():
@@ -102,14 +110,6 @@ def main():
     # st.write("""
     # Navigate through our platform using the buttons above or the sidebar menu. Whether you're a soccer fan, fantasy manager, or data enthusiast, we have something for you!
     # """)
-
-    # now we will fetch the live scores
-    # Your unique API key
-
-    api_key = "60130162"
-
-    # Base URL for TheSportsDB API
-    base_url = "https://www.thesportsdb.com/api/v1/json/{}/".format(api_key)
 
     # Streamlit UI components to trigger API requests and display data
     st.title("TheSportsDB API Data")
