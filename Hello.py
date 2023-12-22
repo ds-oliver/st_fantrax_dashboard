@@ -57,11 +57,16 @@ def main():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("Historical Data")
+        st.subheader("Fantasy Data")
         st.write(
             "Analyze player performance over time, compare players, and identify trends."
         )
-        st.button("Explore Historical Data")
+        # embed link "https://fx-dash.streamlit.app/Data_Dashboard"
+        st.markdown(
+            f'<a href="https://fx-dash.streamlit.app/Data_Dashboard" target="_blank"><input type="button" value="Go to data dashboard"></a>',
+            unsafe_allow_html=True,
+        )
+            
 
     with col2:
         st.subheader("Current Season")
@@ -84,6 +89,10 @@ def main():
     # st.write("""
     # Navigate through our platform using the buttons above or the sidebar menu. Whether you're a soccer fan, fantasy manager, or data enthusiast, we have something for you!
     # """)
+        
+    # now we will fetch the live scores
+    live_scores = fetch_live_scores()
+    st.write(live_scores)
 
 
 if __name__ == "__main__":
