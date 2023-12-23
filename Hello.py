@@ -22,6 +22,36 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Global variable to store the JSON data
+stored_json_data = {}
+
+
+@st.cache_data()
+def store_json_data(json_data, key):
+    """
+    Store the JSON data in a global dictionary.
+
+    :param json_data: The JSON data to store.
+    :param key: The key under which to store the data.
+    """
+    stored_json_data[key] = json_data
+
+
+def transform_json_to_table(key):
+    """
+    Transform the stored JSON data into a Pandas DataFrame.
+
+    :param key: The key of the stored JSON data.
+    :return: Pandas DataFrame.
+    """
+    if key in stored_json_data and "events" in stored_json_data[key]:
+        data = stored_json_data[key]["events"]
+        df = pd.DataFrame(data)
+        return df
+    else:
+        return pd.DataFrame()  # Return an empty DataFrame if the key is not found
+
+
 # Set your upgraded API key
 api_key = "60130162"
 
@@ -113,22 +143,43 @@ def main():
     st.title("TheSportsDB API Data")
 
     # Example usage of the get_events_from_season function
-    league_id = "4328"  # English Premier League ID, for example
+    league_id = "4328"  # English Premier League ID
     season = "2023-2024"
     if st.button("Get Season Events"):
         events_data = get_events_from_season(league_id, season)
-        if events_data and 'events' in events_data:
-            game_weeks = sorted({event['intRound'] for event in events_data['events'] if event['intRound']})
+        if events_data and "events" in events_data:
+            # Store the JSON data
+            store_json_data(events_data, "season_events")
+
+            # Transform stored JSON data into a DataFrame
+            df = transform_json_to_table("season_events")
+
+            # Display the DataFrame in Streamlit
+            st.dataframe(df)
+
+            game_weeks = sorted(
+                {
+                    event["intRound"]
+                    for event in events_data["events"]
+                    if event["intRound"]
+                }
+            )
             selected_week = st.selectbox("Select Game Week", options=game_weeks)
 
-            matches = [event for event in events_data['events'] if event['intRound'] == int(selected_week)]
+            matches = [
+                event
+                for event in events_data["events"]
+                if event["intRound"] == int(selected_week)
+            ]
             for match in matches:
                 match_label = f"{match['strEventAlternate']}"
-                with st.stoggle(f"Get Stats for {match_label}", f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}"):
-                    event_stats = get_event_statistics(match['idEvent'])
-                    if event_stats and 'statistics' in event_stats:
-                        for stat in event_stats['statistics']:
-                            st.write(f"{stat['strStatistic']}: {stat['strHome']} - {stat['strAway']}")
+                with st.expander(f"Get Stats for {match_label}"):
+                    event_stats = get_event_statistics(match["idEvent"])
+                    if event_stats and "statistics" in event_stats:
+                        for stat in event_stats["statistics"]:
+                            st.write(
+                                f"{stat['strStatistic']}: {stat['strHome']} - {stat['strAway']}"
+                            )
                     else:
                         st.write("No statistics available for this event.")
         else:
