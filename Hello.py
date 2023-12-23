@@ -20,37 +20,35 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Your unique API key
-
+# Set your upgraded API key
 api_key = "60130162"
 
 # Base URL for TheSportsDB API
-base_url = "https://www.thesportsdb.com/api/v1/json/{}/".format(api_key)
+base_url = f"https://www.thesportsdb.com/api/v1/json/{api_key}/"
 
-# Function to fetch live scores for soccer
-def fetch_live_scores():
-    live_scores = events.leagueSeasonEvents(league_id="4328", season="2023")
-    return live_scores
-
-
-# Function to fetch all events from a particular season
-def fetch_season_events():
-    season_events = events.leagueSeasonEvents(league_id="4328", season="2023")
-    return season_events
 
 # Function to get all events from a season for a specific league
 def get_events_from_season(league_id, season):
-    url = base_url + "eventsseason.php"
+    url = f"{base_url}eventsseason.php"
     params = {"id": league_id, "s": season}
     response = requests.get(url, params=params)
-    return response.json()
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Failed to fetch data: {response.status_code}")
+        return None
+
 
 # Function to get live scores
 def get_live_scores(sport):
-    url = base_url + "livescore.php"
+    url = f"{base_url}livescore.php"
     params = {"s": sport}
     response = requests.get(url, params=params)
-    return response.json()
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Failed to fetch live scores: {response.status_code}")
+        return None
 
 
 def main():
@@ -114,20 +112,26 @@ def main():
     # Streamlit UI components to trigger API requests and display data
     st.title("TheSportsDB API Data")
 
-    # Fetch and display league season events
-    league_id = "4328"  # Example league ID for English Premier League
-    season = "2023"  # Example season
+    # Example usage of the get_events_from_season function
+    league_id = "4328"  # English Premier League ID, for example
+    season = "2023"
     if st.button("Get Season Events"):
         events_data = get_events_from_season(league_id, season)
-        st.write("League Season Events Data:")
-        st.write(events_data)
+        if events_data:
+            st.write("League Season Events Data:")
+            st.write(events_data)
+        else:
+            st.write("No data available.")
 
-    # Fetch and display live scores
-    sport = "Soccer"  # Example sport
+    # Example usage of the get_live_scores function
+    sport = "Soccer"
     if st.button("Get Live Scores"):
         live_scores_data = get_live_scores(sport)
-        st.write("Live Scores Data:")
-        st.write(live_scores_data)
+        if live_scores_data:
+            st.write("Live Scores Data:")
+            st.write(live_scores_data)
+        else:
+            st.write("No live scores available.")
 
 
 if __name__ == "__main__":
