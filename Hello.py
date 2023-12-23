@@ -64,8 +64,9 @@ def get_event_statistics(event_id):
     version = "v1"
     base_url = f"https://www.thesportsdb.com/api/{version}/json/{api_key}/"
     url = f"{base_url}lookupeventstats.php"
-    print(f"Request URL: {url}?id={event_id}")
     params = {"id": event_id}
+    full_url = f"{url}?id={event_id}"
+    st.write(f"Request URL: {full_url}")  # Display the full URL in the app
     response = requests.get(url, params=params)
     if response.status_code == 200:
         return response.json()
