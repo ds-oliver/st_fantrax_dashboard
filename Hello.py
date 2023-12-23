@@ -124,7 +124,7 @@ def main():
             matches = [event for event in events_data['events'] if event['intRound'] == int(selected_week)]
             for match in matches:
                 match_label = f"{match['strEventAlternate']}"
-                with st.expander(f"Get Stats for {match_label}", f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}"):
+                with st.stoggle(f"Get Stats for {match_label}", f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}"):
                     event_stats = get_event_statistics(match['idEvent'])
                     if event_stats and 'statistics' in event_stats:
                         for stat in event_stats['statistics']:
