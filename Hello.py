@@ -23,12 +23,10 @@ st.set_page_config(
 # Set your upgraded API key
 api_key = "60130162"
 
-# Base URL for TheSportsDB API
-base_url = f"https://www.thesportsdb.com/api/v1/json/{api_key}/"
-
-
 # Function to get all events from a season for a specific league
 def get_events_from_season(league_id, season):
+    version = "v1"
+    base_url = f"https://www.thesportsdb.com/api/{version}/json/{api_key}/"
     url = f"{base_url}eventsseason.php"
     params = {"id": league_id, "s": season}
     st.write(f"Request URL: {url}")
@@ -43,6 +41,8 @@ def get_events_from_season(league_id, season):
 
 # Function to get live scores
 def get_live_scores(sport):
+    version = "v2"
+    base_url = f"https://www.thesportsdb.com/api/{version}/json/{api_key}/"
     url = f"{base_url}livescore.php"
     params = {"s": sport}
     st.write(f"Request URL: {url}")
