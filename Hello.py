@@ -124,14 +124,13 @@ def main():
             matches = [event for event in events_data['events'] if event['intRound'] == selected_week]
             for match in matches:
                 match_label = f"{match['strEventAlternate']}"
-                with stoggle(match_label, f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}"):
-                    if st.button(f"Get Stats for {match_label}", key=match['idEvent']):
-                        event_stats = get_event_statistics(match['idEvent'])
-                        if event_stats and 'statistics' in event_stats:
-                            for stat in event_stats['statistics']:
-                                st.write(f"{stat['strStatistic']}: {stat['strHome']} - {stat['strAway']}")
-                        else:
-                            st.write("No statistics available for this event.")
+                with st.beta_expander(f"Get Stats for {match_label}", f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}"):
+                    event_stats = get_event_statistics(match['idEvent'])
+                    if event_stats and 'statistics' in event_stats:
+                        for stat in event_stats['statistics']:
+                            st.write(f"{stat['strStatistic']}: {stat['strHome']} - {stat['strAway']}")
+                    else:
+                        st.write("No statistics available for this event.")
         else:
             st.write("No data available for the selected season.")
 
