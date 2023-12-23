@@ -121,7 +121,7 @@ def main():
             game_weeks = sorted({event['intRound'] for event in events_data['events'] if event['intRound']})
             selected_week = st.selectbox("Select Game Week", options=game_weeks)
 
-            matches = [event for event in events_data['events'] if event['intRound'] == selected_week]
+            matches = [event for event in events_data['events'] if event['intRound'] == int(selected_week)]
             for match in matches:
                 match_label = f"{match['strEventAlternate']}"
                 with st.expander(f"Get Stats for {match_label}", f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}"):
