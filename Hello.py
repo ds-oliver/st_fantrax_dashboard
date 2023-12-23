@@ -31,19 +31,24 @@ base_url = f"https://www.thesportsdb.com/api/v1/json/{api_key}/"
 def get_events_from_season(league_id, season):
     url = f"{base_url}eventsseason.php"
     params = {"id": league_id, "s": season}
+    st.write(f"Request URL: {url}")
+    st.write(f"Request parameters: {params}")
     response = requests.get(url, params=params)
+    st.write(f"Response status code: {response.status_code}")
     if response.status_code == 200:
         return response.json()
     else:
         st.error(f"Failed to fetch data: {response.status_code}")
         return None
 
-
 # Function to get live scores
 def get_live_scores(sport):
     url = f"{base_url}livescore.php"
     params = {"s": sport}
+    st.write(f"Request URL: {url}")
+    st.write(f"Request parameters: {params}")
     response = requests.get(url, params=params)
+    st.write(f"Response status code: {response.status_code}")
     if response.status_code == 200:
         return response.json()
     else:
