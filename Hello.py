@@ -45,8 +45,7 @@ def get_live_scores(sport):
     base_url = f"https://www.thesportsdb.com/api/{version}/json/{api_key}/"
     url = f"{base_url}livescore.php"
     params = {"s": sport}
-    st.write(f"Request URL: {url}")
-    st.write(f"Request parameters: {params}")
+    st.write(f"Request URL: {url}?s={sport}")
     response = requests.get(url, params=params)
     st.write(f"Response status code: {response.status_code}")
     if response.status_code == 200:
