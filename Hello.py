@@ -12,6 +12,8 @@ from thesportsdb import events, leagues
 import requests
 import json
 import os
+from streamlit_extras.stoggle import stoggle
+
 
 st.set_page_config(
     layout="wide",
@@ -22,6 +24,7 @@ st.set_page_config(
 
 # Set your upgraded API key
 api_key = "60130162"
+
 
 # Function to get all events from a season for a specific league
 def get_events_from_season(league_id, season):
@@ -39,6 +42,7 @@ def get_events_from_season(league_id, season):
         st.error(f"Failed to fetch data: {response.status_code}")
         return None
 
+
 # Function to get live scores
 def get_live_scores(sport):
     version = "v2"
@@ -55,20 +59,26 @@ def get_live_scores(sport):
         return None
 
 
+# Function to get event statistics by event ID
+def get_event_statistics(event_id):
+    version = "v1"
+    base_url = f"https://www.thesportsdb.com/api/{version}/json/{api_key}/"
+    url = f"{base_url}lookupeventstats.php"
+    params = {"id": event_id}
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Failed to fetch event statistics: {response.status_code}")
+        return None
+
+
 def main():
     add_construction()
 
     st.info(
         "This is a work in progress. None of the links on this page work yet. Use the sidebar to navigate to the other pages."
     )
-
-    # with st.sidebar:
-    #     choose = option_menu("Toolkit Menu",
-    #                             ["Home", "Optimal Lineup", "Matchup Projections", "Add/Drop Suggestions",
-    #                             "Trade Calculator", "Fixture Difficulty Tracker", "GW Transaction Data", "Team Power Rankings", "Glossary", "Pick Diff Team"],
-    #                             icons=['house', 'list-columns', 'lightning-charge', 'person-plus',
-    #                                 'calculator', 'calendar-range', 'graph-up-arrow', 'list-ol', 'book', 'arrow-clockwise'],
-    #                             menu_icon="menu-app", default_index=0)
 
     st.title("This is part of @draftalchemy | @ds-oliver FPL Data Science Project")
     st.write(
@@ -98,21 +108,6 @@ def main():
         )
         st.button("Explore Current Season")
 
-    # with col3:
-    #     st.subheader('Fantasy Tools')
-    #     st.write('Use our predictive models to build optimal line-ups, simulate matches, and make informed decisions.')
-    #     st.button('Explore Fantasy Tools')
-
-    # st.header('Datasets')
-    # st.write("""
-    # Our platform provides access to comprehensive datasets including player statistics, match results, historical performance, and more. Analyze data from top leagues around the world or dive into specific player performance metrics.
-    # """)
-
-    # st.header('Get Started')
-    # st.write("""
-    # Navigate through our platform using the buttons above or the sidebar menu. Whether you're a soccer fan, fantasy manager, or data enthusiast, we have something for you!
-    # """)
-
     # Streamlit UI components to trigger API requests and display data
     st.title("TheSportsDB API Data")
 
@@ -121,11 +116,24 @@ def main():
     season = "2023-2024"
     if st.button("Get Season Events"):
         events_data = get_events_from_season(league_id, season)
-        if events_data:
-            st.write("League Season Events Data:")
-            st.write(events_data)
+        if events_data and 'events' in events_data:
+            game_weeks = sorted({event['intRound'] for event in events_data['events'] if event['intRound']})
+            selected_week = st.selectbox("Select Game Week", options=game_weeks)
+
+            matches = [event for event in events_data['events'] if event['intRound'] == selected_week]
+            for match in matches:
+                match_label = f"{match['strEventAlternate']}"
+                stoggle(match_label, f"Event ID: {match['idEvent']}, Venue: {match['strVenue']}, Date: {match['dateEvent']}")
+                
+                if st.button(f"Get Stats for {match_label}", key=match['idEvent']):
+                    event_stats = get_event_statistics(match['idEvent'])
+                    if event_stats:
+                        st.write(event_stats)
+                    else:
+                        st.write("No statistics available for this event.")
+
         else:
-            st.write("No data available.")
+            st.write("No data available for the selected season.")
 
     # Example usage of the get_live_scores function
     sport = "Soccer"
