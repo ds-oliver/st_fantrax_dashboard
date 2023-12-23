@@ -118,7 +118,7 @@ def main():
 
     # Example usage of the get_events_from_season function
     league_id = "4328"  # English Premier League ID, for example
-    season = "2023"
+    season = "2023-2024"
     if st.button("Get Season Events"):
         events_data = get_events_from_season(league_id, season)
         if events_data:
