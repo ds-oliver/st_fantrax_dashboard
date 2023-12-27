@@ -10,8 +10,8 @@ projections = [f'data/projections/{file}' for file in os.listdir('data/projectio
 ros_ranks = [f'data/ros-data/{file}' for file in os.listdir('data/ros-data/') if re.match(r'Weekly ROS Ranks_GW\d+.csv', file)][0]
 
 
-shots_data = 'data/data_out/scraped_big5_data/pl_data/all_shots_all_20231211.csv'
-new_matches_data = 'data/fbref-data/full_season_matchreports_20231211.csv'
+shots_data = 'data/data_out/scraped_big5_data/pl_data/all_shots_all_20231224.csv'
+new_matches_data = 'data/fbref-data/full_season_matchreports_20231224.csv'
 ros_data = 'data/ros-data/Weekly ROS Ranks_GW8.csv'
 
 # files paths
