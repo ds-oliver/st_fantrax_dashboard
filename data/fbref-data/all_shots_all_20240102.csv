@@ -1,0 +1,271 @@
+minute,player,team,xg_shot,psxg_shot,outcome,distance,body_part,notes,sca_1_player,sca_1_type,sca_2_player,sca_2_type,gameweek
+5,Conor Gallagher,Chelsea,0.12,0.20,Saved,11,Right Foot,,Noni Madueke,Pass (Live),Noni Madueke,Take-On,20
+10,Cole Palmer,Chelsea,0.02,0.21,Saved,25,Left Foot,,Malo Gusto,Pass (Live),Noni Madueke,Pass (Live),20
+11,Nicolas Jackson,Chelsea,0.05,0.15,Saved,10,Right Foot,,Cole Palmer,Pass (Live),Thiago Silva,Pass (Dead),20
+12,Cole Palmer,Chelsea,0.04,0.50,Goal,16,Left Foot,,,,,,20
+18,Ross Barkley,Luton Town,0.05,,Off Target,25,Right Foot,Free kick,Jacob Brown,Fouled,,,20
+19,Armando Broja,Chelsea,0.02,0.74,Saved,13,Left Foot,,,,,,20
+20,Elijah Adebayo,Luton Town,0.10,,Off Target,8,Head,,Andros Townsend,Pass (Live),Andros Townsend,Take-On,20
+29,Jacob Brown,Luton Town,0.02,,Blocked,18,Left Foot,,Amari'i Bell,Pass (Live),,,20
+34,Ross Barkley,Luton Town,0.02,,Blocked,23,Right Foot,,Ross Barkley,Take-On,Alfie Doughty,Pass (Live),20
+37,Noni Madueke,Chelsea,0.03,0.34,Goal,14,Right Foot,,Cole Palmer,Pass (Live),Levi Colwill,Pass (Live),20
+42,Jacob Brown,Luton Town,0.11,,Blocked,9,Left Foot,,Teden Mengi,Pass (Live),Andros Townsend,Fouled,20
+45+4,Conor Gallagher,Chelsea,0.07,,Blocked,26,Left Foot,,Cole Palmer,Pass (Live),Thiago Silva,Pass (Live),20
+48,Chiedozie Ogbene,Luton Town,0.21,,Blocked,5,Right Foot,,Andros Townsend,Pass (Live),Tahith Chong,Pass (Live),20
+51,Cole Palmer,Chelsea,0.02,,Off Target,28,Left Foot,,Noni Madueke,Pass (Live),Conor Gallagher,Pass (Dead),20
+53,Tahith Chong,Luton Town,0.06,,Blocked,17,Left Foot,,Alfie Doughty,Pass (Live),Andros Townsend,Pass (Live),20
+61,Nicolas Jackson,Chelsea,0.06,0.03,Saved,24,Right Foot,,Nicolas Jackson,Take-On,Moises Caicedo,Pass (Live),20
+68,Cole Palmer,Chelsea,0.02,,Blocked,24,Left Foot,,Noni Madueke,Pass (Dead),Noni Madueke,Pass (Live),20
+70,Cole Palmer,Chelsea,0.96,0.97,Goal,6,Right Foot,,Cole Palmer,Take-On,Nicolas Jackson,Pass (Live),20
+77,Noni Madueke,Chelsea,0.09,,Off Target,13,Right Foot,,Nicolas Jackson,Pass (Live),Conor Gallagher,Pass (Live),20
+78,Ross Barkley,Luton Town,0.07,0.06,Saved,24,Right Foot,,Chiedozie Ogbene,Pass (Live),Albert Sambi Lokonga,Pass (Live),20
+80,Elijah Adebayo,Luton Town,0.56,,Woodwork,5,Head,,Chiedozie Ogbene,Pass (Live),Carlton Morris,Pass (Live),20
+80,Ross Barkley,Luton Town,0.19,0.47,Goal,7,Head,,Alfie Doughty,Pass (Dead),Elijah Adebayo,Shot,20
+83,Ross Barkley,Luton Town,0.13,,Off Target,6,Right Foot,,Chiedozie Ogbene,Pass (Live),Carlton Morris,Pass (Live),20
+83,Carlton Morris,Luton Town,0.21,0.66,Saved,5,Head,,Ross Barkley,Shot,,,20
+86,Carlton Morris,Luton Town,0.25,0.39,Saved,8,Head,,Alfie Doughty,Pass (Dead),Tahith Chong,Fouled,20
+87,Alfie Doughty,Luton Town,0.13,0.19,Saved,9,Head,,Chiedozie Ogbene,Pass (Live),Carlton Morris,Pass (Live),20
+87,Elijah Adebayo,Luton Town,0.47,0.97,Goal,3,Right Foot,Volley,Alfie Doughty,Shot,,,20
+3,Moussa Diaby,Aston Villa,0.06,,Off Target,10,Left Foot,Volley,Ezri Konsa,Pass (Live),Moussa Diaby,Pass (Live),20
+13,Ollie Watkins,Aston Villa,0.06,0.07,Saved,11,Left Foot,Volley,Alex Moreno,Pass (Live),Leon Bailey,Pass (Live),20
+25,Douglas Luiz,Aston Villa,0.07,,Blocked,26,Right Foot,"Free kick, Deflected",Moussa Diaby,Fouled,Clement Lenglet,Pass (Live),20
+25,Leon Bailey,Aston Villa,0.01,,Blocked,25,Left Foot,Volley,Douglas Luiz,Shot,,,20
+26,Josh Brownhill,Burnley,0.04,,Off Target,17,Right Foot,,Wilson Odobert,Pass (Live),Lyle Foster,Pass (Live),20
+27,Dara O'Shea,Burnley,0.04,,Blocked,16,Left Foot,,Vitinho,Pass (Dead),,,20
+27,Josh Brownhill,Burnley,0.07,0.16,Saved,22,Right Foot,,Dara O'Shea,Shot,,,20
+28,Leon Bailey,Aston Villa,0.12,0.27,Goal,14,Left Foot,Deflected,Ollie Watkins,Pass (Live),Diego Carlos,Pass (Live),20
+31,Zeki Amdouni,Burnley,0.64,0.56,Goal,6,Right Foot,Volley,Dara O'Shea,Pass (Live),Johann Berg Gudmundsson,Pass (Dead),20
+35,Wilson Odobert,Burnley,0.12,,Off Target,10,Head,,Zeki Amdouni,Pass (Live),Sander Berge,Pass (Live),20
+39,Jacob Ramsey,Aston Villa,0.05,,Blocked,18,Left Foot,,Leon Bailey,Pass (Live),John McGinn,Pass (Live),20
+42,Moussa Diaby,Aston Villa,0.92,0.97,Goal,7,Right Foot,,Ollie Watkins,Pass (Live),Ezri Konsa,Pass (Live),20
+45+2,Lyle Foster,Burnley,0.08,0.27,Saved,24,Right Foot,,Vitinho,Pass (Live),Sander Berge,Pass (Live),20
+48,Zeki Amdouni,Burnley,0.04,0.14,Saved,16,Left Foot,,Josh Brownhill,Pass (Live),Vitinho,Pass (Live),20
+57,Leon Bailey,Aston Villa,0.02,,Blocked,21,Left Foot,,John McGinn,Pass (Dead),Douglas Luiz,Fouled,20
+58,Moussa Diaby,Aston Villa,0.06,,Off Target,21,Left Foot,,Douglas Luiz,Pass (Live),John McGinn,Pass (Live),20
+60,Lyle Foster,Burnley,0.07,,Off Target,14,Right Foot,,Dara O'Shea,Pass (Live),Hannes Delcroix,Pass (Live),20
+63,John McGinn,Aston Villa,0.04,0.22,Saved,23,Left Foot,,Jacob Ramsey,Pass (Live),Alex Moreno,Pass (Live),20
+63,Moussa Diaby,Aston Villa,0.08,0.07,Saved,11,Left Foot,,Leon Bailey,Pass (Live),Ezri Konsa,Pass (Live),20
+63,Douglas Luiz,Aston Villa,0.08,,Off Target,21,Right Foot,,Moussa Diaby,Shot,,,20
+64,Jacob Ramsey,Aston Villa,0.30,,Off Target,8,Right Foot,,Ezri Konsa,Pass (Live),Leon Bailey,Pass (Live),20
+69,Moussa Diaby,Aston Villa,0.18,,Off Target,14,Left Foot,,Alex Moreno,Pass (Live),Jacob Ramsey,Pass (Live),20
+70,Moussa Diaby,Aston Villa,0.18,,Off Target,9,Left Foot,,Ollie Watkins,Pass (Live),Jacob Ramsey,Pass (Live),20
+71,Lyle Foster,Burnley,0.08,0.21,Goal,13,Right Foot,,Johann Berg Gudmundsson,Pass (Live),James Trafford,Pass (Dead),20
+77,Ollie Watkins,Aston Villa,0.13,,Off Target,8,Head,,Alex Moreno,Pass (Live),Douglas Luiz,Pass (Live),20
+79,John McGinn,Aston Villa,0.08,,Blocked,16,Left Foot,,Moussa Diaby,Pass (Live),Leon Bailey,Pass (Live),20
+80,Douglas Luiz,Aston Villa,0.01,0.03,Saved,29,Right Foot,,Jacob Ramsey,Pass (Live),Douglas Luiz,Pass (Live),20
+89,Douglas Luiz (pen),Aston Villa,0.79,0.99,Goal,13,Right Foot,,Jhon Duran,Fouled,Jhon Duran,Tackle,20
+2,Amadou Onana,Everton,0.02,,Off Target,39,Right Foot,,Dominic Calvert-Lewin,Pass (Live),,,20
+8,Hwang Hee-chan,Wolves,0.10,,Off Target,11,Head,,Nelson Semedo,Pass (Live),Max Kilman,Pass (Live),20
+14,Matheus Cunha,Wolves,0.02,,Off Target,34,Right Foot,,Tommy Doyle,Pass (Live),Joao Gomes,Pass (Live),20
+21,Dwight McNeil,Everton,0.02,,Off Target,29,Left Foot,,Dominic Calvert-Lewin,Pass (Live),Nathan Patterson,Pass (Live),20
+24,Matheus Cunha,Wolves,0.03,,Blocked,8,Head,,Pablo Sarabia,Pass (Dead),Matheus Cunha,Pass (Live),20
+25,Max Kilman,Wolves,0.30,0.87,Goal,2,Left Foot,Deflected,Pablo Sarabia,Pass (Live),Tommy Doyle,Pass (Live),20
+27,Dominic Calvert-Lewin,Everton,0.07,,Off Target,7,Right Foot,,Dwight McNeil,Pass (Live),Jack Harrison,Pass (Live),20
+45+3,Michael Keane,Everton,0.05,,Blocked,10,Head,,James Tarkowski,Pass (Live),James Garner,Pass (Dead),20
+46,Dwight McNeil,Everton,0.03,,Blocked,29,Left Foot,,Dominic Calvert-Lewin,Pass (Live),Jack Harrison,Pass (Live),20
+49,Jack Harrison,Everton,0.02,,Off Target,25,Right Foot,,Jarrad Branthwaite,Fouled,,,20
+49,Jarrad Branthwaite,Everton,0.04,,Blocked,16,Right Foot,,Jack Harrison,Shot,,,20
+49,James Tarkowski,Everton,0.11,,Blocked,11,Right Foot,,Jarrad Branthwaite,Shot,,,20
+52,Rayan Ait Nouri,Wolves,0.05,,Blocked,14,Left Foot,,Rayan Ait Nouri,Pass (Live),Matheus Cunha,Pass (Live),20
+53,Matheus Cunha,Wolves,0.85,0.93,Goal,2,Right Foot,,Hwang Hee-chan,Pass (Live),Pablo Sarabia,Pass (Live),20
+60,Hwang Hee-chan,Wolves,0.10,0.21,Saved,13,Right Foot,,,,,,20
+61,Craig Dawson,Wolves,0.34,0.35,Goal,11,Right Foot,,Matheus Cunha,Pass (Live),Tommy Doyle,Pass (Live),20
+68,Dwight McNeil,Everton,0.05,,Woodwork,28,Left Foot,,Dominic Calvert-Lewin,Pass (Live),Andre Gomes,Pass (Live),20
+68,Joao Gomes,Wolves,0.04,0.05,Saved,13,Right Foot,,Pablo Sarabia,Pass (Live),Joao Gomes,Pass (Live),20
+71,Hwang Hee-chan,Wolves,0.04,0.13,Saved,18,Right Foot,,Matheus Cunha,Pass (Live),Rayan Ait Nouri,Pass (Live),20
+75,Pablo Sarabia,Wolves,0.04,,Blocked,22,Left Foot,,Nelson Semedo,Pass (Live),Matheus Cunha,Pass (Live),20
+90,Pedro Neto,Wolves,0.07,,Off Target,16,Left Foot,,Boubacar Traore,Pass (Live),Boubacar Traore,Take-On,20
+90+2,Jack Harrison,Everton,0.04,,Off Target,13,Left Foot,,Andre Gomes,Pass (Live),Beto,Pass (Live),20
+3,Julian Alvarez,Manchester City,0.05,,Off Target,23,Left Foot,,Phil Foden,Pass (Live),Jack Grealish,Pass (Live),20
+14,Rodri,Manchester City,0.09,0.32,Goal,21,Right Foot,,Rodri,Take-On,Manuel Akanji,Pass (Live),20
+16,Julian Alvarez,Manchester City,0.10,,Off Target,11,Head,,Bernardo Silva,Pass (Live),Manuel Akanji,Pass (Live),20
+21,Bernardo Silva,Manchester City,0.22,0.87,Saved,9,Right Foot,,Phil Foden,Pass (Live),Manuel Akanji,Pass (Live),20
+24,Kyle Walker,Manchester City,0.02,,Off Target,32,Right Foot,,Jack Grealish,Pass (Live),Julian Alvarez,Pass (Dead),20
+28,Kyle Walker,Manchester City,0.02,,Blocked,34,Right Foot,,Mateo Kovacic,Pass (Live),Jack Grealish,Pass (Live),20
+41,William Osula,Sheffield Utd,0.10,,Blocked,12,Right Foot,,Jayden Bogle,Pass (Live),Jack Robinson,Pass (Live),20
+42,William Osula,Sheffield Utd,0.04,0.07,Saved,10,Head,,Oliver Norwood,Pass (Dead),William Osula,Shot,20
+43,Rodri,Manchester City,0.05,,Blocked,21,Left Foot,,Bernardo Silva,Pass (Live),,,20
+44,Jayden Bogle,Sheffield Utd,0.05,0.11,Saved,19,Left Foot,,George Baldock,Pass (Dead),William Osula,Fouled,20
+45,Rodri,Manchester City,0.02,,Off Target,30,Right Foot,,Jack Grealish,Pass (Live),Josko Gvardiol,Pass (Live),20
+46,Rodri,Manchester City,0.03,,Off Target,30,Left Foot,Volley,Manuel Akanji,Pass (Live),Nathan Ake,Pass (Live),20
+50,Nathan Ake,Manchester City,0.15,,Off Target,3,Head,,,,,,20
+55,Julian Alvarez,Manchester City,0.12,,Off Target,15,Right Foot,,,,,,20
+57,Phil Foden,Manchester City,0.04,,Blocked,11,Left Foot,,Josko Gvardiol,Pass (Live),Mateo Kovacic,Pass (Live),20
+59,Nathan Ake,Manchester City,0.05,,Off Target,10,Head,,Oscar Bobb,Pass (Live),Phil Foden,Pass (Live),20
+61,Julian Alvarez,Manchester City,0.91,0.98,Goal,3,Right Foot,,Phil Foden,Pass (Live),Oscar Bobb,Pass (Live),20
+64,Oscar Bobb,Manchester City,0.14,,Blocked,11,Left Foot,,Oscar Bobb,Take-On,Phil Foden,Pass (Live),20
+75,Phil Foden,Manchester City,0.06,0.21,Saved,24,Left Foot,,Rodri,Pass (Live),Josko Gvardiol,Pass (Live),20
+85,Phil Foden,Manchester City,0.06,,Blocked,17,Right Foot,,Bernardo Silva,Pass (Live),Rodri,Pass (Live),20
+86,Nathan Ake,Manchester City,0.07,,Blocked,9,Head,,Phil Foden,Pass (Live),Bernardo Silva,Pass (Live),20
+89,Jayden Bogle,Sheffield Utd,0.13,,Blocked,18,Right Foot,,Cameron Archer,Pass (Live),Auston Trusty,Pass (Live),20
+2,Keane Lewis-Potter,Brentford,0.42,0.71,Goal,9,Left Foot,Volley,Mads Roerslev,Pass (Live),Mathias Jensen,Pass (Live),20
+10,Eberechi Eze,Crystal Palace,0.03,,Blocked,28,Left Foot,,Jefferson Lerma,Pass (Live),Jean-Philippe Mateta,Pass (Live),20
+14,Michael Olise,Crystal Palace,0.21,0.79,Goal,3,Left Foot,Volley,Jordan Ayew,Pass (Live),Michael Olise,Pass (Live),20
+16,Jefferson Lerma,Crystal Palace,0.03,0.02,Saved,25,Right Foot,,Jean-Philippe Mateta,Pass (Live),Jordan Ayew,Pass (Live),20
+17,Saman Ghoddos,Brentford,0.03,,Off Target,21,Left Foot,,Keane Lewis-Potter,Pass (Live),Mathias Jensen,Pass (Live),20
+18,Keane Lewis-Potter,Brentford,0.15,0.08,Saved,16,Left Foot,,Mads Roerslev,Pass (Live),Mathias Jensen,Pass (Live),20
+27,Nathan Collins,Brentford,0.03,,Off Target,8,Head,,Saman Ghoddos,Pass (Live),Mathias Jensen,Pass (Live),20
+39,Eberechi Eze,Crystal Palace,0.10,0.64,Goal,10,Left Foot,,Tyrick Mitchell,Pass (Live),Chris Richards,Pass (Live),20
+41,Michael Olise,Crystal Palace,0.02,,Blocked,27,Left Foot,,Michael Olise,Take-On,Jean-Philippe Mateta,Pass (Live),20
+46,Michael Olise,Crystal Palace,0.06,,Blocked,16,Left Foot,,Eberechi Eze,Pass (Live),Nathaniel Clyne,Interception,20
+47,Jordan Ayew,Crystal Palace,0.04,,Off Target,15,Right Foot,Volley,Tyrick Mitchell,Pass (Live),Michael Olise,Pass (Live),20
+48,Jefferson Lerma,Crystal Palace,0.06,,Off Target,8,Head,,Eberechi Eze,Pass (Dead),Jordan Ayew,Shot,20
+53,Christian Norgaard,Brentford,0.07,0.38,Saved,20,Right Foot,,Yoane Wissa,Pass (Live),Keane Lewis-Potter,Pass (Live),20
+58,Michael Olise,Crystal Palace,0.14,0.02,Saved,17,Right Foot,,Jordan Ayew,Pass (Live),Jordan Ayew,Take-On,20
+58,Michael Olise,Crystal Palace,0.08,0.44,Goal,17,Left Foot,,Marc Guehi,Pass (Live),Jefferson Lerma,Pass (Live),20
+60,Saman Ghoddos,Brentford,0.02,0.10,Saved,22,Right Foot,,Saman Ghoddos,Take-On,Christian Norgaard,Pass (Dead),20
+67,Michael Olise,Crystal Palace,0.04,,Off Target,21,Left Foot,,Jean-Philippe Mateta,Pass (Live),Joachim Andersen,Interception,20
+72,Eberechi Eze,Crystal Palace,0.07,0.05,Saved,17,Left Foot,,Michael Olise,Pass (Live),Jean-Philippe Mateta,Pass (Live),20
+76,Neal Maupay,Brentford,0.03,,Woodwork,26,Right Foot,,Mikkel Damsgaard,Pass (Live),Vitaly Janelt,Pass (Live),20
+76,Yoane Wissa,Brentford,0.60,,Off Target,5,Right Foot,Volley,Vitaly Janelt,Pass (Live),Nathan Collins,Pass (Live),20
+83,Neal Maupay,Brentford,0.02,,Blocked,16,Left Foot,,Neal Maupay,Pass (Live),Frank Onyeka,Pass (Live),20
+89,Joachim Andersen,Crystal Palace,0.10,,Off Target,7,Head,,Michael Olise,Pass (Dead),Jordan Ayew,Fouled,20
+1,Nicolas Dominguez,Nott'ham Forest,0.09,,Blocked,18,Right Foot,Volley,Anthony Elanga,Pass (Live),Ryan Yates,Pass (Live),20
+7,Chris Wood,Nott'ham Forest,0.04,,Off Target,21,Left Foot,,Ola Aina,Pass (Live),Nicolas Dominguez,Pass (Live),20
+27,Murillo,Nott'ham Forest,0.07,,Off Target,9,Head,,Morgan Gibbs-White,Pass (Dead),,,20
+27,Danilo,Nott'ham Forest,0.03,,Blocked,23,Left Foot,,Murillo,Shot,,,20
+28,Nicolas Dominguez,Nott'ham Forest,0.02,,Blocked,19,Right Foot,Volley,Danilo,Shot,,,20
+32,Ryan Yates,Nott'ham Forest,0.09,,Off Target,21,Right Foot,,Anthony Elanga,Pass (Live),Danilo,Pass (Live),20
+33,Aaron Wan-Bissaka,Manchester Utd,0.04,0.02,Saved,22,Right Foot,Deflected,Christian Eriksen,Pass (Live),Diogo Dalot,Pass (Live),20
+55,Diogo Dalot,Manchester Utd,0.07,,Blocked,24,Right Foot,,Aaron Wan-Bissaka,Pass (Live),Bruno Fernandes,Pass (Live),20
+64,Nicolas Dominguez,Nott'ham Forest,0.19,0.61,Goal,15,Right Foot,,Gonzalo Montiel,Pass (Live),Anthony Elanga,Pass (Live),20
+67,Alejandro Garnacho,Manchester Utd,0.09,,Off Target,10,Right Foot,Volley,Bruno Fernandes,Pass (Dead),Amad Diallo,Pass (Live),20
+68,Alejandro Garnacho,Manchester Utd,0.06,,Blocked,17,Right Foot,,Christian Eriksen,Pass (Live),Amad Diallo,Pass (Live),20
+78,Marcus Rashford,Manchester Utd,0.11,0.26,Goal,16,Right Foot,,Alejandro Garnacho,Pass (Live),Alejandro Garnacho,Interception,20
+82,Christian Eriksen,Manchester Utd,0.09,0.22,Saved,24,Right Foot,,Alejandro Garnacho,Pass (Live),Bruno Fernandes,Pass (Live),20
+82,Morgan Gibbs-White,Nott'ham Forest,0.17,0.40,Goal,21,Right Foot,,Anthony Elanga,Pass (Live),Ryan Yates,Pass (Live),20
+90+5,Scott McTominay,Manchester Utd,0.08,0.12,Saved,10,Left Foot,"Deflected, Volley",Bruno Fernandes,Shot,,,20
+90+5,Bruno Fernandes,Manchester Utd,0.03,,Blocked,23,Right Foot,Volley,Christian Eriksen,Pass (Dead),Christian Eriksen,Pass (Live),20
+90+8,Amad Diallo,Manchester Utd,0.05,0.10,Saved,15,Left Foot,,Sergio Reguilon,Pass (Live),Jonny Evans,Pass (Live),20
+90+11,Christian Eriksen,Manchester Utd,0.14,,Off Target,13,Right Foot,,Amad Diallo,Pass (Live),Sergio Reguilon,Pass (Live),20
+1,Dominic Solanke,Bournemouth,0.02,,Blocked,27,Right Foot,Volley,,,,,20
+4,Richarlison,Tottenham,0.09,,Off Target,18,Right Foot,,Pape Matar Sarr,Pass (Live),Emerson,Pass (Live),20
+7,Dominic Solanke,Bournemouth,0.13,0.25,Saved,10,Head,,Dango Ouattara,Pass (Live),Ryan Christie,Pass (Live),20
+9,Pape Matar Sarr,Tottenham,0.10,0.53,Goal,18,Right Foot,,Giovani Lo Celso,Pass (Live),Rodrigo Bentancur,Interception,20
+14,Marcus Tavernier,Bournemouth,0.04,,Off Target,29,Left Foot,,Luis Sinisterra,Pass (Live),Marcos Senesi,Pass (Live),20
+18,Emerson,Tottenham,0.02,0.12,Saved,28,Right Foot,,Son Heung-min,Pass (Live),Destiny Udogie,Pass (Live),20
+19,Rodrigo Bentancur,Tottenham,0.09,,Off Target,9,Head,,Pedro Porro,Pass (Dead),,,20
+21,Dominic Solanke,Bournemouth,0.02,,Blocked,26,Right Foot,,Dominic Solanke,Tackle,,,20
+24,Marcos Senesi,Bournemouth,0.02,,Off Target,18,Head,,Marcus Tavernier,Pass (Dead),Dango Ouattara,Fouled,20
+25,Son Heung-min,Tottenham,0.05,0.06,Saved,11,Left Foot,,Richarlison,Pass (Live),Ben Davies,Pass (Live),20
+29,Dominic Solanke,Bournemouth,0.03,,Off Target,15,Head,,Adam Smith,Pass (Live),Marcus Tavernier,Pass (Live),20
+34,Luis Sinisterra,Bournemouth,0.08,,Off Target,6,Head,,Lewis Cook,Pass (Dead),,,20
+41,Marcus Tavernier,Bournemouth,0.07,,Blocked,26,Left Foot,Free kick,Marcus Tavernier,Fouled,Ryan Christie,Pass (Live),20
+41,Dango Ouattara,Bournemouth,0.09,,Off Target,8,Head,,Lewis Cook,Pass (Dead),Marcus Tavernier,Shot,20
+45,Justin Kluivert,Bournemouth,0.17,,Off Target,14,Left Foot,,Luis Sinisterra,Take-On,Luis Sinisterra,Take-On,20
+45+3,Dominic Solanke,Bournemouth,0.14,,Blocked,13,Left Foot,,Marcus Tavernier,Pass (Live),Dominic Solanke,Pass (Live),20
+45+6,Justin Kluivert,Bournemouth,0.08,,Blocked,17,Right Foot,,Marcus Tavernier,Pass (Live),Ryan Christie,Pass (Live),20
+50,Dominic Solanke,Bournemouth,0.07,0.06,Saved,5,Head,,Lewis Cook,Pass (Dead),,,20
+51,Dominic Solanke,Bournemouth,0.25,,Blocked,6,Right Foot,,Justin Kluivert,Pass (Live),Marcos Senesi,Pass (Live),20
+51,Marcus Tavernier,Bournemouth,0.04,,Blocked,16,Right Foot,,Dominic Solanke,Shot,,,20
+52,Richarlison,Tottenham,0.49,,Off Target,13,Left Foot,,Son Heung-min,Pass (Live),Giovani Lo Celso,Pass (Live),20
+53,Justin Kluivert,Bournemouth,0.02,,Blocked,24,Right Foot,,Max Aarons,Pass (Live),Ryan Christie,Pass (Live),20
+56,Marcus Tavernier,Bournemouth,0.02,,Blocked,29,Left Foot,,Luis Sinisterra,Pass (Live),Luis Sinisterra,Take-On,20
+60,Dominic Solanke,Bournemouth,0.11,,Off Target,9,Left Foot,,Marcus Tavernier,Pass (Live),Ryan Christie,Pass (Live),20
+71,Son Heung-min,Tottenham,0.09,0.58,Goal,11,Left Foot,,Giovani Lo Celso,Pass (Live),Pierre Hojbjerg,Pass (Live),20
+73,Richarlison,Tottenham,0.19,0.23,Saved,17,Right Foot,,Son Heung-min,Pass (Live),Oliver Skipp,Pass (Live),20
+73,Richarlison,Tottenham,0.05,,Blocked,15,Right Foot,,Richarlison,Shot,,,20
+73,Pedro Porro,Tottenham,0.03,,Blocked,22,Right Foot,,Richarlison,Shot,,,20
+80,Richarlison,Tottenham,0.52,0.39,Goal,8,Right Foot,,Brennan Johnson,Pass (Live),Emerson,Pass (Live),20
+83,Antoine Semenyo,Bournemouth,0.02,,Blocked,18,Left Foot,,Alex Scott,Pass (Live),,,20
+84,Alex Scott,Bournemouth,0.11,0.43,Goal,15,Left Foot,,Marcus Tavernier,Pass (Live),Philip Billing,Pass (Live),20
+87,Bryan Gil,Tottenham,0.59,,Woodwork,4,Head,,Pierre Hojbjerg,Pass (Live),Pierre Hojbjerg,Take-On,20
+90,Antoine Semenyo,Bournemouth,0.01,0.02,Saved,34,Right Foot,,Marcus Tavernier,Pass (Live),Lewis Cook,Pass (Live),20
+90+7,Dominic Solanke,Bournemouth,0.07,,Off Target,10,Head,,Marcos Senesi,Pass (Live),Marcus Tavernier,Pass (Live),20
+90+8,Antoine Semenyo,Bournemouth,0.04,,Blocked,11,Right Foot,,Lewis Cook,Pass (Dead),Marcos Senesi,Pass (Live),20
+90+9,David Brooks,Bournemouth,0.02,,Off Target,27,Left Foot,,Alex Scott,Pass (Live),Max Aarons,Pass (Live),20
+3,Martin Odegaard,Arsenal,0.04,,Off Target,18,Left Foot,,Martin Odegaard,Take-On,,,20
+5,Gabriel Martinelli,Arsenal,0.06,0.33,Saved,14,Right Foot,,Kai Havertz,Pass (Live),David Raya,Pass (Live),20
+5,Bukayo Saka,Arsenal,0.90,0.99,Goal,3,Right Foot,,Gabriel Martinelli,Shot,,,20
+14,Raul Jimenez,Fulham,0.12,0.10,Saved,19,Right Foot,,Antonee Robinson,Pass (Live),Willian,Pass (Live),20
+19,Willian,Fulham,0.07,,Off Target,13,Right Foot,,Alex Iwobi,Pass (Live),Raul Jimenez,Pass (Live),20
+21,Willian,Fulham,0.07,,Blocked,21,Right Foot,,Bobby Reid,Tackle,,,20
+21,Alex Iwobi,Fulham,0.05,,Blocked,25,Right Foot,,Willian,Shot,,,20
+22,Raul Jimenez,Fulham,0.04,,Off Target,11,Right Foot,,Willian,Pass (Dead),Alex Iwobi,Shot,20
+29,Raul Jimenez,Fulham,0.23,0.32,Goal,7,Right Foot,,Tom Cairney,Pass (Live),Willian,Pass (Live),20
+33,Eddie Nketiah,Arsenal,0.12,0.07,Saved,9,Left Foot,Deflected,Bukayo Saka,Pass (Live),Gabriel Martinelli,Pass (Live),20
+40,Gabriel Martinelli,Arsenal,0.04,,Blocked,22,Right Foot,,Martin Odegaard,Fouled,William Saliba,Pass (Live),20
+42,Gabriel Martinelli,Arsenal,0.17,,Off Target,16,Left Foot,,Martin Odegaard,Pass (Live),Declan Rice,Pass (Live),20
+44,Tosin Adarabioyo,Fulham,0.01,,Off Target,38,Right Foot,,Joao Palhinha,Pass (Live),,,20
+45+1,Eddie Nketiah,Arsenal,0.03,,Off Target,14,Right Foot,,Martin Odegaard,Pass (Live),Jakub Kiwior,Pass (Live),20
+45+4,Declan Rice,Arsenal,0.03,,Off Target,26,Right Foot,,Gabriel Martinelli,Pass (Live),Gabriel Dos Santos,Pass (Live),20
+47,Gabriel Martinelli,Arsenal,0.04,,Off Target,16,Right Foot,,Declan Rice,Pass (Live),,,20
+48,Alex Iwobi,Fulham,0.05,,Blocked,20,Left Foot,,Raul Jimenez,Pass (Live),Antonee Robinson,Pass (Live),20
+59,Joao Palhinha,Fulham,0.02,,Blocked,12,Head,,Willian,Pass (Dead),,,20
+59,Bobby Reid,Fulham,0.33,0.37,Goal,7,Right Foot,,Joao Palhinha,Shot,,,20
+63,Bukayo Saka,Arsenal,0.08,,Off Target,9,Left Foot,Volley,Takehiro Tomiyasu,Pass (Live),Martin Odegaard,Pass (Live),20
+67,Martin Odegaard,Arsenal,0.07,,Off Target,29,Left Foot,Free kick,Bukayo Saka,Fouled,Gabriel Dos Santos,Pass (Live),20
+71,Raul Jimenez,Fulham,0.04,,Blocked,22,Right Foot,,Raul Jimenez,Take-On,Raul Jimenez,Take-On,20
+71,Tom Cairney,Fulham,0.06,0.22,Saved,25,Left Foot,,Raul Jimenez,Shot,,,20
+82,Bukayo Saka,Arsenal,0.04,,Blocked,13,Left Foot,,Bukayo Saka,Take-On,Takehiro Tomiyasu,Pass (Live),20
+84,Raul Jimenez,Fulham,0.03,,Blocked,10,Right Foot,,Antonee Robinson,Pass (Live),,,20
+84,Harry Wilson,Fulham,0.03,,Off Target,18,Left Foot,Volley,Raul Jimenez,Shot,,,20
+88,Andreas Pereira,Fulham,0.08,,Woodwork,24,Right Foot,Free kick,Harry Wilson,Fouled,Raul Jimenez,Pass (Live),20
+90+4,Gabriel Jesus,Arsenal,0.07,,Blocked,10,Head,,Martin Odegaard,Pass (Live),Leandro Trossard,Pass (Live),20
+1,Dominik Szoboszlai,Liverpool,0.09,,Blocked,15,Left Foot,,Wataru Endo,Pass (Live),Mohamed Salah,Pass (Live),20
+2,Trent Alexander-Arnold,Liverpool,0.04,,Blocked,21,Left Foot,,Curtis Jones,Pass (Live),Dominik Szoboszlai,Pass (Live),20
+8,Lewis Miley,Newcastle Utd,0.08,,Blocked,13,Right Foot,,Alexander Isak,Pass (Live),Anthony Gordon,Pass (Live),20
+12,Darwin Nunez,Liverpool,0.52,0.42,Saved,8,Right Foot,,Mohamed Salah,Pass (Live),Darwin Nunez,Pass (Live),20
+12,Curtis Jones,Liverpool,0.12,,Blocked,14,Left Foot,Volley,Darwin Nunez,Shot,,,20
+12,Wataru Endo,Liverpool,0.03,,Off Target,26,Right Foot,,Luis Diaz,Pass (Live),Curtis Jones,Pass (Live),20
+17,Darwin Nunez,Liverpool,0.02,,Off Target,11,Head,,Trent Alexander-Arnold,Pass (Dead),Wataru Endo,Fouled,20
+22,Mohamed Salah (pen),Liverpool,0.79,0.95,Saved,13,Left Foot,,Luis Diaz,Fouled,Luis Diaz,Take-On,20
+23,Trent Alexander-Arnold,Liverpool,0.27,,Off Target,7,Right Foot,Volley,Mohamed Salah,Shot,,,20
+24,Curtis Jones,Liverpool,0.04,0.04,Saved,26,Right Foot,,Virgil van Dijk,Pass (Live),Alisson,Pass (Live),20
+26,Curtis Jones,Liverpool,0.07,,Blocked,6,Left Foot,,Luis Diaz,Pass (Live),,,20
+26,Virgil van Dijk,Liverpool,0.07,,Blocked,15,Right Foot,,Trent Alexander-Arnold,Pass (Live),Dominik Szoboszlai,Pass (Dead),20
+26,Ibrahima Konate,Liverpool,0.05,,Blocked,10,Head,,Dominik Szoboszlai,Pass (Live),Wataru Endo,Pass (Live),20
+29,Wataru Endo,Liverpool,0.05,,Blocked,28,Right Foot,,Dominik Szoboszlai,Pass (Live),Curtis Jones,Pass (Live),20
+30,Dominik Szoboszlai,Liverpool,0.02,,Blocked,31,Right Foot,,Darwin Nunez,Pass (Live),Luis Diaz,Pass (Live),20
+36,Darwin Nunez,Liverpool,0.49,0.83,Saved,17,Right Foot,,Curtis Jones,Tackle,,,20
+36,Darwin Nunez,Liverpool,0.07,0.06,Saved,21,Right Foot,,Darwin Nunez,Shot,,,20
+39,Trent Alexander-Arnold,Liverpool,0.00,,Woodwork,22,Right Foot,Volley,Joe Gomez,Pass (Live),Luis Diaz,Pass (Live),20
+42,Dominik Szoboszlai,Liverpool,0.04,,Blocked,26,Right Foot,,Mohamed Salah,Pass (Live),Luis Diaz,Pass (Live),20
+49,Mohamed Salah,Liverpool,0.89,0.67,Goal,6,Right Foot,,Darwin Nunez,Pass (Live),Luis Diaz,Pass (Live),20
+52,Darwin Nunez,Liverpool,0.43,0.82,Saved,6,Right Foot,,Mohamed Salah,Pass (Live),Luis Diaz,Pass (Live),20
+52,Darwin Nunez,Liverpool,0.07,0.07,Saved,15,Right Foot,Volley,Ibrahima Konate,Pass (Live),Alisson,Pass (Live),20
+53,Darwin Nunez,Liverpool,0.02,,Off Target,14,Head,,Trent Alexander-Arnold,Pass (Live),Trent Alexander-Arnold,Take-On,20
+54,Alexander Isak,Newcastle Utd,0.25,0.82,Goal,15,Right Foot,,Anthony Gordon,Pass (Live),Anthony Gordon,Take-On,20
+62,Luis Diaz,Liverpool,0.09,0.03,Saved,17,Right Foot,,Luis Diaz,Take-On,Wataru Endo,Pass (Live),20
+64,Darwin Nunez,Liverpool,0.08,,Off Target,10,Head,,Wataru Endo,Pass (Live),Mohamed Salah,Pass (Live),20
+65,Mohamed Salah,Liverpool,0.02,0.22,Saved,21,Left Foot,,Diogo Jota,Pass (Live),Trent Alexander-Arnold,Pass (Live),20
+65,Curtis Jones,Liverpool,0.18,,Blocked,13,Left Foot,,Mohamed Salah,Shot,,,20
+69,Cody Gakpo,Liverpool,0.20,0.10,Saved,12,Right Foot,,,,,,20
+69,Ryan Gravenberch,Liverpool,0.03,,Off Target,20,Right Foot,,Cody Gakpo,Shot,,,20
+70,Anthony Gordon,Newcastle Utd,0.02,0.04,Saved,33,Right Foot,,,,,,20
+74,Curtis Jones,Liverpool,0.96,0.92,Goal,3,Right Foot,,Diogo Jota,Pass (Live),Mohamed Salah,Pass (Live),20
+76,Miguel Almiron,Newcastle Utd,0.07,,Off Target,13,Left Foot,,Fabian Schar,Pass (Live),Valentino Livramento,Pass (Live),20
+78,Cody Gakpo,Liverpool,0.55,0.56,Goal,9,Right Foot,,Mohamed Salah,Pass (Live),Alexis Mac Allister,Pass (Live),20
+81,Sven Botman,Newcastle Utd,0.18,0.54,Goal,6,Head,,Sean Longstaff,Pass (Dead),Valentino Livramento,Pass (Live),20
+86,Mohamed Salah (pen),Liverpool,0.79,0.98,Goal,13,Left Foot,,Diogo Jota,Fouled,Alexis Mac Allister,Pass (Live),20
+88,Mohamed Salah,Liverpool,0.03,,Blocked,19,Left Foot,,Curtis Jones,Pass (Live),Ryan Gravenberch,Pass (Live),20
+90+5,Mohamed Salah,Liverpool,0.18,,Blocked,13,Left Foot,,Ryan Gravenberch,Pass (Live),Virgil van Dijk,Pass (Live),20
+90+5,Diogo Jota,Liverpool,0.10,,Blocked,11,Right Foot,,Mohamed Salah,Shot,,,20
+23,Facundo Buonanotte,Brighton,0.02,0.05,Saved,31,Left Foot,Deflected,Pervis Estupinan,Pass (Live),Facundo Buonanotte,Pass (Live),20
+24,Emerson Palmieri,West Ham,0.08,,Off Target,17,Right Foot,,Said Benrahma,Pass (Live),Jarrod Bowen,Pass (Live),20
+28,James Ward-Prowse,West Ham,0.09,0.07,Saved,11,Left Foot,Volley,Jarrod Bowen,Pass (Live),James Ward-Prowse,Pass (Live),20
+29,Konstantinos Mavropanos,West Ham,0.11,,Off Target,9,Head,,Jarrod Bowen,Pass (Live),Ben Johnson,Pass (Live),20
+32,Jack Hinshelwood,Brighton,0.17,0.11,Saved,8,Right Foot,Volley,Pascal Gross,Pass (Dead),Facundo Buonanotte,Fouled,20
+32,Adam Webster,Brighton,0.01,,Off Target,12,Right Foot,Volley,Jack Hinshelwood,Shot,,,20
+35,Said Benrahma,West Ham,0.02,,Off Target,27,Right Foot,,Jarrod Bowen,Pass (Live),Jarrod Bowen,Interception,20
+36,Facundo Buonanotte,Brighton,0.02,,Off Target,36,Left Foot,,Billy Gilmour,Pass (Live),Jack Hinshelwood,Pass (Live),20
+42,Pascal Gross,Brighton,0.35,0.20,Saved,9,Head,,James Milner,Pass (Live),Danny Welbeck,Pass (Live),20
+55,Danny Welbeck,Brighton,0.06,0.07,Saved,15,Right Foot,,Facundo Buonanotte,Pass (Live),Joao Pedro,Pass (Live),20
+55,James Milner,Brighton,0.07,,Off Target,13,Left Foot,Volley,Joao Pedro,Pass (Live),Danny Welbeck,Shot,20
+59,Pablo Fornals,West Ham,0.02,0.09,Saved,28,Left Foot,,Jarrod Bowen,Pass (Live),Edson Alvarez,Pass (Live),20
+59,Joao Pedro,Brighton,0.19,0.05,Saved,14,Right Foot,,Facundo Buonanotte,Pass (Live),Pervis Estupinan,Pass (Live),20
+61,Tomas Soucek,West Ham,0.37,,Off Target,8,Right Foot,,Said Benrahma,Pass (Live),James Ward-Prowse,Pass (Live),20
+64,Pascal Gross,Brighton,0.03,,Off Target,13,Right Foot,Volley,Facundo Buonanotte,Pass (Live),Billy Gilmour,Pass (Live),20
+66,Jack Hinshelwood,Brighton,0.19,,Off Target,3,Head,,Joao Pedro,Pass (Live),Danny Welbeck,Pass (Live),20
+68,Joao Pedro,Brighton,0.08,,Blocked,12,Left Foot,,James Milner,Pass (Live),Pascal Gross,Pass (Live),20
+68,Billy Gilmour,Brighton,0.04,,Blocked,21,Right Foot,,Joao Pedro,Shot,,,20
+69,Evan Ferguson,Brighton,0.12,,Off Target,18,Left Foot,,Evan Ferguson,Take-On,Facundo Buonanotte,Pass (Live),20
+78,Pascal Gross,Brighton,0.11,,Off Target,7,Head,,James Milner,Pass (Live),Joao Pedro,Pass (Live),20
+79,Adam Lallana,Brighton,0.09,0.02,Saved,14,Right Foot,,Jakub Moder,Pass (Live),Jack Hinshelwood,Pass (Live),20
+81,Evan Ferguson,Brighton,0.21,,Blocked,7,Right Foot,,Adam Lallana,Pass (Live),Adam Lallana,Pass (Live),20
+82,Evan Ferguson,Brighton,0.07,,Off Target,11,Head,,Pascal Gross,Pass (Live),Jakub Moder,Pass (Live),20
+86,Pascal Gross,Brighton,0.10,,Blocked,10,Right Foot,Volley,James Milner,Pass (Live),Billy Gilmour,Pass (Live),20
+86,Jakub Moder,Brighton,0.41,,Off Target,8,Right Foot,Volley,Pascal Gross,Shot,,,20
+89,Adam Lallana,Brighton,0.09,0.33,Saved,21,Right Foot,,Pascal Gross,Pass (Live),Pervis Estupinan,Pass (Live),20
+90+5,Pascal Gross,Brighton,0.04,,Blocked,21,Left Foot,,Jack Hinshelwood,Pass (Live),Joao Pedro,Pass (Live),20
+90+5,Jack Hinshelwood,Brighton,0.05,0.73,Saved,12,Head,,Pervis Estupinan,Pass (Live),Billy Gilmour,Pass (Live),20
