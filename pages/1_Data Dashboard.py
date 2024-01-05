@@ -1421,16 +1421,16 @@ def main():
     }
 
     # Add a new section for the Plottable Table
-    df_dict["Special Plottable Table"] = {
-        "frames": [
-            {
-                "title": "Special Table with Plottable",
-                "type": "plottable_table",  # A new type to trigger Plottable Table
-                "data": grouped_players_df,  # The DataFrame containing data for the table
-            }
-        ],
-        "icon": "table",  # Choose an appropriate FontAwesome icon
-    }
+    # df_dict["Special Plottable Table"] = {
+    #     "frames": [
+    #         {
+    #             "title": "Special Table with Plottable",
+    #             "type": "plottable_table",  # A new type to trigger Plottable Table
+    #             "data": grouped_players_df,  # The DataFrame containing data for the table
+    #         }
+    #     ],
+    #     "icon": "table",  # Choose an appropriate FontAwesome icon
+    # }
 
     # Insert 'Player Radar Chart' at the beginning of the OrderedDict
     from collections import OrderedDict
