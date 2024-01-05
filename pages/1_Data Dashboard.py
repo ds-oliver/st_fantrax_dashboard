@@ -438,184 +438,184 @@ def display_date_of_update(date_of_update, title="Last Data Refresh"):
 #     st.pyplot(plt.gcf())
 
 
-@st.cache_data
-def plot_bumpy_chart(
-    df,
-    x_column,
-    y_column,
-    label_column,
-    highlight_dict=None,
-    text_color="white",
-    bg_color="black",
-    **kwargs,
-):
-    # log columns to check
-    st.write(f"Columns in df: {df.columns}")
+# @st.cache_data
+# def plot_bumpy_chart(
+#     df,
+#     x_column,
+#     y_column,
+#     label_column,
+#     highlight_dict=None,
+#     text_color="white",
+#     bg_color="black",
+#     **kwargs,
+# ):
+#     # log columns to check
+#     st.write(f"Columns in df: {df.columns}")
 
-    # Check if the required columns exist in the DataFrame
-    if not all(col in df.columns for col in [x_column, y_column, label_column]):
-        raise ValueError("The specified columns do not exist in the DataFrame.")
+#     # Check if the required columns exist in the DataFrame
+#     if not all(col in df.columns for col in [x_column, y_column, label_column]):
+#         raise ValueError("The specified columns do not exist in the DataFrame.")
 
-    # Sort DataFrame based on x_column and calculate rankings based on y_column
-    df = df.sort_values(by=[x_column, y_column], ascending=[True, False])
-    df["Rank"] = df.groupby(x_column)[y_column].rank(method="min", ascending=False)
+#     # Sort DataFrame based on x_column and calculate rankings based on y_column
+#     df = df.sort_values(by=[x_column, y_column], ascending=[True, False])
+#     df["Rank"] = df.groupby(x_column)[y_column].rank(method="min", ascending=False)
 
-    # Fill forward any missing rankings (if a player is missing for a particular game week)
-    df["Rank"] = df.groupby(label_column)["Rank"].fillna(method="ffill")
+#     # Fill forward any missing rankings (if a player is missing for a particular game week)
+#     df["Rank"] = df.groupby(label_column)["Rank"].fillna(method="ffill")
 
-    # Create lists for x and y axes
-    x_list = sorted(df[x_column].unique())
-    y_list = np.arange(1, df["Rank"].max() + 1).tolist()  # Rankings start from 1
+#     # Create lists for x and y axes
+#     x_list = sorted(df[x_column].unique())
+#     y_list = np.arange(1, df["Rank"].max() + 1).tolist()  # Rankings start from 1
 
-    # Create a dictionary of values for plotting
-    values = {}
-    for player in df[label_column].unique():
-        player_df = df[df[label_column] == player]
-        rankings = (
-            player_df.set_index(x_column)["Rank"].reindex(x_list).fillna(0).tolist()
-        )
-        values[player] = rankings
+#     # Create a dictionary of values for plotting
+#     values = {}
+#     for player in df[label_column].unique():
+#         player_df = df[df[label_column] == player]
+#         rankings = (
+#             player_df.set_index(x_column)["Rank"].reindex(x_list).fillna(0).tolist()
+#         )
+#         values[player] = rankings
 
-    # Instantiate the Bumpy object
-    bumpy = Bumpy(
-        scatter_color=bg_color,
-        line_color="#252525",
-        ticklabel_size=14,
-        label_size=18,
-        scatter_primary="D",
-        show_right=True,
-        plot_labels=True,
-        alignment_yvalue=0.1,
-        alignment_xvalue=0.065,
-        **kwargs,
-    )
+#     # Instantiate the Bumpy object
+#     bumpy = Bumpy(
+#         scatter_color=bg_color,
+#         line_color="#252525",
+#         ticklabel_size=14,
+#         label_size=18,
+#         scatter_primary="D",
+#         show_right=True,
+#         plot_labels=True,
+#         alignment_yvalue=0.1,
+#         alignment_xvalue=0.065,
+#         **kwargs,
+#     )
 
-    # Create the bumpy chart plot
-    fig, ax = bumpy.plot(
-        x_list,
-        y_list,
-        values,
-        secondary_alpha=0.2,
-        highlight_dict=highlight_dict,
-        upside_down=True,  # <--- to flip the y-axis
-        x_label="GW",
-        y_label=y_column,  # label name
-        lw=2.5,
-        ylim=(1, max(y_list)),  # Explicitly set y-axis limits
-    )
+#     # Create the bumpy chart plot
+#     fig, ax = bumpy.plot(
+#         x_list,
+#         y_list,
+#         values,
+#         secondary_alpha=0.2,
+#         highlight_dict=highlight_dict,
+#         upside_down=True,  # <--- to flip the y-axis
+#         x_label="GW",
+#         y_label=y_column,  # label name
+#         lw=2.5,
+#         ylim=(1, max(y_list)),  # Explicitly set y-axis limits
+#     )
 
-    # Font properties
-    font_bold = FontProperties()
-    font_bold.set_weight("bold")
+#     # Font properties
+#     font_bold = FontProperties()
+#     font_bold.set_weight("bold")
 
-    # Title
-    TITLE = "Bumpy Chart Example:"
-    fig.text(0.09, 0.95, TITLE, size=29, color=text_color, fontproperties=font_bold)
+#     # Title
+#     TITLE = "Bumpy Chart Example:"
+#     fig.text(0.09, 0.95, TITLE, size=29, color=text_color, fontproperties=font_bold)
 
-    # Subtitle with highlighted text
-    SUB_TITLE = "A comparison between " + ", ".join(
-        [f"<{player}>" for player in highlight_dict.keys()]
-    )
-    highlight_colors = [{"color": color} for color in highlight_dict.values()]
+#     # Subtitle with highlighted text
+#     SUB_TITLE = "A comparison between " + ", ".join(
+#         [f"<{player}>" for player in highlight_dict.keys()]
+#     )
+#     highlight_colors = [{"color": color} for color in highlight_dict.values()]
 
-    fig_text(
-        0.09,
-        0.9,
-        SUB_TITLE,
-        color=text_color,
-        highlight_textprops=highlight_colors,
-        size=18,
-        fig=fig,
-        fontproperties=font_bold,
-    )
+#     fig_text(
+#         0.09,
+#         0.9,
+#         SUB_TITLE,
+#         color=text_color,
+#         highlight_textprops=highlight_colors,
+#         size=18,
+#         fig=fig,
+#         fontproperties=font_bold,
+#     )
 
-    # Display the plot in Streamlit
-    st.pyplot(fig)
+#     # Display the plot in Streamlit
+#     st.pyplot(fig)
 
 
-@st.cache_data
-def plot_percentile_bumpy_chart(
-    df,
-    label_column,
-    metrics,
-    highlight_dict=None,
-    text_color="white",
-    bg_color="black",
-    **kwargs,
-):
-    # Calculate the percentile ranks for each player in the selected metrics
-    for metric in metrics:
-        df[f"{metric} Percentile"] = df[metric].rank(pct=True) * 100
+# @st.cache_data
+# def plot_percentile_bumpy_chart(
+#     df,
+#     label_column,
+#     metrics,
+#     highlight_dict=None,
+#     text_color="white",
+#     bg_color="black",
+#     **kwargs,
+# ):
+#     # Calculate the percentile ranks for each player in the selected metrics
+#     for metric in metrics:
+#         df[f"{metric} Percentile"] = df[metric].rank(pct=True) * 100
 
-    # Create lists for x and y axes
-    x_list = [f"{metric}\nPercentile" for metric in metrics]
-    y_list = np.linspace(0, 100, 11).astype(int).tolist()
+#     # Create lists for x and y axes
+#     x_list = [f"{metric}\nPercentile" for metric in metrics]
+#     y_list = np.linspace(0, 100, 11).astype(int).tolist()
 
-    # Create a dictionary of values for plotting
-    values = {}
-    for player in df[label_column].unique():
-        player_df = df[df[label_column] == player]
-        player_values = [
-            player_df[f"{metric} Percentile"].values[0] for metric in metrics
-        ]
-        values[player] = player_values
+#     # Create a dictionary of values for plotting
+#     values = {}
+#     for player in df[label_column].unique():
+#         player_df = df[df[label_column] == player]
+#         player_values = [
+#             player_df[f"{metric} Percentile"].values[0] for metric in metrics
+#         ]
+#         values[player] = player_values
 
-    # Instantiate the Bumpy object
-    bumpy = Bumpy(
-        rotate_xticks=0,
-        ticklabel_size=23,
-        label_size=28,
-        scatter="value",
-        show_right=True,
-        alignment_yvalue=0.15,
-        alignment_xvalue=0.06,
-        **kwargs,
-    )
+#     # Instantiate the Bumpy object
+#     bumpy = Bumpy(
+#         rotate_xticks=0,
+#         ticklabel_size=23,
+#         label_size=28,
+#         scatter="value",
+#         show_right=True,
+#         alignment_yvalue=0.15,
+#         alignment_xvalue=0.06,
+#         **kwargs,
+#     )
 
-    # Create the bumpy chart plot
-    fig, ax = bumpy.plot(
-        x_list,
-        y_list,
-        values,
-        secondary_alpha=0.05,
-        highlight_dict=highlight_dict,
-        figsize=(20, 12),
-        upside_down=True,
-        x_label="Metrics",
-        y_label="Percentile Rank",
-        ylim=(0, 100),
-        lw=2.5,
-    )
+#     # Create the bumpy chart plot
+#     fig, ax = bumpy.plot(
+#         x_list,
+#         y_list,
+#         values,
+#         secondary_alpha=0.05,
+#         highlight_dict=highlight_dict,
+#         figsize=(20, 12),
+#         upside_down=True,
+#         x_label="Metrics",
+#         y_label="Percentile Rank",
+#         ylim=(0, 100),
+#         lw=2.5,
+#     )
 
-    # Adjust plot position
-    fig.subplots_adjust(left=0.1, bottom=0.15, right=0.9, top=0.85)
+#     # Adjust plot position
+#     fig.subplots_adjust(left=0.1, bottom=0.15, right=0.9, top=0.85)
 
-    # Font properties
-    font_bold = FontProperties()
-    font_bold.set_weight("bold")
+#     # Font properties
+#     font_bold = FontProperties()
+#     font_bold.set_weight("bold")
 
-    # Title
-    TITLE = "Player Percentile Rank Comparison"
-    fig.text(0.02, 0.98, TITLE, size=34, color=text_color, fontproperties=font_bold)
+#     # Title
+#     TITLE = "Player Percentile Rank Comparison"
+#     fig.text(0.02, 0.98, TITLE, size=34, color=text_color, fontproperties=font_bold)
 
-    # Subtitle with highlighted text
-    if highlight_dict:
-        SUB_TITLE = ", ".join([f"<{player}>" for player in highlight_dict.keys()])
-        highlight_colors = [{"color": color} for color in highlight_dict.values()]
+#     # Subtitle with highlighted text
+#     if highlight_dict:
+#         SUB_TITLE = ", ".join([f"<{player}>" for player in highlight_dict.keys()])
+#         highlight_colors = [{"color": color} for color in highlight_dict.values()]
 
-        fig_text(
-            0.02,
-            0.93,
-            SUB_TITLE,
-            color=text_color,
-            highlight_textprops=highlight_colors,
-            size=28,
-            fig=fig,
-            fontproperties=font_bold,
-        )
+#         fig_text(
+#             0.02,
+#             0.93,
+#             SUB_TITLE,
+#             color=text_color,
+#             highlight_textprops=highlight_colors,
+#             size=28,
+#             fig=fig,
+#             fontproperties=font_bold,
+#         )
 
-    # Display the plot in Streamlit
-    st.pyplot(fig)
+#     # Display the plot in Streamlit
+#     st.pyplot(fig)
 
 
 relevant_stats = [
@@ -861,49 +861,49 @@ def plot_grouped_bar_chart(df):
     fig.show()
 
 
-def create_plottable_table(data_frame, fig_size=(20, 22)):
-    """
-    Creates and displays a table using the plottable library.
+# def create_plottable_table(data_frame, fig_size=(20, 22)):
+#     """
+#     Creates and displays a table using the plottable library.
 
-    Parameters:
-        data_frame (pd.DataFrame): The pandas DataFrame you want to display as a table.
-        fig_size (tuple): The size of the figure to display the table on, default is (20, 22).
-    """
-    # Ensure data_frame is a pandas DataFrame
-    if not isinstance(data_frame, pd.DataFrame):
-        raise ValueError("The data_frame argument must be a pandas DataFrame.")
+#     Parameters:
+#         data_frame (pd.DataFrame): The pandas DataFrame you want to display as a table.
+#         fig_size (tuple): The size of the figure to display the table on, default is (20, 22).
+#     """
+#     # Ensure data_frame is a pandas DataFrame
+#     if not isinstance(data_frame, pd.DataFrame):
+#         raise ValueError("The data_frame argument must be a pandas DataFrame.")
 
-    # Dynamically create column definitions based on DataFrame columns
-    col_defs = []
-    for col_name, dtype in data_frame.dtypes.iteritems():
-        # Infer column type for plottable based on dtype
-        if pd.api.types.is_numeric_dtype(dtype):
-            col_type = "number"
-        elif pd.api.types.is_datetime64_any_dtype(dtype):
-            col_type = "datetime"
-        elif pd.api.types.is_string_dtype(dtype):
-            col_type = "text"
-        elif pd.api.types.is_categorical_dtype(dtype):
-            col_type = "categorical"
-        elif pd.api.types.is_bool_dtype(dtype):
-            col_type = "boolean"
-        else:
-            col_type = "text"  # Default to text for any other types
-        col_defs.append(ColumnDefinition(col_name, col_type))
+#     # Dynamically create column definitions based on DataFrame columns
+#     col_defs = []
+#     for col_name, dtype in data_frame.dtypes.iteritems():
+#         # Infer column type for plottable based on dtype
+#         if pd.api.types.is_numeric_dtype(dtype):
+#             col_type = "number"
+#         elif pd.api.types.is_datetime64_any_dtype(dtype):
+#             col_type = "datetime"
+#         elif pd.api.types.is_string_dtype(dtype):
+#             col_type = "text"
+#         elif pd.api.types.is_categorical_dtype(dtype):
+#             col_type = "categorical"
+#         elif pd.api.types.is_bool_dtype(dtype):
+#             col_type = "boolean"
+#         else:
+#             col_type = "text"  # Default to text for any other types
+#         col_defs.append(ColumnDefinition(col_name, col_type))
 
-    # Create a Table object with the DataFrame and column definitions
-    fig, ax = plt.subplots(figsize=fig_size)
-    table = Table(
-        data_frame,
-        column_definitions=col_defs,
-    )
+#     # Create a Table object with the DataFrame and column definitions
+#     fig, ax = plt.subplots(figsize=fig_size)
+#     table = Table(
+#         data_frame,
+#         column_definitions=col_defs,
+#     )
 
-    # Render the table onto the axes and hide the axes
-    ax.axis("off")
+#     # Render the table onto the axes and hide the axes
+#     ax.axis("off")
 
-    # Display the figure in Streamlit
-    # st.pyplot(fig)
-    fig
+#     # Display the figure in Streamlit
+#     # st.pyplot(fig)
+#     fig
 
 
 def main():
@@ -933,7 +933,7 @@ def main():
 
     date_created = get_date_created(file_path)
 
-    display_date_of_update(date_created, title="Ros Data Last Updated")
+    display_date_of_update(date_created, title="ROS Data Last Updated")
 
     # add_datadump_info()
 
@@ -1677,17 +1677,17 @@ def main():
             #         compare_players(player_1_name, player_2_name, frame["data"])
 
             # Inside your main function, where you check the 'type' of each frame
-            elif frame.get("type") == "plottable_table":
-                # Assuming 'grouped_players_df' contains the data you want to display in the table
-                # Retrieve the DataFrame
-                data_for_table = frame["data"]
+            # elif frame.get("type") == "plottable_table":
+            #     # Assuming 'grouped_players_df' contains the data you want to display in the table
+            #     # Retrieve the DataFrame
+            #     data_for_table = frame["data"]
 
-                # Create the special table with Plottable
-                # You need to define 'create_plottable_table' according to the Plottable documentation
-                plottable_table = create_plottable_table(data_for_table)
+            #     # Create the special table with Plottable
+            #     # You need to define 'create_plottable_table' according to the Plottable documentation
+            #     plottable_table = create_plottable_table(data_for_table)
 
-                # Display the table in the Streamlit app
-                st.write(plottable_table)
+            #     # Display the table in the Streamlit app
+            #     st.write(plottable_table)
 
             else:
                 # ... (handling for other visualization and data types)
