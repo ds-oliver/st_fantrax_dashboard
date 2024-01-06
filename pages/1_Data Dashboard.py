@@ -1129,9 +1129,9 @@ def main():
 
     default_style = {
         "container": {"padding": "5!important", "background-color": "#08061c"},
-        "icon": {"color": "#fefae0", "font-size": "20px"},
+        "icon": {"color": "#fefae0", "font-size": "14px"},
         "nav-link": {
-            "font-size": "16px",
+            "font-size": "12px",
             "text-align": "left",
             "margin": "0px",
             "--hover-color": "#6d597a",
