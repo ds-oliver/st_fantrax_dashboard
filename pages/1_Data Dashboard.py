@@ -1129,15 +1129,17 @@ def main():
 
     default_style = {
         "container": {"padding": "5!important", "background-color": "#08061c"},
-        "icon": {"color": "#fefae0", "font-size": "14px"},
+        "icon": {"color": "#fefae0", "font-size": "16px"},
         "nav-link": {
-            "font-size": "12px",
+            "font-size": "14px",
             "text-align": "left",
             "margin": "0px",
             "--hover-color": "#6d597a",
+            "--hover-border": "1px dashed #fefae0",  # Add this line
         },
         "nav-link-selected": {"background-color": "#370617"},
     }
+
 
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
