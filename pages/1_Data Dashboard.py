@@ -1208,7 +1208,7 @@ def main():
                 {
                     "title": f"Granular Positional Data",
                     "data": all_pos,
-                    "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data.",
+                    "info_text": f"Note: This table shows position-specific data for all gameweeks. At this time we are looking at :orange[{recent_gw}] gameweeks of data.",
                     "upper_info_text": f"Aggregated data is pre-filtered for player data in matches were they played more than 45 minutes",
                 },
             ],
