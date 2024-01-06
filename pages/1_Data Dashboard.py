@@ -196,8 +196,8 @@ def plot_radar_chart(
     st.plotly_chart(fig, use_container_width=True)
 
 
-@st.cache_data
-def load_csv_file_cached(csv_file, set_index_cols=None):
+# @st.cache_data
+def load_csv_file_cached(csv_file, set_index_cols=None, drop_cols=None):
     """
     Loads a CSV file and applies a function to round and format its values.
     Optionally sets one or more columns as the DataFrame index.
@@ -205,6 +205,7 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     Parameters:
         csv_file (str): Path to the CSV file.
         set_index_cols (list, str, optional): Column(s) to set as DataFrame index. Defaults to None.
+        drop_cols (list, str, optional): Column(s) to drop from DataFrame. Defaults to None.
 
     Returns:
         pd.DataFrame: The loaded and formatted DataFrame.
@@ -239,6 +240,13 @@ def load_csv_file_cached(csv_file, set_index_cols=None):
     # if GPR exists, format it as a percentage
     if "GPR" in df.columns:
         df["GPR"] = df["GPR"].apply(lambda x: f"{x:.0%}")
+
+    # Check if drop_cols is provided
+    if drop_cols:
+        # Check if columns in drop_cols exist in the DataFrame in any case (lower, upper, title)
+        cols_to_drop = [col for col in drop_cols if col.lower() in df.columns or col.upper() in df.columns or col.title() in df.columns]
+        # Drop the columns
+        df.drop(columns=cols_to_drop, inplace=True)
 
     # Check if set_index_cols is provided
     if set_index_cols:
@@ -953,7 +961,7 @@ def main():
     custom_cmap = create_custom_cmap_cached(*simple_colors)
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
-    recent_gw_players_df = load_csv_file_cached(f"{data_path}/recent_gw_data.csv")
+    recent_gw_players_df = load_csv_file_cached(f"{data_path}/recent_gw_data.csv", drop_cols=["GW"])
 
     grouped_players_df = load_csv_file_cached(f"{data_path}/grouped_player_data.csv")
     # create per 90s stats
