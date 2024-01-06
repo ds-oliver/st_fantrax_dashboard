@@ -84,6 +84,7 @@ sys.path.append(scripts_path)
 def load_cached_css():
     load_css()
 
+
 @st.cache_data
 def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
     # Ensure the '90s' column is numeric
@@ -104,7 +105,7 @@ def create_per_90s_stats(df, stats_columns, minutes_column="90s"):
             df[stat] = pd.to_numeric(df[stat], errors="coerce")
             per_90_col_name = f"{stat} per 90"
             df[per_90_col_name] = df[stat] / df[minutes_column]
-    
+
     # save to csv
     df.to_csv("data/display-data/final/grouped_player_data_p90.csv")
 
@@ -156,36 +157,36 @@ def plot_radar_chart(
     # Add the radar chart "slices" with adjusted opacity for marker
     fig.add_trace(
         go.Barpolar(
-            r=stats, # Set the percentile values for the player
-            theta=params, # Set the parameters for the radar chart
+            r=stats,  # Set the percentile values for the player
+            theta=params,  # Set the parameters for the radar chart
             marker=dict(
-                color=slice_colors, # Set the color of the slices
-                line=dict(color="black", width=2), # Set the color of the slice borders
-                opacity=0.5 # Adjust the opacity of the slices
-            ), # Set the marker options
+                color=slice_colors,  # Set the color of the slices
+                line=dict(color="black", width=2),  # Set the color of the slice borders
+                opacity=0.5,  # Adjust the opacity of the slices
+            ),  # Set the marker options
             text=[
                 f"{stat*100:.0f}%" for stat in stats
             ],  # Display the percentile as a percentage
         )
-    ) # Add the trace to the figure
+    )  # Add the trace to the figure
 
     # Set layout options with adjusted axis tick colors
     fig.update_layout(
         polar=dict(
             radialaxis=dict(
-                visible=True, # Set the radial axis to be visible
-                range=[0, 1], # Set the radial axis range
+                visible=True,  # Set the radial axis to be visible
+                range=[0, 1],  # Set the radial axis range
                 tickcolor="black",  # Set axis tick color
                 tickfont=dict(color="black"),  # Set font color for the ticks
             )
-        ), # Set the layout for the polar axis
-        showlegend=False, # Hide the legend
+        ),  # Set the layout for the polar axis
+        showlegend=False,  # Hide the legend
         title={
-            "text": f"{player_name}'s Radar Chart (Percentile Rank) among position: {position}", # Set the title
-            "y": 0.95, # Set the y position of the title
-            "x": 0.5, # Set the x position of the title
-            "xanchor": "center", # Set the x anchor of the title
-            "yanchor": "top", # Set the y anchor of the title
+            "text": f"{player_name}'s Radar Chart (Percentile Rank) among position: {position}",  # Set the title
+            "y": 0.95,  # Set the y position of the title
+            "x": 0.5,  # Set the x position of the title
+            "xanchor": "center",  # Set the x anchor of the title
+            "yanchor": "top",  # Set the y anchor of the title
         },
         # Set the size of the chart here
         width=900,  # Adjust the width as needed
@@ -244,7 +245,13 @@ def load_csv_file_cached(csv_file, set_index_cols=None, drop_cols=None):
     # Check if drop_cols is provided
     if drop_cols:
         # Check if columns in drop_cols exist in the DataFrame in any case (lower, upper, title)
-        cols_to_drop = [col for col in drop_cols if col.lower() in df.columns or col.upper() in df.columns or col.title() in df.columns]
+        cols_to_drop = [
+            col
+            for col in drop_cols
+            if col.lower() in df.columns
+            or col.upper() in df.columns
+            or col.title() in df.columns
+        ]
         # Drop the columns
         df.drop(columns=cols_to_drop, inplace=True)
 
@@ -961,7 +968,9 @@ def main():
     custom_cmap = create_custom_cmap_cached(*simple_colors)
     custom_divergent_cmap = create_custom_divergent_cmap_cached(*divergent_colors)
 
-    recent_gw_players_df = load_csv_file_cached(f"{data_path}/recent_gw_data.csv", drop_cols=["GW"])
+    recent_gw_players_df = load_csv_file_cached(
+        f"{data_path}/recent_gw_data.csv", drop_cols=["GW"]
+    )
 
     grouped_players_df = load_csv_file_cached(f"{data_path}/grouped_player_data.csv")
     # create per 90s stats
@@ -1148,7 +1157,6 @@ def main():
         "nav-link-selected": {"background-color": "#370617"},
     }
 
-
     # Create a dictionary to map dataframe names to actual dataframes and info_text
     df_dict = {
         # recent gw data
@@ -1176,13 +1184,13 @@ def main():
                     # all players, all gameweeks
                     "title": f"Player Data",
                     "data": grouped_players_df,
-                    "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data.",
+                    "info_text": f"Note: This table will show the statistics earned by each respective player, across all gameweeks. At this time we are looking at :orange[{(recent_gw)}] gameweeks of data.",
                     "upper_info_text": f"",
                 },
                 {
                     "title": f"Team Data",
                     "data": team_df,
-                    "info_text": f"Note: This table shows team-specific data for all gameweeks. At this time we are looking at :orange[{max(recent_gw_players_df['GW'])}] gameweeks of data.",
+                    "info_text": f"Note: This table shows team-specific data for all gameweeks. At this time we are looking at :orange[{(recent_gw)}] gameweeks of data.",
                     "upper_info_text": f"Aggregated data is pre-filtered for player data in matches were they played more than 45 minutes",
                 },
                 {
@@ -1212,12 +1220,12 @@ def main():
                 {
                     "title": "Set Piece Studs",
                     "data": set_piece_studs,
-                    "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
+                    "info_text": f"Note: This table shows the top 5 players per team for set piece statistics. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {recent_gw} gameweeks of data.",
                 },
                 {
                     "title": "Set Piece Studs (Team)",
                     "data": set_piece_studs_teams,
-                    "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {max(recent_gw_players_df['GW'])} gameweeks of data.",
+                    "info_text": f"Note: This table shows the set piece statistics for each team. The table is sorted by a deadball specialist aggregate metric. At this time we are looking at {recent_gw} gameweeks of data.",
                     "upper_info_text": f"Aggregated data is pre-filtered for player data in matches were they played more than 45 minutes",
                 },
             ],
