@@ -131,7 +131,7 @@ def display_quant_stats(selected_teams_df, selected_team, selected_opponent, fin
     st.dataframe(sum_mean_df, use_container_width=True)
 
 def add_construction():
-    return st.info("""🏗️ **:orange[This app is under construction and might break, please let the author know if you break the app]**""")
+    return st.info("""🏗️ **:orange[This app is under construction and might break, please let the developer know if the app breaks. Data is sourced from FBRef and Fantrax]**""")
 
 def add_datadump_info():
     return st.info("""📊 :red[This app gets a data-dump within 12 hours of the last match of the gameweek.]""")
