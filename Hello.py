@@ -133,67 +133,70 @@ def main():
         )
 
     with col2:
-        st.subheader("Current Season")
+        st.subheader("Bigger Picture Stuff")
         st.write(
-            "View player statistics for the current season, including live data during matches."
+            "Here you can find data on the bigger picture of the game, including team performance, league performance, and more."
         )
-        st.button("Explore Current Season")
+        st.markdown(
+            f'<a href="https://fx-dash.streamlit.app/Team_Dashboard" target="_blank"><input type="button" value="Look at trends"></a>',
+            unsafe_allow_html=True,
+        )
 
-    # Streamlit UI components to trigger API requests and display data
-    st.title("TheSportsDB API Data")
+    # # Streamlit UI components to trigger API requests and display data
+    # st.title("TheSportsDB API Data")
 
-    # Example usage of the get_events_from_season function
-    league_id = "4328"  # English Premier League ID
-    season = "2023-2024"
-    if st.button("Get Season Events"):
-        events_data = get_events_from_season(league_id, season)
-        if events_data and "events" in events_data:
-            # Store the JSON data
-            store_json_data(events_data, "season_events")
+    # # Example usage of the get_events_from_season function
+    # league_id = "4328"  # English Premier League ID
+    # season = "2023-2024"
+    # if st.button("Get Season Events"):
+    #     events_data = get_events_from_season(league_id, season)
+    #     if events_data and "events" in events_data:
+    #         # Store the JSON data
+    #         store_json_data(events_data, "season_events")
 
-            # Transform stored JSON data into a DataFrame
-            df = transform_json_to_table("season_events")
+    #         # Transform stored JSON data into a DataFrame
+    #         df = transform_json_to_table("season_events")
 
-            # Display the DataFrame in Streamlit
-            st.dataframe(df)
+    #         # Display the DataFrame in Streamlit
+    #         st.dataframe(df)
 
-            game_weeks = sorted(
-                {
-                    event["intRound"]
-                    for event in events_data["events"]
-                    if event["intRound"]
-                }
-            )
-            selected_week = st.selectbox("Select Game Week", options=game_weeks)
+    #         game_weeks = sorted(
+    #             {
+    #                 event["intRound"]
+    #                 for event in events_data["events"]
+    #                 if event["intRound"]
+    #             }
+    #         )
+    #         selected_week = st.selectbox("Select Game Week", options=game_weeks)
 
-            matches = [
-                event
-                for event in events_data["events"]
-                if event["intRound"] == int(selected_week)
-            ]
-            for match in matches:
-                match_label = f"{match['strEventAlternate']}"
-                with st.expander(f"Get Stats for {match_label}"):
-                    event_stats = get_event_statistics(match["idEvent"])
-                    if event_stats and "statistics" in event_stats:
-                        for stat in event_stats["statistics"]:
-                            st.write(
-                                f"{stat['strStatistic']}: {stat['strHome']} - {stat['strAway']}"
-                            )
-                    else:
-                        st.write("No statistics available for this event.")
-        else:
-            st.write("No data available for the selected season.")
+    #         matches = [
+    #             event
+    #             for event in events_data["events"]
+    #             if event["intRound"] == int(selected_week)
+    #         ]
+    #         for match in matches:
+    #             match_label = f"{match['strEventAlternate']}"
+    #             with st.expander(f"Get Stats for {match_label}"):
+    #                 event_stats = get_event_statistics(match["idEvent"])
+    #                 if event_stats and "statistics" in event_stats:
+    #                     for stat in event_stats["statistics"]:
+    #                         st.write(
+    #                             f"{stat['strStatistic']}: {stat['strHome']} - {stat['strAway']}"
+    #                         )
+    #                 else:
+    #                     st.write("No statistics available for this event.")
+    #     else:
+    #         st.write("No data available for the selected season.")
 
-    # Example usage of the get_live_scores function
-    sport = "Soccer"
-    if st.button("Get Live Scores"):
-        live_scores_data = get_live_scores(sport)
-        if live_scores_data:
-            st.write("Live Scores Data:")
-            st.write(live_scores_data)
-        else:
-            st.write("No live scores available.")
+    # # Example usage of the get_live_scores function
+    # sport = "Soccer"
+    # if st.button("Get Live Scores"):
+    #     live_scores_data = get_live_scores(sport)
+    #     if live_scores_data:
+    #         st.write("Live Scores Data:")
+    #         st.write(live_scores_data)
+    #     else:
+    #         st.write("No live scores available.")
 
 
 if __name__ == "__main__":
