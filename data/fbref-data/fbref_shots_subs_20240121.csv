@@ -1,0 +1,1089 @@
+team,minute,score,player1,player2,event_type,game_id
+Manchester City,23,0:1,Mateo Kovačić,Kevin De Bruyne,substitute_in,3a6836b4
+Burnley,61,0:2,Jacob Bruun Larsen,Luca Koleosho,substitute_in,3a6836b4
+Burnley,61,0:2,Anass Zaroury,Zeki Amdouni,substitute_in,3a6836b4
+Burnley,74,0:2,Benson Manuel,Jordan Beyer,substitute_in,3a6836b4
+Manchester City,79,0:3,Joško Gvardiol,Rico Lewis,substitute_in,3a6836b4
+Manchester City,79,0:3,Aymeric Laporte,Nathan Aké,substitute_in,3a6836b4
+Manchester City,80,0:3,Cole Palmer,Erling Haaland,substitute_in,3a6836b4
+Burnley,90+1,0:3,Josh Brownhill,Sander Berge,substitute_in,3a6836b4
+Burnley,90+1,0:3,Nathan Redmond,Lyle Foster,substitute_in,3a6836b4
+Manchester City,90+5,0:3,James Mcatee,Kyle Walker,substitute_in,3a6836b4
+Arsenal,50,2:0,Takehiro Tomiyasu,Jurriën Timber,substitute_in,26a7f90c
+Nottingham Forest,71,2:0,Taiwo Awoniyi,Danilo,substitute_in,26a7f90c
+Nottingham Forest,72,2:0,Neco Williams,Ola Aina,substitute_in,26a7f90c
+Arsenal,74,2:0,Leandro Trossard,Eddie Nketiah,substitute_in,26a7f90c
+Nottingham Forest,80,2:0,Anthony Elanga,Brennan Johnson,substitute_in,26a7f90c
+Arsenal,86,2:1,Gabriel Dos Santos,Gabriel Martinelli,substitute_in,26a7f90c
+Nottingham Forest,90,2:1,Chris Wood,Joe Worrall,substitute_in,26a7f90c
+Nottingham Forest,90,2:1,Cheikhou Kouyaté,Orel Mangala,substitute_in,26a7f90c
+Bournemouth,60,0:1,Chris Mepham,Marcos Senesi,substitute_in,d6bbf293
+Bournemouth,60,0:1,Justin Kluivert,Jaidon Anthony,substitute_in,d6bbf293
+Bournemouth,67,0:1,Kieffer Moore,Ryan Christie,substitute_in,d6bbf293
+Bournemouth,75,0:1,James Hill,Max Aarons,substitute_in,d6bbf293
+Bournemouth,75,0:1,Antoine Semenyo,David Brooks,substitute_in,d6bbf293
+West Ham United,78,0:1,Danny Ings,Michail Antonio,substitute_in,d6bbf293
+West Ham United,86,1:1,Thilo Kehrer,Pablo Fornals,substitute_in,d6bbf293
+West Ham United,90+4,1:1,Maxwel Cornet,Lucas Paquetá,substitute_in,d6bbf293
+Fulham,46,0:0,Bobby Reid,Willian,substitute_in,15addfc7
+Fulham,58,0:0,Aleksandar Mitrović,Raúl Jiménez,substitute_in,15addfc7
+Fulham,58,0:0,Andreas Pereira,Tom Cairney,substitute_in,15addfc7
+Everton,72,0:0,Arnaut Danjuma,Neal Maupay,substitute_in,15addfc7
+Everton,83,0:1,Lewis Dobbin,James Garner,substitute_in,15addfc7
+Aston Villa,31,2:1,Pau Torres,Tyrone Mings,substitute_in,8ff2f8fe
+Aston Villa,46,2:1,Youri Tielemans,Leon Bailey,substitute_in,8ff2f8fe
+Aston Villa,64,3:1,Diego Carlos,John McGinn,substitute_in,8ff2f8fe
+Newcastle United,68,3:1,Harvey Barnes,Anthony Gordon,substitute_in,8ff2f8fe
+Newcastle United,68,3:1,Callum Wilson,Alexander Isak,substitute_in,8ff2f8fe
+Newcastle United,85,4:1,Sean Longstaff,Bruno Guimarães,substitute_in,8ff2f8fe
+Newcastle United,86,4:1,Jacob Murphy,Miguel Almirón,substitute_in,8ff2f8fe
+Aston Villa,87,4:1,Jaden Philogene Bidace,Matty Cash,substitute_in,8ff2f8fe
+Aston Villa,87,4:1,Philippe Coutinho,Moussa Diaby,substitute_in,8ff2f8fe
+Newcastle United,90+2,5:1,Elliot Anderson,Sandro Tonali,substitute_in,8ff2f8fe
+Sheffield United,80,0:1,Yasser Larouci,Max Lowe,substitute_in,55fd92c7
+Sheffield United,80,0:1,Vinicius Souza,Chris Basham,substitute_in,55fd92c7
+Sheffield United,80,0:1,Anis Ben Slimane,Jack Robinson,substitute_in,55fd92c7
+Sheffield United,87,0:1,Andre Brooks,Ben Osborn,substitute_in,55fd92c7
+Sheffield United,87,0:1,Antwoine Hackford,Bénie Adama Traore,substitute_in,55fd92c7
+Crystal Palace,90+2,0:1,James Tomkins,Marc Guéhi,substitute_in,55fd92c7
+Liverpool,66,1:1,Curtis Jones,Cody Gakpo,substitute_in,c18d3207
+Liverpool,66,1:1,Darwin Núñez,Diogo Jota,substitute_in,c18d3207
+Chelsea,76,1:1,Malo Gusto,Reece James,substitute_in,c18d3207
+Liverpool,77,1:1,Harvey Elliott,Mohamed Salah,substitute_in,c18d3207
+Liverpool,77,1:1,Ben Doak,Luis Díaz,substitute_in,c18d3207
+Chelsea,81,1:1,Ian Maatsen,Carney Chukwuemeka,substitute_in,c18d3207
+Chelsea,81,1:1,Mykhailo Mudryk,Raheem Sterling,substitute_in,c18d3207
+Chelsea,90,1:1,Lesley Ugochukwu,Ben Chilwell,substitute_in,c18d3207
+Manchester United,46,0:0,Victor Lindelöf,Lisandro Martínez,substitute_in,f1ecda2c
+Wolverhampton Wanderers,63,0:0,Hwang Hee-chan,Pablo Sarabia,substitute_in,f1ecda2c
+Manchester United,68,0:0,Christian Eriksen,Mason Mount,substitute_in,f1ecda2c
+Manchester United,68,0:0,Jadon Sancho,Alejandro Garnacho,substitute_in,f1ecda2c
+Manchester United,77,1:0,Facundo Pellistri,Antony,substitute_in,f1ecda2c
+Wolverhampton Wanderers,77,1:0,Fábio Silva,Matheus Cunha,substitute_in,f1ecda2c
+Wolverhampton Wanderers,77,1:0,Hugo Bueno,Rayan Aït Nouri,substitute_in,f1ecda2c
+Manchester United,88,1:0,Scott McTominay,Marcus Rashford,substitute_in,f1ecda2c
+Wolverhampton Wanderers,88,1:0,Sasa Kalajdzic,João Gomes,substitute_in,f1ecda2c
+Sheffield United,46,1:0,Yasser Larouci,Max Lowe,substitute_in,a0a93f71
+Sheffield United,58,1:1,Chris Basham,Vinicius Souza,substitute_in,a0a93f71
+Nottingham Forest,69,1:1,Ryan Yates,Orel Mangala,substitute_in,a0a93f71
+Nottingham Forest,69,1:1,Anthony Elanga,Willy Boly,substitute_in,a0a93f71
+Sheffield United,74,1:1,Andre Brooks,William Osula,substitute_in,a0a93f71
+Sheffield United,82,1:1,Antwoine Hackford,Bénie Adama Traore,substitute_in,a0a93f71
+Nottingham Forest,84,1:1,Chris Wood,Taiwo Awoniyi,substitute_in,a0a93f71
+Nottingham Forest,90+1,2:1,Cheikhou Kouyaté,Danilo,substitute_in,a0a93f71
+Nottingham Forest,90+1,2:1,Moussa Niakhate,Brennan Johnson,substitute_in,a0a93f71
+Bournemouth,63,3:1,Justin Kluivert,Jaidon Anthony,substitute_in,80bebdbb
+Liverpool,63,3:1,Wataru Endo,Cody Gakpo,substitute_in,80bebdbb
+Bournemouth,63,3:1,Kieffer Moore,Ryan Christie,substitute_in,80bebdbb
+Liverpool,75,3:1,Joe Gomez,Trent Alexander-Arnold,substitute_in,80bebdbb
+Liverpool,76,3:1,Harvey Elliott,Diogo Jota,substitute_in,80bebdbb
+Bournemouth,76,3:1,David Brooks,Antoine Semenyo,substitute_in,80bebdbb
+Bournemouth,76,3:1,Lloyd Kelly,Joe Rothwell,substitute_in,80bebdbb
+Bournemouth,84,3:1,Hamed Junior Traorè,Marcos Senesi,substitute_in,80bebdbb
+Liverpool,86,3:1,Darwin Núñez,Luis Díaz,substitute_in,80bebdbb
+Liverpool,86,3:1,Kostas Tsimikas,Mohamed Salah,substitute_in,80bebdbb
+Newcastle United,56,1:0,Harvey Barnes,Anthony Gordon,substitute_in,0b8f50a5
+Newcastle United,57,1:0,Sean Longstaff,Joelinton,substitute_in,0b8f50a5
+Newcastle United,66,1:0,Callum Wilson,Alexander Isak,substitute_in,0b8f50a5
+Newcastle United,66,1:0,Elliot Anderson,Sandro Tonali,substitute_in,0b8f50a5
+Newcastle United,86,1:0,Valentino Livramento,Miguel Almirón,substitute_in,0b8f50a5
+Wolverhampton Wanderers,55,0:4,Hwang Hee-chan,Fábio Silva,substitute_in,d7c606ec
+Wolverhampton Wanderers,56,0:4,Pablo Sarabia,João Gomes,substitute_in,d7c606ec
+Brighton & Hove Albion,57,0:4,João Pedro,Danny Welbeck,substitute_in,d7c606ec
+Brighton & Hove Albion,57,0:4,Joël Veltman,James Milner,substitute_in,d7c606ec
+Brighton & Hove Albion,67,1:4,Evan Ferguson,Julio César Enciso,substitute_in,d7c606ec
+Wolverhampton Wanderers,71,1:4,Toti Gomes,Craig Dawson,substitute_in,d7c606ec
+Brighton & Hove Albion,81,1:4,Mahmoud Dahoud,Pascal Groß,substitute_in,d7c606ec
+Brighton & Hove Albion,81,1:4,Adam Lallana,Kaoru Mitoma,substitute_in,d7c606ec
+Wolverhampton Wanderers,86,1:4,Hugo Bueno,Rayan Aït Nouri,substitute_in,d7c606ec
+Luton Town,70,2:0,Alfie Doughty,Issa Kaboré,substitute_in,6bfb9dc0
+Luton Town,70,2:0,Jacob Brown,Elijah Adebayo,substitute_in,6bfb9dc0
+Luton Town,77,3:0,Chiedozie Ogbene,Tahith Chong,substitute_in,6bfb9dc0
+Luton Town,77,3:0,Pelly Ruddock Mpanzu,Ross Barkley,substitute_in,6bfb9dc0
+Luton Town,77,3:0,Mads Juel Andersen,Reece Burke,substitute_in,6bfb9dc0
+Chelsea,83,3:0,Lesley Ugochukwu,Nicolas Jackson,substitute_in,6bfb9dc0
+Chelsea,86,3:0,Ian Maatsen,Ben Chilwell,substitute_in,6bfb9dc0
+Chelsea,90+2,3:0,Mason Burstow,Raheem Sterling,substitute_in,6bfb9dc0
+Wolverhampton Wanderers,46,0:0,Rayan Aït Nouri,Hwang Hee-chan,substitute_in,18dfee28
+Everton,66,0:0,Youssef Chermiti,Lewis Dobbin,substitute_in,18dfee28
+Wolverhampton Wanderers,74,0:0,Pablo Sarabia,Fábio Silva,substitute_in,18dfee28
+Wolverhampton Wanderers,85,0:0,Sasa Kalajdzic,Matheus Cunha,substitute_in,18dfee28
+Wolverhampton Wanderers,85,0:0,Toti Gomes,Hugo Bueno,substitute_in,18dfee28
+Everton,90+1,0:1,Thomas Cannon,Arnaut Danjuma,substitute_in,18dfee28
+Everton,90+1,0:1,Michael Keane,Idrissa Gana Gueye,substitute_in,18dfee28
+West Ham United,39,0:1,Saïd Benrahma,Tomáš Souček,substitute_in,ba68d60c
+Brighton & Hove Albion,60,0:2,João Pedro,Danny Welbeck,substitute_in,ba68d60c
+Brighton & Hove Albion,60,0:2,Adam Lallana,Billy Gilmour,substitute_in,ba68d60c
+Brighton & Hove Albion,72,0:3,Joël Veltman,James Milner,substitute_in,ba68d60c
+Brighton & Hove Albion,72,0:3,Simon Adingra,Solly March,substitute_in,ba68d60c
+West Ham United,79,0:3,Thilo Kehrer,Michail Antonio,substitute_in,ba68d60c
+West Ham United,84,1:3,Pablo Fornals,Edson Álvarez,substitute_in,ba68d60c
+West Ham United,85,1:3,Danny Ings,Lucas Paquetá,substitute_in,ba68d60c
+Bournemouth,46,0:1,Lewis Cook,Joe Rothwell,substitute_in,f49c4ad2
+Tottenham Hotspur,59,0:1,Ivan Perišić,Pape Matar Sarr,substitute_in,f49c4ad2
+Bournemouth,60,0:1,Hamed Junior Traorè,Ryan Christie,substitute_in,f49c4ad2
+Bournemouth,60,0:1,Jaidon Anthony,Justin Kluivert,substitute_in,f49c4ad2
+Tottenham Hotspur,60,0:1,Pierre Højbjerg,Richarlison,substitute_in,f49c4ad2
+Bournemouth,73,0:2,David Brooks,Antoine Semenyo,substitute_in,f49c4ad2
+Tottenham Hotspur,73,0:2,Oliver Skipp,James Maddison,substitute_in,f49c4ad2
+Tottenham Hotspur,74,0:2,Giovani Lo Celso,Yves Bissouma,substitute_in,f49c4ad2
+Tottenham Hotspur,82,0:2,Ben Davies,Destiny Udogie,substitute_in,f49c4ad2
+Bournemouth,86,0:2,Kieffer Moore,Philip Billing,substitute_in,f49c4ad2
+Brentford,71,1:0,Frank Onyeka,Mathias Jensen,substitute_in,537b2b0b
+Crystal Palace,71,1:0,Jean-Philippe Mateta,Odsonne Édouard,substitute_in,537b2b0b
+Crystal Palace,71,1:0,Naouirou Ahamada,Jeffrey Schlupp,substitute_in,537b2b0b
+Brentford,80,1:1,Keane Lewis-Potter,Kevin Schade,substitute_in,537b2b0b
+Burnley,46,0:2,Jóhann Berg Guðmundsson,Benson Manuel,substitute_in,b66a7def
+Burnley,68,1:3,Nathan Redmond,Luca Koleosho,substitute_in,b66a7def
+Burnley,68,1:3,Aaron Ramsey,Sander Berge,substitute_in,b66a7def
+Aston Villa,73,1:3,Nicolò Zaniolo,Moussa Diaby,substitute_in,b66a7def
+Burnley,81,1:3,Jacob Bruun Larsen,Zeki Amdouni,substitute_in,b66a7def
+Burnley,81,1:3,Jay Rodriguez,Lyle Foster,substitute_in,b66a7def
+Aston Villa,81,1:3,Bertrand Traoré,Lucas Digne,substitute_in,b66a7def
+Aston Villa,86,1:3,Jhon Durán,Ollie Watkins,substitute_in,b66a7def
+Aston Villa,86,1:3,Youri Tielemans,Douglas Luiz,substitute_in,b66a7def
+Liverpool,33,1:0,Joe Gomez,Luis Díaz,substitute_in,b31156ab
+Liverpool,58,1:0,Harvey Elliott,Wataru Endo,substitute_in,b31156ab
+Liverpool,58,1:0,Diogo Jota,Cody Gakpo,substitute_in,b31156ab
+Newcastle United,72,1:0,Sean Longstaff,Sandro Tonali,substitute_in,b31156ab
+Newcastle United,72,1:0,Harvey Barnes,Anthony Gordon,substitute_in,b31156ab
+Newcastle United,72,1:0,Callum Wilson,Alexander Isak,substitute_in,b31156ab
+Liverpool,77,1:0,Darwin Núñez,Alexis Mac Allister,substitute_in,b31156ab
+Liverpool,77,1:0,Jarell Quansah,Joël Matip,substitute_in,b31156ab
+Newcastle United,82,1:1,Elliot Anderson,Joelinton,substitute_in,b31156ab
+Newcastle United,87,1:1,Matt Targett,Sven Botman,substitute_in,b31156ab
+Luton Town,71,0:1,Pelly Ruddock Mpanzu,Ross Barkley,substitute_in,e929e225
+Luton Town,71,0:1,Jacob Brown,Elijah Adebayo,substitute_in,e929e225
+Luton Town,71,0:1,Issa Kaboré,Ryan John Giles,substitute_in,e929e225
+West Ham United,72,0:1,Pablo Fornals,Saïd Benrahma,substitute_in,e929e225
+Luton Town,78,0:1,Chiedozie Ogbene,Alfie Doughty,substitute_in,e929e225
+West Ham United,80,0:1,Danny Ings,Michail Antonio,substitute_in,e929e225
+Luton Town,84,0:1,Cauley Woodrow,Tahith Chong,substitute_in,e929e225
+West Ham United,90+1,0:2,Kudus Mohammed,Lucas Paquetá,substitute_in,e929e225
+Nottingham Forest,45+2,0:0,Anthony Elanga,Danilo,substitute_in,44e89d37
+Chelsea,62,0:1,Cole Palmer,Conor Gallagher,substitute_in,44e89d37
+Chelsea,62,0:1,Noni Madueke,Ben Chilwell,substitute_in,44e89d37
+Nottingham Forest,65,0:1,Chris Wood,Taiwo Awoniyi,substitute_in,44e89d37
+Nottingham Forest,72,0:1,Gonzalo Montiel,Serge Aurier,substitute_in,44e89d37
+Nottingham Forest,72,0:1,Nuno Tavares,Orel Mangala,substitute_in,44e89d37
+Nottingham Forest,73,0:1,Cheikhou Kouyaté,Ola Aina,substitute_in,44e89d37
+Chelsea,77,0:1,Ian Maatsen,Moisés Caicedo,substitute_in,44e89d37
+Chelsea,77,0:1,Mykhailo Mudryk,Malo Gusto,substitute_in,44e89d37
+Newcastle United,58,1:0,Sean Longstaff,Sandro Tonali,substitute_in,4f754e0a
+Newcastle United,58,1:0,Elliot Anderson,Miguel Almirón,substitute_in,4f754e0a
+Newcastle United,58,1:0,Callum Wilson,Joelinton,substitute_in,4f754e0a
+Newcastle United,74,3:0,Harvey Barnes,Alexander Isak,substitute_in,4f754e0a
+Newcastle United,74,3:0,Jamaal Lascelles,Matt Targett,substitute_in,4f754e0a
+Brighton & Hove Albion,77,3:0,Tariq Lamptey,João Pedro,substitute_in,4f754e0a
+Brighton & Hove Albion,77,3:0,Mahmoud Dahoud,Billy Gilmour,substitute_in,4f754e0a
+Brighton & Hove Albion,81,3:0,Adam Lallana,Solly March,substitute_in,4f754e0a
+Brighton & Hove Albion,81,3:0,James Milner,Evan Ferguson,substitute_in,4f754e0a
+Brighton & Hove Albion,89,3:0,Simon Adingra,Pascal Groß,substitute_in,4f754e0a
+Bournemouth,60,1:1,David Brooks,Antoine Semenyo,substitute_in,e2946b10
+Brentford,71,1:1,Keane Lewis-Potter,Kevin Schade,substitute_in,e2946b10
+Brentford,71,1:1,Frank Onyeka,Vitaly Janelt,substitute_in,e2946b10
+Bournemouth,71,1:1,Marcus Tavernier,Justin Kluivert,substitute_in,e2946b10
+Brentford,81,1:2,Kristoffer Ajer,Mathias Jensen,substitute_in,e2946b10
+Brentford,81,1:2,Nathan Collins,Ben Mee,substitute_in,e2946b10
+Brentford,82,1:2,Michael Olakigbe,Aaron Hickey,substitute_in,e2946b10
+Bournemouth,87,1:2,Chris Mepham,Ryan Christie,substitute_in,e2946b10
+Burnley,46,1:2,Hannes Delcroix,Jóhann Berg Guðmundsson,substitute_in,f1786fb8
+Burnley,46,1:2,Josh Brownhill,Sander Berge,substitute_in,f1786fb8
+Burnley,60,1:3,Nathan Redmond,Zeki Amdouni,substitute_in,f1786fb8
+Burnley,68,1:5,Jacob Bruun Larsen,Luca Koleosho,substitute_in,f1786fb8
+Tottenham Hotspur,68,1:5,Pierre Højbjerg,Pape Matar Sarr,substitute_in,f1786fb8
+Tottenham Hotspur,68,1:5,Ivan Perišić,Manor Solomon,substitute_in,f1786fb8
+Tottenham Hotspur,72,1:5,Richarlison,Son Heung-min,substitute_in,f1786fb8
+Burnley,74,1:5,Jack Cork,Jordan Beyer,substitute_in,f1786fb8
+Tottenham Hotspur,86,1:5,Oliver Skipp,Dejan Kulusevski,substitute_in,f1786fb8
+Tottenham Hotspur,86,1:5,Emerson,James Maddison,substitute_in,f1786fb8
+Manchester United,67,1:1,Harry Maguire,Lisandro Martínez,substitute_in,74125d47
+Manchester United,67,1:1,Rasmus Højlund,Anthony Martial,substitute_in,74125d47
+Arsenal,76,1:1,Takehiro Tomiyasu,Oleksandr Zinchenko,substitute_in,74125d47
+Arsenal,76,1:1,Gabriel Jesus,Eddie Nketiah,substitute_in,74125d47
+Arsenal,77,1:1,Fabio Vieira,Kai Havertz,substitute_in,74125d47
+Manchester United,84,1:1,Jonny Evans,Victor Lindelöf,substitute_in,74125d47
+Manchester United,84,1:1,Alejandro Garnacho,Antony,substitute_in,74125d47
+Arsenal,90,1:1,Reiss Nelson,Gabriel Martinelli,substitute_in,74125d47
+Arsenal,90+9,2:1,Jorginho,Martin Ødegaard,substitute_in,74125d47
+Wolverhampton Wanderers,60,1:0,Hwang Hee-chan,Pablo Sarabia,substitute_in,f9436d32
+Crystal Palace,71,1:1,Jean-Philippe Mateta,Jeffrey Schlupp,substitute_in,f9436d32
+Wolverhampton Wanderers,74,1:1,Boubacar Traoré,Fábio Silva,substitute_in,f9436d32
+Wolverhampton Wanderers,81,2:1,Sasa Kalajdzic,João Gomes,substitute_in,f9436d32
+Wolverhampton Wanderers,82,2:1,Hugo Bueno,Rayan Aït Nouri,substitute_in,f9436d32
+Crystal Palace,90,3:1,Will Hughes,Odsonne Édouard,substitute_in,f9436d32
+Manchester City,67,1:1,Matheus Nunes,Phil Foden,substitute_in,64c0a6e2
+West Ham United,67,1:1,Kudus Mohammed,Michail Antonio,substitute_in,64c0a6e2
+West Ham United,68,1:1,Saïd Benrahma,Edson Álvarez,substitute_in,64c0a6e2
+West Ham United,87,1:3,Danny Ings,Tomáš Souček,substitute_in,64c0a6e2
+West Ham United,87,1:3,Thilo Kehrer,Vladimír Coufal,substitute_in,64c0a6e2
+Manchester City,90,1:3,Sergio Gómez,Jeremy Doku,substitute_in,64c0a6e2
+Manchester City,90+4,1:3,Rico Lewis,Erling Haaland,substitute_in,64c0a6e2
+Manchester City,90+5,1:3,Nathan Aké,Joško Gvardiol,substitute_in,64c0a6e2
+Manchester City,90+5,1:3,Oscar Bobb,Bernardo Silva,substitute_in,64c0a6e2
+Fulham,62,0:0,Alex Iwobi,Harrison Reed,substitute_in,48b1bdc7
+Fulham,62,0:0,Carlos Vinícius,Raúl Jiménez,substitute_in,48b1bdc7
+Luton Town,74,1:0,Elijah Adebayo,Tahith Chong,substitute_in,48b1bdc7
+Luton Town,74,1:0,Pelly Ruddock Mpanzu,Albert Sambi Lokonga,substitute_in,48b1bdc7
+Luton Town,74,1:0,Chiedozie Ogbene,Carlton Morris,substitute_in,48b1bdc7
+Luton Town,74,1:0,Alfie Doughty,Jacob Brown,substitute_in,48b1bdc7
+Fulham,81,1:0,Tom Cairney,Andreas Pereira,substitute_in,48b1bdc7
+Fulham,81,1:0,Bobby Reid,Harry Wilson,substitute_in,48b1bdc7
+Luton Town,81,1:0,Cauley Woodrow,Reece Burke,substitute_in,48b1bdc7
+Fulham,90+1,1:0,Calvin Bassey,Willian,substitute_in,48b1bdc7
+Manchester United,64,0:2,Anthony Martial,Rasmus Højlund,substitute_in,ddcf2857
+Manchester United,64,0:2,Hannibal Mejbri,Casemiro,substitute_in,ddcf2857
+Brighton & Hove Albion,64,0:2,Ansu Fati,Adam Lallana,substitute_in,ddcf2857
+Brighton & Hove Albion,64,0:2,João Pedro,Danny Welbeck,substitute_in,ddcf2857
+Brighton & Hove Albion,77,1:3,Billy Gilmour,Mahmoud Dahoud,substitute_in,ddcf2857
+Brighton & Hove Albion,77,1:3,James Milner,Tariq Lamptey,substitute_in,ddcf2857
+Manchester United,85,1:3,Alejandro Garnacho,Sergio Reguilón,substitute_in,ddcf2857
+Manchester United,85,1:3,Aaron Wan-Bissaka,Lisandro Martínez,substitute_in,ddcf2857
+Manchester United,85,1:3,Facundo Pellistri,Scott McTominay,substitute_in,ddcf2857
+Brighton & Hove Albion,85,1:3,Evan Ferguson,Simon Adingra,substitute_in,ddcf2857
+Sheffield United,70,0:0,Oliver Norwood,James Mcatee,substitute_in,e56e96e1
+Tottenham Hotspur,80,0:1,Richarlison,Pape Matar Sarr,substitute_in,e56e96e1
+Tottenham Hotspur,80,0:1,Ivan Perišić,Manor Solomon,substitute_in,e56e96e1
+Tottenham Hotspur,80,0:1,Brennan Johnson,Son Heung-min,substitute_in,e56e96e1
+Sheffield United,81,0:1,Tom Davies,Gustavo Hamer,substitute_in,e56e96e1
+Sheffield United,86,0:1,Auston Trusty,Jayden Bogle,substitute_in,e56e96e1
+Tottenham Hotspur,90+4,0:1,Emerson,Pedro Porro,substitute_in,e56e96e1
+Tottenham Hotspur,90+5,0:1,Pierre Højbjerg,Micky van de Ven,substitute_in,e56e96e1
+Bournemouth,63,0:0,Justin Kluivert,Dango Ouattara,substitute_in,be0cbf88
+Chelsea,63,0:0,Cole Palmer,Mykhailo Mudryk,substitute_in,be0cbf88
+Bournemouth,73,0:0,Luis Sinisterra,Marcus Tavernier,substitute_in,be0cbf88
+Bournemouth,74,0:0,Marcos Senesi,Milos Kerkez,substitute_in,be0cbf88
+Chelsea,80,0:0,Ben Chilwell,Levi Colwill,substitute_in,be0cbf88
+Chelsea,81,0:0,Ian Maatsen,Enzo Fernández,substitute_in,be0cbf88
+Bournemouth,89,0:0,David Brooks,Ryan Christie,substitute_in,be0cbf88
+Arsenal,24,0:0,Leandro Trossard,Gabriel Martinelli,substitute_in,b1278924
+Everton,66,0:0,Dominic Calvert-Lewin,Beto,substitute_in,b1278924
+Arsenal,66,0:0,Gabriel Jesus,Eddie Nketiah,substitute_in,b1278924
+Everton,80,0:1,James Garner,Abdoulaye Doucouré,substitute_in,b1278924
+Arsenal,80,0:1,Kai Havertz,Fabio Vieira,substitute_in,b1278924
+Arsenal,80,0:1,Takehiro Tomiyasu,Oleksandr Zinchenko,substitute_in,b1278924
+Everton,87,0:1,Nathan Patterson,Ashley Young,substitute_in,b1278924
+Everton,88,0:1,Youssef Chermiti,Dwight McNeil,substitute_in,b1278924
+Nottingham Forest,53,0:1,Nuno Tavares,Gonzalo Montiel,substitute_in,ad7ecfad
+Burnley,63,1:1,Anass Zaroury,Jóhann Berg Guðmundsson,substitute_in,ad7ecfad
+Burnley,63,1:1,Sander Berge,Zeki Amdouni,substitute_in,ad7ecfad
+Nottingham Forest,71,1:1,Ryan Yates,Orel Mangala,substitute_in,ad7ecfad
+Nottingham Forest,71,1:1,Divock Origi,Callum Hudson-Odoi,substitute_in,ad7ecfad
+Burnley,76,1:1,Mike Trésor,Luca Koleosho,substitute_in,ad7ecfad
+Burnley,87,1:1,Hannes Delcroix,Jordan Beyer,substitute_in,ad7ecfad
+Nottingham Forest,88,1:1,Chris Wood,Taiwo Awoniyi,substitute_in,ad7ecfad
+Brentford,61,1:1,Kristoffer Ajer,Mads Roerslev,substitute_in,96681b93
+Brentford,61,1:1,Frank Onyeka,Vitaly Janelt,substitute_in,96681b93
+Everton,63,1:1,Dominic Calvert-Lewin,Beto,substitute_in,96681b93
+Brentford,73,1:3,Saman Ghoddos,Aaron Hickey,substitute_in,96681b93
+Everton,77,1:3,Arnaut Danjuma,Amadou Onana,substitute_in,96681b93
+Brentford,89,1:3,Michael Olakigbe,Keane Lewis-Potter,substitute_in,96681b93
+Burnley,20,0:0,Mike Trésor,Jóhann Berg Guðmundsson,substitute_in,8e26793d
+Burnley,73,0:1,Jacob Bruun Larsen,Luca Koleosho,substitute_in,8e26793d
+Burnley,73,0:1,Sander Berge,Aaron Ramsey,substitute_in,8e26793d
+Burnley,73,0:1,Jay Rodriguez,Zeki Amdouni,substitute_in,8e26793d
+Manchester United,79,0:1,Raphaël Varane,Sergio Reguilón,substitute_in,8e26793d
+Burnley,86,0:1,Benson Manuel,Josh Brownhill,substitute_in,8e26793d
+Manchester United,89,0:1,Sofyan Amrabat,Jonny Evans,substitute_in,8e26793d
+Crystal Palace,70,0:0,Jean-Philippe Mateta,Jeffrey Schlupp,substitute_in,cf0b2b19
+Fulham,75,0:0,Alex Iwobi,Andreas Pereira,substitute_in,cf0b2b19
+Fulham,79,0:0,Harry Wilson,Bobby Reid,substitute_in,cf0b2b19
+Fulham,79,0:0,Carlos Vinícius,Raúl Jiménez,substitute_in,cf0b2b19
+Crystal Palace,90+1,0:0,Jesuran Rak Sakyi,Odsonne Édouard,substitute_in,cf0b2b19
+Nottingham Forest,39,2:0,Gonzalo Montiel,Nuno Tavares,substitute_in,5dc7e234
+Manchester City,51,2:0,Kalvin Phillips,Jeremy Doku,substitute_in,5dc7e234
+Nottingham Forest,56,2:0,Anthony Elanga,Ibrahim Sangaré,substitute_in,5dc7e234
+Nottingham Forest,56,2:0,Callum Hudson-Odoi,Serge Aurier,substitute_in,5dc7e234
+Manchester City,57,2:0,Nathan Aké,Julián Álvarez,substitute_in,5dc7e234
+Nottingham Forest,75,2:0,Chris Wood,Taiwo Awoniyi,substitute_in,5dc7e234
+Nottingham Forest,75,2:0,Divock Origi,Ola Aina,substitute_in,5dc7e234
+Manchester City,87,2:0,Jack Grealish,Phil Foden,substitute_in,5dc7e234
+Chelsea,61,0:0,Ben Chilwell,Mykhailo Mudryk,substitute_in,7d2c5e05
+Chelsea,68,0:0,Lesley Ugochukwu,Nicolas Jackson,substitute_in,7d2c5e05
+Chelsea,68,0:0,Cole Palmer,Enzo Fernández,substitute_in,7d2c5e05
+Aston Villa,75,0:1,Leon Bailey,Nicolò Zaniolo,substitute_in,7d2c5e05
+Aston Villa,75,0:1,Jacob Ramsey,John McGinn,substitute_in,7d2c5e05
+Chelsea,79,0:1,Armando Broja,Moisés Caicedo,substitute_in,7d2c5e05
+Aston Villa,81,0:1,Youri Tielemans,Moussa Diaby,substitute_in,7d2c5e05
+Aston Villa,90,0:1,Leander Dendoncker,Boubacar Kamara,substitute_in,7d2c5e05
+Aston Villa,90+1,0:1,Jhon Durán,Ollie Watkins,substitute_in,7d2c5e05
+Newcastle United,12,0:0,Anthony Gordon,Harvey Barnes,substitute_in,cf4fef85
+Sheffield United,46,0:3,Bénie Adama Traore,Jayden Bogle,substitute_in,cf4fef85
+Sheffield United,62,0:5,Tom Davies,Oliver Norwood,substitute_in,cf4fef85
+Sheffield United,66,0:5,Anis Ben Slimane,Gustavo Hamer,substitute_in,cf4fef85
+Newcastle United,70,0:6,Sandro Tonali,Miguel Almirón,substitute_in,cf4fef85
+Newcastle United,70,0:6,Alexander Isak,Callum Wilson,substitute_in,cf4fef85
+Newcastle United,70,0:6,Valentino Livramento,Kieran Trippier,substitute_in,cf4fef85
+Sheffield United,75,0:7,Chris Basham,James Mcatee,substitute_in,cf4fef85
+Newcastle United,81,0:7,Lewis Hall,Bruno Guimarães,substitute_in,cf4fef85
+Sheffield United,56,2:0,Chris Basham,John Egan,substitute_in,b82be6d7
+Sheffield United,70,2:0,Tom Davies,James Mcatee,substitute_in,b82be6d7
+West Ham United,72,2:0,Kudus Mohammed,Michail Antonio,substitute_in,b82be6d7
+West Ham United,72,2:0,Saïd Benrahma,Edson Álvarez,substitute_in,b82be6d7
+Sheffield United,79,2:0,Anis Ben Slimane,Gustavo Hamer,substitute_in,b82be6d7
+Sheffield United,79,2:0,Rhian Brewster,Cameron Archer,substitute_in,b82be6d7
+Sheffield United,79,2:0,Auston Trusty,Jayden Bogle,substitute_in,b82be6d7
+West Ham United,90+3,2:0,Pablo Fornals,Jarrod Bowen,substitute_in,b82be6d7
+West Ham United,90+3,2:0,Konstantinos Mavropanos,Lucas Paquetá,substitute_in,b82be6d7
+Everton,46,1:2,Jack Harrison,Idrissa Gana Gueye,substitute_in,921d5f17
+Luton Town,46,1:2,Mads Juel Andersen,Reece Burke,substitute_in,921d5f17
+Luton Town,56,1:2,Teden Mengi,Tom Lockyer,substitute_in,921d5f17
+Everton,60,1:2,Beto,Abdoulaye Doucouré,substitute_in,921d5f17
+Everton,78,1:2,Nathan Patterson,Ashley Young,substitute_in,921d5f17
+Luton Town,78,1:2,Elijah Adebayo,Carlton Morris,substitute_in,921d5f17
+Luton Town,83,1:2,Cauley Woodrow,Alfie Doughty,substitute_in,921d5f17
+Everton,84,1:2,Arnaut Danjuma,Dwight McNeil,substitute_in,921d5f17
+Manchester United,61,0:1,Alejandro Garnacho,Facundo Pellistri,substitute_in,ef2b7ab9
+Manchester United,77,0:1,Christian Eriksen,Marcus Rashford,substitute_in,ef2b7ab9
+Manchester United,77,0:1,Anthony Martial,Mason Mount,substitute_in,ef2b7ab9
+Crystal Palace,78,0:1,Jaïro Riedewald,Jeffrey Schlupp,substitute_in,ef2b7ab9
+Manchester United,87,0:1,Harry Maguire,Raphaël Varane,substitute_in,ef2b7ab9
+Manchester United,88,0:1,Donny van de Beek,Victor Lindelöf,substitute_in,ef2b7ab9
+Crystal Palace,88,0:1,Chris Richards,Eberechi Eze,substitute_in,ef2b7ab9
+Nottingham Forest,60,0:1,Harry Toffolo,Callum Hudson-Odoi,substitute_in,923467c5
+Nottingham Forest,60,0:1,Morgan Gibbs-White,Anthony Elanga,substitute_in,923467c5
+Brentford,69,1:1,Frank Onyeka,Mathias Jensen,substitute_in,923467c5
+Brentford,69,1:1,Saman Ghoddos,Aaron Hickey,substitute_in,923467c5
+Brentford,75,1:1,Neal Maupay,Keane Lewis-Potter,substitute_in,923467c5
+Nottingham Forest,77,1:1,Cheikhou Kouyaté,Ibrahim Sangaré,substitute_in,923467c5
+Nottingham Forest,80,1:1,Divock Origi,Nicolás Domínguez,substitute_in,923467c5
+Nottingham Forest,81,1:1,Chris Wood,Taiwo Awoniyi,substitute_in,923467c5
+Brentford,89,1:1,Michael Olakigbe,Vitaly Janelt,substitute_in,923467c5
+Brentford,89,1:1,Mads Roerslev,Kristoffer Ajer,substitute_in,923467c5
+Chelsea,46,0:2,Ian Maatsen,Mykhailo Mudryk,substitute_in,c9787e60
+Fulham,53,0:2,Carlos Vinícius,Raúl Jiménez,substitute_in,c9787e60
+Fulham,54,0:2,Alex Iwobi,Harry Wilson,substitute_in,c9787e60
+Fulham,65,0:2,Tom Cairney,Harrison Reed,substitute_in,c9787e60
+Chelsea,65,0:2,Raheem Sterling,Armando Broja,substitute_in,c9787e60
+Fulham,75,0:2,Saša Lukić,Andreas Pereira,substitute_in,c9787e60
+Chelsea,78,0:2,Lesley Ugochukwu,Cole Palmer,substitute_in,c9787e60
+Chelsea,90+5,0:2,Alex Matos,Enzo Fernández,substitute_in,c9787e60
+Chelsea,90+6,0:2,Noni Madueke,Moisés Caicedo,substitute_in,c9787e60
+Luton Town,21,0:0,Reece Burke,Amari'i Bell,substitute_in,4f7b3f27
+Luton Town,62,0:1,Elijah Adebayo,Issa Kaboré,substitute_in,4f7b3f27
+Luton Town,69,0:1,Tahith Chong,Jacob Brown,substitute_in,4f7b3f27
+Burnley,74,0:1,Aaron Ramsey,Zeki Amdouni,substitute_in,4f7b3f27
+Burnley,75,0:1,Jacob Bruun Larsen,Luca Koleosho,substitute_in,4f7b3f27
+Burnley,80,0:1,Jay Rodriguez,Lyle Foster,substitute_in,4f7b3f27
+Burnley,90+4,1:2,Hannes Delcroix,Aaron Ramsey,substitute_in,4f7b3f27
+Tottenham Hotspur,46,0:0,Pierre Højbjerg,Richarlison,substitute_in,d021f28f
+Luton Town,59,0:1,Teden Mengi,Mads Juel Andersen,substitute_in,d021f28f
+Luton Town,66,0:1,Luke Berry,Jacob Brown,substitute_in,d021f28f
+Luton Town,67,0:1,Cauley Woodrow,Elijah Adebayo,substitute_in,d021f28f
+Luton Town,67,0:1,Tahith Chong,Pelly Ruddock Mpanzu,substitute_in,d021f28f
+Tottenham Hotspur,76,0:1,Emerson,Son Heung-min,substitute_in,d021f28f
+Tottenham Hotspur,76,0:1,Oliver Skipp,James Maddison,substitute_in,d021f28f
+Luton Town,81,0:1,Ross Barkley,Tom Lockyer,substitute_in,d021f28f
+Tottenham Hotspur,82,0:1,Ben Davies,Destiny Udogie,substitute_in,d021f28f
+Tottenham Hotspur,90+2,0:1,Alejo Véliz,Dejan Kulusevski,substitute_in,d021f28f
+Manchester United,46,0:1,Christian Eriksen,Casemiro,substitute_in,5006142a
+Manchester United,63,0:1,Antony,Mason Mount,substitute_in,5006142a
+Manchester United,63,0:1,Alejandro Garnacho,Marcus Rashford,substitute_in,5006142a
+Brentford,70,0:1,Neal Maupay,Yoane Wissa,substitute_in,5006142a
+Brentford,70,0:1,Frank Onyeka,Vitaly Janelt,substitute_in,5006142a
+Manchester United,71,0:1,Anthony Martial,Victor Lindelöf,substitute_in,5006142a
+Brentford,83,0:1,Saman Ghoddos,Mathias Jensen,substitute_in,5006142a
+Manchester United,87,0:1,Scott McTominay,Sofyan Amrabat,substitute_in,5006142a
+Bournemouth,46,2:0,Joe Rothwell,Ryan Christie,substitute_in,497b9558
+Bournemouth,57,2:0,Luis Sinisterra,Dango Ouattara,substitute_in,497b9558
+Bournemouth,66,3:0,Kieffer Moore,Lewis Cook,substitute_in,497b9558
+Bournemouth,67,3:0,David Brooks,Milos Kerkez,substitute_in,497b9558
+Everton,78,3:0,Nathan Patterson,Jack Harrison,substitute_in,497b9558
+Everton,83,3:0,Beto,Dominic Calvert-Lewin,substitute_in,497b9558
+Bournemouth,86,3:0,Max Aarons,Adam Smith,substitute_in,497b9558
+Everton,90+1,3:0,Youssef Chermiti,Abdoulaye Doucouré,substitute_in,497b9558
+Crystal Palace,26,0:0,Jesuran Rak Sakyi,Jeffrey Schlupp,substitute_in,1828106c
+Nottingham Forest,46,0:0,Gonzalo Montiel,Serge Aurier,substitute_in,1828106c
+Nottingham Forest,66,0:0,Anthony Elanga,Callum Hudson-Odoi,substitute_in,1828106c
+Crystal Palace,75,0:0,Chris Richards,Jaïro Riedewald,substitute_in,1828106c
+Nottingham Forest,76,0:0,Ryan Yates,Ibrahim Sangaré,substitute_in,1828106c
+Nottingham Forest,76,0:0,Divock Origi,Chris Wood,substitute_in,1828106c
+Nottingham Forest,83,0:0,Cheikhou Kouyaté,Orel Mangala,substitute_in,1828106c
+Arsenal,46,0:0,Gabriel Martinelli,Leandro Trossard,substitute_in,59cd18ae
+Manchester City,68,0:0,Jeremy Doku,Julián Álvarez,substitute_in,59cd18ae
+Manchester City,68,0:0,Matheus Nunes,Mateo Kovačić,substitute_in,59cd18ae
+Manchester City,68,0:0,John Stones,Rico Lewis,substitute_in,59cd18ae
+Arsenal,75,0:0,Takehiro Tomiyasu,Oleksandr Zinchenko,substitute_in,59cd18ae
+Arsenal,75,0:0,Kai Havertz,Eddie Nketiah,substitute_in,59cd18ae
+Arsenal,75,0:0,Thomas Partey,Jorginho,substitute_in,59cd18ae
+West Ham United,75,1:2,Saïd Benrahma,Michail Antonio,substitute_in,017c9ca5
+West Ham United,76,1:2,Kudus Mohammed,Tomáš Souček,substitute_in,017c9ca5
+Newcastle United,82,1:2,Jacob Murphy,Miguel Almirón,substitute_in,017c9ca5
+Newcastle United,86,1:2,Callum Wilson,Alexander Isak,substitute_in,017c9ca5
+Newcastle United,90+3,2:2,Matt Targett,Elliot Anderson,substitute_in,017c9ca5
+Wolverhampton Wanderers,46,0:0,Matt Doherty,Rayan Aït Nouri,substitute_in,3292ed35
+Aston Villa,62,1:1,Nicolò Zaniolo,Moussa Diaby,substitute_in,3292ed35
+Wolverhampton Wanderers,69,1:1,Boubacar Traoré,João Gomes,substitute_in,3292ed35
+Wolverhampton Wanderers,76,1:1,Sasa Kalajdzic,Matheus Cunha,substitute_in,3292ed35
+Aston Villa,82,1:1,Leon Bailey,Matty Cash,substitute_in,3292ed35
+Aston Villa,82,1:1,Youri Tielemans,Boubacar Kamara,substitute_in,3292ed35
+Wolverhampton Wanderers,86,1:1,Fábio Silva,Hwang Hee-chan,substitute_in,3292ed35
+Luton Town,55,1:0,Issa Kaboré,Reece Burke,substitute_in,d1671efa
+Luton Town,72,1:0,Elijah Adebayo,Jacob Brown,substitute_in,d1671efa
+Luton Town,72,1:0,Ross Barkley,Pelly Ruddock Mpanzu,substitute_in,d1671efa
+Luton Town,72,1:0,Andros Townsend,Tahith Chong,substitute_in,d1671efa
+Nottingham Forest,78,2:0,Cheikhou Kouyaté,Ibrahim Sangaré,substitute_in,d1671efa
+Nottingham Forest,78,2:0,Joe Worrall,Willy Boly,substitute_in,d1671efa
+Nottingham Forest,78,2:0,Ryan Yates,Nicolás Domínguez,substitute_in,d1671efa
+Luton Town,81,2:0,Cauley Woodrow,Carlton Morris,substitute_in,d1671efa
+Nottingham Forest,88,2:1,Neco Williams,Anthony Elanga,substitute_in,d1671efa
+Nottingham Forest,88,2:1,Ola Aina,Serge Aurier,substitute_in,d1671efa
+Crystal Palace,61,3:0,Jesuran Rak Sakyi,Jean-Philippe Mateta,substitute_in,21625dde
+Newcastle United,69,4:0,Valentino Livramento,Kieran Trippier,substitute_in,21625dde
+Newcastle United,69,4:0,Sandro Tonali,Bruno Guimarães,substitute_in,21625dde
+Newcastle United,70,4:0,Miguel Almirón,Anthony Gordon,substitute_in,21625dde
+Newcastle United,70,4:0,Alexander Isak,Callum Wilson,substitute_in,21625dde
+Crystal Palace,70,4:0,Matheus França,Will Hughes,substitute_in,21625dde
+Newcastle United,80,4:0,Elliot Anderson,Joelinton,substitute_in,21625dde
+Crystal Palace,87,4:0,David Ozoh,Jefferson Lerma,substitute_in,21625dde
+Brighton & Hove Albion,16,1:0,Evan Ferguson,Danny Welbeck,substitute_in,b782a834
+Brighton & Hove Albion,46,2:0,Joël Veltman,James Milner,substitute_in,b782a834
+Brighton & Hove Albion,66,2:0,Ansu Fati,João Pedro,substitute_in,b782a834
+Brighton & Hove Albion,66,2:0,Billy Gilmour,Carlos Baleba,substitute_in,b782a834
+Manchester City,75,2:1,Rúben Dias,John Stones,substitute_in,b782a834
+Manchester City,75,2:1,Jack Grealish,Jeremy Doku,substitute_in,b782a834
+Brighton & Hove Albion,90+4,2:1,Jan Paul van Hecke,Solly March,substitute_in,b782a834
+Manchester City,90+6,2:1,Nathan Aké,Julián Álvarez,substitute_in,b782a834
+Burnley,46,1:0,Luca Koleosho,Wilson Odobert,substitute_in,52781f37
+Burnley,66,2:0,Josh Brownhill,Sander Berge,substitute_in,52781f37
+Burnley,66,2:0,Jacob Bruun Larsen,Mike Trésor,substitute_in,52781f37
+Brentford,76,2:0,Yehor Yarmoliuk,Mathias Jensen,substitute_in,52781f37
+Brentford,76,2:0,Mads Roerslev,Kristoffer Ajer,substitute_in,52781f37
+Burnley,76,2:0,Nathan Redmond,Zeki Amdouni,substitute_in,52781f37
+Burnley,80,2:0,Hannes Delcroix,Jacob Bruun Larsen,substitute_in,52781f37
+Brentford,84,2:0,Saman Ghoddos,Frank Onyeka,substitute_in,52781f37
+Brentford,88,3:0,Michael Olakigbe,Neal Maupay,substitute_in,52781f37
+Wolverhampton Wanderers,46,1:0,Tommy Doyle,João Gomes,substitute_in,007b352e
+Bournemouth,57,1:1,Joe Rothwell,Alex Scott,substitute_in,007b352e
+Bournemouth,57,1:1,Ryan Christie,David Brooks,substitute_in,007b352e
+Bournemouth,75,1:1,Dango Ouattara,Marcus Tavernier,substitute_in,007b352e
+Wolverhampton Wanderers,75,1:1,Pablo Sarabia,Toti Gomes,substitute_in,007b352e
+Wolverhampton Wanderers,82,1:1,Sasa Kalajdzic,Matheus Cunha,substitute_in,007b352e
+Bournemouth,85,1:1,Marcos Senesi,Milos Kerkez,substitute_in,007b352e
+Bournemouth,85,1:1,Kieffer Moore,Dominic Solanke,substitute_in,007b352e
+Fulham,46,1:0,Raúl Jiménez,Carlos Vinícius,substitute_in,8c6293a3
+Fulham,46,1:0,Alex Iwobi,Andreas Pereira,substitute_in,8c6293a3
+Tottenham Hotspur,56,2:0,Emerson,Destiny Udogie,substitute_in,8c6293a3
+Tottenham Hotspur,62,2:0,Oliver Skipp,Pape Matar Sarr,substitute_in,8c6293a3
+Fulham,62,2:0,Harry Wilson,Bobby Reid,substitute_in,8c6293a3
+Fulham,72,2:0,Harrison Reed,Saša Lukić,substitute_in,8c6293a3
+Tottenham Hotspur,81,2:0,Brennan Johnson,Richarlison,substitute_in,8c6293a3
+Tottenham Hotspur,82,2:0,Alejo Véliz,James Maddison,substitute_in,8c6293a3
+Tottenham Hotspur,82,2:0,Giovani Lo Celso,Son Heung-min,substitute_in,8c6293a3
+Fulham,82,2:0,Tom Cairney,João Palhinha,substitute_in,8c6293a3
+Brentford,64,0:1,Frank Onyeka,Mathias Jensen,substitute_in,91e3b922
+Chelsea,67,0:1,Reece James,Axel Disasi,substitute_in,91e3b922
+Chelsea,67,0:1,Ian Maatsen,Noni Madueke,substitute_in,91e3b922
+Brentford,76,0:1,Neal Maupay,Yoane Wissa,substitute_in,91e3b922
+Brentford,76,0:1,Yehor Yarmoliuk,Vitaly Janelt,substitute_in,91e3b922
+Chelsea,81,0:1,Lesley Ugochukwu,Moisés Caicedo,substitute_in,91e3b922
+Chelsea,81,0:1,Deivid Washington,Marc Cucurella,substitute_in,91e3b922
+Brentford,84,0:1,Saman Ghoddos,Aaron Hickey,substitute_in,91e3b922
+Burnley,46,1:1,Jay Rodriguez,Zeki Amdouni,substitute_in,c4c42d3e
+Burnley,60,1:1,Sander Berge,Josh Cullen,substitute_in,c4c42d3e
+Burnley,68,1:1,Jacob Bruun Larsen,Anass Zaroury,substitute_in,c4c42d3e
+Bournemouth,69,1:1,Dango Ouattara,Antoine Semenyo,substitute_in,c4c42d3e
+Burnley,81,2:1,Mike Trésor,Luca Koleosho,substitute_in,c4c42d3e
+Burnley,81,2:1,Nathan Redmond,Jóhann Berg Guðmundsson,substitute_in,c4c42d3e
+Bournemouth,82,2:1,Milos Kerkez,Marcus Tavernier,substitute_in,c4c42d3e
+Bournemouth,82,2:1,Joe Rothwell,Philip Billing,substitute_in,c4c42d3e
+Bournemouth,85,2:1,Adam Smith,Max Aarons,substitute_in,c4c42d3e
+West Ham United,57,0:1,Saïd Benrahma,Michail Antonio,substitute_in,868a89be
+West Ham United,73,0:1,Tomáš Souček,James Ward-Prowse,substitute_in,868a89be
+West Ham United,85,0:1,Danny Ings,Aaron Cresswell,substitute_in,868a89be
+Everton,89,0:1,Youssef Chermiti,Dominic Calvert-Lewin,substitute_in,868a89be
+Brighton & Hove Albion,58,1:0,Ansu Fati,Adam Lallana,substitute_in,a0c422e9
+Fulham,58,1:0,Andreas Pereira,Harrison Reed,substitute_in,a0c422e9
+Fulham,58,1:0,Rodrigo Muniz,Raúl Jiménez,substitute_in,a0c422e9
+Fulham,58,1:0,Harry Wilson,Bobby Reid,substitute_in,a0c422e9
+Brighton & Hove Albion,71,1:1,Joël Veltman,Simon Adingra,substitute_in,a0c422e9
+Brighton & Hove Albion,71,1:1,Billy Gilmour,Mahmoud Dahoud,substitute_in,a0c422e9
+Brighton & Hove Albion,71,1:1,Facundo Buonanotte,Carlos Baleba,substitute_in,a0c422e9
+Brighton & Hove Albion,78,1:1,João Pedro,Evan Ferguson,substitute_in,a0c422e9
+Fulham,86,1:1,Tom Cairney,Willian,substitute_in,a0c422e9
+Fulham,90+2,1:1,Saša Lukić,Alex Iwobi,substitute_in,a0c422e9
+Liverpool,58,2:0,Cody Gakpo,Diogo Jota,substitute_in,79bf0c7f
+Liverpool,59,2:0,Harvey Elliott,Ryan Gravenberch,substitute_in,79bf0c7f
+Nottingham Forest,69,2:0,Harry Toffolo,Ola Aina,substitute_in,79bf0c7f
+Nottingham Forest,69,2:0,Taiwo Awoniyi,Willy Boly,substitute_in,79bf0c7f
+Nottingham Forest,69,2:0,Ryan Yates,Nicolás Domínguez,substitute_in,79bf0c7f
+Liverpool,80,3:0,Wataru Endo,Darwin Núñez,substitute_in,79bf0c7f
+Nottingham Forest,83,3:0,Andrey Santos,Orel Mangala,substitute_in,79bf0c7f
+Nottingham Forest,83,3:0,Neco Williams,Morgan Gibbs-White,substitute_in,79bf0c7f
+Liverpool,89,3:0,Joe Gomez,Trent Alexander-Arnold,substitute_in,79bf0c7f
+Crystal Palace,58,0:1,Eberechi Eze,Cheick Doucouré,substitute_in,8797f9a9
+Crystal Palace,70,0:1,Naouirou Ahamada,Jeffrey Schlupp,substitute_in,8797f9a9
+Crystal Palace,70,0:1,Nathaniel Clyne,Joel Ward,substitute_in,8797f9a9
+Burnley,78,0:1,Wilson Odobert,Luca Koleosho,substitute_in,8797f9a9
+Burnley,78,0:1,Nathan Redmond,Zeki Amdouni,substitute_in,8797f9a9
+Crystal Palace,86,0:1,Chris Richards,Odsonne Édouard,substitute_in,8797f9a9
+Burnley,87,0:1,Mike Trésor,Jordan Beyer,substitute_in,8797f9a9
+Burnley,90+2,0:1,Jacob Bruun Larsen,Jóhann Berg Guðmundsson,substitute_in,8797f9a9
+Manchester United,63,0:0,Facundo Pellistri,Antony,substitute_in,31273be0
+Fulham,76,0:0,Carlos Vinícius,Rodrigo Muniz,substitute_in,31273be0
+Fulham,76,0:0,Saša Lukić,Willian,substitute_in,31273be0
+Manchester United,79,0:0,Anthony Martial,Rasmus Højlund,substitute_in,31273be0
+Manchester United,79,0:0,Mason Mount,Christian Eriksen,substitute_in,31273be0
+Fulham,81,0:0,Bobby Reid,Andreas Pereira,substitute_in,31273be0
+Fulham,89,0:0,Raúl Jiménez,Alex Iwobi,substitute_in,31273be0
+Fulham,90,0:0,Tom Cairney,Harry Wilson,substitute_in,31273be0
+Manchester United,90+3,0:1,Raphaël Varane,Alejandro Garnacho,substitute_in,31273be0
+Bournemouth,44,3:0,Joe Rothwell,Alex Scott,substitute_in,e75a870b
+Manchester City,46,3:0,Phil Foden,Erling Haaland,substitute_in,e75a870b
+Bournemouth,46,3:0,Marcos Senesi,Chris Mepham,substitute_in,e75a870b
+Manchester City,71,4:0,Matheus Nunes,Julián Álvarez,substitute_in,e75a870b
+Manchester City,71,4:0,Kalvin Phillips,Rodri,substitute_in,e75a870b
+Manchester City,71,4:0,Rico Lewis,John Stones,substitute_in,e75a870b
+Bournemouth,71,4:0,Antoine Semenyo,Philip Billing,substitute_in,e75a870b
+Bournemouth,72,4:0,Luis Sinisterra,Marcus Tavernier,substitute_in,e75a870b
+Manchester City,85,5:1,Oscar Bobb,Bernardo Silva,substitute_in,e75a870b
+Bournemouth,85,5:1,Justin Kluivert,Dominic Solanke,substitute_in,e75a870b
+Newcastle United,46,0:0,Valentino Livramento,Dan Burn,substitute_in,6096abaa
+Newcastle United,62,0:0,Joe Willock,Callum Wilson,substitute_in,6096abaa
+Newcastle United,63,0:0,Jacob Murphy,Miguel Almirón,substitute_in,6096abaa
+Arsenal,73,1:0,Oleksandr Zinchenko,Ben White,substitute_in,6096abaa
+Newcastle United,79,1:0,Matt Ritchie,Jacob Murphy,substitute_in,6096abaa
+Arsenal,79,1:0,Leandro Trossard,Eddie Nketiah,substitute_in,6096abaa
+Arsenal,79,1:0,Fabio Vieira,Jorginho,substitute_in,6096abaa
+Luton Town,61,0:0,Tahith Chong,Andros Townsend,substitute_in,a62b97ba
+Liverpool,66,0:0,Harvey Elliott,Dominik Szoboszlai,substitute_in,a62b97ba
+Liverpool,66,0:0,Cody Gakpo,Diogo Jota,substitute_in,a62b97ba
+Liverpool,67,0:0,Kostas Tsimikas,Joe Gomez,substitute_in,a62b97ba
+Luton Town,75,0:0,Elijah Adebayo,Carlton Morris,substitute_in,a62b97ba
+Luton Town,79,0:0,Jacob Brown,Chiedozie Ogbene,substitute_in,a62b97ba
+Liverpool,83,1:0,Luis Díaz,Ryan Gravenberch,substitute_in,a62b97ba
+Aston Villa,46,1:0,Leon Bailey,Nicolò Zaniolo,substitute_in,ac18f108
+Aston Villa,59,2:0,Youri Tielemans,Matty Cash,substitute_in,ac18f108
+Nottingham Forest,71,2:0,Serge Aurier,Harry Toffolo,substitute_in,ac18f108
+Aston Villa,78,2:0,Diego Carlos,Boubacar Kamara,substitute_in,ac18f108
+Nottingham Forest,82,2:0,Danilo,Taiwo Awoniyi,substitute_in,ac18f108
+Nottingham Forest,86,2:0,Neco Williams,Ola Aina,substitute_in,ac18f108
+Aston Villa,86,2:0,Leander Dendoncker,Douglas Luiz,substitute_in,ac18f108
+Nottingham Forest,87,2:0,Ryan Yates,Nicolás Domínguez,substitute_in,ac18f108
+Tottenham Hotspur,63,0:1,Rodrigo Bentancur,Pape Matar Sarr,substitute_in,1634f066
+Wolverhampton Wanderers,67,0:1,Matt Doherty,Nélson Semedo,substitute_in,1634f066
+Wolverhampton Wanderers,73,0:1,Sasa Kalajdzic,Jean-Ricner Bellegarde,substitute_in,1634f066
+Tottenham Hotspur,75,0:1,Bryan Gil,Brennan Johnson,substitute_in,1634f066
+Tottenham Hotspur,76,0:1,Giovani Lo Celso,Yves Bissouma,substitute_in,1634f066
+Wolverhampton Wanderers,87,0:1,Pablo Sarabia,João Gomes,substitute_in,1634f066
+Wolverhampton Wanderers,87,0:1,Tommy Doyle,Rayan Aït Nouri,substitute_in,1634f066
+Manchester United,40,0:0,Mason Mount,Christian Eriksen,substitute_in,4b9f3f25
+Luton Town,61,1:0,Tahith Chong,Andros Townsend,substitute_in,4b9f3f25
+Manchester United,68,1:0,Antony,Alejandro Garnacho,substitute_in,4b9f3f25
+Luton Town,73,1:0,Jordan Clark,Alfie Doughty,substitute_in,4b9f3f25
+Manchester United,79,1:0,Anthony Martial,Rasmus Højlund,substitute_in,4b9f3f25
+Manchester United,79,1:0,Raphaël Varane,Sergio Reguilón,substitute_in,4b9f3f25
+Luton Town,85,1:0,Pelly Ruddock Mpanzu,Marvelous Nakamba,substitute_in,4b9f3f25
+Luton Town,86,1:0,Ryan John Giles,Chiedozie Ogbene,substitute_in,4b9f3f25
+Luton Town,86,1:0,Elijah Adebayo,Issa Kaboré,substitute_in,4b9f3f25
+Newcastle United,31,0:0,Matt Ritchie,Miguel Almirón,substitute_in,641024cf
+Newcastle United,46,0:0,Valentino Livramento,Lewis Hall,substitute_in,641024cf
+Newcastle United,66,1:0,Ben Parkinson,Lewis Miley,substitute_in,641024cf
+Bournemouth,68,1:0,Luis Sinisterra,Justin Kluivert,substitute_in,641024cf
+Bournemouth,68,1:0,Adam Smith,Max Aarons,substitute_in,641024cf
+Bournemouth,81,2:0,Dango Ouattara,Antoine Semenyo,substitute_in,641024cf
+Newcastle United,90+5,2:0,Emil Krafth,Joe Willock,substitute_in,641024cf
+Bournemouth,90+6,2:0,Joe Rothwell,Marcus Tavernier,substitute_in,641024cf
+Arsenal,59,2:1,Fabio Vieira,Kai Havertz,substitute_in,2cb4e4dc
+Burnley,80,3:1,Jacob Bruun Larsen,Luca Koleosho,substitute_in,2cb4e4dc
+Burnley,80,3:1,Aaron Ramsey,Zeki Amdouni,substitute_in,2cb4e4dc
+Arsenal,81,3:1,Reiss Nelson,Bukayo Saka,substitute_in,2cb4e4dc
+Arsenal,81,3:1,Eddie Nketiah,Leandro Trossard,substitute_in,2cb4e4dc
+Burnley,85,3:1,Michael Obafemi,Josh Brownhill,substitute_in,2cb4e4dc
+Burnley,88,3:1,Wilson Odobert,Vitinho,substitute_in,2cb4e4dc
+Arsenal,89,3:1,Jakub Kiwior,Gabriel Martinelli,substitute_in,2cb4e4dc
+Brentford,46,1:0,Frank Onyeka,Vitaly Janelt,substitute_in,996ee990
+Brentford,72,2:0,Saman Ghoddos,Mads Roerslev,substitute_in,996ee990
+Brentford,72,2:0,Yehor Yarmoliuk,Mathias Jensen,substitute_in,996ee990
+Brentford,72,2:0,Neal Maupay,Yoane Wissa,substitute_in,996ee990
+Liverpool,83,3:0,Harvey Elliott,Cody Gakpo,substitute_in,996ee990
+Liverpool,83,3:0,Luis Díaz,Diogo Jota,substitute_in,996ee990
+Liverpool,90,3:0,Jarell Quansah,Trent Alexander-Arnold,substitute_in,996ee990
+Liverpool,90+4,3:0,James McConnell,Dominik Szoboszlai,substitute_in,996ee990
+Nottingham Forest,46,1:1,Danilo,Nicolás Domínguez,substitute_in,76b8e568
+Nottingham Forest,76,2:2,Willy Boly,Murillo,substitute_in,76b8e568
+Nottingham Forest,76,2:2,Chris Wood,Taiwo Awoniyi,substitute_in,76b8e568
+Nottingham Forest,76,2:2,Serge Aurier,Ola Aina,substitute_in,76b8e568
+West Ham United,79,2:2,Michail Antonio,Edson Álvarez,substitute_in,76b8e568
+Nottingham Forest,90,3:2,Divock Origi,Ibrahim Sangaré,substitute_in,76b8e568
+West Ham United,90+5,3:2,Angelo Ogbonna,Kudus Mohammed,substitute_in,76b8e568
+West Ham United,90+9,3:2,Aaron Cresswell,Lucas Paquetá,substitute_in,76b8e568
+Sheffield United,46,0:2,Anel Ahmedhodžić,Jayden Bogle,substitute_in,799a2c04
+Sheffield United,46,0:2,Oliver McBurnie,Vinicius Souza,substitute_in,799a2c04
+Bournemouth,46,0:2,Milos Kerkez,Lloyd Kelly,substitute_in,799a2c04
+Sheffield United,66,0:3,Ben Osborn,Luke Thomas,substitute_in,799a2c04
+Bournemouth,66,0:3,Philip Billing,Justin Kluivert,substitute_in,799a2c04
+Bournemouth,66,0:3,Luis Sinisterra,Antoine Semenyo,substitute_in,799a2c04
+Sheffield United,81,0:3,John Fleck,Gustavo Hamer,substitute_in,799a2c04
+Sheffield United,81,0:3,William Osula,James Mcatee,substitute_in,799a2c04
+Bournemouth,82,0:3,David Brooks,Marcus Tavernier,substitute_in,799a2c04
+Chelsea,69,3:1,Mykhailo Mudryk,Conor Gallagher,substitute_in,8c8f48f4
+Chelsea,69,3:1,Moisés Caicedo,Lesley Ugochukwu,substitute_in,8c8f48f4
+Chelsea,69,3:1,Armando Broja,Nicolas Jackson,substitute_in,8c8f48f4
+Chelsea,75,3:1,Levi Colwill,Cole Palmer,substitute_in,8c8f48f4
+Newcastle United,81,3:1,Matt Ritchie,Alexander Isak,substitute_in,8c8f48f4
+Newcastle United,86,4:1,Paul Dummett,Jamaal Lascelles,substitute_in,8c8f48f4
+Chelsea,87,4:1,Noni Madueke,Raheem Sterling,substitute_in,8c8f48f4
+Newcastle United,87,4:1,Alex Murphy,Miguel Almirón,substitute_in,8c8f48f4
+Newcastle United,90+2,4:1,Michael Ndiweni,Anthony Gordon,substitute_in,8c8f48f4
+Newcastle United,90+3,4:1,Amadou Diallo,Lewis Miley,substitute_in,8c8f48f4
+Crystal Palace,49,0:0,Jordan Ayew,Eberechi Eze,substitute_in,f4805536
+Crystal Palace,54,0:0,Will Hughes,Cheick Doucouré,substitute_in,f4805536
+Luton Town,61,0:0,Jordan Clark,Pelly Ruddock Mpanzu,substitute_in,f4805536
+Luton Town,61,0:0,Tahith Chong,Andros Townsend,substitute_in,f4805536
+Luton Town,74,1:1,Elijah Adebayo,Carlton Morris,substitute_in,f4805536
+Luton Town,79,1:1,Jacob Brown,Alfie Doughty,substitute_in,f4805536
+Crystal Palace,80,1:1,Naouirou Ahamada,Jeffrey Schlupp,substitute_in,f4805536
+Crystal Palace,80,1:1,Jean-Philippe Mateta,Odsonne Édouard,substitute_in,f4805536
+Liverpool,54,1:0,Luis Díaz,Diogo Jota,substitute_in,5d4a5006
+Liverpool,54,1:0,Ryan Gravenberch,Curtis Jones,substitute_in,5d4a5006
+Liverpool,73,1:0,Cody Gakpo,Dominik Szoboszlai,substitute_in,5d4a5006
+Liverpool,85,1:1,Wataru Endo,Alexis Mac Allister,substitute_in,5d4a5006
+Liverpool,85,1:1,Harvey Elliott,Darwin Núñez,substitute_in,5d4a5006
+Arsenal,66,0:0,Eddie Nketiah,Gabriel Jesus,substitute_in,626c6561
+Brentford,72,0:0,Shandon Baptiste,Yehor Yarmoliuk,substitute_in,626c6561
+Brentford,72,0:0,Neal Maupay,Yoane Wissa,substitute_in,626c6561
+Arsenal,79,0:0,Kai Havertz,Gabriel Martinelli,substitute_in,626c6561
+Brentford,90,0:1,Mathias Jørgensen,Saman Ghoddos,substitute_in,626c6561
+Brentford,90+1,0:1,Keane Lewis-Potter,Frank Onyeka,substitute_in,626c6561
+Arsenal,90+3,0:1,Ben White,Bukayo Saka,substitute_in,626c6561
+Arsenal,90+3,0:1,Jorginho,Martin Ødegaard,substitute_in,626c6561
+Tottenham Hotspur,32,1:0,Pierre Højbjerg,Rodrigo Bentancur,substitute_in,83db7754
+Aston Villa,46,1:1,Youri Tielemans,Moussa Diaby,substitute_in,83db7754
+Aston Villa,46,1:1,Leon Bailey,Matty Cash,substitute_in,83db7754
+Tottenham Hotspur,71,1:2,Oliver Skipp,Bryan Gil,substitute_in,83db7754
+Tottenham Hotspur,86,1:2,Alejo Véliz,Giovani Lo Celso,substitute_in,83db7754
+Aston Villa,90+2,1:2,Jacob Ramsey,John McGinn,substitute_in,83db7754
+Aston Villa,90+2,1:2,Jhon Durán,Ollie Watkins,substitute_in,83db7754
+Nottingham Forest,46,0:0,Felipe,Willy Boly,substitute_in,0486198b
+Nottingham Forest,65,0:0,Callum Hudson-Odoi,Ibrahim Sangaré,substitute_in,0486198b
+Nottingham Forest,82,0:1,Divock Origi,Harry Toffolo,substitute_in,0486198b
+Everton,82,0:1,Youssef Chermiti,Beto,substitute_in,0486198b
+Sheffield United,25,1:0,Jayden Bogle,George Baldock,substitute_in,e2c53b0a
+Sheffield United,46,2:0,Bénie Adama Traore,Cameron Archer,substitute_in,e2c53b0a
+Sheffield United,46,2:0,William Osula,John Fleck,substitute_in,e2c53b0a
+Sheffield United,46,2:0,James Mcatee,Luke Thomas,substitute_in,e2c53b0a
+Burnley,65,2:0,Jóhann Berg Guðmundsson,Jacob Bruun Larsen,substitute_in,e2c53b0a
+Burnley,77,4:0,Michael Obafemi,Jay Rodriguez,substitute_in,e2c53b0a
+Burnley,77,4:0,Mike Trésor,Luca Koleosho,substitute_in,e2c53b0a
+Burnley,77,4:0,Nathan Redmond,Zeki Amdouni,substitute_in,e2c53b0a
+Burnley,83,5:0,Hjalmar Ekdal,Dara O'Shea,substitute_in,e2c53b0a
+Manchester United,61,1:0,Rasmus Højlund,Anthony Martial,substitute_in,66a1f3ac
+Manchester United,61,1:0,Antony,Marcus Rashford,substitute_in,66a1f3ac
+Manchester United,80,1:0,Sofyan Amrabat,Kobbie Mainoo,substitute_in,66a1f3ac
+Manchester United,80,1:0,Sergio Reguilón,Aaron Wan-Bissaka,substitute_in,66a1f3ac
+Newcastle United,86,1:0,Martin Dúbravka,Nick Pope,substitute_in,66a1f3ac
+Newcastle United,90+7,1:0,Matt Ritchie,Anthony Gordon,substitute_in,66a1f3ac
+Wolverhampton Wanderers,23,2:0,Daniel Bentley,José Sá,substitute_in,6e65df8e
+Wolverhampton Wanderers,62,2:0,Matt Doherty,Hugo Bueno,substitute_in,6e65df8e
+Wolverhampton Wanderers,63,2:0,Pablo Sarabia,Jean-Ricner Bellegarde,substitute_in,6e65df8e
+Arsenal,67,2:0,Eddie Nketiah,Gabriel Jesus,substitute_in,6e65df8e
+Arsenal,78,2:0,Kai Havertz,Gabriel Martinelli,substitute_in,6e65df8e
+Arsenal,79,2:0,Ben White,Takehiro Tomiyasu,substitute_in,6e65df8e
+Arsenal,90+3,2:1,Jorginho,Martin Ødegaard,substitute_in,6e65df8e
+Arsenal,90+3,2:1,Jakub Kiwior,Bukayo Saka,substitute_in,6e65df8e
+Wolverhampton Wanderers,90+3,2:1,Sasa Kalajdzic,Tommy Doyle,substitute_in,6e65df8e
+Luton Town,46,0:0,Jacob Brown,Tom Lockyer,substitute_in,0f71f535
+Luton Town,60,2:0,Jordan Clark,Pelly Ruddock Mpanzu,substitute_in,0f71f535
+Luton Town,60,2:0,Andros Townsend,Chiedozie Ogbene,substitute_in,0f71f535
+Luton Town,60,2:0,Elijah Adebayo,Carlton Morris,substitute_in,0f71f535
+Brentford,70,2:0,Shandon Baptiste,Yehor Yarmoliuk,substitute_in,0f71f535
+Luton Town,76,2:1,Ryan John Giles,Teden Mengi,substitute_in,0f71f535
+Brentford,77,2:1,Mads Roerslev,Saman Ghoddos,substitute_in,0f71f535
+Brentford,78,2:1,Keane Lewis-Potter,Bryan Mbeumo,substitute_in,0f71f535
+Brentford,90+2,3:1,Myles Peart-Harris,Neal Maupay,substitute_in,0f71f535
+Crystal Palace,82,1:1,Jaïro Riedewald,Will Hughes,substitute_in,f7fb8049
+Crystal Palace,87,1:1,Jean-Philippe Mateta,Odsonne Édouard,substitute_in,f7fb8049
+West Ham United,89,1:1,Pablo Fornals,Edson Álvarez,substitute_in,f7fb8049
+Aston Villa,46,1:1,Jacob Ramsey,Nicolò Zaniolo,substitute_in,19533403
+Aston Villa,65,2:1,Jhon Durán,John McGinn,substitute_in,19533403
+Bournemouth,70,2:1,Luis Sinisterra,Antoine Semenyo,substitute_in,19533403
+Bournemouth,70,2:1,Philip Billing,Justin Kluivert,substitute_in,19533403
+Aston Villa,74,2:1,Álex Moreno,Lucas Digne,substitute_in,19533403
+Aston Villa,74,2:1,Moussa Diaby,Leon Bailey,substitute_in,19533403
+Aston Villa,74,2:1,Matty Cash,Ezri Konsa,substitute_in,19533403
+Bournemouth,83,2:1,Chris Mepham,Milos Kerkez,substitute_in,19533403
+Bournemouth,90+3,2:2,Dango Ouattara,Marcus Tavernier,substitute_in,19533403
+Luton Town,61,3:3,Carlton Morris,Elijah Adebayo,substitute_in,dd3a5afc
+Luton Town,61,3:3,Tahith Chong,Jacob Brown,substitute_in,dd3a5afc
+Luton Town,62,3:3,Chiedozie Ogbene,Andros Townsend,substitute_in,dd3a5afc
+Arsenal,64,3:3,Leandro Trossard,Gabriel Martinelli,substitute_in,dd3a5afc
+Arsenal,64,3:3,Oleksandr Zinchenko,Jakub Kiwior,substitute_in,dd3a5afc
+Luton Town,88,3:3,Jordan Clark,Pelly Ruddock Mpanzu,substitute_in,dd3a5afc
+Luton Town,88,3:3,Ryan John Giles,Alfie Doughty,substitute_in,dd3a5afc
+Burnley,36,0:0,Jóhann Berg Guðmundsson,Luca Koleosho,substitute_in,a52ffb27
+Burnley,70,1:0,Mike Trésor,Jacob Bruun Larsen,substitute_in,a52ffb27
+Wolverhampton Wanderers,79,1:0,Jean-Ricner Bellegarde,Pablo Sarabia,substitute_in,a52ffb27
+Wolverhampton Wanderers,87,1:0,Boubacar Traoré,Matheus Cunha,substitute_in,a52ffb27
+Wolverhampton Wanderers,90+1,1:0,Matt Doherty,Hugo Bueno,substitute_in,a52ffb27
+Burnley,90+2,1:0,Nathan Redmond,Hjalmar Ekdal,substitute_in,a52ffb27
+Burnley,90+2,1:0,Wilson Odobert,Vitinho,substitute_in,a52ffb27
+Liverpool,57,0:1,Curtis Jones,Alexis Mac Allister,substitute_in,01aca132
+Liverpool,67,0:1,Darwin Núñez,Luis Díaz,substitute_in,01aca132
+Liverpool,67,0:1,Harvey Elliott,Mohamed Salah,substitute_in,01aca132
+Sheffield United,74,0:1,Bénie Adama Traore,William Osula,substitute_in,01aca132
+Sheffield United,74,0:1,John Fleck,Andre Brooks,substitute_in,01aca132
+Sheffield United,86,0:1,Oliver Norwood,Vinicius Souza,substitute_in,01aca132
+Liverpool,86,0:1,Ryan Gravenberch,Cody Gakpo,substitute_in,01aca132
+Sheffield United,88,0:1,Max Lowe,Auston Trusty,substitute_in,01aca132
+Manchester United,46,1:1,Sergio Reguilón,Victor Lindelöf,substitute_in,49f486f6
+Chelsea,46,1:1,Reece James,Marc Cucurella,substitute_in,49f486f6
+Chelsea,77,2:1,Armando Broja,Mykhailo Mudryk,substitute_in,49f486f6
+Manchester United,84,2:1,Marcus Rashford,Rasmus Højlund,substitute_in,49f486f6
+Manchester United,90+2,2:1,Jonny Evans,Alejandro Garnacho,substitute_in,49f486f6
+Nottingham Forest,46,2:0,Ryan Yates,Ibrahim Sangaré,substitute_in,fd5606da
+Nottingham Forest,46,2:0,Morgan Gibbs-White,Nicolás Domínguez,substitute_in,fd5606da
+Nottingham Forest,58,3:0,Chris Wood,Divock Origi,substitute_in,fd5606da
+Nottingham Forest,58,3:0,Danilo,Callum Hudson-Odoi,substitute_in,fd5606da
+Fulham,63,3:0,Harry Wilson,Willian,substitute_in,fd5606da
+Fulham,75,4:0,Fodé Ballo-Touré,Antonee Robinson,substitute_in,fd5606da
+Fulham,76,4:0,Bobby Reid,Alex Iwobi,substitute_in,fd5606da
+Nottingham Forest,76,4:0,Moussa Niakhate,Felipe,substitute_in,fd5606da
+Fulham,79,4:0,Saša Lukić,João Palhinha,substitute_in,fd5606da
+Fulham,79,4:0,Carlos Vinícius,Raúl Jiménez,substitute_in,fd5606da
+Crystal Palace,29,0:1,Nathaniel Clyne,Tyrick Mitchell,substitute_in,09909bf8
+Bournemouth,62,0:1,Marcus Tavernier,Antoine Semenyo,substitute_in,09909bf8
+Bournemouth,62,0:1,Philip Billing,Justin Kluivert,substitute_in,09909bf8
+Crystal Palace,69,0:1,Will Hughes,Jeffrey Schlupp,substitute_in,09909bf8
+Crystal Palace,69,0:1,Naouirou Ahamada,Joel Ward,substitute_in,09909bf8
+Bournemouth,79,0:1,Dango Ouattara,Luis Sinisterra,substitute_in,09909bf8
+Crystal Palace,86,0:1,Jean-Philippe Mateta,Jefferson Lerma,substitute_in,09909bf8
+Bournemouth,88,0:1,Kieffer Moore,Dominic Solanke,substitute_in,09909bf8
+Manchester City,68,0:0,Matheus Nunes,Rico Lewis,substitute_in,0ad90506
+Manchester City,68,0:0,Mateo Kovačić,Julián Álvarez,substitute_in,0ad90506
+Manchester City,73,0:0,Oscar Bobb,Phil Foden,substitute_in,0ad90506
+Aston Villa,85,1:0,Jacob Ramsey,Youri Tielemans,substitute_in,0ad90506
+Aston Villa,85,1:0,Moussa Diaby,Leon Bailey,substitute_in,0ad90506
+Aston Villa,90,1:0,Álex Moreno,Lucas Digne,substitute_in,0ad90506
+Aston Villa,90,1:0,Jhon Durán,Ollie Watkins,substitute_in,0ad90506
+Everton,67,0:0,Nathan Patterson,Séamus Coleman,substitute_in,2fe9d766
+Everton,85,1:0,Beto,Dominic Calvert-Lewin,substitute_in,2fe9d766
+Newcastle United,90,2:0,Emil Krafth,Jamaal Lascelles,substitute_in,2fe9d766
+Newcastle United,90,2:0,Matt Ritchie,Lewis Miley,substitute_in,2fe9d766
+Tottenham Hotspur,67,1:1,Richarlison,Pierre Højbjerg,substitute_in,200af033
+Tottenham Hotspur,67,1:1,Oliver Skipp,Giovani Lo Celso,substitute_in,200af033
+Tottenham Hotspur,84,1:2,Bryan Gil,Yves Bissouma,substitute_in,200af033
+Tottenham Hotspur,84,1:2,Pape Matar Sarr,Brennan Johnson,substitute_in,200af033
+Tottenham Hotspur,88,1:2,Alejo Véliz,Son Heung-min,substitute_in,200af033
+West Ham United,88,1:2,Pablo Fornals,Kudus Mohammed,substitute_in,200af033
+Aston Villa,46,1:0,Moussa Diaby,Leon Bailey,substitute_in,8cf29e50
+Aston Villa,56,1:0,Jacob Ramsey,Youri Tielemans,substitute_in,8cf29e50
+Aston Villa,66,1:0,Matty Cash,Ezri Konsa,substitute_in,8cf29e50
+Aston Villa,67,1:0,Leander Dendoncker,Boubacar Kamara,substitute_in,8cf29e50
+Arsenal,70,1:0,Leandro Trossard,Gabriel Martinelli,substitute_in,8cf29e50
+Aston Villa,78,1:0,Álex Moreno,Lucas Digne,substitute_in,8cf29e50
+Arsenal,81,1:0,Eddie Nketiah,Gabriel Jesus,substitute_in,8cf29e50
+Arsenal,90+4,1:0,Reiss Nelson,Oleksandr Zinchenko,substitute_in,8cf29e50
+Brighton & Hove Albion,46,0:1,Kaoru Mitoma,Adam Lallana,substitute_in,ab18fa97
+Brighton & Hove Albion,46,0:1,Billy Gilmour,Mahmoud Dahoud,substitute_in,ab18fa97
+Burnley,58,0:1,Aaron Ramsey,Jóhann Berg Guðmundsson,substitute_in,ab18fa97
+Brighton & Hove Albion,59,0:1,Jack Hinshelwood,James Milner,substitute_in,ab18fa97
+Brighton & Hove Albion,59,0:1,Igor,Carlos Baleba,substitute_in,ab18fa97
+Burnley,78,1:1,Nathan Redmond,Jay Rodriguez,substitute_in,ab18fa97
+Burnley,78,1:1,Mike Trésor,Wilson Odobert,substitute_in,ab18fa97
+Burnley,79,1:1,Connor Roberts,Aaron Ramsey,substitute_in,ab18fa97
+Burnley,82,1:1,Hjalmar Ekdal,Zeki Amdouni,substitute_in,ab18fa97
+Brighton & Hove Albion,85,1:1,Facundo Buonanotte,Lewis Dunk,substitute_in,ab18fa97
+Manchester United,56,0:1,Rasmus Højlund,Anthony Martial,substitute_in,0760a568
+Bournemouth,58,0:1,Philip Billing,Antoine Semenyo,substitute_in,0760a568
+Bournemouth,72,0:2,Luis Sinisterra,Justin Kluivert,substitute_in,0760a568
+Manchester United,79,0:3,Facundo Pellistri,Antony,substitute_in,0760a568
+Manchester United,79,0:3,Jonny Evans,Luke Shaw,substitute_in,0760a568
+Manchester United,79,0:3,Marcus Rashford,Alejandro Garnacho,substitute_in,0760a568
+Bournemouth,88,0:3,Dango Ouattara,Marcus Tavernier,substitute_in,0760a568
+Bournemouth,88,0:3,Joe Rothwell,Lewis Cook,substitute_in,0760a568
+Brentford,46,1:0,Yehor Yarmoliuk,Frank Onyeka,substitute_in,e268f518
+Sheffield United,53,1:0,Anis Ben Slimane,William Osula,substitute_in,e268f518
+Brentford,65,1:0,Mikkel Damsgaard,Shandon Baptiste,substitute_in,e268f518
+Brentford,66,1:0,Michael Olakigbe,Keane Lewis-Potter,substitute_in,e268f518
+Sheffield United,73,1:0,Max Lowe,Andre Brooks,substitute_in,e268f518
+Sheffield United,81,1:0,Sydie Peck,James Mcatee,substitute_in,e268f518
+Wolverhampton Wanderers,61,1:1,Boubacar Traoré,Mario Lemina,substitute_in,8c8fdba5
+Nottingham Forest,63,1:1,Danilo,Cheikhou Kouyaté,substitute_in,8c8fdba5
+Wolverhampton Wanderers,69,1:1,Jean-Ricner Bellegarde,Pablo Sarabia,substitute_in,8c8fdba5
+Wolverhampton Wanderers,69,1:1,Matt Doherty,Hugo Bueno,substitute_in,8c8fdba5
+Nottingham Forest,77,1:1,Felipe,Murillo,substitute_in,8c8fdba5
+Nottingham Forest,84,1:1,Chris Wood,Anthony Elanga,substitute_in,8c8fdba5
+Wolverhampton Wanderers,90+1,1:1,Sasa Kalajdzic,Matheus Cunha,substitute_in,8c8fdba5
+Fulham,46,3:0,Harry Wilson,Willian,substitute_in,d3dd23fb
+West Ham United,46,3:0,Emerson Palmieri,Pablo Fornals,substitute_in,d3dd23fb
+West Ham United,46,3:0,Konstantinos Mavropanos,Aaron Cresswell,substitute_in,d3dd23fb
+West Ham United,64,4:0,Divin Mubama,Kudus Mohammed,substitute_in,d3dd23fb
+West Ham United,64,4:0,Angelo Ogbonna,Kurt Zouma,substitute_in,d3dd23fb
+West Ham United,65,4:0,Saïd Benrahma,Lucas Paquetá,substitute_in,d3dd23fb
+Fulham,72,4:0,Fodé Ballo-Touré,Antonee Robinson,substitute_in,d3dd23fb
+Fulham,72,4:0,Carlos Vinícius,Raúl Jiménez,substitute_in,d3dd23fb
+Fulham,79,4:0,Bobby Reid,Alex Iwobi,substitute_in,d3dd23fb
+Fulham,80,4:0,Harrison Reed,João Palhinha,substitute_in,d3dd23fb
+Chelsea,27,0:0,Levi Colwill,Reece James,substitute_in,953b5f9b
+Everton,41,0:0,Nathan Patterson,Ashley Young,substitute_in,953b5f9b
+Everton,46,0:0,Amadou Onana,Idrissa Gana Gueye,substitute_in,953b5f9b
+Chelsea,66,1:0,Raheem Sterling,Enzo Fernández,substitute_in,953b5f9b
+Everton,67,1:0,Beto,Dominic Calvert-Lewin,substitute_in,953b5f9b
+Chelsea,67,1:0,Nicolas Jackson,Armando Broja,substitute_in,953b5f9b
+Chelsea,84,1:0,Đorđe Petrović,Robert Sánchez,substitute_in,953b5f9b
+Chelsea,84,1:0,Ian Maatsen,Marc Cucurella,substitute_in,953b5f9b
+Everton,86,1:0,Lewis Dobbin,Jack Harrison,substitute_in,953b5f9b
+Manchester City,69,1:2,John Stones,Joško Gvardiol,substitute_in,f6155857
+Luton Town,72,1:2,Albert Sambi Lokonga,Marvelous Nakamba,substitute_in,f6155857
+Luton Town,72,1:2,Carlton Morris,Andros Townsend,substitute_in,f6155857
+Manchester City,83,1:2,Matheus Nunes,Mateo Kovačić,substitute_in,f6155857
+Luton Town,84,1:2,Tahith Chong,Ryan John Giles,substitute_in,f6155857
+Luton Town,90,1:2,Jordan Clark,Tom Lockyer,substitute_in,f6155857
+Manchester City,90+3,1:2,Manuel Akanji,Phil Foden,substitute_in,f6155857
+Tottenham Hotspur,32,0:0,Oliver Skipp,Brennan Johnson,substitute_in,4d9f1a71
+Nottingham Forest,67,0:2,Danilo,Cheikhou Kouyaté,substitute_in,4d9f1a71
+Nottingham Forest,67,0:2,Chris Wood,Willy Boly,substitute_in,4d9f1a71
+Tottenham Hotspur,72,0:2,Pierre Højbjerg,Richarlison,substitute_in,4d9f1a71
+Nottingham Forest,83,0:2,Callum Hudson-Odoi,Orel Mangala,substitute_in,4d9f1a71
+Tottenham Hotspur,88,0:2,Emerson,Son Heung-min,substitute_in,4d9f1a71
+Tottenham Hotspur,90+9,0:2,Alejo Véliz,Dejan Kulusevski,substitute_in,4d9f1a71
+Bournemouth,46,0:1,Philip Billing,Antoine Semenyo,substitute_in,a32a8157
+Luton Town,59,1:1,Pelly Ruddock Mpanzu,Albert Sambi Lokonga,substitute_in,a32a8157
+Luton Town,59,1:1,Carlton Morris,Elijah Adebayo,substitute_in,a32a8157
+Luton Town,59,1:1,Chiedozie Ogbene,Andros Townsend,substitute_in,a32a8157
+Burnley,46,0:2,Lyle Foster,Jay Rodriguez,substitute_in,01904d1d
+Everton,46,0:2,Lewis Dobbin,Abdoulaye Doucouré,substitute_in,01904d1d
+Burnley,70,0:2,Ameen Al-Dakhil,Hannes Delcroix,substitute_in,01904d1d
+Burnley,82,0:2,Benson Manuel,Jacob Bruun Larsen,substitute_in,01904d1d
+Everton,82,0:2,Beto,Dominic Calvert-Lewin,substitute_in,01904d1d
+Burnley,87,0:2,Nathan Redmond,Vitinho,substitute_in,01904d1d
+Burnley,87,0:2,Mike Trésor,Wilson Odobert,substitute_in,01904d1d
+Sheffield United,58,1:0,William Osula,Andre Brooks,substitute_in,3bbbaf15
+Sheffield United,67,2:0,Oliver Norwood,Oliver McBurnie,substitute_in,3bbbaf15
+Chelsea,69,2:0,Enzo Fernández,Mykhailo Mudryk,substitute_in,3bbbaf15
+Chelsea,75,2:0,Armando Broja,Raheem Sterling,substitute_in,3bbbaf15
+Sheffield United,80,2:0,Anis Ben Slimane,Gustavo Hamer,substitute_in,3bbbaf15
+Chelsea,90+4,2:0,Ian Maatsen,Cole Palmer,substitute_in,3bbbaf15
+Chelsea,90+4,2:0,Malo Gusto,Nicolas Jackson,substitute_in,3bbbaf15
+Newcastle United,14,0:0,Emil Krafth,Fabian Schär,substitute_in,5db0f25b
+Newcastle United,36,0:0,Lewis Miley,Joelinton,substitute_in,5db0f25b
+Fulham,61,1:0,Rodrigo Muniz,Timothy Castagne,substitute_in,5db0f25b
+Fulham,61,1:0,Kenny Tete,Andreas Pereira,substitute_in,5db0f25b
+Fulham,76,2:0,Saša Lukić,Tom Cairney,substitute_in,5db0f25b
+Fulham,77,2:0,Harrison Reed,João Palhinha,substitute_in,5db0f25b
+Fulham,77,2:0,Bobby Reid,Alex Iwobi,substitute_in,5db0f25b
+Newcastle United,84,3:0,Matt Ritchie,Valentino Livramento,substitute_in,5db0f25b
+Newcastle United,84,3:0,Sven Botman,Dan Burn,substitute_in,5db0f25b
+Newcastle United,84,3:0,Lewis Hall,Anthony Gordon,substitute_in,5db0f25b
+West Ham United,70,2:0,Pablo Fornals,Edson Álvarez,substitute_in,5f5bc7b3
+Wolverhampton Wanderers,70,2:0,Rayan Aït Nouri,Toti Gomes,substitute_in,5f5bc7b3
+Wolverhampton Wanderers,79,3:0,Tommy Doyle,Mario Lemina,substitute_in,5f5bc7b3
+Wolverhampton Wanderers,80,3:0,Matt Doherty,Nélson Semedo,substitute_in,5f5bc7b3
+West Ham United,86,3:0,Danny Ings,Kudus Mohammed,substitute_in,5f5bc7b3
+West Ham United,86,3:0,Divin Mubama,Lucas Paquetá,substitute_in,5f5bc7b3
+West Ham United,90+1,3:0,Thilo Kehrer,Vladimír Coufal,substitute_in,5f5bc7b3
+Liverpool,61,0:0,Cody Gakpo,Ryan Gravenberch,substitute_in,18e98d77
+Liverpool,61,0:0,Joe Gomez,Dominik Szoboszlai,substitute_in,18e98d77
+Manchester United,71,0:0,Marcus Rashford,Alejandro Garnacho,substitute_in,18e98d77
+Liverpool,78,0:0,Harvey Elliott,Darwin Núñez,substitute_in,18e98d77
+Liverpool,78,0:0,Curtis Jones,Luis Díaz,substitute_in,18e98d77
+Manchester United,82,0:0,Hannibal Mejbri,Kobbie Mainoo,substitute_in,18e98d77
+Manchester United,82,0:0,Facundo Pellistri,Antony,substitute_in,18e98d77
+Brighton & Hove Albion,27,0:0,Jack Hinshelwood,Joël Veltman,substitute_in,e3a46a4e
+Brighton & Hove Albion,60,1:0,João Pedro,Evan Ferguson,substitute_in,e3a46a4e
+Brighton & Hove Albion,60,1:0,Facundo Buonanotte,Adam Lallana,substitute_in,e3a46a4e
+Brighton & Hove Albion,60,1:0,Igor,James Milner,substitute_in,e3a46a4e
+Brighton & Hove Albion,79,1:0,Danny Welbeck,Simon Adingra,substitute_in,e3a46a4e
+Arsenal,81,1:0,Eddie Nketiah,Gabriel Jesus,substitute_in,e3a46a4e
+Arsenal,82,1:0,Leandro Trossard,Gabriel Martinelli,substitute_in,e3a46a4e
+Arsenal,89,2:0,Emile Smith Rowe,Kai Havertz,substitute_in,e3a46a4e
+Arsenal,89,2:0,Reiss Nelson,Bukayo Saka,substitute_in,e3a46a4e
+Arsenal,90+3,2:0,Jakub Kiwior,Oleksandr Zinchenko,substitute_in,e3a46a4e
+Aston Villa,65,1:0,Jhon Durán,Moussa Diaby,substitute_in,4a3af0ab
+Aston Villa,65,1:0,Leon Bailey,Matty Cash,substitute_in,4a3af0ab
+Brentford,68,1:0,Neal Maupay,Keane Lewis-Potter,substitute_in,4a3af0ab
+Brentford,68,1:0,Frank Onyeka,Mikkel Damsgaard,substitute_in,4a3af0ab
+Brentford,76,1:0,Nathan Collins,Yoane Wissa,substitute_in,4a3af0ab
+Aston Villa,81,1:1,Nicolò Zaniolo,Pau Torres,substitute_in,4a3af0ab
+Brentford,88,1:2,Yehor Yarmoliuk,Vitaly Janelt,substitute_in,4a3af0ab
+Brentford,89,1:2,Michael Olakigbe,Mads Roerslev,substitute_in,4a3af0ab
+Aston Villa,90,1:2,Leander Dendoncker,Jacob Ramsey,substitute_in,4a3af0ab
+Brighton & Hove Albion,46,1:0,Danny Welbeck,Simon Adingra,substitute_in,7340be7a
+Brighton & Hove Albion,46,1:0,Facundo Buonanotte,Carlos Baleba,substitute_in,7340be7a
+Crystal Palace,59,1:0,David Ozoh,Will Hughes,substitute_in,7340be7a
+Crystal Palace,70,1:0,Eberechi Eze,Jordan Ayew,substitute_in,7340be7a
+Brighton & Hove Albion,75,1:0,Adam Lallana,Jack Hinshelwood,substitute_in,7340be7a
+Brighton & Hove Albion,83,1:1,Jakub Moder,Kaoru Mitoma,substitute_in,7340be7a
+Sheffield United,58,0:0,Max Lowe,Yasser Larouci,substitute_in,37916998
+Sheffield United,58,0:0,Gustavo Hamer,Andre Brooks,substitute_in,37916998
+Aston Villa,74,0:0,Jhon Durán,Moussa Diaby,substitute_in,37916998
+Aston Villa,74,0:0,Álex Moreno,Lucas Digne,substitute_in,37916998
+Sheffield United,76,0:0,James Mcatee,Anis Ben Slimane,substitute_in,37916998
+Aston Villa,81,0:0,Nicolò Zaniolo,Leon Bailey,substitute_in,37916998
+Sheffield United,90,0:1,Oliver McBurnie,Cameron Archer,substitute_in,37916998
+Burnley,46,0:0,Mike Trésor,Jacob Bruun Larsen,substitute_in,7dd3c51a
+Fulham,64,0:1,Carlos Vinícius,Rodrigo Muniz,substitute_in,7dd3c51a
+Fulham,65,0:1,Bobby Reid,Andreas Pereira,substitute_in,7dd3c51a
+Burnley,65,0:1,Jay Rodriguez,Lyle Foster,substitute_in,7dd3c51a
+Burnley,80,0:2,Connor Roberts,Wilson Odobert,substitute_in,7dd3c51a
+Burnley,80,0:2,Nathan Redmond,Zeki Amdouni,substitute_in,7dd3c51a
+Fulham,82,0:2,Fodé Ballo-Touré,Antonee Robinson,substitute_in,7dd3c51a
+Fulham,82,0:2,Harrison Reed,João Palhinha,substitute_in,7dd3c51a
+Burnley,89,0:2,Hannes Delcroix,Mike Trésor,substitute_in,7dd3c51a
+Liverpool,35,1:1,Joe Gomez,Kostas Tsimikas,substitute_in,bfbfbbe8
+Liverpool,68,1:1,Harvey Elliott,Luis Díaz,substitute_in,bfbfbbe8
+Liverpool,68,1:1,Ryan Gravenberch,Curtis Jones,substitute_in,bfbfbbe8
+Liverpool,68,1:1,Darwin Núñez,Cody Gakpo,substitute_in,bfbfbbe8
+Arsenal,68,1:1,Leandro Trossard,Gabriel Martinelli,substitute_in,bfbfbbe8
+Arsenal,78,1:1,Eddie Nketiah,Gabriel Jesus,substitute_in,bfbfbbe8
+Newcastle United,37,1:0,Sven Botman,Jamaal Lascelles,substitute_in,46bfb645
+Newcastle United,38,1:0,Alexander Isak,Lewis Miley,substitute_in,46bfb645
+Luton Town,46,1:0,Ryan John Giles,Issa Kaboré,substitute_in,46bfb645
+Luton Town,76,1:0,Mads Juel Andersen,Amari'i Bell,substitute_in,46bfb645
+Luton Town,80,1:0,Pelly Ruddock Mpanzu,Albert Sambi Lokonga,substitute_in,46bfb645
+Luton Town,80,1:0,Carlton Morris,Elijah Adebayo,substitute_in,46bfb645
+Luton Town,81,1:0,Chiedozie Ogbene,Andros Townsend,substitute_in,46bfb645
+Newcastle United,81,1:0,Valentino Livramento,Miguel Almirón,substitute_in,46bfb645
+Newcastle United,85,1:0,Lewis Hall,Dan Burn,substitute_in,46bfb645
+Nottingham Forest,26,0:0,Moussa Niakhate,Divock Origi,substitute_in,c5548935
+Bournemouth,29,0:0,Alex Scott,Lewis Cook,substitute_in,c5548935
+Nottingham Forest,46,0:0,Callum Hudson-Odoi,Orel Mangala,substitute_in,c5548935
+Bournemouth,70,1:2,Luis Sinisterra,Antoine Semenyo,substitute_in,c5548935
+Bournemouth,70,1:2,Joe Rothwell,Alex Scott,substitute_in,c5548935
+Bournemouth,81,2:2,David Brooks,Philip Billing,substitute_in,c5548935
+Bournemouth,82,2:2,Kieffer Moore,Dango Ouattara,substitute_in,c5548935
+Nottingham Forest,85,2:2,Ola Aina,Harry Toffolo,substitute_in,c5548935
+Nottingham Forest,90+3,2:2,Danilo,Morgan Gibbs-White,substitute_in,c5548935
+Everton,24,2:0,André Gomes,Idrissa Gana Gueye,substitute_in,849071fe
+Tottenham Hotspur,46,2:0,Eric Dier,Cristian Romero,substitute_in,849071fe
+Tottenham Hotspur,63,2:0,Pierre Højbjerg,Richarlison,substitute_in,849071fe
+Everton,66,2:0,Arnaut Danjuma,Jack Harrison,substitute_in,849071fe
+Tottenham Hotspur,73,2:0,Giovani Lo Celso,Pape Matar Sarr,substitute_in,849071fe
+Everton,79,2:0,Beto,Amadou Onana,substitute_in,849071fe
+Manchester United,57,0:0,Marcus Rashford,Rasmus Højlund,substitute_in,328777ed
+Manchester United,73,1:0,Facundo Pellistri,Antony,substitute_in,328777ed
+Manchester United,84,2:0,Sergio Reguilón,Willy Kambwala,substitute_in,328777ed
+Manchester United,85,2:0,Christian Eriksen,Alejandro Garnacho,substitute_in,328777ed
+West Ham United,88,2:0,Pablo Fornals,Jarrod Bowen,substitute_in,328777ed
+West Ham United,90+4,2:0,Ben Johnson,Kudus Mohammed,substitute_in,328777ed
+Chelsea,59,1:0,Mykhailo Mudryk,Armando Broja,substitute_in,8c0b314c
+Chelsea,59,1:0,Christopher Nkunku,Lesley Ugochukwu,substitute_in,8c0b314c
+Wolverhampton Wanderers,70,1:0,Santiago Bueno,Craig Dawson,substitute_in,8c0b314c
+Wolverhampton Wanderers,75,1:0,Tommy Doyle,Pablo Sarabia,substitute_in,8c0b314c
+Chelsea,79,1:0,Ian Maatsen,Levi Colwill,substitute_in,8c0b314c
+Chelsea,80,1:0,Benoît Badiashile,Malo Gusto,substitute_in,8c0b314c
+Chelsea,80,1:0,Noni Madueke,Nicolas Jackson,substitute_in,8c0b314c
+Wolverhampton Wanderers,86,1:0,Matt Doherty,Matheus Cunha,substitute_in,8c0b314c
+Wolverhampton Wanderers,87,1:0,Hugo Bueno,Rayan Aït Nouri,substitute_in,8c0b314c
+Burnley,61,0:1,Jóhann Berg Guðmundsson,Mike Trésor,substitute_in,c0904954
+Liverpool,66,0:1,Curtis Jones,Ryan Gravenberch,substitute_in,c0904954
+Liverpool,67,0:1,Dominik Szoboszlai,Cody Gakpo,substitute_in,c0904954
+Liverpool,67,0:1,Luis Díaz,Harvey Elliott,substitute_in,c0904954
+Liverpool,84,0:1,Diogo Jota,Darwin Núñez,substitute_in,c0904954
+Burnley,85,0:1,Jacob Bruun Larsen,Zeki Amdouni,substitute_in,c0904954
+Burnley,85,0:1,Nathan Redmond,Lyle Foster,substitute_in,c0904954
+Burnley,90+2,0:2,Aaron Ramsey,Josh Brownhill,substitute_in,c0904954
+Aston Villa,50,0:2,Álex Moreno,Lucas Digne,substitute_in,83709fdf
+Aston Villa,77,2:2,Moussa Diaby,Jacob Ramsey,substitute_in,83709fdf
+Aston Villa,77,2:2,Nicolò Zaniolo,Leon Bailey,substitute_in,83709fdf
+Manchester United,80,2:2,Antony,Marcus Rashford,substitute_in,83709fdf
+Manchester United,81,2:2,Scott McTominay,Kobbie Mainoo,substitute_in,83709fdf
+Aston Villa,86,3:2,Jhon Durán,John McGinn,substitute_in,83709fdf
+Aston Villa,86,3:2,Tim Iroegbunam,Leander Dendoncker,substitute_in,83709fdf
+Manchester United,89,3:2,Willy Kambwala,Rasmus Højlund,substitute_in,83709fdf
+Manchester United,90+4,3:2,Daniel Gore,Christian Eriksen,substitute_in,83709fdf
+Manchester United,90+5,3:2,Hannibal Mejbri,Alejandro Garnacho,substitute_in,83709fdf
+Wolverhampton Wanderers,45+7,1:3,Jean-Ricner Bellegarde,Hwang Hee-chan,substitute_in,ea28d527
+Brentford,46,1:3,Mikkel Damsgaard,Yehor Yarmoliuk,substitute_in,ea28d527
+Wolverhampton Wanderers,64,1:3,Matt Doherty,Nélson Semedo,substitute_in,ea28d527
+Wolverhampton Wanderers,65,1:3,Tommy Doyle,Pablo Sarabia,substitute_in,ea28d527
+Brentford,67,1:3,Mathias Jensen,Mads Roerslev,substitute_in,ea28d527
+Wolverhampton Wanderers,80,1:4,Hugo Bueno,Rayan Aït Nouri,substitute_in,ea28d527
+Brentford,86,1:4,Michael Olakigbe,Yoane Wissa,substitute_in,ea28d527
+Brentford,86,1:4,Myles Peart-Harris,Keane Lewis-Potter,substitute_in,ea28d527
+West Ham United,33,0:1,Saïd Benrahma,Lucas Paquetá,substitute_in,ba570015
+Arsenal,64,0:2,Eddie Nketiah,Gabriel Martinelli,substitute_in,ba570015
+Arsenal,64,0:2,Reiss Nelson,Oleksandr Zinchenko,substitute_in,ba570015
+Arsenal,79,0:2,Emile Smith Rowe,Leandro Trossard,substitute_in,ba570015
+Manchester United,46,0:0,Scott McTominay,Kobbie Mainoo,substitute_in,1aa68cba
+Manchester United,54,0:0,Amad Diallo,Antony,substitute_in,1aa68cba
+Nottingham Forest,74,1:0,Neco Williams,Gonzalo Montiel,substitute_in,1aa68cba
+Nottingham Forest,79,1:1,Callum Hudson-Odoi,Nicolás Domínguez,substitute_in,1aa68cba
+Nottingham Forest,87,2:1,Harry Toffolo,Ola Aina,substitute_in,1aa68cba
+Nottingham Forest,87,2:1,Orel Mangala,Danilo,substitute_in,1aa68cba
+Nottingham Forest,87,2:1,Willy Boly,Anthony Elanga,substitute_in,1aa68cba
+Manchester United,90,2:1,Sergio Reguilón,Aaron Wan-Bissaka,substitute_in,1aa68cba
+Everton,63,3:0,André Gomes,Michael Keane,substitute_in,7dfc59ca
+Everton,63,3:0,Séamus Coleman,Nathan Patterson,substitute_in,7dfc59ca
+Wolverhampton Wanderers,73,3:0,Hugo Bueno,Rayan Aït Nouri,substitute_in,7dfc59ca
+Everton,74,3:0,Arnaut Danjuma,Dwight McNeil,substitute_in,7dfc59ca
+Everton,74,3:0,Beto,Dominic Calvert-Lewin,substitute_in,7dfc59ca
+Wolverhampton Wanderers,80,3:0,Jean-Ricner Bellegarde,Pablo Sarabia,substitute_in,7dfc59ca
+Wolverhampton Wanderers,80,3:0,Pedro Neto,Matheus Cunha,substitute_in,7dfc59ca
+Wolverhampton Wanderers,85,3:0,Matt Doherty,Nélson Semedo,substitute_in,7dfc59ca
+Wolverhampton Wanderers,85,3:0,Boubacar Traoré,João Gomes,substitute_in,7dfc59ca
+Manchester City,52,1:0,Oscar Bobb,Jack Grealish,substitute_in,aefd7405
+Sheffield United,67,2:0,Rhian Brewster,Anis Ben Slimane,substitute_in,aefd7405
+Sheffield United,67,2:0,Cameron Archer,William Osula,substitute_in,aefd7405
+Manchester City,68,2:0,Rico Lewis,Kyle Walker,substitute_in,aefd7405
+Manchester City,68,2:0,Rúben Dias,Mateo Kovačić,substitute_in,aefd7405
+Sheffield United,80,2:0,Ben Osborn,Andre Brooks,substitute_in,aefd7405
+Sheffield United,90,2:0,Rhys Norrington-Davies,Luke Thomas,substitute_in,aefd7405
+Brentford,63,3:1,Frank Onyeka,Mads Roerslev,substitute_in,e9d5dd9b
+Brentford,63,3:1,Neal Maupay,Mathias Jensen,substitute_in,e9d5dd9b
+Brentford,67,3:1,Mikkel Damsgaard,Christian Nørgaard,substitute_in,e9d5dd9b
+Brentford,80,3:1,Yehor Yarmoliuk,Vitaly Janelt,substitute_in,e9d5dd9b
+Brentford,80,3:1,Michael Olakigbe,Keane Lewis-Potter,substitute_in,e9d5dd9b
+Crystal Palace,86,3:1,Will Hughes,Eberechi Eze,substitute_in,e9d5dd9b
+Crystal Palace,86,3:1,Matheus França,Jean-Philippe Mateta,substitute_in,e9d5dd9b
+Crystal Palace,90+2,3:1,Jeffrey Schlupp,Jordan Ayew,substitute_in,e9d5dd9b
+Luton Town,46,0:2,Tahith Chong,Issa Kaboré,substitute_in,8e04572c
+Luton Town,46,0:2,Chiedozie Ogbene,Jacob Brown,substitute_in,8e04572c
+Luton Town,62,0:2,Carlton Morris,Andros Townsend,substitute_in,8e04572c
+Chelsea,62,0:2,Christopher Nkunku,Armando Broja,substitute_in,8e04572c
+Chelsea,81,1:3,Enzo Fernández,Noni Madueke,substitute_in,8e04572c
+Chelsea,90+1,2:3,Alfie Gilchrist,Cole Palmer,substitute_in,8e04572c
+Luton Town,90+4,2:3,Cauley Woodrow,Albert Sambi Lokonga,substitute_in,8e04572c
+Arsenal,46,1:1,Takehiro Tomiyasu,Jakub Kiwior,substitute_in,6c1b6ffc
+Arsenal,67,2:1,Leandro Trossard,Gabriel Martinelli,substitute_in,6c1b6ffc
+Arsenal,67,2:1,Gabriel Jesus,Ben White,substitute_in,6c1b6ffc
+Fulham,72,2:1,Andreas Pereira,Alex Iwobi,substitute_in,6c1b6ffc
+Arsenal,77,2:1,Reiss Nelson,Kai Havertz,substitute_in,6c1b6ffc
+Fulham,80,2:1,Harry Wilson,Bobby Reid,substitute_in,6c1b6ffc
+Fulham,80,2:1,Issa Diop,Willian,substitute_in,6c1b6ffc
+Fulham,90+3,2:1,Harrison Reed,Tom Cairney,substitute_in,6c1b6ffc
+Tottenham Hotspur,32,1:0,Oliver Skipp,Pape Matar Sarr,substitute_in,3ab71352
+Bournemouth,46,1:0,Max Aarons,Dango Ouattara,substitute_in,3ab71352
+Tottenham Hotspur,58,1:0,Pierre Højbjerg,Rodrigo Bentancur,substitute_in,3ab71352
+Bournemouth,61,1:0,Philip Billing,Justin Kluivert,substitute_in,3ab71352
+Bournemouth,61,1:0,Antoine Semenyo,Luis Sinisterra,substitute_in,3ab71352
+Bournemouth,69,1:0,Alex Scott,Ryan Christie,substitute_in,3ab71352
+Tottenham Hotspur,82,3:0,Eric Dier,Giovani Lo Celso,substitute_in,3ab71352
+Tottenham Hotspur,82,3:0,Alejo Véliz,Richarlison,substitute_in,3ab71352
+Tottenham Hotspur,82,3:0,Bryan Gil,Brennan Johnson,substitute_in,3ab71352
+Bournemouth,82,3:0,David Brooks,Adam Smith,substitute_in,3ab71352
+Brighton & Hove Albion,67,0:0,Evan Ferguson,Danny Welbeck,substitute_in,d557afd0
+West Ham United,73,0:0,Divin Mubama,Saïd Benrahma,substitute_in,d557afd0
+Brighton & Hove Albion,74,0:0,Adam Lallana,Facundo Buonanotte,substitute_in,d557afd0
+Brighton & Hove Albion,74,0:0,Jakub Moder,Adam Webster,substitute_in,d557afd0
+Luton Town,64,1:0,Tahith Chong,Andros Townsend,substitute_in,d62dd931
+Burnley,74,1:0,Connor Roberts,Jóhann Berg Guðmundsson,substitute_in,d62dd931
+Luton Town,74,1:0,Carlton Morris,Jordan Clark,substitute_in,d62dd931
+Burnley,83,1:0,Mike Trésor,Zeki Amdouni,substitute_in,d62dd931
+Burnley,84,1:0,Jacob Bruun Larsen,Wilson Odobert,substitute_in,d62dd931
+Luton Town,86,1:0,Luke Berry,Albert Sambi Lokonga,substitute_in,d62dd931
+Burnley,90+5,1:1,Jack Cork,Hjalmar Ekdal,substitute_in,d62dd931
+Manchester City,69,2:1,Kevin De Bruyne,Bernardo Silva,substitute_in,738f8c3e
+Manchester City,8,0:0,Stefan Ortega,Ederson,substitute_in,738f8c3e
+Manchester City,82,2:2,Oscar Bobb,Jeremy Doku,substitute_in,738f8c3e
+Newcastle United,86,2:2,Lewis Hall,Anthony Gordon,substitute_in,738f8c3e
+Everton,63,0:0,Beto,Dominic Calvert-Lewin,substitute_in,1628c63e
+Everton,63,0:0,Dwight McNeil,Arnaut Danjuma,substitute_in,1628c63e
+Aston Villa,64,0:0,Youri Tielemans,Moussa Diaby,substitute_in,1628c63e
+Aston Villa,64,0:0,Jhon Durán,Leon Bailey,substitute_in,1628c63e
+Aston Villa,74,0:0,Matty Cash,Diego Carlos,substitute_in,1628c63e
+Aston Villa,89,0:0,Nicolò Zaniolo,John McGinn,substitute_in,1628c63e
+Manchester United,58,2:2,Scott McTominay,Christian Eriksen,substitute_in,904ed2f9
+Manchester United,63,2:2,Lisandro Martínez,Jonny Evans,substitute_in,904ed2f9
+Tottenham Hotspur,80,2:2,Bryan Gil,Timo Werner,substitute_in,904ed2f9
+Tottenham Hotspur,85,2:2,Radu Drăgușin,Oliver Skipp,substitute_in,904ed2f9
+Manchester United,88,2:2,Antony,Marcus Rashford,substitute_in,904ed2f9
+Tottenham Hotspur,89,2:2,Emerson,Micky van de Ven,substitute_in,904ed2f9
+Nottingham Forest,62,2:1,Neco Williams,Ryan Yates,substitute_in,e0a9c631
+Brentford,74,3:2,Shandon Baptiste,Mikkel Damsgaard,substitute_in,e0a9c631
+Brentford,74,3:2,Sergio Reguilón,Neal Maupay,substitute_in,e0a9c631
+Nottingham Forest,86,3:2,Brandon Aguilera,Gonzalo Montiel,substitute_in,e0a9c631
+Brentford,90,3:2,Josh Dasilva,Keane Lewis-Potter,substitute_in,e0a9c631
+Brentford,90,3:2,Kristoffer Ajer,Mads Roerslev,substitute_in,e0a9c631
+Brentford,90+7,3:2,Yehor Yarmoliuk,Mathias Jensen,substitute_in,e0a9c631
