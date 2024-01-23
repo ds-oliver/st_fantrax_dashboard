@@ -1,0 +1,20 @@
+minute,player,team,xg_shot,psxg_shot,outcome,distance,body_part,notes,sca_1_player,sca_1_type,sca_2_player,sca_2_type,gameweek
+1,Pablo Sarabia,Wolves,0.03,0.28,Saved,25,Left Foot,Deflected,,,,,21
+3,Joao Pedro,Brighton,0.09,,Blocked,21,Right Foot,,Pervis Estupinan,Pass (Live),James Milner,Pass (Live),21
+5,Jan Paul van Hecke,Brighton,0.03,,Blocked,14,Head,,Jack Hinshelwood,Pass (Live),Pascal Gross,Pass (Live),21
+11,Danny Welbeck,Brighton,0.05,,Blocked,27,Right Foot,,Jack Hinshelwood,Pass (Live),Lewis Dunk,Pass (Live),21
+11,Danny Welbeck,Brighton,0.09,,Off Target,8,Head,,Pervis Estupinan,Pass (Dead),Danny Welbeck,Shot,21
+11,Facundo Buonanotte,Brighton,0.22,,Blocked,4,Head,,Danny Welbeck,Shot,,,21
+22,Pedro Neto,Wolves,0.07,,Off Target,25,Left Foot,,Pablo Sarabia,Pass (Live),Nelson Semedo,Pass (Live),21
+26,Jan Paul van Hecke,Brighton,0.27,0.89,Saved,4,Head,,Pascal Gross,Pass (Dead),Billy Gilmour,Fouled,21
+30,Pablo Sarabia,Wolves,0.20,,Off Target,20,Left Foot,,Pedro Neto,Pass (Live),Tommy Doyle,Pass (Live),21
+42,Joao Pedro,Brighton,0.14,0.09,Saved,17,Right Foot,,Pascal Gross,Pass (Live),Billy Gilmour,Pass (Live),21
+46,Matheus Cunha,Wolves,0.19,0.11,Saved,14,Right Foot,,Pedro Neto,Pass (Live),Tommy Doyle,Pass (Live),21
+46,Matheus Cunha,Wolves,0.28,,Off Target,9,Right Foot,,Matheus Cunha,Shot,,,21
+52,Joao Pedro,Brighton,0.11,,Blocked,13,Right Foot,,Danny Welbeck,Pass (Live),James Milner,Pass (Live),21
+56,Craig Dawson,Wolves,0.04,,Off Target,15,Right Foot,Volley,Pablo Sarabia,Pass (Live),Pedro Neto,Pass (Live),21
+76,Evan Ferguson,Brighton,0.02,,Blocked,10,Head,,Pascal Gross,Pass (Dead),,,21
+79,Matheus Cunha,Wolves,0.33,,Off Target,27,Right Foot,,Matheus Cunha,Take-On,Pedro Neto,Pass (Live),21
+81,Mario Lemina,Wolves,0.07,0.03,Saved,12,Right Foot,,Matheus Cunha,Pass (Live),Pedro Neto,Pass (Live),21
+82,Joao Pedro,Brighton,0.02,0.07,Saved,15,Left Foot,,Pascal Gross,Pass (Live),Billy Gilmour,Pass (Live),21
+88,Billy Gilmour,Brighton,0.01,,Blocked,24,Right Foot,,Jack Hinshelwood,Pass (Live),Jan Paul van Hecke,Pass (Live),21
